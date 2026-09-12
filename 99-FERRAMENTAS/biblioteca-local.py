@@ -94,6 +94,19 @@ ESTADOS_REVISAO_VISUAL = {
     "já existente na API - conferir vínculo",
     "duplicado informado pela API - revisar",
 }
+ESTADOS_TERMINAIS_REVISAO_VISUAL = {
+    "pronto para cadastro",
+    "pronto para cadastro específico",
+    "cadastrado",
+    "cadastrado - arquivos locais liberados",
+    "duplicado na API - arquivos locais liberados",
+    "duplicado confirmado por ISBN",
+    "duplicado confirmado por título",
+    "duplicado confirmado por título e autor",
+    "duplicado confirmado por conteúdo",
+    "descartado - arquivos locais liberados",
+    ESTADO_DESCARTE,
+}
 LIMITE_CAPA_MANUAL_BYTES = 8 * 1024 * 1024
 CAMPOS_REVISAO_POR_TIPO = {
     "livro": ("titulo", "nmAutor0", "editora", "data", "nmLingua"),
@@ -1722,6 +1735,15 @@ def pacotes_revisao(raiz, arquivo=None, limite=20, imprimir=True):
             if str(digest).startswith("duplicado:"):
                 continue
             ficha_path, ficha = _ler_ficha_registro(c, registro)
+            estado = str(registro.get("estado", "") or "")
+            # A revisão humana aprovada e os estados prontos são terminais
+            # para a bancada visual. A ficha pode manter pendências antigas
+            # da extração automática como histórico, mas elas não devem
+            # recolocar o item na correção manual.
+            if (ficha.get("revisao_manual_aprovada")
+                    or estado in ESTADOS_TERMINAIS_REVISAO_VISUAL
+                    or registro.get("arquivos_liberados_em")):
+                continue
             if (registro.get("estado") in ESTADOS_REVISAO_VISUAL
                     or _partes_pipe(ficha.get("conflitos", ""))
                     or diagnosticar_ausencias_revisao(ficha)):

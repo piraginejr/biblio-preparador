@@ -1135,6 +1135,67 @@ Times CID TrueType Identity-H yes yes yes 2 0
             salva = json.loads(ficha.read_text(encoding="utf-8"))
             self.assertEqual("pronto para cadastro", salva["situacao"])
 
+    def test_pacotes_revisao_nao_reabre_pronto_com_pendencia_historica(self):
+        with tempfile.TemporaryDirectory() as td:
+            c = local.inicializar(pathlib.Path(td) / "livros")
+            pdf = c["pronto"] / "lider.pdf"
+            pdf.write_bytes(b"%PDF-lider")
+            digest = local.sha256(pdf)
+            ficha = c["metadados"] / "lider.json"
+            local.salvar_json(ficha, {
+                "arquivo": pdf.name,
+                "titulo": "Tornando-se um líder",
+                "nmAutor0": "Munroe, Myles",
+                "editora": "Maná",
+                "data": "2006",
+                "nmLingua": "Português",
+                "tipo_documento": "livro",
+                "situacao": "pronto para cadastro",
+                "situacao_metadados": "pronto para cadastro",
+                "pendencias": "editora: fonte antiga sem resultado",
+                "revisao_manual_aprovada": True,
+            })
+            catalogo = local.carregar_catalogo(c)
+            catalogo["livros"][digest] = {
+                "hash_sha256": digest,
+                "arquivo": pdf.name,
+                "caminho": local.relativo(c, pdf),
+                "estado": "pronto para cadastro",
+                "metadados": local.relativo(c, ficha),
+            }
+            local.salvar_catalogo(c, catalogo)
+
+            pacote = local.pacotes_revisao(c["raiz"], limite=0,
+                                           imprimir=False)
+
+            self.assertEqual([], pacote["itens"])
+
+    def test_pacotes_revisao_nao_lista_cadastrado_liberado_sem_pdf(self):
+        with tempfile.TemporaryDirectory() as td:
+            c = local.inicializar(pathlib.Path(td) / "livros")
+            ficha = c["metadados"] / "liberado.json"
+            local.salvar_json(ficha, {
+                "arquivo": "liberado.pdf",
+                "titulo": "Arquivo liberado",
+                "tipo_documento": "apostila",
+                "pendencias": "autor: campo opcional não localizado",
+            })
+            catalogo = local.carregar_catalogo(c)
+            catalogo["livros"]["a" * 64] = {
+                "hash_sha256": "a" * 64,
+                "arquivo": "liberado.pdf",
+                "caminho": "16-ARTIGOS-E-DOCUMENTOS/liberado.pdf",
+                "estado": "cadastrado - arquivos locais liberados",
+                "arquivos_liberados_em": "2026-09-12T10:00:00",
+                "metadados": local.relativo(c, ficha),
+            }
+            local.salvar_catalogo(c, catalogo)
+
+            pacote = local.pacotes_revisao(c["raiz"], limite=0,
+                                           imprimir=False)
+
+            self.assertEqual([], pacote["itens"])
+
     def test_consultar_metadados_isbn_revisao_prefere_fonte_mais_completa(self):
         class FontesFake:
             @staticmethod
