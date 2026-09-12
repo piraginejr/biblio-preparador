@@ -138,6 +138,10 @@ Política inicial sugerida:
 
 ## Fase 1 — piloto técnico
 
+Documento operacional detalhado da fase 1:
+
+- [Engenharia da fase 1 — GROBID central para o Biblio](GROBID-FASE1-ENGENHARIA.md)
+
 ### Resultado esperado
 
 Ao final da fase 1:
