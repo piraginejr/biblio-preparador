@@ -63,6 +63,20 @@ Não devemos reescrever o motor do zero.
 A primeira versão do aplicativo deve **embrulhar, organizar e estabilizar** o
 que já funciona.
 
+Do ponto de vista do operador, o aplicativo deve funcionar como um
+**assistente guiado**:
+
+1. indicar onde colocar os materiais;
+2. iniciar a preparação;
+3. perguntar se deseja enviar o que ficou pronto;
+4. perguntar se deseja liberar espaço;
+5. abrir a revisão do que ficou pendente;
+6. ao final da revisão, perguntar novamente se deseja enviar e limpar.
+
+Portanto, o app não deve ser apenas uma cópia visual do menu antigo. O menu
+continua existindo como base técnica, mas a experiência principal deve seguir o
+fluxo natural do trabalho.
+
 Arquitetura desejada:
 
 ```text

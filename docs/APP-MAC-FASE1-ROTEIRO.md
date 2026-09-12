@@ -230,6 +230,104 @@ Deve mostrar:
 - estado do GROBID;
 - estado das dependências.
 
+### Fluxo assistido principal
+
+A primeira experiência do operador não deve ser escolher entre muitos comandos.
+O aplicativo deve conduzir o trabalho em sequência.
+
+Fluxo recomendado:
+
+1. **Entrada dos materiais**
+   - Se a biblioteca ainda não existir, o app cria a estrutura.
+   - O app mostra claramente onde colocar os arquivos.
+   - O app oferece botão para abrir a pasta de entrada.
+   - Mensagem desejada:
+
+     ```text
+     Coloque aqui os livros, documentos ou pastas que deseja preparar.
+     Quando terminar de copiar os arquivos, clique em “Iniciar preparação”.
+     ```
+
+2. **Preparação**
+   - O operador clica em “Iniciar preparação”.
+   - O app executa o ciclo completo.
+   - A tela mostra etapa atual, arquivo atual e progresso.
+   - Ao terminar, o app mostra um resumo:
+     - quantos ficaram prontos;
+     - quantos foram para revisão;
+     - quantos eram duplicados;
+     - quantos falharam;
+     - quanto espaço poderá ser liberado depois do envio.
+
+3. **Pergunta sobre envio dos prontos**
+   - Se houver itens prontos, o app pergunta:
+
+     ```text
+     Há materiais prontos para cadastro. Deseja enviá-los agora?
+     ```
+
+   - Opções:
+     - “Enviar agora”
+     - “Enviar depois”
+     - “Ver lista antes”
+
+4. **Envio**
+   - Se o operador escolher enviar, o app consulta a API antes de cada envio.
+   - Duplicatas confirmadas não são reenviadas.
+   - Erro em um item não deve travar o lote inteiro.
+   - Ao final, o app mostra:
+     - enviados;
+     - duplicados evitados;
+     - falhas;
+     - incertos;
+     - pendentes.
+
+5. **Limpeza após envio**
+   - Depois do envio, se houver arquivos cadastrados, duplicados confirmados ou
+     descartados, o app pergunta:
+
+     ```text
+     Deseja liberar espaço local agora?
+     ```
+
+   - O app simula primeiro e mostra o que será movido para a Lixeira.
+   - Só executa com confirmação explícita.
+
+6. **Revisão dos pendentes**
+   - Se houver itens em revisão, o app pergunta:
+
+     ```text
+     Deseja abrir agora o painel de revisão dos itens pendentes?
+     ```
+
+   - Opções:
+     - “Abrir revisão”
+     - “Revisar depois”
+
+7. **Após terminar a revisão**
+   - Quando o operador concluir a bancada visual, o app volta para o fluxo e
+     pergunta novamente:
+
+     ```text
+     Alguns materiais ficaram prontos depois da revisão. Deseja enviá-los agora?
+     ```
+
+   - Se sim, envia.
+   - Depois pergunta novamente se deseja liberar espaço.
+
+8. **Conclusão**
+   - O app encerra com uma tela clara:
+
+     ```text
+     Trabalho concluído.
+     Não há novos materiais prontos para envio.
+     Itens restantes precisam de revisão posterior ou ação específica.
+     ```
+
+Esse fluxo deve ser o caminho principal do aplicativo. As demais funções
+continuam existindo, mas como ações secundárias em “Ferramentas” ou
+“Diagnóstico”.
+
 ### Botões principais
 
 - Preparar novo lote.
