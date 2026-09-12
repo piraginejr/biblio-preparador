@@ -20,6 +20,23 @@ class PrepararLivrosTest(unittest.TestCase):
         self.assertEqual("9788577790364", prep.isbn_valido("978-85-7779-036-4"))
         self.assertIsNone(prep.isbn_valido("7898521805111"))
 
+    def test_pagina_tecnica_de_microfilme_nao_e_titulo(self):
+        titulo = "TEST TARGET (MT-3) I25 22 11.8 1.4 L125"
+        self.assertFalse(prep.titulo_bibliograficamente_plausivel(titulo))
+        alertas = prep.alertas_plausibilidade_metadados(titulo, "", "")
+        self.assertTrue(any("digitalização" in a for a in alertas))
+
+    def test_capa_tecnica_de_digitalizacao_e_ignorada(self):
+        capa = {
+            "titulo": "TEST TARGET (MT-3) I25 22 11.8 1.4 L125",
+            "nmAutor0": "EVALUATION, IMAGE",
+            "texto_ocr": [
+                "IMAGE EVALUATION", "TEST TARGET (MT-3)", "I25", "22",
+                "11.8", "1.4", "L125",
+            ],
+        }
+        self.assertTrue(prep.capa_tecnica_digitalizacao(capa))
+
     def test_normaliza_nome_lingua_sem_inferir_idioma(self):
         self.assertEqual("Português", prep.normalizar_nome_lingua("portugues"))
         self.assertEqual("Inglês", prep.normalizar_nome_lingua("inglês"))

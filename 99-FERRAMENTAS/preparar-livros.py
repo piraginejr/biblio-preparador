@@ -3146,6 +3146,12 @@ def alertas_plausibilidade_metadados(titulo, autor, editora):
             f"autor consta na memoria de ruidos: {motivo_autor_ruidoso}")
     if re.search(r"\b(?:camara brasileira do livro|dados de catalogacao|c ip)\b", nt):
         alertas.append("titulo contaminado por texto da ficha catalografica")
+    if re.search(
+            r"(?i)\b(?:test\s+target|image\s+evaluation|microfiche|"
+            r"microreproductions?|cihm|icmh|lura\s*document|"
+            r"digitized\s+by\s+the\s+internet\s+archive)\b",
+            titulo or ""):
+        alertas.append("titulo parece página técnica de digitalização")
     if re.match(r"(?i)^\s*(?:categoria|assunto|classifica[çc][aã]o)\s*:",
                 titulo or ""):
         alertas.append("titulo parece rotulo de categoria ou classificacao")
@@ -3289,6 +3295,31 @@ def titulo_bibliograficamente_plausivel(titulo):
         return False
     return not any("titulo" in alerta for alerta in
                    alertas_plausibilidade_metadados(titulo, "", ""))
+
+
+def capa_tecnica_digitalizacao(capa_info):
+    """Reconhece capas falsas criadas por microfilme ou digitalização."""
+    if not isinstance(capa_info, dict) or not capa_info:
+        return False
+    textos = []
+    for chave in ("titulo", "titulo_visual", "nmAutor0"):
+        if capa_info.get(chave):
+            textos.append(str(capa_info.get(chave)))
+    textos.extend(str(x) for x in (capa_info.get("texto_ocr") or []))
+    combinado = "\n".join(textos)
+    normalizado = identificar.normalizar(combinado)
+    if re.search(
+            r"(?i)\b(?:test\s+target|image\s+evaluation|microfiche|"
+            r"microreproductions?|cihm|icmh)\b", combinado):
+        return True
+    tokens = [p for p in normalizado.split() if p]
+    if not tokens:
+        return False
+    tecnicos = {"test", "target", "image", "evaluation", "mt", "cihm",
+                "icmh", "microfiche", "microfiches"}
+    qtd_tecnicos = sum(1 for p in tokens if p in tecnicos)
+    qtd_numericos = sum(1 for p in tokens if re.fullmatch(r"\d+(?:\.\d+)?", p))
+    return qtd_tecnicos >= 2 and qtd_numericos >= 2
 
 
 def editora_bibliograficamente_plausivel(editora):
@@ -5813,6 +5844,13 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
             autor_pista = (cip.get("autor") or api.get("autores", "")
                            or doc.get("autor", "") or aut_nome)
             capa_info = lercapa.ler(linha["capa"], autor_conhecido=autor_pista)
+            if capa_tecnica_digitalizacao(capa_info):
+                capa_info = {
+                    "_ignorada": "página técnica de digitalização/microfilme",
+                    "_texto_ocr": capa_info.get("texto_ocr", []),
+                    "_titulo_descartado": capa_info.get("titulo", ""),
+                    "_autor_descartado": capa_info.get("nmAutor0", ""),
+                }
         except Exception:
             capa_info = {}
 
@@ -5937,10 +5975,10 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
             and titulo_bibliograficamente_plausivel(capa_info["titulo"])
             and not titulo_bibliograficamente_plausivel(titulo)):
         titulo, origem_tit = capa_info["titulo"], "capa substituiu OCR implausivel"
-    if not titulo and capa_info.get("titulo"):
-        titulo, origem_tit = capa_info["titulo"], "capa"
     if not titulo and doc.get("titulo"):
         titulo, origem_tit = doc["titulo"], "metadado do PDF"
+    if not titulo and capa_info.get("titulo"):
+        titulo, origem_tit = capa_info["titulo"], "capa"
 
     # --- autor, em ordem de autoridade:
     #     CIP > API > capa confirmada > metadado interno > copyright > arquivo
