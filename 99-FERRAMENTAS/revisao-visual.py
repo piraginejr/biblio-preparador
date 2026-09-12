@@ -16,6 +16,7 @@ import os
 import pathlib
 import socket
 import sys
+import threading
 import urllib.parse
 import webbrowser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -50,6 +51,11 @@ HTML = r"""<!doctype html>
     .acoes-fixas button { padding: 8px 10px; }
     select, input, textarea { width: 100%; box-sizing: border-box; border: 1px solid #d8cfc3; border-radius: 8px; padding: 8px; font: inherit; }
     iframe { width: 100%; height: 100%; border: 0; background: #ddd; }
+    .conclusao { display: none; height: 100%; box-sizing: border-box; padding: 36px; place-items: center; text-align: center; background: linear-gradient(135deg, #eef7f2, #f7f4ef); }
+    .cartao-conclusao { max-width: 620px; background: white; border-radius: 18px; padding: 32px; box-shadow: 0 6px 24px #0002; }
+    .cartao-conclusao h1 { margin: 0 0 10px; color: #1f4d3a; font-size: 30px; }
+    .cartao-conclusao p { margin: 8px 0; color: #6b625a; line-height: 1.45; }
+    .botoes-conclusao { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 22px; }
     aside { display: grid; grid-template-rows: auto minmax(0, 1fr); overflow: hidden; padding: 0; }
     .cabecalho-revisao { padding: 14px 14px 8px; border-bottom: 1px solid #e7ded3; }
     .corpo-revisao { overflow: auto; min-height: 0; padding: 0 14px 18px; }
@@ -82,6 +88,9 @@ HTML = r"""<!doctype html>
       input, textarea, select { background: #1d1b19; color: #f1eee9; border-color: #5b5148; }
       .tag, pre { background: #332e29; }
       .cabecalho-revisao { border-color: #3a342f; }
+      .conclusao { background: linear-gradient(135deg, #182920, #24211f); }
+      .cartao-conclusao { background: #24211f; }
+      .cartao-conclusao p { color: #c9c0b6; }
     }
   </style>
 </head>
@@ -107,6 +116,19 @@ HTML = r"""<!doctype html>
       <button class="warn" onclick="recarregar()">recarregar</button>
     </div>
     <iframe id="pdf"></iframe>
+    <div id="conclusao" class="conclusao">
+      <div class="cartao-conclusao">
+        <h1>Revisão concluída</h1>
+        <p>Não há mais itens pendentes nesta bancada visual.</p>
+        <p>Você pode voltar ao console principal para enviar materiais, ver o estado da biblioteca ou executar outro serviço.</p>
+        <div class="botoes-conclusao">
+          <button onclick="encerrarBancada()">voltar ao console principal</button>
+          <button class="sec" onclick="recarregar()">verificar novamente</button>
+          <button class="sec" onclick="window.close()">fechar esta aba</button>
+        </div>
+        <div id="fimMsg" class="meta" style="margin-top:14px"></div>
+      </div>
+    </div>
   </section>
   <aside class="painel">
     <div class="cabecalho-revisao">
@@ -379,17 +401,43 @@ function removerItemAtualDaRevisao() {
   idx = Math.min(pos, Math.max(0, dados.itens.length - 1));
   mostrar();
 }
+function mostrarConclusao() {
+  $("pdf").src = "about:blank";
+  $("pdf").style.display = "none";
+  $("conclusao").style.display = "grid";
+  $("titulo").textContent = "Revisão concluída";
+  $("arquivo").textContent = "Todos os itens da bancada foram tratados.";
+  $("capa").style.display = "none";
+  $("salvoTopo").innerHTML = "<span class='ok'>não há mais itens para corrigir</span>";
+  $("salvo").innerHTML = "<span class='ok'>revisão concluída</span>";
+  $("conflitos").innerHTML = "<span class='meta'>sem item ativo</span>";
+  $("ausencias").innerHTML = "<span class='meta'>sem item ativo</span>";
+  $("classificacao").innerHTML = "<span class='meta'>sem item ativo</span>";
+  $("buscaIsbn").innerHTML = "<span class='meta'>sem item ativo</span>";
+  $("paginas").innerHTML = "<span class='meta'>sem item ativo</span>";
+  $("rejeitadas").innerHTML = "<span class='meta'>sem item ativo</span>";
+  sujo = false;
+}
+async function encerrarBancada() {
+  $("fimMsg").textContent = "encerrando a bancada e voltando ao console…";
+  try {
+    await fetch("/api/encerrar", {method:"POST"});
+    $("fimMsg").innerHTML = "<span class='ok'>bancada encerrada; volte à janela do console</span>";
+    setTimeout(() => { try { window.close(); } catch(e) {} }, 700);
+  } catch (e) {
+    $("fimMsg").innerHTML = `<span class="erro">${esc(e.message || e)}</span>`;
+  }
+}
 function mostrar() {
   const item = atual();
   $("estado").textContent = `${dados.itens.length} item(ns) de revisão`;
   $("listaItens").innerHTML = (dados.itens || []).map((x, i) => `<button class="${i===idx?'sel':''}" onclick="selecionar(${i})"><b>${esc(x.campos.titulo || x.arquivo)}</b><br><span class="meta">${esc(x.estado || "")} · ${esc((x.classificacao_material||{}).tipo_atual || "")}</span></button>`).join("");
   if (!item) {
-    $("pdf").src = "about:blank";
-    $("titulo").textContent = "Nenhum item";
-    $("arquivo").textContent = "";
-    $("capa").style.display = "none";
+    mostrarConclusao();
     return;
   }
+  $("pdf").style.display = "block";
+  $("conclusao").style.display = "none";
   $("titulo").textContent = item.campos.titulo || item.arquivo;
   $("arquivo").textContent = `${idx + 1}/${dados.itens.length} — ${item.arquivo} — ${item.estado}`;
   $("pdf").src = "about:blank";
@@ -525,10 +573,15 @@ class ServidorRevisao(BaseHTTPRequestHandler):
         caminho = urllib.parse.urlparse(self.path).path
         if caminho not in {
                 "/api/gravar", "/api/consultar-isbn", "/api/capa-url",
-                "/api/capa-arquivo"}:
+                "/api/capa-arquivo", "/api/encerrar"}:
             self.send_error(404)
             return
         try:
+            if caminho == "/api/encerrar":
+                self._json({"ok": True, "mensagem": "bancada encerrada"})
+                threading.Thread(
+                    target=self.server.shutdown, daemon=True).start()
+                return
             tamanho = int(self.headers.get("Content-Length", "0"))
             dados = json.loads(self.rfile.read(tamanho).decode("utf-8"))
             if caminho == "/api/consultar-isbn":
@@ -608,6 +661,9 @@ def main():
     except KeyboardInterrupt:
         print("\nBancada encerrada.")
         return 0
+    finally:
+        servidor.server_close()
+    print("Bancada encerrada. Voltando ao menu principal.", flush=True)
     return 0
 
 
