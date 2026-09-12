@@ -1,0 +1,53 @@
+# Arquivos do macOS
+.DS_Store
+
+# Acervo local, mineração e resultados gerados: não enviar ao Git.
+00-INDICE/
+01-EDICOES-PDF/
+02-MINERACAO/
+03-REGISTROS-SELECIONADOS/
+tmp/
+download-manifest.csv
+download-manifest.csv.tmp
+
+# PDFs e arquivos temporários de download.
+*.pdf
+*.pdf.part
+*.part
+*.pgm
+
+# Cache do Python.
+__pycache__/
+*.py[cod]
+
+# Segredos e configuração local.
+.env
+.env.*
+*.key
+*.pem
+
+# Estado local da preparação de livros.
+livros/00-ENTRADA/
+livros/10-REVISAO/
+livros/15-TESES-DISSERTACOES-E-TRABALHOS/
+livros/16-ARTIGOS-E-DOCUMENTOS/
+livros/17-REVISTAS-E-PERIODICOS/
+livros/18-EXCECOES-DE-TAMANHO/
+livros/19-DESCARTE/
+livros/20-PRONTOS/
+livros/30-ARQUIVADOS/
+livros/_controle/
+livros/_metadados/
+livros/_capas/
+livros/_capas300/
+livros/_preparados-envio/
+livros/_livros-metadados.csv
+
+# Artefatos e saídas locais de ferramentas.
+99-FERRAMENTAS/.DS_Store
+99-FERRAMENTAS/_originais_sem_ocr/
+99-FERRAMENTAS/baixar-voice-fgbmfi.log
+99-FERRAMENTAS/_resultado-capas.txt
+99-FERRAMENTAS/_resultado-ner.txt
+99-FERRAMENTAS/vision-barcode
+99-FERRAMENTAS/vision-ocr
