@@ -66,7 +66,8 @@ que já funciona.
 Do ponto de vista do operador, o aplicativo deve funcionar como um
 **assistente guiado**:
 
-1. indicar onde colocar os materiais;
+1. oferecer uma bandeja de importação para selecionar arquivos, importar uma
+   pasta local inteira ou abrir a pasta de entrada;
 2. iniciar a preparação;
 3. perguntar se deseja enviar o que ficou pronto;
 4. perguntar se deseja liberar espaço;

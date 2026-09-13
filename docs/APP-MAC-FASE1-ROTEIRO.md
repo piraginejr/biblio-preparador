@@ -235,17 +235,47 @@ Deve mostrar:
 A primeira experiência do operador não deve ser escolher entre muitos comandos.
 O aplicativo deve conduzir o trabalho em sequência.
 
+Referências de design pesquisadas:
+
+- Calibre: oferece “Adicionar livros” por arquivo, pasta única, pastas e
+  subpastas, arquivo compactado e ISBN. A lição para nós é que a entrada deve
+  aceitar lote e pasta, não apenas exigir que o operador encontre manualmente a
+  pasta interna.
+- Paperless-ngx: trabalha com uma pasta de consumo, mas também permite upload
+  pela interface. A lição para nós é separar “local temporário de entrada” da
+  biblioteca organizada, mostrando ao operador que a entrada é uma bandeja de
+  chegada.
+- Zotero e Mendeley: permitem arrastar PDFs ou importar pastas inteiras e
+  depois tentam recuperar metadados automaticamente. A lição para nós é tratar
+  importação e recuperação de dados como uma etapa única, visível e
+  tranquilizadora.
+- Libib, BookBuddy e apps de catalogação: priorizam ações humanas simples como
+  escanear, digitar ISBN, adicionar manualmente e organizar em coleções. A lição
+  para nós é esconder complexidade técnica e mostrar ações compreensíveis.
+
 Fluxo recomendado:
 
 1. **Entrada dos materiais**
    - Se a biblioteca ainda não existir, o app cria a estrutura.
-   - O app mostra claramente onde colocar os arquivos.
-   - O app oferece botão para abrir a pasta de entrada.
+   - O app mostra claramente onde colocar os arquivos, mas não depende apenas
+     disso.
+   - O app oferece três caminhos de entrada:
+     - selecionar vários arquivos;
+     - escolher uma pasta local inteira para o app importar;
+     - abrir a pasta de entrada criada na instalação.
+   - Ao escolher arquivos ou uma pasta, o app copia ou move para a entrada
+     correta de forma controlada.
+   - Antes de preparar, o app mostra uma pré-lista do lote importado:
+     - arquivos PDF;
+     - Word/PowerPoint/EPUB a converter;
+     - pastas com OPF/capa;
+     - formatos não reconhecidos;
+     - possíveis duplicatas locais.
    - Mensagem desejada:
 
      ```text
-     Coloque aqui os livros, documentos ou pastas que deseja preparar.
-     Quando terminar de copiar os arquivos, clique em “Iniciar preparação”.
+     Escolha arquivos, selecione uma pasta ou abra a pasta de entrada.
+     O Biblio Preparador organizará o lote antes de iniciar a preparação.
      ```
 
 2. **Preparação**
