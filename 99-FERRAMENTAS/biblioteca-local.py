@@ -136,10 +136,25 @@ SOFFICE_APLICATIVOS = (
     pathlib.Path("/Applications/LibreOfficeDev.app/Contents/MacOS/soffice"),
 )
 MICROSOFT_WORD = pathlib.Path("/Applications/Microsoft Word.app")
+ARQUIVOS_SISTEMA_IGNORADOS = {
+    ".DS_Store",
+    "Thumbs.db",
+    "desktop.ini",
+}
 
 
 def agora():
     return datetime.now().isoformat(timespec="seconds")
+
+
+def arquivo_de_sistema_ignorado(caminho):
+    """Arquivos auxiliares do sistema/Finder não são material bibliográfico."""
+    nome = pathlib.Path(caminho).name
+    return (
+        nome in ARQUIVOS_SISTEMA_IGNORADOS
+        or nome.startswith("._")
+        or nome.startswith("~$")
+    )
 
 
 def caminhos(raiz):
@@ -3572,7 +3587,7 @@ def mostrar_status(raiz):
     arquivos_entrada = [
         p for p in c["entrada"].rglob("*")
         if p.is_file() and not p.is_symlink()
-        and not p.name.startswith("~$")
+        and not arquivo_de_sistema_ignorado(p)
         and not any(parte.endswith(("_files", "_arquivos")) for parte in p.parts)
     ]
     aguardando = len(arquivos_entrada)
