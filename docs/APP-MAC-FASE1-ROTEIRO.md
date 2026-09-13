@@ -215,6 +215,64 @@ Chaves do macOS
 
 ## Etapa 5 — interface inicial
 
+### Layout aprovado em 13/09/2026
+
+O protótipo aprovado para a fase 1 está registrado em:
+
+- `/Users/piraginejr/.codex/visualizations/2026/07/27/019fa273-6b82-7741-802f-cb5b4cb585b1/biblio-app-mockups-lateral.html`
+- `/Users/piraginejr/.codex/visualizations/2026/07/27/019fa273-6b82-7741-802f-cb5b4cb585b1/biblio-revisao-bancada-aprovada.html`
+
+Decisão de produto:
+
+- manter o fluxo assistido em cinco etapas:
+  1. **Importar** — arquivos ou pasta;
+  2. **Preparar** — esteira do lote;
+  3. **Enviar** — subir e limpar;
+  4. **Revisar** — corrigir pendentes;
+  5. **Concluir** — resumo final.
+- a tela inicial deve orientar o operador em poucas palavras, sem ocupar espaço
+  excessivo com explicações;
+- o operador deve poder selecionar vários arquivos, escolher uma pasta local ou
+  abrir a pasta de entrada criada pelo aplicativo;
+- ao clicar em “Iniciar preparação”, o app deve mudar para uma tela de
+  acompanhamento, deixando claro que está trabalhando;
+- todos os dados de progresso devem ficar concentrados em um único bloco:
+  barras de progresso, arquivo atual, etapa atual e atividade em tempo real;
+- o botão “Ver detalhes” abre uma tela ou painel detalhado do processamento,
+  sem poluir a visão principal;
+- ao terminar a preparação, se houver material pronto, a tela **Enviar** deve
+  abrir automaticamente; ela também continua acessível pelo passo 3;
+- a tela **Enviar** deve mostrar a fila, o resultado de cada envio, duplicatas
+  evitadas, erros recuperáveis e ação de limpeza;
+- a tela **Revisar** deve usar a bancada visual já aprovada, sem redesenhar o
+  painel de leitura.
+
+Regra específica da bancada de revisão:
+
+- manter o layout em três colunas:
+  - lista de itens à esquerda;
+  - PDF ou material ativo no centro;
+  - campos de cadastro e decisão à direita;
+- não empilhar as colunas automaticamente, pois as laterais são parte essencial
+  da revisão manual;
+- em telas estreitas, preferir rolagem horizontal a empilhamento;
+- preservar os botões existentes da bancada:
+  - salvar / validar;
+  - salvar e próximo;
+  - confirmar divergência;
+  - salvar sem aprovar;
+  - consultar dados por ISBN;
+  - usar capa da internet;
+  - usar arquivo de capa;
+  - abrir PDF ativo;
+  - abrir capa;
+  - recarregar;
+- a bancada pode receber uma faixa discreta do fluxo do app, com retorno para
+  **Enviar** e avanço para **Concluir**, mas essa faixa não deve alterar a
+  bancada aprovada;
+- o fundo deve ser claro, na paleta bege/verde do app, mas a estrutura da
+  bancada deve continuar igual à versão testada no navegador.
+
 ### Tela inicial
 
 Deve mostrar:
@@ -296,6 +354,9 @@ Fluxo recomendado:
      Há materiais prontos para cadastro. Deseja enviá-los agora?
      ```
 
+   - Essa tela deve abrir automaticamente ao final da preparação quando houver
+     materiais prontos.
+   - Ela também continua acessível manualmente pelo passo “Enviar”.
    - Opções:
      - “Enviar agora”
      - “Enviar depois”

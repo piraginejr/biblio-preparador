@@ -581,6 +581,29 @@ Ações:
 - abertura da bancada visual;
 - retorno ao menu principal após revisão.
 
+Decisão de layout aprovada em 13/09/2026:
+
+- o app deve seguir um fluxo assistido em cinco etapas: **Importar**,
+  **Preparar**, **Enviar**, **Revisar** e **Concluir**;
+- a preparação deve trocar de tela quando iniciar, mostrando progresso,
+  atividade em tempo real e o arquivo atual em um único centro de progresso;
+- a tela de envio deve abrir automaticamente ao final da preparação quando
+  houver itens prontos, além de permanecer acessível pelo passo **Enviar**;
+- a bancada de revisão deve reaproveitar a versão visual já testada e aprovada,
+  com três colunas fixas: lista à esquerda, PDF no centro e metadados à
+  direita;
+- a bancada de revisão não deve empilhar as colunas em telas menores; se faltar
+  largura, deve usar rolagem horizontal;
+- a única mudança visual obrigatória na bancada aprovada é adotar fundo claro
+  compatível com a paleta do app;
+- o operador deve conseguir voltar para **Enviar** ou avançar para
+  **Concluir** por uma faixa discreta, sem alterar a estrutura da bancada.
+
+Arquivos de referência do protótipo aprovado:
+
+- `/Users/piraginejr/.codex/visualizations/2026/07/27/019fa273-6b82-7741-802f-cb5b4cb585b1/biblio-app-mockups-lateral.html`
+- `/Users/piraginejr/.codex/visualizations/2026/07/27/019fa273-6b82-7741-802f-cb5b4cb585b1/biblio-revisao-bancada-aprovada.html`
+
 Entregável:
 
 - protótipo funcional local.
