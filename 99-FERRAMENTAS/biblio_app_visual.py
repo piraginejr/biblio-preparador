@@ -11,13 +11,18 @@ import mimetypes
 import os
 import pathlib
 import shutil
+import socket
 import sys
 import threading
 import urllib.parse
+import urllib.request
 import webbrowser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 import biblio_app_service as svc
+
+PORTA_PADRAO = 65087
+APP_ID = "biblio-preparador-visual"
 
 
 HTML = r"""<!doctype html>
@@ -356,6 +361,13 @@ class Handler(BaseHTTPRequestHandler):
         if url.path == "/":
             self._html()
             return
+        if url.path == "/api/health":
+            self._json({
+                "ok": True,
+                "app": APP_ID,
+                "raiz": str(self.raiz),
+            })
+            return
         if url.path == "/api/status":
             try:
                 self._json({
@@ -446,32 +458,63 @@ class Handler(BaseHTTPRequestHandler):
             self._json({"erro": str(exc)}, 500)
 
 
-def porta_livre(inicial: int) -> int:
-    import socket
+def porta_ocupada_por_biblio(porta: int) -> bool:
+    for caminho in ("/api/health", "/api/status"):
+        try:
+            with urllib.request.urlopen(
+                    f"http://127.0.0.1:{porta}{caminho}",
+                    timeout=(0.8 if caminho == "/api/health" else 4.0)) as resp:
+                dados = json.loads(resp.read().decode("utf-8"))
+        except Exception:
+            continue
+        if dados.get("app") == APP_ID:
+            return True
+        # Compatibilidade com uma instância antiga do mesmo Preparador,
+        # anterior ao endpoint /api/health.
+        if caminho == "/api/status" and "contagens" in dados and "raiz" in dados:
+            return True
+    return False
+
+
+def porta_disponivel(porta: int) -> bool:
+    with socket.socket() as s:
+        try:
+            s.bind(("127.0.0.1", porta))
+            return True
+        except OSError:
+            return False
+
+
+def resolver_porta(inicial: int, abrir: bool) -> tuple[int, bool]:
+    """Retorna (porta, reutilizada). Porta 0 continua útil para testes."""
     if inicial == 0:
         with socket.socket() as s:
             s.bind(("127.0.0.1", 0))
-            return int(s.getsockname()[1])
-    porta = inicial
-    while porta < inicial + 100:
-        with socket.socket() as s:
-            try:
-                s.bind(("127.0.0.1", porta))
-                return porta
-            except OSError:
-                porta += 1
-    raise RuntimeError("não encontrei porta livre")
+            return int(s.getsockname()[1]), False
+    if porta_ocupada_por_biblio(inicial):
+        url = f"http://127.0.0.1:{inicial}/"
+        print(f"Biblio Preparador já está aberto em: {url}", flush=True)
+        if abrir:
+            webbrowser.open(url)
+        return inicial, True
+    if porta_disponivel(inicial):
+        return inicial, False
+    raise RuntimeError(
+        f"a porta fixa {inicial} está ocupada por outro programa; "
+        "feche-o ou abra o Biblio com --porta 0 para modo de teste")
 
 
 def main():
     ap = argparse.ArgumentParser(description="Interface visual local do Biblio Preparador")
     ap.add_argument("--raiz", default=str(svc.biblioteca_padrao()))
-    ap.add_argument("--porta", type=int, default=0)
+    ap.add_argument("--porta", type=int, default=PORTA_PADRAO)
     ap.add_argument("--abrir", action="store_true")
     args = ap.parse_args()
     Handler.raiz = pathlib.Path(args.raiz).expanduser().resolve()
     svc.inicializar_biblioteca(Handler.raiz)
-    porta = porta_livre(args.porta)
+    porta, reutilizada = resolver_porta(args.porta, args.abrir)
+    if reutilizada:
+        return 0
     servidor = ThreadingHTTPServer(("127.0.0.1", porta), Handler)
     url = f"http://127.0.0.1:{porta}/"
     print(f"Biblio Preparador visual aberto em: {url}", flush=True)

@@ -22,5 +22,4 @@ LIVROS="$(cd .. && pwd)/livros"
 mkdir -p "$LIVROS"
 
 PYTHONPYCACHEPREFIX=/private/tmp/biblio-pycache \
-  "$PY" biblio_app_visual.py --raiz "$LIVROS" --abrir
-
+  "$PY" biblio_app_visual.py --raiz "$LIVROS" --porta 65087 --abrir
