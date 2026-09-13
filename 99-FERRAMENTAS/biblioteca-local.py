@@ -1770,6 +1770,24 @@ def _carregar_revisoes(c):
     return caminho, dados
 
 
+def _salvar_snapshot_revisao_manual(c, registro, ficha_antes, ficha_depois,
+                                    revisao):
+    """Guarda uma cópia auditável de cada salvamento feito na bancada."""
+    pasta = c["controle"] / "revisoes-manuais-snapshots"
+    arquivo_base = pathlib.Path(registro.get("arquivo", "item")).stem
+    carimbo = agora().replace(":", "-")
+    destino = pasta / f"{carimbo}-{arquivo_base}.json"
+    salvar_json(destino, {
+        "arquivo": registro.get("arquivo", ""),
+        "hash_sha256": revisao.get("hash_sha256", ""),
+        "salvo_em": revisao.get("atualizado_em", agora()),
+        "campos_revisao": revisao.get("campos", {}),
+        "ficha_antes": ficha_antes,
+        "ficha_depois": ficha_depois,
+    })
+    return destino
+
+
 def _adicionar_ruido_memoria(arquivo, texto, modo, motivo):
     texto = str(texto or "").strip()
     if not texto:
@@ -2002,12 +2020,41 @@ def gravar_decisao_revisao(raiz, arquivo, campos=None, aprovado=True,
         ficha_atualizada = dict(ficha)
         ficha_atualizada.update({k: v for k, v in campos_mesclados.items()
                                  if not k.startswith("_")})
+        autor_principal = str(ficha_atualizada.get("nmAutor0", "")).strip()
+        autores_atuais = ficha_atualizada.get("autores", []) or []
+        if autor_principal and not autores_atuais:
+            ficha_atualizada["autores"] = [{
+                "nome": autor_principal,
+                "desc": "Autor",
+            }]
         ficha_atualizada["revisao_manual_aplicada"] = True
         ficha_atualizada["revisao_manual_aprovada"] = bool(aprovado)
         ficha_atualizada["revisao_manual_atualizada_em"] = revisao["atualizado_em"]
         ficha_atualizada["fontes_revisao"] = " | ".join(revisao.get("fontes", []))
         if aprovado:
+            conflitos_anteriores = _partes_pipe(
+                ficha_atualizada.get("conflitos", ""))
+            pendencias_anteriores = _partes_pipe(
+                ficha_atualizada.get("pendencias", ""))
+            if conflitos_anteriores or pendencias_anteriores:
+                resolvidos = list(ficha_atualizada.get(
+                    "resolvidos_por_revisao_manual", []) or [])
+                resolvidos.append({
+                    "em": revisao["atualizado_em"],
+                    "fonte": ficha_atualizada.get("fontes_revisao", ""),
+                    "confirmacao_soberana": bool(confirmacao_soberana),
+                    "motivo_confirmacao_soberana": str(
+                        motivo_confirmacao or "").strip(),
+                    "conflitos": conflitos_anteriores,
+                    "pendencias": pendencias_anteriores,
+                })
+                ficha_atualizada["resolvidos_por_revisao_manual"] = resolvidos
+            ficha_atualizada["conflitos"] = ""
+            ficha_atualizada["pendencias"] = ""
             _mover_aprovado_revisao(c, digest, registro, ficha_atualizada)
+        snapshot = _salvar_snapshot_revisao_manual(
+            c, registro, ficha, ficha_atualizada, revisao)
+        ficha_atualizada["ultimo_snapshot_revisao_manual"] = relativo(c, snapshot)
         salvar_json(ficha_path, ficha_atualizada)
     registro["revisao_manual_aprovada"] = bool(aprovado)
     registro["revisao_manual_atualizada_em"] = revisao["atualizado_em"]

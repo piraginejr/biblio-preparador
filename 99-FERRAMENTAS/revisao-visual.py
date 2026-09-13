@@ -120,9 +120,9 @@ HTML = r"""<!doctype html>
       <div class="cartao-conclusao">
         <h1>Revisão concluída</h1>
         <p>Não há mais itens pendentes nesta bancada visual.</p>
-        <p>Você pode voltar ao console principal para enviar materiais, ver o estado da biblioteca ou executar outro serviço.</p>
+        <p>Você pode voltar ao Biblio Preparador para enviar materiais, ver o estado da biblioteca ou executar outro serviço.</p>
         <div class="botoes-conclusao">
-          <button onclick="encerrarBancada()">voltar ao console principal</button>
+          <button onclick="encerrarBancada()">voltar ao Biblio Preparador</button>
           <button class="sec" onclick="recarregar()">verificar novamente</button>
           <button class="sec" onclick="window.close()">fechar esta aba</button>
         </div>
@@ -419,14 +419,17 @@ function mostrarConclusao() {
   sujo = false;
 }
 async function encerrarBancada() {
-  $("fimMsg").textContent = "encerrando a bancada e voltando ao console…";
+  $("fimMsg").textContent = "encerrando a bancada…";
   try {
     await fetch("/api/encerrar", {method:"POST"});
-    $("fimMsg").innerHTML = "<span class='ok'>bancada encerrada; volte à janela do console</span>";
-    setTimeout(() => { try { window.close(); } catch(e) {} }, 700);
   } catch (e) {
-    $("fimMsg").innerHTML = `<span class="erro">${esc(e.message || e)}</span>`;
+    // Ao encerrar, o próprio servidor local desliga. Alguns navegadores
+    // relatam esse desligamento como falha de rede, mesmo quando o comando
+    // foi recebido corretamente. Para o operador, isto não deve aparecer
+    // como erro: a intenção era justamente fechar a bancada.
   }
+  $("fimMsg").innerHTML = "<span class='ok'>bancada encerrada; volte à janela do Biblio Preparador</span>";
+  setTimeout(() => { try { window.close(); } catch(e) {} }, 700);
 }
 function mostrar() {
   const item = atual();
