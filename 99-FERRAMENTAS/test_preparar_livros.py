@@ -1291,6 +1291,10 @@ Faculdade de Teologia Evangélica em Curitiba (FATEV)."""]
             "ISRAELITAS",
             prep.limpar_titulo_bibliografico(
                 "ISRAELITAS Richard S. Hess", "Hess, Richard S."))
+        self.assertEqual(
+            "107 FILMES ERA DIGITAL",
+            prep.limpar_titulo_bibliografico(
+                "107 FILMES ERA DIGITAL_VS2025"))
 
     def test_autor_pode_estar_na_folha_de_rosto_depois_de_endossos(self):
         paginas = [

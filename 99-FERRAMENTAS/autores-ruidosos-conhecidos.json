@@ -41,6 +41,11 @@
       "texto": "Ministério",
       "modo": "prefixo",
       "motivo": "instituicao ou departamento capturado como autor"
+    },
+    {
+      "texto": "FILMES PARA ENTENDER A ERA DIGITAL",
+      "modo": "exato",
+      "motivo": "subtítulo/título do documento capturado como autor"
     }
   ]
 }
