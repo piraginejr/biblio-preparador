@@ -5019,6 +5019,9 @@ def limpar_titulo_bibliografico(titulo, autor=""):
     valor = " ".join(str(titulo or "").split()).strip(" .,:;-\"“”")
     if not valor:
         return ""
+    # Sufixos técnicos vindos de nome de arquivo/versão não pertencem ao
+    # título bibliográfico. Ex.: ``107 FILMES ERA DIGITAL_VS2025``.
+    valor = re.sub(r"(?i)(?:[_\s-]+v?s20\d{2})$", "", valor).strip(" .,:;-_")
     # Amazon e páginas de crédito às vezes devolvem ``Título, by Autor``.
     byline = re.search(r"(?i)\s*,?\s+(?:by|por)\s+(.{3,90})$", valor)
     if byline:
