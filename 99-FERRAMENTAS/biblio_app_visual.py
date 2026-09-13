@@ -412,7 +412,9 @@ class Handler(BaseHTTPRequestHandler):
                 job = svc.JOBS.iniciar("Liberação de espaço", svc.etapas_liberar_espaco(self.raiz, True))
                 self._json({"ok": True, "job_id": job.id})
             elif action == "abrir_revisao":
-                job = svc.abrir_revisao(self.raiz)
+                host = self.headers.get("Host", "")
+                voltar_url = f"http://{host}/#revisar" if host else ""
+                job = svc.abrir_revisao(self.raiz, voltar_url=voltar_url)
                 self._json({"ok": True, "job_id": job.id})
             else:
                 self._json({"erro": "ação desconhecida"}, 400)

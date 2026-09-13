@@ -214,6 +214,7 @@ let dados = {itens: []};
 let idx = 0;
 let ultimaConsultaIsbn = null;
 let sujo = false;
+const VOLTAR_URL = "__VOLTAR_URL__";
 const campos = ["titulo","subTitulo","nmAutor0","editora","isbn","edicao","data","nPaginas","lugar","nmLingua","tipo_documento","CDD","assunto","pchave","abstract"];
 const $ = id => document.getElementById(id);
 
@@ -428,8 +429,12 @@ async function encerrarBancada() {
     // foi recebido corretamente. Para o operador, isto não deve aparecer
     // como erro: a intenção era justamente fechar a bancada.
   }
-  $("fimMsg").innerHTML = "<span class='ok'>bancada encerrada; volte à janela do Biblio Preparador</span>";
-  setTimeout(() => { try { window.close(); } catch(e) {} }, 700);
+  $("fimMsg").innerHTML = "<span class='ok'>bancada encerrada; voltando ao Biblio Preparador…</span>";
+  if (VOLTAR_URL) {
+    setTimeout(() => { window.location.href = VOLTAR_URL; }, 350);
+  } else {
+    setTimeout(() => { try { window.close(); } catch(e) {} }, 700);
+  }
 }
 function mostrar() {
   const item = atual();
@@ -520,6 +525,7 @@ recarregar();
 class ServidorRevisao(BaseHTTPRequestHandler):
     raiz = pathlib.Path(".")
     limite = 0
+    voltar_url = ""
 
     def _json(self, dados, status=200):
         bruto = json.dumps(dados, ensure_ascii=False).encode("utf-8")
@@ -530,7 +536,8 @@ class ServidorRevisao(BaseHTTPRequestHandler):
         self.wfile.write(bruto)
 
     def _html(self):
-        bruto = HTML.encode("utf-8")
+        html = HTML.replace("__VOLTAR_URL__", self.voltar_url)
+        bruto = html.encode("utf-8")
         self.send_response(200)
         self.send_header("Content-Type", "text/html; charset=utf-8")
         self.send_header("Content-Length", str(len(bruto)))
@@ -647,11 +654,14 @@ def main():
     ap.add_argument("--porta", type=int, default=8765)
     ap.add_argument("--limite", type=int, default=0,
                     help="quantidade máxima de itens; 0 mostra todos")
+    ap.add_argument("--voltar-url", default="",
+                    help="URL do Biblio Preparador para retorno ao concluir")
     ap.add_argument("--abrir", action="store_true",
                     help="abre a bancada no navegador padrão")
     args = ap.parse_args()
     ServidorRevisao.raiz = pathlib.Path(args.raiz).expanduser().resolve()
     ServidorRevisao.limite = args.limite
+    ServidorRevisao.voltar_url = args.voltar_url
     porta = porta_livre(args.porta)
     servidor = ThreadingHTTPServer(("127.0.0.1", porta), ServidorRevisao)
     url = f"http://127.0.0.1:{porta}/"

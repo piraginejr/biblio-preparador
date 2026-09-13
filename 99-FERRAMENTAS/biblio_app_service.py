@@ -265,12 +265,14 @@ def abrir_entrada(raiz: pathlib.Path) -> None:
     subprocess.Popen(["open", str(entrada)])
 
 
-def abrir_revisao(raiz: pathlib.Path) -> Job:
+def abrir_revisao(raiz: pathlib.Path, voltar_url: str = "") -> Job:
+    cmd = python_cmd("revisao-visual.py", "--raiz", str(raiz),
+                     "--limite", "0", "--abrir")
+    if voltar_url:
+        cmd.extend(["--voltar-url", voltar_url])
     return JOBS.iniciar(
         "Bancada de revisão visual",
-        [Etapa("Abrindo bancada de revisão visual",
-               python_cmd("revisao-visual.py", "--raiz", str(raiz),
-                          "--limite", "0", "--abrir"))],
+        [Etapa("Abrindo bancada de revisão visual", cmd)],
     )
 
 
@@ -293,4 +295,3 @@ def importar_arquivos(raiz: pathlib.Path, arquivos: Iterable[pathlib.Path]) -> L
         shutil.copy2(arquivo, destino)
         resultado.append({"origem": str(arquivo), "destino": str(destino)})
     return resultado
-
