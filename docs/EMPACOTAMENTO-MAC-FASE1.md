@@ -54,7 +54,8 @@ O app gerado:
 
 - contém uma duplicata funcional em `Contents/Resources/pacote-base`;
 - copia essa duplicata para a pasta externa do usuário na primeira abertura;
-- abre o `LIVROS.command` atual no Terminal;
+- abre o `BIBLIO-VISUAL.command`, que inicia a interface visual local;
+- mantém o `LIVROS.command` no pacote como plano B operacional;
 - deixa o fluxo funcional exatamente como está hoje;
 - não executa preparo, OCR, envio ou limpeza durante o build;
 - não inclui o acervo local, filas reais, revisões reais, PDFs, caches ou
@@ -111,24 +112,26 @@ open "dist/Biblio Preparador.app"
 O teste esperado nesta fase é simples:
 
 1. o app abre o Terminal;
-2. o menu `LIVROS` aparece;
+2. a interface visual local abre no navegador;
 3. a biblioteca usada fica em:
 
    ```text
    ~/Library/Application Support/Biblio Preparador/revista/livros
    ```
 
-4. nenhum dado da pasta atual é modificado pelo simples ato de abrir o app.
+4. o menu antigo continua disponível em `99-FERRAMENTAS/LIVROS.command`;
+5. nenhum dado da pasta atual é modificado pelo simples ato de abrir o app.
 
 ## Limites desta primeira etapa
 
-Esta fase ainda não é o app visual aprovado no mockup.
+Esta fase já abre uma primeira interface visual operacional baseada no fluxo
+aprovado no mockup.
 
 Ela serve para:
 
 - validar a estrutura de app instalável;
 - separar ferramenta e dados do usuário;
-- preparar o caminho para trocar o Terminal pela interface visual;
+- ligar os botões principais ao motor funcional existente;
 - permitir que voluntários abram o sistema por ícone, sem conhecer a pasta de
   desenvolvimento.
 

@@ -10,7 +10,7 @@ set -euo pipefail
 #   - não executa OCR, envio nem preparo durante o build;
 #   - não copia o acervo local;
 #   - não guarda livros dentro do .app;
-#   - abre o LIVROS.command atual em uma pasta de trabalho externa do usuário.
+#   - abre a interface visual local em uma pasta de trabalho externa do usuário.
 #
 # Pasta externa usada no Mac do operador:
 #   ~/Library/Application Support/Biblio Preparador/revista
@@ -100,12 +100,12 @@ if [ ! -d "$TOOLS" ]; then
   (cd "$PACKAGE_BASE" && tar -cf - .) | (cd "$SUPPORT" && tar -xf -)
 fi
 
-chmod +x "$TOOLS/LIVROS.command" 2>/dev/null || true
+chmod +x "$TOOLS/LIVROS.command" "$TOOLS/BIBLIO-VISUAL.command" 2>/dev/null || true
 
 osascript <<APPLESCRIPT
 tell application "Terminal"
   activate
-  do script "cd " & quoted form of "$TOOLS" & " && ./LIVROS.command"
+  do script "cd " & quoted form of "$TOOLS" & " && ./BIBLIO-VISUAL.command"
 end tell
 APPLESCRIPT
 LAUNCHER
