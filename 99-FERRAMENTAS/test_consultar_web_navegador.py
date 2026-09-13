@@ -64,6 +64,21 @@ class ConsultarWebNavegadorTest(unittest.TestCase):
                 "A mensagem da Epístola aos Hebreus Albert Vanhoye",
                 "Vanhoye, Albert"))
 
+    def test_limpa_titulo_contaminado_por_pagina_e_trecho_de_ocr(self):
+        titulo = ('QUANDO NOSSO MUNDO SE TORNOU CRISTÃO [312/394 '
+                  '"Um historiador de primeira grandeza. " '
+                  'CIVILIZACÃO BRASIEETRA Georges Duby')
+        self.assertEqual(
+            "QUANDO NOSSO MUNDO SE TORNOU CRISTÃO",
+            web.limpar_titulo_consulta(titulo, "Veyne, Paul"))
+        self.assertEqual([
+            "QUANDO NOSSO MUNDO SE TORNOU CRISTÃO Veyne",
+            "QUANDO NOSSO MUNDO TORNOU CRISTÃO Veyne",
+            "QUANDO NOSSO MUNDO SE TORNOU CRISTÃO",
+        ], web.montar_consultas_comerciais({
+            "titulo": titulo, "autor": "Veyne, Paul",
+            "isbn": "", "isbn_confirmado": False}))
+
     def test_pendente_com_editora_tambem_entra_na_ultima_camada(self):
         with tempfile.TemporaryDirectory() as td:
             raiz = pathlib.Path(td)

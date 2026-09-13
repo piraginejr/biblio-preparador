@@ -200,6 +200,15 @@ def limpar_titulo_consulta(titulo, autor=""):
     titulo = " ".join(str(titulo or "").replace("_", " ").split())
     titulo = re.sub(r"(?i)\.(?:pdf|docx?|indd)\s*$", "", titulo)
     titulo = re.sub(r"^\s*\d{6,12}[-_ ]+", "", titulo)
+    # Leitores de PDF às vezes colam no campo de título o número da página,
+    # trechos de resenha ou texto decorativo capturado no OCR. Exemplo real:
+    # ``Quando nosso mundo se tornou cristão [312/394 "Um historiador..."``.
+    # Para consulta comercial, o título curto correto vale mais que um campo
+    # longo contaminado.
+    titulo = re.split(r"\s*\[\s*\d{1,5}\s*/\s*\d{1,5}\b", titulo, maxsplit=1)[0]
+    titulo = re.split(r"\s+\"[^\"]{8,}", titulo, maxsplit=1)[0]
+    titulo = re.split(r"\s+[“”][^“”]{8,}", titulo, maxsplit=1)[0]
+    titulo = re.split(r"(?i)\s+\b(?:página|page)\s+\d{1,5}\b", titulo, maxsplit=1)[0]
     titulo = retirar_autor_do_titulo(titulo, autor)
     return titulo if titulo_pesquisavel(titulo) else ""
 
