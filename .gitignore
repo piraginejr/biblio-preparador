@@ -44,6 +44,7 @@ livros/_preparados-envio/
 livros/_livros-metadados.csv
 
 # Artefatos e saídas locais de ferramentas.
+dist/
 99-FERRAMENTAS/.DS_Store
 99-FERRAMENTAS/_originais_sem_ocr/
 99-FERRAMENTAS/baixar-voice-fgbmfi.log
