@@ -500,19 +500,25 @@ def validar(ficha, pdf, capa, tipo_api="livro"):
                 "apresentação", "opúsculo"}:
             erros.append("a ficha nao esta classificada como documento")
         if ficha.get("situacao") not in {
-                "aguardando cadastro específico", "pronto para cadastro"}:
+                "aguardando cadastro específico",
+                "pronto para cadastro específico",
+                "pronto para cadastro"}:
             erros.append("o documento nao esta pronto para cadastro específico")
     elif tipo_api in {"artigo de revista", "artigo de jornal"}:
         if tipo_local != "artigo":
             erros.append("a ficha nao esta classificada como artigo")
         if ficha.get("situacao") not in {
-                "aguardando cadastro específico", "pronto para cadastro"}:
+                "aguardando cadastro específico",
+                "pronto para cadastro específico",
+                "pronto para cadastro"}:
             erros.append("o artigo nao esta pronto para cadastro específico")
     elif tipo_api == "revista":
         if tipo_local not in {"revista", "periódico", "boletim", "jornal"}:
             erros.append("a ficha nao esta classificada como revista ou periódico")
         if ficha.get("situacao") not in {
-                "aguardando cadastro específico", "pronto para cadastro"}:
+                "aguardando cadastro específico",
+                "pronto para cadastro específico",
+                "pronto para cadastro"}:
             erros.append("a revista nao esta pronta para cadastro específico")
     if ficha.get("status_ocr") != "OCR aprovado":
         erros.append("o OCR nao esta aprovado")
