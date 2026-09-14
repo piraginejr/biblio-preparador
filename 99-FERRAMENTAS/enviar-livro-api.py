@@ -486,7 +486,7 @@ def validar(ficha, pdf, capa, tipo_api="livro"):
     documento_so_titulo = (
         tipo_api == "documento" and
         tipo_local in {"documento", "apostila", "sermão", "trecho",
-                       "apresentação"})
+                       "apresentação", "opúsculo"})
     if tipo_api == "livro":
         if tipo_local != "livro":
             erros.append("esta fila e API sao exclusivas para livros")
@@ -496,7 +496,7 @@ def validar(ficha, pdf, capa, tipo_api="livro"):
         if tipo_local not in {
                 "documento", "apostila", "sermão", "trecho",
                 "tese", "dissertação", "trabalho acadêmico",
-                "apresentação"}:
+                "apresentação", "opúsculo"}:
             erros.append("a ficha nao esta classificada como documento")
         if ficha.get("situacao") not in {
                 "aguardando cadastro específico", "pronto para cadastro"}:

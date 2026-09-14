@@ -159,6 +159,11 @@ HTML = r"""<!doctype html>
     <div class="corpo-revisao">
     <h3>Campos para cadastro</h3>
     <label>Título <input id="tituloCampo"></label>
+    <label>Tipo do material
+      <select id="tipo_documento">
+        <option>livro</option><option>opúsculo</option><option>documento</option><option>apostila</option><option>sermão</option><option>artigo</option><option>revista</option><option>periódico</option><option>boletim</option><option>jornal</option><option>tese</option><option>dissertação</option><option>trabalho acadêmico</option><option>apresentação</option><option>resumo</option><option>trecho</option>
+      </select>
+    </label>
     <label>Subtítulo <input id="subTitulo"></label>
     <label>Autor principal <input id="nmAutor0"></label>
     <label>Editora <input id="editora"></label>
@@ -172,11 +177,6 @@ HTML = r"""<!doctype html>
     <label>Idioma
       <select id="nmLingua">
         <option></option><option>Português</option><option>Inglês</option><option>Espanhol</option><option>Francês</option><option>Alemão</option><option>Italiano</option>
-      </select>
-    </label>
-    <label>Tipo
-      <select id="tipo_documento">
-        <option>livro</option><option>documento</option><option>apostila</option><option>sermão</option><option>artigo</option><option>revista</option><option>periódico</option><option>jornal</option><option>tese</option><option>dissertação</option><option>trabalho acadêmico</option><option>apresentação</option><option>resumo</option><option>trecho</option>
       </select>
     </label>
     <label>CDD <input id="CDD"></label>
