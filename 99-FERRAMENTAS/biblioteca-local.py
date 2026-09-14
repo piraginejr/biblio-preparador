@@ -1716,7 +1716,8 @@ def montar_pacote_revisao(c, digest, registro):
                 "titulo", "subTitulo", "nmAutor0", "autores", "editora", "isbn",
                 "edicao", "data", "nPaginas", "lugar", "nmLingua",
                 "tipo_documento", "assunto", "pchave", "abstract")},
-            "CDD": ficha.get("CDD", "") or ficha.get("cdd", ""),
+            "CDD": (ficha.get("CDD", "") or ficha.get("cdd", "")
+                    or ficha.get("classificacao_original", "")),
         },
         "conflitos": conflitos,
         "pendencias": pendencias,
@@ -2049,8 +2050,13 @@ def gravar_decisao_revisao(raiz, arquivo, campos=None, aprovado=True,
         ficha_atualizada = dict(ficha)
         ficha_atualizada.update({k: v for k, v in campos_mesclados.items()
                                  if not k.startswith("_")})
-        if ficha_atualizada.get("CDD") and not ficha_atualizada.get("cdd"):
-            ficha_atualizada["cdd"] = ficha_atualizada["CDD"]
+        classificacao = str(ficha_atualizada.get("CDD", "") or "").strip()
+        if classificacao:
+            if re.match(r"(?i)^CDU\b", classificacao):
+                ficha_atualizada["classificacao_original"] = classificacao
+            elif not ficha_atualizada.get("cdd"):
+                ficha_atualizada["cdd"] = re.sub(
+                    r"(?i)^CDD\s*[-:]?\s*", "", classificacao).strip()
         autor_principal = str(ficha_atualizada.get("nmAutor0", "")).strip()
         autores_atuais = ficha_atualizada.get("autores", []) or []
         if autor_principal and not autores_atuais:

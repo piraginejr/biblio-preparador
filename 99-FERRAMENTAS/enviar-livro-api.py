@@ -439,7 +439,8 @@ def montar_payload(ficha, tipo_api="livro"):
         "lugar": ficha.get("lugar", ""),
         "abstract": ficha.get("abstract", ""),
         "pchave": ficha.get("palavrasChave", ""),
-        "CDD": ficha.get("cdd", ""),
+        "CDD": (ficha.get("cdd", "") or ficha.get("classificacao_original", "")
+                or ficha.get("CDD", "")),
         "assunto": ficha.get("tipoAssunto1", ""),
         "series": ficha.get("series", ""),
         "nserie": ficha.get("numSerie", ""),
@@ -1126,7 +1127,10 @@ def gerar_relatorio_rejeicoes(raiz):
                 "editora": ficha.get("editora", ""), "ano": ficha.get("data", ""),
                 "edicao": ficha.get("edicao", ""), "paginas": ficha.get("nPaginas", ""),
                 "idioma": ficha.get("nmLingua", ficha.get("idioma", "")),
-                "lugar": ficha.get("lugar", ""), "cdd": ficha.get("cdd", ""),
+                "lugar": ficha.get("lugar", ""),
+                "cdd": (ficha.get("cdd", "")
+                        or ficha.get("classificacao_original", "")
+                        or ficha.get("CDD", "")),
                 "assunto": ficha.get("tipoAssunto1", ""),
             },
             "arquivo": {
