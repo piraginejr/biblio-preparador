@@ -96,7 +96,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate {
             let url = URL(string: "http://127.0.0.1:\(defaultPort)/")!
             if !isBiblioAlive(port: defaultPort) {
                 updateStatus("Abrindo o motor local…")
-                log("servidor nao estava ativo; iniciando")
+                log("servidor nao estava ativo; verificando porta presa")
+                try recoverStaleBiblioServer(port: defaultPort)
+                log("iniciando servidor")
                 try startServer(tools: tools, livros: livros, port: defaultPort)
                 try waitForServer(port: defaultPort, seconds: 25)
             }
@@ -185,6 +187,97 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate {
         process.standardError = output
         try process.run()
         serverProcess = process
+        Thread.sleep(forTimeInterval: 0.35)
+        if !process.isRunning {
+            let data = output.fileHandleForReading.readDataToEndOfFile()
+            let text = String(data: data, encoding: .utf8) ?? "sem saída do processo"
+            log("motor Python encerrou imediatamente: \(text)")
+            throw AppError("O motor local não iniciou. Detalhes: \(text)")
+        }
+    }
+
+    private func recoverStaleBiblioServer(port: Int) throws {
+        let pids = try listeningPids(on: port)
+        if pids.isEmpty {
+            return
+        }
+        var recovered = false
+        for pid in pids {
+            let command = processCommand(pid: pid)
+            log("porta \(port) ocupada por pid \(pid): \(command)")
+            if command.contains("biblio_app_visual.py") {
+                log("encerrando servidor Biblio preso: \(pid)")
+                kill(pid, SIGTERM)
+                Thread.sleep(forTimeInterval: 1.0)
+                if !processExists(pid) {
+                    recovered = true
+                    continue
+                }
+                log("servidor Biblio ainda ativo; forçando encerramento: \(pid)")
+                kill(pid, SIGKILL)
+                Thread.sleep(forTimeInterval: 0.5)
+                recovered = true
+            }
+        }
+        if recovered {
+            try waitForPortToBeFree(port: port, seconds: 8)
+            return
+        }
+        if !pids.isEmpty {
+            throw AppError(
+                "A porta \(port) está ocupada por outro programa. Feche esse programa e abra o Biblio novamente."
+            )
+        }
+    }
+
+    private func listeningPids(on port: Int) throws -> [Int32] {
+        let process = Process()
+        process.executableURL = URL(fileURLWithPath: "/usr/sbin/lsof")
+        process.arguments = ["-ti", "tcp:\(port)", "-sTCP:LISTEN"]
+        let output = Pipe()
+        process.standardOutput = output
+        process.standardError = Pipe()
+        try process.run()
+        process.waitUntilExit()
+        let data = output.fileHandleForReading.readDataToEndOfFile()
+        let text = String(data: data, encoding: .utf8) ?? ""
+        return text
+            .split(whereSeparator: \.isNewline)
+            .compactMap { Int32($0.trimmingCharacters(in: .whitespaces)) }
+    }
+
+    private func waitForPortToBeFree(port: Int, seconds: Int) throws {
+        let deadline = Date().addingTimeInterval(TimeInterval(seconds))
+        while Date() < deadline {
+            if (try? listeningPids(on: port).isEmpty) == true {
+                log("porta \(port) liberada")
+                return
+            }
+            Thread.sleep(forTimeInterval: 0.25)
+        }
+        throw AppError("A porta \(port) ficou presa e não liberou para reiniciar o Biblio.")
+    }
+
+    private func processCommand(pid: Int32) -> String {
+        let process = Process()
+        process.executableURL = URL(fileURLWithPath: "/bin/ps")
+        process.arguments = ["-p", "\(pid)", "-o", "command="]
+        let output = Pipe()
+        process.standardOutput = output
+        process.standardError = Pipe()
+        do {
+            try process.run()
+            process.waitUntilExit()
+            let data = output.fileHandleForReading.readDataToEndOfFile()
+            return String(data: data, encoding: .utf8)?
+                .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        } catch {
+            return ""
+        }
+    }
+
+    private func processExists(_ pid: Int32) -> Bool {
+        kill(pid, 0) == 0
     }
 
     private func waitForServer(port: Int, seconds: Int) throws {
