@@ -24,6 +24,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
     var webView: WKWebView!
     var serverProcess: Process?
     var statusLabel: NSTextField!
+    var serverURL: URL?
+    var serverOutput = ""
+    let serverOutputQueue = DispatchQueue(label: "biblio-preparador.server-output")
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         buildWindow()
@@ -94,14 +97,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
             let livros = support.appendingPathComponent("livros", isDirectory: true)
             try FileManager.default.createDirectory(at: livros, withIntermediateDirectories: true)
 
-            let url = URL(string: "http://127.0.0.1:\(defaultPort)/")!
+            var url = URL(string: "http://127.0.0.1:\(defaultPort)/")!
             if !isBiblioAlive(port: defaultPort) {
                 updateStatus("Abrindo o motor local…")
                 log("servidor nao estava ativo; verificando porta presa")
                 try recoverStaleBiblioServer(port: defaultPort)
+                let portToStart = try listeningPids(on: defaultPort).isEmpty ? defaultPort : 0
+                if portToStart == 0 {
+                    log("porta \(defaultPort) continua ocupada; usando porta livre automática")
+                }
                 log("iniciando servidor")
-                try startServer(tools: tools, livros: livros, port: defaultPort)
-                try waitForServer(port: defaultPort, seconds: 25)
+                try startServer(tools: tools, livros: livros, port: portToStart)
+                url = try waitForServerURL(defaultPort: defaultPort, seconds: 25)
             }
 
             DispatchQueue.main.async {
@@ -186,14 +193,47 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
         let output = Pipe()
         process.standardOutput = output
         process.standardError = output
+        output.fileHandleForReading.readabilityHandler = { [weak self] handle in
+            let data = handle.availableData
+            guard !data.isEmpty,
+                  let text = String(data: data, encoding: .utf8) else { return }
+            self?.recordServerOutput(text)
+        }
         try process.run()
         serverProcess = process
         Thread.sleep(forTimeInterval: 0.35)
         if !process.isRunning {
+            output.fileHandleForReading.readabilityHandler = nil
             let data = output.fileHandleForReading.readDataToEndOfFile()
-            let text = String(data: data, encoding: .utf8) ?? "sem saída do processo"
+            let text = (serverOutputSnapshot() + (String(data: data, encoding: .utf8) ?? ""))
+                .trimmingCharacters(in: .whitespacesAndNewlines)
             log("motor Python encerrou imediatamente: \(text)")
-            throw AppError("O motor local não iniciou. Detalhes: \(text)")
+            throw AppError("O motor local não iniciou. Detalhes: \(text.isEmpty ? "sem saída do processo" : text)")
+        }
+    }
+
+    private func recordServerOutput(_ text: String) {
+        serverOutputQueue.sync {
+            serverOutput += text
+        }
+        for line in text.split(whereSeparator: \.isNewline) {
+            let lineText = String(line)
+            log("motor: \(lineText)")
+            if let range = lineText.range(
+                of: #"http://127\.0\.0\.1:\d+/"#,
+                options: .regularExpression
+            ) {
+                let found = String(lineText[range])
+                if let url = URL(string: found) {
+                    serverURL = url
+                }
+            }
+        }
+    }
+
+    private func serverOutputSnapshot() -> String {
+        serverOutputQueue.sync {
+            serverOutput
         }
     }
 
@@ -224,11 +264,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
             try waitForPortToBeFree(port: port, seconds: 8)
             return
         }
-        if !pids.isEmpty {
-            throw AppError(
-                "A porta \(port) está ocupada por outro programa. Feche esse programa e abra o Biblio novamente."
-            )
-        }
+        log("porta \(port) continua ocupada por outro programa; o app usará porta livre automática")
     }
 
     private func listeningPids(on port: Int) throws -> [Int32] {
@@ -281,15 +317,26 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
         kill(pid, 0) == 0
     }
 
-    private func waitForServer(port: Int, seconds: Int) throws {
+    private func waitForServerURL(defaultPort: Int, seconds: Int) throws -> URL {
         let deadline = Date().addingTimeInterval(TimeInterval(seconds))
         while Date() < deadline {
-            if isBiblioAlive(port: port) {
-                return
+            if isBiblioAlive(port: defaultPort) {
+                return URL(string: "http://127.0.0.1:\(defaultPort)/")!
+            }
+            if let url = serverURL, let port = url.port, isBiblioAlive(port: port) {
+                log("motor respondeu em porta alternativa: \(port)")
+                return url
+            }
+            if let process = serverProcess, !process.isRunning {
+                let text = serverOutputSnapshot()
+                    .trimmingCharacters(in: .whitespacesAndNewlines)
+                throw AppError("O motor local encerrou antes de responder. Detalhes: \(text.isEmpty ? "sem saída do processo" : text)")
             }
             Thread.sleep(forTimeInterval: 0.35)
         }
-        throw AppError("O motor local não respondeu na porta \(port).")
+        let text = serverOutputSnapshot()
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        throw AppError("O motor local não respondeu. Detalhes: \(text.isEmpty ? "nenhuma saída do motor" : text)")
     }
 
     private func isBiblioAlive(port: Int) -> Bool {
