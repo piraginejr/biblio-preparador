@@ -27,6 +27,34 @@ PROJETO = BASE.parent
 PYTHON = sys.executable
 
 
+def ambiente_app() -> Dict[str, str]:
+    """Ambiente previsível para o app aberto pelo Finder/WebView.
+
+    Aplicativos macOS não herdam o mesmo PATH do Terminal. Sem isso,
+    ferramentas instaladas pelo Homebrew, como ocrmypdf, tesseract, pdftoppm,
+    qpdf e ghostscript, ficam invisíveis para o preparo de OCR e capas.
+    """
+    env = os.environ.copy()
+    caminhos = [
+        "/opt/homebrew/bin",
+        "/usr/local/bin",
+        "/usr/bin",
+        "/bin",
+        "/usr/sbin",
+        "/sbin",
+    ]
+    atual = env.get("PATH", "")
+    for caminho in reversed(caminhos):
+        if caminho not in atual.split(":"):
+            atual = f"{caminho}:{atual}" if atual else caminho
+    env["PATH"] = atual
+    env["PYTHONPYCACHEPREFIX"] = "/private/tmp/biblio-pycache"
+    env.setdefault("CLANG_MODULE_CACHE_PATH", "/private/tmp/biblio-clang-cache")
+    env.setdefault("SWIFT_MODULE_CACHE_PATH", "/private/tmp/biblio-swift-cache")
+    env.setdefault("MODULE_CACHE_DIR", "/private/tmp/biblio-swift-cache")
+    return env
+
+
 def biblioteca_padrao() -> pathlib.Path:
     return PROJETO / "livros"
 
@@ -41,6 +69,72 @@ def playwright_disponivel() -> bool:
         return True
     except Exception:
         return False
+
+
+def preparar_ambiente_nativo() -> int:
+    """Compila auxiliares nativos exigidos pelo preparo visual.
+
+    O script antigo ``LIVROS.command`` fazia isso antes de abrir o menu. No
+    aplicativo Mac, essa responsabilidade precisa ficar dentro do próprio app.
+    """
+    obrigatorios = ["ocrmypdf", "tesseract", "pdftoppm"]
+    faltando = [nome for nome in obrigatorios
+                if not shutil.which(nome, path=ambiente_app()["PATH"])]
+    if faltando:
+        print("Ferramentas essenciais ausentes para OCR/capa: "
+              + ", ".join(faltando))
+        print("Instale pelo Homebrew e reabra o Biblio Preparador.")
+        return 1
+
+    qpdf = shutil.which("qpdf", path=ambiente_app()["PATH"])
+    gs = shutil.which("gs", path=ambiente_app()["PATH"])
+    print("OCRmyPDF encontrado.")
+    print("Tesseract encontrado para orientação e segunda camada.")
+    print("Poppler/pdftoppm encontrado para gerar capas.")
+    if qpdf:
+        print("qpdf encontrado para otimização sem perdas.")
+    if gs:
+        print("Ghostscript encontrado para compactação quando necessária.")
+
+    fonte = BASE / "vision-ocr.swift"
+    binario = BASE / "vision-ocr"
+    if not fonte.is_file():
+        print("vision-ocr.swift não encontrado; OCR Apple Vision indisponível.")
+        return 1
+    if binario.is_file() and os.access(binario, os.X_OK):
+        if binario.stat().st_mtime >= fonte.stat().st_mtime:
+            print("Apple Vision OCR já preparado.")
+            return 0
+
+    compilador = shutil.which("xcrun", path=ambiente_app()["PATH"])
+    if compilador:
+        comando = [compilador, "swiftc", "-O", str(fonte), "-o", str(binario)]
+    else:
+        swiftc = shutil.which("swiftc", path=ambiente_app()["PATH"])
+        if not swiftc:
+            print("Compilador Swift não encontrado; instale Xcode/Command Line Tools.")
+            return 1
+        comando = [swiftc, "-O", str(fonte), "-o", str(binario)]
+
+    print("Compilando auxiliar Apple Vision OCR...")
+    tmp = pathlib.Path("/private/tmp") / f"biblio-vision-ocr-{os.getpid()}"
+    comando[-1] = str(tmp)
+    try:
+        subprocess.run(
+            comando, cwd=str(BASE), check=True, env=ambiente_app(),
+            stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+        tmp.replace(binario)
+        binario.chmod(0o755)
+        print("Apple Vision OCR preparado.")
+        return 0
+    except subprocess.CalledProcessError as exc:
+        print(exc.stdout or str(exc))
+        return exc.returncode or 1
+    finally:
+        try:
+            tmp.unlink()
+        except OSError:
+            pass
 
 
 @dataclass
@@ -119,7 +213,7 @@ class JobManager:
                     stderr=subprocess.STDOUT,
                     text=True,
                     bufsize=1,
-                    env={**os.environ, "PYTHONPYCACHEPREFIX": "/private/tmp/biblio-pycache"},
+                    env=ambiente_app(),
                 )
                 assert processo.stdout is not None
                 for linha in processo.stdout:
@@ -150,7 +244,7 @@ def inicializar_biblioteca(raiz: pathlib.Path) -> None:
         python_cmd("biblioteca-local.py", "--raiz", str(raiz), "--inicializar"),
         cwd=str(BASE),
         check=True,
-        env={**os.environ, "PYTHONPYCACHEPREFIX": "/private/tmp/biblio-pycache"},
+        env=ambiente_app(),
     )
 
 
@@ -162,7 +256,7 @@ def status_texto(raiz: pathlib.Path) -> str:
         text=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
-        env={**os.environ, "PYTHONPYCACHEPREFIX": "/private/tmp/biblio-pycache"},
+        env=ambiente_app(),
     )
     return proc.stdout
 
@@ -189,6 +283,8 @@ def contagens_basicas(raiz: pathlib.Path) -> Dict[str, int]:
 
 def etapas_preparar(raiz: pathlib.Path, com_internet: bool = True) -> List[Etapa]:
     etapas = [
+        Etapa("Preparando OCR Apple Vision",
+              python_cmd("biblio_app_service.py", "--preparar-ambiente")),
         Etapa("Preparando o leitor acadêmico local (GROBID)",
               python_cmd("gerenciar-grobid.py", "--raiz", str(raiz), "--garantir"),
               obrigatoria=False),
@@ -295,3 +391,15 @@ def importar_arquivos(raiz: pathlib.Path, arquivos: Iterable[pathlib.Path]) -> L
         shutil.copy2(arquivo, destino)
         resultado.append({"origem": str(arquivo), "destino": str(destino)})
     return resultado
+
+
+def main(argv: Optional[List[str]] = None) -> int:
+    argv = list(sys.argv[1:] if argv is None else argv)
+    if argv == ["--preparar-ambiente"]:
+        return preparar_ambiente_nativo()
+    print("Uso interno: biblio_app_service.py --preparar-ambiente")
+    return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
