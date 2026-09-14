@@ -6450,7 +6450,8 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
         "lugar": cip.get("cidade") or cp["cidade"],   # Local de publicacao
         "local": "",                           # Estante fisica - so voce sabe
         "cdd": cip.get("cdd", ""),             # vem do DDC do bloco CIP
-        "CDD": cip.get("cdd", ""),
+        "classificacao_original": cip.get("classificacao_original", ""),
+        "CDD": cip.get("cdd", "") or cip.get("classificacao_original", ""),
         "series": "", "numSerie": "", "volume": "",
         "acervo": ACERVO_PADRAO,
         # a pagina de creditos ("Titulo del original: ...") tem prioridade;
