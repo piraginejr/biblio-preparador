@@ -3628,6 +3628,63 @@ def normalizar_rotulos_numeros_ocr(texto):
     return saida
 
 
+def cdd_aproximado_por_cdu(classificacao):
+    """Converte uma CDU religiosa em um CDD provável.
+
+    CDU e CDD não são sistemas equivalentes. Para o nosso fluxo, porém, uma
+    sugestão ampla é melhor do que deixar uma ficha parada quando a própria
+    ficha catalográfica trouxe apenas CDU. A CDU original continua preservada
+    em ``classificacao_original``.
+    """
+    texto = str(classificacao or "").strip()
+    if not texto:
+        return ""
+    bruto = re.sub(r"(?i)^\s*CDU\s*[-:]?\s*", "", texto).strip()
+    compacto = re.sub(r"\s+", "", bruto)
+    compacto = compacto.replace(",", ".")
+
+    regras = (
+        # Regras específicas primeiro.
+        (r"^27(?:[-:.]?1|/1|\(1\))", "230"),   # teologia cristã
+        (r"^23(?:\b|[^\d])", "230"),
+        (r"^27[-:.]?2", "220"),                # Bíblia no cristianismo
+        (r"^22(?:\b|[^\d])", "220"),           # Bíblia
+        (r"^27[-:.]?23", "232"),               # cristologia
+        (r"^27[-:.]?24", "234"),               # salvação/graça
+        (r"^27[-:.]?27", "231"),               # Deus
+        (r"^27[-:.]?31", "241"),               # ética cristã
+        (r"^27[-:.]?36", "248"),               # vida cristã/devocional
+        (r"^27[-:.]?4", "240"),                # prática cristã
+        (r"^27[-:.]?5", "250"),                # ministério/pastoral
+        (r"^27[-:.]?7", "260"),                # igreja/eclesiologia
+        (r"^27(?:[-:.]?9|\(091\))", "270"),    # história da igreja
+        (r"^28(?:\b|[^\d])", "297"),           # islamismo
+        (r"^29(?:\b|[^\d])", "290"),           # outras religiões
+        # Regras gerais.
+        (r"^2(?:\b|[^\d])", "200"),
+        (r"^27", "230"),
+    )
+    for padrao, cdd in regras:
+        if re.search(padrao, compacto, re.I):
+            return cdd
+    return ""
+
+
+def aplicar_cdd_sugerido_por_cdu(dados):
+    """Preenche CDD aproximado quando só existe CDU."""
+    if not isinstance(dados, dict) or dados.get("cdd"):
+        return dados
+    original = str(dados.get("classificacao_original", "") or "").strip()
+    if not re.match(r"(?i)^CDU\b", original):
+        return dados
+    cdd = cdd_aproximado_por_cdu(original)
+    if cdd:
+        dados["cdd"] = cdd
+        dados["cdd_sugerido"] = cdd
+        dados["fonte_cdd_sugerido"] = f"conversão aproximada de {original}"
+    return dados
+
+
 def editora_por_assinatura_ocr(texto):
     compacto = re.sub(r"\s+", "", identificar.normalizar(texto or ""))
     for nome, assinatura in EDITORAS_POR_ASSINATURA:
@@ -3781,6 +3838,8 @@ def ler_cip(t):
             d["classificacao_original"] = f"{sigla} {numero.strip()}"
             if sigla == "CDD":
                 d["cdd"] = numero.replace("-", ".").replace(" ", "")
+            else:
+                aplicar_cdd_sugerido_por_cdu(d)
 
     mm = re.search(r"\b(\d{1,5})\s*p(?:\.|\b)", plano, re.I)
     if mm:
@@ -3850,7 +3909,7 @@ def ler_cip(t):
         nb = identificar.normalizar(bibliotecaria.group(1))
         if nt and (nt == nb or nt in nb or nb in nt):
             d["titulo"] = ""
-    return d
+    return aplicar_cdd_sugerido_por_cdu(d)
 
 
 def ler_dcip_institucional_paginas(paginas):
@@ -6451,6 +6510,8 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
         "local": "",                           # Estante fisica - so voce sabe
         "cdd": cip.get("cdd", ""),             # vem do DDC do bloco CIP
         "classificacao_original": cip.get("classificacao_original", ""),
+        "cdd_sugerido": cip.get("cdd_sugerido", ""),
+        "fonte_cdd_sugerido": cip.get("fonte_cdd_sugerido", ""),
         "CDD": cip.get("cdd", "") or cip.get("classificacao_original", ""),
         "series": "", "numSerie": "", "volume": "",
         "acervo": ACERVO_PADRAO,

@@ -2054,6 +2054,13 @@ def gravar_decisao_revisao(raiz, arquivo, campos=None, aprovado=True,
         if classificacao:
             if re.match(r"(?i)^CDU\b", classificacao):
                 ficha_atualizada["classificacao_original"] = classificacao
+                if not ficha_atualizada.get("cdd"):
+                    cdd = prep.cdd_aproximado_por_cdu(classificacao)
+                    if cdd:
+                        ficha_atualizada["cdd"] = cdd
+                        ficha_atualizada["cdd_sugerido"] = cdd
+                        ficha_atualizada["fonte_cdd_sugerido"] = (
+                            f"conversão aproximada de {classificacao}")
             elif not ficha_atualizada.get("cdd"):
                 ficha_atualizada["cdd"] = re.sub(
                     r"(?i)^CDD\s*[-:]?\s*", "", classificacao).strip()
