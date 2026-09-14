@@ -420,19 +420,24 @@ function mostrarConclusao() {
   sujo = false;
 }
 async function encerrarBancada() {
-  $("fimMsg").textContent = "encerrando a bancada…";
-  try {
-    await fetch("/api/encerrar", {method:"POST"});
-  } catch (e) {
-    // Ao encerrar, o próprio servidor local desliga. Alguns navegadores
-    // relatam esse desligamento como falha de rede, mesmo quando o comando
-    // foi recebido corretamente. Para o operador, isto não deve aparecer
-    // como erro: a intenção era justamente fechar a bancada.
-  }
-  $("fimMsg").innerHTML = "<span class='ok'>bancada encerrada; voltando ao Biblio Preparador…</span>";
+  $("fimMsg").innerHTML = "<span class='ok'>voltando ao Biblio Preparador…</span>";
   if (VOLTAR_URL) {
-    setTimeout(() => { window.location.href = VOLTAR_URL; }, 350);
+    // Não aguardamos a resposta de /api/encerrar: ao desligar o servidor da
+    // bancada, alguns navegadores cancelam o redirecionamento e o botão fica
+    // parecendo quebrado. Primeiro devolvemos o operador ao Preparador; o
+    // fechamento da bancada fica em segundo plano.
+    try {
+      navigator.sendBeacon("/api/encerrar", new Blob(["{}"], {type:"application/json"}));
+    } catch (e) {
+      fetch("/api/encerrar", {method:"POST", keepalive:true}).catch(() => {});
+    }
+    setTimeout(() => { window.location.assign(VOLTAR_URL); }, 80);
   } else {
+    try {
+      navigator.sendBeacon("/api/encerrar", new Blob(["{}"], {type:"application/json"}));
+    } catch (e) {
+      fetch("/api/encerrar", {method:"POST", keepalive:true}).catch(() => {});
+    }
     setTimeout(() => { try { window.close(); } catch(e) {} }, 700);
   }
 }

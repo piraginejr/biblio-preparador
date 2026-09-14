@@ -242,7 +242,9 @@ function mostrar(id){
   telaAtual = id;
   document.querySelectorAll('.screen').forEach(s => s.classList.toggle('active', s.id === id));
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.screen === id));
+  if(location.hash !== '#' + id) history.replaceState(null, '', '#' + id);
   if(id === 'concluir') carregarStatus();
+  if(id === 'revisar') carregarStatus();
 }
 async function api(path, body){
   const opt = body ? {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)} : {};
@@ -327,6 +329,8 @@ $('uploadForm').addEventListener('submit', async ev => {
   $('uploadMsg').textContent = data.message;
   await carregarStatus();
 });
+const telaInicial = (location.hash || '#entrada').slice(1);
+mostrar(['entrada','preparar','enviar','revisar','concluir'].includes(telaInicial) ? telaInicial : 'entrada');
 carregarStatus();
 </script>
 </body>
