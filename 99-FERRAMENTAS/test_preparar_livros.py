@@ -20,6 +20,19 @@ class PrepararLivrosTest(unittest.TestCase):
         self.assertEqual("9788577790364", prep.isbn_valido("978-85-7779-036-4"))
         self.assertIsNone(prep.isbn_valido("7898521805111"))
 
+    def test_cdu_religiosa_gera_cdd_aproximado(self):
+        self.assertEqual("230", prep.cdd_aproximado_por_cdu("CDU 27-1"))
+        self.assertEqual("220", prep.cdd_aproximado_por_cdu("CDU 22"))
+        self.assertEqual("270", prep.cdd_aproximado_por_cdu("CDU 27(091)"))
+
+    def test_cdu_preserva_original_e_preenche_cdd_sugerido(self):
+        dados = {"classificacao_original": "CDU 27-4"}
+        prep.aplicar_cdd_sugerido_por_cdu(dados)
+        self.assertEqual("CDU 27-4", dados["classificacao_original"])
+        self.assertEqual("240", dados["cdd"])
+        self.assertEqual("240", dados["cdd_sugerido"])
+        self.assertIn("CDU 27-4", dados["fonte_cdd_sugerido"])
+
     def test_pagina_tecnica_de_microfilme_nao_e_titulo(self):
         titulo = "TEST TARGET (MT-3) I25 22 11.8 1.4 L125"
         self.assertFalse(prep.titulo_bibliograficamente_plausivel(titulo))
