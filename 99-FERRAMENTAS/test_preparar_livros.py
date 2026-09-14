@@ -13,6 +13,12 @@ SPEC = importlib.util.spec_from_file_location("preparar_livros", ARQUIVO)
 prep = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(prep)
 
+ARQUIVO_ENVIO = pathlib.Path(__file__).with_name("enviar-livro-api.py")
+SPEC_ENVIO = importlib.util.spec_from_file_location(
+    "enviar_livro_api", ARQUIVO_ENVIO)
+envio = importlib.util.module_from_spec(SPEC_ENVIO)
+SPEC_ENVIO.loader.exec_module(envio)
+
 
 class PrepararLivrosTest(unittest.TestCase):
     def test_isbn_valido_aceita_isbn10_e_recusa_ean13_de_produto(self):
@@ -32,6 +38,22 @@ class PrepararLivrosTest(unittest.TestCase):
         self.assertEqual("240", dados["cdd"])
         self.assertEqual("240", dados["cdd_sugerido"])
         self.assertIn("CDU 27-4", dados["fonte_cdd_sugerido"])
+
+    def test_documento_pronto_especifico_e_valido_para_api(self):
+        ficha = {
+            "tipo_documento": "documento",
+            "situacao": "pronto para cadastro específico",
+            "status_ocr": "OCR aprovado",
+            "titulo": "Algo Inimaginável",
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            base = pathlib.Path(tmp)
+            pdf = base / "documento.pdf"
+            capa = base / "capa.jpg"
+            pdf.write_bytes(b"%PDF-1.4\n%%EOF\n")
+            capa.write_bytes(b"\xff\xd8\xff\xd9")
+            self.assertEqual([], envio.validar(
+                ficha, pdf, capa, tipo_api="documento"))
 
     def test_pagina_tecnica_de_microfilme_nao_e_titulo(self):
         titulo = "TEST TARGET (MT-3) I25 22 11.8 1.4 L125"
