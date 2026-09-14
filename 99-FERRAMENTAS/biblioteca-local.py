@@ -1490,14 +1490,24 @@ def buscar_isbn_para_revisao(c, ficha, registro, limite_paginas=40):
 
 def _campos_revisao_de_fonte(fonte, isbn):
     """Traduz uma resposta bibliográfica externa para campos da nossa ficha."""
-    autores = str(fonte.get("autores") or fonte.get("autor") or "").strip()
-    autor_principal = autores.split(";")[0].strip() if autores else ""
+    autores_brutos = fonte.get("autores") or fonte.get("autor") or ""
+    if isinstance(autores_brutos, list):
+        autores_lista = [str(x).strip() for x in autores_brutos if str(x).strip()]
+    else:
+        autores_lista = [x.strip() for x in re.split(
+            r"\s*;\s*|\s+(?:&|e|y|and)\s+",
+            str(autores_brutos).strip(), flags=re.I) if x.strip()]
+    autores_lista = [prep.sobrenome_virgula(x) for x in autores_lista]
+    autores = "; ".join(autores_lista)
+    autor_principal = autores_lista[0] if autores_lista else ""
     assuntos = str(fonte.get("assuntos") or fonte.get("assunto") or "").strip()
     campos = {
         "titulo": str(fonte.get("titulo") or "").strip(),
         "subTitulo": str(fonte.get("subtitulo") or fonte.get("subTitulo")
                          or fonte.get("titulo_publicacao") or "").strip(),
         "nmAutor0": autor_principal,
+        "autores": [{"nome": nome, "desc": "Autor"}
+                    for nome in autores_lista],
         "autores_texto": autores,
         "editora": str(fonte.get("editora") or "").strip(),
         "isbn": prep.isbn_valido(fonte.get("isbn", "")) or isbn,
