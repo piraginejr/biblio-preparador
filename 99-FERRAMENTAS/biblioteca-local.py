@@ -86,7 +86,7 @@ ESTADO_DUPLICADO_CONTEUDO = "duplicado confirmado por conteúdo"
 MAX_PALAVRAS_DUPLICIDADE = 30_000
 TIPOS_ACADEMICOS = {"tese", "dissertação", "trabalho acadêmico"}
 TIPOS_DOCUMENTOS = {"artigo", "documento", "apostila", "sermão", "trecho",
-                    "resumo", "apresentação"}
+                    "resumo", "apresentação", "opúsculo"}
 TIPOS_REVISTAS = {"revista", "periódico", "boletim", "jornal"}
 ESTADOS_REVISAO_VISUAL = {
     "analisado", "conflito", "precisa OCR",
@@ -111,6 +111,7 @@ LIMITE_CAPA_MANUAL_BYTES = 8 * 1024 * 1024
 CAMPOS_REVISAO_POR_TIPO = {
     "livro": ("titulo", "nmAutor0", "editora", "data", "nmLingua"),
     "documento": ("titulo",),
+    "opúsculo": ("titulo",),
     "apostila": ("titulo",),
     "sermão": ("titulo",),
     "trecho": ("titulo",),
