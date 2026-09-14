@@ -860,6 +860,12 @@ CDD - 260.01"""
         self.assertEqual("Mais de um Século de Educação Metodista", titulo)
         self.assertEqual(1, pagina)
 
+    def test_folha_de_rosto_com_byline_nao_inverte_titulo_e_autor(self):
+        titulo, autor = prep.titulo_autor_por_byline_folha(
+            "Algo Inimaginável Pelo Dr. Barbet")
+        self.assertEqual("Algo Inimaginável", titulo)
+        self.assertEqual("Barbet", autor)
+
     def test_rodar_ocr_recusa_substituir_original(self):
         with self.assertRaises(ValueError):
             prep.rodar_ocr("/tmp/livro.pdf", "/tmp/livro.pdf")

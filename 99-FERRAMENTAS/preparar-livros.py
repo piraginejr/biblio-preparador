@@ -4448,6 +4448,37 @@ def titulo_nas_paginas_iniciais(paginas, pistas=(), autor=""):
     return "", None, ""
 
 
+def titulo_autor_por_byline_folha(titulo_folha):
+    """Separa ``Título Pelo/Por Dr. Autor`` sem inverter os campos.
+
+    Em folhetos e livros curtos, a folha de rosto frequentemente vem numa
+    única linha, por exemplo ``Algo Inimaginável Pelo Dr. Barbet``. Sem esta
+    regra, o final rotulado como autoria podia virar título e as primeiras
+    palavras do título podiam virar autor.
+    """
+    texto = " ".join(str(titulo_folha or "").split()).strip(" .,:;|-")
+    if not texto:
+        return "", ""
+    m = re.search(
+        r"(?i)^(.{3,160}?)\s+"
+        r"(?:pelo|pela|por)\s+"
+        r"(?:(?:dr|dra|pr|pra|rev|reva|pastor|pastora)\.?\s+)?"
+        r"([A-ZÀ-Ü][A-Za-zÀ-ÿ'.-]+(?:\s+[A-ZÀ-Ü]"
+        r"[A-Za-zÀ-ÿ'.-]+){0,5})\s*$",
+        texto)
+    if not m:
+        return "", ""
+    titulo = limpar_titulo_bibliografico(m.group(1))
+    autor = " ".join(m.group(2).split()).strip(" .,:;-")
+    if not titulo_bibliograficamente_plausivel(titulo):
+        return "", ""
+    # Autores de folhetos podem aparecer só pelo sobrenome após um honorífico
+    # ("Dr. Barbet"). Aceitamos nome único aqui porque o rótulo é explícito.
+    if not autor or identificar.INSTITUICAO.search(autor):
+        return "", ""
+    return titulo, sobrenome_virgula(autor)
+
+
 def autor_da_serie_obras(paginas, nome_arquivo=""):
     """Confirma no nome do arquivo o autor anunciado por uma série de obras.
 
@@ -6051,6 +6082,38 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
     if (origem_aut == "nome do arquivo"
             and autor_confirmado_nas_paginas(paginas, autor)):
         origem_aut = "folha de rosto"
+
+    # Folha de rosto em uma linha só: "Título Pelo/Por Dr. Autor".
+    # Essa estrutura é explícita o bastante para corrigir a troca recorrente
+    # entre título e autor, mas não vence ISBN/CIP/API exata.
+    titulo_byline, autor_byline = titulo_autor_por_byline_folha(tit_pag)
+    if (titulo_byline and autor_byline
+            and not api_por_isbn_exato
+            and not cip_identifica_edicao):
+        titulo_atual_n = identificar.normalizar(titulo)
+        titulo_byline_n = identificar.normalizar(titulo_byline)
+        autor_atual_n = identificar.normalizar(autor.replace(",", " "))
+        autor_byline_n = identificar.normalizar(autor_byline.replace(",", " "))
+        autor_parece_titulo = bool(
+            autor_atual_n and titulo_byline_n
+            and (autor_atual_n in titulo_byline_n
+                 or titulo_byline_n.startswith(autor_atual_n)
+                 or similaridade_titulos(autor, titulo_byline) >= 0.55))
+        titulo_parece_autor = bool(
+            titulo_atual_n and autor_byline_n
+            and (titulo_atual_n in autor_byline_n
+                 or re.search(r"(?i)\b(?:pelo|pela|por)\b", titulo or "")))
+        if (origem_tit in {"folha de rosto", motivo_tit_pag, "",
+                           "capa", "título visual da capa"}
+                and (titulo_parece_autor
+                     or not titulo_bibliograficamente_plausivel(titulo)
+                     or len(titulo.split()) <= 3)):
+            titulo, origem_tit = titulo_byline, "folha de rosto"
+        if (origem_aut in {"rotulo documental", "folha de rosto",
+                           "capa confirmada", "capa", "nome do arquivo", ""}
+                and (autor_parece_titulo
+                     or not autor_bibliograficamente_plausivel(autor))):
+            autor, origem_aut = autor_byline, "folha de rosto"
 
     # Divergencia entre copyright e API so vira conflito quando ELA AINDA
     # IMPORTA - ou seja, quando o autor que escolhemos veio de um dos dois.
