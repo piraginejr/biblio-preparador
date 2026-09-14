@@ -866,6 +866,30 @@ CDD - 260.01"""
         self.assertEqual("Algo Inimaginável", titulo)
         self.assertEqual("Barbet", autor)
 
+    def test_cip_lida_no_ocr_visual_da_capa(self):
+        capa = {
+            "texto_ocr": [
+                "DADOS INTERNACIONAIS DE CATALOGAÇÃO NA PUBLICAÇÃO (CIP)",
+                "Chan, Edmund",
+                "UM TIPO CERTO - Discipulado intencional que redefine o",
+                "sucesso no ministério / Edmund Chan - Curitiba: Editora Betânia,",
+                "2021.",
+                "272 p.: 13,5 cm x 21 cm",
+                "Título original: A Certain Kind",
+                "ISBN 978-65-89540-02-1",
+                "1. Equipes de ministério, grupos pequenos, vida da igreja, liderança",
+                "CDD 248",
+            ]
+        }
+        cip = prep.ler_cip_ocr_visual_capa(capa)
+        self.assertEqual("UM TIPO CERTO - Discipulado intencional que redefine o sucesso no ministério", cip["titulo"])
+        self.assertEqual("Chan, Edmund", cip["autor"])
+        self.assertEqual("Editora Betânia", cip["editora"])
+        self.assertEqual("2021", cip["ano"])
+        self.assertEqual("272", cip["paginas"])
+        self.assertEqual("248", cip["cdd"])
+        self.assertEqual([("9786589540021", "isbn")], cip["isbns"])
+
     def test_rodar_ocr_recusa_substituir_original(self):
         with self.assertRaises(ValueError):
             prep.rodar_ocr("/tmp/livro.pdf", "/tmp/livro.pdf")

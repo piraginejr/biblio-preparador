@@ -1701,10 +1701,13 @@ def montar_pacote_revisao(c, digest, registro):
         "pdf_visualizacao": _caminho_visualizacao(c, ficha, registro),
         "capa": ficha.get("capa", "") or registro.get("capa", ""),
         "ficha": relativo(c, ficha_path) if ficha_path else "",
-        "campos": {campo: ficha.get(campo, "") for campo in (
-            "titulo", "subTitulo", "nmAutor0", "autores", "editora", "isbn",
-            "edicao", "data", "nPaginas", "lugar", "nmLingua", "tipo_documento",
-            "CDD", "assunto", "pchave", "abstract")},
+        "campos": {
+            **{campo: ficha.get(campo, "") for campo in (
+                "titulo", "subTitulo", "nmAutor0", "autores", "editora", "isbn",
+                "edicao", "data", "nPaginas", "lugar", "nmLingua",
+                "tipo_documento", "assunto", "pchave", "abstract")},
+            "CDD": ficha.get("CDD", "") or ficha.get("cdd", ""),
+        },
         "conflitos": conflitos,
         "pendencias": pendencias,
         "ausencias": ausencias,
@@ -2036,6 +2039,8 @@ def gravar_decisao_revisao(raiz, arquivo, campos=None, aprovado=True,
         ficha_atualizada = dict(ficha)
         ficha_atualizada.update({k: v for k, v in campos_mesclados.items()
                                  if not k.startswith("_")})
+        if ficha_atualizada.get("CDD") and not ficha_atualizada.get("cdd"):
+            ficha_atualizada["cdd"] = ficha_atualizada["CDD"]
         autor_principal = str(ficha_atualizada.get("nmAutor0", "")).strip()
         autores_atuais = ficha_atualizada.get("autores", []) or []
         if autor_principal and not autores_atuais:
