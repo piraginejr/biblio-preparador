@@ -19,7 +19,7 @@ func log(_ message: String) {
     }
 }
 
-final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate {
+final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDelegate {
     var window: NSWindow!
     var webView: WKWebView!
     var serverProcess: Process?
@@ -55,6 +55,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate {
         webView = WKWebView(frame: .zero, configuration: config)
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.navigationDelegate = self
+        webView.uiDelegate = self
 
         content.addSubview(statusLabel)
         content.addSubview(webView)
@@ -324,6 +325,22 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate {
         alert.informativeText = message
         alert.alertStyle = .critical
         alert.runModal()
+    }
+
+    func webView(
+        _ webView: WKWebView,
+        runOpenPanelWith parameters: WKOpenPanelParameters,
+        initiatedByFrame frame: WKFrameInfo,
+        completionHandler: @escaping ([URL]?) -> Void
+    ) {
+        let panel = NSOpenPanel()
+        panel.canChooseFiles = true
+        panel.canChooseDirectories = true
+        panel.allowsMultipleSelection = parameters.allowsMultipleSelection
+        panel.canCreateDirectories = false
+        panel.beginSheetModal(for: window) { response in
+            completionHandler(response == .OK ? panel.urls : nil)
+        }
     }
 }
 
