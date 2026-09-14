@@ -82,35 +82,18 @@ cat > "$CONTENTS/Info.plist" <<'PLIST'
 </plist>
 PLIST
 
-cat > "$MACOS/BiblioPreparador" <<'LAUNCHER'
-#!/usr/bin/env bash
-set -euo pipefail
+SWIFT_CACHE="/private/tmp/biblio-swift-cache"
+mkdir -p "$SWIFT_CACHE"
 
-APP_DIR="$(cd "$(dirname "$0")/../.." && pwd)"
-RESOURCES="$APP_DIR/Contents/Resources"
-PACKAGE_BASE="$RESOURCES/pacote-base"
-SUPPORT="$HOME/Library/Application Support/Biblio Preparador/revista"
-TOOLS="$SUPPORT/99-FERRAMENTAS"
-LIVROS="$SUPPORT/livros"
-
-mkdir -p "$SUPPORT" "$LIVROS"
-
-if [ ! -d "$TOOLS" ]; then
-  mkdir -p "$SUPPORT"
-  (cd "$PACKAGE_BASE" && tar -cf - .) | (cd "$SUPPORT" && tar -xf -)
-fi
-
-chmod +x "$TOOLS/LIVROS.command" "$TOOLS/BIBLIO-VISUAL.command" 2>/dev/null || true
-
-osascript <<APPLESCRIPT
-tell application "Terminal"
-  activate
-  do script "cd " & quoted form of "$TOOLS" & " && ./BIBLIO-VISUAL.command"
-end tell
-APPLESCRIPT
-LAUNCHER
-
-chmod +x "$MACOS/BiblioPreparador"
+CLANG_MODULE_CACHE_PATH="$SWIFT_CACHE/clang" \
+MODULE_CACHE_DIR="$SWIFT_CACHE/modules" \
+xcrun swiftc \
+  -O \
+  -target arm64-apple-macosx12.0 \
+  -framework Cocoa \
+  -framework WebKit \
+  "$ROOT/packaging/macos/BiblioPreparador.swift" \
+  -o "$MACOS/BiblioPreparador"
 
 copiar_limpo "$ROOT/99-FERRAMENTAS" "$PACKAGE_BASE/99-FERRAMENTAS"
 copiar_limpo "$ROOT/docs" "$PACKAGE_BASE/docs"

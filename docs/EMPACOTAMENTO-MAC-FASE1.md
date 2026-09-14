@@ -5,14 +5,17 @@
 Começar o empacotamento do Biblio Preparador sem alterar o que já está
 funcional.
 
-Nesta fase, o app Mac é apenas uma camada externa de lançamento. O motor atual
-continua sendo:
+Nesta fase, o app Mac passa a ser uma janela nativa com WebView. A interface
+aprovada roda dentro dessa janela, e o motor atual continua sendo:
 
 - `99-FERRAMENTAS/LIVROS.command`
 - `99-FERRAMENTAS/biblioteca-local.py`
 - `99-FERRAMENTAS/enviar-livro-api.py`
 - `99-FERRAMENTAS/revisao-visual.py`
 - demais módulos já testados em `99-FERRAMENTAS/`
+
+Assim, o operador usa um aplicativo normal, mas não reescrevemos o motor já
+validado.
 
 ## Princípio de segurança
 
@@ -54,7 +57,11 @@ O app gerado:
 
 - contém uma duplicata funcional em `Contents/Resources/pacote-base`;
 - copia essa duplicata para a pasta externa do usuário na primeira abertura;
-- abre o `BIBLIO-VISUAL.command`, que inicia a interface visual local;
+- abre uma janela Mac própria usando WebView;
+- inicia automaticamente o servidor local do Biblio Preparador em
+  `127.0.0.1:65087`;
+- reutiliza a instância já aberta quando a porta fixa já está ocupada pelo
+  próprio Biblio;
 - mantém o `LIVROS.command` no pacote como plano B operacional;
 - deixa o fluxo funcional exatamente como está hoje;
 - não executa preparo, OCR, envio ou limpeza durante o build;
@@ -111,15 +118,16 @@ open "dist/Biblio Preparador.app"
 
 O teste esperado nesta fase é simples:
 
-1. o app abre o Terminal;
-2. a interface visual local abre no navegador;
+1. o app abre uma janela própria chamada `Biblio Preparador`;
+2. o servidor local é iniciado automaticamente em `127.0.0.1:65087`;
 3. a biblioteca usada fica em:
 
    ```text
    ~/Library/Application Support/Biblio Preparador/revista/livros
    ```
 
-4. o menu antigo continua disponível em `99-FERRAMENTAS/LIVROS.command`;
+4. o menu antigo continua disponível em `99-FERRAMENTAS/LIVROS.command` como
+   plano B;
 5. nenhum dado da pasta atual é modificado pelo simples ato de abrir o app.
 
 ## Limites desta primeira etapa
@@ -140,7 +148,8 @@ Ela serve para:
 1. Criar instalador que copie o `.app` para `/Applications` ou para
    `~/Applications`.
 2. Adicionar verificador visual de dependências.
-3. Trocar a abertura do Terminal pela interface visual aprovada.
+3. Trazer a bancada de revisão para dentro da mesma janela WebView quando
+   concluirmos o fluxo principal.
 4. Criar rotina segura de atualização das ferramentas empacotadas.
 5. Definir estratégia para Python e dependências:
    - usar ambiente próprio em `~/.biblio-venv`, como hoje;
