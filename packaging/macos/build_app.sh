@@ -50,7 +50,17 @@ copiar_limpo() {
 rm -rf "$APP_BUNDLE"
 mkdir -p "$MACOS" "$PACKAGE_BASE"
 
-python3 "$ROOT/packaging/macos/make_app_icon.py" "$RESOURCES/BiblioPreparadorIcon.icns"
+ICON_WORK="/private/tmp/BiblioPreparadorIcon.iconset"
+ICON_PREVIEW="/private/tmp/BiblioPreparadorIcon.png"
+ICON_TIFF="/private/tmp/BiblioPreparadorIcon.tiff"
+ICON_TMP="/private/tmp/BiblioPreparadorIcon.icns"
+rm -rf "$ICON_WORK" "$ICON_PREVIEW" "$ICON_TIFF" "$ICON_TMP"
+python3 "$ROOT/packaging/macos/make_app_icon.py" "$ICON_WORK"
+cp "$ICON_WORK/icon_512x512@2x.png" "$ICON_PREVIEW"
+sips -s format tiff "$ICON_PREVIEW" --out "$ICON_TIFF" >/dev/null
+tiff2icns "$ICON_TIFF" "$ICON_TMP"
+cp "$ICON_TMP" "$RESOURCES/BiblioPreparadorIcon.icns"
+rm -rf "$ICON_WORK" "$ICON_PREVIEW" "$ICON_TIFF" "$ICON_TMP"
 
 cat > "$CONTENTS/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?>
@@ -65,7 +75,7 @@ cat > "$CONTENTS/Info.plist" <<'PLIST'
   <key>CFBundleExecutable</key>
   <string>BiblioPreparador</string>
   <key>CFBundleIconFile</key>
-  <string>BiblioPreparadorIcon</string>
+  <string>BiblioPreparadorIcon.icns</string>
   <key>CFBundleIdentifier</key>
   <string>br.org.pibcuritiba.biblio-preparador</string>
   <key>CFBundleInfoDictionaryVersion</key>
@@ -101,6 +111,21 @@ xcrun swiftc \
 
 copiar_limpo "$ROOT/99-FERRAMENTAS" "$PACKAGE_BASE/99-FERRAMENTAS"
 copiar_limpo "$ROOT/docs" "$PACKAGE_BASE/docs"
+
+# Além do CFBundleIconFile, aplicamos também o ícone customizado no próprio
+# bundle. Isso ajuda o Finder a exibir a arte imediatamente, especialmente em
+# pastas sincronizadas como Dropbox/iCloud, onde o cache visual pode insistir
+# no ícone genérico por algum tempo.
+if command -v Rez >/dev/null 2>&1 && command -v DeRez >/dev/null 2>&1 && command -v SetFile >/dev/null 2>&1; then
+  ICON_RSRC="$RESOURCES/BiblioPreparadorIcon.rsrc"
+  DeRez -only icns "$RESOURCES/BiblioPreparadorIcon.icns" > "$ICON_RSRC" 2>/dev/null || true
+  if [ -s "$ICON_RSRC" ]; then
+    Rez -append "$ICON_RSRC" -o "$APP_BUNDLE/Icon"$'\r' 2>/dev/null || true
+    SetFile -a C "$APP_BUNDLE" 2>/dev/null || true
+    SetFile -a V "$APP_BUNDLE/Icon"$'\r' 2>/dev/null || true
+  fi
+  rm -f "$ICON_RSRC"
+fi
 
 for arquivo in AGENTS.md .gitignore; do
   if [ -f "$ROOT/$arquivo" ]; then
