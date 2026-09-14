@@ -4076,17 +4076,49 @@ def combinar_fichas_catalograficas(cabecalho, simplificada, sinais):
     resultado.update({k: v for k, v in (cabecalho or {}).items()
                       if v not in (None, "", [])})
     titulo = resultado.get("titulo", "")
-    autor_forte = (sinais or {}).get("autor", "")
+    autor_forte = ((sinais or {}).get("autor", "")
+                   or resultado.get("autor", ""))
     if titulo:
         titulo = titulo.split("/", 1)[0].strip(" .,:;-")
-        if autor_forte and identificar.normalizar(titulo).startswith(
-                identificar.normalizar(autor_forte)):
-            titulo = titulo[len(autor_forte):].strip(" .,:;-")
+        if autor_forte:
+            titulo = re.sub(
+                r"(?i)^\s*" + re.escape(autor_forte).replace(r"\ ", r"\s+")
+                + r"\s+", "", titulo).strip(" .,:;-")
+            autor_norm = identificar.normalizar(autor_forte)
+            titulo_norm = identificar.normalizar(titulo)
+            if titulo_norm.startswith(autor_norm):
+                tokens_autor = autor_norm.split()
+                partes_titulo = titulo.split()
+                titulo = " ".join(partes_titulo[len(tokens_autor):]).strip(" .,:;-")
         if titulo_bibliograficamente_plausivel(titulo):
             resultado["titulo"] = titulo
         else:
             resultado.pop("titulo", None)
     return resultado
+
+
+def ler_cip_ocr_visual_capa(capa_info):
+    """Aproveita ficha CIP que só apareceu no OCR visual da capa/página.
+
+    Alguns PDFs têm a primeira página como imagem: ``pdftotext`` devolve
+    vazio, mas o leitor visual da capa enxerga a ficha catalográfica inteira.
+    Sem esta ponte, a bancada mostrava a CIP completa e o motor mesmo assim
+    deixava o livro em revisão.
+    """
+    linhas = []
+    if isinstance(capa_info, dict):
+        linhas = [str(x) for x in (capa_info.get("texto_ocr") or []) if str(x).strip()]
+    texto = "\n".join(linhas)
+    if not texto or not CIP_INICIO.search(texto):
+        return {}
+    cip = combinar_fichas_catalograficas(
+        ler_cip_paginas([texto]),
+        ler_ficha_catalografica_simplificada([texto]),
+        ler_ficha_catalografica_por_sinais([texto]))
+    if cip:
+        cip["fonte_cip"] = "OCR visual da capa/página inicial"
+        cip.setdefault("pagina_cip", 1)
+    return cip
 
 
 def cip_tem_identidade_bibliografica(cip):
@@ -5887,6 +5919,26 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
                 }
         except Exception:
             capa_info = {}
+
+    if not cip_identifica_edicao:
+        cip_visual = ler_cip_ocr_visual_capa(capa_info)
+        if cip_tem_identidade_bibliografica(cip_visual):
+            cip.update({k: v for k, v in cip_visual.items()
+                        if v not in (None, "", [])})
+            cip_identifica_edicao = True
+            vistos = {c["isbn"] for c in isbn_cands}
+            for isbn, rotulo in cip.get("isbns", []) or []:
+                if isbn not in vistos:
+                    isbn_cands.append({
+                        "isbn": isbn, "rotulo": rotulo or "CIP visual",
+                        "ctx": "CIP lida pelo OCR visual da capa/página inicial",
+                        "linha": "", "formato": "", "volume": "",
+                        "pagina": cip.get("pagina_cip", 1),
+                    })
+                    vistos.add(isbn)
+            if not linha.get("isbn") and isbn_cands:
+                linha["isbn"], linha["isbn_motivo"] = escolher_isbn(
+                    isbn_cands, nome, ano)
 
     # Um ISBN confirmado na propria edicao e a chave bibliografica primaria.
     # Quando a fonte estruturada devolve esse ISBN exato, seus dados vencem
