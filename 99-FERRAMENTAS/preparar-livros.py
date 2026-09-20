@@ -3445,6 +3445,47 @@ def titulo_documental_sem_ruido(titulo_extraido, titulo_nome):
     return titulo_extraido, False
 
 
+PALAVRAS_FRACAS_TITULO = {
+    "a", "as", "o", "os", "um", "uma", "uns", "umas", "de", "da", "das",
+    "do", "dos", "e", "em", "no", "na", "nos", "nas", "por", "para",
+    "com", "sem", "ao", "aos", "the", "of", "and", "for", "in", "to",
+    "by", "with", "el", "la", "los", "las", "un", "una", "del", "y",
+}
+
+
+def tokens_fortes_titulo(texto):
+    return [
+        p for p in identificar.normalizar(texto or "").split()
+        if len(p) > 2 and p not in PALAVRAS_FRACAS_TITULO
+        and not re.fullmatch(r"\d+", p)
+    ]
+
+
+def titulo_orientado_pelo_nome_arquivo(titulo_extraido, titulo_nome):
+    """Usa o nome limpo do arquivo como bússola, não como fonte soberana.
+
+    A capa e as primeiras páginas muitas vezes trazem só parte do título
+    visível; o nome do arquivo, apesar de poluído por OCR/cópia/versão, costuma
+    preservar a forma completa. Só promovemos o nome quando ele é plausível e
+    contém os tokens fortes do título lido localmente.
+    """
+    titulo_nome = limpar_titulo_bibliografico(titulo_nome)
+    if not titulo_bibliograficamente_plausivel(titulo_nome):
+        return titulo_extraido, False
+    extraido = limpar_titulo_bibliografico(titulo_extraido)
+    if not extraido:
+        return titulo_nome, True
+    te = tokens_fortes_titulo(extraido)
+    tn = tokens_fortes_titulo(titulo_nome)
+    if len(te) < 2 or len(tn) < 2 or len(tn) <= len(te):
+        return titulo_extraido, False
+    conjunto_nome = set(tn)
+    confirmados = [t for t in te if t in conjunto_nome]
+    if len(confirmados) >= 2 and len(confirmados) / max(1, len(te)) >= 0.75:
+        return titulo_nome, True
+    return titulo_extraido, False
+
+
 def limpar_editora_bibliografica(valor):
     valor = " ".join(str(valor or "").split()).strip(" ,.;:-")
     # Alguns registros legados da CBL trazem lixo antes do nome e um
@@ -4202,6 +4243,12 @@ ORIGENS_TITULO_CONVERGENTES = {
     "cip", "copyright", "folha de rosto", "linha de copyright", "capa",
     "folha de rosto do volume",
     "capa substituiu OCR implausivel", "metadado do PDF confirmado",
+    "capa confirmada pelo nome do arquivo",
+    "folha de rosto confirmada pelo nome do arquivo",
+    "metadado do PDF confirmado pelo nome do arquivo",
+    "capa substituiu OCR implausivel confirmada pelo nome do arquivo",
+    "título da apresentação confirmada pelo nome do arquivo",
+    "cabeçalho documental explícito confirmado pelo nome do arquivo",
     "API por ISBN confirmado na edição", "CBL por ISBN exato",
     "Google Books por título e autor", "fonte comercial de alta confiança",
     "folha de rosto estruturada do Word",
@@ -4744,13 +4791,19 @@ def do_nome(nome):
         r"[-_]\d{1,2}$", base)
         and re.search(r"[A-ZÀ-Ü][a-zà-ÿ]+[-_]"
                       r"[A-ZÀ-Ü][a-zà-ÿ]+[-_]\d{1,2}$", base))
-    base = re.sub(r"^\d{6,}[-_]", "", base)
+    base = re.sub(r"^\d{5,}[-_]", "", base)
     base = re.sub(r"[-_]+", " ", base)
     base = re.sub(r"\s+", " ", base).strip()
     # Marcadores de cópia/download não pertencem ao autor. Além de
     # poluir a ficha, impediam reconhecer nomes no fim do arquivo.
     base = re.sub(r"\s*\(\s*\d+\s*\)\s*$", "", base).strip()
     base = re.sub(r"\s+\d{5,}\s*$", "", base).strip()
+    base = re.sub(
+        r"(?i)\s+(?:ocr|scan|scanned|digitalizado|corrigido|revisado|"
+        r"final|limpo|optimized|otimizado|compactado|pesquisavel|"
+        r"pesquisável|copia|cópia|copy)\s*$", "", base).strip()
+    base = re.sub(r"(?i)\s+v?s20\d{2}\s*$", "", base).strip()
+    base = re.sub(r"(?i)\s+(?:pdf|docx?|epub|mobi)\s*$", "", base).strip()
     if sufixo_copia_curto:
         base = re.sub(r"\s+\d{1,2}\s*$", "", base).strip()
     # Marcadores de distribuição não são autor nem parte do título.
@@ -4797,7 +4850,8 @@ def do_nome(nome):
                   "Do","Da","Dos","Das","Le","Les","Un","Une","The","Of","And",
                   "Volumen","Volume","Tomo","Parte","Manual","Curso","Guia",
                   "Biblia","Biblica","Biblico","Crista","Cristao","Igreja",
-                  "Teologia","Calvinismo","Agostiniano","Reformada","Missional"}
+                  "Teologia","Calvinismo","Agostiniano","Reformada","Missional",
+                  "Era","Digital"}
         lexical_de_titulo = any(
             re.search(r"(?i)(?:ismo|logia)$", identificar.normalizar(p))
             for p in partes)
@@ -6268,6 +6322,16 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
             linha["conflitos"].append(
                 "titulo veio da API - pode estar no idioma original")
         linha["titulo_original"] = ""
+
+    if (titulo and tit_nome and origem_tit in {
+            "capa", "folha de rosto", "metadado do PDF",
+            "capa substituiu OCR implausivel", "título da apresentação",
+            "cabeçalho documental explícito"}):
+        titulo_nome_expandido, nome_confirmou_titulo = (
+            titulo_orientado_pelo_nome_arquivo(titulo, tit_nome))
+        if nome_confirmou_titulo:
+            titulo = titulo_nome_expandido
+            origem_tit = f"{origem_tit} confirmada pelo nome do arquivo"
 
     # --- so agora o nome do arquivo, e sempre marcado como frageil:
     #     "Herramienta para lideres de jovenes" era, na verdade,
