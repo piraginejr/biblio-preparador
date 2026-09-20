@@ -2071,6 +2071,13 @@ def gravar_decisao_revisao(raiz, arquivo, campos=None, aprovado=True,
                 "nome": autor_principal,
                 "desc": "Autor",
             }]
+        if not str(ficha_atualizada.get("lugar", "") or "").strip():
+            prep.aplicar_lugar_por_editora(ficha_atualizada)
+        elif ficha_atualizada.get("editora"):
+            prep.aprender_editora_cidade(
+                ficha_atualizada.get("editora", ""),
+                ficha_atualizada.get("lugar", ""),
+                fonte="revisão visual do PDF")
         ficha_atualizada["revisao_manual_aplicada"] = True
         ficha_atualizada["revisao_manual_aprovada"] = bool(aprovado)
         ficha_atualizada["revisao_manual_atualizada_em"] = revisao["atualizado_em"]

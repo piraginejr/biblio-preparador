@@ -1215,6 +1215,26 @@ Anexo 2 - Declaração de Niterói parte...............................23"""
         self.assertEqual("EDITORA KELPS", prep.limpar_editora_bibliografica(
             "EDITORA KELPS-ISBN 86 110"))
 
+    def test_editora_remove_ano_grudado(self):
+        self.assertEqual("Editora Vida", prep.limpar_editora_bibliografica(
+            "Editora Vida, 1988"))
+
+    def test_editora_sem_nome_nao_e_plausivel(self):
+        self.assertFalse(prep.editora_bibliograficamente_plausivel("[s.n.]"))
+
+    def test_cidade_sugerida_por_editora_conhecida(self):
+        tabela = {
+            prep._normalizar_editora_chave("Editora Vida"): {
+                "editora": "Editora Vida", "cidade": "São Paulo",
+                "fonte": "teste", "confianca": "alta"}}
+        self.assertEqual("São Paulo", prep.cidade_sugerida_por_editora(
+            "Editora Vida", tabela).get("cidade"))
+
+    def test_aplicar_lugar_por_editora_nao_sobrescreve(self):
+        ficha = {"editora": "Editora Vida", "lugar": "Rio de Janeiro"}
+        prep.aplicar_lugar_por_editora(ficha)
+        self.assertEqual("Rio de Janeiro", ficha["lugar"])
+
     def test_folha_word_rejeita_aviso_como_titulo(self):
         paginas = [
             "BRASIL, E ALGUMAS FIGURAS DO\n"
