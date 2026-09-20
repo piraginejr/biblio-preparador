@@ -3503,6 +3503,21 @@ def titulo_bibliograficamente_plausivel(titulo):
                    alertas_plausibilidade_metadados(titulo, "", ""))
 
 
+def titulo_parece_prosa_ou_artigo_inteiro(titulo):
+    """Reconhece quando OCR devolveu corpo de texto no lugar do título."""
+    alertas = alertas_plausibilidade_metadados(titulo, "", "")
+    return any(
+        marca in alerta
+        for alerta in alertas
+        for marca in (
+            "titulo parece paragrafo do texto",
+            "titulo parece continuação de parágrafo",
+            "titulo parece fragmento truncado do texto",
+            "titulo parece frase do texto",
+            "titulo capturou aviso de direitos autorais",
+        ))
+
+
 def capa_tecnica_digitalizacao(capa_info):
     """Reconhece capas falsas criadas por microfilme ou digitalização."""
     if not isinstance(capa_info, dict) or not capa_info:
@@ -6542,6 +6557,16 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
         if nome_confirmou_titulo:
             titulo = titulo_nome_expandido
             origem_tit = f"{origem_tit} confirmada pelo nome do arquivo"
+
+    # Proteção geral: quando qualquer camada local devolve uma frase narrativa
+    # ou um parágrafo inteiro como "título", o nome limpo do arquivo é uma
+    # bússola mais segura para a revisão. Foi o que aconteceu com
+    # "Os Moravianos e as Missões": a primeira página virou quase o artigo
+    # inteiro, travando a bancada e escondendo os itens seguintes.
+    if (titulo and tit_nome
+            and titulo_parece_prosa_ou_artigo_inteiro(titulo)
+            and titulo_bibliograficamente_plausivel(tit_nome)):
+        titulo, origem_tit = tit_nome, "nome do arquivo substituiu prosa da capa"
 
     # --- so agora o nome do arquivo, e sempre marcado como frageil:
     #     "Herramienta para lideres de jovenes" era, na verdade,
