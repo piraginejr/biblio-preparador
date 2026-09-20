@@ -1439,6 +1439,26 @@ JUSTO L. GONZÁLEZ"""]
             prep.do_nome(
                 "A-History-of-the-Church-Angela-Pellicciari-095929.pdf"))
 
+    def test_nome_do_arquivo_remove_sufixos_tecnicos(self):
+        self.assertEqual(
+            ("Filmes da Era Digital", ""),
+            prep.do_nome("Filmes-da-Era-Digital_VS2025_OCR.pdf"))
+        self.assertEqual(
+            ("Lugar secreto", ""),
+            prep.do_nome("19676_Lugar_secreto_OCR-123456.pdf"))
+
+    def test_nome_do_arquivo_expande_fragmento_lido_na_capa(self):
+        titulo, usado = prep.titulo_orientado_pelo_nome_arquivo(
+            "Era Digital", "Filmes da Era Digital")
+        self.assertTrue(usado)
+        self.assertEqual("Filmes da Era Digital", titulo)
+
+    def test_nome_do_arquivo_nao_vence_titulo_diferente(self):
+        titulo, usado = prep.titulo_orientado_pelo_nome_arquivo(
+            "A Igreja e o Reino", "Filmes da Era Digital")
+        self.assertFalse(usado)
+        self.assertEqual("A Igreja e o Reino", titulo)
+
     def test_nome_do_arquivo_reconhece_autor_maiusculo_no_inicio(self):
         self.assertEqual(
             ("Exultacao Expositiva", "Piper, John"),
