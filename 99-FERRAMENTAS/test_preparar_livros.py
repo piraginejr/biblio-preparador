@@ -205,6 +205,17 @@ TOMO 10: ISBN 978-1-56344-610-8"""
         self.assertFalse(prep.isbn_confirmado_na_edicao(
             candidatos[0]["isbn"], candidatos))
 
+    def test_isbn_sem_rotulo_em_contexto_bibliografico_e_aceito(self):
+        texto = """Copyright © 2021 Editora Exemplo
+Todos os direitos reservados.
+978-85-7779-036-4
+CDD 230"""
+        candidatos = prep.candidatos_isbn_paginas([texto])
+        isbn, motivo = prep.escolher_isbn(candidatos, "obra.pdf", 2021)
+        self.assertEqual("9788577790364", isbn)
+        self.assertTrue(prep.isbn_confirmado_na_edicao(isbn, candidatos))
+        self.assertNotIn("sem rotulo", motivo)
+
     def test_codigo_de_barras_isbn_valido_tem_prioridade(self):
         isbn = "9788551018743"
         self.assertEqual([isbn], prep.isbns_de_codigos_barras([
