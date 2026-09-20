@@ -5445,6 +5445,7 @@ def limpar_titulo_bibliografico(titulo, autor=""):
     # Sufixos técnicos vindos de nome de arquivo/versão não pertencem ao
     # título bibliográfico. Ex.: ``107 FILMES ERA DIGITAL_VS2025``.
     valor = re.sub(r"(?i)(?:[_\s-]+v?s20\d{2})$", "", valor).strip(" .,:;-_")
+    valor, _edicao_no_titulo = separar_edicao_embutida_titulo(valor)
     # Amazon e páginas de crédito às vezes devolvem ``Título, by Autor``.
     byline = re.search(r"(?i)\s*,?\s+(?:by|por)\s+(.{3,90})$", valor)
     if byline:
@@ -5506,6 +5507,35 @@ def limpar_titulo_bibliografico(titulo, autor=""):
                 "volume", "vol", "tomo", "parte", "edicao"}):
         valor = " ".join(palavras[:-1]).strip(" .,:;-")
     return valor
+
+
+def separar_edicao_embutida_titulo(titulo):
+    """Remove edição colada no fim do título e devolve a edição separada."""
+    valor = " ".join(str(titulo or "").split()).strip(" .,:;-\"“”")
+    if not valor:
+        return "", ""
+    m = re.search(
+        r"(?i)(?:[,;:–—-]|\s)+"
+        r"((?:\d{1,2}|primeira|segunda|terceira|quarta|quinta|sexta|"
+        r"s[eé]tima|oitava|nona|d[eé]cima))"
+        r"[\s.ªºoa]*"
+        r"(?:edi[çc][ãa]o|ed\.?|edition)\s*$",
+        valor)
+    if not m:
+        return valor, ""
+    base = valor[:m.start()].strip(" .,:;-\"“”")
+    if len(identificar.normalizar(base)) < 4:
+        return valor, ""
+    bruto = identificar.normalizar(m.group(1))
+    ordinais = {
+        "primeira": "1", "segunda": "2", "terceira": "3",
+        "quarta": "4", "quinta": "5", "sexta": "6",
+        "setima": "7", "sétima": "7", "oitava": "8",
+        "nona": "9", "decima": "10", "décima": "10",
+    }
+    numero = ordinais.get(bruto, re.sub(r"\D", "", m.group(1)))
+    edicao = f"{numero}ª edição" if numero else "edição"
+    return base, edicao
 
 
 def estrutura_de_livro(paginas):
@@ -6764,7 +6794,10 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
     if not lugar_final:
         lugar_sugerido = cidade_sugerida_por_editora(editora_final)
         lugar_final = lugar_sugerido.get("cidade", "")
+    titulo_pre_limpeza = titulo
     titulo = limpar_titulo_bibliografico(titulo, autor)
+    _titulo_sem_edicao, edicao_embutida_titulo = (
+        separar_edicao_embutida_titulo(titulo_pre_limpeza))
     titulo = limpar_titulo_com_editora_e_serie(titulo, editora_final)
     autores_estruturados = []
     if api_por_isbn_exato or api_por_titulo_autor:
@@ -6829,7 +6862,9 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
         "paginacao_dupla": paginacao["paginacao_dupla"],
         "nmLingua": NOME_LINGUA.get(idi, ""), "idioma": idi,
         "edicao": ("" if documento_nao_livro else
-                    edicao_catalografica(cip.get("edicao"), cp["edicao"])),
+                    edicao_catalografica(
+                        cip.get("edicao") or edicao_embutida_titulo,
+                        cp["edicao"])),
         "tradutor": (cip.get("tradutor") or cp["tradutor"]
                      or livro_word.get("tradutor", "")),
         "lugar": lugar_final,                  # Local de publicacao

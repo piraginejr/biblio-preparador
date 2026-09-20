@@ -57,6 +57,16 @@ def isbn_brasileiro(isbn):
         or (len(numero) == 10 and numero.startswith("85")))
 
 
+def formatar_isbn_busca(isbn):
+    """Forma com hífens suficiente para melhorar a busca pública da CBL."""
+    numero = normalizar_isbn(isbn)
+    if len(numero) == 13 and numero.startswith("978"):
+        return f"{numero[:3]}-{numero[3:5]}-{numero[5:9]}-{numero[9:12]}-{numero[-1]}"
+    if len(numero) == 10:
+        return f"{numero[:2]}-{numero[2:6]}-{numero[6:9]}-{numero[-1]}"
+    return numero
+
+
 def _extrair_configuracao(html):
     campos = {}
     for chave in ("IndexName", "QueryKey", "ServiceName"):
@@ -102,7 +112,8 @@ def _converter(item):
         "autores": "; ".join(autores),
         "editora": item.get("Imprint") or "",
         "ano": str(ano or ""),
-        "paginas": "",
+        "paginas": str(item.get("Paginas") or ""),
+        "edicao": str(item.get("Edicao") or ""),
         "assuntos": item.get("Subject") or "",
         "idiomas_cbl": "; ".join(idiomas),
         "paises_cbl": "; ".join(paises),
@@ -162,26 +173,37 @@ def consultar(isbn, pasta_cache, sessao=None, atualizar=False):
         _esperar_intervalo()
         url = (f"https://{config['ServiceName']}.search.windows.net/"
                f"indexes/{config['IndexName']}/docs")
-        resposta = sessao.get(
-            url,
-            params={
-                "api-version": API_VERSION,
-                "search": numero,
-                "searchFields": "FormattedKey,RowKey",
-                "$top": 3,
-                "$select": ("Authors,Profissoes,Colection,Countries,Date,Imprint,"
-                            "Title,Subtitle,RowKey,PartitionKey,RecordId,FormattedKey,"
-                            "Subject,Veiculacao,Ano,IdiomasObra"),
-            },
-            headers={"api-key": config["QueryKey"]},
-            timeout=25,
-        )
-        resposta.raise_for_status()
-        itens = resposta.json().get("value", [])
+        def buscar(termo):
+            resposta = sessao.get(
+                url,
+                params={
+                    "api-version": API_VERSION,
+                    "search": termo,
+                    "searchFields": "FormattedKey,RowKey",
+                    "$top": 5,
+                    "$select": ("Authors,Profissoes,Colection,Countries,Date,Imprint,"
+                                "Title,Subtitle,RowKey,PartitionKey,RecordId,FormattedKey,"
+                                "Subject,Veiculacao,Ano,IdiomasObra,Paginas,Edicao"),
+                },
+                headers={"api-key": config["QueryKey"]},
+                timeout=25,
+            )
+            resposta.raise_for_status()
+            return resposta.json().get("value", [])
+
+        itens = buscar(numero)
         exatos = [item for item in itens if numero in {
             normalizar_isbn(item.get("FormattedKey")),
             normalizar_isbn(item.get("RowKey")),
         }]
+        if not exatos:
+            termo_formatado = formatar_isbn_busca(numero)
+            if termo_formatado and termo_formatado != numero:
+                itens = buscar(termo_formatado)
+                exatos = [item for item in itens if numero in {
+                    normalizar_isbn(item.get("FormattedKey")),
+                    normalizar_isbn(item.get("RowKey")),
+                }]
         resultado = _converter(exatos[0]) if len(exatos) == 1 else {}
         status = "encontrado" if resultado else (
             "conflito" if len(exatos) > 1 else "nao_encontrado")

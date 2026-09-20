@@ -19,6 +19,11 @@ SPEC_ENVIO = importlib.util.spec_from_file_location(
 envio = importlib.util.module_from_spec(SPEC_ENVIO)
 SPEC_ENVIO.loader.exec_module(envio)
 
+ARQUIVO_CBL = pathlib.Path(__file__).with_name("consultar_cbl.py")
+SPEC_CBL = importlib.util.spec_from_file_location("consultar_cbl", ARQUIVO_CBL)
+cbl = importlib.util.module_from_spec(SPEC_CBL)
+SPEC_CBL.loader.exec_module(cbl)
+
 
 class PrepararLivrosTest(unittest.TestCase):
     def test_isbn_valido_aceita_isbn10_e_recusa_ean13_de_produto(self):
@@ -90,6 +95,18 @@ William Carey é considerado o pai das missões Protestantes.
             "Batistas — Doutrinas. I. Título. C D D — 238.6")
         self.assertEqual("CDD", sigla)
         self.assertEqual("238.6", numero)
+
+    def test_edicao_no_fim_do_titulo_vai_para_campo_proprio(self):
+        titulo, edicao = prep.separar_edicao_embutida_titulo(
+            "NOSSAS DOUTRINAS 6.aEDIÇÃO")
+        self.assertEqual("NOSSAS DOUTRINAS", titulo)
+        self.assertEqual("6ª edição", edicao)
+
+    def test_cbl_formata_isbn_brasileiro_para_busca_publica(self):
+        self.assertEqual("978-85-7845-211-7",
+                         cbl.formatar_isbn_busca("9788578452117"))
+        self.assertEqual("85-8708-606-5",
+                         cbl.formatar_isbn_busca("8587086065"))
 
     def test_capa_tecnica_de_digitalizacao_e_ignorada(self):
         capa = {
