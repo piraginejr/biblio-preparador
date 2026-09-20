@@ -1272,6 +1272,32 @@ def candidatos_isbn(t):
     return u
 
 
+def isbn_sem_rotulo_tem_contexto_bibliografico(candidato):
+    """Aceita ISBN sem a palavra ISBN quando a página parece ficha/creditos.
+
+    Livros reais às vezes imprimem só ``978-...`` ou ``85-...``. O dígito
+    verificador sozinho não basta: sequências de sumário também podem fechar
+    matematicamente. Exigimos, portanto, que o entorno traga sinais editoriais.
+    """
+    contexto = " ".join(str(candidato.get(campo, ""))
+                        for campo in ("rotulo", "linha", "ctx"))
+    if re.search(r"(?i)\b(?:ISBN(?:-1[03])?|EAN)\b", contexto):
+        return True
+    if candidato.get("credito_edicao") or candidato.get("formato"):
+        return True
+    sinais = (
+        r"(?i)\b(?:copyright|©|copirraite|direitos\s+reservados|"
+        r"ficha\s+catalogr[aá]fica|cataloging[\s-]*in[\s-]*publication|"
+        r"dados\s+(?:internacionais\s+)?de\s+cataloga[çc][aã]o|"
+        r"bibliotec[aá]ria|crb|cdd|cdu|ddc|lcc|"
+        r"editora|editorial|publisher|press|publica[çc][õo]es|"
+        r"edi[çc][aã]o|edition|edici[óo]n|"
+        r"t[íi]tulo|title|autor|author|descri[çc][aã]o|description|"
+        r"p[aá]ginas?|pages?|p\.)\b"
+    )
+    return bool(re.search(sinais, contexto))
+
+
 def candidatos_isbn_paginas(paginas, numeros_paginas=None):
     out = []
     numeros = (list(numeros_paginas) if numeros_paginas is not None
@@ -1321,8 +1347,8 @@ def isbn_confirmado_na_edicao(isbn, candidatos, volume_edicao=""):
             continue
         contexto = " ".join(str(candidato.get(campo, ""))
                             for campo in ("rotulo", "linha", "ctx"))
-        explicitamente_rotulado = bool(re.search(
-            r"(?i)\b(?:ISBN(?:-1[03])?|EAN)\b", contexto))
+        explicitamente_rotulado = isbn_sem_rotulo_tem_contexto_bibliografico(
+            candidato)
         # Uma sequência que por acaso fecha o dígito verificador não é prova
         # bibliográfica. Datas e paginação de sumários já produziram ISBNs
         # falsos perfeitamente válidos matematicamente.
@@ -1385,7 +1411,7 @@ def escolher_isbn(cands, nome, ano):
             candidato.get("credito_edicao")
             or candidato.get("volume")
             or candidato.get("formato")
-            or re.search(r"(?i)\b(?:ISBN(?:-1[03])?|EAN)\b", contexto)
+            or isbn_sem_rotulo_tem_contexto_bibliografico(candidato)
         )
 
     ancorados = [c for c in cands if _candidato_textual_ancorado(c)]
