@@ -109,6 +109,9 @@ _CACHE_TITULOS_RUIDOSOS = None
 ARQUIVO_AUTORES_RUIDOSOS = pathlib.Path(__file__).with_name(
     "autores-ruidosos-conhecidos.json")
 _CACHE_AUTORES_RUIDOSOS = None
+ARQUIVO_EDITORAS_CIDADES = pathlib.Path(__file__).with_name(
+    "editoras-cidades.json")
+_CACHE_EDITORAS_CIDADES = None
 _CACHE_FONTES_COMERCIAIS = {}
 # Flag do macOS para arquivo gerenciado por provedor e ainda sem dados locais.
 # Abrir um desses pequenos caches fazia o lote esperar indefinidamente pelo
@@ -230,6 +233,8 @@ def _pastas_metadados_catalogo():
     candidatas = [
         pathlib.Path(__file__).resolve().parent.parent / "livros" / "_metadados",
         pathlib.Path.cwd() / "livros" / "_metadados",
+        pathlib.Path.home() / "Library" / "Application Support"
+        / "Biblio Preparador" / "revista" / "livros" / "_metadados",
     ]
     vistas = set()
     for pasta in candidatas:
@@ -237,6 +242,181 @@ def _pastas_metadados_catalogo():
         if chave not in vistas and pasta.is_dir():
             vistas.add(chave)
             yield pasta
+
+
+def _normalizar_editora_chave(valor):
+    texto = limpar_editora_bibliografica(valor)
+    texto = re.sub(r"(?i)^(?:editora|editorial|edi[çc][õo]es|"
+                   r"ediciones|publisher|publishing|press)\s+", "", texto)
+    texto = re.sub(r"(?i)\s+(?:editora|editorial|edi[çc][õo]es|"
+                   r"ediciones|publisher|publishing|press)$", "", texto)
+    return identificar.normalizar(texto)
+
+
+def cidade_bibliograficamente_plausivel(valor):
+    cidade = " ".join(str(valor or "").split()).strip(" ,.;:-")
+    if not cidade or len(cidade) < 3:
+        return False
+    if re.search(r"(?i)^\[?\s*(?:s\.?\s*l\.?|sem\s+local)\s*\]?$", cidade):
+        return False
+    if re.search(r"(?i)^(?:s\.?\s*n\.?|sem\s+editora|editora)$", cidade):
+        return False
+    if re.search(r"[@:/\\]|www\.|https?", cidade, re.I):
+        return False
+    if len(cidade.split()) > 6:
+        return False
+    return True
+
+
+def carregar_editoras_cidades(atualizar=False):
+    """Tabela incremental editora -> cidade provável.
+
+    A tabela nasce de um JSON editável e é reforçada pelos metadados já
+    gerados. O retorno é conservador: associações únicas ficam registradas,
+    mas só entram como sugestão automática quando há recorrência ou cadastro
+    explícito.
+    """
+    global _CACHE_EDITORAS_CIDADES
+    if _CACHE_EDITORAS_CIDADES is not None and not atualizar:
+        return dict(_CACHE_EDITORAS_CIDADES)
+    dados = {"editoras": []}
+    try:
+        dados = json.loads(ARQUIVO_EDITORAS_CIDADES.read_text(encoding="utf-8"))
+    except (OSError, ValueError, json.JSONDecodeError):
+        pass
+
+    por_chave = {}
+    for item in dados.get("editoras", []):
+        editora = " ".join(str(item.get("editora", "")).split())
+        cidade = " ".join(str(item.get("cidade", "")).split())
+        if (not editora_bibliograficamente_plausivel(editora)
+                or not cidade_bibliograficamente_plausivel(cidade)):
+            continue
+        chave = _normalizar_editora_chave(editora)
+        if not chave:
+            continue
+        por_chave[chave] = {
+            "editora": editora,
+            "cidade": cidade,
+            "fonte": item.get("fonte", "cadastro local"),
+            "ocorrencias": int(item.get("ocorrencias", 1) or 1),
+            "confianca": item.get("confianca", "cadastro"),
+        }
+
+    observados = collections.defaultdict(collections.Counter)
+    formas = {}
+    for pasta in _pastas_metadados_catalogo():
+        for arquivo in pasta.glob("*.json"):
+            try:
+                meta = json.loads(arquivo.read_text(encoding="utf-8"))
+            except (OSError, ValueError, json.JSONDecodeError):
+                continue
+            editora = " ".join(str(meta.get("editora", "")).split())
+            cidade = " ".join(str(meta.get("lugar", "")
+                                  or meta.get("cidade", "")).split())
+            if (not editora_bibliograficamente_plausivel(editora)
+                    or not cidade_bibliograficamente_plausivel(cidade)):
+                continue
+            chave = _normalizar_editora_chave(editora)
+            if not chave:
+                continue
+            observados[chave][cidade] += 1
+            formas.setdefault(chave, editora)
+
+    for chave, cidades in observados.items():
+        cidade, ocorrencias = cidades.most_common(1)[0]
+        if chave in por_chave:
+            por_chave[chave]["ocorrencias_catalogo"] = sum(cidades.values())
+            continue
+        # Uma única ocorrência pode ser erro de OCR ou caso atípico. Duas ou
+        # mais já indicam padrão local; três ou mais entram com confiança alta.
+        if ocorrencias < 2:
+            continue
+        por_chave[chave] = {
+            "editora": formas.get(chave, chave),
+            "cidade": cidade,
+            "fonte": "metadados locais",
+            "ocorrencias": ocorrencias,
+            "confianca": "alta" if ocorrencias >= 3 else "media",
+        }
+    _CACHE_EDITORAS_CIDADES = dict(por_chave)
+    return dict(por_chave)
+
+
+def cidade_sugerida_por_editora(editora, tabela=None):
+    if not editora_bibliograficamente_plausivel(editora):
+        return {}
+    chave = _normalizar_editora_chave(editora)
+    if not chave:
+        return {}
+    tabela = tabela if tabela is not None else carregar_editoras_cidades()
+    item = tabela.get(chave)
+    if item:
+        return dict(item)
+    # Fallback suave para variações com/sem "Editora", Ltda., Brasil etc.
+    tokens = {p for p in chave.split() if len(p) > 2 and p not in {
+        "editora", "editorial", "edicoes", "publicacoes", "ltda", "brasil"}}
+    if len(tokens) < 2:
+        return {}
+    melhor = None
+    melhor_score = 0
+    for chave_tabela, candidato in tabela.items():
+        tc = {p for p in chave_tabela.split() if len(p) > 2}
+        score = len(tokens & tc) / max(1, len(tokens | tc))
+        if score > melhor_score:
+            melhor, melhor_score = candidato, score
+    return dict(melhor) if melhor and melhor_score >= 0.72 else {}
+
+
+def aplicar_lugar_por_editora(ficha):
+    """Preenche cidade ausente por tabela editora->cidade, sem sobrescrever."""
+    if not isinstance(ficha, dict) or ficha.get("lugar"):
+        return ficha
+    sugestao = cidade_sugerida_por_editora(ficha.get("editora", ""))
+    cidade = sugestao.get("cidade", "")
+    if cidade:
+        ficha["lugar"] = cidade
+        ficha["origem_lugar"] = "cidade sugerida pela editora conhecida"
+        ficha["fonte_lugar"] = sugestao.get("fonte", "")
+        ficha["confianca_lugar"] = sugestao.get("confianca", "")
+    return ficha
+
+
+def aprender_editora_cidade(editora, cidade, fonte="revisão/manual"):
+    """Acrescenta associação confirmada pelo operador ao JSON local."""
+    editora = " ".join(str(editora or "").split())
+    cidade = " ".join(str(cidade or "").split())
+    if (not editora_bibliograficamente_plausivel(editora)
+            or not cidade_bibliograficamente_plausivel(cidade)):
+        return False
+    chave = _normalizar_editora_chave(editora)
+    try:
+        dados = json.loads(ARQUIVO_EDITORAS_CIDADES.read_text(encoding="utf-8"))
+    except (OSError, ValueError, json.JSONDecodeError):
+        dados = {"versao": 1, "editoras": []}
+    itens = dados.setdefault("editoras", [])
+    for item in itens:
+        if _normalizar_editora_chave(item.get("editora", "")) == chave:
+            item["editora"] = item.get("editora") or editora
+            item["cidade"] = cidade
+            item["fonte"] = fonte
+            item["confianca"] = "revisada"
+            item["ocorrencias"] = int(item.get("ocorrencias", 0) or 0) + 1
+            break
+    else:
+        itens.append({
+            "editora": editora, "cidade": cidade, "fonte": fonte,
+            "confianca": "revisada", "ocorrencias": 1,
+        })
+    dados["atualizado_em"] = datetime.now().isoformat(timespec="seconds")
+    dados["editoras"] = sorted(
+        itens, key=lambda x: identificar.normalizar(x.get("editora", "")))
+    ARQUIVO_EDITORAS_CIDADES.write_text(
+        json.dumps(dados, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8")
+    global _CACHE_EDITORAS_CIDADES
+    _CACHE_EDITORAS_CIDADES = None
+    return True
 
 
 def carregar_periodicos_conhecidos(incluir_catalogo=True, atualizar=False):
@@ -3351,6 +3531,9 @@ def capa_tecnica_digitalizacao(capa_info):
 def editora_bibliograficamente_plausivel(editora):
     if not editora or len(editora.strip()) < 2:
         return False
+    if re.search(r"(?i)^\[?\s*(?:s\.?\s*n\.?|sem\s+editora)\s*\]?$",
+                 editora.strip()):
+        return False
     if editora.strip()[:1].islower():
         return False
     return not any("editora" in alerta for alerta in
@@ -3524,6 +3707,7 @@ def limpar_editora_bibliografica(valor):
         r"tem,?\s+assim,?\s+(?:grande\s+)?prazer|"
         r"todos\s+os\s+direitos|traduzido\s+por)\b", valor, maxsplit=1)[0]
     valor = re.split(r"(?i)\s*[-–:]?\s*ISBN\b", valor, maxsplit=1)[0]
+    valor = re.sub(r"\s*,\s*(?:1[5-9]|20)\d{2}\s*$", "", valor)
     return valor.strip(" ,.;:-")
 
 
@@ -6528,6 +6712,11 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
     # artigo não podem substituir essa procedência explícita.
     editora_final = escolher_editora_final(
         tipo_documento, editoras, api_por_isbn_exato=api_por_isbn_exato)
+    lugar_final = cip.get("cidade") or cp["cidade"]
+    lugar_sugerido = {}
+    if not lugar_final:
+        lugar_sugerido = cidade_sugerida_por_editora(editora_final)
+        lugar_final = lugar_sugerido.get("cidade", "")
     titulo = limpar_titulo_bibliografico(titulo, autor)
     titulo = limpar_titulo_com_editora_e_serie(titulo, editora_final)
     autores_estruturados = []
@@ -6596,7 +6785,11 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
                     edicao_catalografica(cip.get("edicao"), cp["edicao"])),
         "tradutor": (cip.get("tradutor") or cp["tradutor"]
                      or livro_word.get("tradutor", "")),
-        "lugar": cip.get("cidade") or cp["cidade"],   # Local de publicacao
+        "lugar": lugar_final,                  # Local de publicacao
+        "origem_lugar": ("cidade sugerida pela editora conhecida"
+                         if lugar_sugerido else ""),
+        "fonte_lugar": lugar_sugerido.get("fonte", ""),
+        "confianca_lugar": lugar_sugerido.get("confianca", ""),
         "local": "",                           # Estante fisica - so voce sabe
         "cdd": cip.get("cdd", ""),             # vem do DDC do bloco CIP
         "classificacao_original": cip.get("classificacao_original", ""),
