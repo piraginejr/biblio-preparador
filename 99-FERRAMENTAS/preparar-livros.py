@@ -3248,6 +3248,19 @@ def metadados_artigo_paginas(paginas, nome=""):
     if cabecalho_web:
         titulo_web = " ".join(cabecalho_web.group(1).split()).strip(" -|\u2022")
         autor_web = sobrenome_virgula(cabecalho_web.group(2).strip())
+    if not autor_web:
+        autor_rotulo = re.search(
+            r"(?im)^\s*(?:autor(?:es)?|author(?:s)?)\s*[:\\-–—]\s*"
+            r"([^\n|]{3,100})\s*$",
+            antes_resumo)
+        if autor_rotulo:
+            candidato = re.sub(
+                r"(?i)\s+(?:em|on)\s+\d{1,2}/\d{1,2}/(?:19|20)\d{2}.*$",
+                "", autor_rotulo.group(1)).strip(" .,:;-")
+            candidato = re.sub(r"(?i)\s*,?\s*(?:Ph\\.?D\\.?|D\\.?Min\\.?)$", "",
+                               candidato).strip(" .,:;-")
+            if autor_bibliograficamente_plausivel(candidato):
+                autor_web = sobrenome_virgula(candidato)
     # Cabeçalho acadêmico clássico: autores antes do título e Abstract logo
     # depois. Guarda o primeiro responsável no campo principal da API.
     if not autor_web:
@@ -3951,6 +3964,19 @@ def aplicar_cdd_sugerido_por_cdu(dados):
     return dados
 
 
+def extrair_classificacao_catalografica(texto):
+    """Extrai CDD/CDU mesmo quando o OCR separa letras ou usa travessão."""
+    m = re.search(
+        r"(?i)\b(C\s*D\s*D|C\s*D\s*U|CDD|CDU)\s*[-:–—]?\s*"
+        r"([0-9]{1,3}(?:[.\s-][0-9]+)*)",
+        texto or "")
+    if not m:
+        return "", ""
+    rotulo = re.sub(r"\s+", "", m.group(1).upper())
+    numero = m.group(2).strip()
+    return rotulo, numero
+
+
 def editora_por_assinatura_ocr(texto):
     compacto = re.sub(r"\s+", "", identificar.normalizar(texto or ""))
     for nome, assinatura in EDITORAS_POR_ASSINATURA:
@@ -4096,11 +4122,8 @@ def ler_cip(t):
             d["editora"] = limpar_editora_bibliografica(
                 antiga.group(4).strip(" ."))
             d["ano"] = antiga.group(5)
-        mclasse_antiga = re.search(
-            r"\b(CDD|CDU)\s*[-:]?\s*([0-9]{1,3}(?:[.\s-][0-9]+)*)",
-            plano, re.I)
-        if mclasse_antiga:
-            sigla, numero = mclasse_antiga.group(1).upper(), mclasse_antiga.group(2)
+        sigla, numero = extrair_classificacao_catalografica(plano)
+        if sigla:
             d["classificacao_original"] = f"{sigla} {numero.strip()}"
             if sigla == "CDD":
                 d["cdd"] = numero.replace("-", ".").replace(" ", "")
@@ -4251,7 +4274,8 @@ def ler_ficha_catalografica_simplificada(paginas):
     a trava que impede confundir uma referencia bibliografica comum.
     """
     for numero, texto in enumerate(paginas[:10], 1):
-        if not re.search(r"(?i)\bCDD\s*[-:]?\s*\d{3}", texto):
+        sigla_texto, _numero_texto = extrair_classificacao_catalografica(texto)
+        if sigla_texto != "CDD":
             continue
         plano = " ".join(texto.split())
         pub = re.search(
@@ -4282,7 +4306,7 @@ def ler_ficha_catalografica_simplificada(paginas):
         if autor:
             titulo = re.sub(r"(?i)^.*?" + re.escape(autor) + r"\s+", "", titulo)
         titulo = titulo[:1].upper() + titulo[1:]
-        mcdd = re.search(r"(?i)\bCDD\s*[-:]?\s*(\d{3}(?:\.\d+)?)", texto)
+        _sigla_cdd, numero_cdd = extrair_classificacao_catalografica(texto)
         assuntos = re.findall(r"(?:^|\s)\d+\.\s*([^\d]{3,80}?)(?=\s+\d+\.|\s+I\.\s*T[ií]tulo|$)",
                               plano)
         return {
@@ -4290,7 +4314,7 @@ def ler_ficha_catalografica_simplificada(paginas):
             "edicao": (pub.group(2) + "ª edição") if pub.group(2) else "",
             "cidade": pub.group(3).strip(), "editora": pub.group(4).strip(),
             "ano": pub.group(5), "paginas": pub.group(6),
-            "cdd": mcdd.group(1) if mcdd else "",
+            "cdd": numero_cdd.replace("-", ".").replace(" ", ""),
             "assuntos": "; ".join(
                 re.sub(r"(?i)\s+CDD\s*[-:].*$", "",
                        " ".join(x.split())).strip(" .")
@@ -4344,9 +4368,7 @@ def ler_ficha_catalografica_por_sinais(paginas):
         isbns = [(c["isbn"], c["rotulo"].lower())
                  for c in candidatos_isbn(texto)]
         mpag = re.search(r"\b(\d{1,5})\s*pp?\.?\b", texto, re.I)
-        mclasse = re.search(
-            r"\b(CDD|CDU)\s*[-:]?\s*([0-9]{1,3}(?:[.-][0-9]+)?)",
-            texto, re.I)
+        sigla_classe, numero_classe = extrair_classificacao_catalografica(texto)
         mautor = re.search(
             r"(?im)^\s*(?:[A-Z]\d{2,5}[a-z]?\s+)?"
             r"([A-ZÀ-Ü][\wÀ-ÿ'.’-]+),\s*"
@@ -4359,7 +4381,7 @@ def ler_ficha_catalografica_por_sinais(paginas):
             anos = [int(x) for x in re.findall(r"\b(?:19|20)\d{2}\b", texto)]
             ano = max(anos) if anos else None
         sinais = sum(bool(x) for x in (
-            editora, isbns, mpag, mclasse, autor, ano,
+            editora, isbns, mpag, sigla_classe, autor, ano,
             publicacao, titulo_citacao, autor_citacao))
         if sinais < 4 or not (autor or editora or publicacao):
             continue
@@ -4382,11 +4404,11 @@ def ler_ficha_catalografica_por_sinais(paginas):
             d["isbns"] = isbns
         if mpag:
             d["paginas"] = mpag.group(1)
-        if mclasse:
+        if sigla_classe:
             d["classificacao_original"] = (
-                f"{mclasse.group(1).upper()} {mclasse.group(2)}")
-            if mclasse.group(1).upper() == "CDD":
-                d["cdd"] = mclasse.group(2).replace("-", ".")
+                f"{sigla_classe} {numero_classe}")
+            if sigla_classe == "CDD":
+                d["cdd"] = numero_classe.replace("-", ".").replace(" ", "")
         if ano:
             d["ano"] = str(ano)
         return d

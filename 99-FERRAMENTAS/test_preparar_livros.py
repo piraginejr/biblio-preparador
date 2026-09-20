@@ -74,6 +74,23 @@ class PrepararLivrosTest(unittest.TestCase):
         self.assertTrue(prep.titulo_bibliograficamente_plausivel(
             "Os Moravianos e as Missões"))
 
+    def test_artigo_com_rotulo_autor_dois_pontos(self):
+        paginas = ["""21/02/15                                      OS MORAVIANOS E AS MISSÕES
+
+OS MORAVIANOS E AS MISSÕES
+Autor: Kenneth B. Mulholland
+
+William Carey é considerado o pai das missões Protestantes.
+"""]
+        dados = prep.metadados_artigo_paginas(paginas, nome="Os Moravianos e as Missões.pdf")
+        self.assertEqual("Mulholland, Kenneth B.", dados.get("autor"))
+
+    def test_cdd_com_letras_espacadas_e_travessao(self):
+        sigla, numero = prep.extrair_classificacao_catalografica(
+            "Batistas — Doutrinas. I. Título. C D D — 238.6")
+        self.assertEqual("CDD", sigla)
+        self.assertEqual("238.6", numero)
+
     def test_capa_tecnica_de_digitalizacao_e_ignorada(self):
         capa = {
             "titulo": "TEST TARGET (MT-3) I25 22 11.8 1.4 L125",
