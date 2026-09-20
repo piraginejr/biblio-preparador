@@ -1698,6 +1698,46 @@ def diagnosticar_tipo_material_revisao(c, ficha, registro, limite_paginas=12):
     }
 
 
+def _compactar_valor_revisao(valor, profundidade=0):
+    """Limita evidências enormes antes de enviá-las à bancada visual."""
+    if profundidade >= 4:
+        return "…"
+    if isinstance(valor, str):
+        texto = " ".join(valor.split())
+        return texto if len(texto) <= 600 else texto[:600].rstrip() + "…"
+    if isinstance(valor, (int, float, bool)) or valor is None:
+        return valor
+    if isinstance(valor, list):
+        limite = 25 if profundidade == 0 else 12
+        saida = [_compactar_valor_revisao(v, profundidade + 1)
+                 for v in valor[:limite]]
+        if len(valor) > limite:
+            saida.append(f"… {len(valor) - limite} item(ns) omitido(s)")
+        return saida
+    if isinstance(valor, dict):
+        preferidas = [
+            "titulo", "subtitulo", "autor", "autores", "nmAutor0",
+            "editora", "ano", "data", "isbn", "cdd", "CDD", "fonte",
+            "confianca", "origem", "motivo", "titulo_visual",
+            "pontuacao_revisao", "campos", "escolhido", "conciliado",
+            "pagina", "url",
+        ]
+        chaves = [k for k in preferidas if k in valor]
+        chaves += [k for k in valor.keys() if k not in chaves]
+        limite = 35 if profundidade == 0 else 18
+        saida = {}
+        for k in chaves[:limite]:
+            saida[k] = _compactar_valor_revisao(valor[k], profundidade + 1)
+        if len(chaves) > limite:
+            saida["_omitido"] = f"{len(chaves) - limite} campo(s)"
+        return saida
+    return str(valor)[:600]
+
+
+def _compactar_evidencias_revisao(evidencias):
+    return _compactar_valor_revisao(evidencias)
+
+
 def montar_pacote_revisao(c, digest, registro):
     """Dossiê único para a futura bancada visual de revisão."""
     ficha_path, ficha = _ler_ficha_registro(c, registro)
@@ -1724,7 +1764,8 @@ def montar_pacote_revisao(c, digest, registro):
         "ausencias": ausencias,
         "fontes_revisao": _partes_pipe(ficha.get("fontes_revisao", "")),
         "fontes_rejeitadas": ficha.get("fontes_rejeitadas", []) or [],
-        "evidencias": ficha.get("evidencias", []) or [],
+        "evidencias": _compactar_evidencias_revisao(
+            ficha.get("evidencias", []) or []),
         "paginas_sugeridas": paginas_sugeridas_revisao(c, ficha, registro),
         "busca_isbn": buscar_isbn_para_revisao(c, ficha, registro),
         "classificacao_material": diagnosticar_tipo_material_revisao(

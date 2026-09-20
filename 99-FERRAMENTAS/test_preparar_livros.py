@@ -61,6 +61,19 @@ class PrepararLivrosTest(unittest.TestCase):
         alertas = prep.alertas_plausibilidade_metadados(titulo, "", "")
         self.assertTrue(any("digitalização" in a for a in alertas))
 
+    def test_titulo_com_prosa_da_capa_deve_ser_substituivel(self):
+        titulo = (
+            "ofereceu mais da metade dos missionários Protestantes que "
+            "deixaram a Europa em todo o século XVIII. De fato a história "
+            "dos Moravianos antecede à Reforma. Conhecidos originalmente "
+            "como os Unitas Fratrum, ou a Unidade dos Irmãos, esses cristãos "
+            "Checos foram os seguidores do mártir John Huss"
+        )
+        self.assertFalse(prep.titulo_bibliograficamente_plausivel(titulo))
+        self.assertTrue(prep.titulo_parece_prosa_ou_artigo_inteiro(titulo))
+        self.assertTrue(prep.titulo_bibliograficamente_plausivel(
+            "Os Moravianos e as Missões"))
+
     def test_capa_tecnica_de_digitalizacao_e_ignorada(self):
         capa = {
             "titulo": "TEST TARGET (MT-3) I25 22 11.8 1.4 L125",
