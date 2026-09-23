@@ -268,6 +268,43 @@ def cidade_bibliograficamente_plausivel(valor):
     return True
 
 
+CIDADES_PUBLICACAO_COMUNS = {
+    "sao paulo", "rio de janeiro", "curitiba", "belo horizonte",
+    "brasilia", "goiania", "campinas", "santos", "recife", "salvador",
+    "fortaleza", "porto alegre", "belem", "londrina", "sao jose dos campos",
+    "niteroi", "petropolis", "viçosa", "vicosa", "wheaton", "grand rapids",
+    "nashville", "chicago", "new york", "london", "oxford", "cambridge",
+    "leicester", "downers grove", "philadelphia", "boston", "miami",
+    "barcelona", "madrid", "viladecavalls", "buenos aires", "bogota",
+    "lisboa", "paris", "geneva", "genebra",
+}
+
+
+def parece_nome_cidade_publicacao(valor):
+    texto = " ".join(str(valor or "").split()).strip(" ,.;:-")
+    if not cidade_bibliograficamente_plausivel(texto):
+        return False
+    n = identificar.normalizar(texto)
+    if n in CIDADES_PUBLICACAO_COMUNS:
+        return True
+    return bool(re.search(
+        r"(?i)^(?:s[ãa]o|santo|santa|new|rio|belo|grand|downers|"
+        r"buenos|porto)\s+[A-ZÁ-Úa-zá-ú .'-]{3,40}$",
+        texto))
+
+
+def corrigir_editora_lugar(editora, lugar):
+    """Corrige inversão frequente: cidade no campo editora e editora no lugar."""
+    editora = " ".join(str(editora or "").split()).strip(" ,.;:-")
+    lugar = " ".join(str(lugar or "").split()).strip(" ,.;:-")
+    if editora and parece_nome_cidade_publicacao(editora):
+        if lugar and editora_bibliograficamente_plausivel(lugar):
+            return lugar, editora, "campos editora/lugar invertidos"
+        if not lugar:
+            return "", editora, "cidade capturada no campo editora"
+    return editora, lugar, ""
+
+
 def carregar_editoras_cidades(atualizar=False):
     """Tabela incremental editora -> cidade provável.
 
@@ -1908,6 +1945,22 @@ def ler_copyright(t):
     else:
         d["tradutor"] = tradutor
     return d
+
+
+def copyright_parece_da_edicao_original(cp):
+    """Indica tradução quando copyright descreve original, não a edição local."""
+    if not isinstance(cp, dict):
+        return False
+    texto = json.dumps(cp, ensure_ascii=False)
+    return bool(
+        cp.get("titulo_original")
+        or cp.get("tradutor")
+        or re.search(
+            r"(?i)\b(?:original(?:ly)?\s+published|t[íi]tulo\s+original|"
+            r"t[íi]tulo\s+del\s+original|tradu(?:c|ç)(?:i[óo]n|[ãa]o)|"
+            r"translated\s+by|edici[óo]n\s+en\s+castellano|"
+            r"edi[çc][ãa]o\s+em\s+portugu[êe]s|[ée]dition\s+fran[çc]aise)\b",
+            texto))
 
 
 def _titulo_documental_do_inicio(paginas):
@@ -3562,6 +3615,8 @@ def editora_bibliograficamente_plausivel(editora):
     if re.search(r"(?i)^\[?\s*(?:s\.?\s*n\.?|sem\s+editora)\s*\]?$",
                  editora.strip()):
         return False
+    if parece_nome_cidade_publicacao(editora):
+        return False
     if editora.strip()[:1].islower():
         return False
     return not any("editora" in alerta for alerta in
@@ -4846,10 +4901,10 @@ def titulo_autor_por_byline_folha(titulo_folha):
         return "", ""
     m = re.search(
         r"(?i)^(.{3,160}?)\s+"
-        r"(?:pelo|pela|por)\s+"
+        r"(?:pelo|pela|por|by)\s+"
         r"(?:(?:dr|dra|pr|pra|rev|reva|pastor|pastora)\.?\s+)?"
-        r"([A-ZÀ-Ü][A-Za-zÀ-ÿ'.-]+(?:\s+[A-ZÀ-Ü]"
-        r"[A-Za-zÀ-ÿ'.-]+){0,5})\s*$",
+        r"((?:(?:[A-Z]\.\s*){1,4})?[A-ZÀ-Ü][A-Za-zÀ-ÿ'.-]+"
+        r"(?:\s+(?:[A-Z]\.|[A-ZÀ-Ü][A-Za-zÀ-ÿ'.-]+)){0,5})\s*$",
         texto)
     if not m:
         return "", ""
@@ -4862,6 +4917,34 @@ def titulo_autor_por_byline_folha(titulo_folha):
     if not autor or identificar.INSTITUICAO.search(autor):
         return "", ""
     return titulo, sobrenome_virgula(autor)
+
+
+def autor_byline_nas_paginas_iniciais(paginas, titulo=""):
+    """Captura autoria em linha própria: ``by A. B. Bruce``."""
+    titulo_norm = identificar.normalizar(titulo or "")
+    for texto in list(paginas or [])[:5]:
+        linhas = [" ".join(l.split()).strip(" .,:;-")
+                  for l in texto.splitlines() if l.strip()]
+        for i, linha in enumerate(linhas[:12]):
+            m = re.match(
+                r"(?i)^by\s+((?:(?:[A-Z]\.\s*){1,4})?"
+                r"[A-ZÀ-Ü][A-Za-zÀ-ÿ'.-]+(?:\s+(?:[A-Z]\.|"
+                r"[A-ZÀ-Ü][A-Za-zÀ-ÿ'.-]+)){0,5})$",
+                linha)
+            if not m:
+                continue
+            antes = " ".join(linhas[max(0, i - 4):i])
+            if titulo_norm:
+                antes_norm = identificar.normalizar(antes)
+                tokens_titulo = {p for p in titulo_norm.split() if len(p) > 3}
+                tokens_antes = {p for p in antes_norm.split() if len(p) > 3}
+                if tokens_titulo and len(tokens_titulo & tokens_antes) < min(
+                        2, len(tokens_titulo)):
+                    continue
+            autor = " ".join(m.group(1).split()).strip()
+            if autor_bibliograficamente_plausivel(autor):
+                return sobrenome_virgula(autor)
+    return ""
 
 
 def autor_da_serie_obras(paginas, nome_arquivo=""):
@@ -5780,6 +5863,7 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
            or ano_publicacao(t_bibliografico)
            or ano_romano_editorial(t_bibliografico))
     cp  = ler_copyright(t_bibliografico)
+    copyright_original = copyright_parece_da_edicao_original(cp)
     cip = combinar_fichas_catalograficas(
         ler_cip_paginas(paginas_bibliograficas),
         ler_ficha_catalografica_simplificada(paginas_bibliograficas),
@@ -5803,6 +5887,11 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
             paginas, aut_nome, pagina_titulo=pag_tit)
     tipo_documento, autor_rotulado = tipo_documento_e_autor(
         t, paginas, metadados=doc, nome=nome, origem_word=origem_word)
+    autor_byline_folha = autor_byline_nas_paginas_iniciais(
+        paginas, tit_pag or tit_nome)
+    if (not autor_rotulado and autor_byline_folha
+            and tipo_documento in {"livro", "coletânea"}):
+        autor_rotulado = autor_byline_folha
     if (not autor_rotulado and autor_folha_confirmado
             and tipo_documento in {"livro", "coletânea"}):
         autor_rotulado = autor_folha_confirmado
@@ -6782,6 +6871,10 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
         "institucional": limpar_editora_bibliografica(editora_institucional),
         "folha_word": limpar_editora_bibliografica(livro_word.get("editora", "")),
     }
+    if copyright_original and any(editoras.get(k) for k in (
+            "cip", "capa", "artigo", "academico", "api",
+            "institucional", "folha_word")):
+        editoras["copyright"] = ""
     editoras = {k: v for k, v in editoras.items()
                 if editora_bibliograficamente_plausivel(v)}
     # Em impressão de página web, o domínio identifica a instituição
@@ -6789,16 +6882,26 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
     # artigo não podem substituir essa procedência explícita.
     editora_final = escolher_editora_final(
         tipo_documento, editoras, api_por_isbn_exato=api_por_isbn_exato)
-    lugar_final = cip.get("cidade") or cp["cidade"]
+    lugar_final = cip.get("cidade") or ("" if copyright_original else cp["cidade"])
     lugar_sugerido = {}
     if not lugar_final:
         lugar_sugerido = cidade_sugerida_por_editora(editora_final)
         lugar_final = lugar_sugerido.get("cidade", "")
+    editora_final, lugar_corrigido, motivo_lugar_corrigido = (
+        corrigir_editora_lugar(editora_final, lugar_final))
+    if motivo_lugar_corrigido:
+        lugar_final = lugar_corrigido
+        lugar_sugerido = {
+            "fonte": "validação automática",
+            "confianca": "alta",
+            "motivo": motivo_lugar_corrigido,
+        }
     titulo_pre_limpeza = titulo
     titulo = limpar_titulo_bibliografico(titulo, autor)
     _titulo_sem_edicao, edicao_embutida_titulo = (
         separar_edicao_embutida_titulo(titulo_pre_limpeza))
     titulo = limpar_titulo_com_editora_e_serie(titulo, editora_final)
+    ano_sem_copyright_original = "" if copyright_original else ano
     autores_estruturados = []
     if api_por_isbn_exato or api_por_titulo_autor:
         autores_estruturados = autores_com_papeis(
@@ -6846,7 +6949,8 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
                     or (cip.get("ano") if cip.get("formato_cip") in
                      ("brasileira", "brasileira antiga",
                       "ficha antiga sem cabeçalho") else "")
-                    or artigo.get("ano", "") or ano or cip.get("ano")
+                    or artigo.get("ano", "") or ano_sem_copyright_original
+                    or cip.get("ano")
                     or api.get("ano", "")
                     or ("[s.d.]" if livro_word.get("titulo")
                         and livro_word.get("editora") else "")),
@@ -6868,7 +6972,8 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
         "tradutor": (cip.get("tradutor") or cp["tradutor"]
                      or livro_word.get("tradutor", "")),
         "lugar": lugar_final,                  # Local de publicacao
-        "origem_lugar": ("cidade sugerida pela editora conhecida"
+        "origem_lugar": (lugar_sugerido.get("motivo")
+                         or "cidade sugerida pela editora conhecida"
                          if lugar_sugerido else ""),
         "fonte_lugar": lugar_sugerido.get("fonte", ""),
         "confianca_lugar": lugar_sugerido.get("confianca", ""),
