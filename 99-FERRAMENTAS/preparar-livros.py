@@ -1708,7 +1708,9 @@ def ano_publicacao(t):
         if re.search(r"(?i)biblia|bible|esv|niv\b|nvi\b|reina.?valera|"
                      r"escrituras|scripture|ilustra|imagen de portada|"
                      r"cover (?:image|design)|marca registrada|\bcf\.|\bpp?\.|"
-                     r"refer[êe]ncias? bibliogr[áa]ficas?", contexto):
+                     r"refer[êe]ncias? bibliogr[áa]ficas?|"
+                     r"first\s+appeared|receiving\s+notice\s+from\s+the\s+publisher",
+                     contexto):
             continue
         for achado in re.finditer(r"\b((?:1[6-9]|20)\d{2})\b", contexto):
             # Em fichas CIP, "Payne, Tony, 1962-" e data de nascimento,
@@ -1977,25 +1979,73 @@ def ler_ficha_tecnica_rotulada_paginas(paginas):
         "lc call no": "classificacao_original",
         "lc call no.": "classificacao_original",
         "lc call number": "classificacao_original",
+        "date published": "ano",
+        "publication date": "ano",
+        "date created": "data_criacao_digital",
     }
     for numero, texto in enumerate((paginas or [])[:12], 1):
         valores = {}
         linhas = [" ".join(linha.split()).strip()
                   for linha in str(texto or "").splitlines()]
+        linhas = [linha for linha in linhas if linha]
+
+        def guardar_rotulo_valor(rotulo_bruto, valor_bruto):
+            rotulo = identificar.normalizar(rotulo_bruto)
+            rotulo = rotulo.replace(" ", " ").strip()
+            campo = rotulos.get(rotulo)
+            if not campo:
+                return
+            valor = " ".join(str(valor_bruto or "").split()).strip(" .,:;")
+            if valor:
+                valores[campo] = valor
+
         for linha in linhas:
             m = re.match(
                 r"(?i)^([A-Za-zÀ-ÿ() .]{2,28})\s*:\s*(.{1,220})$",
                 linha)
             if not m:
                 continue
-            rotulo = identificar.normalizar(m.group(1))
-            rotulo = rotulo.replace(" ", " ").strip()
-            campo = rotulos.get(rotulo)
-            if not campo:
+            guardar_rotulo_valor(m.group(1), m.group(2))
+
+        # Em PDFs gerados por bibliotecas digitais, o pdftotext pode separar
+        # uma tabela em duas colunas verticais:
+        #   Title:
+        #   URL:
+        #   Author(s):
+        #
+        #   Training of the Twelve
+        #   http://...
+        #   Bruce, A.B.
+        # Esse caso parecia perfeito na tela, mas a regra "rótulo: valor"
+        # não o enxergava. Pareamos a sequência de rótulos com a sequência
+        # de valores imediatamente seguinte.
+        for i, linha in enumerate(linhas):
+            if not re.match(r"(?i)^[A-Za-zÀ-ÿ() .]{2,28}:\s*$", linha):
                 continue
-            valor = " ".join(m.group(2).split()).strip(" .,:;")
-            if valor:
-                valores[campo] = valor
+            rotulos_bloco = []
+            j = i
+            while j < len(linhas):
+                mrot = re.match(r"(?i)^([A-Za-zÀ-ÿ() .]{2,28}):\s*$",
+                                linhas[j])
+                if not mrot:
+                    break
+                if identificar.normalizar(mrot.group(1)) not in rotulos:
+                    break
+                rotulos_bloco.append(mrot.group(1))
+                j += 1
+            if len(rotulos_bloco) < 2:
+                continue
+            valores_bloco = []
+            k = j
+            while k < len(linhas) and len(valores_bloco) < len(rotulos_bloco):
+                if re.match(r"(?i)^[A-Za-zÀ-ÿ() .]{2,28}:\s*$", linhas[k]):
+                    break
+                valores_bloco.append(linhas[k])
+                k += 1
+            if len(valores_bloco) >= min(3, len(rotulos_bloco)):
+                for rotulo, valor in zip(rotulos_bloco, valores_bloco):
+                    guardar_rotulo_valor(rotulo, valor)
+                break
         if not valores:
             continue
 
@@ -2038,6 +2088,12 @@ def ler_ficha_tecnica_rotulada_paginas(paginas):
             d["classificacao_original"] = valores["classificacao_original"]
         if valores.get("url"):
             d["url_fonte"] = valores["url"]
+        if valores.get("data_criacao_digital"):
+            d["data_criacao_digital"] = valores["data_criacao_digital"]
+        if valores.get("ano"):
+            mano = re.search(r"\b((?:1[5-9]|20)\d{2})\b", valores["ano"])
+            if mano:
+                d["ano"] = mano.group(1)
 
         sinais = sum(bool(d.get(campo)) for campo in (
             "titulo", "autor", "editora", "cidade", "assuntos",
