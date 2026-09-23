@@ -44,6 +44,23 @@ class PrepararLivrosTest(unittest.TestCase):
         self.assertEqual("240", dados["cdd_sugerido"])
         self.assertIn("CDU 27-4", dados["fonte_cdd_sugerido"])
 
+    def test_ficha_tecnica_rotulada_em_ingles_recupera_editora(self):
+        paginas = ["""About Training of the Twelve by A.B. Bruce
+         Title:   Training of the Twelve
+         URL:     http://www.ccel.org/ccel/bruce/twelve.html
+    Author(s):    Bruce, A.B.
+    Publisher:    Grand Rapids, MI: Christian Classics Ethereal Library
+CCEL Subjects:    All; Bibles; Biography;
+   LC Call no:    BS2440.B7
+"""]
+        dados = prep.ler_ficha_tecnica_rotulada_paginas(paginas)
+        self.assertEqual("Training of the Twelve", dados["titulo"])
+        self.assertEqual("Bruce, A.B", dados["autor"])
+        self.assertEqual("Grand Rapids", dados["cidade"])
+        self.assertEqual("Christian Classics Ethereal Library",
+                         dados["editora"])
+        self.assertEqual("BS2440.B7", dados["classificacao_original"])
+
     def test_documento_pronto_especifico_e_valido_para_api(self):
         ficha = {
             "tipo_documento": "documento",

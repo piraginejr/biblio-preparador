@@ -1947,6 +1947,106 @@ def ler_copyright(t):
     return d
 
 
+def ler_ficha_tecnica_rotulada_paginas(paginas):
+    """Lê páginas técnicas com rótulos explícitos.
+
+    Alguns livros antigos em inglês, especialmente cópias de bibliotecas
+    digitais, não trazem uma CIP formal. Em vez disso, a segunda página pode
+    declarar campos como ``Title:``, ``Author(s):`` e ``Publisher:``. Esses
+    rótulos são mais confiáveis que a capa OCRizada e não devem ficar de fora
+    apenas porque o cabeçalho "Cataloging in Publication" não existe.
+    """
+    rotulos = {
+        "title": "titulo",
+        "título": "titulo",
+        "titulo": "titulo",
+        "author": "autor",
+        "authors": "autor",
+        "author(s)": "autor",
+        "author s": "autor",
+        "autor": "autor",
+        "autores": "autor",
+        "publisher": "editora",
+        "published by": "editora",
+        "editora": "editora",
+        "publicado por": "editora",
+        "url": "url",
+        "ccel subjects": "assuntos",
+        "subjects": "assuntos",
+        "assuntos": "assuntos",
+        "lc call no": "classificacao_original",
+        "lc call no.": "classificacao_original",
+        "lc call number": "classificacao_original",
+    }
+    for numero, texto in enumerate((paginas or [])[:12], 1):
+        valores = {}
+        linhas = [" ".join(linha.split()).strip()
+                  for linha in str(texto or "").splitlines()]
+        for linha in linhas:
+            m = re.match(
+                r"(?i)^([A-Za-zÀ-ÿ() .]{2,28})\s*:\s*(.{1,220})$",
+                linha)
+            if not m:
+                continue
+            rotulo = identificar.normalizar(m.group(1))
+            rotulo = rotulo.replace(" ", " ").strip()
+            campo = rotulos.get(rotulo)
+            if not campo:
+                continue
+            valor = " ".join(m.group(2).split()).strip(" .,:;")
+            if valor:
+                valores[campo] = valor
+        if not valores:
+            continue
+
+        d = {
+            "pagina_cip": numero,
+            "formato_cip": "ficha técnica rotulada",
+        }
+        titulo = valores.get("titulo", "")
+        if titulo_bibliograficamente_plausivel(titulo):
+            d["titulo"] = titulo
+        autor = valores.get("autor", "")
+        if autor:
+            autor = re.split(r";|\s+\|\s+|\s+and\s+", autor, maxsplit=1,
+                             flags=re.I)[0]
+            autor = re.sub(r"\bet\s+al\.?$", "", autor, flags=re.I)
+            autor = re.sub(r"\b([A-Z])\.([A-Z])\.", r"\1. \2.", autor)
+            autor = autor.strip(" .,:;")
+            if autor_bibliograficamente_plausivel(autor):
+                d["autor"] = sobrenome_virgula(autor)
+        editora = valores.get("editora", "")
+        if editora:
+            # Ex.: "Grand Rapids, MI: Christian Classics Ethereal Library"
+            # A parte antes dos dois-pontos é local; a parte depois é editora.
+            m_pub = re.match(r"^([^:]{2,80})\s*:\s*(.{2,120})$", editora)
+            if m_pub:
+                cidade = re.sub(r",\s*[A-Z]{2}\b.*$", "",
+                                m_pub.group(1)).strip(" .,:;")
+                editora = m_pub.group(2).strip(" .,:;")
+                if cidade:
+                    d["cidade"] = cidade
+            editora = limpar_editora_bibliografica(editora)
+            if editora_bibliograficamente_plausivel(editora):
+                d["editora"] = editora
+        if valores.get("assuntos"):
+            assuntos = re.sub(r"(?i)\blcsh\s*:\s*", "", valores["assuntos"])
+            d["assuntos"] = "; ".join(
+                p.strip(" .,:;") for p in re.split(r";|\|", assuntos)
+                if p.strip(" .,:;"))[:200]
+        if valores.get("classificacao_original"):
+            d["classificacao_original"] = valores["classificacao_original"]
+        if valores.get("url"):
+            d["url_fonte"] = valores["url"]
+
+        sinais = sum(bool(d.get(campo)) for campo in (
+            "titulo", "autor", "editora", "cidade", "assuntos",
+            "classificacao_original", "url_fonte"))
+        if sinais >= 3 and (d.get("titulo") or d.get("autor")):
+            return d
+    return {}
+
+
 def copyright_parece_da_edicao_original(cp):
     """Indica tradução quando copyright descreve original, não a edição local."""
     if not isinstance(cp, dict):
@@ -5904,6 +6004,12 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
         ler_ficha_catalografica_simplificada(paginas_bibliograficas),
         ler_ficha_catalografica_por_sinais(
             paginas[:PAGS_BIBLIOGRAFICAS]))
+    ficha_rotulada = ler_ficha_tecnica_rotulada_paginas(
+        paginas_bibliograficas)
+    if ficha_rotulada:
+        for campo, valor in ficha_rotulada.items():
+            if valor not in (None, "", []) and not cip.get(campo):
+                cip[campo] = valor
     dc_institucional = ler_dcip_institucional_paginas(
         paginas[:PAGS_BIBLIOGRAFICAS])
     if dc_institucional:
