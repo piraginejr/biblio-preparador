@@ -61,6 +61,38 @@ CCEL Subjects:    All; Bibles; Biography;
                          dados["editora"])
         self.assertEqual("BS2440.B7", dados["classificacao_original"])
 
+    def test_ficha_tecnica_rotulada_em_colunas_recupera_editora(self):
+        paginas = ["""About Training of the Twelve by A.B. Bruce
+Title:
+URL:
+Author(s):
+Publisher:
+Date Created:
+CCEL Subjects:
+LC Call no:
+
+Training of the Twelve
+http://www.ccel.org/ccel/bruce/twelve.html
+Bruce, A.B.
+Grand Rapids, MI: Christian Classics Ethereal Library
+2000-07-09
+All; Bibles; Biography;
+BS2440.B7
+"""]
+        dados = prep.ler_ficha_tecnica_rotulada_paginas(paginas)
+        self.assertEqual("Training of the Twelve", dados["titulo"])
+        self.assertEqual("Bruce, A.B", dados["autor"])
+        self.assertEqual("Grand Rapids", dados["cidade"])
+        self.assertEqual("Christian Classics Ethereal Library",
+                         dados["editora"])
+        self.assertEqual("2000-07-09", dados["data_criacao_digital"])
+        self.assertNotIn("ano", dados)
+
+    def test_ano_publicacao_nao_usa_first_appeared_como_data_da_edicao(self):
+        texto = """ON receiving notice from the publisher that a second edition
+of The Training of the Twelve which first appeared in 1871, was called for"""
+        self.assertIsNone(prep.ano_publicacao(texto))
+
     def test_documento_pronto_especifico_e_valido_para_api(self):
         ficha = {
             "tipo_documento": "documento",
