@@ -9,6 +9,7 @@ cache local.
 
 import argparse
 import getpass
+import html
 import hashlib
 import json
 import os
@@ -43,6 +44,7 @@ GOOGLE_BOOKS_URL = "https://www.googleapis.com/books/v1/volumes"
 # o gateway SRU oficial na porta 210 é o endpoint funcional.
 LOC_SRU_URL = "http://lx2.loc.gov:210/lcdb"
 HATHITRUST_URL = "https://catalog.hathitrust.org/api/volumes/full/isbn/{isbn}.json"
+ISBNSEARCH_URL = "https://www.isbnsearch.org/isbn/{isbn}"
 CROSSREF_URL = "https://api.crossref.org/works"
 OPENALEX_URL = "https://api.openalex.org/works"
 CORE_URL = "https://api.core.ac.uk/v3/search/works"
@@ -206,6 +208,78 @@ def _salvar_cache_texto(arquivo, fonte, titulo, autor, resultado):
     tmp.write_text(json.dumps(pacote, ensure_ascii=False, indent=2),
                    encoding="utf-8")
     os.replace(tmp, arquivo)
+
+
+def _texto_html(valor):
+    texto = re.sub(r"(?is)<script.*?</script>|<style.*?</style>", " ", str(valor or ""))
+    texto = re.sub(r"(?s)<[^>]+>", " ", texto)
+    return " ".join(html.unescape(texto).split())
+
+
+def _parse_isbnsearch(texto, isbn):
+    """Extrai a ficha pública do ISBNsearch quando APIs catalográficas falham."""
+    bloco = re.search(r'(?is)<div[^>]+class=["\']bookinfo["\'][^>]*>(.*?)</div>',
+                      texto or "")
+    area = bloco.group(1) if bloco else (texto or "")
+    titulo = ""
+    m_titulo = re.search(r"(?is)<h1[^>]*>(.*?)</h1>", area)
+    if m_titulo:
+        titulo = _texto_html(m_titulo.group(1))
+        titulo = re.sub(r"\s*\((?:Hardcover|Paperback|Mass Market Paperback|"
+                        r"eBook|Kindle Edition|Capa comum|Capa dura)\)\s*$",
+                        "", titulo, flags=re.I).strip()
+    campos = {}
+    for m in re.finditer(
+            r"(?is)<p>\s*<strong>\s*([^:<]+(?:-[0-9]+)?):\s*</strong>\s*(.*?)</p>",
+            area):
+        rotulo = _texto_html(m.group(1)).lower()
+        valor = _texto_html(m.group(2))
+        campos[rotulo] = valor
+    if not titulo and not campos:
+        return {}
+    publicado = campos.get("published", "")
+    ano = (re.search(r"\b((?:18|19|20)\d{2})\b", publicado)
+           or [None, ""])[1]
+    isbn_13 = normalizar_isbn(campos.get("isbn-13", ""))
+    isbn_10 = normalizar_isbn(campos.get("isbn-10", ""))
+    return {
+        "titulo": titulo,
+        "subtitulo": "",
+        "autores": campos.get("author", ""),
+        "editora": campos.get("publisher", ""),
+        "ano": ano,
+        "data": publicado,
+        "paginas": "",
+        "assuntos": "",
+        "isbn": isbn_13 or isbn_10 or isbn,
+        "isbn_10": isbn_10,
+        "isbn_13": isbn_13,
+        "encadernacao": campos.get("binding", ""),
+        "identificador_fonte": ISBNSEARCH_URL.format(isbn=isbn),
+        "fonte": "ISBNsearch",
+    }
+
+
+def consultar_isbnsearch(isbn, pasta_cache, sessao=None, atualizar=False):
+    numero = normalizar_isbn(isbn)
+    if not requests or len(numero) not in (10, 13):
+        return {}
+    arquivo = _arquivo_cache(pasta_cache, "isbnsearch", numero)
+    if arquivo.exists() and not atualizar:
+        cache = _ler_cache(arquivo, numero)
+        if cache is not None:
+            return cache
+    sessao = sessao or requests.Session()
+    sessao.headers.setdefault("User-Agent", USER_AGENT)
+    try:
+        _esperar("isbnsearch")
+        resposta = sessao.get(ISBNSEARCH_URL.format(isbn=numero), timeout=25)
+        resposta.raise_for_status()
+        resultado = _parse_isbnsearch(resposta.text, numero)
+        _salvar_cache(arquivo, numero, "ISBNsearch", resultado)
+        return resultado
+    except Exception:
+        return {}
 
 
 def _texto(no, nome):

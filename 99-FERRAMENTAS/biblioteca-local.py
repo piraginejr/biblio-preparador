@@ -1535,6 +1535,8 @@ def _pontuar_fonte_isbn(fonte):
         pontos += 3
     elif "Library of Congress" in nome:
         pontos += 2
+    elif "ISBNsearch" in nome:
+        pontos += 2
     elif "Google" in nome or "OpenLibrary" in nome or "Open Library" in nome:
         pontos += 1
     return pontos
@@ -1614,6 +1616,9 @@ def consultar_metadados_isbn_revisao(raiz, isbn, arquivo="", atualizar=False,
                numero, cache, sessao, atualizar)
         tentar("HathiTrust", prep.fontes_biblio.consultar_hathitrust,
                numero, cache, sessao, atualizar)
+        if hasattr(prep.fontes_biblio, "consultar_isbnsearch"):
+            tentar("ISBNsearch", prep.fontes_biblio.consultar_isbnsearch,
+                   numero, cache, sessao, atualizar)
         try:
             candidatos_bnf = prep.fontes_biblio.consultar_bnf(
                 numero, cache, sessao, atualizar)
