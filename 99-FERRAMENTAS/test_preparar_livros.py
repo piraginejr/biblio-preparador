@@ -93,6 +93,25 @@ BS2440.B7
 of The Training of the Twelve which first appeared in 1871, was called for"""
         self.assertIsNone(prep.ano_publicacao(texto))
 
+    def test_folha_rosto_antiga_recupera_editora_cidade_ano(self):
+        paginas = ["""THE BOOK OF REVELATION
+A SERIES OF OUTLINE STUDIES IN THE
+APOCALYPSE
+By
+JAMES H. McCONKEY
+42nd Thousand
+1921
+SILVER PUBLISHING COMPANY
+1018 Bessemer BUILDING
+PITTSBURGH, PA. U. S. A.
+"""]
+        dados = prep.metadados_folha_rosto_editorial_antiga(paginas)
+        self.assertEqual("Silver Publishing Company", dados["editora"])
+        self.assertEqual("Pittsburgh", dados["cidade"])
+        self.assertEqual("1921", dados["ano"])
+        self.assertEqual("McCONKEY, JAMES H.", dados["autor"])
+        self.assertIn("THE BOOK OF REVELATION", dados["titulo"])
+
     def test_documento_pronto_especifico_e_valido_para_api(self):
         ficha = {
             "tipo_documento": "documento",

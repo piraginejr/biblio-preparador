@@ -3821,7 +3821,8 @@ def escolher_editora_final(tipo_documento, editoras,
     return (editoras.get("cip") or editoras.get("copyright")
             or editoras.get("capa") or editoras.get("artigo")
             or editoras.get("academico") or editoras.get("api")
-            or editoras.get("folha_word") or editoras.get("institucional", ""))
+            or editoras.get("folha_word") or editoras.get("folha_rosto")
+            or editoras.get("institucional", ""))
 
 
 def limpar_titulo_com_editora_e_serie(titulo, editora):
@@ -4877,6 +4878,111 @@ def ler_folha_rosto(f, autor_conhecido="", pistas=()):
         if not (sig & tit):
             r["titulo"] = ""
     return r
+
+
+def metadados_folha_rosto_editorial_antiga(paginas):
+    """Extrai dados editoriais de folha de rosto antiga digitalizada.
+
+    Obras devocionais antigas sem ISBN/CIP frequentemente trazem tudo numa
+    única folha de rosto:
+
+        THE BOOK OF REVELATION
+        A SERIES OF OUTLINE STUDIES IN THE
+        APOCALYPSE
+        By
+        JAMES H. McCONKEY
+        42nd Thousand
+        1921
+        SILVER PUBLISHING COMPANY
+        1018 Bessemer Building
+        PITTSBURGH, PA., U. S. A.
+
+    Essa informação não é "copyright" nem CIP, mas é a própria página
+    editorial da edição. Deve preencher editora, cidade e ano quando o OCR
+    visual a recupera.
+    """
+    for numero, texto in enumerate((paginas or [])[:8], 1):
+        linhas = [" ".join(l.split()).strip(" .,:;")
+                  for l in str(texto or "").splitlines()]
+        linhas = [l for l in linhas if l]
+        if len(linhas) < 5:
+            continue
+
+        editora = ""
+        idx_editora = None
+        for i, linha in enumerate(linhas):
+            if re.search(
+                    r"(?i)\b(?:publishing\s+company|publishing|publisher|"
+                    r"press|book\s+house|books|publications)\b", linha):
+                if not re.search(r"(?i)\b(?:free|write|address|sent|leaflet)\b",
+                                 linha):
+                    editora = limpar_editora_bibliografica(linha)
+                    if editora.isupper():
+                        editora = identificar.caixa_normal(editora)
+                    idx_editora = i
+                    break
+        if not editora_bibliograficamente_plausivel(editora):
+            continue
+
+        ano = ""
+        for linha in linhas[max(0, (idx_editora or 0) - 4):(idx_editora or 0) + 2]:
+            m = re.search(r"\b((?:18|19|20)\d{2})\b", linha)
+            if m:
+                ano = m.group(1)
+                break
+
+        cidade = ""
+        for linha in linhas[(idx_editora or 0) + 1:(idx_editora or 0) + 5]:
+            # remove endereço antes de procurar a cidade
+            if re.search(r"(?i)\b(?:building|street|st\.?|avenue|ave\.?|"
+                         r"road|rd\.?|box|p\.?\s*o\.?)\b", linha):
+                continue
+            mcidade = re.match(
+                r"(?i)^([A-Z][A-Z .'-]{2,40}),\s*"
+                r"(?:[A-Z]{2}|[A-Z][a-z]{1,12}\.?)\b", linha)
+            if mcidade:
+                cidade = mcidade.group(1).title()
+                cidade_norm = identificar.normalizar(cidade)
+                if cidade_norm in {"pittsburge", "pittsburg", "pittsburgh"}:
+                    cidade = "Pittsburgh"
+                break
+
+        autor = ""
+        for i, linha in enumerate(linhas[:12]):
+            if re.fullmatch(r"(?i)by|por|pelo|pela", linha) and i + 1 < len(linhas):
+                candidato = linhas[i + 1]
+                if autor_bibliograficamente_plausivel(candidato):
+                    autor = sobrenome_virgula(candidato)
+                break
+
+        titulo = ""
+        if autor:
+            idx_by = next((i for i, linha in enumerate(linhas[:12])
+                           if re.fullmatch(r"(?i)by|por|pelo|pela", linha)),
+                          None)
+            if idx_by and idx_by >= 1:
+                cand_linhas = [
+                    l for l in linhas[:idx_by]
+                    if not re.search(r"(?i)^(?:the|a|an)?\s*$", l)
+                    and not re.fullmatch(r"\d+(?:st|nd|rd|th)?\s+thousand",
+                                         l, re.I)
+                ]
+                titulo = " ".join(cand_linhas[:4]).strip(" .,:;")
+                titulo = limpar_titulo_bibliografico(titulo, autor)
+                if not titulo_bibliograficamente_plausivel(titulo):
+                    titulo = ""
+
+        dados = {
+            "pagina": numero,
+            "editora": editora,
+            "cidade": cidade,
+            "ano": ano,
+            "autor": autor,
+            "titulo": titulo,
+            "fonte": "folha de rosto editorial",
+        }
+        return {k: v for k, v in dados.items() if v not in ("", None)}
+    return {}
 
 
 # ---------------------------------------------------------------------------
@@ -6079,6 +6185,8 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
     tit_pag, pag_tit, motivo_tit_pag = titulo_nas_paginas_iniciais(
         paginas, pistas=[tit_nome, nome],
         autor=cip.get("autor") or autor_folha_confirmado or aut_nome)
+    folha_editorial = metadados_folha_rosto_editorial_antiga(
+        paginas_bibliograficas)
     if not autor_folha_confirmado and pag_tit:
         autor_folha_confirmado = autor_folha_rosto_confirmado(
             paginas, aut_nome, pagina_titulo=pag_tit)
@@ -6095,6 +6203,9 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
     if (not autor_rotulado and autor_serie
             and tipo_documento in {"livro", "coletânea"}):
         autor_rotulado = autor_serie
+    if (not autor_rotulado and folha_editorial.get("autor")
+            and tipo_documento in {"livro", "coletânea"}):
+        autor_rotulado = folha_editorial["autor"]
     autores_creditos = autores_rotulados_nas_paginas(paginas_bibliograficas)
     if (tipo_documento in {"livro", "coletânea"}
             and autores_creditos and not autor_rotulado):
@@ -7102,10 +7213,12 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
         "api": limpar_editora_bibliografica(api.get("editora", "")),
         "institucional": limpar_editora_bibliografica(editora_institucional),
         "folha_word": limpar_editora_bibliografica(livro_word.get("editora", "")),
+        "folha_rosto": limpar_editora_bibliografica(
+            folha_editorial.get("editora", "")),
     }
     if copyright_original and any(editoras.get(k) for k in (
             "cip", "capa", "artigo", "academico", "api",
-            "institucional", "folha_word")):
+            "institucional", "folha_word", "folha_rosto")):
         editoras["copyright"] = ""
     editoras = {k: v for k, v in editoras.items()
                 if editora_bibliograficamente_plausivel(v)}
@@ -7114,7 +7227,9 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
     # artigo não podem substituir essa procedência explícita.
     editora_final = escolher_editora_final(
         tipo_documento, editoras, api_por_isbn_exato=api_por_isbn_exato)
-    lugar_final = cip.get("cidade") or ("" if copyright_original else cp["cidade"])
+    lugar_final = (cip.get("cidade")
+                   or folha_editorial.get("cidade", "")
+                   or ("" if copyright_original else cp["cidade"]))
     lugar_sugerido = {}
     if not lugar_final:
         lugar_sugerido = cidade_sugerida_por_editora(editora_final)
@@ -7225,6 +7340,7 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
                     or (api.get("ano", "") if
                         (api_por_isbn_exato or api_por_titulo_autor) else "")
                     or (cip.get("ano") if cip_identifica_edicao else "")
+                    or folha_editorial.get("ano", "")
                     or (cip.get("ano") if cip.get("formato_cip") in
                      ("brasileira", "brasileira antiga",
                       "ficha antiga sem cabeçalho") else "")
@@ -7536,6 +7652,7 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
         "capa": capa_info,
         "editora_confirmada_na_capa": editora_capa,
         "metadados_pdf": doc,
+        "folha_rosto_editorial": folha_editorial,
         "titulo_paginas": {"titulo": tit_pag, "pagina": pag_tit,
                             "motivo": motivo_tit_pag},
         "revisao_manual": rev,
