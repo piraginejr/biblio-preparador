@@ -5141,6 +5141,39 @@ def do_nome(nome):
     # ``Digital, Livro``.
     base = re.sub(r"(?i)\s+(?:livro\s+digital|e-?book)(?:\s+\d+)?\s*$",
                   "", base).strip()
+    base = re.sub(
+        r"(?i)^(?:evangelico|evangélico|scribd|z\s*lib(?:rary)?|"
+        r"archive|internet\s+archive)\s+", "", base).strip()
+
+    # "The Book Revelation by James H McConkey" ou arquivos OCR antigos em
+    # inglês: o marcador "by" é forte o suficiente para separar título e
+    # autoria já no nome do arquivo. Sem isso, o "by" podia ficar grudado ao
+    # título ou a autoria podia permanecer vazia, fazendo o reprocessamento
+    # repetir a mesma troca na bancada.
+    m = re.match(r"(?i)^(.{3,180}?)\s+by\s+(.{3,90})$", base)
+    if m:
+        titulo = limpar_titulo_bibliografico(m.group(1))
+        autor_natural = " ".join(m.group(2).split()).strip(" .,:;-")
+        if (titulo_bibliograficamente_plausivel(titulo)
+                and autor_bibliograficamente_plausivel(autor_natural)):
+            return titulo, sobrenome_virgula(autor_natural)
+
+    # "A B Bruce Training of the Twelve": coleções antigas podem trazer o
+    # autor por iniciais antes do título, sem "by". Só aceitamos essa forma
+    # quando há pelo menos uma inicial e um sobrenome, para não desmontar
+    # títulos normais.
+    m = re.match(
+        r"^((?:[A-Za-z]\s+){2,4}[A-ZÀ-Üa-zà-ÿ]"
+        r"[A-Za-zÀ-ÿ'’.-]{2,})\s+(.{3,180})$",
+        base)
+    if m:
+        autor_natural = " ".join(
+            p.upper() if len(p) == 1 else p.title()
+            for p in m.group(1).split())
+        titulo = limpar_titulo_bibliografico(m.group(2))
+        if (titulo_bibliograficamente_plausivel(titulo)
+                and autor_bibliograficamente_plausivel(autor_natural)):
+            return titulo, sobrenome_virgula(autor_natural)
 
     # ``JOHN-PIPER-Exultacao...``: a transição de duas ou mais palavras
     # inteiramente maiúsculas para texto em caixa normal marca uma autoria
@@ -5181,7 +5214,8 @@ def do_nome(nome):
                   "Volumen","Volume","Tomo","Parte","Manual","Curso","Guia",
                   "Biblia","Biblica","Biblico","Crista","Cristao","Igreja",
                   "Teologia","Calvinismo","Agostiniano","Reformada","Missional",
-                  "Era","Digital"}
+                  "Era","Digital","Tribulation","Revelation","Testament",
+                  "Ministry","Service","Services","Doctrine","Scripture"}
         lexical_de_titulo = any(
             re.search(r"(?i)(?:ismo|logia)$", identificar.normalizar(p))
             for p in partes)
@@ -5525,6 +5559,7 @@ def limpar_titulo_bibliografico(titulo, autor=""):
     valor = " ".join(str(titulo or "").split()).strip(" .,:;-\"“”")
     if not valor:
         return ""
+    valor = re.sub(r"(?i)\s+(?:by|por)$", "", valor).strip(" .,:;-")
     # Sufixos técnicos vindos de nome de arquivo/versão não pertencem ao
     # título bibliográfico. Ex.: ``107 FILMES ERA DIGITAL_VS2025``.
     valor = re.sub(r"(?i)(?:[_\s-]+v?s20\d{2})$", "", valor).strip(" .,:;-_")
@@ -5799,8 +5834,8 @@ def deve_ler_codigo_barras(tipo_documento):
     return tipo_documento not in TIPOS_SEM_CODIGO_BARRAS
 
 def processar(caminho, usar_api=True, capa="", paginas=None,
-              revisao_caminho=None):
-    nome = os.path.basename(caminho)
+              revisao_caminho=None, nome_origem=None):
+    nome = os.path.basename(str(nome_origem or caminho))
     linha = {"arquivo": nome, "conflitos": [], "pendencias": [], "capa": capa}
     rev = revisao_manual(revisao_caminho or caminho)
     arquivos_origem = (rev.get("campos", {}).get(
@@ -6646,6 +6681,41 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
                      or not autor_bibliograficamente_plausivel(autor))):
             autor, origem_aut = autor_byline, "folha de rosto"
 
+    # Proteção final contra a troca recorrente "título virou autor" em obras
+    # antigas em inglês. Quando o arquivo traz uma autoria plausível e o
+    # autor escolhido pelo OCR é apenas parte do título ("Twelve, Training of
+    # the", "Spirit, The"), o nome do arquivo corrige a autoria. Se o título
+    # local também parece subtítulo, o título do arquivo assume o campo
+    # principal e o anterior fica como subtítulo.
+    if (aut_nome and autor_bibliograficamente_plausivel(aut_nome)
+            and not api_por_isbn_exato and not cip_identifica_edicao):
+        autor_norm = identificar.normalizar(autor.replace(",", " "))
+        titulo_norm = identificar.normalizar(titulo or "")
+        nome_titulo_norm = identificar.normalizar(tit_nome or "")
+        partes_autor = {p for p in autor_norm.split() if len(p) > 2}
+        partes_titulo = {p for p in titulo_norm.split() if len(p) > 2}
+        partes_nome_titulo = {
+            p for p in nome_titulo_norm.split() if len(p) > 2}
+        autor_e_pedaco_de_titulo = bool(
+            autor and partes_autor
+            and (partes_autor <= partes_titulo
+                 or partes_autor <= partes_nome_titulo
+                 or similaridade_titulos(autor, titulo) >= 0.55
+                 or similaridade_titulos(autor, tit_nome) >= 0.55))
+        if (autor_e_pedaco_de_titulo
+                and origem_aut in {"rotulo documental", "folha de rosto",
+                                   "capa confirmada", "capa",
+                                   "nome do arquivo", ""}):
+            autor, origem_aut = aut_nome, "nome do arquivo corrigiu autor-título"
+            if (tit_nome and titulo_bibliograficamente_plausivel(tit_nome)
+                    and origem_tit in {"folha de rosto", "metadado do PDF",
+                                       "capa", "título visual da capa", ""}
+                    and similaridade_titulos(titulo, tit_nome) < 0.45):
+                if titulo_bibliograficamente_plausivel(titulo):
+                    linha.setdefault("subTitulo", titulo)
+                titulo, origem_tit = (
+                    tit_nome, "nome do arquivo corrigiu autor-título")
+
     # Divergencia entre copyright e API so vira conflito quando ELA AINDA
     # IMPORTA - ou seja, quando o autor que escolhemos veio de um dos dois.
     # Se o CIP ja decidiu (a ficha do bibliotecario), o desacordo entre as
@@ -6898,6 +6968,53 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
         }
     titulo_pre_limpeza = titulo
     titulo = limpar_titulo_bibliografico(titulo, autor)
+    if (tit_nome and titulo_bibliograficamente_plausivel(tit_nome)
+            and not api_por_isbn_exato and not cip_identifica_edicao):
+        autor_nome_tokens = {
+            p for p in identificar.normalizar(
+                aut_nome.replace(",", " ")).split() if len(p) > 2}
+        titulo_tokens = {
+            p for p in identificar.normalizar(titulo or "").split()
+            if len(p) > 2}
+        titulo_nome_tokens = {
+            p for p in identificar.normalizar(tit_nome or "").split()
+            if len(p) > 2}
+        titulo_traz_autor_nome = bool(
+            autor_nome_tokens and len(autor_nome_tokens & titulo_tokens)
+            >= min(2, len(autor_nome_tokens)))
+        titulo_tem_hash = bool(re.search(r"\b[0-9a-f]{8}\b", titulo or "",
+                                         re.I))
+        titulo_fragmento_do_nome = bool(
+            titulo_tokens and titulo_nome_tokens
+            and titulo_tokens < titulo_nome_tokens)
+        titulo_nome_corrigido, nome_orientou = (
+            titulo_orientado_pelo_nome_arquivo(titulo, tit_nome))
+        if (nome_orientou or titulo_traz_autor_nome or titulo_tem_hash
+                or titulo_fragmento_do_nome):
+            if (titulo and titulo_bibliograficamente_plausivel(titulo)
+                    and similaridade_titulos(titulo, tit_nome) < 0.45
+                    and not linha.get("subTitulo")):
+                linha["subTitulo"] = titulo
+            titulo = titulo_nome_corrigido if nome_orientou else tit_nome
+            origem_tit = "nome do arquivo corrigiu leitura visual"
+
+    if (aut_nome and autor_bibliograficamente_plausivel(aut_nome)
+            and not api_por_isbn_exato and not cip_identifica_edicao):
+        autor_norm = identificar.normalizar(autor.replace(",", " "))
+        titulo_norm = identificar.normalizar((titulo or tit_nome).replace(",", " "))
+        partes_autor = {p for p in autor_norm.split() if len(p) > 2}
+        partes_titulo = {p for p in titulo_norm.split() if len(p) > 2}
+        autor_parece_titulo = bool(
+            partes_autor and partes_titulo
+            and (partes_autor <= partes_titulo
+                 or similaridade_titulos(autor, titulo or tit_nome) >= 0.55))
+        autor_parece_lugar = bool(re.search(
+            r"(?i)\b(?:pitts?burg|pa\.?|u\.?s\.?a\.?|usa|grand\s+rapids)\b",
+            autor or ""))
+        if (autor_parece_titulo or autor_parece_lugar
+                or not autor_bibliograficamente_plausivel(autor)):
+            autor = aut_nome
+            origem_aut = "nome do arquivo corrigiu autor-título"
     _titulo_sem_edicao, edicao_embutida_titulo = (
         separar_edicao_embutida_titulo(titulo_pre_limpeza))
     titulo = limpar_titulo_com_editora_e_serie(titulo, editora_final)

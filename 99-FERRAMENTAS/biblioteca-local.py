@@ -3538,7 +3538,7 @@ def reprocessar_revisao(raiz, usar_api=True, arquivos=None):
         capa = prep.gerar_capa(str(fonte), str(c["capas"]))
         linha = prep.processar(
             str(fonte), usar_api=usar_api, capa=capa, paginas=paginas,
-            revisao_caminho=str(origem))
+            revisao_caminho=str(origem), nome_origem=origem.name)
         if tamanho_envio > LIMITE_ENVIO_BYTES:
             linha["excecao_tamanho"] = True
             linha["motivo_excecao_tamanho"] = (
