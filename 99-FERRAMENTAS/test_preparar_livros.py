@@ -1553,6 +1553,22 @@ JUSTO L. GONZÁLEZ"""]
             ("A History of the Church", "Pellicciari, Angela"),
             prep.do_nome(
                 "A-History-of-the-Church-Angela-Pellicciari-095929.pdf"))
+        self.assertEqual(
+            ("The 70 Weeks of Daniel the Great Tribulation", ""),
+            prep.do_nome(
+                "2281351-The-70-Weeks-of-Daniel-the-Great-Tribulation.pdf"))
+
+    def test_nome_do_arquivo_ingles_com_by_separa_titulo_e_autor(self):
+        self.assertEqual(
+            ("The Book Revelation", "McConkey, James H"),
+            prep.do_nome(
+                "19523947-The-Book-Revelation-by-James-H-McConkey.pdf"))
+
+    def test_nome_do_arquivo_ingles_com_iniciais_no_inicio(self):
+        self.assertEqual(
+            ("training of the twelve", "Bruce, A B"),
+            prep.do_nome(
+                "15505653-evangelico-a-b-bruce-training-of-the-twelve.pdf"))
 
     def test_nome_do_arquivo_remove_sufixos_tecnicos(self):
         self.assertEqual(
