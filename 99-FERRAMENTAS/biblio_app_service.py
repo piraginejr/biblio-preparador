@@ -325,6 +325,24 @@ def etapas_preparar(raiz: pathlib.Path, com_internet: bool = True) -> List[Etapa
     return etapas
 
 
+def etapas_reprocessar_pendentes(raiz: pathlib.Path) -> List[Etapa]:
+    """Reavalia somente itens ainda em revisão/conflito.
+
+    Não refaz o ciclo pesado de OCR/preparo completo. A intenção é aplicar as
+    melhorias novas do motor às fichas pendentes, preservando revisões humanas
+    aprovadas e materiais já cadastrados.
+    """
+    return [
+        Etapa("Reprocessando somente pendentes de revisão",
+              python_cmd("biblioteca-local.py", "--raiz", str(raiz),
+                         "--reprocessar-revisao")),
+        Etapa("Atualizando fila de envio",
+              python_cmd("enviar-livro-api.py", "--atualizar-fila", str(raiz))),
+        Etapa("Resumo da biblioteca",
+              python_cmd("biblioteca-local.py", "--raiz", str(raiz), "--status")),
+    ]
+
+
 def etapas_enviar_tudo(raiz: pathlib.Path, enviar: bool, limite: int = 0) -> List[Etapa]:
     cmd = python_cmd("enviar-livro-api.py", "--processar-todas-filas", str(raiz),
                      "--limite", str(limite), "--intervalo", "3")

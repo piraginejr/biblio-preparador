@@ -128,6 +128,9 @@ HTML = r"""<!doctype html>
         <div class="panel">
           <h2>Estado da biblioteca</h2>
           <div class="stats" id="stats"></div>
+          <div class="actions">
+            <button class="secondary" onclick="iniciarJob('reprocessar_pendentes')">reprocessar pendentes</button>
+          </div>
           <pre class="status" id="statusTexto">carregando…</pre>
         </div>
       </div>
@@ -141,6 +144,7 @@ HTML = r"""<!doctype html>
           <div class="actions">
             <button onclick="iniciarJob('preparar')">iniciar preparação</button>
             <button class="secondary" onclick="iniciarJob('preparar_sem_internet')">preparar sem internet</button>
+            <button class="secondary" onclick="iniciarJob('reprocessar_pendentes')">reprocessar pendentes com melhorias novas</button>
             <button class="secondary" onclick="mostrar('enviar')">ir para envio</button>
           </div>
         </div>
@@ -188,6 +192,7 @@ HTML = r"""<!doctype html>
           <div><b>4 Revisar pendentes</b><br><span class="muted">Abre a bancada visual aprovada em uma aba/janela local.</span></div>
           <div class="actions">
             <button onclick="iniciarJob('abrir_revisao')">abrir bancada</button>
+            <button class="secondary" onclick="iniciarJob('reprocessar_pendentes')">reprocessar todos em revisão</button>
             <button class="secondary" onclick="mostrar('enviar')">← Enviar</button>
             <button onclick="mostrar('concluir')">Concluir</button>
           </div>
@@ -271,8 +276,8 @@ async function acao(nome){
 }
 async function iniciarJob(action){
   if(action.includes('envio') || action.includes('limpeza')) mostrar('enviar');
-  if(action.includes('preparar')) mostrar('preparar');
-  if(action.includes('revisao')) mostrar('revisar');
+  if(action.includes('preparar') || action.includes('reprocessar')) mostrar('preparar');
+  if(action.includes('abrir_revisao')) mostrar('revisar');
   const data = await api('/api/action', {action});
   jobAtual = data.job_id;
   atualizarJob();
@@ -414,6 +419,9 @@ class Handler(BaseHTTPRequestHandler):
                 self._json({"ok": True, "job_id": job.id})
             elif action == "preparar_sem_internet":
                 job = svc.JOBS.iniciar("Preparação sem internet", svc.etapas_preparar(self.raiz, False))
+                self._json({"ok": True, "job_id": job.id})
+            elif action == "reprocessar_pendentes":
+                job = svc.JOBS.iniciar("Reprocessamento dos pendentes", svc.etapas_reprocessar_pendentes(self.raiz))
                 self._json({"ok": True, "job_id": job.id})
             elif action == "simular_envio":
                 job = svc.JOBS.iniciar("Simulação de envio", svc.etapas_enviar_tudo(self.raiz, False, 0))
