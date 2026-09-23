@@ -14,7 +14,9 @@ import json
 import mimetypes
 import os
 import pathlib
+import re
 import socket
+import subprocess
 import sys
 import threading
 import urllib.parse
@@ -651,10 +653,47 @@ class ServidorRevisao(BaseHTTPRequestHandler):
                 arquivo = dados.get("arquivo", "")
                 if not arquivo:
                     raise RuntimeError("nenhum item ativo para reprocessar")
+                env = dict(os.environ)
+                env.setdefault("PYTHONPYCACHEPREFIX",
+                               "/private/tmp/biblio-pycache")
+                proc = subprocess.run(
+                    [
+                        sys.executable, str(BASE / "biblioteca-local.py"),
+                        "--raiz", str(self.raiz),
+                        "--reprocessar-revisao",
+                        "--arquivo", arquivo,
+                    ],
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                    text=True,
+                    env=env,
+                    cwd=str(BASE),
+                )
+                if proc.returncode:
+                    raise RuntimeError(proc.stdout.strip()
+                                       or "erro ao reprocessar")
+                resumo = {
+                    "encontrados": 0, "prontos": 0, "academicos": 0,
+                    "documentos": 0, "revisao": 0, "falhas": 0,
+                }
+                for linha in proc.stdout.splitlines():
+                    if linha.startswith("Revisão:"):
+                        for chave, valor in re.findall(
+                                r"([A-Za-z_]+)=([0-9]+)", linha):
+                            mapa = {
+                                "encontrados": "encontrados",
+                                "prontos": "prontos",
+                                "academicos": "academicos",
+                                "documentos": "documentos",
+                                "revisao": "revisao",
+                                "falhas": "falhas",
+                            }
+                            if chave in mapa:
+                                resumo[mapa[chave]] = int(valor)
                 resultado = {
                     "ok": True,
-                    "resumo": local.reprocessar_revisao(
-                        self.raiz, usar_api=True, arquivos=[arquivo]),
+                    "resumo": resumo,
+                    "saida": proc.stdout[-4000:],
                 }
             else:
                 resultado = local.gravar_decisao_revisao(
