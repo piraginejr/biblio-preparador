@@ -138,6 +138,28 @@ class FontesBibliograficasTest(unittest.TestCase):
             self.assertEqual({}, fontes.consultar_google_books(
                 "9780801026560", td, sessao=sessao))
 
+    def test_isbnsearch_recupera_ficha_web_por_isbn(self):
+        html = '''<div class="bookinfo">
+          <h1>The Seventy Weeks and the Great Tribulation A Study of Daniel
+          (Hardcover)</h1>
+          <p><strong>ISBN-13:</strong> <a href="/isbn/9781387977406">
+          9781387977406</a></p>
+          <p><strong>ISBN-10:</strong> <a href="/isbn/1387977407">
+          1387977407</a></p>
+          <p><strong>Author:</strong> Philip Mauro</p>
+          <p><strong>Binding:</strong> Hardcover</p>
+          <p><strong>Publisher:</strong> Lulu Press, Incorporated</p>
+          <p><strong>Published:</strong> 2018-07-26</p>
+        </div>'''
+        resultado = fontes._parse_isbnsearch(html, "9781387977406")
+        self.assertEqual(
+            "The Seventy Weeks and the Great Tribulation A Study of Daniel",
+            resultado["titulo"])
+        self.assertEqual("Philip Mauro", resultado["autores"])
+        self.assertEqual("Lulu Press, Incorporated", resultado["editora"])
+        self.assertEqual("2018", resultado["ano"])
+        self.assertEqual("9781387977406", resultado["isbn"])
+
     def test_google_books_sem_isbn_aceita_titulo_autor_fortes(self):
         dados = {"items": [{"volumeInfo": {
             "title": "Ide e fazei discípulos",
