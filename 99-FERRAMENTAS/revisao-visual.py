@@ -142,6 +142,7 @@ HTML = r"""<!doctype html>
       <div class="acoes-fixas">
         <button onclick="salvar(true, false)">salvar / validar</button>
         <button onclick="salvar(true, true)">salvar e próximo</button>
+        <button class="sec" onclick="reprocessarAtual()">reprocessar este item</button>
         <button class="warn" onclick="confirmarMesmoComDivergencia()">confirmar divergência</button>
         <button class="sec" onclick="salvar(false)">salvar sem aprovar</button>
       </div>
@@ -514,6 +515,31 @@ async function confirmarMesmoComDivergencia() {
     removerItemAtualDaRevisao();
   }
 }
+async function reprocessarAtual() {
+  const item = atual();
+  if (!item) return;
+  if (sujo && !confirm("Há alterações não salvas nesta ficha. Reprocessar agora pode substituir os campos visíveis. Continuar?")) {
+    return;
+  }
+  $("salvo").textContent = "reprocessando este item…";
+  $("salvoTopo").textContent = "reprocessando este item…";
+  const resp = await fetch("/api/reprocessar", {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({arquivo:item.arquivo})
+  });
+  const out = await resp.json();
+  if (!resp.ok) {
+    $("salvo").innerHTML = `<span class="erro">${esc(out.erro || "erro ao reprocessar")}</span>`;
+    $("salvoTopo").innerHTML = $("salvo").innerHTML;
+    return;
+  }
+  const resumo = out.resumo || {};
+  $("salvo").innerHTML = `<span class="ok">reprocessado: prontos=${esc(resumo.prontos || 0)}, revisão=${esc(resumo.revisao || 0)}, documentos=${esc(resumo.documentos || 0)}, acadêmicos=${esc(resumo.academicos || 0)}</span>`;
+  $("salvoTopo").innerHTML = $("salvo").innerHTML;
+  sujo = false;
+  await recarregar();
+}
 window.addEventListener("load", () => {
   for (const c of campos) {
     const el = $(c === "titulo" ? "tituloCampo" : c);
@@ -588,7 +614,7 @@ class ServidorRevisao(BaseHTTPRequestHandler):
         caminho = urllib.parse.urlparse(self.path).path
         if caminho not in {
                 "/api/gravar", "/api/consultar-isbn", "/api/capa-url",
-                "/api/capa-arquivo", "/api/encerrar"}:
+                "/api/capa-arquivo", "/api/reprocessar", "/api/encerrar"}:
             self.send_error(404)
             return
         try:
@@ -621,6 +647,15 @@ class ServidorRevisao(BaseHTTPRequestHandler):
                     dados.get("conteudo_base64", ""),
                     imprimir=False,
                 )
+            elif caminho == "/api/reprocessar":
+                arquivo = dados.get("arquivo", "")
+                if not arquivo:
+                    raise RuntimeError("nenhum item ativo para reprocessar")
+                resultado = {
+                    "ok": True,
+                    "resumo": local.reprocessar_revisao(
+                        self.raiz, usar_api=True, arquivos=[arquivo]),
+                }
             else:
                 resultado = local.gravar_decisao_revisao(
                     self.raiz,
