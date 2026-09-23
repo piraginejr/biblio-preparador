@@ -50,6 +50,14 @@ copiar_limpo() {
 rm -rf "$APP_BUNDLE"
 mkdir -p "$MACOS" "$PACKAGE_BASE"
 
+ICON_WORK="/private/tmp/BiblioPreparadorIcon.iconset"
+ICON_TMP="/private/tmp/BiblioPreparadorIcon.icns"
+rm -rf "$ICON_WORK" "$ICON_TMP"
+python3 "$ROOT/packaging/macos/make_app_icon.py" "$ICON_WORK"
+python3 "$ROOT/packaging/macos/make_app_icon.py" "$ICON_TMP"
+cp "$ICON_TMP" "$RESOURCES/BiblioPreparadorIcon.icns"
+rm -rf "$ICON_WORK" "$ICON_TMP"
+
 cat > "$CONTENTS/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
@@ -62,6 +70,8 @@ cat > "$CONTENTS/Info.plist" <<'PLIST'
   <string>Biblio Preparador</string>
   <key>CFBundleExecutable</key>
   <string>BiblioPreparador</string>
+  <key>CFBundleIconFile</key>
+  <string>BiblioPreparadorIcon.icns</string>
   <key>CFBundleIdentifier</key>
   <string>br.org.pibcuritiba.biblio-preparador</string>
   <key>CFBundleInfoDictionaryVersion</key>
