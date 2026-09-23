@@ -102,6 +102,21 @@ William Carey é considerado o pai das missões Protestantes.
         self.assertEqual("NOSSAS DOUTRINAS", titulo)
         self.assertEqual("6ª edição", edicao)
 
+    def test_copyright_de_traducao_nao_e_edicao_local_prioritaria(self):
+        cp = prep.ler_copyright("""
+Título original: The Example Book
+Copyright © 1998 Original Publisher
+Tradução: João da Silva
+""")
+        self.assertTrue(prep.copyright_parece_da_edicao_original(cp))
+
+    def test_copyright_sem_traducao_continua_utilizavel(self):
+        cp = prep.ler_copyright("""
+Copyright © 2022 Editora Exemplo
+Publicado por Editora Exemplo
+""")
+        self.assertFalse(prep.copyright_parece_da_edicao_original(cp))
+
     def test_cbl_formata_isbn_brasileiro_para_busca_publica(self):
         self.assertEqual("978-85-7845-211-7",
                          cbl.formatar_isbn_busca("9788578452117"))
@@ -959,6 +974,20 @@ CDD - 260.01"""
         self.assertEqual("Algo Inimaginável", titulo)
         self.assertEqual("Barbet", autor)
 
+    def test_folha_de_rosto_ingles_com_byline_nao_inverte_titulo_e_autor(self):
+        titulo, autor = prep.titulo_autor_por_byline_folha(
+            "The Spirit of Christ by Andrew Murray")
+        self.assertEqual("The Spirit of Christ", titulo)
+        self.assertEqual("Murray, Andrew", autor)
+
+    def test_byline_em_linhas_juntadas_tambem_e_reconhecida(self):
+        paginas = ["The Training of the Twelve\nby A. B. Bruce"]
+        titulo_folha, _pagina, _origem = prep.titulo_nas_paginas_iniciais(
+            paginas, pistas=["The Training of the Twelve"])
+        autor = prep.autor_byline_nas_paginas_iniciais(paginas, titulo_folha)
+        self.assertEqual("The Training of the Twelve", titulo_folha)
+        self.assertEqual("Bruce, A. B.", autor)
+
     def test_cip_lida_no_ocr_visual_da_capa(self):
         capa = {
             "texto_ocr": [
@@ -1276,6 +1305,14 @@ Anexo 2 - Declaração de Niterói parte...............................23"""
                 "fonte": "teste", "confianca": "alta"}}
         self.assertEqual("São Paulo", prep.cidade_sugerida_por_editora(
             "Editora Vida", tabela).get("cidade"))
+
+    def test_cidade_nao_e_editora_e_campos_invertidos_sao_corrigidos(self):
+        self.assertFalse(prep.editora_bibliograficamente_plausivel("Grand Rapids"))
+        editora, lugar, motivo = prep.corrigir_editora_lugar(
+            "Grand Rapids", "Eerdmans")
+        self.assertEqual("Eerdmans", editora)
+        self.assertEqual("Grand Rapids", lugar)
+        self.assertIn("invertidos", motivo)
 
     def test_aplicar_lugar_por_editora_nao_sobrescreve(self):
         ficha = {"editora": "Editora Vida", "lugar": "Rio de Janeiro"}
