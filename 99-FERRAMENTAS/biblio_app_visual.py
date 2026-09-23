@@ -511,9 +511,13 @@ def resolver_porta(inicial: int, abrir: bool) -> tuple[int, bool]:
         return inicial, True
     if porta_disponivel(inicial):
         return inicial, False
-    raise RuntimeError(
-        f"a porta fixa {inicial} está ocupada por outro programa; "
-        "feche-o ou abra o Biblio com --porta 0 para modo de teste")
+    with socket.socket() as s:
+        s.bind(("127.0.0.1", 0))
+        alternativa = int(s.getsockname()[1])
+    print(
+        f"Porta fixa {inicial} ocupada; usando porta livre {alternativa}.",
+        flush=True)
+    return alternativa, False
 
 
 def main():

@@ -189,6 +189,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
         ]
         var environment = ProcessInfo.processInfo.environment
         environment["PYTHONPYCACHEPREFIX"] = "/private/tmp/biblio-pycache"
+        environment["PYTHONWARNINGS"] = "ignore:urllib3 v2 only supports OpenSSL"
         process.environment = environment
         let output = Pipe()
         process.standardOutput = output
