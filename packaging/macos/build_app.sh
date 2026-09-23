@@ -51,16 +51,12 @@ rm -rf "$APP_BUNDLE"
 mkdir -p "$MACOS" "$PACKAGE_BASE"
 
 ICON_WORK="/private/tmp/BiblioPreparadorIcon.iconset"
-ICON_PREVIEW="/private/tmp/BiblioPreparadorIcon.png"
-ICON_TIFF="/private/tmp/BiblioPreparadorIcon.tiff"
 ICON_TMP="/private/tmp/BiblioPreparadorIcon.icns"
-rm -rf "$ICON_WORK" "$ICON_PREVIEW" "$ICON_TIFF" "$ICON_TMP"
+rm -rf "$ICON_WORK" "$ICON_TMP"
 python3 "$ROOT/packaging/macos/make_app_icon.py" "$ICON_WORK"
-cp "$ICON_WORK/icon_512x512@2x.png" "$ICON_PREVIEW"
-sips -s format tiff "$ICON_PREVIEW" --out "$ICON_TIFF" >/dev/null
-tiff2icns "$ICON_TIFF" "$ICON_TMP"
+python3 "$ROOT/packaging/macos/make_app_icon.py" "$ICON_TMP"
 cp "$ICON_TMP" "$RESOURCES/BiblioPreparadorIcon.icns"
-rm -rf "$ICON_WORK" "$ICON_PREVIEW" "$ICON_TIFF" "$ICON_TMP"
+rm -rf "$ICON_WORK" "$ICON_TMP"
 
 cat > "$CONTENTS/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?>
