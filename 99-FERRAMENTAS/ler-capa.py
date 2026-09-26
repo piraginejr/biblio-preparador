@@ -183,12 +183,92 @@ def _ocr_vision_blocos(img):
     return sorted(saida, key=lambda x: (x["top"], x["left"]))
 
 
-def blocos_da_capa(img):
-    """Retorna blocos geométricos da capa priorizando o Apple Vision como
+_RAPID_ENGINE = None
+_RAPID_TENTADO = False
 
-    leitor principal absoluto e recorrendo ao Tesseract apenas como contingência.
+
+def _obter_rapid_engine():
+    """Retorna uma instância reutilizável do RapidOCR com lazy loading.
+
+    Se a biblioteca não estiver instalada, retorna None silenciosamente.
+    """
+    global _RAPID_ENGINE, _RAPID_TENTADO
+    if _RAPID_ENGINE is not None or _RAPID_TENTADO:
+        return _RAPID_ENGINE
+    _RAPID_TENTADO = True
+    try:
+        from rapidocr_onnxruntime import RapidOCR
+        _RAPID_ENGINE = RapidOCR()
+    except Exception:
+        _RAPID_ENGINE = None
+    return _RAPID_ENGINE
+
+
+def _ocr_rapidocr_blocos(img):
+    """Lê caixas delimitadoras e texto via RapidOCR (ONNX Runtime).
+
+    Multiplataforma (Windows/Linux/macOS), muito mais resiliente que o
+    Tesseract em fontes decoradas e capas artísticas.
+    """
+    engine = _obter_rapid_engine()
+    if engine is None:
+        return []
+    try:
+        resultado, _ = engine(img)
+        if not resultado:
+            return []
+    except Exception:
+        return []
+
+    saida = []
+    for item in resultado:
+        if not item or len(item) < 3:
+            continue
+        box, texto, score = item[0], str(item[1]).strip(), float(item[2])
+        if not texto or score < 0.40:
+            continue
+        try:
+            xs = [pt[0] for pt in box]
+            ys = [pt[1] for pt in box]
+            left = int(min(xs))
+            top = int(min(ys))
+            right = int(max(xs))
+            bottom = int(max(ys))
+            width = max(1, right - left)
+            height = max(1, bottom - top)
+            saida.append({
+                "texto": texto,
+                "left": left, "top": top,
+                "right": right, "bottom": bottom,
+                "width": width, "height": height,
+                "area": width * height,
+                "altura_media": height,
+            })
+        except Exception:
+            continue
+    return sorted(saida, key=lambda x: (x["top"], x["left"]))
+
+
+def _ocr_rapidocr(img):
+    """Extrai linhas de texto pelo RapidOCR ordenadas de cima para baixo."""
+    blocos = _ocr_rapidocr_blocos(img)
+    if not blocos:
+        return None
+    linhas = [b["texto"].strip() for b in blocos if b.get("texto", "").strip()]
+    return linhas or None
+
+
+def blocos_da_capa(img):
+    """Retorna blocos geométricos da capa com a cascata de prioridade:
+
+    1. Apple Vision (leitor principal nativo no macOS)
+    2. RapidOCR (rede neural ONNX multiplataforma, primário no Windows)
+    3. Tesseract (contingência universal)
     """
     blocos = _ocr_vision_blocos(img)
+    if blocos:
+        return blocos
+    blocos = _ocr_rapidocr_blocos(img)
     if blocos:
         return blocos
     return _ocr_tesseract_blocos(img)
@@ -282,7 +362,13 @@ def _ocr_vision(img):
 
 
 def texto_da_capa(img):
-    return _ocr_vision(img) or _ocr_tesseract(img)
+    """Extrai linhas de texto com a cascata de prioridade:
+
+    1. Apple Vision (leitor principal nativo no macOS)
+    2. RapidOCR (rede neural ONNX multiplataforma, primário no Windows)
+    3. Tesseract (contingência universal)
+    """
+    return _ocr_vision(img) or _ocr_rapidocr(img) or _ocr_tesseract(img)
 
 
 def capa_do_pdf(pdf, destino, dpi=DPI_CAPA):
@@ -318,8 +404,14 @@ if __name__ == "__main__":
         autor = sys.argv[sys.argv.index("--autor") + 1]
     alvo = args[0] if args else "."
 
-    if not shutil.which("tesseract"):
-        sys.exit("tesseract nao encontrado:  brew install tesseract tesseract-lang")
+    helper_vision = os.path.join(os.path.dirname(os.path.abspath(__file__)), "vision-ocr")
+    tem_motor = (
+        (sys.platform == "darwin" and os.path.exists(helper_vision))
+        or _obter_rapid_engine() is not None
+        or shutil.which("tesseract")
+    )
+    if not tem_motor:
+        sys.exit("Nenhum motor de OCR disponível (instale vision-ocr, rapidocr-onnxruntime ou tesseract).")
 
     imgs = ([alvo] if os.path.isfile(alvo)
             else sorted(glob.glob(os.path.join(alvo, "*.jpg"))))
