@@ -20,7 +20,7 @@ Uso:
     python3 ler-capa.py pasta/
 """
 
-import subprocess, sys, os, glob, shutil, re
+import subprocess, sys, os, glob, shutil, re, json
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import identificar
@@ -115,6 +115,83 @@ def _ocr_tesseract_blocos(img):
             "altura_media": sum(item["heights"]) / max(1, len(item["heights"])),
         })
     return sorted(saida, key=lambda x: (x["top"], x["left"]))
+
+
+def _tamanho_imagem(img_path):
+    """Obtém dimensões em pixels da imagem via utilitário nativo sips no macOS."""
+    try:
+        out = subprocess.run(
+            ["sips", "-g", "pixelWidth", "-g", "pixelHeight", img_path],
+            capture_output=True, text=True, timeout=10).stdout
+        w_m = re.search(r"pixelWidth:\s*(\d+)", out)
+        h_m = re.search(r"pixelHeight:\s*(\d+)", out)
+        if w_m and h_m:
+            return int(w_m.group(1)), int(h_m.group(1))
+    except Exception:
+        pass
+    return 1000, 1500
+
+
+def _ocr_vision_blocos(img):
+    """Lê caixas delimitadoras e texto com o Apple Vision (--json).
+
+    No macOS, o Apple Vision é o motor principal para reconhecimento de texto e
+    hierarquia geométrica da capa (VNRecognizeTextRequest em .accurate).
+    """
+    helper = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                          "vision-ocr")
+    if sys.platform != "darwin" or not os.path.exists(helper):
+        return []
+    try:
+        out = subprocess.run([helper, "--json", img], capture_output=True,
+                             text=True, timeout=180)
+        itens = json.loads(out.stdout)
+        if not isinstance(itens, list) or not itens:
+            return []
+    except Exception:
+        return []
+
+    w, h = _tamanho_imagem(img)
+    saida = []
+    for it in itens:
+        t = str(it.get("texto", "")).strip()
+        if not t:
+            continue
+        try:
+            x = float(it["x"])
+            y = float(it["y"])
+            largura_norm = float(it["largura"])
+            altura_norm = float(it["altura"])
+        except (KeyError, ValueError, TypeError):
+            continue
+
+        left = int(x * w)
+        width = max(1, int(largura_norm * w))
+        right = left + width
+        # No Vision o y=0 é no rodapé da imagem; convertemos para sistema top-down:
+        top = max(0, int((1.0 - (y + altura_norm)) * h))
+        height = max(1, int(altura_norm * h))
+        bottom = top + height
+        saida.append({
+            "texto": t,
+            "left": left, "top": top,
+            "right": right, "bottom": bottom,
+            "width": width, "height": height,
+            "area": width * height,
+            "altura_media": height,
+        })
+    return sorted(saida, key=lambda x: (x["top"], x["left"]))
+
+
+def blocos_da_capa(img):
+    """Retorna blocos geométricos da capa priorizando o Apple Vision como
+
+    leitor principal absoluto e recorrendo ao Tesseract apenas como contingência.
+    """
+    blocos = _ocr_vision_blocos(img)
+    if blocos:
+        return blocos
+    return _ocr_tesseract_blocos(img)
 
 
 def _parece_titulo_visual(texto, autor_conhecido=""):
@@ -220,7 +297,7 @@ def capa_do_pdf(pdf, destino, dpi=DPI_CAPA):
 def ler(img, autor_conhecido=""):
     linhas = texto_da_capa(img)
     r = identificar.separar(linhas, autor_conhecido=autor_conhecido)
-    blocos = _ocr_tesseract_blocos(img)
+    blocos = blocos_da_capa(img)
     visual = titulo_visual_por_geometria_blocos(
         blocos, autor_conhecido=autor_conhecido)
     if visual and visual.get("titulo"):

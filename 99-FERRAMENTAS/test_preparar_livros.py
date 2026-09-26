@@ -1763,6 +1763,40 @@ https://site.example/pagina/3"""
         self.assertTrue(resultado["parcial"])
         self.assertIn("17", resultado["motivo"])
 
+    def test_ano_isolado_em_folha_preliminar_nao_faz_livro_parecer_parcial(self):
+        paginas = [
+            "Capa\n1859",
+            "Folha de Rosto\nBoston: J. E. Tilton and Company\n1859",
+            "Contents\nPreface",
+            "Conteúdo 1\n5",
+            "Conteúdo 2\n6",
+        ]
+        resultado = prep.diagnosticar_parcialidade_pdf(paginas)
+        self.assertFalse(resultado["parcial"])
+
+    def test_ler_copyright_e_ano_reconhecem_act_of_congress_e_imprint_historico(self):
+        texto = (
+            "Entered according to Act of Congress, in the year 1859, by\n"
+            "J. E. TILTON AND COMPANY,\n"
+            "in the Clerk's Office of the District Court of Massachusetts."
+        )
+        dados = prep.ler_copyright(texto)
+        self.assertEqual("J. E. TILTON AND COMPANY", dados["editora"])
+        ano = prep.ano_desta_edicao(texto)
+        self.assertEqual(1859, ano)
+
+    def test_ler_copyright_reconhece_imprint_londrino_e_cidade(self):
+        texto = (
+            "LONDON:\n"
+            "JAMES NISBET & CO., 21 BERNERS STREET.\n"
+            "1888."
+        )
+        dados = prep.ler_copyright(texto)
+        self.assertEqual("JAMES NISBET & CO", dados["editora"])
+        self.assertEqual("LONDON", dados["cidade"])
+        ano = prep.ano_publicacao(texto)
+        self.assertEqual(1888, ano)
+
     def test_titulo_tecnico_do_office_nao_e_metadado_bibliografico(self):
         with mock.patch.object(prep.subprocess, "run") as executar:
             executar.return_value.stdout = (

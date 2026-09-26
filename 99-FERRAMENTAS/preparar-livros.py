@@ -1702,7 +1702,9 @@ def ano_publicacao(t):
     for i, linha in enumerate(linhas):
         contexto = " ".join(linhas[max(0, i - 1):min(len(linhas), i + 2)])
         if not re.search(r"(?i)©|copyright|publicad|publica[çc][aã]o|published|publication|"
-                         r"edi[çc][ãa]o|edici[óo]n|edition|impresi[óo]n", contexto):
+                         r"edi[çc][ãa]o|edici[óo]n|edition|impresi[óo]n|"
+                         r"act of congress|entered according|"
+                         r"(?:london|edinburgh|boston|new york|oxford|cambridge|philadelphia)\s*:", contexto):
             continue
         # Datas de versoes biblicas, ilustracoes e marcas nao datam o livro.
         if re.search(r"(?i)biblia|bible|esv|niv\b|nvi\b|reina.?valera|"
@@ -1762,6 +1764,8 @@ def ano_desta_edicao(t):
         r"(?:Primeira|Primera|First|Première)\s+(?:impress[ãa]o|impresi[óo]n|printing)\s*"
         r"((?:19|20)\d{2})",
         r"Ebook\s+edi(?:tion|ci[óo]n|ção)[^\d]{0,20}((?:19|20)\d{2})",
+        r"Entered according to Act of Congress[^\n\d]{0,80}?((?:18|19|20)\d{2})",
+        r"(?i)\b(?:London|Edinburgh|Boston|New York|Oxford|Cambridge|Philadelphia)[:\s]+[^\n]{1,80}?\b((?:18|19|20)\d{2})\b",
     ):
         m = re.search(p, t, re.I)
         if m:
@@ -1896,6 +1900,10 @@ def ler_copyright(t):
             r"Copyright\s*©\s*\d{4}[^\n]*\n\s*(Crossway|Baker Academic|"
             r"Editorial Portavoz|Editorial Bautista Independiente)",
 
+            # Século XIX e imprints históricos (Act of Congress / folha de rosto)
+            r"(?is)Entered\s+according\s+to\s+Act\s+of\s+Congress.*?\bby\s+([A-Z][A-Za-z0-9&'’.\s-]{2,65}?)(?:,\s*in\s+the\s+Clerk|\s+in\s+the\s+Clerk)",
+            r"(?i)\b(?:London|Edinburgh|Boston|New York|Oxford|Cambridge|Philadelphia)\s*:\s*\n?\s*([A-Z][A-Za-z0-9&'’., -]{2,65}?(?:CO(?:MPANY|\.)?|LTD\.?|PRESS|SOCIETY|PUBLISH(?:ERS?|ING)?|HOUSE|INC\.?|SONS?|BROTHERS?))\b",
+
             # --- ULTIMAS da lista, de proposito -------------------------
             # Sao formas genericas: precisam ceder para as especificas
             # acima. "Edicao publicada pela Kregel" e a editora do
@@ -1924,7 +1932,8 @@ def ler_copyright(t):
             r"Traduit par[:\s]*([A-ZÁ-Ú][^\n©]{3,50})",
             r"Translated by[:\s]*([A-ZÁ-Ú][^\n©]{3,50})"], 60),
         "cidade": _campo(t, [
-            r"\b(Grand Rapids|Wheaton|Nashville|S[ãa]o Paulo|Rio de Janeiro|"
+            r"\b(London|Boston|Edinburgh|New York|Oxford|Cambridge|Philadelphia|"
+            r"Chicago|Grand Rapids|Wheaton|Nashville|S[ãa]o Paulo|Rio de Janeiro|"
             r"Miami|Barcelona|Madrid|Curitiba|Bel[ée]m|Viladecavalls)\b"], 40),
         "edicao": _campo(t, [
             r"\b((?:[1-9]|[12]\d|30)[ªa]?\s*(?:edici[óo]n|edi[çc][ãa]o|edition|[ée]dition))"], 30),
@@ -6026,7 +6035,16 @@ def diagnosticar_parcialidade_pdf(paginas):
             continue
         linhas = [" ".join(x.split()) for x in (pagina or "").splitlines()]
         bordas = [x for x in linhas[:4] + linhas[-4:] if x]
-        isolados = [int(x) for x in bordas if re.fullmatch(r"\d{1,4}", x)]
+        n_pags = len(paginas or [])
+        isolados = []
+        for x in bordas:
+            if re.fullmatch(r"\d{1,4}", x):
+                val = int(x)
+                if indice <= 4 and (1450 <= val <= 2099 or (n_pags and val > max(50, n_pags))):
+                    continue
+                if n_pags and val > max(n_pags * 2, 2000):
+                    continue
+                isolados.append(val)
         if isolados:
             observadas.append((indice, isolados[-1], "número impresso"))
 

@@ -61,5 +61,23 @@ class LerCapaVisualTest(unittest.TestCase):
         self.assertEqual("DOGMÁTICA REFORMADA", visual["titulo"])
 
 
+    def test_blocos_da_capa_prioriza_vision_e_tem_fallback(self):
+        original_vision = lercapa._ocr_vision_blocos
+        original_tess = lercapa._ocr_tesseract_blocos
+        try:
+            # Caso 1: Vision tem blocos -> usa Vision
+            lercapa._ocr_vision_blocos = lambda img: [{"texto": "VISION", "area": 100}]
+            lercapa._ocr_tesseract_blocos = lambda img: [{"texto": "TESS", "area": 50}]
+            self.assertEqual("VISION", lercapa.blocos_da_capa("dummy.jpg")[0]["texto"])
+
+            # Caso 2: Vision falha ou vazio -> fallback para Tesseract
+            lercapa._ocr_vision_blocos = lambda img: []
+            lercapa._ocr_tesseract_blocos = lambda img: [{"texto": "TESS", "area": 50}]
+            self.assertEqual("TESS", lercapa.blocos_da_capa("dummy.jpg")[0]["texto"])
+        finally:
+            lercapa._ocr_vision_blocos = original_vision
+            lercapa._ocr_tesseract_blocos = original_tess
+
+
 if __name__ == "__main__":
     unittest.main()
