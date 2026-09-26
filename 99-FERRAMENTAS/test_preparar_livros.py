@@ -1797,6 +1797,16 @@ https://site.example/pagina/3"""
         ano = prep.ano_publicacao(texto)
         self.assertEqual(1888, ano)
 
+    def test_ler_isbn_codigo_barras_usa_fallback_python(self):
+        with mock.patch.object(prep, "shutil") as mock_shutil, \
+             mock.patch.object(prep, "_auxiliar_codigo_barras", return_value=None), \
+             mock.patch.object(prep, "n_paginas", return_value=1), \
+             mock.patch.object(prep.subprocess, "run") as mock_run, \
+             mock.patch.object(prep, "_ler_barcode_python", return_value=[{"valor": "9788538302759", "tipo": "EAN13"}]):
+            mock_shutil.which.return_value = None
+            res = prep.ler_isbn_codigo_barras("dummy.pdf")
+            self.assertIn("9788538302759", res["isbns"])
+
     def test_titulo_tecnico_do_office_nao_e_metadado_bibliografico(self):
         with mock.patch.object(prep.subprocess, "run") as executar:
             executar.return_value.stdout = (

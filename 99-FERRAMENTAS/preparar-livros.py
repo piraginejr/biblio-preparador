@@ -947,17 +947,13 @@ def diagnosticar_ocr(f, paginas=None, progresso=None):
 
 
 def texto_vision(f, ate=6):
-    """Le as primeiras paginas com o Vision, renderizando cada uma.
+    """Lê as primeiras páginas pelo melhor motor visual (Vision / RapidOCR / Tesseract).
 
-    E o mesmo motor do app de cartoes, e nas capas ele ganhou do Tesseract
-    de longe - onde o Tesseract devolvia "DB \\ | | VIF AA ANS!", o Vision
-    devolvia a linha inteira e correta. Faz sentido usar o melhor motor
-    tambem nas paginas que decidem o tombo: CIP, creditos e folha de rosto.
+    No macOS, o Apple Vision é o preferido. No Windows/Linux, o RapidOCR entra
+    como rede neural principal, garantindo alta acurácia nas páginas editoriais
+    mesmo em PDFs totalmente escaneados.
     """
-    if not lercapa or not lercapa._ocr_vision:
-        return ""
-    helper = os.path.join(os.path.dirname(os.path.abspath(__file__)), "vision-ocr")
-    if sys.platform != "darwin" or not os.path.exists(helper):
+    if not lercapa or not hasattr(lercapa, "texto_da_capa"):
         return ""
 
     import tempfile, glob as _g
@@ -970,7 +966,7 @@ def texto_vision(f, ate=6):
         except Exception:
             return ""
         for img in sorted(_g.glob(base + "*.jpg")):
-            linhas = lercapa._ocr_vision(img)
+            linhas = lercapa.texto_da_capa(img)
             if linhas:
                 partes.append("\n".join(linhas))
     return "\n".join(partes)
@@ -1329,6 +1325,54 @@ def _auxiliar_codigo_barras():
     return binario
 
 
+def _ler_barcode_python(caminho_imagem):
+    """Lê código de barras EAN-13 diretamente em Python (OpenCV / ZXing).
+
+    Multiplataforma (Windows/Linux/macOS), opera sem exigir utilitários nativos externos.
+    """
+    achados = []
+    # 1. OpenCV BarcodeDetector (instalado juntamente com RapidOCR)
+    try:
+        import cv2
+        img = cv2.imread(str(caminho_imagem))
+        if img is not None:
+            detector = cv2.barcode.BarcodeDetector()
+            ok, decodificados, tipos, _ = detector.detectAndDecode(img)
+            if ok and decodificados:
+                for val, tipo in zip(decodificados, tipos or []):
+                    if val and str(val).strip():
+                        achados.append({
+                            "valor": str(val).strip(),
+                            "tipo": str(tipo) if tipo else "EAN13",
+                            "confianca": 1.0,
+                            "motor": "opencv"
+                        })
+    except Exception:
+        pass
+
+    if achados:
+        return achados
+
+    # 2. ZXing-cpp (se disponível)
+    try:
+        import zxingcpp
+        from PIL import Image
+        img = Image.open(str(caminho_imagem))
+        resultados = zxingcpp.read_barcodes(img)
+        for r in resultados:
+            if r.text and r.text.strip():
+                achados.append({
+                    "valor": r.text.strip(),
+                    "tipo": str(r.format).replace("BarcodeFormat.", ""),
+                    "confianca": 1.0,
+                    "motor": "zxing"
+                })
+    except Exception:
+        pass
+
+    return achados
+
+
 def ler_isbn_codigo_barras(pdf, paginas_total=None):
     """Examina primeiro a contracapa e depois a capa, sem executar OCR."""
     zbar = shutil.which("zbarimg")
@@ -1336,7 +1380,7 @@ def ler_isbn_codigo_barras(pdf, paginas_total=None):
         zbar = "/opt/homebrew/bin/zbarimg"
     auxiliar = _auxiliar_codigo_barras() if not zbar else None
     total = paginas_total or n_paginas(pdf)
-    if not (zbar or auxiliar) or not total:
+    if not total:
         return {"isbns": [], "paginas_examinadas": [], "deteccoes": []}
     ordem = list(dict.fromkeys([total, 1]))
     deteccoes = []
@@ -1361,12 +1405,15 @@ def ler_isbn_codigo_barras(pdf, paginas_total=None):
                         for valor in resposta.stdout.splitlines()
                         if valor.strip()
                     ]
-                # Vision permanece como alternativa para outras máquinas.
+                # Vision nativo do macOS (se disponível)
                 if not isbns_de_codigos_barras(encontrados) and auxiliar:
                     resposta = subprocess.run(
                         [str(auxiliar), str(imagem)], capture_output=True,
                         text=True, timeout=60, check=True)
                     encontrados.extend(json.loads(resposta.stdout or "[]"))
+                # Leitor Python multiplataforma (OpenCV / ZXing - primário no Windows)
+                if not isbns_de_codigos_barras(encontrados):
+                    encontrados.extend(_ler_barcode_python(imagem))
             except Exception:
                 encontrados = []
             examinadas.append(pagina)
