@@ -290,6 +290,10 @@ def _parece_titulo_visual(texto, autor_conhecido=""):
         autor_conhecido.replace(",", " ")).split() if len(p) > 2}
     if autor_n and autor_n <= {p for p in palavras if len(p) > 2}:
         return False
+    t_limpo = " ".join(re.sub(r"[^\w\s]", "", n).split())
+    tabela_autores = identificar.carregar_autores_conhecidos()
+    if t_limpo in tabela_autores:
+        return False
     return True
 
 

@@ -115,6 +115,29 @@ class LerCapaVisualTest(unittest.TestCase):
             lercapa._ocr_rapidocr = original_rapid
             lercapa._ocr_tesseract = original_tess
 
+    def test_identificar_autoria_institucional_preserva_nome_direto(self):
+        import identificar
+        linhas = ["Manual de Identidade Batista", "Convenção Batista Paranaense", "Curitiba"]
+        resultado = identificar.separar(linhas)
+        self.assertEqual("Convenção Batista Paranaense", resultado["nmAutor0"])
+        self.assertEqual("Manual de Identidade Batista", resultado["titulo"])
+        self.assertEqual("dicionario", resultado["origem_autor"])
+
+    def test_identificar_autora_feminina_conhecida_formata_bibliografico(self):
+        import identificar
+        linhas = ["Heróis Cristãos de Ontem e Hoje", "Janet Benge", "Editora Vida"]
+        resultado = identificar.separar(linhas)
+        self.assertEqual("Benge, Janet", resultado["nmAutor0"])
+        self.assertEqual("Heróis Cristãos de Ontem e Hoje", resultado["titulo"])
+        self.assertEqual("dicionario", resultado["origem_autor"])
+
+    def test_identificar_autor_com_agnome_formata_corretamente(self):
+        import identificar
+        linhas = ["O Poder da Aliança", "Paschoal Piragine Júnior", "IBC"]
+        resultado = identificar.separar(linhas)
+        self.assertEqual("Piragine Júnior, Paschoal", resultado["nmAutor0"])
+        self.assertEqual("O Poder da Aliança", resultado["titulo"])
+
 
 if __name__ == "__main__":
     unittest.main()

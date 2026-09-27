@@ -1,9 +1,12 @@
 {
-  "versao": "0.2.0",
+  "versao": "0.3.0",
   "data": "2026-09-27",
   "min_shell_versao": "0.1.0",
-  "changelog": "Adicionado suporte a sincronização cooperativa Git, RapidOCR neural e leitor de código de barras",
+  "changelog": "Adicionado dicionário padronizado de 925 autores e instituições autoras, integração em ler-capa e identificar, e suporte a agnomes e nomes corporativos",
   "arquivos_modificados": [
+    "99-FERRAMENTAS/autores-conhecidos.json",
+    "dados/autores-conhecidos.json",
+    "99-FERRAMENTAS/identificar.py",
     "99-FERRAMENTAS/ler-capa.py",
     "99-FERRAMENTAS/preparar-livros.py",
     "99-FERRAMENTAS/sincronizador_git.py"

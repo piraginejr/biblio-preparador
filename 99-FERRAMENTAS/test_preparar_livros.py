@@ -1301,6 +1301,18 @@ Anexo 2 - Declaração de Niterói parte...............................23"""
                 self.assertEqual("Livro da Nuvem Cooperativa", resultado.get("campos", {}).get("titulo"))
                 self.assertTrue(resultado.get("origem_cooperativa"))
 
+    def test_padronizar_autor_bibliografico(self):
+        self.assertEqual("Piper, John", prep.padronizar_autor_bibliografico("John Piper"))
+        self.assertEqual("Piper, John", prep.padronizar_autor_bibliografico("Piper, John"))
+        self.assertEqual("Tozer, A. W.", prep.padronizar_autor_bibliografico("A. W. Tozer"))
+        self.assertEqual("Van Til, Cornelius", prep.padronizar_autor_bibliografico("Cornelius Van Til"))
+        self.assertEqual("Piragine Junior, Paschoal", prep.padronizar_autor_bibliografico("Paschoal Piragine Junior"))
+        self.assertEqual("Igreja Presbiteriana do Brasil", prep.padronizar_autor_bibliografico("Igreja Presbiteriana do Brasil"))
+        self.assertEqual("Sociedade Bíblica do Brasil", prep.padronizar_autor_bibliografico("Sociedade Bíblica do Brasil"))
+        self.assertEqual("Convenção Batista Brasileira", prep.padronizar_autor_bibliografico("Convenção Batista Brasileira"))
+        self.assertEqual("Benge, Janet", prep.padronizar_autor_bibliografico("Janet Benge"))
+        self.assertEqual("Belleville, Linda L.", prep.padronizar_autor_bibliografico("Linda L. Belleville"))
+
     def test_revisao_registra_aprendizado_sem_promover_regra(self):
         with tempfile.TemporaryDirectory() as td:
             raiz = pathlib.Path(td)

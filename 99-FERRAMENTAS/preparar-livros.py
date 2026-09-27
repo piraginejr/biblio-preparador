@@ -109,6 +109,9 @@ _CACHE_TITULOS_RUIDOSOS = None
 ARQUIVO_AUTORES_RUIDOSOS = pathlib.Path(__file__).with_name(
     "autores-ruidosos-conhecidos.json")
 _CACHE_AUTORES_RUIDOSOS = None
+ARQUIVO_AUTORES_CONHECIDOS = pathlib.Path(__file__).with_name(
+    "autores-conhecidos.json")
+_CACHE_AUTORES_CONHECIDOS = None
 ARQUIVO_EDITORAS_CIDADES = pathlib.Path(__file__).with_name(
     "editoras-cidades.json")
 _CACHE_EDITORAS_CIDADES = None
@@ -5892,13 +5895,104 @@ def editora_confirmada_na_capa(linhas, candidatos=()):
 # MONTAGEM
 # ---------------------------------------------------------------------------
 
+def carregar_autores_conhecidos(atualizar=False):
+    global _CACHE_AUTORES_CONHECIDOS
+    if _CACHE_AUTORES_CONHECIDOS is not None and not atualizar:
+        return _CACHE_AUTORES_CONHECIDOS
+    tabela = {}
+    if ARQUIVO_AUTORES_CONHECIDOS.is_file():
+        try:
+            dados = json.loads(ARQUIVO_AUTORES_CONHECIDOS.read_text(encoding="utf-8"))
+            for item in dados.get("autores", []):
+                biblio = item.get("nome_bibliografico", "")
+                direto = item.get("nome_direto", "")
+                if biblio:
+                    k_biblio = " ".join(re.sub(r"[^\w\s]", "", biblio.lower()).split())
+                    tabela[k_biblio] = biblio
+                    if direto:
+                        k_direto = " ".join(re.sub(r"[^\w\s]", "", direto.lower()).split())
+                        tabela[k_direto] = biblio
+        except (OSError, ValueError, json.JSONDecodeError):
+            tabela = {}
+    _CACHE_AUTORES_CONHECIDOS = tabela
+    return tabela
+
+
+AGNOMES_AUTOR = {"junior", "júnior", "filho", "neto", "sobrinho", "segundo", "terceiro", "jr", "jr."}
+PREPOSICOES_SOBRENOME = {"van", "von", "de", "da", "do", "dos", "das", "del"}
+TERMOS_INSTITUCIONAIS_AUTOR = {
+    "igreja", "convencao", "convenção", "associacao", "associação",
+    "sociedade", "ministerio", "ministério", "seminario", "seminário",
+    "universidade", "departamento", "instituto", "conselho", "comissao", "comissão"
+}
+
+
+def _formatar_palavra_autor(p):
+    p_limpa = p.rstrip(".")
+    if len(p_limpa) == 1 and p_limpa.isalpha():
+        return p_limpa.upper() + "."
+    if p.lower() in {"de", "da", "do", "das", "dos", "van", "von", "del"}:
+        return p.lower()
+    if p.lower() in AGNOMES_AUTOR:
+        if p.lower() in {"jr", "jr."}:
+            return "Junior"
+        return p.title()
+    if p.lower().startswith("mc") and len(p) > 2:
+        return "Mc" + p[2:].title()
+    if p.lower().startswith("mac") and len(p) > 4 and p[3].isupper():
+        return "Mac" + p[3:].title()
+    return p.title()
+
+
 def sobrenome_virgula(nome):
     """Converte 'John MacArthur' em 'MacArthur, John' - formato do Biblio."""
-    nome = " ".join(nome.split())
+    nome = " ".join((nome or "").split())
     if not nome or "," in nome:
         return nome
     p = nome.split()
     return f"{p[-1]}, {' '.join(p[:-1])}" if len(p) > 1 else nome
+
+
+def padronizar_autor_bibliografico(nome):
+    """Padroniza 'Nome Sobrenome' no formato bibliográfico formal 'Sobrenome, Nome'."""
+    n = " ".join(str(nome or "").split()).strip(" ,.-–—")
+    if not n or n.startswith("["):
+        return nome
+
+    tabela = carregar_autores_conhecidos()
+    chave = " ".join(re.sub(r"[^\w\s]", "", n.lower()).split())
+    if chave in tabela:
+        return tabela[chave]
+
+    tokens = set(re.findall(r"\w+", n.lower()))
+    if tokens & TERMOS_INSTITUCIONAIS_AUTOR:
+        return n
+
+    if "," in n:
+        partes = [p.strip() for p in n.split(",", 1)]
+        sobrenome = " ".join(_formatar_palavra_autor(w) for w in partes[0].split())
+        prenome = " ".join(_formatar_palavra_autor(w) for w in partes[1].split())
+        return f"{sobrenome}, {prenome}".strip(", ")
+
+    palavras = n.split()
+    if len(palavras) <= 1:
+        return n
+
+    if len(palavras) >= 3 and palavras[-1].lower().rstrip(".") in AGNOMES_AUTOR:
+        sobrenome_raw = " ".join(palavras[-2:])
+        prenome_raw = " ".join(palavras[:-2])
+    elif len(palavras) >= 3 and palavras[-2].lower() in PREPOSICOES_SOBRENOME:
+        sobrenome_raw = " ".join(palavras[-2:])
+        prenome_raw = " ".join(palavras[:-2])
+    else:
+        sobrenome_raw = palavras[-1]
+        prenome_raw = " ".join(palavras[:-1])
+
+    sobrenome = " ".join(_formatar_palavra_autor(w) for w in sobrenome_raw.split())
+    prenome = " ".join(_formatar_palavra_autor(w) for w in prenome_raw.split())
+    if sobrenome:
+        sobrenome = sobrenome[0].upper() + sobrenome[1:]
+    return f"{sobrenome}, {prenome}".strip(", ")
 
 
 def primeiro_autor(nome):

@@ -22,7 +22,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 logger = logging.getLogger("biblio.sincronizador")
 
-VERSAO_MOTOR_LOCAL = "0.2.0"
+VERSAO_MOTOR_LOCAL = "0.3.0"
 REPO_OWNER_PADRAO = "piraginejr"
 REPO_NOME_PADRAO = "biblio-preparador"
 BRANCH_PADRAO = "main"
@@ -129,11 +129,26 @@ def mesclar_dicionario(local: Dict[str, Any], remoto: Dict[str, Any]) -> Tuple[D
             resultado[chave] = valor_remoto
             novas += 1
         elif isinstance(resultado[chave], list) and isinstance(valor_remoto, list):
-            existentes = set(resultado[chave])
+            # Identificação segura de duplicatas para tipos simples e dicionários
+            vistos = set()
+            for item in resultado[chave]:
+                if isinstance(item, dict):
+                    id_item = (item.get("nome_bibliografico") or item.get("editora")
+                               or item.get("nome") or json.dumps(item, sort_keys=True))
+                    vistos.add(id_item)
+                else:
+                    vistos.add(item)
+
             for item in valor_remoto:
-                if item not in existentes:
+                if isinstance(item, dict):
+                    id_item = (item.get("nome_bibliografico") or item.get("editora")
+                               or item.get("nome") or json.dumps(item, sort_keys=True))
+                else:
+                    id_item = item
+
+                if id_item not in vistos:
                     resultado[chave].append(item)
-                    existentes.add(item)
+                    vistos.add(id_item)
                     novas += 1
         elif isinstance(resultado[chave], dict) and isinstance(valor_remoto, dict):
             sub_res, sub_novas = mesclar_dicionario(resultado[chave], valor_remoto)
@@ -154,6 +169,7 @@ def sincronizar_dicionarios(
     """
     arquivos = [
         "editoras-cidades.json",
+        "autores-conhecidos.json",
         "autores-ruidosos-conhecidos.json",
         "titulos-ruidosos-conhecidos.json",
         "periodicos-conhecidos.json",
