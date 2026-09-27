@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "ca5adac981fb2a03276ecbf55db9120c66ee3af5e3e01e1913e9c77ca858becb",
+  "arquivo_origem": "8387a_arte_de_pregar___como_alcancar_o_ouvinte_pos_moderno.pdf",
+  "campos": {
+    "titulo": "A ARTE DE PREGAR: A COMUNICAÇÃO NA HOMILETICA",
+    "subTitulo": "",
+    "nmAutor0": "MARINHO, ROBSON MOURA",
+    "autores": [
+      {
+        "nome": "MARINHO, ROBSON MOURA",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "VIDA NOVA",
+    "data": "2008",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "273",
+    "isbn": "9788527503914",
+    "isbn_codigo_barras": "",
+    "cdd": "149.9",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20889
+}

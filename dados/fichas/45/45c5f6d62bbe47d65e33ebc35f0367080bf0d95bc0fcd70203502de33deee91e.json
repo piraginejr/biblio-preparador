@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "45c5f6d62bbe47d65e33ebc35f0367080bf0d95bc0fcd70203502de33deee91e",
+  "arquivo_origem": "Batismo com o Espírito Santo experiência única no ato da conversão.pdf",
+  "campos": {
+    "titulo": "Batismo com o Espírito Santo experiência única no ato da conversão",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "150",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20895
+}

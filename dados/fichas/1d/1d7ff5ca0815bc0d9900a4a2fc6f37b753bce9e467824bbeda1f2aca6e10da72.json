@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "1d7ff5ca0815bc0d9900a4a2fc6f37b753bce9e467824bbeda1f2aca6e10da72",
+  "arquivo_origem": "151372350-Dons-Espirituais.pdf",
+  "campos": {
+    "titulo": "Dons espirituais",
+    "subTitulo": "",
+    "nmAutor0": "Brandt, Robert L.",
+    "autores": [
+      {
+        "nome": "Brandt, Robert L.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Universidade Global - Instituto de Correspondência Internacional",
+    "data": "2006",
+    "edicao": "",
+    "lugar": "São Miguel, Açores",
+    "nPaginas": "100",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "Autoria e edição portuguesa de outubro de 2006 constam na folha de rosto.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e folha de rosto"
+  ],
+  "id_remoto": 20352
+}

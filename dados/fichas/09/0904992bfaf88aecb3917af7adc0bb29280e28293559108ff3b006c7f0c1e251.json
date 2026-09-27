@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "0904992bfaf88aecb3917af7adc0bb29280e28293559108ff3b006c7f0c1e251",
+  "arquivo_origem": "439100636-Adoracao-Reformada.pdf",
+  "campos": {
+    "titulo": "Adoração reformada",
+    "subTitulo": "",
+    "nmAutor0": "Johnson, Terry L.",
+    "autores": [
+      {
+        "nome": "Johnson, Terry L.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "EDITORA MONERGISMO",
+    "data": "2014",
+    "edicao": "1a edição",
+    "lugar": "Brasília",
+    "nPaginas": "79",
+    "isbn": "9788562478895",
+    "isbn_codigo_barras": "",
+    "cdd": "248.4",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20718
+}

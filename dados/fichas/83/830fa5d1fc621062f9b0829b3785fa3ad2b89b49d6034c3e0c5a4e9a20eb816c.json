@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "830fa5d1fc621062f9b0829b3785fa3ad2b89b49d6034c3e0c5a4e9a20eb816c",
+  "arquivo_origem": "364433690-A-Politica-de-Jesus-John-Howard-Yoder.pdf",
+  "campos": {
+    "titulo": "A POLITICA DE JESUS",
+    "subTitulo": "",
+    "nmAutor0": "YODER, JOHN HOWARD",
+    "autores": [
+      {
+        "nome": "YODER, JOHN HOWARD",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "SINODAL",
+    "data": "1967",
+    "edicao": "",
+    "lugar": "Grand Rapids",
+    "nPaginas": "177",
+    "isbn": "8523301291",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Enciclopédias gerais"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

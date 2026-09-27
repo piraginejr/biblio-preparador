@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "24918c3bed3d8e22df1405b0646c4eb5a9afa19fdde6f3f327743326ae95aa8c",
+  "arquivo_origem": "548416828-O-Avivamento-e-a-santidade-Volume-5.pdf",
+  "campos": {
+    "titulo": "O avivamento e a santidade",
+    "subTitulo": "Volume 5",
+    "nmAutor0": "[autor não identificado]",
+    "autores": [],
+    "editora": "[s.n.]",
+    "data": "[s.d.]",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "20",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "trecho",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20533
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "31e881188fbfae3ef16484576cb1efc041af0464f9325e3f8baf2f9ae2a08342",
+  "arquivo_origem": "587594956-Tony-Cokke-Em-Busca-de-Paulo.pdf",
+  "campos": {
+    "titulo": "EM BUSCA DE PAULO Como Liberar em Sua Vida O Poder dos Grandes Mentores",
+    "subTitulo": "",
+    "nmAutor0": "COOKE, TONY",
+    "autores": [
+      {
+        "nome": "COOKE, TONY",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "RHEMA Brasil Publicações com a devida",
+    "data": "2022",
+    "edicao": "1a edição",
+    "lugar": "",
+    "nPaginas": "234",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20499
+}

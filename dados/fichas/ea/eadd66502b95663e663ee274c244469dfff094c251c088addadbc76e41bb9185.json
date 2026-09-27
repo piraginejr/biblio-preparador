@@ -1,0 +1,43 @@
+{
+  "hash_sha256": "eadd66502b95663e663ee274c244469dfff094c251c088addadbc76e41bb9185",
+  "arquivo_origem": "717821813-Ortodoxia-Missional-Teologia-e-Missoes-de-maos-dadas.pdf",
+  "campos": {
+    "titulo": "Ortodoxia missional",
+    "subTitulo": "Teologia e missões de mãos dadas",
+    "nmAutor0": "Vegas, Chad",
+    "autores": [
+      {
+        "nome": "Vegas, Chad",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Kocman, Alex",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Cavani, João Pedro",
+        "desc": "Tradutor"
+      }
+    ],
+    "editora": "Pro Nobis Editora",
+    "data": "2023",
+    "edicao": "1ª edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "117",
+    "isbn": "9786581489298",
+    "isbn_codigo_barras": "",
+    "cdd": "266",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Missão cristã; Missiologia; Doutrina cristã; Teologia dogmática",
+    "titulo_original": "Missions by the Book: How Theology and Missions Walk Together",
+    "origem_titulo": "folha de rosto e CIP revisadas",
+    "origem_autor": "folha de rosto e CIP revisadas"
+  },
+  "justificativa": "A CIP e a página de créditos do próprio PDF identificam integralmente a edição brasileira. URLs editoriais não caracterizam captura de site.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: folha de rosto, CIP e copyright, páginas 4-5"
+  ]
+}

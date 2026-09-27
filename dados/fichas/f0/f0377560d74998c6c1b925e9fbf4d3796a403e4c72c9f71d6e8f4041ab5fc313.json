@@ -1,0 +1,42 @@
+{
+  "hash_sha256": "f0377560d74998c6c1b925e9fbf4d3796a403e4c72c9f71d6e8f4041ab5fc313",
+  "arquivo_origem": "578610995-273344253-o-Credo-Apostolico-Licoes-Da-Ipb.pdf",
+  "campos": {
+    "titulo": "O Credo Apostólico",
+    "subTitulo": "Revista do Aluno — Série A Descoberta da Fé",
+    "nmAutor0": "Rocha, Thiago R.",
+    "autores": [
+      {
+        "nome": "Rocha, Thiago R.",
+        "desc": "Redação"
+      },
+      {
+        "nome": "Lavoura, Mário da S.",
+        "desc": "Redação"
+      }
+    ],
+    "editora": "Editora Cultura Cristã",
+    "data": "1973",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "32",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "revista",
+    "abstract": "",
+    "palavrasChave": "Credo Apostólico; Doutrina cristã; Adolescentes; Escola dominical",
+    "origem_titulo": "capa e expediente",
+    "origem_autor": "expediente da revista",
+    "isbn_motivo": "revista didática: sem ISBN",
+    "idioma": "por"
+  },
+  "justificativa": "Edição completa da Revista do Aluno, não artigo. O expediente informa redação, publicação, distribuição e a publicação original no 4º trimestre de 1973.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, expediente e índice, páginas 1-4"
+  ],
+  "id_remoto": 20763
+}

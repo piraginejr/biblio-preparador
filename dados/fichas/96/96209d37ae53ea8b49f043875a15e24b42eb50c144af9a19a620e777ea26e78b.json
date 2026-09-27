@@ -1,0 +1,43 @@
+{
+  "hash_sha256": "96209d37ae53ea8b49f043875a15e24b42eb50c144af9a19a620e777ea26e78b",
+  "arquivo_origem": "A historia da pregacao (volume 2) - Benjamin K. Forrest.pdf",
+  "campos": {
+    "titulo": "A história da pregação (volume 2)",
+    "subTitulo": "",
+    "nmAutor0": "Curtis, Bill",
+    "autores": [
+      {
+        "nome": "Curtis, Bill",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Forrest, Benjamin K.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "King, Kevin L.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Milioni, Dwayne",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9788571671546",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

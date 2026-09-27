@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "dace5dffefa0c93919c0cba9b96d66077320cfa4192f5559a059079dffdb41c4",
+  "arquivo_origem": "617207826-Os-batistas-e-sua-heranca-reformada-Teologia-Brasileira.pdf",
+  "campos": {
+    "titulo": "Os batistas e sua herança reformada",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [
+      {
+        "nome": "reformada, Os batistas",
+        "desc": "Autor"
+      },
+      {
+        "nome": "herança, sua",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fi",
+    "data": "2020",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "14",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20752
+}

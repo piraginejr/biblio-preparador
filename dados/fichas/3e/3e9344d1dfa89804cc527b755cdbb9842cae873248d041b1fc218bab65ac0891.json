@@ -1,0 +1,39 @@
+{
+  "hash_sha256": "3e9344d1dfa89804cc527b755cdbb9842cae873248d041b1fc218bab65ac0891",
+  "arquivo_origem": "392092791-226081265-O-Celeste-Porvir-Antonio-Gouveia-Mendonca-pdf.pdf",
+  "campos": {
+    "titulo": "O celeste porvir",
+    "subTitulo": "A inserção do protestantismo no Brasil",
+    "nmAutor0": "Mendonça, Antônio Gouvêa",
+    "autores": [
+      {
+        "nome": "Mendonça, Antônio Gouvêa",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Edições Paulinas",
+    "data": "1984",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "256",
+    "isbn": "8505002164",
+    "isbn_codigo_barras": "",
+    "cdd": "280.40981",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "series": "Estudos e debates latino-americanos",
+    "numSerie": "10",
+    "origem_titulo": "CIP revisada",
+    "origem_autor": "CIP revisada"
+  },
+  "justificativa": "CIP, folha de rosto e copyright do PDF fornecem a ficha completa; a Amazon confirmou o ISBN equivalente de 13 dígitos.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: CIP, folha de rosto e copyright",
+    "Amazon: resultado por ISBN equivalente"
+  ],
+  "id_remoto": 20385
+}

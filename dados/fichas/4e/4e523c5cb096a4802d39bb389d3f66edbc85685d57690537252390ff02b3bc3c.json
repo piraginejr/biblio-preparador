@@ -1,0 +1,29 @@
+{
+  "hash_sha256": "4e523c5cb096a4802d39bb389d3f66edbc85685d57690537252390ff02b3bc3c",
+  "arquivo_origem": "Livro Incoerência de Deus x Óbvio do Homem - Editora 31.01.25 1.pdf",
+  "campos": {
+    "titulo": "Incoerência de Deus x óbvio do homem",
+    "subTitulo": "Manuscrito em editoração",
+    "nmAutor0": "Não identificado",
+    "autores": [],
+    "editora": "",
+    "data": "2025",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Curitiba",
+    "nPaginas": "101",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": "Fé; Providência divina; Vida cristã; Manuscrito"
+  },
+  "justificativa": "O arquivo é um manuscrito em editoração, sem folha de rosto, autoria ou ficha editorial identificável; foi preservado como documento, sem inventar autoria.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, sumário e conteúdo; título interno do arquivo"
+  ],
+  "id_remoto": 20707
+}

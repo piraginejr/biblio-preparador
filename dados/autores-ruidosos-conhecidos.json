@@ -1,0 +1,51 @@
+{
+  "versao": 1,
+  "descricao": "Memoria incremental de textos que ja foram confundidos com autores. Acrescente um item com modo exato, prefixo ou contem; a comparacao ignora maiusculas, acentos, virgulas e espacos repetidos.",
+  "itens": [
+    {
+      "texto": "INGLATERRA, NA",
+      "modo": "exato",
+      "motivo": "trecho de titulo ou local capturado como autor"
+    },
+    {
+      "texto": "Todos os direitos reservados",
+      "modo": "contem",
+      "motivo": "aviso de direitos autorais"
+    },
+    {
+      "texto": "É proibida a reprodução",
+      "modo": "contem",
+      "motivo": "aviso de direitos autorais"
+    },
+    {
+      "texto": "Organização",
+      "modo": "exato",
+      "motivo": "funcao editorial sem nome de pessoa"
+    },
+    {
+      "texto": "Coordenação",
+      "modo": "exato",
+      "motivo": "funcao editorial sem nome de pessoa"
+    },
+    {
+      "texto": "Autor",
+      "modo": "exato",
+      "motivo": "rotulo de campo sem nome"
+    },
+    {
+      "texto": "Professor",
+      "modo": "exato",
+      "motivo": "rotulo de funcao sem nome"
+    },
+    {
+      "texto": "Ministério",
+      "modo": "prefixo",
+      "motivo": "instituicao ou departamento capturado como autor"
+    },
+    {
+      "texto": "FILMES PARA ENTENDER A ERA DIGITAL",
+      "modo": "exato",
+      "motivo": "subtítulo/título do documento capturado como autor"
+    }
+  ]
+}

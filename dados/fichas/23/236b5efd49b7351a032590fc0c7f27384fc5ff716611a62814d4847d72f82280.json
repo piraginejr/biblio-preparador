@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "236b5efd49b7351a032590fc0c7f27384fc5ff716611a62814d4847d72f82280",
+  "arquivo_origem": "720863624-spurgeon-historia-dos-batistas.pdf",
+  "campos": {
+    "titulo": "Sermon #376 Metropolitan Tabernacle Pulpit",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "16",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20689
+}

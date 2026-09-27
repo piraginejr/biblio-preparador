@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "3c1dcc39508e25a93c5e448804d5c59e6e6fbfa3d3c18553786f785b3de7af27",
+  "arquivo_origem": "378635405-Fe-y-Dinero.pdf",
+  "campos": {
+    "titulo": "Fe y dinero",
+    "subTitulo": "",
+    "nmAutor0": "[s.a.]",
+    "autores": [],
+    "editora": "[s.n.]",
+    "data": "2018",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "7",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "sermão",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "cabeçalho revisado",
+    "origem_autor": "autoria não declarada"
+  },
+  "justificativa": "Documento de pregação datado de 18 de abril de 2018, estruturado por texto, tema e propósito; não é livro.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: cabeçalho e estrutura integral"
+  ],
+  "id_remoto": 20526
+}

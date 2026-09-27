@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "43554622a68eac9b016504322dc03417d9c0894ba3ea6f195eb6d7337a42c632",
+  "arquivo_origem": "381942681-livro-10-miolo.pdf",
+  "campos": {
+    "titulo": "Estudo do Evangelho de João: versículo por versículo — capítulos 1–10",
+    "subTitulo": "",
+    "nmAutor0": "Woodward, Dick",
+    "autores": [],
+    "editora": "Ministério Cooperativo Internacional (ICM)",
+    "data": "2017",
+    "edicao": "5ª edição",
+    "lugar": "",
+    "nPaginas": "126",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa e expediente revisados",
+    "origem_autor": "capa e expediente revisados"
+  },
+  "justificativa": "Material complementar do Curso Bíblico Internacional Encontro com a Palavra; deve seguir a fila de apostilas.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, expediente e nota ao aluno"
+  ],
+  "id_remoto": 20523
+}

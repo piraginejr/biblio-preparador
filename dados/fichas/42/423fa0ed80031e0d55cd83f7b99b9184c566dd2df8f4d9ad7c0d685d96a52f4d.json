@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "423fa0ed80031e0d55cd83f7b99b9184c566dd2df8f4d9ad7c0d685d96a52f4d",
+  "arquivo_origem": "245953381-Church-History.pdf",
+  "campos": {
+    "titulo": "A Study In Church History",
+    "subTitulo": "",
+    "nmAutor0": "Taylor, Gene",
+    "autores": [
+      {
+        "nome": "Taylor, Gene",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "1997",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "58",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20888
+}

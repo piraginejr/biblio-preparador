@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "29b549f77c01698210baeb35ba1ce7e7621a8e95815a66da16eee827da2375f5",
+  "arquivo_origem": "575511648-Jonas-Carlos-Augusto-Vailatte.pdf",
+  "campos": {
+    "titulo": "Jonas introdução, tradução e comentário",
+    "subTitulo": "",
+    "nmAutor0": "Vailatti, Carlos Augusto",
+    "autores": [
+      {
+        "nome": "Vailatti, Carlos Augusto",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Reflexão",
+    "data": "2018",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "229",
+    "isbn": "9788580883763",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Religião"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "hash_sha256": "fb2a10d778712d082705facd0f3318ad24124e9d11d4b4249d2b1b8636cf8bbf",
+  "arquivo_origem": "9- DISCIPLINAS ESPIRITUAIS.pdf",
+  "campos": {
+    "titulo": "Primeiros Passos com Jesus",
+    "subTitulo": "Disciplinas Espirituais",
+    "nmAutor0": "Jr., Paschoal Piragine",
+    "autores": [
+      {
+        "nome": "Jr., Paschoal Piragine",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Rofdrigues, Cleverson",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Chavez, Juan",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Ribeiro, Fernando Boa Sorte",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Fernando Boa Sorte Ribeiro",
+    "data": "2026",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "728",
+    "isbn": "9786501879666",
+    "isbn_codigo_barras": "9786501879666",
+    "cdd": "248.4",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

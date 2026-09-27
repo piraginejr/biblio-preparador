@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "5d7f7e784e0c1626e88e27f5947b3d7ec37b0c94fe8250a07addacd5f5c1f4ae",
+  "arquivo_origem": "263832931-Reflexoes-Sobre-a-Vida-e-Pensamento-de-John-Owen-Por-John-Piper.pdf",
+  "campos": {
+    "titulo": "Reflexões sobre a vida e pensamento de John Owen",
+    "subTitulo": "O principal propósito de minha vida",
+    "nmAutor0": "Piper, John",
+    "autores": [
+      {
+        "nome": "Piper, John",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "O Estandarte de Cristo",
+    "data": "2015",
+    "edicao": "",
+    "lugar": "[S.l.]",
+    "nPaginas": "31",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa revisada"
+  },
+  "justificativa": "Capa, créditos e texto integral confirmam título e autoria; o ano 1647 pertence à biografia de Owen, não à publicação.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, créditos e final"
+  ],
+  "id_remoto": 20362
+}

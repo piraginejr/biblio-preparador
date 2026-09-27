@@ -1,0 +1,56 @@
+{
+  "hash_sha256": "ef7640e4ee87cff4420ae32d6fc1cd26b14ec0438536b3dc7f6f01690d1e61d1",
+  "arquivo_origem": "historia da pregacao (volume 2), A - Benjamin K. Forrest & Kevin L. King & Bill Curtis & Dwayne Milioni.pdf",
+  "campos": {
+    "titulo": "A história da pregação (volume 2)",
+    "subTitulo": "",
+    "nmAutor0": "Forrest, Benjamin K.",
+    "autores": [
+      {
+        "nome": "Forrest, Benjamin K.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "King, Kevin L.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Curtis, Bill",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Milioni, Dwayne",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Thomas Nelson Brasil",
+    "data": "2020",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "668",
+    "isbn": "9788571671546",
+    "isbn_codigo_barras": "",
+    "cdd": "220",
+    "nmLingua": "portugues",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "idioma": "por",
+    "pasta_origem_importacao": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Forrest, Benjamin K. & King, Kevin L. & Curtis, Bill & Milioni, Dwayne/historia da pregacao (volume 2), A",
+    "arquivos_origem_importacao": [
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Forrest, Benjamin K. & King, Kevin L. & Curtis, Bill & Milioni, Dwayne/historia da pregacao (volume 2), A/historia da pregacao (volume 2), A - Benjamin K. Forrest & Kevin L. King & Bill Curtis & Dwayne Milioni.epub",
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Forrest, Benjamin K. & King, Kevin L. & Curtis, Bill & Milioni, Dwayne/historia da pregacao (volume 2), A/historia da pregacao (volume 2), A - Benjamin K. Forrest & Kevin L. King & Bill Curtis & Dwayne Milioni.jpg",
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Forrest, Benjamin K. & King, Kevin L. & Curtis, Bill & Milioni, Dwayne/historia da pregacao (volume 2), A/historia da pregacao (volume 2), A - Benjamin K. Forrest & Kevin L. King & Bill Curtis & Dwayne Milioni.opf",
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Forrest, Benjamin K. & King, Kevin L. & Curtis, Bill & Milioni, Dwayne/historia da pregacao (volume 2), A/historia da pregacao (volume 2), A - Benjamin K. Forrest & Kevin L. King & Bill Curtis & Dwayne Milioni.pdf"
+    ],
+    "opf_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Forrest, Benjamin K. & King, Kevin L. & Curtis, Bill & Milioni, Dwayne/historia da pregacao (volume 2), A/historia da pregacao (volume 2), A - Benjamin K. Forrest & Kevin L. King & Bill Curtis & Dwayne Milioni.opf",
+    "asin": "B085LVFVD6"
+  },
+  "justificativa": "metadados estruturados importados do OPF",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "OPF: /Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Forrest, Benjamin K. & King, Kevin L. & Curtis, Bill & Milioni, Dwayne/historia da pregacao (volume 2), A/historia da pregacao (volume 2), A - Benjamin K. Forrest & Kevin L. King & Bill Curtis & Dwayne Milioni.opf"
+  ],
+  "id_remoto": 20856
+}

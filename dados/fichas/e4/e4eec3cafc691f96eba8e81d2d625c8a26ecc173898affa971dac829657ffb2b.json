@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "e4eec3cafc691f96eba8e81d2d625c8a26ecc173898affa971dac829657ffb2b",
+  "arquivo_origem": "561437423-APOSTILA-Historia-dos-Batistas.pdf",
+  "campos": {
+    "titulo": "HISTÓRIA BATISTAS",
+    "subTitulo": "",
+    "nmAutor0": "HISTÓRIA",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "36",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20571
+}

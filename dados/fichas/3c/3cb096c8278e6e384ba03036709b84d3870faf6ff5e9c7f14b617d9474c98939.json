@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "3cb096c8278e6e384ba03036709b84d3870faf6ff5e9c7f14b617d9474c98939",
+  "arquivo_origem": "ESPIRITUALIDADE - DESAFIO PARA IGREJA POS MODERNA.pdf",
+  "campos": {
+    "titulo": "ESPIRITUALIDADE : DESAFIO PARA A IGREJA PÓS",
+    "subTitulo": "",
+    "nmAutor0": "DEDICATÓRIA, Roberto Alves de Alencar.",
+    "autores": [],
+    "editora": "Editora Vida, 1988",
+    "data": "1993",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "34",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20857
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "2d9152e9fd003ac31b2845d5e182c2a2a08644b5f96a8391bf82277f38883183",
+  "arquivo_origem": "1009the church and its mission.pdf",
+  "campos": {
+    "titulo": "MISSION",
+    "subTitulo": "",
+    "nmAutor0": "Jenkins, W. L.",
+    "autores": [
+      {
+        "nome": "Jenkins, W. L.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editorial Herder, S.A., Barcelona, Spain, for permission to",
+    "data": "1974",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Wheaton",
+    "nPaginas": "164",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20764
+}

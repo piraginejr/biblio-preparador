@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "5ca3792c8509757119d50ef6ea25c948a8718fe7fd7f116eb93459417b891483",
+  "arquivo_origem": "750718492-Apostila-Culto-e-Liturgia.pdf",
+  "campos": {
+    "titulo": "Dr. Marcos Orison Nunes de Almeida",
+    "subTitulo": "",
+    "nmAutor0": "Almeida, Marcos Orison Nunes de",
+    "autores": [],
+    "editora": "Rua: Martinho Lutero, 277 - Gleba Palhano - Londrina - PR",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "147",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20812
+}

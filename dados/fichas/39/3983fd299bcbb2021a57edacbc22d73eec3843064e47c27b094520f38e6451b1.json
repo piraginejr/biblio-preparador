@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "3983fd299bcbb2021a57edacbc22d73eec3843064e47c27b094520f38e6451b1",
+  "arquivo_origem": "777239128-Worship-in-the-Early-Church-Ralph-P-Martin.pdf",
+  "campos": {
+    "titulo": "Worship in the early church",
+    "subTitulo": "",
+    "nmAutor0": "Martin, Ralph P.",
+    "autores": [
+      {
+        "nome": "Martin, Ralph P.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Eerdmans",
+    "data": "1974",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "GRAND RAPIDS",
+    "nPaginas": "144",
+    "isbn": "0802816134",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Worship; History; Church history; Early church; Cultes"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20798
+}

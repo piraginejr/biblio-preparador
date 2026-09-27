@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "6cbb2d8bb1b2987c7290a50115eddfc66fc2655db0e434cfe28aafb8b08e559f",
+  "arquivo_origem": "What was life like for Judeans living in exile in Babylonia_.pdf",
+  "campos": {
+    "titulo": "The Al-Yahudu Tablets",
+    "subTitulo": "",
+    "nmAutor0": "Heath-Whyte, George",
+    "autores": [],
+    "editora": "Tyndale House",
+    "data": "2023",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "6",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20640
+}

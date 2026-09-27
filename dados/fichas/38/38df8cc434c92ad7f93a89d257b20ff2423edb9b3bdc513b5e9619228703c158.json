@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "38df8cc434c92ad7f93a89d257b20ff2423edb9b3bdc513b5e9619228703c158",
+  "arquivo_origem": "15036discipulado_by_dietrich_bonhoeffer__z_lib.org_.pdf",
+  "campos": {
+    "titulo": "DISCIPULADO",
+    "subTitulo": "",
+    "nmAutor0": "BONHOEFFER, DIETRICH",
+    "autores": [
+      {
+        "nome": "BONHOEFFER, DIETRICH",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "SINODAL",
+    "data": "1937",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Leopoldo",
+    "nPaginas": "173",
+    "isbn": "8523307672",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

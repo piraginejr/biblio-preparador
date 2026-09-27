@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "a1aec52c082d447e57868afc33ef5c6e0d661e48bb681fc4ce08adb432994964",
+  "arquivo_origem": "527174751-Comentario-Biblico-Beacon-Tomo-08-Romanos-Hasta-2-Corintios.pdf",
+  "campos": {
+    "titulo": "COMENTARIO BÍBLICO BEACON",
+    "subTitulo": "",
+    "nmAutor0": "Foundation, The Lockman",
+    "autores": [
+      {
+        "nome": "Foundation, The Lockman",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Nazarena de Publicaciones",
+    "data": "1969",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "495",
+    "isbn": "9781563446016",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

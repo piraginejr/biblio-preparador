@@ -1,0 +1,55 @@
+{
+  "hash_sha256": "c3312617afeee0f5d45d687eb1552b78b9fe76143ea1bd5cbdfa650b0cba9f69",
+  "arquivo_origem": "560606910-Comentario-Biblico-Beacon-de-Los-Libros-Historicos.pdf",
+  "campos": {
+    "titulo": "Comentario Bíblico Beacon: Libros Históricos",
+    "subTitulo": "Tomo II: Josué a Ester",
+    "nmAutor0": "Mulder, Chester O.",
+    "autores": [
+      {
+        "nome": "Mulder, Chester O.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Ridall, R. Clyde",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Purkiser, W. T.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Finley, Harvey E.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Sawyer, Robert L.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Demaray, C. E.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Nazarena de Publicaciones",
+    "data": "1969",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Lenexa, Kansas",
+    "nPaginas": "469",
+    "isbn": "9781563446023",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "volume": "2"
+  },
+  "justificativa": "O tomo II foi consultado novamente com seu ISBN próprio e não consta na API.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e lista de ISBNs da coleção"
+  ],
+  "id_remoto": 20496
+}

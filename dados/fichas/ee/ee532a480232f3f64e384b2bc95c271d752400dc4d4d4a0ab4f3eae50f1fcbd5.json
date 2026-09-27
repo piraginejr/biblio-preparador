@@ -1,0 +1,26 @@
+{
+  "hash_sha256": "ee532a480232f3f64e384b2bc95c271d752400dc4d4d4a0ab4f3eae50f1fcbd5",
+  "arquivo_origem": "356293724-Comentario-Biblico-Beacon-PDF.pdf",
+  "campos": {
+    "titulo": "Página de download incorreta - Comentário Bíblico Beacon",
+    "subTitulo": "",
+    "nmAutor0": "PDF, Biblico Beacon",
+    "autores": [],
+    "editora": "",
+    "data": "1982",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "2",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "arquivo inválido",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "3fd2b99f0648a0d55c80605492ac4e4fa3a00127cb512a347ab4b7c651e70621",
+  "arquivo_origem": "846608722-Curso-Para-Formacao-de-Lideres-Vida-Vova.pdf",
+  "campos": {
+    "titulo": "CURSO PARA FORMAÇÃO DE LÍDERES & OBREIROS",
+    "subTitulo": "",
+    "nmAutor0": "HORTON, David",
+    "autores": [
+      {
+        "nome": "HORTON, David",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9788527505338",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

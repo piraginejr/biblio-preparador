@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "42c0205409b29e8e42b880d422d2f9804144d9d898e6cd1e576cfded72b42821",
+  "arquivo_origem": "Where did the Bible's chapters come from_.pdf",
+  "campos": {
+    "titulo": "Where did the Bible's chapters come from?",
+    "subTitulo": "",
+    "nmAutor0": "Hsieh, Nelson",
+    "autores": [],
+    "editora": "Tyndale House",
+    "data": "2023",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "8",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20644
+}

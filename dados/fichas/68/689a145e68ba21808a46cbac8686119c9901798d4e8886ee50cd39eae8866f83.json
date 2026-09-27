@@ -1,0 +1,29 @@
+{
+  "hash_sha256": "689a145e68ba21808a46cbac8686119c9901798d4e8886ee50cd39eae8866f83",
+  "arquivo_origem": "O MAIOR EXEMPLO DE PERDÃO.pdf",
+  "campos": {
+    "titulo": "Jesus, o maior exemplo de perdão",
+    "subTitulo": "",
+    "nmAutor0": "Não identificado",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "4",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": "Perdão; Jesus Cristo; Lição bíblica infantil"
+  },
+  "justificativa": "Trata-se de uma lição bíblica infantil de quatro páginas, sem autoria ou dados editoriais declarados, e não de um livro.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: primeira página e conteúdo"
+  ],
+  "id_remoto": 20708
+}

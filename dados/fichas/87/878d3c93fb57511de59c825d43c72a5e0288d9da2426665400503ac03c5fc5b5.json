@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "878d3c93fb57511de59c825d43c72a5e0288d9da2426665400503ac03c5fc5b5",
+  "arquivo_origem": "13333290-TONGUES-IN-CHURCH-HISTORY.pdf",
+  "campos": {
+    "titulo": "EDITORS CORNER",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "13",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20850
+}

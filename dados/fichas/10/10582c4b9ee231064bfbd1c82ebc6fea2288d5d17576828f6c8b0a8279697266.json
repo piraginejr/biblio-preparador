@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "10582c4b9ee231064bfbd1c82ebc6fea2288d5d17576828f6c8b0a8279697266",
+  "arquivo_origem": "A DIMENSÃO DA IGREJA COMO POVO DE DEUS NA TEOLOGIA BÍBLICA.pdf",
+  "campos": {
+    "titulo": "A DIMENSÃO DA IGREJA COMO POVO DE DEUS NA TEOLOGIA BÍBLICA",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "1958",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "30",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20893
+}

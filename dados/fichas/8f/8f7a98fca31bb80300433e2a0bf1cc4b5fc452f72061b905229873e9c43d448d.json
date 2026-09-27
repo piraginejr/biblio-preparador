@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "8f7a98fca31bb80300433e2a0bf1cc4b5fc452f72061b905229873e9c43d448d",
+  "arquivo_origem": "Nascido Escravo - Martinho Lutero.pdf",
+  "campos": {
+    "titulo": "Nascido escravo",
+    "subTitulo": "",
+    "nmAutor0": "Pond, Clifford",
+    "autores": [
+      {
+        "nome": "Pond, Clifford",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Lutero, Martinho",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "1992",
+    "edicao": "1ª Edição",
+    "lugar": "",
+    "nPaginas": "125",
+    "isbn": "9788581320854",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20902
+}

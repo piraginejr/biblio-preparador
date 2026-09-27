@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "e6fc4de0ecd345cf3135bf22c149a0ddb40b116880e5985af9034af696c0515f",
+  "arquivo_origem": "13123apostilamentoria_atualizada.pdf",
+  "campos": {
+    "titulo": "13123apostilamentoria atualizada",
+    "subTitulo": "",
+    "nmAutor0": "CRISTĂ, LIDERANÇA",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "78",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20946
+}

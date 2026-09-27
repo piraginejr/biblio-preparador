@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "0c4bf6a9be1b9b3ef5f2a2e3d720a075f2c4cbedc23ecaa9cd228b1fcefe1613",
+  "arquivo_origem": "642256350-Pregando-Para-a-Gloria-de-Deus-Begg-Alistair.pdf",
+  "campos": {
+    "titulo": "Pregando para a glória de Deus",
+    "subTitulo": "",
+    "nmAutor0": "Begg, Alistair",
+    "autores": [
+      {
+        "nome": "Begg, Alistair",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9788581322056",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "hash_sha256": "255dce63fff6d36960184cef9badf9f7231f759d077222fa1529b9c770cef38a",
+  "arquivo_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/666584368-TRIPP-Paul-David-El-Dolor-de-la-Perdida.pdf",
+  "campos": {
+    "titulo": "El Dolor de la Pérdida",
+    "isbn": "9781944839383"
+  },
+  "justificativa": "Cadastrado na API Biblio",
+  "fontes": [
+    "API Biblio PIB Curitiba"
+  ]
+}

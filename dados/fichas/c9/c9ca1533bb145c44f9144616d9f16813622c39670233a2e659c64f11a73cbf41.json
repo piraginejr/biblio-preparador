@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "c9ca1533bb145c44f9144616d9f16813622c39670233a2e659c64f11a73cbf41",
+  "arquivo_origem": "004057368404100216.pdf",
+  "campos": {
+    "titulo": "Resenha de Christ Outside the Gate: Mission Beyond Christendom",
+    "subTitulo": "",
+    "nmAutor0": "Moffett, Samuel Hugh",
+    "autores": [],
+    "editora": "Theology Today",
+    "data": "1984",
+    "edicao": "v. 41, n. 2, julho de 1984, p. 214-216",
+    "lugar": "",
+    "nPaginas": "3",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": "Orlando E. Costas; Missiologia; Missão cristã; Teologia da libertação; Resenha",
+    "idioma": "eng",
+    "origem_titulo": "cabeçalho da resenha revisado",
+    "origem_autor": "assinatura ao final da resenha revisada"
+  },
+  "justificativa": "O PDF é uma resenha publicada em Theology Today, não o livro de Orlando Costas. O autor da resenha é Samuel Hugh Moffett, identificado na assinatura final.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: cabeçalho, texto e assinatura, páginas 1-3",
+    "Theology Today, v. 41, n. 2, julho de 1984, p. 214-216"
+  ],
+  "id_remoto": 20776
+}

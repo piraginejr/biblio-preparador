@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "9adb8272872576bfb9b77c11949c77666f032690ee1fd6bbacc162825287351c",
+  "arquivo_origem": "apostila_concilio_diaconal_2019.pdf",
+  "campos": {
+    "titulo": "APOSTILA PARA CONCÍLIO DIACONAL",
+    "subTitulo": "",
+    "nmAutor0": "de Janeiro (ADIBERJ), através do diácono Jonatas Nascimento, da",
+    "autores": [],
+    "editora": "Publicações. Rio de Janeiro. 2018",
+    "data": "2000",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "20",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20848
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "2dc0e4192e22d3d037092f6847f6bb31f96765d3dd2e2625f1ebb57d842f5fd0",
+  "arquivo_origem": "644065538-O-Deus-Que-Eu-Nao-Conhecia.pdf",
+  "campos": {
+    "titulo": "O deus que eu não conhecia: como a amizade verdadeira com o espírito santo pode transformar sua vida",
+    "subTitulo": "",
+    "nmAutor0": "Morris, Robert",
+    "autores": [
+      {
+        "nome": "Morris, Robert",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "LAN EDITORA",
+    "data": "2011",
+    "edicao": "1ª edição",
+    "lugar": "1. ed., reimpr. - Rio de Janeiro, RJ",
+    "nPaginas": "203",
+    "isbn": "9788599858622",
+    "isbn_codigo_barras": "",
+    "cdd": "231.3",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20778
+}

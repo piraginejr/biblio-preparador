@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "3e4359c949b4262c6bd9eca860a5bb77b3eb6401b1494ae09c955027a0eed556",
+  "arquivo_origem": "500206240-Teologia-biblica-batista.pdf",
+  "campos": {
+    "titulo": "2020",
+    "subTitulo": "",
+    "nmAutor0": "Angelim, Fernando",
+    "autores": [
+      {
+        "nome": "Angelim, Fernando",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora O Estandarte de Cristo",
+    "data": "2020",
+    "edicao": "1ª edição",
+    "lugar": "Belém",
+    "nPaginas": "247",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20440
+}

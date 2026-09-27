@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "8723cc0c14872e46920b8e1336dcc120f3ce730d575e2e4257223ce044309874",
+  "arquivo_origem": "Contracultura (David Platt) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Um chamado Compassivo à contracultura: em um mundo de pobreza casamento, com pessoa do mesmo sexo. racismo, escravidão sexual, imigração, perseguição, aborto, órfãos, pornografia",
+    "subTitulo": "",
+    "nmAutor0": "Platt, David",
+    "autores": [
+      {
+        "nome": "Platt, David",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "VIDA NOVA",
+    "data": "2016",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "288",
+    "isbn": "9788527506731",
+    "isbn_codigo_barras": "",
+    "cdd": "261.0973",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

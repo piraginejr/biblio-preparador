@@ -1,0 +1,30 @@
+{
+  "hash_sha256": "b67abf0b4fb9c1e3fa9914a1cf9c9209ff5f07d8b5326165edebd83943b53ee6",
+  "arquivo_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/586382784-Teologia-Historica-william-Cunningham.pdf",
+  "campos": {
+    "titulo": "Teología histórica",
+    "isbn": "",
+    "subTitulo": "Una revisión de las principales discusiones doctrinales en la Iglesia cristiana desde la era apostólica",
+    "nmAutor0": "Cunningham, William",
+    "titulo_original": "Historical Theology: A Review of the Principal Doctrinal Discussions in the Christian Church since the Apostolic Age",
+    "editora": "[s.n.]",
+    "data": "2022",
+    "lugar": "[S.l.]",
+    "nPaginas": "1193",
+    "isbn_motivo": "sem ISBN: obra original de 1863; tradução digital sem ISBN próprio",
+    "cdd": "230.09",
+    "nmLingua": "Espanhol",
+    "idioma": "spa",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa revisada",
+    "palavrasChave": "Teologia doutrinária - História; História da Igreja",
+    "abstract": "Tradução digital em espanhol sem tradutor ou editora identificados. Data inferida dos metadados de criação do PDF (2022). A obra-fonte foi publicada em dois volumes por T. & T. Clark, Edimburgo, em 1863. A ausência de ISBN é normal para a obra antiga e este arquivo não declara ISBN próprio."
+  },
+  "justificativa": "Capa e conteúdo conferidos; dados ausentes representados pelas convenções [S.l.] e [s.n.], com data inferida documentada.",
+  "fontes": [
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e metadados internos",
+    "https://openlibrary.org/books/OL7075136M/Historical_theology",
+    "https://ci.nii.ac.jp/ncid/BA33437132"
+  ]
+}

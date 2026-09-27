@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "247a46aa2e4dde528fb883af6f2cf8f7d72890e7f6596749ec5747bc948cdc5e",
+  "arquivo_origem": "619642706-CULTO-E-ADORACAO-DOUTRINA.pdf",
+  "campos": {
+    "titulo": "Culto e Adoração",
+    "subTitulo": "Culto de Oração e Doutrina",
+    "nmAutor0": "Souza, Isaac Lopes de",
+    "autores": [
+      {
+        "nome": "Souza, Isaac Lopes de",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Convicção Editora",
+    "data": "2011",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "20",
+    "isbn": "9788561016265",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa, créditos e ISBN revisados",
+    "origem_autor": "crédito de exposição na capa"
+  },
+  "justificativa": "O PDF tem cobertura pesquisável integral; a única página antes marcada como fraca é um sumário legível.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: capa, créditos, ISBN e sumário"
+  ]
+}

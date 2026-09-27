@@ -1,0 +1,26 @@
+{
+  "hash_sha256": "118a9a8af4fb97ad9e084fcca3091a16ae6445d56b5faae319c26ecc1788a811",
+  "arquivo_origem": "MINISTÉRIO DIACONAL - Breve Estudo .pdf",
+  "campos": {
+    "titulo": "BREVE ESTUDO SOBRE",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "Curitiba",
+    "nPaginas": "12",
+    "isbn": "6984660408",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

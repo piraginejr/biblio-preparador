@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "cf50dc5269315bd50a683fae6b79984a6d2a17431f12a54a5b7f9db7f863cf59",
+  "arquivo_origem": "Os 5 Desafios de uma Equipe, Patrick Lenzioni.pdf",
+  "campos": {
+    "titulo": "EQUIPES – COMPREENDENDO E SUPERANDO AS SUAS 05 PRINCIPAIS",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "3",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "trecho",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20591
+}

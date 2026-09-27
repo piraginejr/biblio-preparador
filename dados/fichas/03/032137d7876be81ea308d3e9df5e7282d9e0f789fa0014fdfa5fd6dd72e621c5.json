@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "032137d7876be81ea308d3e9df5e7282d9e0f789fa0014fdfa5fd6dd72e621c5",
+  "arquivo_origem": "469178164-Historia-Igreja-e-Poder.pdf",
+  "campos": {
+    "titulo": "História, Igreja e Poder",
+    "subTitulo": "O papel da religião no processo histórico de formação/sustentação do poder político-econômico-ideológico temporal da civilização ocidental cristã [1559-1978]",
+    "nmAutor0": "Rêgo, Paulo Romero Batista",
+    "autores": [
+      {
+        "nome": "Rêgo, Paulo Romero Batista",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fi",
+    "data": "2020",
+    "edicao": "1ª edição",
+    "lugar": "Porto Alegre",
+    "nPaginas": "340",
+    "isbn": "9788556967862",
+    "isbn_codigo_barras": "",
+    "cdd": "100",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa e CIP revisadas",
+    "origem_autor": "capa e CIP revisadas"
+  },
+  "justificativa": "Capa e CIP concordam integralmente; os capítulos finais haviam sido unidos incorretamente como título.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e CIP"
+  ],
+  "id_remoto": 20428
+}

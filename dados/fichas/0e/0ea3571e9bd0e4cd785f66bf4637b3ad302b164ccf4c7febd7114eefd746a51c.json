@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "0ea3571e9bd0e4cd785f66bf4637b3ad302b164ccf4c7febd7114eefd746a51c",
+  "arquivo_origem": "212777957-Critica-Textual-do-NT-Wilson-Paroschi.pdf",
+  "campos": {
+    "titulo": "Crítica Textual do Novo Testamento",
+    "subTitulo": "",
+    "nmAutor0": "Paroschi, Wilson",
+    "autores": [
+      {
+        "nome": "Paroschi, Wilson",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "VIDA NOVA",
+    "data": "1993",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "248",
+    "isbn": "9788527501811",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20355
+}

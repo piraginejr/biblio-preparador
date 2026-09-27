@@ -1,0 +1,26 @@
+{
+  "hash_sha256": "ea8fb892e79749976ae027ef428b804ec594a2663f983acd42e1529883380c06",
+  "arquivo_origem": "368183539-Historia-do-Cantor-Cristao-pdf.pdf",
+  "campos": {
+    "titulo": "História do Cantor Cristão",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "JUERP - Junta de Educação Religiosa e Publicações",
+    "data": "1911",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "5",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

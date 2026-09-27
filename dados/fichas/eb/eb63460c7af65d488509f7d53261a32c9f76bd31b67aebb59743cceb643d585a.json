@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "eb63460c7af65d488509f7d53261a32c9f76bd31b67aebb59743cceb643d585a",
+  "arquivo_origem": "637086586-Untitled.pdf",
+  "campos": {
+    "titulo": "Crescimento explosivo da igreja em células",
+    "subTitulo": "Levando seu grupo a crescer e se multiplicar",
+    "nmAutor0": "Comiskey, Joel",
+    "autores": [
+      {
+        "nome": "KOMISKEY, JOEL",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Ministério Igreja em Células",
+    "data": "2008",
+    "edicao": "3",
+    "lugar": "Curitiba",
+    "nPaginas": "192",
+    "isbn": "9788587194619",
+    "isbn_codigo_barras": "",
+    "cdd": "253.7",
+    "nmLingua": "português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo",
+    "origem_titulo": "CIP e capa revisadas",
+    "origem_autor": "CIP e capa revisadas"
+  },
+  "justificativa": "Capa, CIP, créditos e encerramento confirmam a 3ª edição de 2008 e mostram que o PDF está completo.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, CIP, créditos, sumário e páginas finais"
+  ],
+  "id_remoto": 20938
+}

@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "ec78700b653e4f32d155eeb6adf146bc21680cc8d69d260ef5967a205203db35",
+  "arquivo_origem": "594988124-Raizes-Judaicas.pdf",
+  "campos": {
+    "titulo": "Raízes judaicas: entendedo as origens da nossa fé",
+    "subTitulo": "",
+    "nmAutor0": "Juster, Daniel",
+    "autores": [
+      {
+        "nome": "Juster, Daniel",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Impacto Publicações",
+    "data": "2018",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "408",
+    "isbn": "9788565419338",
+    "isbn_codigo_barras": "9788565419338",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

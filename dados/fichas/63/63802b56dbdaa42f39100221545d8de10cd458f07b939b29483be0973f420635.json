@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "63802b56dbdaa42f39100221545d8de10cd458f07b939b29483be0973f420635",
+  "arquivo_origem": "840673184-Hermeneutica-Uma-abordagem-multidisciplinar-da-leitura-Elmer-Dyck.pdf",
+  "campos": {
+    "titulo": "Hermenêutica : uma abordagem multidisciplinar da leitura bíblica",
+    "subTitulo": "",
+    "nmAutor0": "Dyck, editor Elmer",
+    "autores": [
+      {
+        "nome": "Dyck, editor Elmer",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Shedd",
+    "data": "2012",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "201",
+    "isbn": "9788580380149",
+    "isbn_codigo_barras": "",
+    "cdd": "220.601",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20800
+}

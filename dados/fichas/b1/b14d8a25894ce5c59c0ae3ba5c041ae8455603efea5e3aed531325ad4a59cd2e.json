@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "b14d8a25894ce5c59c0ae3ba5c041ae8455603efea5e3aed531325ad4a59cd2e",
+  "arquivo_origem": "350840858-A-GRANDE-OMISSAO-Dallas-Willard-pdf.pdf",
+  "campos": {
+    "titulo": "A grande omissão",
+    "subTitulo": "As dramáticas consequências de ser cristão sem se tornar discípulo",
+    "nmAutor0": "Willard, Dallas",
+    "autores": [
+      {
+        "nome": "Willard, Dallas",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Mundo Cristão",
+    "data": "2008",
+    "edicao": "1ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "99",
+    "isbn": "9788573254938",
+    "isbn_codigo_barras": "",
+    "cdd": "248.4",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional",
+    "tradutor": "Susana Klassen",
+    "origem_titulo": "capa e CIP revisadas",
+    "origem_autor": "CIP revisada"
+  },
+  "justificativa": "A CIP mostra que Dallas Willard é autor e Mundo Cristão é editora; a antiga extração havia invertido os campos.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, CIP e copyright"
+  ]
+}

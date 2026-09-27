@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "2382c084a1257e8e86982f203264fdadc71138b43b74291a5bc17614601708bd",
+  "arquivo_origem": "86041721-ComoFluirNoSobrenatural.pdf",
+  "campos": {
+    "titulo": "htf_port_0208.p65",
+    "subTitulo": "",
+    "nmAutor0": "Fluir, Como",
+    "autores": [
+      {
+        "nome": "Fluir, Como",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Dave Duell Ministries",
+    "data": "2008",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "129",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20342
+}

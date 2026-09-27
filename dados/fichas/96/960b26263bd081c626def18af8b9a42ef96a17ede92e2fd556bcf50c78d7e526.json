@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "960b26263bd081c626def18af8b9a42ef96a17ede92e2fd556bcf50c78d7e526",
+  "arquivo_origem": "Reparative Therapy of Male Homosexuality (Joseph Nicolosi) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Reparative Therapy of Male Homosexuality",
+    "subTitulo": "",
+    "nmAutor0": "Nicolosi, by Joseph",
+    "autores": [
+      {
+        "nome": "Nicolosi, by Joseph",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "1991",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "209",
+    "isbn": "0876685459",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20858
+}

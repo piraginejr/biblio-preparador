@@ -1,0 +1,12 @@
+{
+  "hash_sha256": "c2fd27809ae18a49ae621cdf909c1c507f9aa642512c587fd06466d47f5f8972",
+  "arquivo_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/_preparados-envio/MINISTÉRIO DIACONAL - Breve Estudo -118a9a8a.pdf",
+  "campos": {
+    "titulo": "BREVE ESTUDO SOBRE",
+    "isbn": "6984660408"
+  },
+  "justificativa": "Cadastrado na API Biblio",
+  "fontes": [
+    "API Biblio PIB Curitiba"
+  ]
+}

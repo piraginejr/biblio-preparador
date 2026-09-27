@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "4dee79d09b7c07fce3d0bfbd52c75a8ae99f597d78998d5d960ce8e1b0bb710e",
+  "arquivo_origem": "209809760-Paulo-e-Sua-Teologia-Lourenco-S-Rega-Organizador.pdf",
+  "campos": {
+    "titulo": "Paulo e sua teologia",
+    "subTitulo": "",
+    "nmAutor0": "Rega, Lourenço Stelio",
+    "autores": [
+      {
+        "nome": "Rega, Lourenço Stelio",
+        "desc": "Organizador"
+      }
+    ],
+    "editora": "Editora Vida",
+    "data": "2009",
+    "edicao": "2ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "092",
+    "isbn": "9788538301417",
+    "isbn_codigo_barras": "",
+    "cdd": "270.092",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo",
+    "origem_titulo": "capa e CIP revisadas",
+    "origem_autor": "CIP revisada"
+  },
+  "justificativa": "A ficha CIP completa foi conferida; Lourenço Stelio Rega é organizador, não parte do nome do autor.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e CIP"
+  ]
+}

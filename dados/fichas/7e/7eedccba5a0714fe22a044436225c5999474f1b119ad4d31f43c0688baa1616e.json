@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "7eedccba5a0714fe22a044436225c5999474f1b119ad4d31f43c0688baa1616e",
+  "arquivo_origem": "233668632-08-Economia-Del-Reino-de-Los-Cielos.pdf",
+  "campos": {
+    "titulo": "Economía del Reino de los Cielos",
+    "subTitulo": "",
+    "nmAutor0": "11 Mas tú, oh hombre de Dios, huye de estas cosas, y sigue la justicia, la piedad, la fe",
+    "autores": [],
+    "editora": "[s.n.]",
+    "data": "[s.d.]",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "14",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20569
+}

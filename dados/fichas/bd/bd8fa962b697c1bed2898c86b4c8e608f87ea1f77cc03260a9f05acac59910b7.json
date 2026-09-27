@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "bd8fa962b697c1bed2898c86b4c8e608f87ea1f77cc03260a9f05acac59910b7",
+  "arquivo_origem": "617663431-10504828 (1).pdf",
+  "campos": {
+    "titulo": "Silvio Lacerda",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "28",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20924
+}

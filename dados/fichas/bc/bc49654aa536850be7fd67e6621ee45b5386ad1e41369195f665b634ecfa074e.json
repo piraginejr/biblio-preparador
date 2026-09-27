@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "bc49654aa536850be7fd67e6621ee45b5386ad1e41369195f665b634ecfa074e",
+  "arquivo_origem": "733961480-Ensina-nos-a-orar-Corey-Russell.pdf",
+  "campos": {
+    "titulo": "Ensina-nos a Orar: A Oração que acessa o céu e muda a Terra",
+    "subTitulo": "",
+    "nmAutor0": "Russell, Corey",
+    "autores": [
+      {
+        "nome": "Russell, Corey",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Betânia, 1989, p. 21",
+    "data": "2020",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "132",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20792
+}

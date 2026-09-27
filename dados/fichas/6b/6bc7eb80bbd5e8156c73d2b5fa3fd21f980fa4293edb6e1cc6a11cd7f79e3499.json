@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "6bc7eb80bbd5e8156c73d2b5fa3fd21f980fa4293edb6e1cc6a11cd7f79e3499",
+  "arquivo_origem": "As parábolas de Jesus comentadas por John MacArthur Os mistérios do Reino de Deus revelados nas histórias contadas pelo… (John F. MacArthur Jr.) (z-library.pdf",
+  "campos": {
+    "titulo": "As parábolas de Jesus comentadas por John MacArthur: os mistérios do reino de Deus revelados nas histórias contadas pelo salvador",
+    "subTitulo": "",
+    "nmAutor0": "MacArthur, John",
+    "autores": [
+      {
+        "nome": "MacArthur, John",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Thomas Nelson Brasil",
+    "data": "2016",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "1. ed. – Rio de Janeiro",
+    "nPaginas": "219",
+    "isbn": "9788578603618",
+    "isbn_codigo_barras": "",
+    "cdd": "232",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Religião"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20881
+}

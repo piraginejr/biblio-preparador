@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "f21df9a466919d590d34c201d4b5f568a007c6306304c28a19b07c721e5b80df",
+  "arquivo_origem": "616110662-Personagens-BiblicoS-Antigo-Test.pdf",
+  "campos": {
+    "titulo": "Personagens Bíblicos: Antigo Testamento",
+    "subTitulo": "",
+    "nmAutor0": "Whyte, Alexander",
+    "autores": [
+      {
+        "nome": "Whyte, Alexander",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Penkall",
+    "data": "2021",
+    "edicao": "Edição completa e revisada",
+    "lugar": "Londrina",
+    "nPaginas": "638",
+    "isbn": "9786559962693",
+    "isbn_codigo_barras": "9786559962693",
+    "cdd": "220.92",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa e CIP revisadas",
+    "origem_autor": "capa e CIP revisadas"
+  },
+  "justificativa": "Alexander Whyte é o autor; Livrarias Família Cristã é entidade editorial e não coautora.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, código de barras e CIP"
+  ],
+  "id_remoto": 20506
+}

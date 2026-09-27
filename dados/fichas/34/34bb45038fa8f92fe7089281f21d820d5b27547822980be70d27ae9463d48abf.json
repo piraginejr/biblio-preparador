@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "34bb45038fa8f92fe7089281f21d820d5b27547822980be70d27ae9463d48abf",
+  "arquivo_origem": "12665multiplicacao__roberto_bottrel.pdf",
+  "campos": {
+    "titulo": "Roberto Bottret",
+    "subTitulo": "",
+    "nmAutor0": "Bottrel, Roberto",
+    "autores": [
+      {
+        "nome": "Bottrel, Roberto",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Roberto Bottrel",
+    "data": "2015",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "294",
+    "isbn": "9788566115512",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

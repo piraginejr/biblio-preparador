@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "a4cbaaec6e1710f8b6eb3958e97921f0e4ed3b593be4fdc8daaf1ab22140bde3",
+  "arquivo_origem": "612296303-x-John-Bevere.pdf",
+  "campos": {
+    "titulo": "X",
+    "subTitulo": "Multiply Your God-Given Potential",
+    "nmAutor0": "Bevere, John",
+    "autores": [
+      {
+        "nome": "Bevere, John",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Messenger International",
+    "data": "2020",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "280",
+    "isbn": "9781937558253",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "ISBN e página de créditos revisados",
+    "origem_autor": "ISBN e página de créditos revisados"
+  },
+  "justificativa": "O texto 'by John P. Bevere' é crédito de autoria e não parte do título.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e créditos",
+    "ISBN 9781937558253"
+  ],
+  "id_remoto": 20565
+}

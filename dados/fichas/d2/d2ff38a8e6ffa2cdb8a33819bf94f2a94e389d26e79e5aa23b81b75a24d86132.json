@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "d2ff38a8e6ffa2cdb8a33819bf94f2a94e389d26e79e5aa23b81b75a24d86132",
+  "arquivo_origem": "620261388-Manso-e-Humilde-Dane-Ortlund.pdf",
+  "campos": {
+    "titulo": "Manso e humilde: o coração de Cristo para quem peca e para quem sofre",
+    "subTitulo": "",
+    "nmAutor0": "Ortlund, Humilde Dane",
+    "autores": [
+      {
+        "nome": "Ortlund, Humilde Dane",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Thomas Nelson Brasil",
+    "data": "1651",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "157",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20675
+}

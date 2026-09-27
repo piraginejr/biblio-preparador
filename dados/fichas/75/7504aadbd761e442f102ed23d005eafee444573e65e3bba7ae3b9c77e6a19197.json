@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "7504aadbd761e442f102ed23d005eafee444573e65e3bba7ae3b9c77e6a19197",
+  "arquivo_origem": "726986773-10-Razoes-Para-Ser-um-Presbiteriano.pdf",
+  "campos": {
+    "titulo": "10 Razões",
+    "subTitulo": "",
+    "nmAutor0": "um, para ser",
+    "autores": [
+      {
+        "nome": "um, para ser",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Credo Reformado",
+    "data": "2024",
+    "edicao": "2ª edição",
+    "lugar": "",
+    "nPaginas": "20",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20819
+}

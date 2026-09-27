@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "3048b0067d1045d068adf503bd8dedcb7ebc7a87086ba63895bd56bd161098f1",
+  "arquivo_origem": "vocção perigosa tripp.pdf",
+  "campos": {
+    "titulo": "Vocação perigosa",
+    "subTitulo": "",
+    "nmAutor0": "p, paul trip",
+    "autores": [
+      {
+        "nome": "p, paul trip",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Cultura Cristã",
+    "data": "2012",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "192",
+    "isbn": "9788576225379",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20904
+}

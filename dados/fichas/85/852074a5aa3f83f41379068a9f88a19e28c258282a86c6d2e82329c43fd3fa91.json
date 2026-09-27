@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "852074a5aa3f83f41379068a9f88a19e28c258282a86c6d2e82329c43fd3fa91",
+  "arquivo_origem": "11520apostila_treinamento_diaconos.pdf",
+  "campos": {
+    "titulo": "Diaconia: conceito e missão",
+    "subTitulo": "",
+    "nmAutor0": "Junior, Paschoal Piragine",
+    "autores": [],
+    "editora": "",
+    "data": "[s.d.]",
+    "edicao": "",
+    "lugar": "Curitiba",
+    "nPaginas": "120",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": "Diaconia; Diáconos; Igreja; Ministério cristão; Treinamento",
+    "isbn_motivo": "apostila institucional sem ISBN declarado",
+    "idioma": "por"
+  },
+  "justificativa": "A capa identifica o autor e o título; o nome do arquivo e o conteúdo confirmam tratar-se de apostila de treinamento, não livro comercial.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e conteúdo"
+  ],
+  "id_remoto": 20917
+}

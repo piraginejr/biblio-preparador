@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "95cfaf98789761c40f5dae8697bfb94bcefc1e1b260ba5a95f98c432fe07a8e3",
+  "arquivo_origem": "518457877-O-sofrimento-nunca-e-em-va-o-Elisabeth-Elliot.pdf",
+  "campos": {
+    "titulo": "SOFRIMENIO nunca é em vão",
+    "subTitulo": "",
+    "nmAutor0": "Elliot, Elisabeth",
+    "autores": [
+      {
+        "nome": "Elliot, Elisabeth",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel da Missão Evangélica Literária",
+    "data": "2019",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Nashville",
+    "nPaginas": "101",
+    "isbn": "9788581326856",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20447
+}

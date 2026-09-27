@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "d461f894df2a45d4fb0b2d1835d04dbf29df0dbaf10594f0aa6b68e75d82d217",
+  "arquivo_origem": "415066785-Licoes-de-Mestre.pdf",
+  "campos": {
+    "titulo": "Lições de Mestre",
+    "subTitulo": "",
+    "nmAutor0": "Shaw; Mark",
+    "autores": [
+      {
+        "nome": "Shaw; Mark",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "85-7325-367-3",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

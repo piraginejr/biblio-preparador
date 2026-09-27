@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "3f0f638060d16fb887a6a4fbf95aefd8e0703317a24d44276204fb502f95a465",
+  "arquivo_origem": "306740065-Una-Introduccion-a-La-Historia-de-Los-Bautistas-Por-Chris-Traffanstedt-3.pdf",
+  "campos": {
+    "titulo": "Una introducción a la historia de los bautistas",
+    "subTitulo": "",
+    "nmAutor0": "Traffanstedt, Chris",
+    "autores": [],
+    "editora": "O Estandarte de Cristo",
+    "data": "2015",
+    "edicao": "",
+    "lugar": "Nashville",
+    "nPaginas": "18",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20547
+}

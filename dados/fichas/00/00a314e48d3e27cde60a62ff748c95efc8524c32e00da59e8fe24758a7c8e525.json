@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "00a314e48d3e27cde60a62ff748c95efc8524c32e00da59e8fe24758a7c8e525",
+  "arquivo_origem": "432413740-PARKER-Os-Oraculos-de-Deus-8f61d22d68193513b6047378841c1c4f.pdf",
+  "campos": {
+    "titulo": "Os oráculos de Deus",
+    "subTitulo": "Uma introdução à pregação de João Calvino",
+    "nmAutor0": "Parker, T. H. L.",
+    "autores": [
+      {
+        "nome": "Parker, T. H. L.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Cultura Cristã",
+    "data": "2016",
+    "edicao": "1ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "176",
+    "isbn": "9788576225881",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Homilética; Pregação; João Calvino",
+    "tradutor": "Lopes, Gabriel Henrique Marcandali",
+    "titulo_original": "The Oracles of God",
+    "origem_titulo": "capa e CIP revisadas",
+    "origem_autor": "capa e CIP revisadas"
+  },
+  "justificativa": "Capa, copyright e CIP do próprio PDF fornecem os dados completos da edição brasileira.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, copyright e CIP, páginas 1-2"
+  ],
+  "id_remoto": 20389
+}

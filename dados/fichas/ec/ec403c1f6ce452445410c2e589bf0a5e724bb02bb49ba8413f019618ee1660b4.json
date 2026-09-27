@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "ec403c1f6ce452445410c2e589bf0a5e724bb02bb49ba8413f019618ee1660b4",
+  "arquivo_origem": "474776156-Historia-do-Baptismo-Cristao.pdf",
+  "campos": {
+    "titulo": "Uma breve história do Baptismo Cristão",
+    "subTitulo": "De João Baptista até John Smyth",
+    "nmAutor0": "Jones, Robert C.",
+    "autores": [
+      {
+        "nome": "Jones, Robert C.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora O Mistério da Vida Cristã",
+    "data": "[s.d.]",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Maputo",
+    "nPaginas": "41",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Alfredo F. Gravata",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "copyright revisado"
+  },
+  "justificativa": "Capa, copyright, tradução e editora estão declarados; a cópia não apresenta ano de publicação.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, copyright e créditos"
+  ],
+  "id_remoto": 20430
+}

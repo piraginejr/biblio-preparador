@@ -1,0 +1,53 @@
+{
+  "hash_sha256": "25c3fbbb51ef0c1025bbe3fd6e6df80c29fe6ea51d5eac5c3473bd0d1f54ea9e",
+  "arquivo_origem": "271359876-Comentario-Biblico-Beacon-Tomo-1.pdf",
+  "campos": {
+    "titulo": "Comentario Bíblico Beacon",
+    "subTitulo": "Tomo I: Génesis a Deuteronomio",
+    "nmAutor0": "Livingston, George Herbert",
+    "autores": [
+      {
+        "nome": "Livingston, George Herbert",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Cox, Leo G.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Kinlaw, Dennis F.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Richards, Lawrence O.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Ford, Jack",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Nazarena de Publicaciones",
+    "data": "1969",
+    "edicao": "",
+    "lugar": "Lenexa, Kansas",
+    "nPaginas": "446",
+    "isbn": "9781563446016",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "volume": "1",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "Autores de cada parte, volume, editora e ISBN foram conferidos na folha de rosto e no copyright.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto, copyright e comissão editorial"
+  ],
+  "id_remoto": 20363
+}

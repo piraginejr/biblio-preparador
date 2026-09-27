@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "1d3fb9fa42822d56ed880d8effbaf15b4cfba7048e560d935bb1463729ba44b5",
+  "arquivo_origem": "630691306-A-formacao-de-um-discipulo-pdf.pdf",
+  "campos": {
+    "titulo": "A formação de um discípulo",
+    "subTitulo": "",
+    "nmAutor0": "Phillips, Keith",
+    "autores": [
+      {
+        "nome": "Phillips, Keith",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Vida",
+    "data": "2008",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "711",
+    "isbn": "9788573671605",
+    "isbn_codigo_barras": "",
+    "cdd": "248.4",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20648
+}

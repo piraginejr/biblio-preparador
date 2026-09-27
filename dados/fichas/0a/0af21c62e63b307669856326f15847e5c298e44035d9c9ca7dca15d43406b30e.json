@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "0af21c62e63b307669856326f15847e5c298e44035d9c9ca7dca15d43406b30e",
+  "arquivo_origem": "521197835-Antonio-Neves-de-Mesquita-Historia-dos-batistas-no-Brasil-de-1907-a-1935.pdf",
+  "campos": {
+    "titulo": "História dos Batistas do Brasil",
+    "subTitulo": "De 1907 até 1935",
+    "nmAutor0": "Mesquita, Antônio Neves de",
+    "autores": [
+      {
+        "nome": "Mesquita, Antônio Neves de",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Publicadora Batista",
+    "data": "1962",
+    "edicao": "2ª edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "189",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "volume": "2",
+    "origem_titulo": "capa e catálogos revisados",
+    "origem_autor": "capa e catálogos revisados"
+  },
+  "justificativa": "A capa digitalizada identifica obra e autor; catálogos e estudos bibliográficos confirmam volume 2, segunda edição, Casa Publicadora Batista e 1962.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: capa e conteúdo integral",
+    "Catálogos bibliográficos: História dos Batistas do Brasil, volume 2, CPB, 1962"
+  ]
+}

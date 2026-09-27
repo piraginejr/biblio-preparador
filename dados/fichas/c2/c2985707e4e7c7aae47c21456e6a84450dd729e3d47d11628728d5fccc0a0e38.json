@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "c2985707e4e7c7aae47c21456e6a84450dd729e3d47d11628728d5fccc0a0e38",
+  "arquivo_origem": "356839333-Revista-Fe-Para-Hoje-Nu-mero-36-Ano-2012-pdf.pdf",
+  "campos": {
+    "titulo": "FÉ HOJE",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "Editora Fi",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "68",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20851
+}

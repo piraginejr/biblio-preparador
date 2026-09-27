@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "6acd7a7b85f2f805ecb7845d8ecf6fa52002ba992e88645936ee39eab37aff4e",
+  "arquivo_origem": "546445107-Disciplina-Na-Igreja.pdf",
+  "campos": {
+    "titulo": "DISCIPLINA",
+    "subTitulo": "",
+    "nmAutor0": "KNIGHT III, GEORGE",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "Sao Paulo",
+    "nPaginas": "123",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "trabalho acadêmico",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20729
+}

@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "1e5d609622acfdcd2f1564752acf766ef1ffe8c70d5ff8b46a17ab747e1d0a17",
+  "arquivo_origem": "The Reformation, Bible Translation, and the Modern Missionary Movement - IMB.pdf",
+  "campos": {
+    "titulo": "The Reformation, Bible Translation",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [
+      {
+        "nome": "The Reformation, Bible Translation",
+        "desc": "Autor"
+      },
+      {
+        "nome": "IMB, the Modern Missionary Movement -",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "2017",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "7",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20642
+}

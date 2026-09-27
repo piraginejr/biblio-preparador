@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "604691141d1f285ba6bec61d8b53ca7314837c3df42a7cc1620398ea4e38fde2",
+  "arquivo_origem": "534529722-A-Profecia-de-Isaias-Vol-1.pdf",
+  "campos": {
+    "titulo": "A profecia de Isaías",
+    "subTitulo": "Capítulos 1–39: texto, exegese e exposição",
+    "nmAutor0": "Crabtree, A. R.",
+    "autores": [
+      {
+        "nome": "Crabtree, A. R.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Publicadora Batista",
+    "data": "1967",
+    "edicao": "1ª edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "466",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "volume": "1",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "A folha de rosto declara título, volume, autor, primeira edição, ano e editora.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e nota editorial"
+  ],
+  "id_remoto": 20468
+}

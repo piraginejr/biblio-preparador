@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "c51d6ef9fe599fe9288b29227af9d4985388ce30fe9a70e5d3a1ac0071b7d5d7",
+  "arquivo_origem": "473103130-Raymond-Brown-A-morte-do-Messias-Comentario-as-narrativas-da-Paixao-nos-quatro-evangelhos-pdf.pdf",
+  "campos": {
+    "titulo": "A morte do Messias",
+    "subTitulo": "",
+    "nmAutor0": "Brown, Raymond E.",
+    "autores": [
+      {
+        "nome": "Brown, Raymond E.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Paulinas",
+    "data": "1994",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "1047",
+    "isbn": "9788535627282",
+    "isbn_codigo_barras": "9788535627282",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20419
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "94194705203c675db4de2e6ee95fdf4f1b285b326604814e420a4e4f569de883",
+  "arquivo_origem": "521593188-1e8b93a0a3319c20d50ae443be223c81-A-historia-dos-Anabatistas-20-pags.pdf",
+  "campos": {
+    "titulo": "www.LMSdobrasil.com.br",
+    "subTitulo": "",
+    "nmAutor0": "Estep, William",
+    "autores": [
+      {
+        "nome": "Estep, William",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "LMS",
+    "data": "1975",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "20",
+    "isbn": "9788564737334",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Denominações cristãs e seitas"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20455
+}

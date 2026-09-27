@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "f60f77d6db61522e5437af441ca06cdd86f9792956be361b4eaf09940c4f9048",
+  "arquivo_origem": "A new leadership for a new ecclesiology (Lumko) (Z-Library).pdf",
+  "campos": {
+    "titulo": "A New Leadership for a New Ecclesiology",
+    "subTitulo": "",
+    "nmAutor0": "Mothoagae, I.D.",
+    "autores": [],
+    "editora": "Acta Theologica",
+    "data": "2010",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "17",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20609
+}

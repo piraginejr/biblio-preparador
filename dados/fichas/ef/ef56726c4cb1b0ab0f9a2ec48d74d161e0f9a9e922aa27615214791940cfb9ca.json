@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "ef56726c4cb1b0ab0f9a2ec48d74d161e0f9a9e922aa27615214791940cfb9ca",
+  "arquivo_origem": "452271939-01-O-poder-de-Deus-para-sua-vida-a-w-tozer-pdf.pdf",
+  "campos": {
+    "titulo": "O poder de Deus para a sua vida",
+    "subTitulo": "Como o Espírito Santo transforma você por meio da Palavra de Deus",
+    "nmAutor0": "Tozer, A. W.",
+    "autores": [
+      {
+        "nome": "Tozer, A. W.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Graça Editorial",
+    "data": "2016",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "304",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa e catálogo comercial"
+  },
+  "justificativa": "Capa e catálogos comerciais concordam em título, subtítulo, autor, editora, ano e paginação.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa",
+    "Catálogo comercial: Graça Editorial, 2016"
+  ],
+  "id_remoto": 20408
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "2e7ed1dc73e509c89cb67dbeec6e44f3cfae0f200e2b530bd2c3296bd48d9e55",
+  "arquivo_origem": "473537588-Teologia-do-Aconselhamento-Cristao-pdf.pdf",
+  "campos": {
+    "titulo": "Teologia do aconselhamento cristão",
+    "subTitulo": "",
+    "nmAutor0": "Jr], Jay EAdams [Tradução de Samuel Fernandes do Nascimento",
+    "autores": [
+      {
+        "nome": "Jr], Jay EAdams [Tradução de Samuel Fernandes do Nascimento",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Peregrino",
+    "data": "2016",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Eusébio",
+    "nPaginas": "5",
+    "isbn": "9788569267140",
+    "isbn_codigo_barras": "9788569267140",
+    "cdd": "253.5",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20420
+}

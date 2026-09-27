@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "dea78f3b6ad05008f2d37e1acff4c657ed9cddf9a30b8339b2726c97b6e1b4c5",
+  "arquivo_origem": "458869671-Livro-do-novo-testamento-200000.pdf",
+  "campos": {
+    "titulo": "Introdução aos Livros do Novo Testamento",
+    "subTitulo": "",
+    "nmAutor0": "Fromholz, Jeffery L.",
+    "autores": [
+      {
+        "nome": "Fromholz, Jeffery L.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Geração Benjamim",
+    "data": "2020",
+    "edicao": "1ª edição no Brasil",
+    "lugar": "",
+    "nPaginas": "356",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "Folha editorial e pesquisa comercial confirmam autor, entidade publicadora e abril de 2020.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha editorial",
+    "Pesquisa comercial por título e autor"
+  ],
+  "id_remoto": 20410
+}

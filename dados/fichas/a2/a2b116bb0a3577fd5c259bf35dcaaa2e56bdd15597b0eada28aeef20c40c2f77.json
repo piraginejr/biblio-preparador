@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "a2b116bb0a3577fd5c259bf35dcaaa2e56bdd15597b0eada28aeef20c40c2f77",
+  "arquivo_origem": "449863844-147688877-costas-orlando-comunicacion-por-medio-de-la-predicacion-pdf-pdf.pdf",
+  "campos": {
+    "titulo": "Comunicación Por Medio De La Predicación",
+    "subTitulo": "",
+    "nmAutor0": "Costas, Orlando",
+    "autores": [
+      {
+        "nome": "Costas, Orlando",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Grupo Nelson",
+    "data": "1991",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Miami",
+    "nPaginas": "256",
+    "isbn": "0899220215",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Oratoria sagrada; Preaching; Religious education of children"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20766
+}

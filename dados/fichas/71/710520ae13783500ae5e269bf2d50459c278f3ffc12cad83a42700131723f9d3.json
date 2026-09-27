@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "710520ae13783500ae5e269bf2d50459c278f3ffc12cad83a42700131723f9d3",
+  "arquivo_origem": "118564981-apostila-de-lideranca-arca-da-alianca-pronta.pdf",
+  "campos": {
+    "titulo": "PRECIOSOS COMENTÁRIOS SOBRE LIDERANÇA",
+    "subTitulo": "",
+    "nmAutor0": "Góis, Sidney",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "41",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20563
+}

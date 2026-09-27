@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "5c02a4bb2fe865740788392caeb673ba7f45ab1a0e0c24b3898bdbacf4fe92bc",
+  "arquivo_origem": "395544207-ESTUDO-PENTECOSTALISMO.pdf",
+  "campos": {
+    "titulo": "muitos o \"fundador do moderno pentecostalismo´",
+    "subTitulo": "",
+    "nmAutor0": "movement, Christian",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "155",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "revista",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20936
+}

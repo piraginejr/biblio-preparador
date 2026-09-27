@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "8c3cf2cc8d7087f84f772e7d247f99bb10a63b192c76657360fba6ec8deaca3c",
+  "arquivo_origem": "757905885-LV-O-Lugar-do-lider.pdf",
+  "campos": {
+    "titulo": "21 dias na vida de um discípulo",
+    "subTitulo": "",
+    "nmAutor0": "Silva, Aluízio A.",
+    "autores": [
+      {
+        "nome": "Silva, Aluízio A.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9788598510552",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

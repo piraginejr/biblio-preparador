@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "d879c10f5c276d88ff316291ea40cdd8452ee34249bd35e2119dd2b0e5171e45",
+  "arquivo_origem": "347193182-Anibal-Pereira-dos-Reis-O-Ecumenismo-e-os-Batistas-pdf.pdf",
+  "campos": {
+    "titulo": "O ecumenismo e os batistas",
+    "subTitulo": "Um brado de alerta na hora do perigo",
+    "nmAutor0": "Reis, Aníbal Pereira",
+    "autores": [
+      {
+        "nome": "Reis, Aníbal Pereira",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Edições Caminho de Damasco",
+    "data": "[s.d.]",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "74",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa revisada"
+  },
+  "justificativa": "Capa e verso identificam autor e editora; o exemplar não declara ano, registrado como [s.d.].",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, verso e sumário"
+  ],
+  "id_remoto": 20369
+}

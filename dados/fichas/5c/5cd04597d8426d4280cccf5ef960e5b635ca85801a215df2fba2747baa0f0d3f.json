@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "5cd04597d8426d4280cccf5ef960e5b635ca85801a215df2fba2747baa0f0d3f",
+  "arquivo_origem": "433268415-Qualificados-Tony-Cooke-pdf.pdf",
+  "campos": {
+    "titulo": "Qualificados",
+    "subTitulo": "Servindo a Deus com integridade e terminando sua carreira com honra",
+    "nmAutor0": "Cooke, Tony",
+    "autores": [
+      {
+        "nome": "Cooke, Tony",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Rhema Brasil Publicações",
+    "data": "2017",
+    "edicao": "1ª edição em português",
+    "lugar": "Campina Grande",
+    "nPaginas": "409",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa e copyright revisados"
+  },
+  "justificativa": "Capa e créditos distinguem o copyright original de 2012 da edição brasileira de 2017.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e créditos"
+  ],
+  "id_remoto": 20402
+}

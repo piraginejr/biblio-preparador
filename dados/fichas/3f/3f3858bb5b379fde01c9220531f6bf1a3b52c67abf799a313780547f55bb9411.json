@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "3f3858bb5b379fde01c9220531f6bf1a3b52c67abf799a313780547f55bb9411",
+  "arquivo_origem": "535396684-155737637-Restaurando-Os-Soldados-Feridos.pdf",
+  "campos": {
+    "titulo": "Restaurando os Soldados Feridos",
+    "subTitulo": "",
+    "nmAutor0": "Huber, Abe",
+    "autores": [
+      {
+        "nome": "Huber, Abe",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Premius Editora",
+    "data": "2010",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Fortaleza",
+    "nPaginas": "108",
+    "isbn": "9788575645093",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Religião"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20921
+}

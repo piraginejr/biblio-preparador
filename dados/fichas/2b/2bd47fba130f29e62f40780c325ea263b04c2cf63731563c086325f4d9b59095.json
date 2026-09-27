@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "2bd47fba130f29e62f40780c325ea263b04c2cf63731563c086325f4d9b59095",
+  "arquivo_origem": "504032106-Dicionario-Teologico-Beacon.pdf",
+  "campos": {
+    "titulo": "DICIONÁRIO Beacon Teológico",
+    "subTitulo": "",
+    "nmAutor0": "Taylor, RICHARD S.",
+    "autores": [
+      {
+        "nome": "Taylor, RICHARD S.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Beacon Hill Press of Kansas City",
+    "data": "1984",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "846",
+    "isbn": "9781563440939",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

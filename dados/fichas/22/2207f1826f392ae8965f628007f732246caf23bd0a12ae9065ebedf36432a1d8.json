@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "2207f1826f392ae8965f628007f732246caf23bd0a12ae9065ebedf36432a1d8",
+  "arquivo_origem": "630211433-Entendendo-a-disciplina-na-igre-Leeman-Jonathan.pdf",
+  "campos": {
+    "titulo": "Entendendo a disciplina na igreja",
+    "subTitulo": "",
+    "nmAutor0": "Leeman, Jonathan",
+    "autores": [
+      {
+        "nome": "Leeman, Jonathan",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2019",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "82",
+    "isbn": "9788581326726",
+    "isbn_codigo_barras": "",
+    "cdd": "262.8",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Congregações cristãs, prática e teologia pastoral"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20576
+}

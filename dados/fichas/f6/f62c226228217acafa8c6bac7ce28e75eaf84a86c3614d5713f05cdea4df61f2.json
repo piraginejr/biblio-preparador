@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "f62c226228217acafa8c6bac7ce28e75eaf84a86c3614d5713f05cdea4df61f2",
+  "arquivo_origem": "618079310-A-Presenc-a-Bill-Johnson.pdf",
+  "campos": {
+    "titulo": "A presença: desvendando",
+    "subTitulo": "",
+    "nmAutor0": "Johnson, Bill",
+    "autores": [
+      {
+        "nome": "Johnson, Bill",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "LAN EDITORA",
+    "data": "2013",
+    "edicao": "1ª edição",
+    "lugar": "1.ed. - Rio de Janeiro",
+    "nPaginas": "246",
+    "isbn": "9788599858561",
+    "isbn_codigo_barras": "",
+    "cdd": "248.4",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20750
+}

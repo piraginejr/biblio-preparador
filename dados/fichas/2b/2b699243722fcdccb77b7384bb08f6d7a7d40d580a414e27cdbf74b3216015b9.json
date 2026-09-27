@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "2b699243722fcdccb77b7384bb08f6d7a7d40d580a414e27cdbf74b3216015b9",
+  "arquivo_origem": "109359029-Protestantismo-No-Brasil-Usp-Revista.pdf",
+  "campos": {
+    "titulo": "Protestantismo no Brasil: um caso de religião e cultura",
+    "subTitulo": "",
+    "nmAutor0": "Mendonça, Antonio Gouvêa",
+    "autores": [],
+    "editora": "Universidade de São Paulo",
+    "data": "2005",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "14",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20541
+}

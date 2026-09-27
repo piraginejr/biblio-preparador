@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "62c0d0d1214e719b69e32d1da2f599dbc30ad0bc562114124301689c870b5055",
+  "arquivo_origem": "752448463-LA-MESA-COMPARTIDA.pdf",
+  "campos": {
+    "titulo": "La mesa compartida",
+    "subTitulo": "estudios del NT desde las ciencias sociales",
+    "nmAutor0": "Monasterio, Rafael Aguirre",
+    "autores": [
+      {
+        "nome": "Monasterio, Rafael Aguirre",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editorial Sal Terrae",
+    "data": "1994",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Barcelona",
+    "nPaginas": "242",
+    "isbn": "8429311270",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Criticism, interpretation; Bible"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

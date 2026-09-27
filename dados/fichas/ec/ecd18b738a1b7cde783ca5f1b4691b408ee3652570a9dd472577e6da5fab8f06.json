@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "ecd18b738a1b7cde783ca5f1b4691b408ee3652570a9dd472577e6da5fab8f06",
+  "arquivo_origem": "Homo Deus_ Uma breve historia do amanha - Harari, Yuval Noah.pdf",
+  "campos": {
+    "titulo": "HOMO DEUS Uma breve história do amanhã",
+    "subTitulo": "",
+    "nmAutor0": "Harari, Yuval Noah",
+    "autores": [
+      {
+        "nome": "Harari, Yuval Noah",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "2014",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "486",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20901
+}

@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "59b75d6649387d18c1e394e85b4df93d68636d67deffff3302b0a25de1fab083",
+  "arquivo_origem": "437375942-Ancioes-e-Diaconos-Bibicos-por-Nehemiah-Coxe-pdf.pdf",
+  "campos": {
+    "titulo": "Anciãos & diáconos bíblicos",
+    "subTitulo": "",
+    "nmAutor0": "Coxe, Nehemiah",
+    "autores": [
+      {
+        "nome": "Coxe, Nehemiah",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "O Estandarte de Cristo",
+    "data": "2015",
+    "edicao": "2ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "39",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "William Teixeira e Camila Almeida",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa revisada"
+  },
+  "justificativa": "Capa e créditos identificam autor, tradução, editor digital e edição.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e créditos"
+  ],
+  "id_remoto": 20405
+}

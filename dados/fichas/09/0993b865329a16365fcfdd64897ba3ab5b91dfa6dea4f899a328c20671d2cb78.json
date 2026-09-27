@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "0993b865329a16365fcfdd64897ba3ab5b91dfa6dea4f899a328c20671d2cb78",
+  "arquivo_origem": "O PASTOR FINAL.pdf",
+  "campos": {
+    "titulo": "O pastor",
+    "subTitulo": "",
+    "nmAutor0": "Souza, Manoel Avelino de",
+    "autores": [
+      {
+        "nome": "Souza, Manoel Avelino de",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Publicadora Batista",
+    "data": "1939",
+    "edicao": "1ª edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "250",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Ministério pastoral; Pastores; Igreja batista"
+  },
+  "justificativa": "A autoria foi confirmada no texto; a paginação de 250 páginas corresponde à edição da Casa Publicadora Batista de 1939, distinta da segunda edição de 1956 com 268 páginas.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local",
+    "https://www.estantevirtual.com.br/busca/manuel-avelino-de-souza-o-pastor-livro-antigo-raro",
+    "https://www.sebocaravelas.com.br/o-pastor-manoel-avelino-de-souza"
+  ]
+}

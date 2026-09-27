@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "93e71928440ed5db8e00348a0edb95e998ea172fc9c07e28361832e11fb7f72a",
+  "arquivo_origem": "John MacArthur - Ministério Pastoral 3 (Unknown Author) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Ministério pastoral 3 [trecho parcial]",
+    "subTitulo": "",
+    "nmAutor0": "MacArthur, John",
+    "autores": [],
+    "editora": "",
+    "data": "[s.d.]",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "167",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "trecho",
+    "abstract": "",
+    "palavrasChave": "Ministério pastoral; Liderança cristã; Igreja; Trecho parcial",
+    "isbn_motivo": "trecho incompleto sem elementos editoriais",
+    "idioma": "por"
+  },
+  "justificativa": "O PDF começa no meio de uma frase e não contém capa nem ficha editorial; foi preservado honestamente como trecho parcial, sem inventar dados de edição.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: início do texto e nome descritivo do arquivo"
+  ],
+  "id_remoto": 20919
+}

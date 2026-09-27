@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "c7970ebde755de2ff51c503fa8250682a721683316efe8964f4093e9bb201f80",
+  "arquivo_origem": "Raízes da Depressão Enfrentando o grande mal do século (Pr. Coty - Marcos de Souza Borges [Borges etc.) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Raízes da Depressão Diagramação gráfica: Marcos de S. Borges",
+    "subTitulo": "",
+    "nmAutor0": "INICIAL, APÊNDICE",
+    "autores": [
+      {
+        "nome": "INICIAL, APÊNDICE",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Jocum",
+    "data": "2013",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Curitiba",
+    "nPaginas": "173",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "240",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20674
+}

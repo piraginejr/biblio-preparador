@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "95eee99665215126376893bfd4771fab697232ddd34cf2584d7de00de6987ce3",
+  "arquivo_origem": "How we got the Bible_ The story of Scripture.pdf",
+  "campos": {
+    "titulo": "How we got the Bible: The story of Scripture",
+    "subTitulo": "",
+    "nmAutor0": "Jongkind, Dirk",
+    "autores": [],
+    "editora": "Tyndale House",
+    "data": "2023",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "14",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20624
+}

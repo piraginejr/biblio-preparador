@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "effdb3bfd2a8b251db306a55c3bcfa7bea3b8fc10470c51b60cfa343b8b71519",
+  "arquivo_origem": "677995844-O-Clamor-Da-Igreja-Jilton-Moraes.pdf",
+  "campos": {
+    "titulo": "O clamor da igreja: 13 conselhos que podem transformar seu púlpito",
+    "subTitulo": "",
+    "nmAutor0": "Moraes, Jilton",
+    "autores": [
+      {
+        "nome": "Moraes, Jilton",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "MUNDO CRISTÃO",
+    "data": "2012",
+    "edicao": "12a edição",
+    "lugar": "São Paulo",
+    "nPaginas": "180",
+    "isbn": "9788573257793",
+    "isbn_codigo_barras": "9788573257793",
+    "cdd": "251",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Romance; ficção e contos brasileiros"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20780
+}

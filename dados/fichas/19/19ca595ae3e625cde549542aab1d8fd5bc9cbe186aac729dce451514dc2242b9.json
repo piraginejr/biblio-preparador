@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "19ca595ae3e625cde549542aab1d8fd5bc9cbe186aac729dce451514dc2242b9",
+  "arquivo_origem": "544830799-Novo-Comentario-Biblico-Atos-David-j-Wil.pdf",
+  "campos": {
+    "titulo": "Atos",
+    "subTitulo": "Novo Comentário Bíblico Contemporâneo",
+    "nmAutor0": "Williams, David J.",
+    "autores": [
+      {
+        "nome": "Williams, David J.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Vida",
+    "data": "1996",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "455",
+    "isbn": "0829717463",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Ramos, Oswaldo",
+    "titulo_original": "Acts",
+    "origem_titulo": "capa e copyright revisados",
+    "origem_autor": "capa e copyright revisados"
+  },
+  "justificativa": "Capa e copyright fornecem título, autor, ISBN, editora, ano, tradutor e título original.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, copyright e sumário"
+  ]
+}

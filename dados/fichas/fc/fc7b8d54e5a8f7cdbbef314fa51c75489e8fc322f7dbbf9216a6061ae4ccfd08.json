@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "fc7b8d54e5a8f7cdbbef314fa51c75489e8fc322f7dbbf9216a6061ae4ccfd08",
+  "arquivo_origem": "Following the Footnotes_ The Septuagint.pdf",
+  "campos": {
+    "titulo": "Following the Footnotes: The Septuagint",
+    "subTitulo": "",
+    "nmAutor0": "Fresch, Chris",
+    "autores": [],
+    "editora": "Tyndale House",
+    "data": "2023",
+    "edicao": "",
+    "lugar": "Grand Rapids",
+    "nPaginas": "7",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20619
+}

@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "a510fd88bb87b0c374c17a3d92eb951e0f3edede26f32b9e40ec20ecdb5ba64c",
+  "arquivo_origem": "52670675-Historia-da-Formacao-do-Novo-Testamento.pdf",
+  "campos": {
+    "titulo": "História da Formação do Novo Testamento",
+    "subTitulo": "",
+    "nmAutor0": "MARTINS, SEBASTIAO PINHEIRO",
+    "autores": [
+      {
+        "nome": "MARTINS, SEBASTIAO PINHEIRO",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Caio em 220",
+    "data": "1993",
+    "edicao": "1a Edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "50",
+    "isbn": "8572970061",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Parapsicologia, ocultismo e espiritismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "e83db5654bf058fd9f2a1b30be084f3e3933b0b6bfdec186ad2410146f617621",
+  "arquivo_origem": "14078_A_Intolerancia_da_Tolerancia_by_D.A._Carson__z_lib.org_.pdf",
+  "campos": {
+    "titulo": "A intolerância da tolerância",
+    "subTitulo": "",
+    "nmAutor0": "CARSON, D.A.",
+    "autores": [
+      {
+        "nome": "CARSON, D.A.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "978-85-7622-474-7",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

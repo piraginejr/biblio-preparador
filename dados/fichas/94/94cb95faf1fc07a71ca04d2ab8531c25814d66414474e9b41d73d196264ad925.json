@@ -1,0 +1,39 @@
+{
+  "hash_sha256": "94cb95faf1fc07a71ca04d2ab8531c25814d66414474e9b41d73d196264ad925",
+  "arquivo_origem": "378285735-vocabulariobibli00allm-pdf.pdf",
+  "campos": {
+    "titulo": "Vocabulário bíblico",
+    "subTitulo": "",
+    "nmAutor0": "Allmen, Jean-Jacques von",
+    "autores": [
+      {
+        "nome": "Allmen, Jean-Jacques von",
+        "desc": "Editor"
+      }
+    ],
+    "editora": "Associação de Seminários Teológicos Evangélicos (ASTE)",
+    "data": "1963",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "360",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Alfonso Zimmermann",
+    "isbn_motivo": "sem ISBN: edição publicada antes da adoção do ISBN no Brasil",
+    "origem_titulo": "folha de rosto e metadado interno revisados",
+    "origem_autor": "folha de rosto e catálogo da edição revisados"
+  },
+  "justificativa": "A folha de rosto identifica direção, tradutor e ASTE; o registro do Internet Archive embutido no próprio PDF confirma a edição de São Paulo de 1963.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto, página editorial e metadados internos",
+    "Internet Archive: registro vocabulariobibli00allm"
+  ],
+  "id_remoto": 20378
+}

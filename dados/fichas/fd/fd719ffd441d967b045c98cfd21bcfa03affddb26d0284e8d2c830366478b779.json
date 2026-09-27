@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "fd719ffd441d967b045c98cfd21bcfa03affddb26d0284e8d2c830366478b779",
+  "arquivo_origem": "499233706-Teologia-Sobre-Louvor-e-Adoracao.pdf",
+  "campos": {
+    "titulo": "Os Levitas: teologia sobre louvor e adoração",
+    "subTitulo": "",
+    "nmAutor0": "[autor não identificado]",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "51",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "Material de ensino sobre o ministério levítico e sua aplicação ao louvor e à adoração na igreja. Parte I.",
+    "palavrasChave": "Louvor; Adoração; Levitas; Ministério de louvor; Culto",
+    "origem_autor": "não declarada no documento",
+    "origem_titulo": "cabeçalho da página 1",
+    "isbn_motivo": "material de ensino: não recebe ISBN",
+    "idioma": "por",
+    "tipoAssunto1": "Teologia"
+  },
+  "justificativa": "Material de ensino de igreja, sem autoria declarada, sem editora e sem ISBN. Classificado como apostila para não exigir campos inexistentes.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: páginas 1-3, sem folha de rosto nem créditos"
+  ],
+  "id_remoto": 20740
+}

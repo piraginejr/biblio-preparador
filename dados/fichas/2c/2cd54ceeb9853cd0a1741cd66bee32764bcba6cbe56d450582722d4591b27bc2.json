@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "2cd54ceeb9853cd0a1741cd66bee32764bcba6cbe56d450582722d4591b27bc2",
+  "arquivo_origem": "336193101-Biografia-de-Billy-Graham.pdf",
+  "campos": {
+    "titulo": "Biografia de Billy Graham",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "Wheaton",
+    "nPaginas": "10",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20586
+}

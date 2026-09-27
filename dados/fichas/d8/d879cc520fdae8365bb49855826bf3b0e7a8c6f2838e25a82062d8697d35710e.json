@@ -1,0 +1,12 @@
+{
+  "hash_sha256": "d879cc520fdae8365bb49855826bf3b0e7a8c6f2838e25a82062d8697d35710e",
+  "arquivo_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/_preparados-envio/452077181-Um-Judeu-Errante-no-Brasil-2e7f5067.pdf",
+  "campos": {
+    "titulo": "JUDEU",
+    "isbn": ""
+  },
+  "justificativa": "Cadastrado na API Biblio",
+  "fontes": [
+    "API Biblio PIB Curitiba"
+  ]
+}

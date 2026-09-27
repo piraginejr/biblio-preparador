@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "c1089f72369c00e65b9dfb1c85dffc87d38740ae3bfa47631f3a30e02a4c1b11",
+  "arquivo_origem": "199491137-Apostila-MOVER-Vol-02.pdf",
+  "campos": {
+    "titulo": "Mover para Deus",
+    "subTitulo": "Estudos para liderança - volume 2",
+    "nmAutor0": "Caetano, Silmara",
+    "autores": [],
+    "editora": "[s.n.]",
+    "data": "2011",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "24",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20532
+}

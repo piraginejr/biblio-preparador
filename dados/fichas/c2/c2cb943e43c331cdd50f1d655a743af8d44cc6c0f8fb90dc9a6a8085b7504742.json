@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "c2cb943e43c331cdd50f1d655a743af8d44cc6c0f8fb90dc9a6a8085b7504742",
+  "arquivo_origem": "687769163-planos-de-evangelismo.pdf",
+  "campos": {
+    "titulo": "Planos de evangelismo",
+    "subTitulo": "Um chamado, uma missão",
+    "nmAutor0": "Almeida, Claybson",
+    "autores": [
+      {
+        "nome": "Almeida, Claybson",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "[s.d.]",
+    "edicao": "1ª edição",
+    "lugar": "[S.l.]",
+    "nPaginas": "108",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Evangelismo; Missão cristã; Juventude; Igreja",
+    "isbn_motivo": "sem ISBN declarado na publicação digital",
+    "origem_titulo": "capa e folha de rosto revisadas",
+    "origem_autor": "capa revisada"
+  },
+  "justificativa": "A capa e a folha inicial confirmam título, subtítulo e autor; a edição não declara editora, local, ano ou ISBN.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e folha de rosto"
+  ],
+  "id_remoto": 20826
+}

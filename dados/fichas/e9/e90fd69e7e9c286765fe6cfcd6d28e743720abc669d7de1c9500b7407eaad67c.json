@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "e90fd69e7e9c286765fe6cfcd6d28e743720abc669d7de1c9500b7407eaad67c",
+  "arquivo_origem": "167769028-Andre-Paganelli-Verdadeiros-Adoradores.pdf",
+  "campos": {
+    "titulo": "Verdadeiros Adoradores",
+    "subTitulo": "",
+    "nmAutor0": "Paganelli, André",
+    "autores": [
+      {
+        "nome": "Paganelli, André",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "1999",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "60",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "Estudo sobre louvor e adoração cristãos. Edição do próprio autor; preparação de originais e edição de Magno Paganelli, revisão de Elisabete Barbosa Pereira.",
+    "palavrasChave": "Louvor; Adoração; Música cristã; Ministério de louvor",
+    "origem_autor": "folha de rosto e copyright do próprio livro",
+    "origem_titulo": "folha de rosto",
+    "isbn_motivo": "obra sem ISBN: edição do próprio autor",
+    "idioma": "por",
+    "tipoAssunto1": "Teologia"
+  },
+  "justificativa": "Obra editada pelo próprio autor: o © é dele e não há editora nem ISBN. A ausência é legítima, não falha de leitura.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: folha de rosto e ficha técnica, páginas 1-2"
+  ]
+}

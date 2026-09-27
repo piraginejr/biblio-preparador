@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "8e37869093e17ad671eb6926857cae7f6e9820564b24edc561e3e80a4be71d82",
+  "arquivo_origem": "635686953-na-casa-do-oleiro-arthur-walkington-pink.pdf",
+  "campos": {
+    "titulo": "do Oleiro",
+    "subTitulo": "",
+    "nmAutor0": "Teixeira, William",
+    "autores": [
+      {
+        "nome": "Teixeira, William",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fi",
+    "data": "2013",
+    "edicao": "1ª edição",
+    "lugar": "",
+    "nPaginas": "15",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20651
+}

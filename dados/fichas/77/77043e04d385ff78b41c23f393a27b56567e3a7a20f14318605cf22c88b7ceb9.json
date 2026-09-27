@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "77043e04d385ff78b41c23f393a27b56567e3a7a20f14318605cf22c88b7ceb9",
+  "arquivo_origem": "431686821-Controversias-Em-Torno-Do-Marco-Inicial-Batista-Revista-Batista-Pioneira-263-1062-1-PB.pdf",
+  "campos": {
+    "titulo": "Controvérsias em torno do marco inicial batista: Santa Bárbara d'Oeste ou Salvador?",
+    "subTitulo": "",
+    "nmAutor0": "Silva, Jorgevan Alves da",
+    "autores": [],
+    "editora": "Revista Batista Pioneira",
+    "data": "2018",
+    "edicao": "v. 7, n. 1, junho de 2018",
+    "lugar": "São Paulo",
+    "nPaginas": "14",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": "Batistas; Marco inicial; Convenção Batista Brasileira; Santa Bárbara d'Oeste; Salvador"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20518
+}

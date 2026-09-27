@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "4cc8c2745247fff1d19f8a138f4c42317d45d0072a6e2a3f3c1c4a9402663081",
+  "arquivo_origem": "316506093-livro-4-miolo.pdf",
+  "campos": {
+    "titulo": "Encontro com a Palavra - Livro 4",
+    "subTitulo": "Estudo panorâmico do Velho Testamento: profetas maiores e menores",
+    "nmAutor0": "Woodward, Dick",
+    "autores": [],
+    "editora": "Ministério Cooperativo Internacional (ICM)",
+    "data": "2015",
+    "edicao": "1ª Edição",
+    "lugar": "",
+    "nPaginas": "126",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20520
+}

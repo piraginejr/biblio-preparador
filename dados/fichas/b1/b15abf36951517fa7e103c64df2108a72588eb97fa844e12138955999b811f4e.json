@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "b15abf36951517fa7e103c64df2108a72588eb97fa844e12138955999b811f4e",
+  "arquivo_origem": "642256350-Pregando-Para-a-Gloria-de-Deus-Begg-Alistair.pdf",
+  "campos": {
+    "titulo": "Pregando para a glória de Deus",
+    "subTitulo": "",
+    "nmAutor0": "Begg, Alistair",
+    "autores": [
+      {
+        "nome": "Begg, Alistair",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2014",
+    "edicao": "1ª Edição",
+    "lugar": "Wheaton",
+    "nPaginas": "43",
+    "isbn": "9788581322056",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Congregações cristãs, prática e teologia pastoral"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20578
+}

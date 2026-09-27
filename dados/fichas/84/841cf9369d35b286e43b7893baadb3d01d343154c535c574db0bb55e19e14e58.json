@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "841cf9369d35b286e43b7893baadb3d01d343154c535c574db0bb55e19e14e58",
+  "arquivo_origem": "421618738-A-Voz-de-um-Profeta (1).pdf",
+  "campos": {
+    "titulo": "Voz de um profeta",
+    "subTitulo": "",
+    "nmAutor0": "Tozer, A. W.",
+    "autores": [],
+    "editora": "",
+    "data": "2018",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "24",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "Documento de A. W. Tozer sobre a voz profética e a Igreja. O arquivo digital preservado contém as páginas iniciais disponíveis da publicação.",
+    "palavrasChave": "Profecia; Igreja; Pregação; A. W. Tozer",
+    "isbn_motivo": "trecho sem ficha editorial ou ISBN",
+    "idioma": "por"
+  },
+  "justificativa": "Classificado por decisão do responsável pelo acervo como documento de A. W. Tozer. O PDF contém a capa, salta para a página impressa 7 e termina na 28; essa limitação fica registrada na descrição, sem alterar o título público.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, cabeçalhos, paginação impressa e propriedades do arquivo"
+  ],
+  "id_remoto": 20926
+}

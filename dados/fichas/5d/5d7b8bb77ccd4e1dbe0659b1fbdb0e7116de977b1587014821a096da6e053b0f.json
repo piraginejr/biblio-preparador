@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "5d7b8bb77ccd4e1dbe0659b1fbdb0e7116de977b1587014821a096da6e053b0f",
+  "arquivo_origem": "1306438_estrategias_para_vencer_qual_arthur_schopenhauer.pdf",
+  "campos": {
+    "titulo": "38 estratégias para vencer qualquer debate",
+    "subTitulo": "A arte de ter razão",
+    "nmAutor0": "Schopenhauer, Arthur",
+    "autores": [
+      {
+        "nome": "Schopenhauer, Arthur",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Faro Editorial",
+    "data": "2014",
+    "edicao": "1ª edição brasileira",
+    "lugar": "São Paulo",
+    "nPaginas": "89",
+    "isbn": "9788562409103",
+    "isbn_codigo_barras": "",
+    "cdd": "193",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Camila Werner",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa revisada"
+  },
+  "justificativa": "Capa, rosto, sumário, texto completo e créditos finais conferidos. As 89 páginas digitais decorrem da paginação do arquivo; todos os 38 capítulos, apêndices e créditos estão presentes.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, sumário e créditos finais"
+  ]
+}

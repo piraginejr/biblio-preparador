@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "5ae3c47f72baf65ff01ab4836468d95d2f504ce5572d6cb7c6e9cb650c59a0b1",
+  "arquivo_origem": "A Public Missiology How Local Churches Witness to a Complex World (Gregg Okesson) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Public Missiology",
+    "subTitulo": "How Local Churches Witness to a Complex World",
+    "nmAutor0": "Okesson, Gregg",
+    "autores": [
+      {
+        "nome": "Okesson, Gregg",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Baker Academic",
+    "data": "2020",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "303",
+    "isbn": "9781493422388",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Theology, practical; Evangelistic work; Missions; Church work; Church"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20604
+}

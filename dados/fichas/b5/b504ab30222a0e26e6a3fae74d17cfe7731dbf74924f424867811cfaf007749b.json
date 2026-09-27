@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "b504ab30222a0e26e6a3fae74d17cfe7731dbf74924f424867811cfaf007749b",
+  "arquivo_origem": "19439_THE_CLASS_LEADER.pdf",
+  "campos": {
+    "titulo": "The Class Leader",
+    "subTitulo": "His Work, And How To Do  It",
+    "nmAutor0": "ATKINSON, JOHN ",
+    "autores": [
+      {
+        "nome": "ATKINSON, JOHN",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "HALIFAX",
+    "data": "1875",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Toronto",
+    "nPaginas": "183",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "This work has been selected by scholars as being culturally important, and is part of the knowledge base of civilization as we know it. This work was reproduced from the original artifact, and remains as true to the original work as possible. Therefore, you will see the original copyright references, library stamps (as most of these works have been housed in our most important libraries around the world), and other notations in the work.\n\nThis work is in the public domain in the United States of America, and possibly other nations. Within the United States, you may freely copy and distribute this work, as no entity (individual or corporate) has a copyright on the body of the work.\n\nAs a reproduction of a historical artifact, this work may contain missing or blurred pages, poor pictures, errant marks, etc. Scholars believe, and we concur, that this work is important enough to be preserved, reproduced, and made generally available to the public. We appreciate your support of the preservation process, and thank you for being an important part of keeping this knowledge alive and relevant.",
+    "palavrasChave": "",
+    "assunto": "Liderança "
+  },
+  "justificativa": "revisão visual",
+  "fontes": [
+    "Metadados locais do acervo",
+    "revisão visual do PDF"
+  ]
+}

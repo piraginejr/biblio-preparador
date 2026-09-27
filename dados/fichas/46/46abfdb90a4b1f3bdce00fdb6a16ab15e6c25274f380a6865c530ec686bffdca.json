@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "46abfdb90a4b1f3bdce00fdb6a16ab15e6c25274f380a6865c530ec686bffdca",
+  "arquivo_origem": "705574787-Copia-de-Contextualizando-a-Igreja-de-Cristo-Diversos.pdf",
+  "campos": {
+    "titulo": "A contextualização da igreja de Cristo",
+    "subTitulo": "Igrejas fiéis no mundo de hoje",
+    "nmAutor0": "Piragine Júnior, Paschoal",
+    "autores": [
+      {
+        "nome": "Piragine Júnior, Paschoal",
+        "desc": "Compilador"
+      }
+    ],
+    "editora": "JUERP - Junta de Educação Religiosa e Publicações",
+    "data": "2003",
+    "edicao": "1ª edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "274",
+    "isbn": "",
+    "isbn_codigo_barras": "9798535002118",
+    "cdd": "280.286",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Igreja de Cristo; Contextualização; Igreja local; Missão cristã",
+    "isbn_motivo": "ISBN impresso 85.350-0211.8 não passa na validação do dígito verificador; preservado apenas como nota",
+    "origem_titulo": "CIP revisada",
+    "origem_autor": "CIP revisada"
+  },
+  "justificativa": "A CIP identifica Paschoal Piragine Júnior como compilador e fornece título, subtítulo, editora, local, ano e CDD. O ISBN impresso é matematicamente inválido e não foi corrigido por adivinhação.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto, copyright e CIP, páginas 1-5"
+  ],
+  "id_remoto": 20828
+}

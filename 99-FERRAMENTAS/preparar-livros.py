@@ -570,37 +570,83 @@ def identificar_periodico_conhecido(texto, periodicos=None):
 def revisao_manual(caminho):
     """Carrega decisao bibliografica revisada sem embuti-la no programa.
 
-    O hash impede que uma correcao pelo nome seja aplicada a outro PDF que
-    por acaso receba o mesmo nome. O arquivo de revisoes e pequeno, legivel e
-    pode acompanhar o catalogo local sem duplicar o livro.
+    A resolucao segue:
+      1. Nome exato em revisoes-manuais.json local (com validacao estrita de hash sha256).
+      2. Se nao existir por nome, busca por hash sha256 nas revisoes locais (caso o arquivo tenha sido renomeado).
+      3. Base Cooperativa Git (via sincronizador_git.consultar_ficha_cooperativa).
     """
     caminho = os.path.abspath(caminho)
     nome = os.path.basename(caminho)
     atual = os.path.dirname(caminho)
+
+    hash_calculado = None
+    def _obter_hash():
+        nonlocal hash_calculado
+        if hash_calculado is None:
+            try:
+                h = hashlib.sha256()
+                with open(caminho, "rb") as f:
+                    for bloco in iter(lambda: f.read(1024 * 1024), b""):
+                        h.update(bloco)
+                hash_calculado = h.hexdigest().lower()
+            except OSError:
+                hash_calculado = ""
+        return hash_calculado
+
+    pasta_controle_encontrada = None
+
     for _ in range(5):
-        arquivo = os.path.join(atual, "_controle", "revisoes-manuais.json")
+        pasta_ctrl = os.path.join(atual, "_controle")
+        arquivo = os.path.join(pasta_ctrl, "revisoes-manuais.json")
         if os.path.exists(arquivo):
+            pasta_controle_encontrada = pasta_ctrl
             try:
                 with open(arquivo, encoding="utf-8") as f:
                     dados = json.load(f)
-                rev = dados.get("livros", {}).get(nome, {})
-                if not rev:
-                    return {}
-                esperado = rev.get("hash_sha256", "")
-                if esperado:
-                    h = hashlib.sha256()
-                    with open(caminho, "rb") as f:
-                        for bloco in iter(lambda: f.read(1024 * 1024), b""):
-                            h.update(bloco)
-                    if h.hexdigest() != esperado:
+                livros_map = dados.get("livros", {})
+
+                # 1. Busca direta por nome de arquivo com validacao estrita de hash
+                if nome in livros_map:
+                    rev = livros_map[nome]
+                    esperado = str(rev.get("hash_sha256", "")).lower()
+                    if esperado:
+                        if esperado == _obter_hash():
+                            return rev
                         return {}
-                return rev
+                    return rev
+
+                # 2. Se o nome nao esta no arquivo, procura se o hash confere com outro livro
+                h_real = _obter_hash()
+                if h_real:
+                    for item_nome, item_rev in livros_map.items():
+                        if str(item_rev.get("hash_sha256", "")).lower() == h_real:
+                            return item_rev
             except (OSError, ValueError, json.JSONDecodeError):
-                return {}
+                pass
         pai = os.path.dirname(atual)
         if pai == atual:
             break
         atual = pai
+
+    # 3. Consulta Base Cooperativa Git
+    h_real = _obter_hash()
+    if h_real:
+        try:
+            import sincronizador_git as sg
+            cache_dir = os.path.join(pasta_controle_encontrada, "cache-cooperativo") if pasta_controle_encontrada else None
+            ficha_coop = sg.consultar_ficha_cooperativa(h_real, pasta_cache=cache_dir)
+            if ficha_coop and isinstance(ficha_coop, dict):
+                return {
+                    "hash_sha256": h_real,
+                    "aprovado": True,
+                    "campos": ficha_coop.get("campos", {}),
+                    "justificativa": f"Base Cooperativa Git: {ficha_coop.get('justificativa', 'Aprovado na rede')}",
+                    "fontes": ficha_coop.get("fontes", ["Base Cooperativa Git"]),
+                    "origem_cooperativa": True,
+                }
+        except Exception:
+            pass
+
     return {}
 
 

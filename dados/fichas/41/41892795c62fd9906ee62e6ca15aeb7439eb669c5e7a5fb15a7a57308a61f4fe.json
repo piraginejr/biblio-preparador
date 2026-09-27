@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "41892795c62fd9906ee62e6ca15aeb7439eb669c5e7a5fb15a7a57308a61f4fe",
+  "arquivo_origem": "587542233-Cristo-Aquele-Que-Cura.pdf",
+  "campos": {
+    "titulo": "CRISTO, AQUELE QUE CURA",
+    "subTitulo": "",
+    "nmAutor0": "BOSWORTH, F. F.",
+    "autores": [
+      {
+        "nome": "BOSWORTH, F. F.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Graça Editorial",
+    "data": "1973",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "304",
+    "isbn": "857343578X",
+    "isbn_codigo_barras": "",
+    "cdd": "234.2",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Religião"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20498
+}

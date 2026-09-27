@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "f151643119b78935d9a1f1769eff18d8f344a90d06a77329789687a9c037af3d",
+  "arquivo_origem": "378394421-Menno-Simons-docx.pdf",
+  "campos": {
+    "titulo": "Menno Simons",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [
+      {
+        "nome": "Isaak, Helmut",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Pandora Pr",
+    "data": "2006",
+    "edicao": "",
+    "lugar": "Grand Rapids",
+    "nPaginas": "158",
+    "isbn": "9781894710695",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": "Anabaptists; Doctrines; History; Mennonites; Jerusalem in Christianity"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20597
+}

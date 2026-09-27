@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "6e3e11d9ac757edaca1406b12fbcb56e397e6b4734661b661c73d1e0fd901ecb",
+  "arquivo_origem": "540381591-George-Barna-Millennial-Report-2021-FINAL-Web.pdf",
+  "campos": {
+    "titulo": "Millennials in America",
+    "subTitulo": "New Insights into the Generation of Growing Influence",
+    "nmAutor0": "Barna, George",
+    "autores": [],
+    "editora": "Cultural Research Center at Arizona Christian University",
+    "data": "2021",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "62",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20490
+}

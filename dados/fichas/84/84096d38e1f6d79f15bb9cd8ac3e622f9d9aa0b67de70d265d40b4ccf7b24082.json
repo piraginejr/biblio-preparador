@@ -1,0 +1,12 @@
+{
+  "hash_sha256": "84096d38e1f6d79f15bb9cd8ac3e622f9d9aa0b67de70d265d40b4ccf7b24082",
+  "arquivo_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/_preparados-envio/12665multiplicacao__roberto_bottrel-34bb4503.pdf",
+  "campos": {
+    "titulo": "Roberto Bottret",
+    "isbn": "9788566115512"
+  },
+  "justificativa": "Cadastrado na API Biblio",
+  "fontes": [
+    "API Biblio PIB Curitiba"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "663ad1d61bfd895ecb77f4d3b8e8559e6a0ab43d5d2ada8088dd9df20ed4675b",
+  "arquivo_origem": "520865611-20-Novo-Comentario-BA-blico-Beacon-Daniel-Jim-Edlin.pdf",
+  "campos": {
+    "titulo": "Novo comentário bíblico beacon: Daniel",
+    "subTitulo": "",
+    "nmAutor0": "Edlin, Jim",
+    "autores": [
+      {
+        "nome": "Edlin, Jim",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Beacon Hill Press of Kansas City",
+    "data": "2015",
+    "edicao": "1",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "333",
+    "isbn": "9788576894285",
+    "isbn_codigo_barras": "9788576894285",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20454
+}

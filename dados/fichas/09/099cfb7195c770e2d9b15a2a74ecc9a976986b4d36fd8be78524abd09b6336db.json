@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "099cfb7195c770e2d9b15a2a74ecc9a976986b4d36fd8be78524abd09b6336db",
+  "arquivo_origem": "659230337-BARROS-Clara-Janson-Revista-Louvor-e-Canc-a-o-Engajada-Tradic-a-o-e-Modernidade-Nas-Pra-Ticas-Religiosas-de-Protestantes-Brasileiros-Na-de-Cada-de.pdf",
+  "campos": {
+    "titulo": "REVISTA LOUVOR E CANÇÃO ENGAJADA: TRADIÇÃO E MODERNIDADE NAS",
+    "subTitulo": "",
+    "nmAutor0": "Música, Mestrado Em",
+    "autores": [],
+    "editora": "UNIVERSIDADE ESTADUAL DO PARANÁ",
+    "data": "2021",
+    "edicao": "",
+    "lugar": "CURITIBA",
+    "nPaginas": "87",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "dissertação",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20691
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "6ac6cecf59ad769dc4d207a1ba8d2f561fbc0acfd3680981754f58cc277ec16e",
+  "arquivo_origem": "866860254-Richard-s-Hess-Religiones-Israelitas.pdf",
+  "campos": {
+    "titulo": "RELIGIONES ISRAELITAS",
+    "subTitulo": "",
+    "nmAutor0": "Hess, Richard S.",
+    "autores": [
+      {
+        "nome": "Hess, Richard S.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "1989",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "590",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20880
+}

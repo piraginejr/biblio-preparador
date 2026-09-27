@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "4b12e525ce696a27f4b59c16d9c6664c0b822a42cc3d4b8dea1f46d5fb281af4",
+  "arquivo_origem": "385596721-A-segunda-reforma.pdf",
+  "campos": {
+    "titulo": "de A Segunda",
+    "subTitulo": "",
+    "nmAutor0": "BECKHAM, WILLIAM A.",
+    "autores": [
+      {
+        "nome": "BECKHAM, WILLIAM A.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Igreja em Células",
+    "data": "1995",
+    "edicao": "",
+    "lugar": "Curitiba",
+    "nPaginas": "283",
+    "isbn": "9788587194466",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

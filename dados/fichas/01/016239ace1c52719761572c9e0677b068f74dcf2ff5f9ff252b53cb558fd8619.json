@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "016239ace1c52719761572c9e0677b068f74dcf2ff5f9ff252b53cb558fd8619",
+  "arquivo_origem": "225655610-Teologia-Biblica-Do-Velho-Testamento-LANGSTON.pdf",
+  "campos": {
+    "titulo": "Teologia bíblica do Velho Testamento",
+    "subTitulo": "",
+    "nmAutor0": "Langston, A. B.",
+    "autores": [
+      {
+        "nome": "Langston, A. B.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "[s.d.]",
+    "edicao": "",
+    "lugar": "[S.l.]",
+    "nPaginas": "521",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa e prefácio revisados"
+  },
+  "justificativa": "Obra antiga completa; o exemplar digitalizado não conserva folha editorial legível. Dados ausentes foram representados pelas convenções bibliográficas.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: capa, prefácio, sumário e texto integral"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "2f5d3eaf6608335d339caab58273d0f23298a6b84f3aeefb022b7fd8b6a2d4a4",
+  "arquivo_origem": "13564formador_de_herois_1.pdf",
+  "campos": {
+    "titulo": "FORMADOR DE HERÓIS",
+    "subTitulo": "",
+    "nmAutor0": "FERGUSON, Dave; BIRD, Warren",
+    "autores": [
+      {
+        "nome": "FERGUSON, Dave; BIRD, Warren",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9788565158428",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

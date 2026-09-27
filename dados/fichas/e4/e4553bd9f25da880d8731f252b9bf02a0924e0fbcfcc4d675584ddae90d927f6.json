@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "e4553bd9f25da880d8731f252b9bf02a0924e0fbcfcc4d675584ddae90d927f6",
+  "arquivo_origem": "556805806-Povo-de-Deus-Juliano-Spyer.pdf",
+  "campos": {
+    "titulo": "Deus acima de todos",
+    "subTitulo": "",
+    "nmAutor0": "Spyer, Juliano",
+    "autores": [
+      {
+        "nome": "Spyer, Juliano",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Geração Editorial",
+    "data": "2020",
+    "edicao": "1ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "314",
+    "isbn": "9786556470115",
+    "isbn_codigo_barras": "",
+    "cdd": "300",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Religião"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20487
+}

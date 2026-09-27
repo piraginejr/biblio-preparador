@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "627fec594705a7bace1143f0cbe17ecd979dde314e9182a6e61bb320046fa881",
+  "arquivo_origem": "504503240-Almanaque-Dos-Grandes-Misterios-Biblicos.pdf",
+  "campos": {
+    "titulo": "ALMANAQUE J» GRANDES MISTÉRIOS",
+    "subTitulo": "",
+    "nmAutor0": "Corporation, Livingstone",
+    "autores": [
+      {
+        "nome": "Corporation, Livingstone",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Pensamento",
+    "data": "2010",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "243",
+    "isbn": "9788531516306",
+    "isbn_codigo_barras": "",
+    "cdd": "220",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20442
+}

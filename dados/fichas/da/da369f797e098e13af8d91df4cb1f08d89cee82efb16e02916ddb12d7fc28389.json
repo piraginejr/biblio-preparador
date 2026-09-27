@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "da369f797e098e13af8d91df4cb1f08d89cee82efb16e02916ddb12d7fc28389",
+  "arquivo_origem": "Bible and Mission Christian Witness in a Postmodern World (Richard Bauckham) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Bible and Mission",
+    "subTitulo": "Christian Witness in a Postmodern World",
+    "nmAutor0": "Bauckham, Richard",
+    "autores": [
+      {
+        "nome": "Bauckham, Richard",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Paternoster Publishing",
+    "data": "2003",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "112",
+    "isbn": "184227242X",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Missions; Biblical teaching; Zending; Bijbel; Postmodernisme"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20605
+}

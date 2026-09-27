@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "43bde8f856a7c4cb33c296b349fc764a34dc9560f4c99b031baf99eb3363460a",
+  "arquivo_origem": "Biblia Sagrada com Metodo Lectio Divina_ N - Sociedade Biblica do Brasil.pdf",
+  "campos": {
+    "titulo": "Bíblia sagrada com método lectio divina",
+    "subTitulo": "",
+    "nmAutor0": "Brasil, Sociedade Bíblica do",
+    "autores": [
+      {
+        "nome": "Brasil, Sociedade Bíblica do",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "SBB",
+    "data": "2003",
+    "edicao": "1ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "5794",
+    "isbn": "9788531116155",
+    "isbn_codigo_barras": "",
+    "cdd": "225.5269",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Bíblia"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20892
+}

@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "ee22afe3aea72315de79e3633971128fb9d3b6800578ec360ae629957a7d0e05",
+  "arquivo_origem": "A igreja crista na historia - Franklin Ferreira.pdf",
+  "campos": {
+    "titulo": "A Igreja Cristã Na História",
+    "subTitulo": "",
+    "nmAutor0": "FERREIRA, Franklin",
+    "autores": [
+      {
+        "nome": "FERREIRA, Franklin",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "978-85-275-0525-3",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

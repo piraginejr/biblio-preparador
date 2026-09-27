@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "c9c0ea9c31b7c7de65e3f7a02a421163f165dab7910b20d7a1517cdc138ed043",
+  "arquivo_origem": "514910280-Historia-Principios-e-Organizacoes-Batistas.pdf",
+  "campos": {
+    "titulo": "História, Princípios e Organizações Batistas",
+    "subTitulo": "Unidade Temática 08",
+    "nmAutor0": "Souza, Edilson Soares de",
+    "autores": [],
+    "editora": "Faculdade Teológica Batista do Paraná",
+    "data": "[s.d.]",
+    "edicao": "3ª edição",
+    "lugar": "Curitiba",
+    "nPaginas": "42",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20529
+}

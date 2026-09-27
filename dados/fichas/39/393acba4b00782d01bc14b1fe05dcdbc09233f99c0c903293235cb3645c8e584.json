@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "393acba4b00782d01bc14b1fe05dcdbc09233f99c0c903293235cb3645c8e584",
+  "arquivo_origem": "Christ and the spiritual powers in Colossians.pdf",
+  "campos": {
+    "titulo": "Christ and the spiritual powers in Colossians",
+    "subTitulo": "",
+    "nmAutor0": "Araújo, Diego dy Carlos",
+    "autores": [
+      {
+        "nome": "Colossians, the spiritual powers in",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Tyndale House",
+    "data": "2023",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "7",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20611
+}

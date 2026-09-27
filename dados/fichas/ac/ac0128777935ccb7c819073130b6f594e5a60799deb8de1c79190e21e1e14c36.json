@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "ac0128777935ccb7c819073130b6f594e5a60799deb8de1c79190e21e1e14c36",
+  "arquivo_origem": "506234259-Cultura-de-Oracao-Michael-Duque-Estrada.pdf",
+  "campos": {
+    "titulo": "Cultura de oração",
+    "subTitulo": "Fortalecendo a Igreja que Ora",
+    "nmAutor0": "Estrada, Michael Duque",
+    "autores": [
+      {
+        "nome": "Estrada, Michael Duque",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Impacto Publicações",
+    "data": "2016",
+    "edicao": "1ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "120",
+    "isbn": "9788565419192",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa, folha de rosto e CIP revisadas",
+    "origem_autor": "capa e CIP revisadas"
+  },
+  "justificativa": "A página editorial e a CIP, preservadas como imagem no PDF, fornecem editora, ano, edição, ISBN e paginação.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, folha de rosto, página editorial e CIP",
+    "https://www.alfalivrariacrista.com.br/produtos/cultura-de-oracao/"
+  ],
+  "id_remoto": 20449
+}

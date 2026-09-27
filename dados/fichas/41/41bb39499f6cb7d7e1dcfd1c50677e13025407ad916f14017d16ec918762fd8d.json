@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "41bb39499f6cb7d7e1dcfd1c50677e13025407ad916f14017d16ec918762fd8d",
+  "arquivo_origem": "622343297-Hagin-Kenneth-W-Construidos-para-Durar.pdf",
+  "campos": {
+    "titulo": "C o n s t r u íd o s",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "Rhema Brasil Publicações",
+    "data": "2013",
+    "edicao": "",
+    "lugar": "Campina Grande",
+    "nPaginas": "156",
+    "isbn": "9780892767533",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20682
+}

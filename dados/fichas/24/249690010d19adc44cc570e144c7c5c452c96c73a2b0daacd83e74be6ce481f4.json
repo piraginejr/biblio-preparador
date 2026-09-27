@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "249690010d19adc44cc570e144c7c5c452c96c73a2b0daacd83e74be6ce481f4",
+  "arquivo_origem": "422082269-Saiba-o-Que-Voce-Cre.pdf",
+  "campos": {
+    "titulo": "Saiba",
+    "subTitulo": "",
+    "nmAutor0": "Cre, Que Voce",
+    "autores": [
+      {
+        "nome": "DUVIDAS",
+        "desc": "Autor"
+      },
+      {
+        "nome": "SUAS, DISSIPE",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Mundo Cristão",
+    "data": "1970",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "81",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20717
+}

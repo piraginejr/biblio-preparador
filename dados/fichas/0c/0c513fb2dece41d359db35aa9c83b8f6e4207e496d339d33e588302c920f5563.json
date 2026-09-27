@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "0c513fb2dece41d359db35aa9c83b8f6e4207e496d339d33e588302c920f5563",
+  "arquivo_origem": "437500593-O-reino-de-ponta-cabecI-a-pdf.pdf",
+  "campos": {
+    "titulo": "0 REINO DE PONTA",
+    "subTitulo": "",
+    "nmAutor0": "Kraybill, Donald B.",
+    "autores": [
+      {
+        "nome": "Kraybill, Donald B.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "EMPT",
+    "data": "2017",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "401",
+    "isbn": "9788560535927",
+    "isbn_codigo_barras": "9788560535927",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20391
+}

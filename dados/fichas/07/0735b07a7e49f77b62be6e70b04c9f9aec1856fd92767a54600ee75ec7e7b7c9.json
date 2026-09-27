@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "0735b07a7e49f77b62be6e70b04c9f9aec1856fd92767a54600ee75ec7e7b7c9",
+  "arquivo_origem": "706845547-Sola-Scriptura-Numa-Epoca-Sem-Fundamentos-o-Resgate-Do-Alicerce-Biblico.pdf",
+  "campos": {
+    "titulo": "Sola Scriptura: Numa Época Sem Fundamentos O Resgate do Alicerce Bíb",
+    "subTitulo": "",
+    "nmAutor0": "Outros, Joel Beeke",
+    "autores": [
+      {
+        "nome": "Outros, Joel Beeke",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Cultura Cristã",
+    "data": "1995",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "214",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20809
+}

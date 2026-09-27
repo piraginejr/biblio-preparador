@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "a60b164b644cbb46b4f20b2fd660857c04a366360cdd397099f087943dfd32ad",
+  "arquivo_origem": "551637609-MANUAL-LOUVOR-LAGOINHA-RP.pdf",
+  "campos": {
+    "titulo": "MINISTÉRIO DE LOUVOR Manual de Orientações",
+    "subTitulo": "",
+    "nmAutor0": "RP, LOUVOR LAGOINHA",
+    "autores": [],
+    "editora": "",
+    "data": "2022",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "23",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20736
+}

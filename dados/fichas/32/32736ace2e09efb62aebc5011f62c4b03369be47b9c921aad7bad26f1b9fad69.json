@@ -1,0 +1,12 @@
+{
+  "hash_sha256": "32736ace2e09efb62aebc5011f62c4b03369be47b9c921aad7bad26f1b9fad69",
+  "arquivo_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/_preparados-envio/575511648-Jonas-Carlos-Augusto-Vailatte-29b549f7.pdf",
+  "campos": {
+    "titulo": "Jonas introdução, tradução e comentário",
+    "isbn": "9788580883763"
+  },
+  "justificativa": "Cadastrado na API Biblio",
+  "fontes": [
+    "API Biblio PIB Curitiba"
+  ]
+}

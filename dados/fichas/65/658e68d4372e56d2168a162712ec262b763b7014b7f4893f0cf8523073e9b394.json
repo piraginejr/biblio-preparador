@@ -1,0 +1,29 @@
+{
+  "hash_sha256": "658e68d4372e56d2168a162712ec262b763b7014b7f4893f0cf8523073e9b394",
+  "arquivo_origem": "650870379-PREPARANDO-SE-PARA-A-VOLTA-DE-JESUS-A-W-TOZER.pdf",
+  "campos": {
+    "titulo": "Preparando-se para a volta de Jesus",
+    "subTitulo": "Arquivo parcial",
+    "nmAutor0": "Tozer, A. W.",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "13",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": "Segunda vinda de Cristo; Vida cristã; Arquivo parcial"
+  },
+  "justificativa": "O arquivo possui apenas 13 páginas e não declara os dados de uma edição completa; foi preservado como documento parcial.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local e nome do arquivo"
+  ],
+  "id_remoto": 20710
+}

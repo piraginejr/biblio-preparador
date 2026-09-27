@@ -1,0 +1,12 @@
+{
+  "hash_sha256": "428ccc724b13fd765293964707ec0da741de5a7b96aeb1106ec6db0ba0dbd8a6",
+  "arquivo_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/_preparados-envio/752448463-LA-MESA-COMPARTIDA-62c0d0d1.pdf",
+  "campos": {
+    "titulo": "La mesa compartida",
+    "isbn": "8429311270"
+  },
+  "justificativa": "Cadastrado na API Biblio",
+  "fontes": [
+    "API Biblio PIB Curitiba"
+  ]
+}

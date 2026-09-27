@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "f3b675478a92f9d9219297d1cf285173dc773d5ba94e6064c30a76550888217e",
+  "arquivo_origem": "595536621-Evangelho-Explicito-Matt-Chandler.pdf",
+  "campos": {
+    "titulo": "O evangelho explícito",
+    "subTitulo": "",
+    "nmAutor0": "Chandler, Matt",
+    "autores": [
+      {
+        "nome": "Chandler, Matt",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2013",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Wheaton",
+    "nPaginas": "208",
+    "isbn": "9788581321448",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Jesus cristo e sua família"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20748
+}

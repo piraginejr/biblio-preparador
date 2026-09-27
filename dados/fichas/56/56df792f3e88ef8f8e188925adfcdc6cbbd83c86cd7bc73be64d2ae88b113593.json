@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "56df792f3e88ef8f8e188925adfcdc6cbbd83c86cd7bc73be64d2ae88b113593",
+  "arquivo_origem": "616301636-A-Igreja-de-Casa-em-Casa.pdf",
+  "campos": {
+    "titulo": "A igreja de casa em casa",
+    "subTitulo": "",
+    "nmAutor0": "Silva, Luciano",
+    "autores": [
+      {
+        "nome": "Silva, Luciano",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Editora e Publicadora",
+    "data": "2009",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Balneário Piçarras",
+    "nPaginas": "233",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Igreja nos lares; Igreja orgânica; Eclesiologia; Discipulado",
+    "origem_titulo": "folha de rosto",
+    "origem_autor": "folha de rosto e página de créditos",
+    "isbn_motivo": "edição eletrônica independente sem ISBN declarado",
+    "idioma": "por"
+  },
+  "justificativa": "A própria edição declara autor, ano, editora e endereço editorial; a origem Curitiba encontrada automaticamente pertence ao relato biográfico do autor.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: folha de rosto e créditos, páginas 1-4"
+  ]
+}

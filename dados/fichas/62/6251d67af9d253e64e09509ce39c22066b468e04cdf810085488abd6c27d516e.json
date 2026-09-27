@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "6251d67af9d253e64e09509ce39c22066b468e04cdf810085488abd6c27d516e",
+  "arquivo_origem": "611991019-2-EXEGESE-BIBLICA.pdf",
+  "campos": {
+    "titulo": "Exegese bíblica",
+    "subTitulo": "",
+    "nmAutor0": "Brizotti, Alan",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "46",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": "Exegese bíblica; Hermenêutica; Interpretação bíblica",
+    "origem_titulo": "capa",
+    "origem_autor": "crédito 'Professor' na capa",
+    "isbn_motivo": "apostila de curso: não recebe ISBN",
+    "idioma": "por"
+  },
+  "justificativa": "A imagem da capa declara 'Apostila', o título e 'Professor: Alan Brizotti'. O texto corrido extraído como título era o primeiro parágrafo do conteúdo.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e sumário, páginas 1-3"
+  ],
+  "id_remoto": 20759
+}

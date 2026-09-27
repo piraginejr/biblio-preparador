@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "9f4fb8f2c7031981c58d6ecb3c60b14dc525089353e5a4cf9e62f8aeda86bdcc",
+  "arquivo_origem": "O-reino-entre-nos-leia.pdf",
+  "campos": {
+    "titulo": "O REINO ENTRE NOS",
+    "subTitulo": "",
+    "nmAutor0": "CUNHA, MAURICIO JOSE SILVA",
+    "autores": [
+      {
+        "nome": "CUNHA, MAURICIO JOSE SILVA",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "ULTIMATO",
+    "data": "2003",
+    "edicao": "2ª Edição",
+    "lugar": "Viçosa",
+    "nPaginas": "144",
+    "isbn": "8586539627",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Denominações cristãs e seitas"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20671
+}

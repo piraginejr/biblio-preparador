@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "bb2d5beb29f3313224dd8f8d3eac82fb565f02469ac6fe9023d3f9ff2321367c",
+  "arquivo_origem": "113926735-113894311-Biblia-Etica-y-Apocaliptica-Noguez-Armando-1.pdf",
+  "campos": {
+    "titulo": "_ ETICA Y APOCALÍPTICA",
+    "subTitulo": "",
+    "nmAutor0": "Armando, Noguez",
+    "autores": [
+      {
+        "nome": "Armando, Noguez",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Universidad Intercontinental",
+    "data": "[s.d.]",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Madrid",
+    "nPaginas": "162",
+    "isbn": "970652083X",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20867
+}

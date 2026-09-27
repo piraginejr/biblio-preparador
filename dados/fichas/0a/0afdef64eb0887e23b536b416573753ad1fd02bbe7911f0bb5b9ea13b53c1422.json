@@ -1,0 +1,43 @@
+{
+  "hash_sha256": "0afdef64eb0887e23b536b416573753ad1fd02bbe7911f0bb5b9ea13b53c1422",
+  "arquivo_origem": "299561269-Dic-Int-de-Teologia-do-AT.pdf",
+  "campos": {
+    "titulo": "Dicionário Internacional de Teologia do Antigo Testamento",
+    "subTitulo": "",
+    "nmAutor0": "Harris, R. Laird",
+    "autores": [
+      {
+        "nome": "Harris, R. Laird",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Archer Jr., Gleason L.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Waltke, Bruce K.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Sociedade Religiosa Edições Vida Nova",
+    "data": "1998",
+    "edicao": "1ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "1790",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "idioma": "pt",
+    "origem_titulo": "capa e folha de rosto revisadas",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "Capa, folha de rosto e copyright foram conferidos visualmente; os três nomes são autores, não parte do título.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: capa, copyright e folha de rosto"
+  ]
+}

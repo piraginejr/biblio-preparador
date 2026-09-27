@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "484df2ce3eddac1f2547dcc464fb3b5b730e6009d328544aac33f07bec63bbf9",
+  "arquivo_origem": "Understanding reconciliation (Lumko) (Z-Library).pdf",
+  "campos": {
+    "titulo": "UNDERSTANDING RECONCILIATION",
+    "subTitulo": "",
+    "nmAutor0": "O'Leary, Seán",
+    "autores": [
+      {
+        "nome": "O'Leary, Seán",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Hay, Mark",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Lumko Institute",
+    "data": "2000",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "58",
+    "isbn": "187483833X",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

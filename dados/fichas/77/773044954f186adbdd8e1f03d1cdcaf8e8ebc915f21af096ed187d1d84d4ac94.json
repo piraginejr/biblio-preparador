@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "773044954f186adbdd8e1f03d1cdcaf8e8ebc915f21af096ed187d1d84d4ac94",
+  "arquivo_origem": "Liderar é influenciar Seja agente de transformação positiva em qualquer ambiente (John C. Maxwell [Maxwell, John C.]) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+  "campos": {
+    "titulo": "Liderar é influenciar: seja agente de transformação em qualquer ambiente",
+    "subTitulo": "",
+    "nmAutor0": "Dorman, Jim",
+    "autores": [
+      {
+        "nome": "Dorman, Jim",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Maxwell, John",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Thomas Nelson Brasil",
+    "data": "2011",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "142",
+    "isbn": "9788578601836",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Psicologia"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20878
+}

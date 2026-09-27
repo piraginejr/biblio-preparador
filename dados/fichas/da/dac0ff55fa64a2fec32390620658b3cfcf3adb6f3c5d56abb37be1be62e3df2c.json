@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "dac0ff55fa64a2fec32390620658b3cfcf3adb6f3c5d56abb37be1be62e3df2c",
+  "arquivo_origem": "784144951-A-Arte-de-Pastorear.pdf",
+  "campos": {
+    "titulo": "Arte de Pastorear: um ministério sem todas as respostas",
+    "subTitulo": "",
+    "nmAutor0": "HANSEN, David",
+    "autores": [
+      {
+        "nome": "HANSEN, David",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "85-88315-10-6",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

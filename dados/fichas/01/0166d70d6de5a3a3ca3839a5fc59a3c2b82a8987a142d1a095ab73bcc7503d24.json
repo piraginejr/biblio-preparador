@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "0166d70d6de5a3a3ca3839a5fc59a3c2b82a8987a142d1a095ab73bcc7503d24",
+  "arquivo_origem": "498341630-Uma-Igreja-Impara-vel.pdf",
+  "campos": {
+    "titulo": "UNSTOPPABLE UMA",
+    "subTitulo": "",
+    "nmAutor0": "A, Aluízio",
+    "autores": [
+      {
+        "nome": "A, Aluízio",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "AMS Gráfica e Editora",
+    "data": "2020",
+    "edicao": "1ª edição",
+    "lugar": "",
+    "nPaginas": "138",
+    "isbn": "9788579292156",
+    "isbn_codigo_barras": "",
+    "cdd": "230",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20439
+}

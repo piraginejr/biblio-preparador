@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "32e33d237cec96a93447c2fee3679ed141013d90f91f6e6baac840356076a0a4",
+  "arquivo_origem": "568961113-Historia-Documental-Do-Protestantismo-No-Brasil.pdf",
+  "campos": {
+    "titulo": "HISTORIA DOCUMENTAL DO PROTESTANTISMO NO BRASIL",
+    "subTitulo": "",
+    "nmAutor0": "REILY, DUNCAN",
+    "autores": [
+      {
+        "nome": "REILY, DUNCAN",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "ASTE",
+    "data": "2003",
+    "edicao": "3a edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "455",
+    "isbn": "8587565095",
+    "isbn_codigo_barras": "",
+    "cdd": "2",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "História do cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

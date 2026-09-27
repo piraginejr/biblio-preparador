@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "fae3ab7e2775e33dbc2cc9190c35cc4505b03e966d985f8ccf22b5ddfb867fdf",
+  "arquivo_origem": "706882005-Proposta-de-Estudo-Sobre-Solomon-Luis-Ginsburg.pdf",
+  "campos": {
+    "titulo": "VI SIMPODI",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "1901",
+    "edicao": "",
+    "lugar": "Curitiba",
+    "nPaginas": "8",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20690
+}

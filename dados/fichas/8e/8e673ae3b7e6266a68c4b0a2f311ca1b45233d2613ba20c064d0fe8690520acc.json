@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "8e673ae3b7e6266a68c4b0a2f311ca1b45233d2613ba20c064d0fe8690520acc",
+  "arquivo_origem": "351985311-Hans-Kung-Women-in-Christianity.pdf",
+  "campos": {
+    "titulo": "Women in Christianity",
+    "subTitulo": "",
+    "nmAutor0": "KÜNG, Hans",
+    "autores": [
+      {
+        "nome": "KÜNG, Hans",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "0826476902",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

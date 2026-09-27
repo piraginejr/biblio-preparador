@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "f693bc44f1c53190c353aa99e09c4ed2fa86bf83bb4b9a8a00339ef55d2a00fa",
+  "arquivo_origem": "522015858-68O-Protestantismo-A-Maconaria-e-a-Questao-Religiosa-No-Brasil-David-Gueiros-Vieira-1981.pdf",
+  "campos": {
+    "titulo": "O protestantismo, a maçonaria e a questão religiosa no Brasil",
+    "subTitulo": "",
+    "nmAutor0": "Vieira, David Gueiros",
+    "autores": [
+      {
+        "nome": "Vieira, David Gueiros",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Universidade de Brasília",
+    "data": "1980",
+    "edicao": "2ª edição",
+    "lugar": "Brasília",
+    "nPaginas": "409",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "series": "Coleção Temas Brasileiros",
+    "origem_titulo": "folha de rosto e CIP revisadas",
+    "origem_autor": "folha de rosto e CIP revisadas"
+  },
+  "justificativa": "Folha de rosto, copyright e ficha interna confirmam título, autor, editora, 1980 e 409 páginas; catálogo público confirma a segunda edição.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: folha de rosto, copyright e ficha catalográfica",
+    "Google Books e Biblioteca de Santo André: Editora UnB, 1980, 409 p."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "4cf9bca3cabe9d31288b1ba04c07e13106d305467966e46562c5ae70392cad55",
+  "arquivo_origem": "354305419-Atos-1-12-Missao-e-Comunidade-Michel-Gourgues.pdf",
+  "campos": {
+    "titulo": "Atos 1-12 missão e comunidade",
+    "subTitulo": "",
+    "nmAutor0": "Gourgues, Michel",
+    "autores": [
+      {
+        "nome": "Gourgues, Michel",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Academia Cristã",
+    "data": "2012",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "75",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20372
+}

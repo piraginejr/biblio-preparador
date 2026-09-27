@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "1b9984b0eaea7b935aa9775710a8c8da7dbe0392afaac7c85dc5c1123ebf4c81",
+  "arquivo_origem": "681315571-Historia-Dos-Batistas-Pr-Davi-Portela.pdf",
+  "campos": {
+    "titulo": "História, princípios e doutrinas batistas",
+    "subTitulo": "",
+    "nmAutor0": "Portela, Davi",
+    "autores": [
+      {
+        "nome": "Portela, Davi",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "[s.d.]",
+    "edicao": "1ª edição",
+    "lugar": "[S.l.]",
+    "nPaginas": "138",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Batistas; História dos batistas; Doutrinas batistas"
+  },
+  "justificativa": "O cabeçalho interno identifica repetidamente o título e declara que a obra foi compilada, comentada e escrita pelo Pr. Davi Portela.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: cabeçalhos e apresentação"
+  ],
+  "id_remoto": 20698
+}

@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "11591ec6978653feaa24d9bd0f29a85797f1f241243ff01ccd5f306b7cc1208a",
+  "arquivo_origem": "19035_SAUDE_PASTORA.pdf",
+  "campos": {
+    "titulo": "Saúde Pastoral",
+    "subTitulo": "",
+    "nmAutor0": "EBERT, Clarice",
+    "autores": [
+      {
+        "nome": "EBERT, Clarice",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9786556000503",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

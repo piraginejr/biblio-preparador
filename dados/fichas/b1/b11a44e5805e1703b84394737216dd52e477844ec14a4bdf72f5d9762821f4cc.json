@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "b11a44e5805e1703b84394737216dd52e477844ec14a4bdf72f5d9762821f4cc",
+  "arquivo_origem": "443622153-Origem-Historica-do-Movimento-Pentecostal-Samuel-Henrique.pdf",
+  "campos": {
+    "titulo": "Origem Histórica do Movimento Pentecostal",
+    "subTitulo": "",
+    "nmAutor0": "Henrique, Samuel",
+    "autores": [
+      {
+        "nome": "Henrique, Samuel",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[edição do autor]",
+    "data": "2019",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "49",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa e metadado do PDF",
+    "origem_autor": "capa e copyright revisados"
+  },
+  "justificativa": "A cópia declara copyright do próprio autor em 2019 e não identifica editora; a edição comercial posterior não foi usada para preencher esta cópia.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, propriedades e copyright de 2019"
+  ],
+  "id_remoto": 20414
+}

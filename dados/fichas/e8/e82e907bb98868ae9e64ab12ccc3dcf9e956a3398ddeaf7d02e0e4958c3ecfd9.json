@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "e82e907bb98868ae9e64ab12ccc3dcf9e956a3398ddeaf7d02e0e4958c3ecfd9",
+  "arquivo_origem": "George Washington Carver From Slave to Scientist (Heroes of History) (Janet Benge, Geoff Benge) (Z-Library).pdf",
+  "campos": {
+    "titulo": "George Washington Carver: From Slave to Scientist",
+    "subTitulo": "",
+    "nmAutor0": "BENGE, Janet",
+    "autores": [
+      {
+        "nome": "BENGE, Janet",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9781932096736",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

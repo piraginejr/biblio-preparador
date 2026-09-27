@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "94d5b457c01c09d4d3c146b3aa02ea367efdefe519f467977fdff40b474f9b7a",
+  "arquivo_origem": "55572737-LIVRO-DIZIMO-1.pdf",
+  "campos": {
+    "titulo": "Dízimo: o engano cavalgando a verdade",
+    "subTitulo": "",
+    "nmAutor0": "Vilar, Venefredo Barbosa",
+    "autores": [
+      {
+        "nome": "Vilar, Venefredo Barbosa",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "2008",
+    "edicao": "Edição em CD e apostila",
+    "lugar": "[S.l.]",
+    "nPaginas": "69",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "página de créditos revisada",
+    "origem_autor": "copyright revisado"
+  },
+  "justificativa": "O copyright identifica Venefredo Barbosa Vilar como autor; Pricilla Pereira Vilar aparece somente como revisora. O PDF corresponde à edição digital de maio de 2008.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: página 1"
+  ],
+  "id_remoto": 20346
+}

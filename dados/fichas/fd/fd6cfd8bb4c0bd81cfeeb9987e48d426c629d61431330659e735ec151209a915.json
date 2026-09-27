@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "fd6cfd8bb4c0bd81cfeeb9987e48d426c629d61431330659e735ec151209a915",
+  "arquivo_origem": "287499898-A-Vida-e-o-Ministerio-de-Charles-Spurgeon-por-John-Piper-pdf.pdf",
+  "campos": {
+    "titulo": "A vida e o ministério de Charles Spurgeon",
+    "subTitulo": "",
+    "nmAutor0": "Piper, John",
+    "autores": [],
+    "editora": "O Estandarte de Cristo; Desiring God Foundation",
+    "data": "2015",
+    "edicao": "1ª Edição",
+    "lugar": "",
+    "nPaginas": "14",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20512
+}

@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "dc417cb353f805fa68b8c3c1e6e60af0594ef5d5a5aa80df09a88bc9bd7fcc7d",
+  "arquivo_origem": "A utopia possível em busca de um cristianismo integral (Robinson Cavalcanti) (Z-Library).pdf",
+  "campos": {
+    "titulo": "A Utopia Possível",
+    "subTitulo": "",
+    "nmAutor0": " CAVALCANTI,ROBINSON ,",
+    "autores": [
+      {
+        "nome": " CAVALCANTI,ROBINSON ,",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "8586539023",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

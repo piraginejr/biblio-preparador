@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "f0391cc5540ffe2cd53959df4aa0850f8df3403ead19dd47d5dce0855dfbf27c",
+  "arquivo_origem": "615774367-A-B-Simpson-As-Quatro-Dimensoes-Do-Evangelho.pdf",
+  "campos": {
+    "titulo": "As Quatro Dimensões do Evangelho",
+    "subTitulo": "",
+    "nmAutor0": "Simpson, A. B.",
+    "autores": [
+      {
+        "nome": "Simpson, A. B.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Betânia",
+    "data": "1986",
+    "edicao": "1ª edição em português",
+    "lugar": "Venda Nova, Belo Horizonte",
+    "nPaginas": "93",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "Folha de rosto e créditos identificam a edição brasileira; o texto capturado anteriormente era uma apresentação da contracapa.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e créditos"
+  ],
+  "id_remoto": 20505
+}

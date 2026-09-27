@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "c1c7d7d4c31a79ad070f4c1d88ca2b91d79ca335dd3ca0007e13cd7993f94d12",
+  "arquivo_origem": "468280062-A-Igreja-que-Jesus-Construiu-Roy-Mason-Th-D-pdf.pdf",
+  "campos": {
+    "titulo": "A igreja que Jesus construiu",
+    "subTitulo": "",
+    "nmAutor0": "Mason, Roy",
+    "autores": [
+      {
+        "nome": "Mason, Roy",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Congregação Batista da Graça",
+    "data": "2020",
+    "edicao": "1ª edição brasileira (presumida)",
+    "lugar": "Tucuruí",
+    "nPaginas": "156",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Jeanne Borgerth Duarte Rangel",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa revisada"
+  },
+  "justificativa": "A cópia é uma redação brasileira revista em 2020; 1923 refere-se à primeira edição original citada na introdução.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, créditos da tradução e nota de redação de 2020"
+  ],
+  "id_remoto": 20427
+}

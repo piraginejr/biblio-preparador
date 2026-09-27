@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "dd4cc22596bb7ac5afc4fae7f659c66b14a1d8e7a47943d83681cfa2092a7c04",
+  "arquivo_origem": "Coletanea Diaconia Teoria e Prática.pdf",
+  "campos": {
+    "titulo": "VENDA PROIBIDA",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "The British",
+    "data": "2003",
+    "edicao": "",
+    "lugar": "RIO DE JANEIRO",
+    "nPaginas": "658",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20854
+}

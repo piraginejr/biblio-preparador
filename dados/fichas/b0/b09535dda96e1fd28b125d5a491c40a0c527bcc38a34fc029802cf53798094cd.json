@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "b09535dda96e1fd28b125d5a491c40a0c527bcc38a34fc029802cf53798094cd",
+  "arquivo_origem": "777748213-FAESP-ECLESIOLOGIA-MEDIO-TEOLOGIA.pdf",
+  "campos": {
+    "titulo": "ECLESIOLOGIA",
+    "subTitulo": "",
+    "nmAutor0": "TEOLOGIA, ECLESIOLOGIA MEDIO",
+    "autores": [],
+    "editora": "Editora Cultura Cristã",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "100",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20834
+}

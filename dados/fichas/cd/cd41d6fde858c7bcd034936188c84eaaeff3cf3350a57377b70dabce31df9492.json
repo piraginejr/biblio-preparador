@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "cd41d6fde858c7bcd034936188c84eaaeff3cf3350a57377b70dabce31df9492",
+  "arquivo_origem": "168156862-JOVENS-MORAVIANOS.pdf",
+  "campos": {
+    "titulo": "JOVENS MORAVIANOS",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "3",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20952
+}

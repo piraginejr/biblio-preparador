@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "14f542656fe5df536329c6a210eb2697062612efd976a9735402a64f284491cb",
+  "arquivo_origem": "537289552-Os-Distintivos-Da-Teologia-Pactual-Batista-Pascal-Denault.pdf",
+  "campos": {
+    "titulo": "2018",
+    "subTitulo": "",
+    "nmAutor0": "Denault, Pascal",
+    "autores": [
+      {
+        "nome": "Denault, Pascal",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora O Estandarte de Cristo",
+    "data": "2018",
+    "edicao": "1ª Edição",
+    "lugar": "São Paulo",
+    "nPaginas": "232",
+    "isbn": "9788585200022",
+    "isbn_codigo_barras": "",
+    "cdd": "230.61",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20461
+}

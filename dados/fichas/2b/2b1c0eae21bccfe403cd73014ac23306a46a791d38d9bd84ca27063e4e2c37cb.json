@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "2b1c0eae21bccfe403cd73014ac23306a46a791d38d9bd84ca27063e4e2c37cb",
+  "arquivo_origem": "705835643-05-1-2-e-3-Joao.pdf",
+  "campos": {
+    "titulo": "1,2 e 3 JOAO",
+    "subTitulo": "",
+    "nmAutor0": "Williamson, Rick",
+    "autores": [
+      {
+        "nome": "Williamson, Rick",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Central Gospel",
+    "data": "2017",
+    "edicao": "1",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "219",
+    "isbn": "9788576895701",
+    "isbn_codigo_barras": "9788576895701",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20663
+}

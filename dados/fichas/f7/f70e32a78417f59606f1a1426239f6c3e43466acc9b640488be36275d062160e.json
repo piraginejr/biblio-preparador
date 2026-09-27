@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "f70e32a78417f59606f1a1426239f6c3e43466acc9b640488be36275d062160e",
+  "arquivo_origem": "581857859-A-Missionaria-Que-Abriu-Caminhos.pdf",
+  "campos": {
+    "titulo": "A missionária que abriu caminhos: Biografia de Marcolina Figueira de Magalhães",
+    "subTitulo": "",
+    "nmAutor0": "Freitas, Ida de",
+    "autores": [
+      {
+        "nome": "Freitas, Ida de",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "UFMBB",
+    "data": "2010",
+    "edicao": "3ª EDIÇÃO",
+    "lugar": "3.ed. - Rio de 3.ed. Janeiro",
+    "nPaginas": "32",
+    "isbn": "9788577810178",
+    "isbn_codigo_barras": "",
+    "cdd": "266.0092",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Teologia social e eclesiástica cristã"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20497
+}

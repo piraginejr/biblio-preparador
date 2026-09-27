@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "4f28a42f44ad5b82a8e6e26374368c7ee0d15b9fc5380357f622fcd452560c80",
+  "arquivo_origem": "499838696-21-Dias-na-Vida-de-um-Discipulo.pdf",
+  "campos": {
+    "titulo": "21 dias na vida de um discípulo",
+    "subTitulo": "Edificando relacionamentos para o Reino",
+    "nmAutor0": "Silva, Aluízio A.",
+    "autores": [
+      {
+        "nome": "Silva, Aluízio A.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "VINHA Editora",
+    "data": "2009",
+    "edicao": "1ª edição",
+    "lugar": "Goiânia",
+    "nPaginas": "268",
+    "isbn": "9788598510552",
+    "isbn_codigo_barras": "",
+    "cdd": "230/240",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa revisada"
+  },
+  "justificativa": "A capa e o conteúdo integral identificam a obra; a ficha da mesma edição confirma editora, ano, ISBN, paginação e CDD.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, índice e conteúdo",
+    "https://pt.scribd.com/document/729656157/LV-21-Dias-Na-Vida-de-Um-Discipulo"
+  ],
+  "id_remoto": 20448
+}

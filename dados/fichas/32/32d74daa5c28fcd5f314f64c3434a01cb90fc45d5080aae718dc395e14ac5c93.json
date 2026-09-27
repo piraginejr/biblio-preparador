@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "32d74daa5c28fcd5f314f64c3434a01cb90fc45d5080aae718dc395e14ac5c93",
+  "arquivo_origem": "58028038-Economia-Dos-Hebreus.pdf",
+  "campos": {
+    "titulo": "Os Hebreus",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "4",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20598
+}

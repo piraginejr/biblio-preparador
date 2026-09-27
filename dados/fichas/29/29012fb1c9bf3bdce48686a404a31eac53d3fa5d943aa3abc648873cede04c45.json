@@ -1,0 +1,69 @@
+{
+  "hash_sha256": "29012fb1c9bf3bdce48686a404a31eac53d3fa5d943aa3abc648873cede04c45",
+  "arquivo_origem": "594739188-Apocalipse-Puro-e-Simples-eBook.pdf",
+  "campos": {
+    "titulo": "Apocalipse",
+    "subTitulo": "",
+    "nmAutor0": "Duailibe, André Mendonça",
+    "autores": [
+      {
+        "nome": "Duailibe, André Mendonça",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Lima, Sandra",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Santos, José Rodrigues dos",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Gundim, Divina Maria",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Jurado, Maria Antonia Rivera",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Peres, Erick Ribeiro",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Comunicações, MCM",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Chairô, Agência",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Gomes, Eliel",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Oliveira, Jônatas",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "MCM PUBLICACOES",
+    "data": "2012",
+    "edicao": "1ª Edição",
+    "lugar": "São Paulo",
+    "nPaginas": "300",
+    "isbn": "9786587276007",
+    "isbn_codigo_barras": "9786587276007",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20746
+}

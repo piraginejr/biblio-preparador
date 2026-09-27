@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "3b751793a86702fa8d409490b2157118665cec1e94bce88baa5a4daaef7b1185",
+  "arquivo_origem": "556218991-9-Principios-Para-Uma-Verdadeira-Lideranca-Crista-Livro-Digital-1.pdf",
+  "campos": {
+    "titulo": "9 Princípios para uma Verdadeira Liderança Cristã",
+    "subTitulo": "",
+    "nmAutor0": "Bernardino, Felipe",
+    "autores": [],
+    "editora": "",
+    "data": "2020",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "25",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": "Liderança cristã; Ministério; Igreja; E-book",
+    "isbn_motivo": "e-book gratuito sem ISBN declarado",
+    "idioma": "por"
+  },
+  "justificativa": "As propriedades identificam Felipe Bernardino; o nome do arquivo fornece o título e o conteúdo confirma nove princípios completos. O próprio PDF se declara e-book gratuito financiado por doações, sem ficha editorial.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: propriedades, introdução, sequência completa de nove princípios e encerramento"
+  ],
+  "id_remoto": 20925
+}

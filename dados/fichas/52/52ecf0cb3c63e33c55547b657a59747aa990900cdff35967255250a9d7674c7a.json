@@ -1,0 +1,39 @@
+{
+  "hash_sha256": "52ecf0cb3c63e33c55547b657a59747aa990900cdff35967255250a9d7674c7a",
+  "arquivo_origem": "1- PRIMEIROS PASSOS COM JESUS - Caminhando com Cristo.pdf",
+  "campos": {
+    "titulo": "Primeiros passos com Jesus",
+    "subTitulo": "Caminhando com Cristo",
+    "nmAutor0": "Piragine, Michel Ferreira",
+    "autores": [
+      {
+        "nome": "Piragine, Michel Ferreira",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Rodrigues, Cleverson Pereira",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Júnior, Paschoal Piragine",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Fernando Boa Sorte Ribeiro",
+    "data": "2024",
+    "edicao": "2ª EDIÇÃO",
+    "lugar": "Curitiba",
+    "nPaginas": "224",
+    "isbn": "9786501017280",
+    "isbn_codigo_barras": "9786501017280",
+    "cdd": "253.7",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

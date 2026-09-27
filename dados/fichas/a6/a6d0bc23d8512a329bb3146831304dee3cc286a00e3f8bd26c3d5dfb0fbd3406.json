@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "a6d0bc23d8512a329bb3146831304dee3cc286a00e3f8bd26c3d5dfb0fbd3406",
+  "arquivo_origem": "427798912-BIBLIA-APOLOGETICA-DE-ESTUDO-PDF.pdf",
+  "campos": {
+    "titulo": "Bíblia Apologética de Estudo",
+    "subTitulo": "Antigo e Novo Testamentos, incluindo notas de estudo e auxílios",
+    "nmAutor0": "Almeida, João Ferreira de",
+    "autores": [
+      {
+        "nome": "Almeida, João Ferreira de",
+        "desc": "Tradutor"
+      }
+    ],
+    "editora": "ICP - Instituto Cristão de Pesquisas",
+    "data": "2005",
+    "edicao": "2ª edição ampliada",
+    "lugar": "Jundiaí",
+    "nPaginas": "1681",
+    "isbn": "0907861415",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Bíblia; Apologética; Estudo bíblico; Seitas; Defesa da fé",
+    "tradutor": "Almeida, João Ferreira de",
+    "origem_titulo": "capa, folha de rosto e expediente revisados",
+    "origem_autor": "obra sem autoria pessoal; tradução identificada"
+  },
+  "justificativa": "O expediente identifica o ICP como editor, João Ferreira de Almeida como tradutor, segunda edição de 2005 e ISBN. A expressão DE ESTUDO PDF no nome do arquivo não é autor.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, folha de rosto, expediente e prefácio da segunda edição, páginas 2-5"
+  ],
+  "id_remoto": 20489
+}

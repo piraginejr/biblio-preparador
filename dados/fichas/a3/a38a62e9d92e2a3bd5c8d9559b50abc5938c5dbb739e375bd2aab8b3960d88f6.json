@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "a38a62e9d92e2a3bd5c8d9559b50abc5938c5dbb739e375bd2aab8b3960d88f6",
+  "arquivo_origem": "274893870-Os-Batistas-Na-Inglaterra.pdf",
+  "campos": {
+    "titulo": "OS BATISTAS",
+    "subTitulo": "",
+    "nmAutor0": "[autor não identificado]",
+    "autores": [
+      {
+        "nome": "[autor não identificado]",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "30",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apresentação",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20865
+}

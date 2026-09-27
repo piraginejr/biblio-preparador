@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "28258ebc39dcb22dfc313b621f21ba2f4ae4f90898162a8f6a98e2c282403c5e",
+  "arquivo_origem": "266560965-Francis-Schaeffer-A-Obra-Consumada-de-Cristo.pdf",
+  "campos": {
+    "titulo": "autorizada",
+    "subTitulo": "",
+    "nmAutor0": "Schaeffer, Francis A.",
+    "autores": [
+      {
+        "nome": "Schaeffer, Francis A.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Cultura Cristã. Edição em português autorizada",
+    "data": "2003",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Wheaton",
+    "nPaginas": "244",
+    "isbn": "9798586886583",
+    "isbn_codigo_barras": "9798586886583",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

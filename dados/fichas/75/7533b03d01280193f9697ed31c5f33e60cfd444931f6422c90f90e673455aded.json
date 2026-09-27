@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "7533b03d01280193f9697ed31c5f33e60cfd444931f6422c90f90e673455aded",
+  "arquivo_origem": "DocGo.Net-Aconselhamento Espiritual Bert Hellinger.pdf",
+  "campos": {
+    "titulo": "RELIG~IÃO, PSICOTERAPIA E ACONSELHAMENTO ESPIRITUAL",
+    "subTitulo": "",
+    "nmAutor0": "HELLINGER, BERT",
+    "autores": [
+      {
+        "nome": "HELLINGER, BERT",
+        "desc": "Autor"
+      },
+      {
+        "nome": "QUEIROZ, NEWTON A",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Cultrix",
+    "data": "2005",
+    "edicao": "1ª Edição",
+    "lugar": "São Paulo",
+    "nPaginas": "184",
+    "isbn": "8531608953",
+    "isbn_codigo_barras": "",
+    "cdd": "261.515",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Psicologia"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20842
+}

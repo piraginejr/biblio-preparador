@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "823167249c2bb2c27c54d9d12c541f3394e421e80bb6c59637d2b8703a9006da",
+  "arquivo_origem": "Música e igreja - amostra.pdf",
+  "campos": {
+    "titulo": "Música e Igreja",
+    "subTitulo": "",
+    "nmAutor0": " Godoi,MARIANE ,",
+    "autores": [
+      {
+        "nome": " Godoi,MARIANE ,",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9788578394615",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

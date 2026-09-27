@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "beef2b41a5b9439609ab2fd3c4b01c46f8a0c2f56801c42ed23a069c2a8e9d0d",
+  "arquivo_origem": "522034049-Apologetica-Norman-Geisler-Enciclopedia-de-Apologetica-Respostas-Aos-Criticos-Da-Fe-Crista.pdf",
+  "campos": {
+    "titulo": "Enciclopédia de Apologética",
+    "subTitulo": "Respostas aos críticos da fé cristã",
+    "nmAutor0": "Geisler, Norman L.",
+    "autores": [
+      {
+        "nome": "Geisler, Norman L.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Vida",
+    "data": "2002",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "921",
+    "isbn": "8573675608",
+    "isbn_codigo_barras": "",
+    "cdd": "239.03",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Apologética; Cristianismo; Enciclopédias; Defesa da fé",
+    "tradutor": "Noronha, Lailah de",
+    "origem_titulo": "folha de rosto e CIP revisadas",
+    "origem_autor": "folha de rosto e CIP revisadas"
+  },
+  "justificativa": "Folha de rosto, copyright e CIP identificam integralmente a edição; ME IC é fragmento de OCR e não título.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: folha de rosto, copyright e CIP, páginas 2-3"
+  ]
+}

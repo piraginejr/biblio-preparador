@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "db33bdc40e8bdb838171c366ebcb4f6c7e64b3f4eb951690ef1a72cd90f5d1a1",
+  "arquivo_origem": "Manual_20de_20metodologia.pdf",
+  "campos": {
+    "titulo": "Manual de Metodologia da Pesquisa Científica",
+    "subTitulo": "",
+    "nmAutor0": "Oliva, Alfredo dos Santos; Barro, Jorge Henrique",
+    "autores": [],
+    "editora": "Faculdade Teológica Sul Americana",
+    "data": "2001",
+    "edicao": "",
+    "lugar": "Londrina",
+    "nPaginas": "66",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": "Metodologia científica; Pesquisa; Trabalhos acadêmicos; Normalização",
+    "isbn_motivo": "manual institucional sem ISBN declarado",
+    "idioma": "por"
+  },
+  "justificativa": "A capa identifica dois autores, título, instituição, local e ano. As menções a tese e dissertação ensinam formatos e não descrevem a natureza do próprio documento.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e sumário"
+  ],
+  "id_remoto": 20918
+}

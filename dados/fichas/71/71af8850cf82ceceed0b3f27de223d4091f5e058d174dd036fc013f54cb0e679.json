@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "71af8850cf82ceceed0b3f27de223d4091f5e058d174dd036fc013f54cb0e679",
+  "arquivo_origem": "421894575-Vinho-Novo-Odres-Novos-Snyder.pdf",
+  "campos": {
+    "titulo": "Vinho novo, odres novos",
+    "subTitulo": "Vida nova para a igreja",
+    "nmAutor0": "Snyder, Howard A.",
+    "autores": [
+      {
+        "nome": "Snyder, Howard A.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "ABU Editora",
+    "data": "1997",
+    "edicao": "1ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "252",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "titulo_original": "Radical Renewal: The Problem of Wineskins Today",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "Folha de rosto e copyright trazem todos os dados da edição brasileira.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, folha de rosto e copyright"
+  ],
+  "id_remoto": 20401
+}

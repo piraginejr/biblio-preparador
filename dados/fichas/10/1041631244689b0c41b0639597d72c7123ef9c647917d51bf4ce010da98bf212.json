@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "1041631244689b0c41b0639597d72c7123ef9c647917d51bf4ce010da98bf212",
+  "arquivo_origem": "386108269-A-Origem-Historica-e-Desenvolvi-Marcio-Ribeiro-1-pdf.pdf",
+  "campos": {
+    "titulo": "A origem histórica e desenvolvimento da doutrina da Trindade",
+    "subTitulo": "",
+    "nmAutor0": "Ribeiro, Marcio",
+    "autores": [],
+    "editora": "Seminário Bíblico do Nordeste (SBNE)",
+    "data": "2018",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "90",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "trabalho acadêmico",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "metadado interno e introdução revisados",
+    "origem_autor": "metadado interno revisado"
+  },
+  "justificativa": "O texto se identifica como projeto de pesquisa/monografia do Seminário Bíblico do Nordeste; deve seguir a fila acadêmica.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: metadados internos e introdução"
+  ],
+  "id_remoto": 20549
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "db4aeb629c58596559b1683eb22076c35977a7487fec669684c29a1ddd9d0f34",
+  "arquivo_origem": "535145759-Armado-Para-o-Combate-Renner-Rick.pdf",
+  "campos": {
+    "titulo": "Armado para o Combate",
+    "subTitulo": "",
+    "nmAutor0": "RENNER, RICK",
+    "autores": [
+      {
+        "nome": "RENNER, RICK",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Rhema Brasil Publicações com a devida",
+    "data": "1991",
+    "edicao": "1a edição",
+    "lugar": "",
+    "nPaginas": "308",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20458
+}

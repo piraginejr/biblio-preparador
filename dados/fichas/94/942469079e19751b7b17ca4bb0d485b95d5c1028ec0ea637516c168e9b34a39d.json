@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "942469079e19751b7b17ca4bb0d485b95d5c1028ec0ea637516c168e9b34a39d",
+  "arquivo_origem": "531585505-Rede-Inspire-Igrejas-Vivas-comunicacao-17-ok.pdf",
+  "campos": {
+    "titulo": "LAB | COMUNICAÇÃO",
+    "subTitulo": "",
+    "nmAutor0": "Ser, Nosso Jeito de",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "17",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20933
+}

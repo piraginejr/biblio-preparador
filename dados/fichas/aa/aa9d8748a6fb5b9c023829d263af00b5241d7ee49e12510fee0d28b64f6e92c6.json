@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "aa9d8748a6fb5b9c023829d263af00b5241d7ee49e12510fee0d28b64f6e92c6",
+  "arquivo_origem": "660005702-Resposta-As-Seitas-Norman-Geisler-Ron-Rh.pdf",
+  "campos": {
+    "titulo": "Respostas as seitas",
+    "subTitulo": "",
+    "nmAutor0": "GEISLER, Norman L.",
+    "autores": [
+      {
+        "nome": "GEISLER, Norman L.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "RHODES, Ron.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "8526302973",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

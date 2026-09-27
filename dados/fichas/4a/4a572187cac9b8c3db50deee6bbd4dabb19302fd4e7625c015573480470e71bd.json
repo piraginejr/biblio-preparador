@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "4a572187cac9b8c3db50deee6bbd4dabb19302fd4e7625c015573480470e71bd",
+  "arquivo_origem": "412690519-Documento-de-Prof-jonas-1.pdf",
+  "campos": {
+    "titulo": "Comentário Bíblico Broadman",
+    "subTitulo": "Volume 5: Provérbios - Isaías",
+    "nmAutor0": "Allen, Clifton J.",
+    "autores": [
+      {
+        "nome": "Allen, Clifton J.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "JUERP - Junta de Educação Religiosa e Publicações",
+    "data": "1986",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "556",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "220.7",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "volume": "5",
+    "origem_titulo": "capa e catálogo da coleção",
+    "origem_autor": "editor geral da obra"
+  },
+  "justificativa": "Capa identifica o volume 5 e o catálogo da coleção confirma JUERP, Rio de Janeiro e a edição brasileira.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa",
+    "Catálogo bibliográfico da coleção Broadman"
+  ],
+  "id_remoto": 20398
+}

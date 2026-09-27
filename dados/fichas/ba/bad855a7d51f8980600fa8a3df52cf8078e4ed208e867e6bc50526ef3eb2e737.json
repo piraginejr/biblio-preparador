@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "bad855a7d51f8980600fa8a3df52cf8078e4ed208e867e6bc50526ef3eb2e737",
+  "arquivo_origem": "Roldan_Alberto- escatologia integral.pdf",
+  "campos": {
+    "titulo": "Resenha de Do terror à esperança: paradigmas para uma escatologia integral",
+    "subTitulo": "",
+    "nmAutor0": "Filho, Carlos Ribeiro Caldas",
+    "autores": [],
+    "editora": "Fides Reformata",
+    "data": "2001",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "2",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20914
+}

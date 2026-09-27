@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "cda175b4cc92c7c8fd63221db49fabd0251d9f22d2676da932df74ccbafef498",
+  "arquivo_origem": "543235626-1-5118553388409159991.pdf",
+  "campos": {
+    "titulo": "INTRODUÇÃO AO NOVO TESTAMENTO Patinas",
+    "subTitulo": "",
+    "nmAutor0": "Brown, Raymond E",
+    "autores": [
+      {
+        "nome": "Brown, Raymond E",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Pauliru s",
+    "data": "2012",
+    "edicao": "2a edição",
+    "lugar": "2. ed. - São Paulo",
+    "nPaginas": "1138",
+    "isbn": "9788535613438",
+    "isbn_codigo_barras": "9788535613438",
+    "cdd": "225.07",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20463
+}

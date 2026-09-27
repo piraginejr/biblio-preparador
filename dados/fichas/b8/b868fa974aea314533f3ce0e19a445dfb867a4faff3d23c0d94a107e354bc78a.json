@@ -1,0 +1,58 @@
+{
+  "hash_sha256": "b868fa974aea314533f3ce0e19a445dfb867a4faff3d23c0d94a107e354bc78a",
+  "arquivo_origem": "376271079-A-igreja-no-novo-testamento-pdf.pdf",
+  "campos": {
+    "titulo": "A igreja no Novo Testamento",
+    "subTitulo": "",
+    "nmAutor0": "Kittel, Gerhard",
+    "autores": [
+      {
+        "nome": "Kittel, Gerhard",
+        "desc": "Editor"
+      },
+      {
+        "nome": "Schmidt, Karl Ludwig",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Rengstorf, Karl Heinrich",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Beyer, Hermann Wolfgang",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Bornkamm, Günter",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Cullmann, Oscar",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Associação de Seminários Teológicos Evangélicos (ASTE)",
+    "data": "1965",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "329",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Helmuth Alfredo Simon",
+    "isbn_motivo": "sem ISBN: edição publicada antes da adoção do ISBN no Brasil",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "A folha de rosto distingue o editor dos cinco colaboradores; a página editorial confirma tradução, ASTE, São Paulo e 1965.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e página editorial"
+  ],
+  "id_remoto": 20377
+}

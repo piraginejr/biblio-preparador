@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "536df6bcd14172d57b6f6f42d5ca19491b67facd746808b6f54f6903f1eb0606",
+  "arquivo_origem": "334413878-TCC-Marcio-Roldan.pdf",
+  "campos": {
+    "titulo": "Vocação cristã e espiritualidade a partir do conceito de discipulado de Dietrich Bonhoeffer",
+    "subTitulo": "",
+    "nmAutor0": "Araujo, Marcio Roldan de",
+    "autores": [
+      {
+        "nome": "Araujo, Marcio Roldan de",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Faculdade Teológica Batista de São Paulo",
+    "data": "2007",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "84",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "226.6",
+    "nmLingua": "Português",
+    "tipo_documento": "trabalho acadêmico",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20575
+}

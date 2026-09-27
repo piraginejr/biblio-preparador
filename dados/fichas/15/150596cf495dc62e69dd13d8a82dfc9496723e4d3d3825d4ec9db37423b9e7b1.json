@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "150596cf495dc62e69dd13d8a82dfc9496723e4d3d3825d4ec9db37423b9e7b1",
+  "arquivo_origem": "634642802-O Texto do novo testamento.pdf",
+  "campos": {
+    "titulo": "O TEXTO",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "Paul Wagner",
+    "data": "2018",
+    "edicao": "",
+    "lugar": "Wheaton",
+    "nPaginas": "200",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20686
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "b2a66c92c980733f8de215395d70ab007753c02bfd289776db86720af7403ea6",
+  "arquivo_origem": "642041324-Geografia Bíblica.pdf",
+  "campos": {
+    "titulo": "Faculdade Batista do Rio de Janeiro Seminário do Sul",
+    "subTitulo": "",
+    "nmAutor0": "SILVA, MS FLÁVIO MARTINS DA",
+    "autores": [
+      {
+        "nome": "SILVA, MS FLÁVIO MARTINS DA",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Sociedade Bíblica do Brasil",
+    "data": "2013",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "132",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20653
+}

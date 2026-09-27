@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "0221de25ae793585615fea4e8cc378f0b4fbb45d84d0b5500a43b71b00bd040a",
+  "arquivo_origem": "The Hiding Place Boom Corrie Ten Z Lib Org Pdf.pdf",
+  "campos": {
+    "titulo": "Hiding Place",
+    "subTitulo": "",
+    "nmAutor0": "Boom, Corrie ten",
+    "autores": [
+      {
+        "nome": "Boom, Corrie ten",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Chosen Books",
+    "data": "2006",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "272",
+    "isbn": "9781441232885",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20732
+}

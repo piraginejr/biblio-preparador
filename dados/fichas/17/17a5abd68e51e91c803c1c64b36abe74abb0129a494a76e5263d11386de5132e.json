@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "17a5abd68e51e91c803c1c64b36abe74abb0129a494a76e5263d11386de5132e",
+  "arquivo_origem": "243290911-David-Fisher-O-Pastor-do-seculo-21-pdf.pdf",
+  "campos": {
+    "titulo": "O pastor do século 21",
+    "subTitulo": "Uma reflexão bíblica sobre os desafios do ministério pastoral no terceiro milênio",
+    "nmAutor0": "Fisher, David",
+    "autores": [
+      {
+        "nome": "Fisher, David",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Vida",
+    "data": "1996",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "230",
+    "isbn": "8573673680",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa e registro externo confirmados"
+  },
+  "justificativa": "A capa mostra que David Fisher é autor; a antiga rotina havia colocado seu nome também no campo editora.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e conteúdo integral"
+  ]
+}

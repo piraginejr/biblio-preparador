@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "350b24397b55b1f7674f68da9eb1f513e5502d14dc423577db4cc109dfa810c7",
+  "arquivo_origem": "15720_AUTORIDADE_E_SUBMISSAO_ocr.pdf",
+  "campos": {
+    "titulo": "Authority & Submission",
+    "subTitulo": "",
+    "nmAutor0": "Nee, Watchman",
+    "autores": [
+      {
+        "nome": "Nee, Watchman",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Living Stream Ministry",
+    "data": "1996",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "101",
+    "isbn": "0870834045",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

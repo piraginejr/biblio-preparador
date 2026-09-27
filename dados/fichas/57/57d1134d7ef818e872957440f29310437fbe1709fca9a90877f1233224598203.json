@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "57d1134d7ef818e872957440f29310437fbe1709fca9a90877f1233224598203",
+  "arquivo_origem": "410390839-os-batistas-na-bahia-1882-1925-um-estudo-de-historia-social-pdf.pdf",
+  "campos": {
+    "titulo": "A Bahía, 1882- 1221; Um e3tuda de Historia Social",
+    "subTitulo": "",
+    "nmAutor0": "Salvador, Universidade Federal da",
+    "autores": [],
+    "editora": "Universidade fladeri.1 da Bahia",
+    "data": "1975",
+    "edicao": "",
+    "lugar": "Salvador",
+    "nPaginas": "282",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "286.098",
+    "nmLingua": "Português",
+    "tipo_documento": "dissertação",
+    "abstract": "",
+    "palavrasChave": "Batistas-Historia; Batistas-Bahiá"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20548
+}

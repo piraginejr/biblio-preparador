@@ -1,0 +1,12 @@
+{
+  "hash_sha256": "0e491396bb6f7bf115fde487f066c09d8fbdf9345b85a58fa78571b2fefcd001",
+  "arquivo_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/_preparados-envio/Biblia Sagrada com reflexoes de Lutero_ No - Sociedade Biblica do Brasil-18bfd366.pdf",
+  "campos": {
+    "titulo": "Bíblia sagrada com reflexões de Lutero",
+    "isbn": "9788531115929"
+  },
+  "justificativa": "Cadastrado na API Biblio",
+  "fontes": [
+    "API Biblio PIB Curitiba"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "491d53f9c7be142a094cad983286c6cf18f4f93b82e37547d4e443401dbdb0d9",
+  "arquivo_origem": "511102014-O-EXTRAORDINARIO-CRESCIMENTO-DA-FE-Kenneth-Hagin.pdf",
+  "campos": {
+    "titulo": "O extraordinário crescimento da fé",
+    "subTitulo": "",
+    "nmAutor0": "Hagin, Kenneth E.",
+    "autores": [
+      {
+        "nome": "Hagin, Kenneth E.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Graça Editorial",
+    "data": "2002",
+    "edicao": "2a edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "121",
+    "isbn": "9788573439243",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Credos e catecismos"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20443
+}

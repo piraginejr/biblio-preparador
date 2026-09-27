@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "5345682dabe3ff8a4360a832948091a77bdc9fbc80a3a854074430a794589fb3",
+  "arquivo_origem": "Paulo Agente de pastoral e semeador de comunidades (O Mundo da Bíblia) ( etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+  "campos": {
+    "titulo": "Paulo agente de pastoral e semeador de comunidades",
+    "subTitulo": "",
+    "nmAutor0": "Rossi, Luiz Alexandre Solano",
+    "autores": [
+      {
+        "nome": "Rossi, Luiz Alexandre Solano",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Paulus Editora",
+    "data": "2019",
+    "edicao": "1ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "109",
+    "isbn": "9788534950206",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

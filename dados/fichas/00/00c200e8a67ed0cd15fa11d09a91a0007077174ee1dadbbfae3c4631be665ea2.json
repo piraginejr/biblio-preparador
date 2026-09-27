@@ -1,0 +1,12 @@
+{
+  "hash_sha256": "00c200e8a67ed0cd15fa11d09a91a0007077174ee1dadbbfae3c4631be665ea2",
+  "arquivo_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/_preparados-envio/631837960-ETICA-CRISTA-Martinho-Lutero-pdf-5014713d.pdf",
+  "campos": {
+    "titulo": "LUTERO",
+    "isbn": "9788523305703"
+  },
+  "justificativa": "Cadastrado na API Biblio",
+  "fontes": [
+    "API Biblio PIB Curitiba"
+  ]
+}

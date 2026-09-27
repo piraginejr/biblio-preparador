@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "28665350c726cd08ca956efc1afeb106b95067f6143998384c2a52ed4db47a91",
+  "arquivo_origem": "704056467-Eu-Vos-Envio.pdf",
+  "campos": {
+    "titulo": "ENVIO",
+    "subTitulo": "",
+    "nmAutor0": "Cunha, Amilton Costa & Heyssen J. Cordero Maraví",
+    "autores": [
+      {
+        "nome": "Cunha, Amilton Costa & Heyssen J. Cordero Maraví",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Divulgue Gráfica e Editora",
+    "data": "2022",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Salvador, BA",
+    "nPaginas": "60",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "242",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20789
+}

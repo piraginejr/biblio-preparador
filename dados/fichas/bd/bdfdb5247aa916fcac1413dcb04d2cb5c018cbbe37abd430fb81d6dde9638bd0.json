@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "bdfdb5247aa916fcac1413dcb04d2cb5c018cbbe37abd430fb81d6dde9638bd0",
+  "arquivo_origem": "487361072-WILLIAM-BARCLAY-ETHICS-IN-A-PERMISSIVE-SOCIETY-eltropical-pdf.pdf",
+  "campos": {
+    "titulo": "Ethics in a Permissive Society",
+    "subTitulo": "",
+    "nmAutor0": "Barclay, William",
+    "autores": [
+      {
+        "nome": "Barclay, William",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Harper & Row",
+    "data": "1971",
+    "edicao": "1st U.S. edition",
+    "lugar": "New York",
+    "nPaginas": "223",
+    "isbn": "0060604158",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "idioma": "eng",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "Folha de rosto e copyright identificam a edição norte-americana; o catálogo bibliográfico confirma ISBN e 223 páginas.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e copyright",
+    "Google Books e Open Library: Harper & Row, 1971"
+  ],
+  "id_remoto": 20433
+}

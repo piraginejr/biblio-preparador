@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "145800a9685deb226b69383b0c38ab057c44fc7acc1c9002bb4ea23c307aa7a5",
+  "arquivo_origem": "554324981-O-Pastor-Imperfeito-Zack-Eswine.pdf",
+  "campos": {
+    "titulo": "O pastor imperfeito: descobrindo a alegria em nossas limitações, mediante um aprendizado diário com Jesus",
+    "subTitulo": "",
+    "nmAutor0": "Ezwine, Zack",
+    "autores": [
+      {
+        "nome": "Ezwine, Zack",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2016",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São José dos Campos, SI'",
+    "nPaginas": "324",
+    "isbn": "9788581323916",
+    "isbn_codigo_barras": "",
+    "cdd": "253",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Teologia pastoral"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20922
+}

@@ -1,0 +1,41 @@
+{
+  "hash_sha256": "306b28044445d263eef8a3d0ddfb764ecdfcfc8d40d7557b997a3330b63a6017",
+  "arquivo_origem": "Shame and Attachment Loss The Practical Work of Reparative Therapy (Joseph Nicolosi, H. Newton Malony etc.) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Shame and Attachment Loss",
+    "subTitulo": "",
+    "nmAutor0": "Nicolosi, Joseph J.",
+    "autores": [
+      {
+        "nome": "Nicolosi, Joseph J.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Malony, H. Newton",
+        "desc": "Prefácio"
+      },
+      {
+        "nome": "Perloff, Robert",
+        "desc": "Prefácio"
+      }
+    ],
+    "editora": "InterVarsity Press",
+    "data": "2010",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Wheaton",
+    "nPaginas": "489",
+    "isbn": "9780830878710",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Gays, mental health; Male homosexuality; Sexual orientation; Psychotherapy"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20846
+}

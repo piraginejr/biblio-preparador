@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "0ca33a8d864a518bc3a41d0c54d61653041f43e2a550ad45e543b1cee74c210e",
+  "arquivo_origem": "795566834-Historia-da-Pregacao-Crista.pdf",
+  "campos": {
+    "titulo": "Historia da Pregacao Crista",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "30",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20886
+}

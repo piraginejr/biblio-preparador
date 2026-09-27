@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "d254b642243c70fe1c99979015406885a39b2a6e5575dbb396c9586ffe56ec81",
+  "arquivo_origem": "302597213-Historia-Dos-Batistas-Independentes.pdf",
+  "campos": {
+    "titulo": "História dos Batistas Independentes",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "27",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20595
+}

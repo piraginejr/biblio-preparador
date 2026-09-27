@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "336b4ea90d8a162b3f546a2edc87c9b2bbea41c91a58de2f366ade52ed17aaa8",
+  "arquivo_origem": "841584223-148-Como-estudar-sua-Bi-blia-pelo-me-todo-indutivo-Kay-Arthur-1.pdf",
+  "campos": {
+    "titulo": "COMO ESTUDAR SUA BIBLIA",
+    "subTitulo": "",
+    "nmAutor0": "ARTHUR, KAY",
+    "autores": [
+      {
+        "nome": "ARTHUR, KAY",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Vida",
+    "data": "1994",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "148",
+    "isbn": "8573671149",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Bíblia"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20801
+}

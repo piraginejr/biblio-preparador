@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "39ccec3e5656362e5caeae18cf9f8e76fd1b09f88935e7720107ff1f0a6a6247",
+  "arquivo_origem": "Instinto El Poder Para Liberar El Impulso Interno (T. D. Jakes) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Instinto",
+    "subTitulo": "El Poder para Liberar el Impulso Interno",
+    "nmAutor0": "Jakes, T. D.",
+    "autores": [
+      {
+        "nome": "Jakes, T. D.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "FaithWords",
+    "data": "2014",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "194",
+    "isbn": "9781455584758",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Instinct; Christian life"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20945
+}

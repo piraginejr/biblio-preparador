@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "19841ae00ab7556fa7ed4feecdf2e33ad1182e0a321fdf224736156873c74684",
+  "arquivo_origem": "642507414-No-poder-Do-Espirito-Santo-Robert-Menzies.pdf",
+  "campos": {
+    "titulo": "ESPIRITO E PODER",
+    "subTitulo": "",
+    "nmAutor0": "MENZIES, ROBERT P.",
+    "autores": [
+      {
+        "nome": "MENZIES, ROBERT P.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "MENZIES, WILLIAM W.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Vida",
+    "data": "2002",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "257",
+    "isbn": "8573675993",
+    "isbn_codigo_barras": "",
+    "cdd": "270.82",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20777
+}

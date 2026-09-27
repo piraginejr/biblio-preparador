@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "21da8974572b5cd5c336d2ae6a5da0f538a58922a4f65e40355e876059b7110f",
+  "arquivo_origem": "698071749-Vencendo-o-Mundo.pdf",
+  "campos": {
+    "titulo": "Vencendo o mundo",
+    "subTitulo": "Fé bíblica na era da pós-verdade",
+    "nmAutor0": "Costa, João",
+    "autores": [
+      {
+        "nome": "VENCENDO",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "2020",
+    "edicao": "1ª edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "120",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Pós-verdade; Fé cristã; Credo Niceno; Apologética",
+    "isbn_motivo": "sem ISBN declarado na publicação digital",
+    "origem_titulo": "capa e introdução revisadas",
+    "origem_autor": "capa e folha de créditos revisadas"
+  },
+  "justificativa": "A capa informa título, subtítulo e autor; a folha seguinte informa Rio de Janeiro e 2020, repetidos na introdução assinada.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, créditos e introdução, páginas 1-4"
+  ],
+  "id_remoto": 20827
+}

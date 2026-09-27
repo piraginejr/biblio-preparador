@@ -1,0 +1,44 @@
+{
+  "hash_sha256": "4de4610ca7d0268e2125bc0334234fc1bfa942c61e7edcdfaa2343130bf0bbc1",
+  "arquivo_origem": "284595145-1-Ide-e-fazei-discipulos-Roger-Greenway-doc.pdf",
+  "campos": {
+    "titulo": "Ide e fazei discípulos",
+    "subTitulo": "Uma introdução às missões cristãs",
+    "nmAutor0": "Greenway, Roger S.",
+    "autores": [
+      {
+        "nome": "Greenway, Roger S.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Agreste, Sônia",
+        "desc": "Tradutora"
+      }
+    ],
+    "editora": "Editora Cultura Cristã",
+    "data": "2001",
+    "edicao": "1ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "205",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Missões cristãs; Missiologia; Evangelismo; Grande Comissão",
+    "pasta_origem_importacao": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA",
+    "arquivos_origem_importacao": [
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/284595145-1-Ide-e-fazei-discipulos-Roger-Greenway-doc.doc"
+    ]
+  },
+  "justificativa": "O PDF local confirma a identidade da obra; Google Books e referências acadêmicas independentes confirmam autor, tradutora, editora, local e ano da edição brasileira.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: título, subtítulo, autoria e conteúdo",
+    "Google Books: Editora Cultura Cristã, 2001, 205 p., tradução de Sônia Agreste",
+    "Referências bibliográficas acadêmicas: São Paulo, Cultura Cristã, 2001"
+  ],
+  "id_remoto": 20580
+}

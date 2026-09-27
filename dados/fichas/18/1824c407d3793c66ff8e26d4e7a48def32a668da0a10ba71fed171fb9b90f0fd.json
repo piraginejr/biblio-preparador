@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "1824c407d3793c66ff8e26d4e7a48def32a668da0a10ba71fed171fb9b90f0fd",
+  "arquivo_origem": "434556348-History-of-Christian-Dance.pdf",
+  "campos": {
+    "titulo": "History of Christian Dance",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "Grand Rapids",
+    "nPaginas": "37",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20896
+}

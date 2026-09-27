@@ -1,0 +1,54 @@
+{
+  "hash_sha256": "709304b9906395b19036e0042056359910a31161c57614882497817a70e3c319",
+  "arquivo_origem": "628591120-Discipulado-Jovem.pdf",
+  "campos": {
+    "titulo": "Eu, Discípulo",
+    "subTitulo": "Discipulado para jovens",
+    "nmAutor0": "Pompermayer, Davi Taylor",
+    "autores": [
+      {
+        "nome": "Pompermayer, Davi Taylor",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Martins, Jéssica Santos Souza",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Bezerra, João Marcos",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Ribeiro, Paulo Ricardo Benevenuto",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Gonçalves, Thais Barboza",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "2021",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "47",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": "Discipulado; Jovens; Pequenos grupos; Formação cristã",
+    "origem_titulo": "capa e apresentação",
+    "origem_autor": "grupo de trabalho identificado na apresentação",
+    "isbn_motivo": "apostila institucional: não recebe ISBN",
+    "idioma": "por"
+  },
+  "justificativa": "Material institucional de discipulado. A menção 'Editora Vida, 2009, pag. 809' é uma referência bibliográfica do conteúdo, não a editora desta apostila.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, apresentação e sumário, páginas 1-4"
+  ],
+  "id_remoto": 20758
+}

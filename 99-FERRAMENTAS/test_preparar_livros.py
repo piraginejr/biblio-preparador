@@ -1257,6 +1257,50 @@ Anexo 2 - Declaração de Niterói parte...............................23"""
                 json.dumps(dados), encoding="utf-8")
             self.assertEqual({}, prep.revisao_manual(pdf))
 
+    def test_revisao_manual_localiza_por_hash_se_renomeado(self):
+        with tempfile.TemporaryDirectory() as td:
+            raiz = pathlib.Path(td)
+            entrada = raiz / "00-ENTRADA"
+            controle = raiz / "_controle"
+            entrada.mkdir(); controle.mkdir()
+            pdf_original = entrada / "nome_original.pdf"
+            pdf_original.write_bytes(b"conteudo unico de teste")
+            digest = hashlib.sha256(pdf_original.read_bytes()).hexdigest()
+            dados = {"livros": {pdf_original.name: {
+                "hash_sha256": digest, "campos": {"titulo": "Livro Renomeado"}}}}
+            (controle / "revisoes-manuais.json").write_text(
+                json.dumps(dados), encoding="utf-8")
+
+            # Renomeia o arquivo
+            pdf_novo = entrada / "nome_completamente_diferente.pdf"
+            pdf_original.rename(pdf_novo)
+
+            resultado = prep.revisao_manual(pdf_novo)
+            self.assertEqual("Livro Renomeado", resultado.get("campos", {}).get("titulo"))
+
+    def test_revisao_manual_consulta_base_cooperativa(self):
+        with tempfile.TemporaryDirectory() as td:
+            raiz = pathlib.Path(td)
+            entrada = raiz / "00-ENTRADA"
+            entrada.mkdir()
+            pdf = entrada / "livro_cooperativo.pdf"
+            pdf.write_bytes(b"conteudo cooperativo novo")
+            digest = hashlib.sha256(pdf.read_bytes()).hexdigest()
+
+            ficha_mock = {
+                "hash_sha256": digest,
+                "campos": {"titulo": "Livro da Nuvem Cooperativa", "editora": "Editora Rede"},
+                "justificativa": "Validado pela comunidade",
+                "fontes": ["Base Cooperativa"]
+            }
+
+            from unittest.mock import patch
+            with patch("sincronizador_git.consultar_ficha_cooperativa", return_value=ficha_mock):
+                resultado = prep.revisao_manual(pdf)
+                self.assertTrue(resultado.get("aprovado"))
+                self.assertEqual("Livro da Nuvem Cooperativa", resultado.get("campos", {}).get("titulo"))
+                self.assertTrue(resultado.get("origem_cooperativa"))
+
     def test_revisao_registra_aprendizado_sem_promover_regra(self):
         with tempfile.TemporaryDirectory() as td:
             raiz = pathlib.Path(td)

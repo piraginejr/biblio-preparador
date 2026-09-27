@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "3b1ae52ed6f836c0e83ebbf1c96047f73f26b0ff9affe316badd50508e42346b",
+  "arquivo_origem": "19977_ADORACÃO_NA_IGREJA_PRIMITIVA_OCR.pdf",
+  "campos": {
+    "titulo": "é transcorrido já quase",
+    "subTitulo": "",
+    "nmAutor0": "P, Ralph",
+    "autores": [
+      {
+        "nome": "P, Ralph",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "VIDA NOVA",
+    "data": "1964",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "175",
+    "isbn": "9788527504942",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

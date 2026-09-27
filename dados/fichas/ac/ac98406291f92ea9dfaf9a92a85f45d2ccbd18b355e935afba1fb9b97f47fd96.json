@@ -1,0 +1,52 @@
+{
+  "hash_sha256": "ac98406291f92ea9dfaf9a92a85f45d2ccbd18b355e935afba1fb9b97f47fd96",
+  "arquivo_origem": "354519270-COMENTARIO-BIBLICO-BEACON-3-Job-hasta-Cantar-de-los-Cantares-pdf.pdf",
+  "campos": {
+    "titulo": "Comentario Bíblico Beacon",
+    "subTitulo": "Tomo III: Job, Salmos, Proverbios, Eclesiastés y Cantar de los Cantares",
+    "nmAutor0": "Chapman, Milo L.",
+    "autores": [
+      {
+        "nome": "Chapman, Milo L.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Purkiser, W. T.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Wolf, Earl C.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Harper, A. F.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Franco, Sergio",
+        "desc": "Redator"
+      }
+    ],
+    "editora": "Casa Nazarena de Publicaciones",
+    "data": "1969",
+    "edicao": "",
+    "lugar": "Lenexa, Kansas",
+    "nPaginas": "473",
+    "isbn": "9781563446030",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "volume": "3",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "Autores por livro bíblico, volume, editora e ISBN foram conferidos diretamente na folha de rosto e copyright.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e copyright"
+  ]
+}

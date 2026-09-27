@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "12722dc3c6fd6bade1eaa2fcbfeb879189f952b619ca5f055f2567a1811433b7",
+  "arquivo_origem": "552440061-Rumo-e-Prumo.pdf",
+  "campos": {
+    "titulo": "Rumo e Prumo",
+    "subTitulo": "",
+    "nmAutor0": "Convenção Batista do Estado de São Paulo",
+    "autores": [],
+    "editora": "CBESP e OPBB-SP",
+    "data": "2005",
+    "edicao": "4ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "207",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20543
+}

@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "d21947b4da79d03099ba4ea5b6971896a049c60915283a50950407b62d35d447",
+  "arquivo_origem": "Mildred Cable Through the Jade Gate (Christian Heroes Then  Now) (Janet Benge  Geoff Benge) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Mildred Cable: Through The Jade Gate",
+    "subTitulo": "",
+    "nmAutor0": "BENGE, Janet",
+    "autores": [
+      {
+        "nome": "BENGE, Janet",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9781576588864",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

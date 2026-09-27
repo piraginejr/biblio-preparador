@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "8cb8894d9d529f8c1e3324e4c4944cac83ebc3b1fad80ea3a6157cf981807aa1",
+  "arquivo_origem": "MODELO G12 OCR.pdf",
+  "campos": {
+    "titulo": "Modelo G-12",
+    "subTitulo": "Revelação de Deus ou criação de homem?",
+    "nmAutor0": "Lima, Delcyr de Souza",
+    "autores": [
+      {
+        "nome": "Lima, Delcyr de Souza",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Seminário Teológico Batista de Niterói",
+    "data": "2000",
+    "edicao": "1ª edição",
+    "lugar": "Niterói",
+    "nPaginas": "92",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Modelo G-12; Eclesiologia; Igreja em células"
+  },
+  "justificativa": "Folha de rosto e copyright identificam autor, título, instituição, primeira edição e setembro de 2000.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e copyright"
+  ],
+  "id_remoto": 20702
+}

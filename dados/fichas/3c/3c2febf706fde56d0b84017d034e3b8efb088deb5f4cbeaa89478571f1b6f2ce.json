@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "3c2febf706fde56d0b84017d034e3b8efb088deb5f4cbeaa89478571f1b6f2ce",
+  "arquivo_origem": "714508144-3-Coisas-Que-Todo-Pastor-Deve-Fazer-Dave-Earley.pdf",
+  "campos": {
+    "titulo": "3 COISAS QUE TODO PASTOR DEVE FAZER",
+    "subTitulo": "",
+    "nmAutor0": "EARLEY,Dave",
+    "autores": [
+      {
+        "nome": "EARLEY,Dave",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9788566207439",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

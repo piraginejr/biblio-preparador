@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "ccd406aa02d522f49398416bdf55ee3b49a752c4b5207e312a4fbc1b162f9684",
+  "arquivo_origem": "692244170-Romanos-Michael-J-Gorman.pdf",
+  "campos": {
+    "titulo": "ROMANOS",
+    "subTitulo": "",
+    "nmAutor0": "Gorman, Michael J.",
+    "autores": [
+      {
+        "nome": "Gorman, Michael J.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "PUBLICACIONES KERIGMA",
+    "data": "[s.d.]",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "377",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20882
+}

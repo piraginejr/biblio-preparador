@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "4616f9407d3fc90d337971ac5c8f62adf2b18aa8b3c579b06764362197667363",
+  "arquivo_origem": "720024397-Filosofia-da-Religiao-Danilo-Mendes.pdf",
+  "campos": {
+    "titulo": "FILOSOFIA DA RELIGIÃO",
+    "subTitulo": "",
+    "nmAutor0": "Mendes, Religiao Danilo",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "153",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20835
+}

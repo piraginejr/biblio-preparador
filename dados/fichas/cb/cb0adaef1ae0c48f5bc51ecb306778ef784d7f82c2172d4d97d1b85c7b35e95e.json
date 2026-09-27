@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "cb0adaef1ae0c48f5bc51ecb306778ef784d7f82c2172d4d97d1b85c7b35e95e",
+  "arquivo_origem": "The Gospel in the Western Context A Missiological Reading of Christology in Dialogue with Hendrikus Berkhof and Colin Gunton... (Gert-Jan Roest) (Z-Library).pdf",
+  "campos": {
+    "titulo": "The Gospel in the western context",
+    "subTitulo": "a missiological reading of Christology in dialogue with Hendrikus Berkhof and Colin Gunton",
+    "nmAutor0": "Roest, Gert-Jan",
+    "autores": [
+      {
+        "nome": "Roest, Gert-Jan",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Brill",
+    "data": "2019",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Leiden ; Boston",
+    "nPaginas": "435",
+    "isbn": "9789004386488",
+    "isbn_codigo_barras": "",
+    "cdd": "230.09182",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Missions; Jesus Christ—Person and offices; Berkhof, H. (Hendrikus), 1914–; Gunton, Colin E"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20629
+}

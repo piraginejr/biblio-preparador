@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "d0b5a4b328b78f97e94298ecfcf98f02727e42cf0d9055ae4a6770d0046613f3",
+  "arquivo_origem": "662202898-William-J-Seymour-e-as-Origens-Do-Pentecostalismo-Global-Uma-Biografia.pdf",
+  "campos": {
+    "titulo": "William J. Seymour and the Origins of Global Pentecostalism",
+    "subTitulo": "A Biography and Documentary History",
+    "nmAutor0": "Espinosa, Gastón",
+    "autores": [
+      {
+        "nome": "Espinosa, Gastón",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Duke University Press Books",
+    "data": "2014",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "464",
+    "isbn": "9780822356288",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Pentecostalism; Pentecostals; Biography; Pentecostal churches; Clergy"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20657
+}

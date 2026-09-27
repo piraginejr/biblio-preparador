@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "7dafa703124d7ef28af9e54b373e84a08af41d03c92c83c13b44205c73aaa995",
+  "arquivo_origem": "559079401-Kenneth-E-Hagin-Curso-de-Estudos-Da-Oracao-Biblica-128.pdf",
+  "campos": {
+    "titulo": "Curso de Estudos da Oração Bíblica",
+    "subTitulo": "",
+    "nmAutor0": "Hagin, Kenneth E.",
+    "autores": [
+      {
+        "nome": "Hagin, Kenneth E.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Graça Editorial",
+    "data": "2000",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "228",
+    "isbn": "8573430788",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "ARQUIVO PARCIAL: o PDF termina durante o capítulo 14 de 25 partes anunciadas no sumário.",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20568
+}

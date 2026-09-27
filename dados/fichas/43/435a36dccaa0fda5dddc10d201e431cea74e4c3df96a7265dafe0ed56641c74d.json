@@ -1,0 +1,40 @@
+{
+  "hash_sha256": "435a36dccaa0fda5dddc10d201e431cea74e4c3df96a7265dafe0ed56641c74d",
+  "arquivo_origem": "727480437-CREDO-ORTODOXO-BATISTA-1679.pdf",
+  "campos": {
+    "titulo": "Um credo ortodoxo, ou uma confissão de fé protestante",
+    "subTitulo": "Um ensaio para unir e confirmar todos os verdadeiros protestantes nos artigos fundamentais da religião cristã",
+    "nmAutor0": "[autoria coletiva]",
+    "autores": [
+      {
+        "nome": "[autoria coletiva]",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Center for Theological Research",
+    "data": "2006",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "51",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "Confissão de fé batista geral publicada em Londres em 1679. Transcrição de 2006 por Madison Grace, publicada pelo Center for Theological Research. ATENÇÃO: este PDF é tradução automática feita pelo Google, não tradução editorial.",
+    "palavrasChave": "Confissões de fé; Batistas Gerais; Século XVII; Teologia histórica",
+    "origem_autor": "obra confessional coletiva, sem autoria pessoal",
+    "origem_titulo": "folha de rosto da tradução",
+    "isbn_motivo": "transcrição de obra de 1679: sem ISBN",
+    "idioma": "por",
+    "tipoAssunto1": "Teologia",
+    "titulo_original": "An Orthodox Creed: or, a Protestant Confession of Faith"
+  },
+  "justificativa": "Obra confessional de 1679, sem autoria pessoal. O PDF declara 'Machine Translated by Google' - a tradução é automática e o texto deve ser tratado como versão de trabalho, não como edição publicada em português.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e página de créditos da transcrição"
+  ],
+  "id_remoto": 20738
+}

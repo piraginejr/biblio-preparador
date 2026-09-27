@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "727eb9156969cf0df03e22276239ebb6b37fb39656b496faa7badfa1f6909e89",
+  "arquivo_origem": "471273086-os-rebatizadores-primordios-dos-batistas-e-das-denominacoes-pdf.pdf",
+  "campos": {
+    "titulo": "Os (re)batizadores: Primórdios dos batistas e das denominações",
+    "subTitulo": "",
+    "nmAutor0": "Borba, Timóteo Monteiro",
+    "autores": [
+      {
+        "nome": "Borba, Timóteo Monteiro",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Ciberteologia - Revista de Teologia & Cultura",
+    "data": "2015",
+    "edicao": "3ª edição",
+    "lugar": "",
+    "nPaginas": "13",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20574
+}

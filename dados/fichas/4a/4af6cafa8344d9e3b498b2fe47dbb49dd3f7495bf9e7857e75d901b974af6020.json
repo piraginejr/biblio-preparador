@@ -1,0 +1,12 @@
+{
+  "hash_sha256": "4af6cafa8344d9e3b498b2fe47dbb49dd3f7495bf9e7857e75d901b974af6020",
+  "arquivo_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/811254033-Un-Appel-Dangereux-Paul-David-Tripp.pdf",
+  "campos": {
+    "titulo": "Appel dangereux : Faire face aux défis uniques du ministère pastoral",
+    "isbn": "9781433535826"
+  },
+  "justificativa": "Cadastrado na API Biblio",
+  "fontes": [
+    "API Biblio PIB Curitiba"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "7284786292c82bd23d76049d6a98a5fba66e8ddcd00f1524728415eff3dc865a",
+  "arquivo_origem": "John Flynn Into the Never Never (Janet Benge  Geoff Benge [Benge, Janet  Benge etc.) (Z-Library).pdf",
+  "campos": {
+    "titulo": "John Flynn: Into The Never Never",
+    "subTitulo": "",
+    "nmAutor0": "BENGE, Janet",
+    "autores": [
+      {
+        "nome": "BENGE, Janet",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9781576588987",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

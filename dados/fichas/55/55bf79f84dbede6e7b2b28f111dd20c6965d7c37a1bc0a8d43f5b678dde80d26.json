@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "55bf79f84dbede6e7b2b28f111dd20c6965d7c37a1bc0a8d43f5b678dde80d26",
+  "arquivo_origem": "13068desenvolva_suas_habilidades_de_lideranca.pdf",
+  "campos": {
+    "titulo": "DESENVOLVA SUAS HABILIDADES DE LIDERANÇA",
+    "subTitulo": "",
+    "nmAutor0": "GERALDO,Ezequiel",
+    "autores": [
+      {
+        "nome": "GERALDO,Ezequiel",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "85-263-0250-7",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

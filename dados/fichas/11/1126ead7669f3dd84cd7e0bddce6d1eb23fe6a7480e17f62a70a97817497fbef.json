@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "1126ead7669f3dd84cd7e0bddce6d1eb23fe6a7480e17f62a70a97817497fbef",
+  "arquivo_origem": "681042974-Hebreus-J-Dwight-Pentecost.pdf",
+  "campos": {
+    "titulo": "Hebreus",
+    "subTitulo": "",
+    "nmAutor0": "Pentecost, J. Dwight",
+    "autores": [
+      {
+        "nome": "Pentecost, J. Dwight",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Körber, Doris",
+        "desc": "Tradutor"
+      }
+    ],
+    "editora": "Obra Missionária Chamada da Meia Noite",
+    "data": "2021",
+    "edicao": "1ª Edição",
+    "lugar": "1. ed. – Porto Alegre",
+    "nPaginas": "251",
+    "isbn": "9786589505075",
+    "isbn_codigo_barras": "",
+    "cdd": "227.8707",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Bíblia"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20692
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "8c828f727f66cf59897a734dc60e8420386522679a89ed54279378640838ab24",
+  "arquivo_origem": "Emancipating the World A Christian Response to Radical Islam and Fundamentalist Atheism (Darrow L. Miller [Miller, Darrow L.]) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Emancipating the World: A Christian Response to Radical Islam and Fundamentalist Atheism",
+    "subTitulo": "",
+    "nmAutor0": "L, Darrow",
+    "autores": [
+      {
+        "nome": "L, Darrow",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "YWAM Publishing",
+    "data": "2012",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "235",
+    "isbn": "9781576586075",
+    "isbn_codigo_barras": "",
+    "cdd": "261.2",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20607
+}

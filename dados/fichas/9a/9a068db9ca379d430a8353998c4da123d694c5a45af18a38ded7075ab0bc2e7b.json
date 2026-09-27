@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "9a068db9ca379d430a8353998c4da123d694c5a45af18a38ded7075ab0bc2e7b",
+  "arquivo_origem": "406043639-Lideranca-crista.pdf",
+  "campos": {
+    "titulo": " Noções de Liderança Cristã",
+    "subTitulo": "Analise Bíblica da Filosofia Ministerial de Liderança Cristã",
+    "nmAutor0": "Chagas, José Roberto de Oliveira",
+    "autores": [
+      {
+        "nome": "Chagas, José Roberto de Oliveira",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Mundial ",
+    "data": "2009",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Campo Grande ",
+    "nPaginas": "32",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "Liderança é tema bíblico e atual, de importância primária na Igreja\nCristã. George Barna, especialista na área, declarou inclusive, sem aporia\nalguma, que nada é mais importante do que a liderança. Mesmo que outros\nafirmem que mais importante é santidade, ou retidão de caráter, ou\ncompromisso com Cristo, ou obediência radical a Deus, nunca houve\nqualquer movimento significativo e bem-sucedido, revoluções ou outros\nsistemas, que não tivessem à sua frente líderes fortes e de visão, liderando o\ncaminho da mudança em pensamento, palavra e ação",
+    "palavrasChave": "",
+    "CDD": "253",
+    "assunto": "Liderança ",
+    "pchave": "Liderança bíblica "
+  },
+  "justificativa": "revisão visual",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "revisão visual do PDF"
+  ],
+  "id_remoto": 20947
+}

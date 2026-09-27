@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "0bc5e0fdd466ad11dfd6b01aebffc31e0ff1daa6119977002ad26ae29959031f",
+  "arquivo_origem": "19794_ESMAGADO_DEUS_TRANFORMAR_PRESSAO_EM_PODER_OCR_compressed.pdf",
+  "campos": {
+    "titulo": "Esmagado",
+    "subTitulo": "",
+    "nmAutor0": "JAKES, T.D.",
+    "autores": [
+      {
+        "nome": "JAKES, T.D.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "978-65-86516-13-5",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

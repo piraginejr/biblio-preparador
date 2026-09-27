@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "e7fbf8dd1ceeca5bde24ebdda020e4b5d8bf515c050a09dca23a59fd7bdbbedd",
+  "arquivo_origem": "Pastoral Ministry How to Shepherd Biblically (John MacArthur Pastors Library) (MacArthur, John) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Pastoral ministry",
+    "subTitulo": "how to shepherd biblically",
+    "nmAutor0": "MacArthur, John",
+    "autores": [
+      {
+        "nome": "MacArthur, John",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Thomas Nelson, Inc",
+    "data": "2005",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Nashville",
+    "nPaginas": "363",
+    "isbn": "1418500062",
+    "isbn_codigo_barras": "",
+    "cdd": "253",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Pastoral theology -- Clergy -- Office"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20628
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "667515fa99e08178c9585d64091e4a731dd3869319f2839408ca0585acd31344",
+  "arquivo_origem": "524756516-LEP-O-Tempo-Que-Se-Chama-Hoje-Wolfgang-Gruen-1.pdf",
+  "campos": {
+    "titulo": "O TEMPO QUE SE CHAMA HOJE",
+    "subTitulo": "",
+    "nmAutor0": "GRUEN, W.",
+    "autores": [
+      {
+        "nome": "GRUEN, W.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Paulus",
+    "data": "1976",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "6. ed. — Sao Paulo",
+    "nPaginas": "274",
+    "isbn": "8534907625",
+    "isbn_codigo_barras": "",
+    "cdd": "221.6",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20456
+}

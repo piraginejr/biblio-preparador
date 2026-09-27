@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "d30a7144df18149349f2b8e7ce9894e74447b8bd6927344b99e8ee06313e4ef1",
+  "arquivo_origem": "634258765-Discipulado-comec-a-com-contemplac-a-o.pdf",
+  "campos": {
+    "titulo": "O DISCIPULADO COMEÇA Novo Testamento ao discipulado",
+    "subTitulo": "",
+    "nmAutor0": "Whitefield, Samuel",
+    "autores": [
+      {
+        "nome": "Whitefield, Samuel",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Jesuscopy",
+    "data": "2023",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "62",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20677
+}

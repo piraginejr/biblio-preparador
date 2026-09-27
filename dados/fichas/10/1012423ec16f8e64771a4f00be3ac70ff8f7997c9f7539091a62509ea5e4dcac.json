@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "1012423ec16f8e64771a4f00be3ac70ff8f7997c9f7539091a62509ea5e4dcac",
+  "arquivo_origem": "13593crescimento_equilibrado_na_igreja_local.pdf",
+  "campos": {
+    "titulo": "Crescimento equilibrado na igreja local",
+    "subTitulo": "Curso básico",
+    "nmAutor0": "[autor não identificado]",
+    "autores": [],
+    "editora": "CRESÇA Pesquisa e Treinamento",
+    "data": "[s.d.]",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "[S.l.]",
+    "nPaginas": "79",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": "Crescimento da igreja; Igreja local; Discipulado; Treinamento; Curso",
+    "isbn_motivo": "sem ISBN: material de curso sem ficha editorial ou ISBN declarado",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "autoria não declarada no documento"
+  },
+  "justificativa": "A capa e os cabeçalhos identificam um curso básico produzido por CRESÇA Pesquisa e Treinamento. Orlando Costas e outros autores aparecem apenas em citações; o PDF não declara autoria própria.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, cabeçalhos e conteúdo integral, páginas 1-79"
+  ],
+  "id_remoto": 20775
+}

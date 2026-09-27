@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "899b53be781104671dc204d4bc6f342b0721661c47cf026375ebfa39ec792059",
+  "arquivo_origem": "4- EU, UM DISCIPULADOR.pdf",
+  "campos": {
+    "titulo": "Eu, um Discipulador",
+    "subTitulo": "",
+    "nmAutor0": "Piragine Jr., Paschoal",
+    "autores": [
+      {
+        "nome": "Piragine Jr., Paschoal",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Primeira Igreja Batista de Niterói",
+    "data": "2024",
+    "edicao": "1ª edição",
+    "lugar": "Niterói",
+    "nPaginas": "80",
+    "isbn": "9786501248462",
+    "isbn_codigo_barras": "",
+    "cdd": "248.4",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "Material de discipulado adaptado por Cleverson Pereira Rodrigues a partir do material do Ministério de Educação Cristã da PIB Curitiba, 2ª edição de 2019. Primeira edição de 7.000 exemplares, dezembro de 2024.",
+    "palavrasChave": "Discipulado; Liderança Cristã; Igreja - Educação Cristã",
+    "isbn_motivo": "Ficha catalográfica da página 3, conferida na imagem a 400 dpi. O pdftotext lera 978-65-07-24846-2, que não fecha o dígito verificador; o impresso é 978-65-01-24846-2 - o bloco do editor '01' foi lido como '07'.",
+    "origem_titulo": "ficha catalográfica conferida na imagem",
+    "origem_autor": "ficha catalográfica conferida na imagem"
+  },
+  "justificativa": "O ISBN impresso não fecha o dígito verificador quando lido pela camada de texto; a leitura da imagem mostra que o erro está no bloco do editor. Editora, cidade e CDD vêm da mesma ficha.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: ficha catalográfica da página 3, lida na imagem a 400 dpi"
+  ]
+}

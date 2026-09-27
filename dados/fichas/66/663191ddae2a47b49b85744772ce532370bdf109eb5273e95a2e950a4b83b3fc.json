@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "663191ddae2a47b49b85744772ce532370bdf109eb5273e95a2e950a4b83b3fc",
+  "arquivo_origem": "126670834-Como-Reavivar-a-Igreja.pdf",
+  "campos": {
+    "titulo": "Como reavivar a igreja",
+    "subTitulo": "",
+    "nmAutor0": "Pequenos Grupos, Grandes Negócios",
+    "autores": [],
+    "editora": "[s.n.]",
+    "data": "[s.d.]",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "53",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20517
+}

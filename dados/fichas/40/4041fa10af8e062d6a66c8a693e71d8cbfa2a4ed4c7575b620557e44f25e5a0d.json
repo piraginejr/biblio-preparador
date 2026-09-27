@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "4041fa10af8e062d6a66c8a693e71d8cbfa2a4ed4c7575b620557e44f25e5a0d",
+  "arquivo_origem": "488945545-Casi-en-Casa-Billy-Graham.pdf",
+  "campos": {
+    "titulo": "Nearing Home",
+    "subTitulo": "life, faith, and finishing well",
+    "nmAutor0": "Graham, Billy",
+    "autores": [
+      {
+        "nome": "Graham, Billy",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Thomas Nelson",
+    "data": "2011",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "NASHVILLE",
+    "nPaginas": "182",
+    "isbn": "9780849948329",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Aging; Religious life; Older Christians; Christianity; New York Times bestseller"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20872
+}

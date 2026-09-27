@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "a4d716663bdccafde7609d9808db795f44205d09955211ccfa5b6108d7a2dbbd",
+  "arquivo_origem": "385825966-Caderno-Igreja.pdf",
+  "campos": {
+    "titulo": "Caderno Igreja",
+    "subTitulo": "Vivendo na comunidade de Jesus",
+    "nmAutor0": "Primeira Igreja Batista de Curitiba",
+    "autores": [],
+    "editora": "Primeira Igreja Batista de Curitiba",
+    "data": "2017",
+    "edicao": "1ª edição",
+    "lugar": "Curitiba",
+    "nPaginas": "296",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa e expediente revisados",
+    "origem_autor": "responsabilidade institucional revisada"
+  },
+  "justificativa": "Caderno didático institucional para módulos de discipulado e integração; deve seguir a fila de apostilas.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, ficha catalográfica e conteúdo"
+  ],
+  "id_remoto": 20516
+}

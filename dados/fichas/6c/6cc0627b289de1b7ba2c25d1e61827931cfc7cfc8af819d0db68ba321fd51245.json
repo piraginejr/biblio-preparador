@@ -1,0 +1,29 @@
+{
+  "hash_sha256": "6cc0627b289de1b7ba2c25d1e61827931cfc7cfc8af819d0db68ba321fd51245",
+  "arquivo_origem": "689311729-Homens-mais-parecidos-com-Jesus-INTRODUCAO.pdf",
+  "campos": {
+    "titulo": "Homens mais parecidos com Jesus",
+    "subTitulo": "Introdução — arquivo parcial",
+    "nmAutor0": "Merkh, David J.",
+    "autores": [],
+    "editora": "Hagnos",
+    "data": "",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "13",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": "Caráter cristão; Homens; Discipulado; Arquivo parcial"
+  },
+  "justificativa": "A capa identifica obra, autor e editora, mas o arquivo contém somente a introdução; foi classificado como documento parcial.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e extensão do arquivo"
+  ],
+  "id_remoto": 20706
+}

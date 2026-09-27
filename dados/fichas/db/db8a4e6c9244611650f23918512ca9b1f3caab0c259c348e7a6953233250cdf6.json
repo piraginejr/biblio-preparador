@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "db8a4e6c9244611650f23918512ca9b1f3caab0c259c348e7a6953233250cdf6",
+  "arquivo_origem": "701856125-Discipulos-Fazendo-Discipulos-Vol-2.pdf",
+  "campos": {
+    "titulo": "VÃO E FAÇAM DISCÍPULOS!",
+    "subTitulo": "",
+    "nmAutor0": "Gussơ, Antônio Renatơ",
+    "autores": [
+      {
+        "nome": "Gussơ, Antônio Renatơ",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "EDITORA",
+    "data": "2009",
+    "edicao": "10ª Edição",
+    "lugar": "Curitiba",
+    "nPaginas": "70",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20782
+}

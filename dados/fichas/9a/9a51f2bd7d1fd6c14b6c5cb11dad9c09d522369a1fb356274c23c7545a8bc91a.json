@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "9a51f2bd7d1fd6c14b6c5cb11dad9c09d522369a1fb356274c23c7545a8bc91a",
+  "arquivo_origem": "Revitalizando a igreja e sua liderança (Leandro Silva Virginio, Marcelo França etc.) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Revitalizando a Igreja e sua Liderança",
+    "subTitulo": "",
+    "nmAutor0": "SILVA, Leandro",
+    "autores": [
+      {
+        "nome": "SILVA, Leandro",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9788578392895",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

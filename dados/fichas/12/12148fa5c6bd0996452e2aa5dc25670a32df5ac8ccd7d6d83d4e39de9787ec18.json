@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "12148fa5c6bd0996452e2aa5dc25670a32df5ac8ccd7d6d83d4e39de9787ec18",
+  "arquivo_origem": "431380416-Derek-Kidner-A-Mensagem-de-Eclesiastes-doc.pdf",
+  "campos": {
+    "titulo": "A mensagem de Eclesiastes",
+    "subTitulo": "",
+    "nmAutor0": "KIDNER, Derek",
+    "autores": [
+      {
+        "nome": "KIDNER, Derek",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

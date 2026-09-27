@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "cae97c370e511bb0874c5a73cfba21cfa70175995662d16eee3071b1e6cc90de",
+  "arquivo_origem": "390144361-A-Tunica-Inconstil-Doutrina-da-Igreja-pdf.pdf",
+  "campos": {
+    "titulo": "A túnica inconsútil",
+    "subTitulo": "Um estudo sobre a doutrina da Igreja",
+    "nmAutor0": "Falcão Sobrinho, João",
+    "autores": [
+      {
+        "nome": "Falcão Sobrinho, João",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "JUERP — Junta de Educação Religiosa e Publicações",
+    "data": "1998",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "96",
+    "isbn": "8535001336",
+    "isbn_codigo_barras": "",
+    "cdd": "230.61",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "CIP revisada",
+    "origem_autor": "CIP revisada"
+  },
+  "justificativa": "Copyright e CIP do próprio PDF fornecem a ficha completa; foram corrigidos apenas caracteres confundidos pelo OCR.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: copyright e CIP"
+  ]
+}

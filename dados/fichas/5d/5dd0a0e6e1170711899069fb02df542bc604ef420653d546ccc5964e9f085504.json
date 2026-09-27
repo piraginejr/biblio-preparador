@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "5dd0a0e6e1170711899069fb02df542bc604ef420653d546ccc5964e9f085504",
+  "arquivo_origem": "The Renewal of All Things An Alternative Missiology (Waldron Byron Scott) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Renewal of All Things",
+    "subTitulo": "An Alternative Missiology",
+    "nmAutor0": "Scott, Waldron Byron",
+    "autores": [
+      {
+        "nome": "Scott, Waldron Byron",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Wipf & Stock Publishers",
+    "data": "2009",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "236",
+    "isbn": "9781606085622",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Missions; Universalism; Salvation; Theology; Christianity"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20631
+}

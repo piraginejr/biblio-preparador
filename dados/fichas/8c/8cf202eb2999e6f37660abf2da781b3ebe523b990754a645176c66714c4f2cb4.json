@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "8cf202eb2999e6f37660abf2da781b3ebe523b990754a645176c66714c4f2cb4",
+  "arquivo_origem": "557074136-Comentario-Biblico-1-e-2-Samuel.pdf",
+  "campos": {
+    "titulo": "COMENTÁRIO BÍBLICO BEACON SAMUEL",
+    "subTitulo": "",
+    "nmAutor0": "Mellish, Kevin J.",
+    "autores": [
+      {
+        "nome": "Mellish, Kevin J.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Central Gospel",
+    "data": "2015",
+    "edicao": "1",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "12",
+    "isbn": "9788576894261",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

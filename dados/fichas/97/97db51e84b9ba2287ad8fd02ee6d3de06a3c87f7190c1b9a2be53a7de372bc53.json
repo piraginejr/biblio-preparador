@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "97db51e84b9ba2287ad8fd02ee6d3de06a3c87f7190c1b9a2be53a7de372bc53",
+  "arquivo_origem": "353015197-Abraham-Kuyper-La-Obra-Del-Espiritu-Santopdf.pdf",
+  "campos": {
+    "titulo": "La obra del Espíritu Santo",
+    "subTitulo": "",
+    "nmAutor0": "Kuyper, Abraham",
+    "autores": [
+      {
+        "nome": "Kuyper, Abraham",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "[s.d.]",
+    "edicao": "",
+    "lugar": "[S.l.]",
+    "nPaginas": "363",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "titulo_original": "The Work of the Holy Spirit",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "Tradução digital espanhola integral, sem tradutor, editora, lugar ou data declarados; ausências registradas pelas convenções bibliográficas.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto, sumário, prefácios e texto integral"
+  ],
+  "id_remoto": 20371
+}

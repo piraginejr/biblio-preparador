@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "bf1b779ef0c95b86d64213ccfc92fa93cc9544067220549d5f2bfaf5816c4c30",
+  "arquivo_origem": "519309551-Projeto-Videira-Cultivando-Uma-Cultura.pdf",
+  "campos": {
+    "titulo": "Projeto Videira: cultivando uma cultura de discipulado",
+    "subTitulo": "",
+    "nmAutor0": "Marshall, Colin",
+    "autores": [
+      {
+        "nome": "Marshall, Colin",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Payne, Tony",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2019",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Sho Jose cie Campos, SP",
+    "nPaginas": "315",
+    "isbn": "9788581326450",
+    "isbn_codigo_barras": "",
+    "cdd": "248.446",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Congregações cristãs, prática e teologia pastoral"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

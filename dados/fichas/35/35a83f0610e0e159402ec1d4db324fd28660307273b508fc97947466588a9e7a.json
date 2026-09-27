@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "35a83f0610e0e159402ec1d4db324fd28660307273b508fc97947466588a9e7a",
+  "arquivo_origem": "542633650-Manual-PROGRAMA-DE-FORMAC-A-O-MISSIONA-RIA-30-08-21.pdf",
+  "campos": {
+    "titulo": "Programa de Formação Missionária",
+    "subTitulo": "Manual Institucional",
+    "nmAutor0": "Junta de Missões Nacionais da Convenção Batista Brasileira",
+    "autores": [],
+    "editora": "Junta de Missões Nacionais",
+    "data": "2021",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "130",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20540
+}

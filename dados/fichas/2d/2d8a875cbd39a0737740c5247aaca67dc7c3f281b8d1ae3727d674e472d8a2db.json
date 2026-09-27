@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "2d8a875cbd39a0737740c5247aaca67dc7c3f281b8d1ae3727d674e472d8a2db",
+  "arquivo_origem": "545662431-Caminhos-esquecidos (1).pdf",
+  "campos": {
+    "titulo": "Caminhos esquecidos: reativando a igreja missional",
+    "subTitulo": "",
+    "nmAutor0": "Hirsch, Alan",
+    "autores": [
+      {
+        "nome": "Hirsch, Alan",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Esperança",
+    "data": "2015",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "l.ed. -- Curitiba",
+    "nPaginas": "315",
+    "isbn": "9788578390983",
+    "isbn_codigo_barras": "9788578390983",
+    "cdd": "266",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20721
+}

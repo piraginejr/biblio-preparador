@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "0f72792544270e663bf52898313bbb3f02b50c31b3fe6afc1d59b11d382b7750",
+  "arquivo_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/686599914-E-i.pdf",
+  "campos": {
+    "titulo": "Ética reformada",
+    "isbn": "9781493414444",
+    "subTitulo": "Volumen 1: Humanidad creada, caída y convertida",
+    "nmAutor0": "Bavinck, Herman",
+    "titulo_original": "Reformed Ethics, Volume 1: Created, Fallen, and Converted Humanity",
+    "editora": "Baker Academic",
+    "data": "2019",
+    "lugar": "Grand Rapids",
+    "nPaginas": "1538",
+    "isbn_motivo": "ISBN do e-book inglês declarado no próprio PDF",
+    "cdd": "241.0442",
+    "volume": "1",
+    "nmLingua": "Espanhol",
+    "idioma": "spa",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa e edição-fonte",
+    "palavrasChave": "Ética cristã - Autores reformados; Teologia moral",
+    "abstract": "Versão digital em espanhol com tradução não identificada. A capa fornece o título espanhol. Os dados de editora, ano, ISBN e classificação correspondem ao e-book inglês usado como fonte. John Bolt é o editor literário."
+  },
+  "justificativa": "Título espanhol lido diretamente da capa e reconciliado com o registro oficial da edição-fonte.",
+  "fontes": [
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, copyright e ISBN",
+    "https://bakerpublishinggroup.com/books/reformed-ethics-volume-1/380941",
+    "https://www.pcabookstore.com/samples/14722.pdf"
+  ]
+}

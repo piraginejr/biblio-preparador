@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "13b2788d66bd940f0eec414a713282ea77c3ded13ea91198d69e2fc432c90358",
+  "arquivo_origem": "517152423-Pregacao-Expositiva.pdf",
+  "campos": {
+    "titulo": "Coração em chamas",
+    "subTitulo": "Um recurso para pregadores",
+    "nmAutor0": "Morelli, João",
+    "autores": [
+      {
+        "nome": "Morelli, João",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "[s.d.]",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "150",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa e texto revisados",
+    "origem_autor": "declaração de autoria revisada"
+  },
+  "justificativa": "A capa e o texto repetem o título; o aviso de adoção no curso declara João Morelli como autor. A cópia não informa editora nem data, registradas pelas convenções [s.n.] e [s.d.].",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, sumário, considerações e aviso de autoria",
+    "https://linktr.ee/joaomorelli"
+  ],
+  "id_remoto": 20452
+}

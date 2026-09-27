@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "ebae26cb4825286a8b7d4ba50be452c6fbeaf912ec687a4ee01aece4decfd8b3",
+  "arquivo_origem": "O PENTECOSTE E OS DONS DO ESPÍRITO SANTO OCR.pdf",
+  "campos": {
+    "titulo": "O Pentecoste e os dons do Espírito Santo",
+    "subTitulo": "",
+    "nmAutor0": "Lima, Delcyr de Souza",
+    "autores": [
+      {
+        "nome": "Lima, Delcyr de Souza",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Seminário Teológico Batista de Niterói",
+    "data": "2002",
+    "edicao": "2ª edição, revista e ampliada",
+    "lugar": "Niterói",
+    "nPaginas": "160",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Pentecostes; Dons espirituais; Espírito Santo"
+  },
+  "justificativa": "Folha de rosto, copyright e prefácio identificam autor, instituição e a segunda edição revista, publicada em abril de 2002.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto, copyright e prefácio"
+  ],
+  "id_remoto": 20703
+}

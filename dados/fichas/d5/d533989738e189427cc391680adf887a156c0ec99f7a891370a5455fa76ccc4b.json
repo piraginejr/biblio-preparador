@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "d533989738e189427cc391680adf887a156c0ec99f7a891370a5455fa76ccc4b",
+  "arquivo_origem": "618064475-A-Essencia-Do-Novo-Testamento.pdf",
+  "campos": {
+    "titulo": "A essência do Novo Testamento",
+    "subTitulo": "",
+    "nmAutor0": "Towns, Elmer",
+    "autores": [
+      {
+        "nome": "Towns, Elmer",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Gutierrez, Ben",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Central Gospel",
+    "data": "2012",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "322",
+    "isbn": "9788576894131",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

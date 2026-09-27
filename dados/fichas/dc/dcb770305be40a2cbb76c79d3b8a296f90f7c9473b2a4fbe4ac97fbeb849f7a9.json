@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "dcb770305be40a2cbb76c79d3b8a296f90f7c9473b2a4fbe4ac97fbeb849f7a9",
+  "arquivo_origem": "384839895-Como-ler-o-livro-de-JosuA-Ivo-Storniolo.pdf",
+  "campos": {
+    "titulo": "Como ler o livro de Josué",
+    "subTitulo": "Terra = vida: dom de Deus e conquista do povo",
+    "nmAutor0": "Storniolo, Ivo",
+    "autores": [
+      {
+        "nome": "Storniolo, Ivo",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "PAULUS",
+    "data": "2008",
+    "edicao": "4ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "49",
+    "isbn": "9788534910026",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa e créditos revisados",
+    "origem_autor": "capa e créditos revisados"
+  },
+  "justificativa": "Capa e créditos identificam a 4ª edição de 2008; o ISBN exato também foi localizado na Amazon e na Estante Virtual.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e página de créditos",
+    "Amazon: resultado por ISBN",
+    "Estante Virtual: resultado por ISBN"
+  ],
+  "id_remoto": 20382
+}

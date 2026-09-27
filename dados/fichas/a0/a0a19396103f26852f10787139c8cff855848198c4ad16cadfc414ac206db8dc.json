@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "a0a19396103f26852f10787139c8cff855848198c4ad16cadfc414ac206db8dc",
+  "arquivo_origem": "Educação sexual e sexualidade- o velado e o aparente.pdf",
+  "campos": {
+    "titulo": "Educação [sexual] e sexualidade: o velado e o aparente",
+    "subTitulo": "",
+    "nmAutor0": "Bonato, Nailda Marinho da Costa",
+    "autores": [],
+    "editora": "Universidade do Estado do Rio de Janeiro",
+    "data": "1996",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "105",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "dissertação",
+    "abstract": "",
+    "palavrasChave": "Educação sexual; Sexualidade; Educação; Dissertação",
+    "isbn_motivo": "dissertação acadêmica sem ISBN declarado",
+    "idioma": "por",
+    "pasta_origem_importacao": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA",
+    "arquivos_origem_importacao": [
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Educação sexual e sexualidade- o velado e o aparente.doc"
+    ]
+  },
+  "justificativa": "A folha de rosto declara explicitamente título, autora, instituição, natureza da dissertação, local e ano; a leitura anterior havia invertido autora e título.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "pasta organizada de entrada",
+    "PDF local: capa, folha de rosto e folha de aprovação"
+  ],
+  "id_remoto": 20920
+}

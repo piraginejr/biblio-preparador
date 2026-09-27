@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "1947380f186817055ca082e7b826b57fc339b9e55ee26f22362775acf3e03251",
+  "arquivo_origem": "1799The Integraty of Mission.pdf",
+  "campos": {
+    "titulo": "Integrity of Mission is a passionate plea for a biblically holistic approach to Christian mission",
+    "subTitulo": "",
+    "nmAutor0": "Costas, Orlando E.",
+    "autores": [
+      {
+        "nome": "Costas, Orlando E.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "HarperCollins",
+    "data": "1952",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "114",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20767
+}

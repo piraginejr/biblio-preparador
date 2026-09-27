@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "588c6b127374abf69c164c96ae70fbaefd3bb9c5f4cd1a501220391ee0e52c22",
+  "arquivo_origem": "132506252-229-A-lideranca-da-Igreja.pdf",
+  "campos": {
+    "titulo": "A LIDERANÇA DA IGREJA",
+    "subTitulo": "",
+    "nmAutor0": "SATHLER, ANDERSON",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "4",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20559
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "a1723e0d5a089849e6130fffb59a7774515a5872623db1c1d0d526a9901023e7",
+  "arquivo_origem": "590079871-Livro-O-Dom-de-Profecia-Wayne-Grudem.pdf",
+  "campos": {
+    "titulo": "profecia",
+    "subTitulo": "",
+    "nmAutor0": "Grudem, Wayne",
+    "autores": [
+      {
+        "nome": "Grudem, Wayne",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Vida",
+    "data": "2004",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "479",
+    "isbn": "9788573677379",
+    "isbn_codigo_barras": "9788573677379",
+    "cdd": "234.13",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20564
+}

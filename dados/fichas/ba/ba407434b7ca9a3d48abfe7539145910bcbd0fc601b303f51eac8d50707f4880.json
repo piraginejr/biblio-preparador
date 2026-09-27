@@ -1,0 +1,41 @@
+{
+  "hash_sha256": "ba407434b7ca9a3d48abfe7539145910bcbd0fc601b303f51eac8d50707f4880",
+  "arquivo_origem": "692051759-Acima-de-todos-os-deuses-Hernandes-Dias-Lopes.pdf",
+  "campos": {
+    "titulo": "Acima de todos os deuses",
+    "subTitulo": "",
+    "nmAutor0": "Lopes, Hernandes Dias",
+    "autores": [
+      {
+        "nome": "Lopes, Hernandes Dias",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Madureira, Jonas",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Gandolfo, Renata",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2019",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "102",
+    "isbn": "9788581325941",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20660
+}

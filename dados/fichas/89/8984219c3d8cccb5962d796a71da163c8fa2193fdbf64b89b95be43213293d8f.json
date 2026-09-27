@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "8984219c3d8cccb5962d796a71da163c8fa2193fdbf64b89b95be43213293d8f",
+  "arquivo_origem": "375636094-Depressao-em-pastores-pdf.pdf",
+  "campos": {
+    "titulo": "Um estudo da depressão em pastores protestantes",
+    "subTitulo": "",
+    "nmAutor0": "Deus, Pérsio Ribeiro Gomes de",
+    "autores": [],
+    "editora": "Universidade Presbiteriana Mackenzie",
+    "data": "2009",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "14",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "cabeçalho do artigo revisado",
+    "origem_autor": "cabeçalho do artigo revisado"
+  },
+  "justificativa": "É artigo avulso da revista Ciências da Religião – História e Sociedade, v. 7, n. 1, 2009, e não um livro.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: cabeçalho, resumo e rodapé da primeira página"
+  ],
+  "id_remoto": 20546
+}

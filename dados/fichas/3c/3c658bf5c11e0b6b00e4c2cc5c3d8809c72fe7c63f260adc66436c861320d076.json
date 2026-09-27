@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "3c658bf5c11e0b6b00e4c2cc5c3d8809c72fe7c63f260adc66436c861320d076",
+  "arquivo_origem": "535889362-Igreja-dia-ria.pdf",
+  "campos": {
+    "titulo": "Igreja Diária: comunidades do evangelho em missão",
+    "subTitulo": "",
+    "nmAutor0": "SteveTimmis",
+    "autores": [
+      {
+        "nome": "SteveTimmis",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "arrangement",
+    "data": "2013",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "1 .ed. - Niterói, RJ",
+    "nPaginas": "193",
+    "isbn": "9788561619183",
+    "isbn_codigo_barras": "",
+    "cdd": "941.07092",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Teologia social e eclesiástica cristã"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20460
+}

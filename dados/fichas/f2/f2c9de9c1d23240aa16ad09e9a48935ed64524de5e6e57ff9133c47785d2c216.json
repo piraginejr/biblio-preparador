@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "f2c9de9c1d23240aa16ad09e9a48935ed64524de5e6e57ff9133c47785d2c216",
+  "arquivo_origem": "552585921-1-5184066616224121193.pdf",
+  "campos": {
+    "titulo": "Metodologia do Novo Testamento",
+    "subTitulo": "Introdução aos métodos linguísticos e histórico-críticos",
+    "nmAutor0": "Egger, Wilhelm",
+    "autores": [
+      {
+        "nome": "Egger, Wilhelm",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Edições Loyola",
+    "data": "1994",
+    "edicao": "3ª edição",
+    "lugar": "",
+    "nPaginas": "240",
+    "isbn": "9788515010561",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "series": "Bíblica Loyola",
+    "numSerie": "12"
+  },
+  "justificativa": "Folha de rosto e ficha oficial da Edições Loyola confirmam a edição; o PDF chega aos índices finais.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto, sumário e páginas finais",
+    "Edições Loyola: ficha ISBN 9788515010561"
+  ],
+  "id_remoto": 20486
+}

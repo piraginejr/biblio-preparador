@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "91dfc01e824f808e85f02010ef04b014394458ccdc99945f22b1f8fbd6aaf5a4",
+  "arquivo_origem": "508814743-Livro-eBook-Pregue-Por-Um-Ano.pdf",
+  "campos": {
+    "titulo": "Pregue por um ano #1",
+    "subTitulo": "104 esboços de sermões",
+    "nmAutor0": "Campbell, Roger F.",
+    "autores": [
+      {
+        "nome": "Campbell, Roger F.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Proclamação",
+    "data": "2011",
+    "edicao": "1ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "128",
+    "isbn": "9788586261053",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Pedro Volvchenko",
+    "origem_titulo": "folha de rosto e CIP revisadas",
+    "origem_autor": "folha de rosto e CIP revisadas"
+  },
+  "justificativa": "Folha de rosto, copyright da tradução e CIP identificam a edição brasileira de 2011; a lista dos seis volumes não é o título.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: lista de obras, folha de rosto, copyright e CIP"
+  ],
+  "id_remoto": 20450
+}

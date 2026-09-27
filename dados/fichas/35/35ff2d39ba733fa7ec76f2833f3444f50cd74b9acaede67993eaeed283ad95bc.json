@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "35ff2d39ba733fa7ec76f2833f3444f50cd74b9acaede67993eaeed283ad95bc",
+  "arquivo_origem": "80290723-William-Barclay-El-Padre-Nuestro-1.pdf",
+  "campos": {
+    "titulo": "El Padre Nuestro",
+    "subTitulo": "",
+    "nmAutor0": "Barclay, William",
+    "autores": [
+      {
+        "nome": "Barclay, William",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "[s.d.]",
+    "edicao": "",
+    "lugar": "[S.l.]",
+    "nPaginas": "122",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Jean Galbraith",
+    "titulo_original": "The Plain Man Looks at the Lord's Prayer",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa revisada"
+  },
+  "justificativa": "O PDF identifica título, autor, obra original e tradutora. A edição espanhola não declara editora, lugar nem data; foram usadas as convenções bibliográficas [s.n.], [S.l.] e [s.d.] sem inventar dados.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, página 2, sumário e texto integral"
+  ],
+  "id_remoto": 20349
+}

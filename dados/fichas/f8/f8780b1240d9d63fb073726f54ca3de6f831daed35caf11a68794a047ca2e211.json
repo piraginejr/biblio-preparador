@@ -1,0 +1,26 @@
+{
+  "hash_sha256": "f8780b1240d9d63fb073726f54ca3de6f831daed35caf11a68794a047ca2e211",
+  "arquivo_origem": "225091473-Livro-eBook-a-Missao-Crista-No-Mundo-Moderno.pdf",
+  "campos": {
+    "titulo": "A missão cristã no mundo moderno",
+    "subTitulo": "",
+    "nmAutor0": "Stott, John R. W.",
+    "autores": [],
+    "editora": "Editora Ultimato",
+    "data": "2010",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "16",
+    "isbn": "9788577790395",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "trecho",
+    "abstract": "",
+    "palavrasChave": "Denominações cristãs e seitas"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

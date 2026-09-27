@@ -1,0 +1,39 @@
+{
+  "hash_sha256": "e145ca0d10e14b7cf49cb43c4581c86fa6fc42b30fe7c60f8f9396c9ee2e256f",
+  "arquivo_origem": "554628122-7-Beacon-Juan-a-Hechos.pdf",
+  "campos": {
+    "titulo": "Comentario Bíblico Beacon: Juan y Hechos",
+    "subTitulo": "Tomo VII",
+    "nmAutor0": "Mayfield, Joseph H.",
+    "autores": [
+      {
+        "nome": "Mayfield, Joseph H.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Earle, Ralph",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Nazarena de Publicaciones",
+    "data": "1969",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Lenexa, Kansas",
+    "nPaginas": "405",
+    "isbn": "9781563446078",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "volume": "7"
+  },
+  "justificativa": "O tomo VII possui ISBN próprio; o ISBN do tomo I aparecia apenas na lista completa da coleção.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e lista de ISBNs da coleção"
+  ],
+  "id_remoto": 20495
+}

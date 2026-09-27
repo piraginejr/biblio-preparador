@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "32e2050543ce134a9e7718d5365ed348bf744409972e374b0ff08f875a1a881e",
+  "arquivo_origem": "249911264-A-Historia-de-John-Smith-e-Thomas.pdf",
+  "campos": {
+    "titulo": "A História de John Smith e Thomas Helwys – Parte Final",
+    "subTitulo": "",
+    "nmAutor0": "Paixão, Marcus Vinícius Costa",
+    "autores": [],
+    "editora": "",
+    "data": "2009",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "3",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20558
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "1d0de9d031052511774b6bb9515c634c05bb5ec2bcbe335842030202c1e642ba",
+  "arquivo_origem": "245273262-Diario-Personal-de-John-Wesley-Parte-I-Diarios-de-Avivamientos.pdf",
+  "campos": {
+    "titulo": "Diarios, tomo I",
+    "subTitulo": "",
+    "nmAutor0": "Wesley, John",
+    "autores": [
+      {
+        "nome": "Wesley, John",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Wesley Heritage Foundation, Inc",
+    "data": "[s.d.]",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "333",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20885
+}

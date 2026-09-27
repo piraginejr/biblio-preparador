@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "b142ba980fabbe4882bbde0f95b033aab89a03e11ca3cfff07b261bd9f2672a3",
+  "arquivo_origem": "606178335-VOLUNTA-RIOS-LAGOINHA-2016-17-2.pdf",
+  "campos": {
+    "titulo": "Workshop Voluntários Lagoinha",
+    "subTitulo": "Tudo por pessoas",
+    "nmAutor0": "Igreja Batista da Lagoinha",
+    "autores": [],
+    "editora": "Igreja Batista da Lagoinha",
+    "data": "2016",
+    "edicao": "",
+    "lugar": "Niterói",
+    "nPaginas": "10",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": "Voluntariado; Igreja; Serviço cristão; Treinamento",
+    "origem_titulo": "título interno do PDF e capa",
+    "origem_autor": "responsabilidade institucional",
+    "isbn_motivo": "documento institucional: não recebe ISBN",
+    "idioma": "por"
+  },
+  "justificativa": "Workshop institucional de dez páginas, não livro. A frase capturada como autor era uma chamada da introdução.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, propriedades do PDF e conteúdo"
+  ],
+  "id_remoto": 20762
+}

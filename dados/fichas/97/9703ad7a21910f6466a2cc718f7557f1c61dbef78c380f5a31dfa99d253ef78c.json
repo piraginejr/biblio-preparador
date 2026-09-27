@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "9703ad7a21910f6466a2cc718f7557f1c61dbef78c380f5a31dfa99d253ef78c",
+  "arquivo_origem": "559525611-1-5022036161778942079.pdf",
+  "campos": {
+    "titulo": "Diga Sim!",
+    "subTitulo": "Experimente uma vida tão plena e profunda que você jamais voltará atrás",
+    "nmAutor0": "Renner, Rick",
+    "autores": [
+      {
+        "nome": "Renner, Rick",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Rhema Brasil Publicações",
+    "data": "2017",
+    "edicao": "1ª edição",
+    "lugar": "",
+    "nPaginas": "328",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Copyright e texto introdutório confirmam título, autor, editora e edição em português.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: copyright e páginas introdutórias"
+  ],
+  "id_remoto": 20479
+}

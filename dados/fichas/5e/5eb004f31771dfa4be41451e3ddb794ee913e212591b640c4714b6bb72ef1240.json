@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "5eb004f31771dfa4be41451e3ddb794ee913e212591b640c4714b6bb72ef1240",
+  "arquivo_origem": "Encountering Theology of Mission. Biblical Foundations, Historical Developments (Craig Ott, Stephen J. Strauss etc.) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Encountering Theology of Mission",
+    "subTitulo": "",
+    "nmAutor0": "Strauss, Stephen J.",
+    "autores": [
+      {
+        "nome": "Strauss, Stephen J.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Strauss, Stephen J.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "978-0-8010-2662-1",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

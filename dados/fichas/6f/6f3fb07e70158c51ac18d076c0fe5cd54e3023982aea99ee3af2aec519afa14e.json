@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "6f3fb07e70158c51ac18d076c0fe5cd54e3023982aea99ee3af2aec519afa14e",
+  "arquivo_origem": "477742157-ECLESIOLOGIA-COM-ENEAS-TOGNINI-pdf.pdf",
+  "campos": {
+    "titulo": "Eclesiologia",
+    "subTitulo": "Doutrina da Igreja",
+    "nmAutor0": "Tognini, Enéas",
+    "autores": [
+      {
+        "nome": "Tognini, Enéas",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Edições Enéas Tognini",
+    "data": "1987",
+    "edicao": "2ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "152",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "folha de rosto inspecionada",
+    "origem_autor": "folha de rosto inspecionada"
+  },
+  "justificativa": "A camada OCR está vazia, mas a folha de rosto digitalizada declara título, subtítulo, segunda edição e editora; a dedicatória é datada de 1987.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: capa, folha de rosto, direitos e dedicatória"
+  ]
+}

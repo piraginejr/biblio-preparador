@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "f45aaac2653aca643bc52676b45c659f9ace08c0a1f823716067140bad3111ed",
+  "arquivo_origem": "554657079-O-Deus-Que-Intervem-Francis-a-Schaeffer.pdf",
+  "campos": {
+    "titulo": "O Deus que Intervém",
+    "subTitulo": "",
+    "nmAutor0": "Schaeffer, Francis A.",
+    "autores": [
+      {
+        "nome": "Schaeffer, Francis A.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Cultura Cristã",
+    "data": "2002",
+    "edicao": "1ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "163",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Copyright identifica autor e edição brasileira; o nome capturado antes era da editoração.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: copyright e apresentação da obra"
+  ],
+  "id_remoto": 20474
+}

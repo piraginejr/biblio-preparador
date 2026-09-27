@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "b2053b1f37f9732fed4146078d135e221c1c8783d5c20ac190039ca547814570",
+  "arquivo_origem": "Helen Roseveare Mama Luka (Janet Benge  Geoff Benge [Benge, Janet  Benge etc.) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Helen Roseveare",
+    "subTitulo": "Mama Luka",
+    "nmAutor0": "Janet",
+    "autores": [
+      {
+        "nome": "Janet",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Benge, Geoff",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "YWAM Publishing",
+    "data": "2019",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "137",
+    "isbn": "9781576589106",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Biography; Medicine"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20615
+}

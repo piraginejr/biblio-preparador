@@ -1,0 +1,125 @@
+{
+  "versao": 1,
+  "descricao": "Nomes, variantes e ISSNs confirmados de periodicos. A identidade do periodico e evidencia de classificacao, nunca criterio unico.",
+  "periodicos": [
+    {
+      "nome": "Full Gospel Business Men's Voice",
+      "aliases": ["Full Gospel Business Men's Voice", "Full Gospel Men's Voice", "FGBMFI Voice", "Voice Magazine", "VOICE"],
+      "issn": []
+    },
+    {
+      "nome": "Teológica — Revista Brasileira de Teologia",
+      "aliases": ["Teológica", "Revista Teológica", "Revista Brasileira de Teologia", "Teológica Revista Brasileira de Teologia"],
+      "issn": ["3086-1012", "1807-7056"],
+      "fonte": "https://revistas.seminariodosul.com.br/index.php/teologica"
+    },
+    {
+      "nome": "Revista Batista Pioneira",
+      "aliases": ["Revista Batista Pioneira", "Revista Batista Pioneira Bíblia Teologia e Prática"],
+      "issn": ["2316-462X", "2316-686X"],
+      "fonte": "https://revista.batistapioneira.edu.br/index.php/rbp/about"
+    },
+    {
+      "nome": "Via Teológica",
+      "aliases": ["Via Teológica", "Revista Via Teológica"],
+      "issn": ["1676-0131", "2526-4303"],
+      "fonte": "https://periodicos.fabapar.com.br/index.php/vt"
+    },
+    {
+      "nome": "Pneuma: Revista Teológica",
+      "aliases": ["Pneuma", "Pneuma Revista Teológica"],
+      "issn": ["2965-3177"],
+      "fonte": "https://periodicos.fabapar.com.br/index.php/pto/about"
+    },
+    {
+      "nome": "HORIZONTE — Revista de Estudos de Teologia e Ciências da Religião",
+      "aliases": ["HORIZONTE", "Horizonte Revista de Estudos de Teologia e Ciências da Religião", "Horizonte Revista de Teologia e Ciências da Religião"],
+      "issn": ["2175-5841"],
+      "fonte": "https://periodicos.pucminas.br/horizonte/about"
+    },
+    {
+      "nome": "REVER — Revista de Estudos da Religião",
+      "aliases": ["REVER", "REVER Revista de Estudos da Religião", "Revista de Estudos da Religião"],
+      "issn": ["1677-1222"],
+      "fonte": "https://revistas.pucsp.br/rever/about/index"
+    },
+    {
+      "nome": "Numen — Revista de Estudos e Pesquisa da Religião",
+      "aliases": ["Numen", "Numen Revista de Estudos e Pesquisa da Religião"],
+      "issn": ["2236-6296"],
+      "fonte": "https://periodicos.ufjf.br/index.php/numen/about"
+    },
+    {
+      "nome": "Estudos de Religião",
+      "aliases": ["Estudos de Religião", "Revista Estudos de Religião"],
+      "issn": ["0103-801X", "2176-1078"],
+      "fonte": "https://revistas.metodista.br/index.php/estudosreligiao/about"
+    },
+    {
+      "nome": "Estudos Teológicos",
+      "aliases": ["Estudos Teológicos", "Revista Estudos Teológicos"],
+      "issn": ["0101-3130", "2237-6461"],
+      "fonte": "https://periodicos.est.edu.br/index.php/estudos_teologicos"
+    },
+    {
+      "nome": "Journal of the Evangelical Theological Society",
+      "aliases": ["Journal of the Evangelical Theological Society", "JETS"],
+      "issn": []
+    },
+    {
+      "nome": "Fides Reformata",
+      "aliases": ["Fides Reformata"],
+      "issn": []
+    },
+    {
+      "nome": "Ateliê de História UEPG",
+      "aliases": ["Ateliê de História UEPG", "Ateliê de História", "Atelie de Historia UEPG"],
+      "issn": []
+    },
+    {
+      "nome": "Semeia",
+      "aliases": ["Semeia"],
+      "issn": []
+    },
+    {
+      "nome": "Acta Theologica",
+      "aliases": ["Acta Theologica"],
+      "issn": []
+    },
+    {
+      "nome": "Ciências da Religião — História e Sociedade",
+      "aliases": ["Ciências da Religião História e Sociedade", "Ciências da Religião - História e Sociedade"],
+      "issn": []
+    },
+    {
+      "nome": "Revista de História (USP)",
+      "aliases": ["Revista de História", "Revista de História USP"],
+      "issn": []
+    },
+    {
+      "nome": "Theology Today",
+      "aliases": ["Theology Today"],
+      "issn": []
+    },
+    {
+      "nome": "Christian History Magazine",
+      "aliases": ["Christian History Magazine", "Christian History"],
+      "issn": []
+    },
+    {
+      "nome": "Ciberteologia — Revista de Teologia & Cultura",
+      "aliases": ["Ciberteologia", "Ciberteologia Revista de Teologia e Cultura"],
+      "issn": []
+    },
+    {
+      "nome": "Revista Teologia Brasileira",
+      "aliases": ["Revista Teologia Brasileira", "Teologia Brasileira"],
+      "issn": []
+    },
+    {
+      "nome": "Travessias Interativas",
+      "aliases": ["Travessias Interativas"],
+      "issn": []
+    }
+  ]
+}

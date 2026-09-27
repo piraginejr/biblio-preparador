@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "99897475dd8bac8f1b196e69df163dc6c63535ee8e2248f0111723be582b0b65",
+  "arquivo_origem": "592944657-MANUAL-BI-BLICO-AVENTURANDO-SE-ATRAVE-S-DA-BI-BLIA-Ray-C-Stedman-1.pdf",
+  "campos": {
+    "titulo": "AVENTURANDO-SE ATRAVÉS DA BÍBLIA - De Gênesis a Apocalipse - Parte II",
+    "subTitulo": "",
+    "nmAutor0": "STEDMAN, Ray C.",
+    "autores": [
+      {
+        "nome": "STEDMAN, Ray C.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9781680435962",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

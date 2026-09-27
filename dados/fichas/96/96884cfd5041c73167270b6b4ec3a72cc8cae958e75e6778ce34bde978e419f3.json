@@ -1,0 +1,43 @@
+{
+  "hash_sha256": "96884cfd5041c73167270b6b4ec3a72cc8cae958e75e6778ce34bde978e419f3",
+  "arquivo_origem": "513342184-Projeto-Videira-Tony-Payne-Collin-Marshal.pdf",
+  "campos": {
+    "titulo": "Projeto videira",
+    "subTitulo": "Cultivando uma cultura de discipulado",
+    "nmAutor0": "Marshall, Colin",
+    "autores": [
+      {
+        "nome": "Marshall, Colin",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Payne, Tony",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2019",
+    "edicao": "1ª edição em português",
+    "lugar": "São José dos Campos",
+    "nPaginas": "392",
+    "isbn": "9788581326450",
+    "isbn_codigo_barras": "",
+    "cdd": "248.486",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "João Paulo Aragão da Guia Oliveira",
+    "titulo_original": "The Vine Project: shaping your ministry culture around disciple-making",
+    "origem_titulo": "capa e CIP revisadas",
+    "origem_autor": "capa e CIP revisadas"
+  },
+  "justificativa": "Capa, metadados internos e CIP concordam; o erro vinha de um caractere decorativo e da inversão dos dois coautores no nome do arquivo.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, folha de rosto, copyright e CIP",
+    "https://www.editorafiel.com.br/projeto-videira-colin-marshall-tony-paine"
+  ],
+  "id_remoto": 20451
+}

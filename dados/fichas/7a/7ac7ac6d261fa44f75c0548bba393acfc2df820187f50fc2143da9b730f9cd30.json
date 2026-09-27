@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "7ac7ac6d261fa44f75c0548bba393acfc2df820187f50fc2143da9b730f9cd30",
+  "arquivo_origem": "Florence Young Mission Accomplished (Janet Benge  Geoff Benge [Benge, Janet  Benge etc.) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Florence Young: Mission Accomplished",
+    "subTitulo": "",
+    "nmAutor0": "BENGE, Janet",
+    "autores": [
+      {
+        "nome": "BENGE, Janet",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9781576586136",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

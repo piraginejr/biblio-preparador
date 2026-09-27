@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "e71fabb35116e742d825028020b1201b00b56296548c808f815401a59f770dde",
+  "arquivo_origem": "219078902-ComentarioBiblicoHomileticoRomanos.pdf",
+  "campos": {
+    "titulo": "Romanos",
+    "subTitulo": "Contando el significado del evangelio",
+    "nmAutor0": "Veloso, Mario",
+    "autores": [
+      {
+        "nome": "Veloso, Mario",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Asociación Casa Editora Sudamericana",
+    "data": "2010",
+    "edicao": "1ª edição",
+    "lugar": "Florida, Buenos Aires",
+    "nPaginas": "225",
+    "isbn": "9789875676602",
+    "isbn_codigo_barras": "",
+    "cdd": "251",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto e CIP revisadas"
+  },
+  "justificativa": "Folha de rosto e CIP fornecem todos os dados e confirmam a integralidade de 224 páginas impressas.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto, CIP e página final"
+  ],
+  "id_remoto": 20357
+}

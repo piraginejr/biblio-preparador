@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "c2060691e009fb139a6b5987cba1dd18c03a2cb5fb5e86b21f8495585310cdf1",
+  "arquivo_origem": "443654868-RAIZES-DOS-BATISTAS-BRASILEIROS-Este.pdf",
+  "campos": {
+    "titulo": "Raízes dos Batistas Potiguares",
+    "subTitulo": "",
+    "nmAutor0": "Alexandre, Mário J.O.",
+    "autores": [
+      {
+        "nome": "Alexandre, Mário J.O.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Fundação José Augusto",
+    "data": "1984",
+    "edicao": "",
+    "lugar": "Natal",
+    "nPaginas": "114",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "286.109813",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Batista (religião) - história CDD"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

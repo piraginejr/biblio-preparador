@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "8d4e7bf22af3d4b165568ea86a2082c70050ce0f136e5c7d046cd7cf2fec8a5d",
+  "arquivo_origem": "532276659-Transformando-Membros-Em-Lideres-Pr-Alexandre-Congresso-Aguas-de-Lindoia (1).pdf",
+  "campos": {
+    "titulo": "ALEXANDRE",
+    "subTitulo": "",
+    "nmAutor0": "[autor não identificado]",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "77",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20929
+}

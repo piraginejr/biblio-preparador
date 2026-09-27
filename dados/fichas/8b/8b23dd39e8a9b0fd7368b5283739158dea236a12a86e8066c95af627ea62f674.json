@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "8b23dd39e8a9b0fd7368b5283739158dea236a12a86e8066c95af627ea62f674",
+  "arquivo_origem": "378304987-Historia-de-Israel-Eugene-h-Merril.pdf",
+  "campos": {
+    "titulo": "A história de Israel não pode ser construída seguindo-se as linhas",
+    "subTitulo": "",
+    "nmAutor0": "CHE, CUC",
+    "autores": [
+      {
+        "nome": "CHE, CUC",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Publicadora das Assembleias de Deus",
+    "data": "2001",
+    "edicao": "",
+    "lugar": "Grand Rapids",
+    "nPaginas": "558",
+    "isbn": "8526303376",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20379
+}

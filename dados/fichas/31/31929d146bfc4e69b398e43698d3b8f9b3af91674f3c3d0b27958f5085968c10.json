@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "31929d146bfc4e69b398e43698d3b8f9b3af91674f3c3d0b27958f5085968c10",
+  "arquivo_origem": "356329496-Oscar-Cullmann-a-Formacao-Do-Novo-Testamento.pdf",
+  "campos": {
+    "titulo": "A FORMAÇÃO DO NOVO TESTAMENTO",
+    "subTitulo": "",
+    "nmAutor0": "CULLMANN, OSCAR",
+    "autores": [
+      {
+        "nome": "CULLMANN, OSCAR",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora aE d iç ã o",
+    "data": "1605",
+    "edicao": "",
+    "lugar": "Belém",
+    "nPaginas": "49",
+    "isbn": "8523300260",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Bíblia"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

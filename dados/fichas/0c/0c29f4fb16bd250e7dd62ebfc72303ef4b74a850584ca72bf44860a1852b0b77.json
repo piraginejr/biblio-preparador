@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "0c29f4fb16bd250e7dd62ebfc72303ef4b74a850584ca72bf44860a1852b0b77",
+  "arquivo_origem": "651Liberating News.PDF",
+  "campos": {
+    "titulo": "Liberating news",
+    "subTitulo": "a theology of contextual evangelization",
+    "nmAutor0": "Costas, Orlando E.",
+    "autores": [
+      {
+        "nome": "Costas, Orlando E.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Eerdmans",
+    "data": "1989",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "GRAND RAPIDS",
+    "nPaginas": "182",
+    "isbn": "0802803644",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Christianity and culture; Evangelistic work; Liberation theology; Missions; Theory"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

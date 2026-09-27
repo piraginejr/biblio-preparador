@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "59604c6e624cb8f1f8fb9b8e5ac9c0ecf505cb8f446dc3dcc5cbecebb9c20d6e",
+  "arquivo_origem": "421229992-A-R-Crabtree-O-Livro-de-Amos-pdf.pdf",
+  "campos": {
+    "titulo": "O livro de Amós",
+    "subTitulo": "",
+    "nmAutor0": "Crabtree, A. R.",
+    "autores": [
+      {
+        "nome": "Crabtree, A. R.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Publicadora Batista",
+    "data": "1960",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "200",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa e catálogo comercial"
+  },
+  "justificativa": "Capa e anúncio comercial da edição concordam em título, autor, ano e paginação.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa",
+    "Estante Virtual: edição de 1960"
+  ],
+  "id_remoto": 20400
+}

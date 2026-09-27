@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "5069e4885362f7b95ea0ef9220c345d3e34435b8c236aed665d2892360e93f82",
+  "arquivo_origem": "489457898-Renato-Roquejani-10-Sintomas-Da-Influencia-De-Mamom-v1-01-00-pdf.pdf",
+  "campos": {
+    "titulo": "10 sintomas da influência de Mamom",
+    "subTitulo": "",
+    "nmAutor0": "Roquejani, Renato",
+    "autores": [
+      {
+        "nome": "Roquejani, Renato",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[edição do autor]",
+    "data": "2020",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "51",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa e biografia revisadas"
+  },
+  "justificativa": "Capa, biografia e encerramento confirmam título e autoria; não há editora declarada e a criação do arquivo é de 2020.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, direitos, biografia e encerramento"
+  ],
+  "id_remoto": 20434
+}

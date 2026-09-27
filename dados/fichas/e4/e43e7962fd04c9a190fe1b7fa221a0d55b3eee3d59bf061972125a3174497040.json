@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "e43e7962fd04c9a190fe1b7fa221a0d55b3eee3d59bf061972125a3174497040",
+  "arquivo_origem": "648967491-Sittema-Coracao-de-Pastor-Resgatando-a-Responsabilidade-Pastoral-Do-Presbitero.pdf",
+  "campos": {
+    "titulo": "CORACAO DE PASTOR",
+    "subTitulo": "",
+    "nmAutor0": "SITTEMA, JOHN R",
+    "autores": [
+      {
+        "nome": "SITTEMA, JOHN R",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "CULTURA CRISTÃ",
+    "data": "1996",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Sio Paulo",
+    "nPaginas": "208",
+    "isbn": "8576220326",
+    "isbn_codigo_barras": "",
+    "cdd": "21",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20654
+}

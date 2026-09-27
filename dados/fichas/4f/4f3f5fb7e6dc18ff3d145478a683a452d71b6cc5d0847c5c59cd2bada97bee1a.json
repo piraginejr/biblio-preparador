@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "4f3f5fb7e6dc18ff3d145478a683a452d71b6cc5d0847c5c59cd2bada97bee1a",
+  "arquivo_origem": "532164616-Manual-Biblico-Ilustrado.pdf",
+  "campos": {
+    "titulo": "Dicionário bíblico ilustrado Vida",
+    "subTitulo": "",
+    "nmAutor0": "editores gerais Chad Brand, Charles Draper, Archie England",
+    "autores": [
+      {
+        "nome": "editores gerais Chad Brand, Charles Draper, Archie England",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Vida",
+    "data": "2018",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "- São Paulo",
+    "nPaginas": "194",
+    "isbn": "9788538303688",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Enciclopédias gerais"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20720
+}

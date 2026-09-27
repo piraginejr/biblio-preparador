@@ -1,0 +1,39 @@
+{
+  "hash_sha256": "8030a2a1d9987c359843628037ea47f1fd30faa32770073275965430a47539fc",
+  "arquivo_origem": "672988907-Novo-Beacon-Box-8-Joao-1-12.pdf",
+  "campos": {
+    "titulo": "Novo Comentário Bíblico Beacon João 1–12",
+    "subTitulo": "",
+    "nmAutor0": "Holmes, Laura Sweet",
+    "autores": [
+      {
+        "nome": "Holmes, Laura Sweet",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Lyons, George",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Oliveira, Soraya Imon",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Central Gospel",
+    "data": "2022",
+    "edicao": "1a edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "392",
+    "isbn": "9786557600597",
+    "isbn_codigo_barras": "9786557600597",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hash_sha256": "66fe64987bfb30934976a6a3ca65e59e2cf9eba990a551cbaba9f1320d596fef",
+  "arquivo_origem": "752767077-Teologia-Pastoral-Liturgia-Metodologia-e-Aconselhamento.pdf",
+  "campos": {
+    "titulo": "Teologia pastoral: liturgia, metodologia e aconselhamento",
+    "subTitulo": "",
+    "nmAutor0": "Cerqueira, Marcone Costa",
+    "autores": [
+      {
+        "nome": "Cerqueira, Marcone Costa",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Aguiar, Maycon Silva",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Araujo, Sandro Silva",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "UNIASSELVI",
+    "data": "2021",
+    "edicao": "2a Edição",
+    "lugar": "Indaial",
+    "nPaginas": "184",
+    "isbn": "9786556638386",
+    "isbn_codigo_barras": "",
+    "cdd": "250",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Congregações cristãs, prática e teologia pastoral"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20795
+}

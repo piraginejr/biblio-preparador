@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "983389a470a7ed1ff7f873d6c0ef46bb15d1231bf9f967327fff6e0ba053bbfa",
+  "arquivo_origem": "Livro Deus, casamento e família.pdf",
+  "campos": {
+    "titulo": "Livros em Cristo: a mensagem de Gálatas para a igreja de hoje",
+    "subTitulo": "",
+    "nmAutor0": "Nicodemus, Augustus",
+    "autores": [
+      {
+        "nome": "Nicodemus, Augustus",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "VIDA NOVA",
+    "data": "2015",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "2. ed. - São Paulo",
+    "nPaginas": "352",
+    "isbn": "9788527506120",
+    "isbn_codigo_barras": "9788527506120",
+    "cdd": "261.83581",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "ed. - São Paulo : Vida Nova,; Casamento - Aspectos religiosos - Cristianismo; fam ília - Aspectos religiosos - Cristianismo; Igreja"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20670
+}

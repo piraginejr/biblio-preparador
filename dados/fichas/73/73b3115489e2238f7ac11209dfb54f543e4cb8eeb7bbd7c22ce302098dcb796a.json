@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "73b3115489e2238f7ac11209dfb54f543e4cb8eeb7bbd7c22ce302098dcb796a",
+  "arquivo_origem": "218946944-Early-Church-Leadership.pdf",
+  "campos": {
+    "titulo": "Leadership in the Early Church During Its First Hundred Years",
+    "subTitulo": "",
+    "nmAutor0": "Johnston, Robert M.",
+    "autores": [],
+    "editora": "",
+    "data": "2006",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Izmir",
+    "nPaginas": "13",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "Artigo sobre os papéis de liderança formal na Igreja primitiva em seus primeiros cem anos. Izmir, julho de 2006.",
+    "palavrasChave": "Igreja primitiva; Liderança cristã; História da Igreja",
+    "origem_autor": "assinatura do artigo",
+    "origem_titulo": "cabeçalho do artigo",
+    "isbn_motivo": "artigo de conferência: não recebe ISBN",
+    "idioma": "eng",
+    "tipoAssunto1": "Teologia"
+  },
+  "justificativa": "São 13 páginas com cabeçalho de artigo e local/data de apresentação: é comunicação de conferência, não livro. Artigo não tem editora nem ISBN.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: cabeçalho e assinatura, página 1"
+  ],
+  "id_remoto": 20739
+}

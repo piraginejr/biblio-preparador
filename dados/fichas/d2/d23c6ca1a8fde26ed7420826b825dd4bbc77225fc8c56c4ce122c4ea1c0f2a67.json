@@ -1,0 +1,39 @@
+{
+  "hash_sha256": "d23c6ca1a8fde26ed7420826b825dd4bbc77225fc8c56c4ce122c4ea1c0f2a67",
+  "arquivo_origem": "524798760-o-Conhecimento-Do-Santo-A-w-Tozer.pdf",
+  "campos": {
+    "titulo": "O conhecimento do Santo",
+    "subTitulo": "",
+    "nmAutor0": "Tozer, A. W.",
+    "autores": [
+      {
+        "nome": "Tozer, A. W.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Impacto Publicações",
+    "data": "2018",
+    "edicao": "1ª edição",
+    "lugar": "Americana",
+    "nPaginas": "148",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Manzini, Osler Gustavo",
+    "titulo_original": "The Knowledge of the Holy",
+    "origem_titulo": "copyright revisado",
+    "origem_autor": "copyright e catálogo oficial revisados"
+  },
+  "justificativa": "Copyright da tradução identifica editora, ano e tradutor; a página oficial confirma a edição. O ISBN da brochura não foi atribuído ao e-book por não constar neste arquivo.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: copyright e créditos",
+    "Editora Impacto: ficha oficial de O conhecimento do Santo"
+  ],
+  "id_remoto": 20467
+}

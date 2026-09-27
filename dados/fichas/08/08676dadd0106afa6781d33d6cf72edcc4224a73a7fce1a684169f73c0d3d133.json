@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "08676dadd0106afa6781d33d6cf72edcc4224a73a7fce1a684169f73c0d3d133",
+  "arquivo_origem": "625658841-Diario-Do-Pioneiro-Gunnar-Vingren-Ivar-Vingren.pdf",
+  "campos": {
+    "titulo": "O DIARIO DO PIONEIRO GUNNAR VINGREN",
+    "subTitulo": "",
+    "nmAutor0": "Vingren, Vingren Ivar",
+    "autores": [
+      {
+        "nome": "Vingren, Vingren Ivar",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Publicadora das Assembleias de Deus",
+    "data": "2000",
+    "edicao": "5a edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "315",
+    "isbn": "8526302833",
+    "isbn_codigo_barras": "",
+    "cdd": "289",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20647
+}

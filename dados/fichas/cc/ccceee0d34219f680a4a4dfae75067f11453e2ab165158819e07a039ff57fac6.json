@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "ccceee0d34219f680a4a4dfae75067f11453e2ab165158819e07a039ff57fac6",
+  "arquivo_origem": "513181112-EL-PODER-DE-LA-VISION.pdf",
+  "campos": {
+    "titulo": "Cómo captar y aplicar la visión para desarrollar tu liderazgo •PODERDELA VISION",
+    "subTitulo": "",
+    "nmAutor0": "Barna, George",
+    "autores": [
+      {
+        "nome": "Barna, George",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Regal",
+    "data": "1992",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Wheaton",
+    "nPaginas": "206",
+    "isbn": "9780830747283",
+    "isbn_codigo_barras": "",
+    "cdd": "253",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Christian leadership"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20444
+}

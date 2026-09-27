@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "3c07b8cd25a3cffc2687c0504027e7543a38e4567e37856ca63ed41e2621a12d",
+  "arquivo_origem": "How do we choose which Bible translation to read_.pdf",
+  "campos": {
+    "titulo": "How do we choose which Bible translation to read?",
+    "subTitulo": "",
+    "nmAutor0": "Watkins, Tony",
+    "autores": [],
+    "editora": "Tyndale House",
+    "data": "2023",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "8",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20622
+}

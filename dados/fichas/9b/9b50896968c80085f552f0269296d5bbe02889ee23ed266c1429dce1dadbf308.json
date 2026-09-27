@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "9b50896968c80085f552f0269296d5bbe02889ee23ed266c1429dce1dadbf308",
+  "arquivo_origem": "319672358-J-C-Ryle-Meditacoes-no-Evangelho-de-Marcos-pdf.pdf",
+  "campos": {
+    "titulo": "Meditações no Evangelho de Marcos",
+    "subTitulo": "",
+    "nmAutor0": "Ryle, J. C.",
+    "autores": [
+      {
+        "nome": "Ryle, J. C.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2007",
+    "edicao": "1ª reimpressão",
+    "lugar": "São José dos Campos",
+    "nPaginas": "222",
+    "isbn": "9788599145296",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa revisada"
+  },
+  "justificativa": "O título foi recuperado da capa; 1879 é o ano da edição inglesa, enquanto este PDF corresponde à reimpressão brasileira de 2007.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e copyright"
+  ],
+  "id_remoto": 20366
+}

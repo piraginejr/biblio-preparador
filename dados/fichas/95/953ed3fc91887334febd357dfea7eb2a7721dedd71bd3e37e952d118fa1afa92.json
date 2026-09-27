@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "953ed3fc91887334febd357dfea7eb2a7721dedd71bd3e37e952d118fa1afa92",
+  "arquivo_origem": "754015293-William-MacDonald-O-Mandamento-Esquecido.pdf",
+  "campos": {
+    "titulo": "O mandamento esquecido: sejam Santos",
+    "subTitulo": "",
+    "nmAutor0": "MacDonald, William",
+    "autores": [
+      {
+        "nome": "MacDonald, William",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Chamada",
+    "data": "2015",
+    "edicao": "1ª edição",
+    "lugar": "",
+    "nPaginas": "185",
+    "isbn": "9788577201235",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Escatologia"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20796
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "b204eb4b40852f80d13ce1256b2eccbe3daddd555b84d98a3673a5efcaddac06",
+  "arquivo_origem": "392913102-Quebrando-as-cadeias-da-intimidacao.pdf",
+  "campos": {
+    "titulo": "Quebrando as cadeias da intimidação",
+    "subTitulo": "",
+    "nmAutor0": "BEVERE, JOHN",
+    "autores": [
+      {
+        "nome": "BEVERE, JOHN",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "LAN EDITORA",
+    "data": "1995",
+    "edicao": "1ª edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "192",
+    "isbn": "9788599858974",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20380
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "9f596bd190d51b52d6b65232f1918e003e35524f99bd911252727333a35dea2a",
+  "arquivo_origem": "614262463-Avivamento-a-Maneira-de-Deus.pdf",
+  "campos": {
+    "titulo": "De conhecer este grande homem de Deus",
+    "subTitulo": "",
+    "nmAutor0": "Ravenhill, Leonard",
+    "autores": [
+      {
+        "nome": "Ravenhill, Leonard",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "THE WAY",
+    "data": "2010",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "192",
+    "isbn": "9788599579060",
+    "isbn_codigo_barras": "",
+    "cdd": "230.0462",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20502
+}

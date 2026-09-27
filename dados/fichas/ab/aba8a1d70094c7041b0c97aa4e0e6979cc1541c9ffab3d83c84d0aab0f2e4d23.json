@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "aba8a1d70094c7041b0c97aa4e0e6979cc1541c9ffab3d83c84d0aab0f2e4d23",
+  "arquivo_origem": "541569979-O-Reino-entre-nos.pdf",
+  "campos": {
+    "titulo": "O REINO ENTRE NOS",
+    "subTitulo": "",
+    "nmAutor0": "JOSE, MAURICIO",
+    "autores": [
+      {
+        "nome": "JOSE, MAURICIO",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "8586539627",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

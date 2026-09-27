@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "b50c0a20dbe59acab9e10a60b348dcebc61e916184e4442b63028eca4dc04912",
+  "arquivo_origem": "393871629-1-Sinopse-Evangelica-pdf.pdf",
+  "campos": {
+    "titulo": "Sinopse Evangélica",
+    "subTitulo": "",
+    "nmAutor0": "Dattler, Frederico",
+    "autores": [
+      {
+        "nome": "Dattler, Frederico",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Edições Paulinas",
+    "data": "1959",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "325",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "A folha de rosto identifica autor e editora; as licenças são de 1957 e o registro bibliográfico da mesma paginação data a publicação em 1959. Não há menção a reedição na cópia.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto, licenças e prefácio",
+    "Referência bibliográfica acadêmica: Paulinas, 1959, 332 p."
+  ],
+  "id_remoto": 20412
+}

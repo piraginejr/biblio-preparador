@@ -1,0 +1,12 @@
+{
+  "hash_sha256": "4b34dd56e466c4256cdf261fb1b5a570b5af5af9dd6601a5955dd81d941d36fc",
+  "arquivo_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/_preparados-envio/650415169-O-Que-Creem-Os-Batistas-girado-e3090de9.pdf",
+  "campos": {
+    "titulo": "O que creem os batistas",
+    "isbn": ""
+  },
+  "justificativa": "Cadastrado na API Biblio",
+  "fontes": [
+    "API Biblio PIB Curitiba"
+  ]
+}

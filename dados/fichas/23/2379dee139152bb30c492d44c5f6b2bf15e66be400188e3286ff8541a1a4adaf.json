@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "2379dee139152bb30c492d44c5f6b2bf15e66be400188e3286ff8541a1a4adaf",
+  "arquivo_origem": "Historia do cristianismo_ Uma obra complet - Bruce Shelley.pdf",
+  "campos": {
+    "titulo": "Acampamento esperança, o que a imprensa não mostrou: o 34º homem e outras histórias extraordinárias do resgate dos mineiros no Chile",
+    "subTitulo": "",
+    "nmAutor0": "Díaz, Carlos Parra",
+    "autores": [
+      {
+        "nome": "Díaz, Carlos Parra",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Thomas Nelson Brasil",
+    "data": "2008",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "1. ed. — Rio de Janeiro",
+    "nPaginas": "560",
+    "isbn": "9788578604615",
+    "isbn_codigo_barras": "",
+    "cdd": "282.09",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Outras literaturas; literaturas de outros idiomas"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20900
+}

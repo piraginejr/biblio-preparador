@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "e26eacc4ec96ee4d06bd63d6ff899e91cce2a159180da36699dd6714438a95c4",
+  "arquivo_origem": "215987418-Atos-Bob-Utley.pdf",
+  "campos": {
+    "titulo": "Comentário bíblico: Atos",
+    "subTitulo": "",
+    "nmAutor0": "Utley, Bob",
+    "autores": [
+      {
+        "nome": "Utley, Bob",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Bible Lessons International",
+    "data": "2010",
+    "edicao": "",
+    "lugar": "Marshall, Texas",
+    "nPaginas": "321",
+    "isbn": "9781892691064",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa revisada"
+  },
+  "justificativa": "O livro completo, o copyright, a editora e o ISBN foram conferidos; Darton era apenas fonte de uma tradução bíblica citada.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, copyright, sumário e final"
+  ],
+  "id_remoto": 20356
+}

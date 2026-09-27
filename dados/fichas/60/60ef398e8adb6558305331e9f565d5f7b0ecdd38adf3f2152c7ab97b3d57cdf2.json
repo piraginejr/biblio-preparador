@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "60ef398e8adb6558305331e9f565d5f7b0ecdd38adf3f2152c7ab97b3d57cdf2",
+  "arquivo_origem": "5 Níveis da Liderança, Os - John C. Maxwell.pdf",
+  "campos": {
+    "titulo": "Os 5 níveis de liderança: passos comprovados para maximizar seu potencial",
+    "subTitulo": "",
+    "nmAutor0": "Janeiro, Rio de",
+    "autores": [
+      {
+        "nome": "Janeiro, Rio de",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Publicadora das Assembleias de Deus",
+    "data": "2012",
+    "edicao": "1ª edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "281",
+    "isbn": "9788526312838",
+    "isbn_codigo_barras": "",
+    "cdd": "253",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20943
+}

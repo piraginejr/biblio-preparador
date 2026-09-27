@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "895e96121f9da0468afb15550478523a5d079c045ae0c83821ba15c1122850c2",
+  "arquivo_origem": "587578781-Batista-Regular-no-Brasil.pdf",
+  "campos": {
+    "titulo": "Batista Regular no Brasil”",
+    "subTitulo": "",
+    "nmAutor0": "Maciel, Clauder Pereira",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Curitiba",
+    "nPaginas": "71",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "trabalho acadêmico",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20550
+}

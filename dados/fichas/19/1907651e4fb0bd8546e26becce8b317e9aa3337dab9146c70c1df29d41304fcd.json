@@ -1,0 +1,30 @@
+{
+  "hash_sha256": "1907651e4fb0bd8546e26becce8b317e9aa3337dab9146c70c1df29d41304fcd",
+  "arquivo_origem": "ale1976,+TI-n.04-p050-OLIVEIRA.pdf",
+  "campos": {
+    "titulo": "Mulheres cristãs em visão missionária",
+    "subTitulo": "Uma análise discursiva",
+    "nmAutor0": "Oliveira, Daiane Rodrigues de",
+    "autores": [],
+    "editora": "Travessias Interativas",
+    "data": "2012",
+    "edicao": "N. 4, v. 2",
+    "lugar": "Ribeirão Preto",
+    "nPaginas": "14",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": "Análise do discurso; Discurso religioso; Feminino; Protestantismo; Semântica global",
+    "issn": "22367403"
+  },
+  "justificativa": "A primeira página identifica claramente um artigo publicado na revista Travessias Interativas, n. 4, v. 2, páginas 50-63, jul.-dez. de 2012; não é dissertação.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: primeira página, cabeçalho e rodapé bibliográfico"
+  ],
+  "id_remoto": 20709
+}

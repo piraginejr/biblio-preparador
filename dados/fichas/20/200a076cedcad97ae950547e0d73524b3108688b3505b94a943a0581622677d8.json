@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "200a076cedcad97ae950547e0d73524b3108688b3505b94a943a0581622677d8",
+  "arquivo_origem": "381943435-livro13-miolo.pdf",
+  "campos": {
+    "titulo": "Sermão do Monte: versículo por versículo",
+    "subTitulo": "Treinando agentes de transformação",
+    "nmAutor0": "Woodward, Dick",
+    "autores": [],
+    "editora": "Ministério Cooperativo Internacional (ICM)",
+    "data": "2015",
+    "edicao": "4ª edição",
+    "lugar": "",
+    "nPaginas": "59",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa e expediente revisados",
+    "origem_autor": "capa e expediente revisados"
+  },
+  "justificativa": "A própria capa o identifica como Apostilas 33 do Curso Bíblico Internacional.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, expediente e nota ao aluno"
+  ],
+  "id_remoto": 20544
+}

@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "2fbac141ec6f9ac2a04872483b531410bd4475f0165f340c8505a41d81d28b12",
+  "arquivo_origem": "Disruptive Thinking (T. D. Jakes, Nick Chiles) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Disruptive Thinking",
+    "subTitulo": "",
+    "nmAutor0": " CHILES,NICK ,",
+    "autores": [
+      {
+        "nome": " CHILES,NICK ,",
+        "desc": "Autor"
+      },
+      {
+        "nome": " JAKES,T.D. ,",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9781546004004",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "7efd495b78c632c97aae139d5a14e1c2c252da0f8cbbfe5a4b9c8b5358214f39",
+  "arquivo_origem": "599487550-A-Antropologia-Pastoral-de-Paulo.pdf",
+  "campos": {
+    "titulo": "A Antropologia Pastoral de Paulo",
+    "subTitulo": "",
+    "nmAutor0": "cone",
+    "autores": [
+      {
+        "nome": "cone",
+        "desc": "Autor"
+      },
+      {
+        "nome": "CONNOR, J. Murphi.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "978-85-349-0069-0",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "7164784afe241d2b74a8ef14d1928b13d0f1a30131db7f1d6b7f70a9e8a69c67",
+  "arquivo_origem": "13107pequeno_grupo_multiplicador.pdf",
+  "campos": {
+    "titulo": "PEQUENO GRUPO MULTIPLICADOR",
+    "subTitulo": "",
+    "nmAutor0": "TUNALA, Marcio",
+    "autores": [
+      {
+        "nome": "TUNALA, Marcio",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "978-85-610-1653-1",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

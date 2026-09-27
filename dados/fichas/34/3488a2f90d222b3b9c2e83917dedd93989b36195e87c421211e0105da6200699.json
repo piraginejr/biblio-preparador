@@ -1,0 +1,39 @@
+{
+  "hash_sha256": "3488a2f90d222b3b9c2e83917dedd93989b36195e87c421211e0105da6200699",
+  "arquivo_origem": "135653757-Lloyd-Jones-The-Church-and-the-Last-Things.pdf",
+  "campos": {
+    "titulo": "The Church and the Last Things",
+    "subTitulo": "",
+    "nmAutor0": "Lloyd-Jones, D. Martyn",
+    "autores": [
+      {
+        "nome": "Lloyd-Jones, D. Martyn",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "292",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "Terceiro volume da série 'Great Doctrines of the Bible', sobre a Igreja e as últimas coisas. Este PDF é captura de páginas de um site, com navegação preservada em cada folha; os dados da edição impressa não constam.",
+    "palavrasChave": "Eclesiologia; Escatologia; Sacramentos; Segunda vinda de Cristo",
+    "origem_autor": "obra identificada no conteúdo e no nome do arquivo",
+    "origem_titulo": "índice e conteúdo da obra",
+    "isbn_motivo": "captura de site: a edição impressa não é identificada",
+    "idioma": "eng",
+    "tipoAssunto1": "Teologia"
+  },
+  "justificativa": "O conteúdo é a obra completa, mas o arquivo é captura de páginas web: não traz folha de rosto, créditos nem ISBN. Autor e título são seguros pelo conteúdo; os dados da edição não existem neste arquivo.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: índice inicial e miolo, páginas 1 e 20"
+  ],
+  "id_remoto": 20737
+}

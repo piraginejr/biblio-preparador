@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "2f9f12f327d148fe5ed3b2885260ece24a1dfdb0743828ecc989a5ad4bc7457f",
+  "arquivo_origem": "619024763-A-HISTORIA-DA-IGREJA-BATISTA.pdf",
+  "campos": {
+    "titulo": "POR QUÊ CONHECER A HISTÓRIA",
+    "subTitulo": "",
+    "nmAutor0": "[autor não identificado]",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "23",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20538
+}

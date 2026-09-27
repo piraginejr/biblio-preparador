@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "70e5d2e10cb6f41db1e2ff24e073204a0cc596a98733fd04120fc3fdddd2f3a2",
+  "arquivo_origem": "388999567-DocGo-net-Filipenses-Novo-Comentario-Biblico.pdf",
+  "campos": {
+    "titulo": "Filipenses",
+    "subTitulo": "",
+    "nmAutor0": "Bruce, F. F.",
+    "autores": [
+      {
+        "nome": "Bruce, F. F.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Vida",
+    "data": "1989",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "174",
+    "isbn": "0829717420",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "series": "Novo Comentário Bíblico Contemporâneo",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa e copyright revisados"
+  },
+  "justificativa": "Capa, apresentação editorial e ISBN no próprio PDF identificam o volume; 1989 é a data de copyright mais recente declarada na edição digitalizada.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, apresentação da série, copyright e ISBN"
+  ],
+  "id_remoto": 20384
+}

@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "09a52211ffa400f3b2c32a7692081debcbd123cdb2ab6a331796ea9e6e851487",
+  "arquivo_origem": "736920594-Psicologia-da-Religiao.pdf",
+  "campos": {
+    "titulo": "Psicologia da Religião e, assim, possa transformar e intensificar nos",
+    "subTitulo": "",
+    "nmAutor0": "Machado, Maria Celeste Castro",
+    "autores": [],
+    "editora": "Edições Terceira Via; Fonte Editorial, 2020",
+    "data": "1628",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "155",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20840
+}

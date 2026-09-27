@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "82f4dd0639f662e0cc099c3f3999e59a5ac18a6a52a4394edfaff145e5cbf6fa",
+  "arquivo_origem": "2015.460574.Educational-Ideals_text.pdf",
+  "campos": {
+    "titulo": "Educational Ideals in the Ancient World",
+    "subTitulo": "",
+    "nmAutor0": "Barclay, William",
+    "autores": [
+      {
+        "nome": "Barclay, William",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Collins",
+    "data": "1959",
+    "edicao": "",
+    "lugar": "London",
+    "nPaginas": "288",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "Título, autor, editora e lugar constam na folha de rosto; edição de 1959 confirmada em catálogos bibliográficos.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto",
+    "https://search.worldcat.org/title/2109546"
+  ],
+  "id_remoto": 20345
+}

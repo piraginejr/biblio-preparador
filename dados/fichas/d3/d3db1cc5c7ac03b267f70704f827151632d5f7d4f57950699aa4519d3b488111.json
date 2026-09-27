@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "d3db1cc5c7ac03b267f70704f827151632d5f7d4f57950699aa4519d3b488111",
+  "arquivo_origem": "631222410-Ebook-erros-que-um-ministro-de-louvor.pdf",
+  "campos": {
+    "titulo": "30 ERROS QUE UM",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "38",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20784
+}

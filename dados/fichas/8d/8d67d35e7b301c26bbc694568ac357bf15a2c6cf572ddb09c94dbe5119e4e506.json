@@ -1,0 +1,40 @@
+{
+  "hash_sha256": "8d67d35e7b301c26bbc694568ac357bf15a2c6cf572ddb09c94dbe5119e4e506",
+  "arquivo_origem": "618108245-Igrejas-24-7.pdf",
+  "campos": {
+    "titulo": "Igrejas 24/7",
+    "subTitulo": "Comunidades missionárias na vida cotidiana",
+    "nmAutor0": "Chester, Tim",
+    "autores": [
+      {
+        "nome": "Chester, Tim",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Timmis, Steve",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "2009",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "104",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa revisada"
+  },
+  "justificativa": "Arquivo em português sem folha de créditos que permita atribuir com segurança os dados da edição espanhola; preservado como documento/tradução.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e conteúdo integral"
+  ],
+  "id_remoto": 20530
+}

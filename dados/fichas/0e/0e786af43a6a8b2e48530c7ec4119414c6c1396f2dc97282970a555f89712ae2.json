@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "0e786af43a6a8b2e48530c7ec4119414c6c1396f2dc97282970a555f89712ae2",
+  "arquivo_origem": "460751668-livro-centenario.pdf",
+  "campos": {
+    "titulo": "O Centenário da Convenção Batista do Estado de São Paulo",
+    "subTitulo": "",
+    "nmAutor0": "Ferreira, Damy",
+    "autores": [
+      {
+        "nome": "Ferreira, Damy",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Convenção Batista do Estado de São Paulo",
+    "data": "2004",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "292",
+    "isbn": "1904200419",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "folha de rosto e expediente",
+    "origem_autor": "expediente: autor-organizador"
+  },
+  "justificativa": "Folha de rosto e expediente declaram título, autor-organizador, entidade publicadora e ano.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e expediente",
+    "Estante Virtual: consenso de anúncios"
+  ],
+  "id_remoto": 20411
+}

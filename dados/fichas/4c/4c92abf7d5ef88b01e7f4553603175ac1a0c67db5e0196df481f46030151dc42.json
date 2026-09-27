@@ -1,0 +1,51 @@
+{
+  "hash_sha256": "4c92abf7d5ef88b01e7f4553603175ac1a0c67db5e0196df481f46030151dc42",
+  "arquivo_origem": "747093365-livrarialivros-Uma-Igreja-em-que-vale-a-pena-ser-membro.pdf",
+  "campos": {
+    "titulo": "UMA IGREJA QUE VALE A PENA SER MEMBRO",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [
+      {
+        "nome": "",
+        "desc": "Autor"
+      },
+      {
+        "nome": "",
+        "desc": "Autor"
+      },
+      {
+        "nome": "",
+        "desc": "Autor"
+      },
+      {
+        "nome": "",
+        "desc": "Autor"
+      },
+      {
+        "nome": "",
+        "desc": "Autor"
+      },
+      {
+        "nome": " MONTE,MILTON ,",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9786599378386",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

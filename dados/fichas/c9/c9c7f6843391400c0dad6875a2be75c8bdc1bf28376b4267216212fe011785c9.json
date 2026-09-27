@@ -1,0 +1,39 @@
+{
+  "hash_sha256": "c9c7f6843391400c0dad6875a2be75c8bdc1bf28376b4267216212fe011785c9",
+  "arquivo_origem": "Mission in the Spirit Towards a PentecostalCharismatic Missiology (Regnum Studies in Mission) ( etc.) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Mission in the Spirit",
+    "subTitulo": "Towards a Pentecostal/Charismatic Theology",
+    "nmAutor0": "Ma, Julie C.",
+    "autores": [
+      {
+        "nome": "Ma, Julie C.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Ma, Wonsuk",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Walls, Andrew F.",
+        "desc": "Prefácio"
+      }
+    ],
+    "editora": "Regnum Books",
+    "data": "2010",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "352",
+    "isbn": "9781870345842",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Pentecostalism; Pentecostals; Missions; Theory"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

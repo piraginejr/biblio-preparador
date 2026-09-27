@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "9c9ae6824378f38b2cc71f59b7b7e401121022fd9b31739243211b84cd627b5b",
+  "arquivo_origem": "408499013-Uma-Introducao-a-Historia-Dos-Batistas.pdf",
+  "campos": {
+    "titulo": "As Igrejas Batistas formam uma denominação cristã protestante de origem Anglo",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [
+      {
+        "nome": "Jimmy",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Janeiro: Horizonal, Recife: STBNB Edições, 1997",
+    "data": "2001",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "22",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20585
+}

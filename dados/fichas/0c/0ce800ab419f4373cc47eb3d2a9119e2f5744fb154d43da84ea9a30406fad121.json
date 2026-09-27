@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "0ce800ab419f4373cc47eb3d2a9119e2f5744fb154d43da84ea9a30406fad121",
+  "arquivo_origem": "O Sermão do Monte exposição de Mateus 5—7 (D. A. Carson) (D. A. Carson tradução de Lucília Marques) (Z-Library).pdf",
+  "campos": {
+    "titulo": "O sermão do monte",
+    "subTitulo": "",
+    "nmAutor0": "CARSON, D.A.",
+    "autores": [
+      {
+        "nome": "CARSON, D.A.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9786586136050",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

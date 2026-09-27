@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "1f105ec32ba21b6e4a328c2e2e92a7797f0d63913bf7bdf1d04805daa220c50b",
+  "arquivo_origem": "757797364-Os-Batistas-Nao-protestantes-Wm-Bekgaard.pdf",
+  "campos": {
+    "titulo": "Os batistas não protestantes",
+    "subTitulo": "",
+    "nmAutor0": "Bekgaard, Wm. F.",
+    "autores": [],
+    "editora": "[s.n.]",
+    "data": "[s.d.]",
+    "edicao": "tradução automática não publicada",
+    "lugar": "[S.l.]",
+    "nPaginas": "191",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": "Batistas; História batista; Protestantismo; Tradução automática",
+    "isbn_motivo": "ISBN 9781438917962 pertence à edição original em inglês; não atribuído à tradução automática",
+    "titulo_original": "The Non-Protestant Baptists",
+    "origem_titulo": "declaração do próprio arquivo revisada",
+    "origem_autor": "edição-fonte revisada"
+  },
+  "justificativa": "O arquivo declara tradução automática pelo Google. Não é a edição publicada de 2008; segue como documento, sem herdar editora, data ou ISBN da edição inglesa.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: declaração de tradução, capa e texto integral"
+  ],
+  "id_remoto": 20839
+}

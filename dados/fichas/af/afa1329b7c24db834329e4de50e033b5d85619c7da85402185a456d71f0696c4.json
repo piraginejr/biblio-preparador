@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "afa1329b7c24db834329e4de50e033b5d85619c7da85402185a456d71f0696c4",
+  "arquivo_origem": "669740611-Vida-em-comunhao-Dietrich-Bonhoeffer-Z-Library.pdf",
+  "campos": {
+    "titulo": "Vida em Comunhao",
+    "subTitulo": "",
+    "nmAutor0": "BONHOEFFER, Dietrich",
+    "autores": [
+      {
+        "nome": "BONHOEFFER, Dietrich",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "85-233-0462-2",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

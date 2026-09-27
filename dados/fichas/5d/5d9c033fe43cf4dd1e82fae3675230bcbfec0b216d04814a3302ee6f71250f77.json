@@ -1,0 +1,12 @@
+{
+  "hash_sha256": "5d9c033fe43cf4dd1e82fae3675230bcbfec0b216d04814a3302ee6f71250f77",
+  "arquivo_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/554026514-Se-Lider-Paul-David-Tripp.pdf",
+  "campos": {
+    "titulo": "Se Líder",
+    "isbn": "9781433567636"
+  },
+  "justificativa": "Cadastrado na API Biblio",
+  "fontes": [
+    "API Biblio PIB Curitiba"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "529a8fc20c3e9aaf53a8c5125605bcbae3377063e635883d3d7dd0a1bf716254",
+  "arquivo_origem": "432456391-Deusa-Asera.pdf",
+  "campos": {
+    "titulo": "Deusa Asera, deusa lua, poste-ídolo, deusa árvore, deusa da razão, Semíramis, Estátua da Liberdade etc.",
+    "subTitulo": "",
+    "nmAutor0": "[autor não identificado]",
+    "autores": [],
+    "editora": "[s.n.]",
+    "data": "[s.d.]",
+    "edicao": "",
+    "lugar": "[S.l.]",
+    "nPaginas": "25",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20519
+}

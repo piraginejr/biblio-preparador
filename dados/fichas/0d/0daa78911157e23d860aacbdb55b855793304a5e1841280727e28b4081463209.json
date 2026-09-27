@@ -1,0 +1,41 @@
+{
+  "hash_sha256": "0daa78911157e23d860aacbdb55b855793304a5e1841280727e28b4081463209",
+  "arquivo_origem": "3- DONS E ESPIRITUALIDADE - Discípulos chamados para servir.pdf",
+  "campos": {
+    "titulo": "Primeiros passos 3",
+    "subTitulo": "Dons espirituais",
+    "nmAutor0": "Piragine, Michel Ferreira",
+    "autores": [
+      {
+        "nome": "Piragine, Michel Ferreira",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Rodrigues, Pr. Cleverson Pereira",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Ribeiro, Fernando Boa Sorte",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Fernando Boa Sorte Ribeiro",
+    "data": "2024",
+    "edicao": "1ª EDIÇÃO",
+    "lugar": "Curitiba",
+    "nPaginas": "92",
+    "isbn": "9786501163864",
+    "isbn_codigo_barras": "9786501163864",
+    "cdd": "253.7",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20712
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "11a80da8168ba260e38ba539500b10ce056e8e3c0d81fdb99caaaf1c466f7428",
+  "arquivo_origem": "570474237-Romano-Penna-A-formacao-do-Novo-Testamento.pdf",
+  "campos": {
+    "titulo": "Formação do novo testamento em suas três dimensões (A)",
+    "subTitulo": "",
+    "nmAutor0": "Penna, Romano",
+    "autores": [
+      {
+        "nome": "Penna, Romano",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Edições Loyola",
+    "data": "2001",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Sao Paulo",
+    "nPaginas": "111",
+    "isbn": "9788515041107",
+    "isbn_codigo_barras": "9788515041107",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20483
+}

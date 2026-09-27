@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "c7da17827c2374d886cecb4a637bc4b3ea76f45f27fd152a6601797b5f774753",
+  "arquivo_origem": "625173768-Chaves-Para-a-Economia-Dos-Ceus.pdf",
+  "campos": {
+    "titulo": "Chaves para a economia do céu: uma visitação sobrenatural do ministro das finanças",
+    "subTitulo": "",
+    "nmAutor0": "Bolz, Shawn",
+    "autores": [
+      {
+        "nome": "Bolz, Shawn",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Chara Editora",
+    "data": "2020",
+    "edicao": "1",
+    "lugar": "Brasília",
+    "nPaginas": "103",
+    "isbn": "9788561860462",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20646
+}

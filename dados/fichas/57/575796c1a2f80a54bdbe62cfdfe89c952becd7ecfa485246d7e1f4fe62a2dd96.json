@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "575796c1a2f80a54bdbe62cfdfe89c952becd7ecfa485246d7e1f4fe62a2dd96",
+  "arquivo_origem": "628982600-Historia-dos-Batistas.pdf",
+  "campos": {
+    "titulo": "A História dos Batistas",
+    "subTitulo": "",
+    "nmAutor0": "[autor não identificado]",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "Nashville",
+    "nPaginas": "22",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20681
+}

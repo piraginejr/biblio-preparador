@@ -1,0 +1,25 @@
+{
+  "hash_sha256": "b1c90bfbd149e52c59d18d3df3acf9c1a48e9594819de90865d75cc552786999",
+  "arquivo_origem": "23246623-The-TEMPLE-Its-Ministry-and-Services.pdf",
+  "campos": {
+    "titulo": "The Temple",
+    "subTitulo": "Its Ministry and Services as They Were at the Time of Jesus Christ",
+    "nmAutor0": "Edersheim, Alfred",
+    "editora": "The Religious Tract Society",
+    "isbn": "",
+    "edicao": "1ª edição (presumida)",
+    "data": "1874",
+    "nPaginas": "175",
+    "lugar": "London",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "CDD": "296.4",
+    "assunto": "Templo de Jerusalém, Judaísmo, Ritos e Cerimônias Judaicas",
+    "pchave": "Templo de Jerusalém, Sacerdócio, Festas Judaicas, Alfred Edersheim, Rituais Bíblicos",
+    "abstract": "Estudo clássico e indispensável sobre o Templo de Jerusalém, sua estrutura, o sacerdócio levítico, os sacrifícios e as celebrações religiosas na época de Jesus Cristo."
+  },
+  "justificativa": "Edição londrina histórica de 1874 publicada por The Religious Tract Society",
+  "fontes": [
+    "revisão visual da folha de rosto e capa OCR Apple Vision"
+  ]
+}

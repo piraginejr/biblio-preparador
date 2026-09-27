@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "2e7f5067967e85aa73a010cc0afc69ef51cbb8c4639c0a1b0ecc21bbf379739f",
+  "arquivo_origem": "452077181-Um-Judeu-Errante-no-Brasil.pdf",
+  "campos": {
+    "titulo": "JUDEU",
+    "subTitulo": "",
+    "nmAutor0": "SALOMAO",
+    "autores": [
+      {
+        "nome": "SALOMAO",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "JUERP - Junta de Educação Religiosa e Publicações",
+    "data": "1931",
+    "edicao": "2a edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "231",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

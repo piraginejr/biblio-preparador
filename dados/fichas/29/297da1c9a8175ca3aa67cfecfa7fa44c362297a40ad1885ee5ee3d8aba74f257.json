@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "297da1c9a8175ca3aa67cfecfa7fa44c362297a40ad1885ee5ee3d8aba74f257",
+  "arquivo_origem": "199067700-TU-POREM-JOHN-STOTT.pdf",
+  "campos": {
+    "titulo": "Tu, porém",
+    "subTitulo": "",
+    "nmAutor0": "STOTT, JOHN R. W.",
+    "autores": [
+      {
+        "nome": "STOTT, JOHN R. W.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Sociedade Bíblica do Brasil",
+    "data": "1982",
+    "edicao": "1a Edição",
+    "lugar": "São Paulo",
+    "nPaginas": "57",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20566
+}

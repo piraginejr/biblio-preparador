@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "12f3deb068e6b5bb6cc991cfdc825eb59e34581708f6b72d0d19ef6ea24e6857",
+  "arquivo_origem": "4 La Mision Cristiana em Las Americas.pdf",
+  "campos": {
+    "titulo": "COSTAS, O. E. La mision Cristiana en las Americas. 1979",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "3",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20771
+}

@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "71dafd091074808e9fe37f9800f6f80d8f52a30b48692e52953406ca8c432717",
+  "arquivo_origem": "166038600-Melhor-Da-Espiritualidade-Brasileira.pdf",
+  "campos": {
+    "titulo": "O melhor da espiritualidade brasileira",
+    "subTitulo": "",
+    "nmAutor0": "Bomilcar, Nelson",
+    "autores": [
+      {
+        "nome": "Bomilcar, Nelson",
+        "desc": "Organizador"
+      }
+    ],
+    "editora": "Editora Mundo Cristão",
+    "data": "2005",
+    "edicao": "1ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "33",
+    "isbn": "8573253940",
+    "isbn_codigo_barras": "",
+    "cdd": "255",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Congregações cristãs, prática e teologia pastoral",
+    "origem_titulo": "capa e CIP revisadas",
+    "origem_autor": "CIP revisada"
+  },
+  "justificativa": "A CIP identifica Nelson Bomilcar como organizador; o rótulo de categoria não é o título.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e CIP"
+  ],
+  "id_remoto": 20353
+}

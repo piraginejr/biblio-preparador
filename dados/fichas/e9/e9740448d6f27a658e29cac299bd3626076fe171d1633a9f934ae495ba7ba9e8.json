@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "e9740448d6f27a658e29cac299bd3626076fe171d1633a9f934ae495ba7ba9e8",
+  "arquivo_origem": "17301078-17116971-William-Barclay-Introduccion-a-La-Biblia.pdf",
+  "campos": {
+    "titulo": "Introducción a la Biblia",
+    "subTitulo": "",
+    "nmAutor0": "Barclay, William",
+    "autores": [
+      {
+        "nome": "Barclay, William",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Unida de Publicaciones; Publicaciones El Faro",
+    "data": "1987",
+    "edicao": "",
+    "lugar": "México, D.F.",
+    "nPaginas": "188",
+    "isbn": "968701119X",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa e folha de rosto revisadas",
+    "origem_autor": "capa e folha de rosto revisadas"
+  },
+  "justificativa": "A edição conjunta, o ISBN, o local e o ano constam na página de créditos.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e página de créditos, páginas 1 e 3"
+  ]
+}

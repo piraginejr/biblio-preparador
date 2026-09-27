@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "48e2e740f5aca550d2dc654623e7cb3823325c85a373518796e4a3c551a7673c",
+  "arquivo_origem": "Mysticism a Study in the Nature and Development... (Z-Library).pdf",
+  "campos": {
+    "titulo": "Mysticism",
+    "subTitulo": "A Study in the Nature and Development of Spiritual Consciousness",
+    "nmAutor0": "Underhill, Evelyn",
+    "autores": [
+      {
+        "nome": "Underhill, Evelyn",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Dover Publications, Incorporated",
+    "data": "2012",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "721",
+    "isbn": "9780486123707",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Mysticism; Spirituality; Mysticisme; Anglican church; Church of England"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20804
+}

@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "e50eb19cda25d624c6b401a7f32dc91710da4d74a427798318dd65226ecd4546",
+  "arquivo_origem": "468926258-Copia-de-Tornando-se-Um-lider-Myles-Munroe-docx.pdf",
+  "campos": {
+    "titulo": "TORNANDO-SE UM LÍDER ",
+    "subTitulo": "TODOS PODEM CONSEGUIR",
+    "nmAutor0": "MYLES MUNROE",
+    "autores": [
+      {
+        "nome": "MYLES MUNROE",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Maná",
+    "data": "2006",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "85",
+    "isbn": "858764629X",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "\"Muitos consideram a liderança apenas como permanecer à frente de um grupo, mas isso está muito distante do que liderança realmente é. Liderança pressupõe uma descoberta de si mesmo, a qual vai aflorar na busca obstinada de um propósito de vida, e que servirá de inspiração a outros, que verão em você a influência, motivação e encorajamento para suas vidas. Todos têm o potencial de liderar, pois foram criados para isso. Mas o exercício dessa liderança requer disciplina, integridade, paixão e várias outras características que podem ser lapidadas.\nEm Tornando-se um líder o Dr. Myles Munroe mostra os passos a serem dados por quem decidiu trilhar esse caminho. Não importa onde você esteja ou o que você faça na vida, este livro certamente pode ajuda-lo a tornar-se um líder. Lembre-se de que nunca é tarde para se tornar um líder!\nDescubra princípios que o capacitarão a liderar outros com sabedoria, desenvolva habilidades que geram resposta e respeito daqueles que você lidera e fortaleça as qualidades naturais que estão adormecidas dentro de você.\"",
+    "palavrasChave": "",
+    "CDD": "248.8",
+    "assunto": "Moral cristã e teologia devocional",
+    "pchave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "revisão visual",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "ISBN 858764629X — CBL/ISBN Brasil",
+    "revisão visual do PDF"
+  ],
+  "id_remoto": 20948
+}

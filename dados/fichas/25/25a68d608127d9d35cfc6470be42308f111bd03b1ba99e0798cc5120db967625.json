@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "25a68d608127d9d35cfc6470be42308f111bd03b1ba99e0798cc5120db967625",
+  "arquivo_origem": "Homossexualidade um guia de orientação aos pais para a formação da criança (Joseph Nicolosi) (Z-Library).pdf",
+  "campos": {
+    "titulo": "HOMOSSEXUALIDADE: UM GUIA DE ORIENTAÇÃO PARA OS PAIS",
+    "subTitulo": "",
+    "nmAutor0": "Nicolosi, Joseph Nicolosi & Linda Ames",
+    "autores": [
+      {
+        "nome": "Nicolosi, Joseph Nicolosi & Linda Ames",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Shedd",
+    "data": "2007",
+    "edicao": "1",
+    "lugar": "São Paulo",
+    "nPaginas": "121",
+    "isbn": "9788588315648",
+    "isbn_codigo_barras": "",
+    "cdd": "306.766",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

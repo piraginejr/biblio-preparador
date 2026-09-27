@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "702d6107978d4e490d412b83258afc75d8dfd5adae10c5782fd4c72036c39802",
+  "arquivo_origem": "656420055-Revitalizacao-de-Igrejas-Trabalho-de-Pesquisa-web.pdf",
+  "campos": {
+    "titulo": "REVITALIZAÇÃO DE IGREJAS LITRARIA EDITORA RENOVAÇÃO BATISTA NACIONAL",
+    "subTitulo": "UM PARADIGMA BÍBLICO A PARTIR DE APOCALIPSE",
+    "nmAutor0": "Nascimento, Paulo César",
+    "autores": [
+      {
+        "nome": "Nascimento, Paulo César",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Revista e AtualizadaR",
+    "data": "2022",
+    "edicao": "",
+    "lugar": "- 1. ed. - Brasília, DF",
+    "nPaginas": "92",
+    "isbn": "9788586608308",
+    "isbn_codigo_barras": "",
+    "cdd": "230.4",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": "Religião"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20688
+}

@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "4293aecf600653822b2a9cf38b18a0e7aa7d8f5a2b864940068f43e7d830f4a3",
+  "arquivo_origem": "O desafio da pregação (John Stott) (Z-Library).pdf",
+  "campos": {
+    "titulo": "O Desafio da Pregação",
+    "subTitulo": "",
+    "nmAutor0": "Stott, John",
+    "autores": [
+      {
+        "nome": "Stott, John",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Santos, Meire Portes",
+        "desc": "Tradutor"
+      }
+    ],
+    "editora": "Editora Ultimato",
+    "data": "2022",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Viçosa",
+    "nPaginas": "175",
+    "isbn": "9788577792511",
+    "isbn_codigo_barras": "",
+    "cdd": "22",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20844
+}

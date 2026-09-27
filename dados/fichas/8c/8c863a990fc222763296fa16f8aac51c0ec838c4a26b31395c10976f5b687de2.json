@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "8c863a990fc222763296fa16f8aac51c0ec838c4a26b31395c10976f5b687de2",
+  "arquivo_origem": "182_223Coletanea_de_Artigos_Orlando_Costas_Compilados.pdf",
+  "campos": {
+    "titulo": "Coletânea de artigos de Orlando Costas",
+    "subTitulo": "",
+    "nmAutor0": "Costas, Orlando E.",
+    "autores": [],
+    "editora": "[s.n.]",
+    "data": "[s.d.]",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "[S.l.]",
+    "nPaginas": "95",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": "Orlando E. Costas; Missiologia; Igreja evangélica latino-americana; Crescimento integral; Ecumenismo",
+    "isbn_motivo": "sem ISBN: compilação digital de artigos",
+    "origem_titulo": "nome do arquivo e conteúdo integral revisados",
+    "origem_autor": "cabeçalhos dos artigos revisados"
+  },
+  "justificativa": "É uma compilação digital de diversos artigos, aprovada pelo responsável do acervo como um novo documento agregador, adicional aos artigos cadastrados individualmente.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: conteúdo integral, páginas 1-95",
+    "Registros locais dos cinco documentos de Orlando Costas, IDs remotos 20768-20772"
+  ],
+  "id_remoto": 20773
+}

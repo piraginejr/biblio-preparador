@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "47c47a77140b8364de270d1f7861adb366deb3808e20425fcd3d34b075eee1f1",
+  "arquivo_origem": "James and Paul on Wealth and Poverty.pdf",
+  "campos": {
+    "titulo": "From Tyndale Bulletin: James and Paul on wealth and poverty",
+    "subTitulo": "",
+    "nmAutor0": "Armitage, David",
+    "autores": [],
+    "editora": "Tyndale House",
+    "data": "2023",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "5",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20620
+}

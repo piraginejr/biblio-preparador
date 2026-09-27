@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "3093f80e2cc6eefc99d842d3a36ceae4274972cc01678f86c485550ea8f07108",
+  "arquivo_origem": "Hope for Every Moment 365 Inspirational Thoughts for Every Day of the Year (T. D. Jakes) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Hope for Every Moment",
+    "subTitulo": "365 Inspirational Thoughts for Every Day of the Year",
+    "nmAutor0": "Jakes, T. D.",
+    "autores": [
+      {
+        "nome": "Jakes, T. D.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Destiny Image Publishers",
+    "data": "2007",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "369",
+    "isbn": "9780768423976",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Religion & Spirituality; Nonfiction; Meditations; Devotional calendars; Christian life"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20944
+}

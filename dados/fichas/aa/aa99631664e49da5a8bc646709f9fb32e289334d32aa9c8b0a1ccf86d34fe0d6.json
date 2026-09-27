@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "aa99631664e49da5a8bc646709f9fb32e289334d32aa9c8b0a1ccf86d34fe0d6",
+  "arquivo_origem": "Por uma fé cidadã a dimensão pública da Igreja fundamentos para uma Pastoral da Cidadania (Castro, Clovis Pinto de) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+  "campos": {
+    "titulo": "E Ro PÚBLICA DA IGREJA",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "Edições Loyola",
+    "data": "1994",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "140",
+    "isbn": "8515021978",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20684
+}

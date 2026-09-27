@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "bf139b8c128e0515460d5d6ef86ad61638d834695a2e1ff703f939956bfbd855",
+  "arquivo_origem": "646886495-Apostila-Perspectiva-Em-Louvor-e-Adoracao-Final.pdf",
+  "campos": {
+    "titulo": "APOSTILA DO",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "Miami",
+    "nPaginas": "50",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20786
+}

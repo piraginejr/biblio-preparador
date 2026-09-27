@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "08d509457167b79a6bd98473fd054656cca54c693e44028cc68e71bd10cb423a",
+  "arquivo_origem": "510375760-COMO-ESTUDAR-A-BIBLIA.pdf",
+  "campos": {
+    "titulo": "COMO ESTUDAR A BÍBLIA",
+    "subTitulo": "",
+    "nmAutor0": "Maphori, Thomas",
+    "autores": [
+      {
+        "nome": "Maphori, Thomas",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "ICI – Portugal – Outubro de 2003",
+    "data": "1980",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "52",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20719
+}

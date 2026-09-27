@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "072514256fbc409c1c43e368bda2ed093a6079431f97d851e40d93faa887c630",
+  "arquivo_origem": "551825992-O-Protestantismo-Brasileiro-Emile-Leonard.pdf",
+  "campos": {
+    "titulo": "O Protestantismo Brasileiro",
+    "subTitulo": "",
+    "nmAutor0": "Léonard, émile G.",
+    "autores": [
+      {
+        "nome": "Léonard, émile G.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Juerp",
+    "data": "1951",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "366",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20481
+}

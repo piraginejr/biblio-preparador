@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "34e1fbc92c1a184725ee31edf8fe230636de26778cdd3e5658a475d1a8a5d7e9",
+  "arquivo_origem": "538479146-HISTORIA-DOS-BATISTAS-apostila-1.pdf",
+  "campos": {
+    "titulo": "SEMINÁRIO TEOLÓGICO BATISTA DE MATO GROSSO",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "1889",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "21",
+    "isbn": "8175809000",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20599
+}

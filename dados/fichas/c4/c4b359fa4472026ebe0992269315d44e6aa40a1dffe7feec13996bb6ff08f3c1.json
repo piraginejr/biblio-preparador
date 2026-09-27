@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "c4b359fa4472026ebe0992269315d44e6aa40a1dffe7feec13996bb6ff08f3c1",
+  "arquivo_origem": "641577473-Mentoria-reunioes-saudaveis-do-evangelho-Evandro-Moretti-2.pdf",
+  "campos": {
+    "titulo": "Como iniciar ou identificar as reuniões saudáveis do evangelho?",
+    "subTitulo": "",
+    "nmAutor0": "Moretti, Evandro",
+    "autores": [
+      {
+        "nome": "Moretti, Evandro",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Bom Senso",
+    "data": "[s.d.]",
+    "edicao": "1ª edição",
+    "lugar": "[S.l.]",
+    "nPaginas": "30",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Igreja doméstica; Reuniões cristãs; Evangelho; Comunidade cristã",
+    "isbn_motivo": "sem ISBN declarado na publicação digital",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa revisada"
+  },
+  "justificativa": "A capa fornece título completo, autor e editora; a obra não declara ano ou ISBN.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e sumário, páginas 1-2"
+  ],
+  "id_remoto": 20824
+}

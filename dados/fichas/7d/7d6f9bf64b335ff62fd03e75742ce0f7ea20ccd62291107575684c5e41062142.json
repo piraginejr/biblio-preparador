@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "7d6f9bf64b335ff62fd03e75742ce0f7ea20ccd62291107575684c5e41062142",
+  "arquivo_origem": "497943568-Volume-02-Sintaxe-tessalonicenses.pdf",
+  "campos": {
+    "titulo": "SINTAXE DE TESSALONICENSES",
+    "subTitulo": "",
+    "nmAutor0": "Alcantara, Jean Carlos da Silva",
+    "autores": [
+      {
+        "nome": "Alcantara, Jean Carlos da Silva",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "JCS Publicações",
+    "data": "2017",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "350",
+    "isbn": "9788568485019",
+    "isbn_codigo_barras": "",
+    "cdd": "227.106",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20422
+}

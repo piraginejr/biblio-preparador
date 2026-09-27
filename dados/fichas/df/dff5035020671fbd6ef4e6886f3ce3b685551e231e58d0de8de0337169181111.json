@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "dff5035020671fbd6ef4e6886f3ce3b685551e231e58d0de8de0337169181111",
+  "arquivo_origem": "514764028-A-Biblia-Como-Literatura-by-John-B-Gabel-Charles-B-Wheeler-Z-lib-org-1.pdf",
+  "campos": {
+    "titulo": "Bíblia como Literatura, A",
+    "subTitulo": "",
+    "nmAutor0": "John B. Gabel, Charles B. Wheeler",
+    "autores": [
+      {
+        "nome": "John B. Gabel, Charles B. Wheeler",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Loyola",
+    "data": "1986",
+    "edicao": "2a edição",
+    "lugar": "São Paulo",
+    "nPaginas": "268",
+    "isbn": "9788515007349",
+    "isbn_codigo_barras": "9788515007349",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

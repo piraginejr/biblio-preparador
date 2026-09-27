@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "d6f0664dd2a3c121a0c350e9f1949fe52ea833612ab5f0c6f092719aaf38d916",
+  "arquivo_origem": "159795711-Biografia-de-Joao-Filho-Soren-1-capelao-protestante.pdf",
+  "campos": {
+    "titulo": "BREVE BIOGRAFIA DO PR. JOÃO F. SOREN",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [
+      {
+        "nome": "suceder, convida o jovem João para",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "1944",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "5",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20560
+}

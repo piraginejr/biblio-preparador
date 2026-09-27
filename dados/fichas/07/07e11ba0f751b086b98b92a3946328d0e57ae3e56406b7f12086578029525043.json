@@ -1,0 +1,42 @@
+{
+  "hash_sha256": "07e11ba0f751b086b98b92a3946328d0e57ae3e56406b7f12086578029525043",
+  "arquivo_origem": "428301021-305573951-Fazer-Teologico-pdf.pdf",
+  "campos": {
+    "titulo": "Fazer teológico",
+    "subTitulo": "",
+    "nmAutor0": "Susin, Luiz Carlos",
+    "autores": [
+      {
+        "nome": "Susin, Luiz Carlos",
+        "desc": "Organizador"
+      },
+      {
+        "nome": "Rodrigues, Jéferson Ferreira",
+        "desc": "Organizador"
+      }
+    ],
+    "editora": "Editora Fi",
+    "data": "2015",
+    "edicao": "",
+    "lugar": "Porto Alegre",
+    "nPaginas": "138",
+    "isbn": "9788566923629",
+    "isbn_codigo_barras": "",
+    "cdd": "210",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Filosofia da religião; Teologia; Hermenêutica; Pluralismo religioso",
+    "series": "Teologia em Diálogo",
+    "numSerie": "2",
+    "origem_titulo": "folha de rosto e CIP revisadas",
+    "origem_autor": "folha de rosto e CIP revisadas"
+  },
+  "justificativa": "A CIP do próprio PDF fornece título, organizadores, editora, local, ano, paginação, ISBN, série e CDD.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e CIP, páginas 4-5"
+  ],
+  "id_remoto": 20388
+}

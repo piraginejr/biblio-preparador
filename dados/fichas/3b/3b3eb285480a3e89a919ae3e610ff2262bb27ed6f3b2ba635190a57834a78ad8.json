@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "3b3eb285480a3e89a919ae3e610ff2262bb27ed6f3b2ba635190a57834a78ad8",
+  "arquivo_origem": "Charles Mulli We Are Family (Christian Heroes Then  Now) (Janet Benge  Geoff Benge) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Charles Mulli: We Are Family",
+    "subTitulo": "",
+    "nmAutor0": "BENGE, Janet",
+    "autores": [
+      {
+        "nome": "BENGE, Janet",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9781576588949",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

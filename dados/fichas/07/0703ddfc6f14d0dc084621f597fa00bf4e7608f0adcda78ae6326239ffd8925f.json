@@ -1,0 +1,26 @@
+{
+  "hash_sha256": "0703ddfc6f14d0dc084621f597fa00bf4e7608f0adcda78ae6326239ffd8925f",
+  "arquivo_origem": "630211433-Entendendo-a-disciplina-na-igre-Leeman-Jonathan.pdf",
+  "campos": {
+    "titulo": "",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

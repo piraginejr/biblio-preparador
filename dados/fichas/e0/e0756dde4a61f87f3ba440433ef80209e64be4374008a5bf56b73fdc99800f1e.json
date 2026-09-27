@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "e0756dde4a61f87f3ba440433ef80209e64be4374008a5bf56b73fdc99800f1e",
+  "arquivo_origem": "7 Classics on PRAYER Torrey (How to Pray), Murray (School of Prayer), Moody (Prevailing Prayer), Goforth, Muller (Answers to... ( etc.) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Charles Spurgeon: 40 sermons on Prayer The George Muller Collection",
+    "subTitulo": "",
+    "nmAutor0": "Classic Missions Texts (Murray, Allen, Carey, Zwemer)",
+    "autores": [
+      {
+        "nome": "Classic Missions Texts (Murray, Allen, Carey, Zwemer)",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Fleming H",
+    "data": "1900",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "554",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20341
+}

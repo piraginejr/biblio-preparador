@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "6968afefb3626a46243c63e9710632eb658ad97eafdb5173ea78a9a49a7eff20",
+  "arquivo_origem": "535227359-Cms-Files-66571-163466385662-Igreja-Essencial-PDF-Completo-Copia.pdf",
+  "campos": {
+    "titulo": "2021 ISBN brochura: 978-65-5723-081-7",
+    "subTitulo": "",
+    "nmAutor0": "Hansen, Collin",
+    "autores": [
+      {
+        "nome": "Hansen, Collin",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2021",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "180",
+    "isbn": "9786557230817",
+    "isbn_codigo_barras": "9786557230817",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Teologia social e eclesiástica cristã"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20459
+}

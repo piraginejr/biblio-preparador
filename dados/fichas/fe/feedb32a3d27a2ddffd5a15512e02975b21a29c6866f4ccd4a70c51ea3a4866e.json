@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "feedb32a3d27a2ddffd5a15512e02975b21a29c6866f4ccd4a70c51ea3a4866e",
+  "arquivo_origem": "How were the books of the Bible put together_.pdf",
+  "campos": {
+    "titulo": "Why do our Bibles contain these books and not others?",
+    "subTitulo": "",
+    "nmAutor0": "Watkins, Tony",
+    "autores": [],
+    "editora": "Tyndale House",
+    "data": "2023",
+    "edicao": "",
+    "lugar": "Wheaton",
+    "nPaginas": "8",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20627
+}

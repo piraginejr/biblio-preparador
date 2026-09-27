@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "003675d58a4c34a86b08b59323d251e267672a2f80b16dd3d81a7d793170dd68",
+  "arquivo_origem": "460676314-Culto-domestico-Roteiro.pdf",
+  "campos": {
+    "titulo": "Roteiro para culto doméstico",
+    "subTitulo": "Em casa com Jesus",
+    "nmAutor0": "Igreja Presbiteriana Independente do Brasil",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "47",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "responsabilidade institucional"
+  },
+  "justificativa": "Trata-se de roteiro institucional para culto doméstico, não de monografia comercial.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e estrutura integral"
+  ],
+  "id_remoto": 20542
+}

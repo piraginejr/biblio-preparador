@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "7c5144e93e6016085c99408f4154a33686d354e7cdd9d1f64cab5bd70ba56419",
+  "arquivo_origem": "1030911_mas_eu_nao_queria_o_divorcio.pdf",
+  "campos": {
+    "titulo": "Mas eu não queria o DIVÓRCIO",
+    "subTitulo": "",
+    "nmAutor0": "Bustanoby, André",
+    "autores": [
+      {
+        "nome": "Bustanoby, André",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Centro de Editoração e Jornalismo da AFE",
+    "data": "1981",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Duque de Caxias",
+    "nPaginas": "176",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "261.834",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "\"À medida que aumenta o número de divórcios\nentre cristãos fiéis e seus filhos, mais pessoas\ndivorciadas buscam tornar-se membros das\nigrejas, elas estão sendo pressionadas a\ntomarem uma posição menos rígida face ao\ndivórcio.\nEstou tratando do problema do divórcio\nseparadamente daquele do novo casamento por\nrazões tanto práticas quanto teológicas. As\npessoas que não querem o divórcio ou relutam\nem divorciar-se geralmente não pensam em um\nnovo casamento, pelo menos não de imediato.\nO problema prático que elas enfrentam é\naquele do divórcio — suas conseqüências\npráticas e teológicas. Para o cristão que é uma\nvítima involuntária do divórcio ou que sente\nque vai pôr termo ao casamento sem\nnecessidade, o problema do divórcio como\npecado entra em cena.\nE o divórcio em si mesmo um pecado? Ou\nposicionando de outra maneira, se um cristão\nse divorcia e não casa de novo, está pecando?\nEstá ele frente ao dilema manter um\ncasamento que o está destruindo física e\nemocionalmente ou carregar o estigma de\nadúltero",
+    "palavrasChave": "",
+    "CDD": "261.834 ",
+    "assunto": "Divócio Ética Cristã",
+    "pchave": "Divórcio , Ética "
+  },
+  "justificativa": "revisão visual",
+  "fontes": [
+    "Metadados locais do acervo",
+    "revisão visual do PDF"
+  ]
+}

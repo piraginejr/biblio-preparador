@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "d35a77232228d6316f0462aaa020a1249cedf147287c4bb419fcd39c4696c6d4",
+  "arquivo_origem": "237007338-o-Perfil-Do-Lider-Cristao.pdf",
+  "campos": {
+    "titulo": "O PERFIL DO LÍDER CRISTÃO",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "3",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20573
+}

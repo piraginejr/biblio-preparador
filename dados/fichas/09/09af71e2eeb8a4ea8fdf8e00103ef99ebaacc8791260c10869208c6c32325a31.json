@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "09af71e2eeb8a4ea8fdf8e00103ef99ebaacc8791260c10869208c6c32325a31",
+  "arquivo_origem": "602578481-APOSTILA-TEOLOGIA-E-CIDADANIA.pdf",
+  "campos": {
+    "titulo": "Teologia e cidadania: movimentos e tendências, onde apresentamos",
+    "subTitulo": "",
+    "nmAutor0": "DIDÁTICO, MATERIAL",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "73",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20753
+}

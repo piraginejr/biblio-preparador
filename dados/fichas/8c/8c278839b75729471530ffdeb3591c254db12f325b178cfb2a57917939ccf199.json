@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "8c278839b75729471530ffdeb3591c254db12f325b178cfb2a57917939ccf199",
+  "arquivo_origem": "777748204-FAESP-HOMILETICA-MEDIO-TEOLOGIA.pdf",
+  "campos": {
+    "titulo": "DA HOMILÉTICA",
+    "subTitulo": "",
+    "nmAutor0": "TEOLOGIA, HOMILETICA MEDIO",
+    "autores": [],
+    "editora": "",
+    "data": "2020",
+    "edicao": "",
+    "lugar": "SÃO PAULO",
+    "nPaginas": "70",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20833
+}

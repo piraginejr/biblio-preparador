@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "8dd45242cb5bc04daf2af92caaa7703402c4d3fb80c279a9b3f338eb139a7eb3",
+  "arquivo_origem": "490254406-Graca-O-DNA-de-Deus-Tony-Coky.pdf",
+  "campos": {
+    "titulo": "Graça: o DNA de Deus",
+    "subTitulo": "",
+    "nmAutor0": "Cooke, Tony",
+    "autores": [
+      {
+        "nome": "Cooke, Tony",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Harrison House",
+    "data": "2011",
+    "edicao": "1ª edição",
+    "lugar": "Grand Rapids",
+    "nPaginas": "304",
+    "isbn": "9781606835951",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20421
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "1bcba7d7c6e07a6f86f5e3d1160c08b23e9b5469d5b193de21df6686e4f339a8",
+  "arquivo_origem": "461024510-Tipologia-biblica-pdf.pdf",
+  "campos": {
+    "titulo": "Introdução ao estudo da tipologia bíblica",
+    "subTitulo": "",
+    "nmAutor0": "Paganelli, Magno",
+    "autores": [
+      {
+        "nome": "Paganelli, Magno",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Geográfica Editora",
+    "data": "2014",
+    "edicao": "5a edição",
+    "lugar": "São Paulo",
+    "nPaginas": "157",
+    "isbn": "9788580641882",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Teologia social e eclesiástica cristã"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20418
+}

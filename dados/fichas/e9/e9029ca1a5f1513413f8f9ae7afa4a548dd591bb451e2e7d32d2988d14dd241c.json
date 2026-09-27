@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "e9029ca1a5f1513413f8f9ae7afa4a548dd591bb451e2e7d32d2988d14dd241c",
+  "arquivo_origem": "Worship Through the Ages How the Great Awakenin... (Z-Library).pdf",
+  "campos": {
+    "titulo": "Worship through the ages",
+    "subTitulo": "how the great awakenings shape evangelical worship",
+    "nmAutor0": "Towns, Elmer L.",
+    "autores": [
+      {
+        "nome": "Towns, Elmer L.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "B & H Academic; B&H Academic",
+    "data": "2012",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Nashville",
+    "nPaginas": "400",
+    "isbn": "9781433672576",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Worship; History; Religion; Fundamentalism"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20807
+}

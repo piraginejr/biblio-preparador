@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "da67e17f7d7f237d945f4e1a66c561a09e9f00a3ea6db110fec9637611e70298",
+  "arquivo_origem": "552349081-1-4940460473536479489.pdf",
+  "campos": {
+    "titulo": "Meditações no evangelho de João",
+    "subTitulo": "",
+    "nmAutor0": "Ryle, J. C.",
+    "autores": [
+      {
+        "nome": "Ryle, J. C.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2000",
+    "edicao": "1ª Edição",
+    "lugar": "Belém",
+    "nPaginas": "405",
+    "isbn": "9788581325484",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20472
+}

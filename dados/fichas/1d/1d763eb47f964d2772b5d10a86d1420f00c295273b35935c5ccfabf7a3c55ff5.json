@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "1d763eb47f964d2772b5d10a86d1420f00c295273b35935c5ccfabf7a3c55ff5",
+  "arquivo_origem": "498314072-Livro-UMA-EPOPEIA-de-FE-Hist-Dos-Batistas-Letos-No-Brasil-O-Ronis.pdf",
+  "campos": {
+    "titulo": "UMA EPOPEIA DE FÉ HISTÓRIA 1105 BATISTAS LETOS NO BRASIL",
+    "subTitulo": "",
+    "nmAutor0": "RONIS, OSVADIDO",
+    "autores": [
+      {
+        "nome": "RONIS, OSVADIDO",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "JUERP - Junta de Educação Religiosa e Publicações",
+    "data": "1941",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "738",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20438
+}

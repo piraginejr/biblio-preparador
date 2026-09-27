@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "714e94ef91a0621a973afacee3856e2ef89d60185c300b2f02f849df711d9896",
+  "arquivo_origem": "89574715-MISSIONARIOS-AMERICANOS.pdf",
+  "campos": {
+    "titulo": "Missionários americanos e algumas figuras do Brasil evangélico",
+    "subTitulo": "",
+    "nmAutor0": "Martins, Mário Ribeiro",
+    "autores": [
+      {
+        "nome": "Martins, Mário Ribeiro",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Kelps",
+    "data": "2007",
+    "edicao": "1ª edição",
+    "lugar": "Goiânia",
+    "nPaginas": "233",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Missionários americanos; Protestantismo no Brasil; Biografias; Brasil evangélico",
+    "pasta_origem_importacao": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA",
+    "arquivos_origem_importacao": [
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/89574715-MISSIONARIOS-AMERICANOS.doc"
+    ]
+  },
+  "justificativa": "A folha de rosto e a CIP do próprio PDF confirmam título, autor, editora, local e ano; o aviso de direitos autorais havia sido capturado indevidamente como título.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto, copyright, CIP e sumário"
+  ],
+  "id_remoto": 20579
+}

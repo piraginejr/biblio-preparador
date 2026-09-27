@@ -1,0 +1,11 @@
+{
+  "versao": "0.2.0",
+  "data": "2026-09-27",
+  "min_shell_versao": "0.1.0",
+  "changelog": "Adicionado suporte a sincronização cooperativa Git, RapidOCR neural e leitor de código de barras",
+  "arquivos_modificados": [
+    "99-FERRAMENTAS/ler-capa.py",
+    "99-FERRAMENTAS/preparar-livros.py",
+    "99-FERRAMENTAS/sincronizador_git.py"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "fc4ff85d0a76404ab16b07324a7aee3dfe796743cd2ca4c2e232003239409bac",
+  "arquivo_origem": "338884474-Faminto-por-mais-de-Jesus-David-Wilkerson-pdf.pdf",
+  "campos": {
+    "titulo": "Faminto por mais de Jesus",
+    "subTitulo": "",
+    "nmAutor0": "Wilkerson, David",
+    "autores": [
+      {
+        "nome": "Wilkerson, David",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Publicadora das Assembleias de Deus",
+    "data": "1995",
+    "edicao": "2ª edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "240",
+    "isbn": "8526300067",
+    "isbn_codigo_barras": "",
+    "cdd": "269",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Maria de Fátima Venceslau Nardino; Heloísa Amaral de Souza",
+    "origem_titulo": "capa e CIP revisadas",
+    "origem_autor": "CIP revisada"
+  },
+  "justificativa": "CIP e copyright identificam David Wilkerson; o texto promocional da capa não é autoria.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, CIP, copyright e contracapa"
+  ]
+}

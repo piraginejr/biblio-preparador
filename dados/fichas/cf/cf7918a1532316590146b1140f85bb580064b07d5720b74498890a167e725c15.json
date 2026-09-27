@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "cf7918a1532316590146b1140f85bb580064b07d5720b74498890a167e725c15",
+  "arquivo_origem": "101794719-Estudo-sobre-Lideranca-Crista.pdf",
+  "campos": {
+    "titulo": "CURSO DE LIDERANÇA CRISTÃ",
+    "subTitulo": "",
+    "nmAutor0": "Menezes, Josias Moura de",
+    "autores": [],
+    "editora": "",
+    "data": "2009",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "6",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20561
+}

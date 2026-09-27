@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "1a1f647828392e8228ea0f05759743871e83084a6b4e371ac5da29262faa07b3",
+  "arquivo_origem": "Fases no Desenvolvimento de uma Equipe.pdf",
+  "campos": {
+    "titulo": "Fases no Desenvolvimento de uma Equipe",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [
+      {
+        "nome": "Kornfield, David",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "5",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20593
+}

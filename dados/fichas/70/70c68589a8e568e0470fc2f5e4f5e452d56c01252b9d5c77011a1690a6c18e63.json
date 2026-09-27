@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "70c68589a8e568e0470fc2f5e4f5e452d56c01252b9d5c77011a1690a6c18e63",
+  "arquivo_origem": "474741756-Francis-Schaeffer.pdf",
+  "campos": {
+    "titulo": "SEMINÁRIO PRESBITERIANO BRASIL CENTRAL",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "10",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20728
+}

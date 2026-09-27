@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "b8780d94ac23ea7e9b1f496912c842ef9a20885b05ea70c2e69028af7a6d01b3",
+  "arquivo_origem": "A igreja, a reforma e a civilizacao - Franca, Leonel.pdf",
+  "campos": {
+    "titulo": "A igreja, a reforma e a civilização",
+    "subTitulo": "",
+    "nmAutor0": "Franca, Leonel",
+    "autores": [
+      {
+        "nome": "Franca, Leonel",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "1958",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "RIO DE JANEIRO",
+    "nPaginas": "494",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20891
+}

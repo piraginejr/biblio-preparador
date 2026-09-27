@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "8a5447f8f4c4f7e5fee9b811ac28bbfabc21a1995af31759c57fafec7bd95965",
+  "arquivo_origem": "Hacia una Iglesia comunitaria (Lumko) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Hacia una Iglesia comunitaria",
+    "subTitulo": "Construyendo hoy una nueva parroquia viva y participativa",
+    "nmAutor0": "Lumko Institute",
+    "autores": [
+      {
+        "nome": "Lumko Institute",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "San Pablo",
+    "data": "1994",
+    "edicao": "1ª edição",
+    "lugar": "[S.l.]",
+    "nPaginas": "41",
+    "isbn": "9803500716",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Igreja comunitária; Paróquia; Participação; Pastoral"
+  },
+  "justificativa": "Capa e dados internos fornecem título, subtítulo, editora, ano e ISBN; o Lumko Institute figura como responsável institucional.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: capa e dados editoriais"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "dd553aeb2626c69ced2e3f2aad0c7ddbedfdcb9e8ea4bc164b612525c24fe377",
+  "arquivo_origem": "568068554-Hall-Lendo-as-Escrituras-Com-Os-Pais-Da-Igreja.pdf",
+  "campos": {
+    "titulo": "LENDO A ESCRITURA COM OS PAIS DA IGREJA",
+    "subTitulo": "",
+    "nmAutor0": "HALL, CHRISTOPHER A.",
+    "autores": [
+      {
+        "nome": "HALL, CHRISTOPHER A.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "ULTIMATO",
+    "data": "2000",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Viçosa",
+    "nPaginas": "208",
+    "isbn": "8586539341",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Bíblia"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

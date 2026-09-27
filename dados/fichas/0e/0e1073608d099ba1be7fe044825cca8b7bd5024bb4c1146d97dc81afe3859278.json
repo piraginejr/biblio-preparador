@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "0e1073608d099ba1be7fe044825cca8b7bd5024bb4c1146d97dc81afe3859278",
+  "arquivo_origem": "History of Translation in China _ Articles _ American Bible Society News.pdf",
+  "campos": {
+    "titulo": "History of Translation in China",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "American Bible Society",
+    "data": "2010",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "4",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20621
+}

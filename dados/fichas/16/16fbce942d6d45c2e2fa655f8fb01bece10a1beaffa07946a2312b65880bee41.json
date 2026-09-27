@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "16fbce942d6d45c2e2fa655f8fb01bece10a1beaffa07946a2312b65880bee41",
+  "arquivo_origem": "675473616-Estudo-de-Romanos-Versiculo-Por-Versiculo.pdf",
+  "campos": {
+    "titulo": "CURSO BÍBLICO INTERNACIONAL",
+    "subTitulo": "",
+    "nmAutor0": "WOODWARD, DICK",
+    "autores": [],
+    "editora": "",
+    "data": "2005",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "197",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20589
+}

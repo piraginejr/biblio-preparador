@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "07344f74ef5025ccd5683d992a0910208943b2326dfe78df99394827a08b406f",
+  "arquivo_origem": "580560445-Colunas-Batistas-No-Brasil-Dlcio-Costa.pdf",
+  "campos": {
+    "titulo": "Colunas Batistas no Brasil",
+    "subTitulo": "",
+    "nmAutor0": "Costa, Délcio",
+    "autores": [
+      {
+        "nome": "Costa, Délcio",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Publicadora Batista",
+    "data": "1964",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "72",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "folha de rosto visual revisada",
+    "origem_autor": "folha de rosto visual revisada"
+  },
+  "justificativa": "A terceira página digitalizada contém título, autor, Casa Publicadora Batista, Rio de Janeiro e 1964, embora não possua camada textual.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: capa e folha de rosto visual, páginas 1 e 3"
+  ]
+}

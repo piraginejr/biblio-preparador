@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "6e8836610ec00d2ba2ff969b74ab6dce36423515b929f75a6f745a3dd655907d",
+  "arquivo_origem": "633666002-Ebook-Destino-Ministerial.pdf",
+  "campos": {
+    "titulo": "AULA 02 – DESTINO MINISTERIAL",
+    "subTitulo": "",
+    "nmAutor0": "08, Aula 02 – Destino Ministerial .........................................................",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "54",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20831
+}

@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "61d857b31efbbb9807a7bc437d18ab1d67d06b73f8a8fb837eb1831a78a8e6e2",
+  "arquivo_origem": "370432523-19-Ogden-Gregory-Discipulado-que-trasnforma-El-modelo-de-Jesus-pdf.pdf",
+  "campos": {
+    "titulo": "DISCIPULADO EL MODELO DE JESÚS",
+    "subTitulo": "",
+    "nmAutor0": "Ogden, Greg",
+    "autores": [
+      {
+        "nome": "Ogden, Greg",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Vida Publishers",
+    "data": "2003",
+    "edicao": "",
+    "lugar": "VILADECAVALLS",
+    "nPaginas": "180",
+    "isbn": "9788482674674",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

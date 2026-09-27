@@ -1,0 +1,43 @@
+{
+  "hash_sha256": "38cb4fabb477231f9b22bbe7f7242aa7c173a7c624d6371b528adaa5dfb6c1e7",
+  "arquivo_origem": "arte e a biblia, A - Francis Schaeffer.pdf",
+  "campos": {
+    "titulo": "A arte e a bíblia",
+    "subTitulo": "",
+    "nmAutor0": "Schaeffer, Francis",
+    "autores": [
+      {
+        "nome": "Schaeffer, Francis",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Ultimato",
+    "data": "2021",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "85",
+    "isbn": "9788577790364",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "portugues",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Denominações cristãs e seitas",
+    "idioma": "por",
+    "pasta_origem_importacao": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Schaeffer, Francis/arte e a biblia, A",
+    "arquivos_origem_importacao": [
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Schaeffer, Francis/arte e a biblia, A/arte e a biblia, A - Francis Schaeffer.epub",
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Schaeffer, Francis/arte e a biblia, A/arte e a biblia, A - Francis Schaeffer.jpg",
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Schaeffer, Francis/arte e a biblia, A/arte e a biblia, A - Francis Schaeffer.opf",
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Schaeffer, Francis/arte e a biblia, A/arte e a biblia, A - Francis Schaeffer.pdf"
+    ],
+    "opf_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Schaeffer, Francis/arte e a biblia, A/arte e a biblia, A - Francis Schaeffer.opf",
+    "asin": "B09B817WFS"
+  },
+  "justificativa": "metadados estruturados importados do OPF",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "OPF: /Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Schaeffer, Francis/arte e a biblia, A/arte e a biblia, A - Francis Schaeffer.opf"
+  ]
+}

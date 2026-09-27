@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "2365e602283c8330db2d0b8b7f68e2577ce5c37e80dd53f70ae638e97035a6b5",
+  "arquivo_origem": "136376161-Amos-r-Binney-compendio-de-Teologia.pdf",
+  "campos": {
+    "titulo": "Compêndio de Teologia",
+    "subTitulo": "",
+    "nmAutor0": "Binney, Amos R.",
+    "autores": [
+      {
+        "nome": "Binney, Amos R.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Nazarena",
+    "data": "1885",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "97",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20350
+}

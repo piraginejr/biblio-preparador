@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "54b7cab6a1d2925053a1d2644c337afa0086e03fb25b93f662ec0aeb8dbe3f8f",
+  "arquivo_origem": "429810668-The-State-of-Pastors.pdf",
+  "campos": {
+    "titulo": "Pastors 96% Pastors 95%",
+    "subTitulo": "",
+    "nmAutor0": "OF, THE STATE",
+    "autores": [
+      {
+        "nome": "OF, THE STATE",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Barna Group",
+    "data": "2017",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "175",
+    "isbn": "9781945269080",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20387
+}

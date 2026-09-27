@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "9e7c19482a3d14eeb13032eb812bd700bc59d0a51ff2b5d96113234d38ec9518",
+  "arquivo_origem": "697298611-Os-primeiros-batistas-redescobrindoa-aa-nossa-heranca-inglesa.pdf",
+  "campos": {
+    "titulo": "Os Primeiros Batistas",
+    "subTitulo": "",
+    "nmAutor0": "Haykin, Michael",
+    "autores": [
+      {
+        "nome": "Haykin, Michael",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Pro Nobis Editora",
+    "data": "2020",
+    "edicao": "1",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "127",
+    "isbn": "9786599096235",
+    "isbn_codigo_barras": "",
+    "cdd": "286",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "História do cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20661
+}

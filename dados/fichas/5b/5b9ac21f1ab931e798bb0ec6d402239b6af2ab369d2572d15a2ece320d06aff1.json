@@ -1,0 +1,43 @@
+{
+  "hash_sha256": "5b9ac21f1ab931e798bb0ec6d402239b6af2ab369d2572d15a2ece320d06aff1",
+  "arquivo_origem": "370380091-Dicionario-de-Estudos-Biblico.pdf",
+  "campos": {
+    "titulo": "Dicionário de estudos bíblicos",
+    "subTitulo": "",
+    "nmAutor0": "Patzia, Arthur G.",
+    "autores": [
+      {
+        "nome": "Patzia, Arthur G.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Petrotta, Anthony J.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Vida",
+    "data": "2003",
+    "edicao": "Edição de bolso",
+    "lugar": "São Paulo",
+    "nPaginas": "165",
+    "isbn": "8573677481",
+    "isbn_codigo_barras": "",
+    "cdd": "200.3",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Pedro Wazen de Freitas",
+    "titulo_original": "Pocket Dictionary of Biblical Studies",
+    "origem_titulo": "capa e CIP revisadas",
+    "origem_autor": "CIP e CBL revisadas"
+  },
+  "justificativa": "Capa, copyright e CIP fornecem a ficha completa; a autoria estruturada da CBL confirma os dois autores e substitui o parágrafo capturado por engano como autoria.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, copyright e CIP",
+    "CBL: consulta já armazenada nas evidências da ficha"
+  ],
+  "id_remoto": 20375
+}

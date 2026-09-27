@@ -1,0 +1,26 @@
+{
+  "hash_sha256": "21c4092aed94bea49215a977f569e4e40bdb81c67e2a4d665360122aa2d1af4a",
+  "arquivo_origem": "672352928-HOMILETICA-Revisado-001.pdf",
+  "campos": {
+    "titulo": "Reverendo: Félix Fundice Sinamunda",
+    "subTitulo": "",
+    "nmAutor0": "Sinamunda, Félix F.",
+    "autores": [],
+    "editora": "",
+    "data": "2023",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "53",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

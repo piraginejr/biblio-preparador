@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "63b33fd0ae36a8ee066e3f393ec28f9ccc912c33a26a060d5a741280d7733955",
+  "arquivo_origem": "128222141-o-Protestantismo-e-Suas-Encruzilhadas.pdf",
+  "campos": {
+    "titulo": "O protestantismo no Brasil e suas encruzilhadas",
+    "subTitulo": "",
+    "nmAutor0": "Mendonça, Antonio Gouvêa",
+    "autores": [],
+    "editora": "Universidade de São Paulo",
+    "data": "2005",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "20",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20535
+}

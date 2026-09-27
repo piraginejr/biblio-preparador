@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "68d0a2af45a778b0a80724dfb0c5b0dfc308846fe78eb768f7d29101d49106de",
+  "arquivo_origem": "A arte e a bíblia (Francis Schaeffer) (Z-Library).pdf",
+  "campos": {
+    "titulo": "A Arte e a Bíblia",
+    "subTitulo": "",
+    "nmAutor0": "SCHAEFFER, Francis",
+    "autores": [
+      {
+        "nome": "SCHAEFFER, Francis",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "978-85-7779-036-4",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

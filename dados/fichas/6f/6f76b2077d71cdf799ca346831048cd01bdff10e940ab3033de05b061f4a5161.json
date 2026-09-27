@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "6f76b2077d71cdf799ca346831048cd01bdff10e940ab3033de05b061f4a5161",
+  "arquivo_origem": "14630_A_cultura_do_jejum_ocr.pdf",
+  "campos": {
+    "titulo": "A CULTURA DO JEJUM",
+    "subTitulo": "",
+    "nmAutor0": "SUBIRÁ, Luciano",
+    "autores": [
+      {
+        "nome": "SUBIRÁ, Luciano",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9788577423408",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

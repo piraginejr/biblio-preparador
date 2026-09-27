@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "0e1da71cd9ef8cf32b140246bd5ac33e351850fd1abc79388a33c83780964fc6",
+  "arquivo_origem": "Filosofia da Religião Uma introdução (William L. Rowe) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Filosofia da Religião",
+    "subTitulo": "Uma introdução",
+    "nmAutor0": "Rowe, William L.",
+    "autores": [
+      {
+        "nome": "Rowe, William L.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Fernandes, Valéria Lamim Delgado",
+        "desc": "Tradutor"
+      }
+    ],
+    "editora": "Editora Ultimato",
+    "data": "2023",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Viçosa",
+    "nPaginas": "272",
+    "isbn": "9788577792887",
+    "isbn_codigo_barras": "",
+    "cdd": "23",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Filosofia e Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20668
+}

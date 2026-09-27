@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "e52f672b81ad1cf2e7574834fbe0fc0b8fb6dae2a3b209dc2dae5d465fa932a5",
+  "arquivo_origem": "531585506-Rede-Inspire-Igrejas-Vivas-gestao-de-celulas-19-ok.pdf",
+  "campos": {
+    "titulo": "CELULAS APOSTÓLICAS proféticas. e Pastorais",
+    "subTitulo": "",
+    "nmAutor0": "Apostólicas, LAB | Gestão em Rede de Células",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "19",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20726
+}

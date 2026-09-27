@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "dffd5fece88f1678ebc1ebb1b724f47afa4545db06c27197e8b291981b378cd9",
+  "arquivo_origem": "16527_7013249_Evangelico_Russel_p_Sh.pdf",
+  "campos": {
+    "titulo": "O Líder Que Deus Usa ",
+    "subTitulo": "",
+    "nmAutor0": "SHEDD, Russell P.",
+    "autores": [
+      {
+        "nome": "SHEDD, Russell P.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "85-275-0271-2",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "b5f1560ff362b78a54165792ba81f9d055922c451c0298ba556ab7a85d0c1d38",
+  "arquivo_origem": "344308749-Vincent-Vol-01-Estudo-No-Vocabulario-Grego-No-Novo-Testamento.pdf",
+  "campos": {
+    "titulo": "Estudo no vocabulário grego do Novo Testamento - Volume 1",
+    "subTitulo": "Mateus",
+    "nmAutor0": "Vincent, Marvin R.",
+    "autores": [],
+    "editora": "Casa Publicadora das Assembleias de Deus",
+    "data": "2013",
+    "edicao": "",
+    "lugar": "Belém",
+    "nPaginas": "19",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "trecho",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20570
+}

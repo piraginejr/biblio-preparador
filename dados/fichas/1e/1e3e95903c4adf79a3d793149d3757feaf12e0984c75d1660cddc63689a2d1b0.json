@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "1e3e95903c4adf79a3d793149d3757feaf12e0984c75d1660cddc63689a2d1b0",
+  "arquivo_origem": "How to live well_ role models and imitation in early Christianity.pdf",
+  "campos": {
+    "titulo": "How to live well: Role Models and Imitation in early Christianity",
+    "subTitulo": "",
+    "nmAutor0": "Bennema, Cor",
+    "autores": [],
+    "editora": "Tyndale House",
+    "data": "2023",
+    "edicao": "",
+    "lugar": "Grand Rapids",
+    "nPaginas": "6",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20623
+}

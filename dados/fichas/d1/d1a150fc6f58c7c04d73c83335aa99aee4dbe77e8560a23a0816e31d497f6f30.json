@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "d1a150fc6f58c7c04d73c83335aa99aee4dbe77e8560a23a0816e31d497f6f30",
+  "arquivo_origem": "630211436-Entendendo-a-lideranca-da-igrej-Dever-Mark.pdf",
+  "campos": {
+    "titulo": "Entendendo a liderança da igreja",
+    "subTitulo": "",
+    "nmAutor0": "Dever, Mark",
+    "autores": [
+      {
+        "nome": "Dever, Mark",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2019",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "80",
+    "isbn": "9788581326764",
+    "isbn_codigo_barras": "",
+    "cdd": "262.1",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Congregações cristãs, prática e teologia pastoral"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20577
+}

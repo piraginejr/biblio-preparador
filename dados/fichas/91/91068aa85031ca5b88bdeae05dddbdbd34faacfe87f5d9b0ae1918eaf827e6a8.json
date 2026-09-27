@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "91068aa85031ca5b88bdeae05dddbdbd34faacfe87f5d9b0ae1918eaf827e6a8",
+  "arquivo_origem": "748787751-212-Orar-com-Paulo-um-chamado-a-reforma-espiritual-D-A-Carson.pdf",
+  "campos": {
+    "titulo": "Praying with Paul",
+    "subTitulo": "A Call to Spiritual Reformation",
+    "nmAutor0": "Carson, D. A.",
+    "autores": [
+      {
+        "nome": "Carson, D. A.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Baker Academic",
+    "data": "2015",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "212",
+    "isbn": "9781441226990",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Paul, the apostle, saint; Prayer, christianity; Bible, prayers"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20794
+}

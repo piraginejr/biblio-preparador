@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "e3090de956e12bf7a2d38bee8d162ed97e2c607e9f589482d42ab64806e87b91",
+  "arquivo_origem": "650415169-O-Que-Creem-Os-Batistas-girado.pdf",
+  "campos": {
+    "titulo": "O que creem os batistas",
+    "subTitulo": "",
+    "nmAutor0": "Wallace, O. C. S.",
+    "autores": [
+      {
+        "nome": "Wallace, O. C. S.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Pitrowsky, R.",
+        "desc": "Tradutor"
+      }
+    ],
+    "editora": "Casa Publicadora Batista",
+    "data": "1958",
+    "edicao": "5ª edição, revista e abreviada",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "75",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Batistas; Doutrinas batistas; Confissão de fé"
+  },
+  "justificativa": "A capa fornece autor, tradutor, edição, editora, local e ano.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: capa"
+  ]
+}

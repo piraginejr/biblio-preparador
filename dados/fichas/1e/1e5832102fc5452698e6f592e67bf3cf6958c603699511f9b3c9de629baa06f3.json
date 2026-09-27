@@ -1,0 +1,12 @@
+{
+  "hash_sha256": "1e5832102fc5452698e6f592e67bf3cf6958c603699511f9b3c9de629baa06f3",
+  "arquivo_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/_preparados-envio/330462697-Descobertas-Dos-Tempos-Biblicos-Alan-Millard-18a7febf.pdf",
+  "campos": {
+    "titulo": "Descobertas dos tempos bíblicos",
+    "isbn": "8573674008"
+  },
+  "justificativa": "Cadastrado na API Biblio",
+  "fontes": [
+    "API Biblio PIB Curitiba"
+  ]
+}

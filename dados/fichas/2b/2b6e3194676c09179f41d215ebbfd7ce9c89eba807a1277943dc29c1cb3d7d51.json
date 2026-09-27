@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "2b6e3194676c09179f41d215ebbfd7ce9c89eba807a1277943dc29c1cb3d7d51",
+  "arquivo_origem": "661967065-Pdfcoffee-com-a-Economia-Do-Mais-Monir-Nasser-Versao2-p42-43-Add-PDF-PDF-Free.pdf",
+  "campos": {
+    "titulo": "A economia do mais",
+    "subTitulo": "",
+    "nmAutor0": "Nasser, José Monir",
+    "autores": [
+      {
+        "nome": "Nasser, José Monir",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "2003",
+    "edicao": "1ª edição",
+    "lugar": "Curitiba",
+    "nPaginas": "120",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Economia; Sociedade; Cultura; Ensaios"
+  },
+  "justificativa": "Após correção automática da orientação e novo OCR, capa e página de copyright identificam título, autor, local, copyright de 2002 e impressão em fevereiro de 2003.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: capa e copyright"
+  ]
+}

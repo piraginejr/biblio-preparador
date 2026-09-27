@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "b8e7ac05fa496ccf76d11a36825ea263a46d3ca260d301b6bad2a2ea2c6efc57",
+  "arquivo_origem": "435313734-8-Mulheres-de-Fe-Michael-a-G-Haykin.pdf",
+  "campos": {
+    "titulo": "2017",
+    "subTitulo": "",
+    "nmAutor0": "A, Michael",
+    "autores": [
+      {
+        "nome": "A, Michael",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Crossway Books",
+    "data": "2017",
+    "edicao": "",
+    "lugar": "Wheaton",
+    "nPaginas": "152",
+    "isbn": "9788581324302",
+    "isbn_codigo_barras": "",
+    "cdd": "248.843",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20390
+}

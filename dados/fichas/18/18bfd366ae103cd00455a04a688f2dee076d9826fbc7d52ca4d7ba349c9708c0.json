@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "18bfd366ae103cd00455a04a688f2dee076d9826fbc7d52ca4d7ba349c9708c0",
+  "arquivo_origem": "Biblia Sagrada com reflexoes de Lutero_ No - Sociedade Biblica do Brasil.pdf",
+  "campos": {
+    "titulo": "Bíblia sagrada com reflexões de Lutero",
+    "subTitulo": "",
+    "nmAutor0": "Brasil, Sociedade Bíblica do",
+    "autores": [
+      {
+        "nome": "Brasil, Sociedade Bíblica do",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "SBB",
+    "data": "2012",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "8460",
+    "isbn": "9788531115929",
+    "isbn_codigo_barras": "",
+    "cdd": "220.669",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Bíblia"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

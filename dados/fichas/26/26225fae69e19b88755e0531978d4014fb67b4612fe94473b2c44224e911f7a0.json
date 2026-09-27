@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "26225fae69e19b88755e0531978d4014fb67b4612fe94473b2c44224e911f7a0",
+  "arquivo_origem": "380911365-Momentos-Decisivos-Na-Historia-Do-Cristianismo.pdf",
+  "campos": {
+    "titulo": "Momentos decisivos na história do cristianismo",
+    "subTitulo": "",
+    "nmAutor0": "Noll, Mark A.",
+    "autores": [
+      {
+        "nome": "Noll, Mark A.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Cultura Cristã",
+    "data": "2000",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "384",
+    "isbn": "8586886130",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa e catálogo da edição revisados",
+    "origem_autor": "capa e catálogo da edição revisados"
+  },
+  "justificativa": "Capa, conteúdo completo e catálogos concordam em título e autoria; ISBN, editora e ano identificam a edição brasileira.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, conteúdo e página final",
+    "Catálogo comercial: ISBN 9788586886133",
+    "CPAJ Mackenzie: bibliografia de História da Igreja"
+  ],
+  "id_remoto": 20381
+}

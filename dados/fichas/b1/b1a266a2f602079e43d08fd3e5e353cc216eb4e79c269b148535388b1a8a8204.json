@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "b1a266a2f602079e43d08fd3e5e353cc216eb4e79c269b148535388b1a8a8204",
+  "arquivo_origem": "Twelve ordinary men how the Master shaped his disciples for greatness, and what He wants to do with you (MacArthur, John, F) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Twelve ordinary men",
+    "subTitulo": "how the Master shaped his disciples for greatness, and what he wants to do with you",
+    "nmAutor0": "MacArthur, John",
+    "autores": [
+      {
+        "nome": "MacArthur, John",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Nelson Books",
+    "data": "2002",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Nashville",
+    "nPaginas": "201",
+    "isbn": "9780785288244",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Christian life; Apostles; Biography"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20633
+}

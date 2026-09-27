@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "75c814d09b35577a29918d756e2480acfa6f4779578123cf3bfee52f0c596095",
+  "arquivo_origem": "719067980-Richard-a-Muller-Dogmatica-Reformada-Vol-2.pdf",
+  "campos": {
+    "titulo": "Post-Reformation reformed dogmatics",
+    "subTitulo": "the rise and development of reformed orthodoxy, ca. 1520 to ca. 1725",
+    "nmAutor0": "Muller, Richard A.",
+    "autores": [
+      {
+        "nome": "Muller, Richard A.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Baker Academics",
+    "data": "2003",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "585",
+    "isbn": "9780801026164",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Reformed Church; Doctrines; History; Protestant Scholasticism; Evangelische Kirche"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20874
+}

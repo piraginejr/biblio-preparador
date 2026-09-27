@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "0dc96fc7fffeac5e9358b5e860a4a363c58642b28b32cc991e9006a9b431adb3",
+  "arquivo_origem": "C.S. Lewis Master Storyteller (Janet Benge  Geoff Benge [Benge, Janet  Benge etc.) (Z-Library).pdf",
+  "campos": {
+    "titulo": "C.S. LEWIS",
+    "subTitulo": "",
+    "nmAutor0": "BENGE, Geoff",
+    "autores": [
+      {
+        "nome": "BENGE, Geoff",
+        "desc": "Autor"
+      },
+      {
+        "nome": "BENGE, Janet",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9781576585757",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

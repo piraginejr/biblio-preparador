@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "9b110f7d327214b5f65e1e4ac113f39a9ec9de9f45f0ef0ea4ee541ad3976717",
+  "arquivo_origem": "371149470-Metodologia-de-Exegese-BA-blica-CA-ssio-Murilo-Dias-Da-Silva-pdf.pdf",
+  "campos": {
+    "titulo": "METODOLOGIA DE EXEGESE BIBLICA",
+    "subTitulo": "",
+    "nmAutor0": "Silva, Cássio Murilo Dias da",
+    "autores": [
+      {
+        "nome": "Silva, Cássio Murilo Dias da",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Paulinas",
+    "data": "2000",
+    "edicao": "2",
+    "lugar": "São Paulo",
+    "nPaginas": "531",
+    "isbn": "8535606432",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

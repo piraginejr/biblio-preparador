@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "d4fc8398d27a5cfb43680b20788f811734dc994a476d7a9f9fc737964972fbec",
+  "arquivo_origem": "702696155-MARGUERAT-D-Org-Novo-Testamento-Lv.pdf",
+  "campos": {
+    "titulo": "Novo Testamento",
+    "subTitulo": "História, escritura e teologia",
+    "nmAutor0": "Marguerat, Daniel",
+    "autores": [
+      {
+        "nome": "Marguerat, Daniel",
+        "desc": "Organizador"
+      }
+    ],
+    "editora": "Edições Loyola",
+    "data": "2009",
+    "edicao": "1ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "658",
+    "isbn": "9788515036271",
+    "isbn_codigo_barras": "9788515036271",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Novo Testamento; História bíblica; Exegese; Teologia bíblica"
+  },
+  "justificativa": "Folha de rosto e copyright identificam organizador, editora, ano e ISBN da edição.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e copyright"
+  ],
+  "id_remoto": 20699
+}

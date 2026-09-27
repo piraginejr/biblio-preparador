@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "68db7f6a45841bee51fcbc9137c8903989af9e9f58e4809d10bb29d964469f8d",
+  "arquivo_origem": "247854659-Christ-among-other-gods-Lutzer.pdf",
+  "campos": {
+    "titulo": "CRISTO ENTRE OUTROS DEUSES: UMA DEFESA DA FE CRISTA NUMA ERA DE TOLERANCIA",
+    "subTitulo": "",
+    "nmAutor0": "Lutzer, Erwin E.",
+    "autores": [
+      {
+        "nome": "Lutzer, Erwin E.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Publicadora das Assembleias de Deus",
+    "data": "2000",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "227",
+    "isbn": "8526302604",
+    "isbn_codigo_barras": "",
+    "cdd": "239",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20724
+}

@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "678ea540bf29272edfb85fe0678978b271e1e99813f124027f4023874c8e30c6",
+  "arquivo_origem": "351942496-Manual-de-Id-Batista.pdf",
+  "campos": {
+    "titulo": "Manual de identidade batista",
+    "subTitulo": "",
+    "nmAutor0": "Convenção Batista Paranaense",
+    "autores": [
+      {
+        "nome": "Convenção Batista Paranaense",
+        "desc": "Autor institucional"
+      }
+    ],
+    "editora": "Convenção Batista Paranaense",
+    "data": "2013",
+    "edicao": "2ª edição revisada e ampliada",
+    "lugar": "Curitiba",
+    "nPaginas": "18",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "responsabilidade institucional revisada"
+  },
+  "justificativa": "A folha de rosto declara grupo de trabalho, responsabilidade institucional, edição e ano.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e folha de rosto"
+  ],
+  "id_remoto": 20370
+}

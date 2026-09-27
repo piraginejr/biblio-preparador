@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "2143fc56e7a602c810ed028f9ebe68c6bdbf39a7535da6188279b120df9974a0",
+  "arquivo_origem": "Noronha - 2015 - Migração e formação de redes religiosas nas perife.pdf",
+  "campos": {
+    "titulo": "Migration and formation of religious networks in urban peripheries: aspects of pentecostalism in Rio Grande da Serra",
+    "subTitulo": "",
+    "nmAutor0": "Noronha*, Claudio Pereira",
+    "autores": [],
+    "editora": "Editora da Universidade de Brasília, 2012 (3ª. reimpressão)",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "25",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20908
+}

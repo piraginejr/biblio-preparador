@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "4da2a809f3e30a4ca99b3eb3ec382c26f8c0ff991d7667442b8b1fc320f3679a",
+  "arquivo_origem": "672989099-Novo-Beacon-Box-8-Hebreus.pdf",
+  "campos": {
+    "titulo": "Novo Comentário Bíblico Beacon Hebreus",
+    "subTitulo": "",
+    "nmAutor0": "Alves, Sonia Ribeiro",
+    "autores": [
+      {
+        "nome": "Alves, Sonia Ribeiro",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Anderson, Kevin L.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Central Gospel",
+    "data": "2022",
+    "edicao": "1a edição",
+    "lugar": "- 1. ed. -- Sarah Lole Rio de Janeiro, RJ",
+    "nPaginas": "456",
+    "isbn": "9786557600580",
+    "isbn_codigo_barras": "9786557600580",
+    "cdd": "225.7",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "fecde4631b8134ff21a6ab131621bf4d3c905e5a22de6220bea10104a650cd4d",
+  "arquivo_origem": "Bob_Buford_A_Arte_de_Virar_o_Jogo_No_Seg.pdf",
+  "campos": {
+    "titulo": "A ARTE DE VIRAR O JOGO NO SEGUNDO TEMPO DA VIDA",
+    "subTitulo": "",
+    "nmAutor0": "Buford, Bob",
+    "autores": [
+      {
+        "nome": "Buford, Bob",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "8573254238",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

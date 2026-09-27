@@ -1,0 +1,56 @@
+{
+  "hash_sha256": "d50e78a08d0c13f8b3dff7607f6cb62d88ab10c1910a7288b4e3b67697bbdbaa",
+  "arquivo_origem": "320438631-Deus-Mandou-Matar.pdf",
+  "campos": {
+    "titulo": "Deus mandou matar?",
+    "subTitulo": "Quatro pontos de vista sobre o genocídio cananeu",
+    "nmAutor0": "Gundry, Stanley N.",
+    "autores": [
+      {
+        "nome": "Gundry, Stanley N.",
+        "desc": "Editor"
+      },
+      {
+        "nome": "Cowles, C. S.",
+        "desc": "Colaborador"
+      },
+      {
+        "nome": "Merrill, Eugene H.",
+        "desc": "Colaborador"
+      },
+      {
+        "nome": "Gard, Daniel L.",
+        "desc": "Colaborador"
+      },
+      {
+        "nome": "Longman III, Tremper",
+        "desc": "Colaborador"
+      }
+    ],
+    "editora": "Editora Vida",
+    "data": "2006",
+    "edicao": "1ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "128",
+    "isbn": "9788573679373",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Genocídio cananeu; Guerra no Antigo Testamento; Teologia bíblica; Violência na Bíblia",
+    "pasta_origem_importacao": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA",
+    "arquivos_origem_importacao": [
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/320438631-Deus-Mandou-Matar.doc"
+    ]
+  },
+  "justificativa": "O PDF local corresponde ao conteúdo da obra; a ficha comercial confirma a edição brasileira, e o ruído '5a' foi removido do título por ser fragmento visual da capa.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: sumário, introdução e quatro colaboradores",
+    "Martins Fontes Paulista: ISBN, editora, ano, edição e paginação",
+    "Referência bibliográfica independente da edição brasileira"
+  ],
+  "id_remoto": 20581
+}

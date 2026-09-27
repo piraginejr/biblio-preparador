@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "5582e5f09d35114b662d781e62a7c20522db936f2c2dcf8b930b2c72d077bd76",
+  "arquivo_origem": "557467842-1-4940717686242935032.pdf",
+  "campos": {
+    "titulo": "PENTECOSTAIS OU CARISMATICOS? UM CHAMADO AO VERDADEIRO PENTECOSTES",
+    "subTitulo": "",
+    "nmAutor0": "Burkett, Bill",
+    "autores": [
+      {
+        "nome": "Burkett, Bill",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Publicadora das Assembleias de Deus",
+    "data": "1999",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "58",
+    "isbn": "8526302051",
+    "isbn_codigo_barras": "",
+    "cdd": "280",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20475
+}

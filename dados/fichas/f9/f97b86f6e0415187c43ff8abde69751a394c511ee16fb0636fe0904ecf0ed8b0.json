@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "f97b86f6e0415187c43ff8abde69751a394c511ee16fb0636fe0904ecf0ed8b0",
+  "arquivo_origem": "Communicating Jesus Way (Charles H. Kraft) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Communicating Jesus' way",
+    "subTitulo": "",
+    "nmAutor0": "Kraft, Charles H.",
+    "autores": [
+      {
+        "nome": "Kraft, Charles H.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "William Carey Library",
+    "data": "1999",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "140",
+    "isbn": "0878087737",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Christianity; Communication; Religious aspects; Religious aspects of Communication; Teaching methods"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20606
+}

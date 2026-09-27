@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "9c8768d0e4a4dc645b772941be40d694b6b76d51f653f0a9d55ce7f837eb61c2",
+  "arquivo_origem": "12856proclamar_libertacao_2017_07_17_1.pdf",
+  "campos": {
+    "titulo": "Proclamar Libertação",
+    "subTitulo": "",
+    "nmAutor0": "COSTAS, Orlando E.",
+    "autores": [
+      {
+        "nome": "COSTAS, Orlando E.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "978-85-62877-38-4",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

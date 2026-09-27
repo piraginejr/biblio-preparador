@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "ac92083f0c1d52e7ea65855a7a301bf2e7382eb3476f07d4a3605cc60c540a4c",
+  "arquivo_origem": "370970752-O-Cajado-do-Pastor-Ralph-Mahoney-pdf.pdf",
+  "campos": {
+    "titulo": "O Cajado do Pastor",
+    "subTitulo": "",
+    "nmAutor0": "Mahoney, Ralph",
+    "autores": [
+      {
+        "nome": "Mahoney, Ralph",
+        "desc": "Editor/Compilador"
+      }
+    ],
+    "editora": "World MAP",
+    "data": "2002",
+    "edicao": "Edição em português, reimpressão 1 (fevereiro de 2002)",
+    "lugar": "Burbank, Califórnia",
+    "nPaginas": "1022",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Marcos Taveira; Nadya Denis; Marlene Medine",
+    "isbn_motivo": "sem ISBN declarado no exemplar",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "dedicatória e responsabilidade editorial revisadas"
+  },
+  "justificativa": "O manual declara World MAP como publicadora, Ralph Mahoney como fundador e responsável editorial, a edição portuguesa de 1998 e a reimpressão de fevereiro de 2002.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto, copyright, dedicatória e expediente"
+  ],
+  "id_remoto": 20376
+}

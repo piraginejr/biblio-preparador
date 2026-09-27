@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "dea039ab060219546bd7e581c4a1c781fdaedc61bb98fe5fd3928f5a96274b62",
+  "arquivo_origem": "16572_FILHOS_ESPECIAIS_GERAM_PAIS_ESPECIAIS.pdf",
+  "campos": {
+    "titulo": "FILHOS ESPECIAIS GERAM PAIS ESPECIAIS",
+    "subTitulo": "",
+    "nmAutor0": "NASSIFF, Nivaldo",
+    "autores": [
+      {
+        "nome": "NASSIFF, Nivaldo",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9788576897262",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

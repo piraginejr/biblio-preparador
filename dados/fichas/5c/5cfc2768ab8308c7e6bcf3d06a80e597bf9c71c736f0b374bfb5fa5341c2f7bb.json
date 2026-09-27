@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "5cfc2768ab8308c7e6bcf3d06a80e597bf9c71c736f0b374bfb5fa5341c2f7bb",
+  "arquivo_origem": "Como as Gigantes Caem.pdf",
+  "campos": {
+    "titulo": "Como as Gigantes Caem? – Jim Collins",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "3",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20587
+}

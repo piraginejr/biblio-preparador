@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "71defe645be21e59433865c414eeae09070c5688896d509f966a2029f3181ab6",
+  "arquivo_origem": "541124699-Jesus-o-Filho-de-Deus-D-a-Carson.pdf",
+  "campos": {
+    "titulo": "JESUS O FILHO DE DEUS",
+    "subTitulo": "",
+    "nmAutor0": "Carson, D. A.",
+    "autores": [
+      {
+        "nome": "Carson, D. A.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "SOCIEDADE RELIGIOSA EDIÇÕES VIDA NOVA",
+    "data": "2015",
+    "edicao": "1a edição",
+    "lugar": "São Paulo",
+    "nPaginas": "108",
+    "isbn": "9788527507011",
+    "isbn_codigo_barras": "",
+    "cdd": "232.8",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

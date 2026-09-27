@@ -1,0 +1,39 @@
+{
+  "hash_sha256": "ec0933f155d8263389bb32e0bb06873008d7fb5e79e918ce001594e93de10d5f",
+  "arquivo_origem": "691237112-Na-Dinamica-Do-Espirito-j-l-Packer.pdf",
+  "campos": {
+    "titulo": "Na dinâmica do Espírito",
+    "subTitulo": "Uma avaliação das práticas e doutrinas",
+    "nmAutor0": "Packer, J. I.",
+    "autores": [
+      {
+        "nome": "Packer, J. I.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Oliveira, Adiel Almeida de",
+        "desc": "Tradutor"
+      }
+    ],
+    "editora": "Sociedade Religiosa Edições Vida Nova",
+    "data": "1991",
+    "edicao": "1ª edição em português",
+    "lugar": "São Paulo",
+    "nPaginas": "279",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "Copyright © 1984 de J. I. Packer. Primeira edição em português: outubro de 1991, Sociedade Religiosa Edições Vida Nova. O PDF é digitalização com DUAS páginas do livro por folha: 140 folhas correspondem a 279 páginas impressas - o arquivo está completo.",
+    "palavrasChave": "Espírito Santo; Vida cristã; Teologia prática; Movimento carismático; Santidade",
+    "isbn_motivo": "ISBN não impresso nesta edição de 1991. O 978-85-275-0432-4 pertence à edição de 2010 - registro 11171 do Biblio - que é OUTRA edição, não duplicata.",
+    "titulo_original": "Keep in Step with the Spirit"
+  },
+  "justificativa": "Folha de rosto e copyright fornecem título, subtítulo, autor, tradutor, editora e primeira edição portuguesa de outubro de 1991. CORREÇÕES DE 23/08: (1) não é duplicata do registro 11171, que é a edição de 2010 com ISBN 978-85-275-0432-4; este é a 1ª edição em português, 1991, sem ISBN impresso. (2) nPaginas era 140, número de FOLHAS do PDF; a digitalização traz duas páginas por folha e a numeração impressa chega a 279.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: folha de rosto e copyright",
+    "PDF local: numeração impressa nas folhas 10, 40, 70, 100, 130 e 140"
+  ]
+}

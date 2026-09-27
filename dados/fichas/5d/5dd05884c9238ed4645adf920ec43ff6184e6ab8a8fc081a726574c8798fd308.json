@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "5dd05884c9238ed4645adf920ec43ff6184e6ab8a8fc081a726574c8798fd308",
+  "arquivo_origem": "725580685-Aprendendo-a-Orar-Com-Quem-Ora.pdf",
+  "campos": {
+    "titulo": "Aprendendo a orar com quem ora: um estudo das grandes orações da Bíblia",
+    "subTitulo": "",
+    "nmAutor0": "Lopes, Hernandes Dias",
+    "autores": [
+      {
+        "nome": "Lopes, Hernandes Dias",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Casimiro, Arival Dias",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "UNITED PRESS",
+    "data": "2015",
+    "edicao": "1ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "82",
+    "isbn": "9788524304965",
+    "isbn_codigo_barras": "",
+    "cdd": "242.07",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Experiência cristã, prática e vida"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20665
+}

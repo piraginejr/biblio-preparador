@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "6b88a2d8359c9733eabd8f22215f1342d4d24ca5884c1a435747624657659c6a",
+  "arquivo_origem": "386517545-Robert-B-Selph-Os-Batistas-e-a-Doutrina-da-Eleicao-pdf.pdf",
+  "campos": {
+    "titulo": "Os batistas e a doutrina da eleição",
+    "subTitulo": "",
+    "nmAutor0": "Selph, Robert B.",
+    "autores": [
+      {
+        "nome": "Selph, Robert B.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "1990",
+    "edicao": "1ª edição em português",
+    "lugar": "São José dos Campos",
+    "nPaginas": "148",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa e metadado interno revisados",
+    "origem_autor": "capa e catálogos revisados"
+  },
+  "justificativa": "Capa e metadados internos confirmam obra e autor; referências bibliográficas independentes confirmam a edição brasileira da Fiel de 1990.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: capa e metadados internos",
+    "Universidade Metodista de São Paulo: referência bibliográfica",
+    "Faberj: bibliografia do curso"
+  ]
+}

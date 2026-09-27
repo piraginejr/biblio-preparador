@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "4d51f15276aa60f14082a0dddfcc3a7e50f39b583560e8b7ee84c7eb224d170e",
+  "arquivo_origem": "Quando nosso mundo se tornou cristão Paul Veyne tradução de Marcos de Castro (Paul Veyne MARCOS DE CASTRO) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Quando nosso mundo se tornou cristão",
+    "subTitulo": "312-394",
+    "nmAutor0": "Paul Veyne",
+    "autores": [
+      {
+        "nome": "Paul Veyne",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Civilização Brasileira",
+    "data": "2024",
+    "edicao": "2a edição",
+    "lugar": "São Paulo",
+    "nPaginas": "124",
+    "isbn": "9786558021698",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "Quando nosso mundo se tornou cristão apresenta as razões e consequências desta rápida propagação, que mudou os rumos da História. Ao analisar o progresso do cristianismo, o autor refuta a crença de que Constantino, um dos quatro imperadores romanos da época, visse na nova religião uma chance de unir e estabilizar o Império. Para isso, ele apresenta uma interessante reflexão sobre a passagem histórica que descreve a adesão do governante ao cristianismo: o dirigente estava em guerra com Maxêncio, que dominava indevidamente a Itália e Roma.\n\n\nPara recuperar estas terras, Constantino, que também governava a Gália, Inglaterra e Espanha foi à guerra. Na noite anterior à batalha decisiva, o governante sonhou que sairia vitorioso se abraçasse o Cristianismo. Assim o fez e recuperou seus domínios roubados. O autor afirma que Constantino não tinha como objetivo usar a religião como instrumento de legitimação do regime político. Ele mostra como o cristianismo tem sua origem baseada na oralidade e coletividade e destaca a visão vanguardista do Imperador, que percebeu a legitimidade do movimento, até aquele momento com poucos adeptos, e por isso digno de seu trono.\n\n\nPaul Veyne destaca a importância do ato de Constantino, considerado o marco na história ocidental, que deu origem à Era Cristã. “Em 324, a religião cristã assumia com um golpe único uma dimensão 'mundial' e Constantino estaria alçado à estatura histórica. (...) O cristianismo dispunha daí em diante desse imenso império que era o centro do mundo e que se considerava com a mesma extensão da civilização”, conclui Veyne. O historiador analisa a evolução do cristianismo ao longo do século IV e a sua coexistência com o paganismo, que por todo este período contou com grande número de adeptos.\n\n\nEm Quando nosso mundo se tornou cristão Veyne mostra como a fé cristã evolui de uma seita para uma religião devido ao aumento de bispados em certas regiões do Império, como o norte da Itália, e como suas profundas transformações moldaram o mundo moderno a partir da cristianização do Ocidente.",
+    "palavrasChave": "",
+    "assunto": "História de outras regiões",
+    "pchave": "História de outras regiões"
+  },
+  "justificativa": "revisão visual",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "ISBN 9786558021698 — CBL/ISBN Brasil"
+  ],
+  "id_remoto": 20949
+}

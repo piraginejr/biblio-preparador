@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "5c144c7f31036023d83bed1475089074fc02c7d5c561f2e487a06fab31a08c4f",
+  "arquivo_origem": "696880026-APOSTILA-MINISTERIO-DE-RECEPCAO-ATUALIZADO.pdf",
+  "campos": {
+    "titulo": "Primeira Igreja Presbiteriana de Guarapari",
+    "subTitulo": "",
+    "nmAutor0": "Cunha, Gustavo S.",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "10",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20934
+}

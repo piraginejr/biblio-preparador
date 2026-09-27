@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "f5ba436abde92d570cd8d83124fc74a63cdfea76504b8f7692b9c22c363e97e0",
+  "arquivo_origem": "Daniel Boone Frontiersman (Heroes of History) (Janet Benge  Geoff Benge) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Daniel Boone: Frontiersman",
+    "subTitulo": "",
+    "nmAutor0": "BENGE, Janet",
+    "autores": [
+      {
+        "nome": "BENGE, Janet",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9781932096705",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

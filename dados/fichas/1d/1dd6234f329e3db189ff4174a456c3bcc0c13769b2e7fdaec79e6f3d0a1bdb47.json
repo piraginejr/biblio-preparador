@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "1dd6234f329e3db189ff4174a456c3bcc0c13769b2e7fdaec79e6f3d0a1bdb47",
+  "arquivo_origem": "Reading Jeremiah with the grain of Scripture.pdf",
+  "campos": {
+    "titulo": "Reading Jeremiah with the grain of Scripture",
+    "subTitulo": "",
+    "nmAutor0": "Firth, Jill",
+    "autores": [],
+    "editora": "Tyndale House",
+    "data": "2023",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "6",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20637
+}

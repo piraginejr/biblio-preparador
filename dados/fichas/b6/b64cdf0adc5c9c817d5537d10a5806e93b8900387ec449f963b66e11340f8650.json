@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "b64cdf0adc5c9c817d5537d10a5806e93b8900387ec449f963b66e11340f8650",
+  "arquivo_origem": "744006973-Doctrina-Cristiana-Millard-Erickson.pdf",
+  "campos": {
+    "titulo": "Introducing Christian Doctrine",
+    "subTitulo": "",
+    "nmAutor0": "Hustad, L. Arnold",
+    "autores": [
+      {
+        "nome": "Erickson, Millard J.",
+        "desc": "Colaborador"
+      },
+      {
+        "nome": "Hustad, L. Arnold",
+        "desc": "Editor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "tradução automática não publicada",
+    "lugar": "Grand Rapids",
+    "nPaginas": "768",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20879
+}

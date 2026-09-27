@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "8215a24a66ff3bcb0d116aa2cb290e5d6acf5ace8dababed7ad2c5e66ba25ce9",
+  "arquivo_origem": "629367054-Providencia-John-Piper.pdf",
+  "campos": {
+    "titulo": "Providência",
+    "subTitulo": "",
+    "nmAutor0": "Piper, John",
+    "autores": [
+      {
+        "nome": "Piper, John",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2022",
+    "edicao": "1ª edição",
+    "lugar": "São José dos Campos",
+    "nPaginas": "582",
+    "isbn": "9786557231944",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Providência divina; Soberania de Deus; Teologia cristã"
+  },
+  "justificativa": "Título, autor e edição brasileira foram reconciliados com a página oficial da editora; a paginação registra o PDF local.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local",
+    "https://www.editorafiel.com.br/providencia-john-piper"
+  ],
+  "id_remoto": 20694
+}

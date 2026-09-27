@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "91f9660b263bbeb4d3d525bff11ceced3246daf032ba78491f3beee943392404",
+  "arquivo_origem": "23161632-Gene-Edwards-Assim-uma-Igreja-conquista-almas.pdf",
+  "campos": {
+    "titulo": "Assim uma Igreja conquista almas",
+    "subTitulo": "",
+    "nmAutor0": "Edwards, Gene",
+    "autores": [
+      {
+        "nome": "Edwards, Gene",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "EMPREVAN",
+    "data": "[s.d.]",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "116",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "c97abd34239dfe629d5297469a6e343730601dee3acb7f6532a18f8de0cf5fdc",
+  "arquivo_origem": "169648524-A-Historia-Dos-Batistas-Nacionais.pdf",
+  "campos": {
+    "titulo": "A HISTORIA DOS BATISTAS NACIONAIS",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "3",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20557
+}

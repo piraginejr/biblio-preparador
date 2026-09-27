@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "4be6d71e93ed66c3ea7d255d3f7dce357cac87a77219b3216c0d25e63c5131b9",
+  "arquivo_origem": "611899200-igreja-corpo-vivo-de-cristo.pdf",
+  "campos": {
+    "titulo": "CORPO VIVO DE CRISTO",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "114",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20588
+}

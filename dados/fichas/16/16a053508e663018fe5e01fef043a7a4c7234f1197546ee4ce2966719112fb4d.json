@@ -1,0 +1,25 @@
+{
+  "hash_sha256": "16a053508e663018fe5e01fef043a7a4c7234f1197546ee4ce2966719112fb4d",
+  "arquivo_origem": "20617190-THE-SPIRIT-OF-CHRIST-ANDREW-MURRAY.pdf",
+  "campos": {
+    "titulo": "The Spirit of Christ",
+    "subTitulo": "Thoughts on the Indwelling of the Holy Spirit in the Believer and the Church",
+    "nmAutor0": "Murray, Andrew",
+    "editora": "James Nisbet & Co.",
+    "isbn": "",
+    "edicao": "1ª edição (presumida)",
+    "data": "1888",
+    "nPaginas": "403",
+    "lugar": "London",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "CDD": "231.3",
+    "assunto": "Espírito Santo, Teologia Cristã, Vida Cristã",
+    "pchave": "Espírito Santo, Teologia, Vida Devocional, Igreja, Santificação",
+    "abstract": "Meditações e reflexões bíblicas de Andrew Murray sobre a habitação do Espírito Santo no crente e na Igreja, estruturadas em 31 capítulos para leitura e edificação diária ao longo do mês."
+  },
+  "justificativa": "Edição histórica de 1888 identificada com cidade, editora, autor e ano na folha de rosto",
+  "fontes": [
+    "revisão visual da folha de rosto e verso editorial"
+  ]
+}

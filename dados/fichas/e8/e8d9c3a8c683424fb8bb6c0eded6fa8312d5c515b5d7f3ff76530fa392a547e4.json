@@ -1,0 +1,45 @@
+{
+  "hash_sha256": "e8d9c3a8c683424fb8bb6c0eded6fa8312d5c515b5d7f3ff76530fa392a547e4",
+  "arquivo_origem": "697298620-Historia-dos-Batistas-da-Inglaterra-para-o-Mundo.pdf",
+  "campos": {
+    "titulo": "História dos Batistas",
+    "subTitulo": "Da Inglaterra para o Mundo",
+    "nmAutor0": "Chute, Anthony L.",
+    "autores": [
+      {
+        "nome": "Chute, Anthony L.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Finn, Nathan A.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Haykin, Michael A. G.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Santos, Judiclay Silva",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Pro Nobis Editora",
+    "data": "2022",
+    "edicao": "1",
+    "lugar": "1. ed. - Rio de Janeiro",
+    "nPaginas": "304",
+    "isbn": "9786581489267",
+    "isbn_codigo_barras": "",
+    "cdd": "286",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "História do cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20662
+}

@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "36317844088b711512c417c60f8f912c5e6157a05de1f081ae8d090862b78a9b",
+  "arquivo_origem": "103323371-Almeida-V-S-Os-Letos-Batistas-de-Varpa.pdf",
+  "campos": {
+    "titulo": "Breve estudo sobre a comunidade de letos batistas de Varpa (Tupã/SP) e sua perseguição política durante o Estado Novo",
+    "subTitulo": "",
+    "nmAutor0": "Almeida, Vinícius Soares de",
+    "autores": [],
+    "editora": "Universidade Estadual Paulista, Faculdade de Ciências e Letras, Campus de Assis",
+    "data": "2001",
+    "edicao": "",
+    "lugar": "Assis",
+    "nPaginas": "10",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "trabalho acadêmico",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "campo Discente da folha de rosto"
+  },
+  "justificativa": "É trabalho de disciplina, não livro; deve seguir a fila acadêmica específica.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto, página 1"
+  ],
+  "id_remoto": 20552
+}

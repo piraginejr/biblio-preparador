@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "e648a08f826e4d283c548b08835ac4856d33a4b40e3496eb685ce9980ca5bc0d",
+  "arquivo_origem": "756353806-Louvor-e-Adoracao-Domicio-Junior (1).pdf",
+  "campos": {
+    "titulo": "LOUVOR E ADORAÇÃO",
+    "subTitulo": "",
+    "nmAutor0": "Junior, Domicio",
+    "autores": [
+      {
+        "nome": "Junior, Domicio",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Domício Cordeiro Chavante Filho/Instituto Advance",
+    "data": "2013",
+    "edicao": "1ª Edição",
+    "lugar": "Belém",
+    "nPaginas": "43",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20820
+}

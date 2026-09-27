@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "b645227c415147fc221efc640f17eac1b98382b91ff00e7639107a50606d5f33",
+  "arquivo_origem": "620102790-Homens-de-Oracao-Edward-m-Bounds.pdf",
+  "campos": {
+    "titulo": "Homens de oração",
+    "subTitulo": "",
+    "nmAutor0": "Bounds, Edward M.",
+    "autores": [
+      {
+        "nome": "Bounds, Edward M.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Vida",
+    "data": "2016",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "116",
+    "isbn": "9788538303367",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20645
+}

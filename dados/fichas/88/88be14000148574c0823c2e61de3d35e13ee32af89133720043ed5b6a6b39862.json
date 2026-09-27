@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "88be14000148574c0823c2e61de3d35e13ee32af89133720043ed5b6a6b39862",
+  "arquivo_origem": "707857660-O-Intelecto-Apaixonado-Fe-Crista-e-o-Discipulado-da-Mente-por-Alister.pdf",
+  "campos": {
+    "titulo": "Passionate Intellect",
+    "subTitulo": "Christian Faith and the Discipleship of the Mind",
+    "nmAutor0": "McGrath, Alister E.",
+    "autores": [
+      {
+        "nome": "McGrath, Alister E.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "InterVarsity Press",
+    "data": "2014",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "337",
+    "isbn": "9780830896684",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Theology"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20664
+}

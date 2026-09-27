@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "cc8a1576f82bc105f0be34013924b648b89c622a0da4377ffe18ae3fb6896b3b",
+  "arquivo_origem": "Clara Barton Courage Under Fire (Heroes of History) (Heroes of History by Janet Benge (2002-12-20) (Janet Benge  Geoff Benge [Benge, Janet  Benge etc.) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Clara Barton: Courage Under Fire",
+    "subTitulo": "",
+    "nmAutor0": "BENGE, Janet",
+    "autores": [
+      {
+        "nome": "BENGE, Janet",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9781932096880",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

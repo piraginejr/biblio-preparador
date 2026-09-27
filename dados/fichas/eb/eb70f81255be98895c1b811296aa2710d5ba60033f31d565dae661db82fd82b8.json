@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "eb70f81255be98895c1b811296aa2710d5ba60033f31d565dae661db82fd82b8",
+  "arquivo_origem": "492377877-O-LUGAR-DA-ASSEMBLEIA-Monografia-aprovada-07mar2020.pdf",
+  "campos": {
+    "titulo": "O lugar da assembleia: a morfologia do lugar da assembleia e sua correlação com o sentido de Cristo total",
+    "subTitulo": "",
+    "nmAutor0": "Silva, Ronei Costa Martins",
+    "autores": [],
+    "editora": "",
+    "data": "2020",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "118",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "trabalho acadêmico",
+    "abstract": "Monografia apresentada como exigência parcial para obtenção do título de Especialista, UNISAL, 2020.",
+    "palavrasChave": "Assembleia litúrgica; Eclesiologia; Cristo total; Liturgia",
+    "origem_autor": "folha de rosto acadêmica",
+    "origem_titulo": "folha de rosto acadêmica",
+    "isbn_motivo": "monografia acadêmica: não recebe ISBN",
+    "idioma": "por",
+    "tipoAssunto1": "Teologia",
+    "instituicao": "Centro Universitário Salesiano de São Paulo - UNISAL, Unidade São Paulo, Campus Pio XI"
+  },
+  "justificativa": "Monografia de especialização: a instituição é UNISAL, não editora. O conflito 'editora coincide com o autor' vinha de tratar a instituição como editora - trabalho acadêmico não tem editora.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto, páginas 1-2"
+  ],
+  "id_remoto": 20741
+}

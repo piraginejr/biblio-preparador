@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "d011c9c25093dee437ae247d90bf9b1c6e3140bae1e5b2170a2656fc93dfcffe",
+  "arquivo_origem": "199Christ Outside the Gate.pdf",
+  "campos": {
+    "titulo": "Christ outside the gate",
+    "subTitulo": "mission beyond Christendom",
+    "nmAutor0": "Costas, Orlando E.",
+    "autores": [
+      {
+        "nome": "Costas, Orlando E.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Orbis Books",
+    "data": "1982",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Nashville",
+    "nPaginas": "238",
+    "isbn": "0883441470",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Missions; Theory; Weltkirche; Mission; Christian life"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20765
+}

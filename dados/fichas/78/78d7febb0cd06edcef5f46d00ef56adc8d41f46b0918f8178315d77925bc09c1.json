@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "78d7febb0cd06edcef5f46d00ef56adc8d41f46b0918f8178315d77925bc09c1",
+  "arquivo_origem": "A TRADIÇÃO CRISTÃ  -  UMA HISTÓRIA DO DESENVOLVIMENTO DA DOUTRINA (JAROLASV PELIKAN) (Z-Library).pdf",
+  "campos": {
+    "titulo": "A tradição cristã: uma história do desenvolvimento da doutrina: o desenvolvimento da teologia medieval 600-1300",
+    "subTitulo": "",
+    "nmAutor0": "Pelikan, Jaroslav",
+    "autores": [
+      {
+        "nome": "Pelikan, Jaroslav",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Shedd",
+    "data": "2015",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "376",
+    "isbn": "9788580380392",
+    "isbn_codigo_barras": "9788580380392",
+    "cdd": "230.209",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20890
+}

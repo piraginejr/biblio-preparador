@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "dafc8b9726591ce7f9b258cfd8016adde933dd2af81ae25048439dc132bfc82a",
+  "arquivo_origem": "Rosalind Goforth - EU SEI QUE DEUS RESPONDE ÀS ORAÇÕES.pdf",
+  "campos": {
+    "titulo": "Eu sei que Deus responde às orações",
+    "subTitulo": "Testemunho pessoal de uma vida",
+    "nmAutor0": "Goforth, Rosalind",
+    "autores": [
+      {
+        "nome": "Goforth, Rosalind",
+        "desc": "Autora"
+      },
+      {
+        "nome": "Silva, Hope Gordon",
+        "desc": "Tradutora"
+      }
+    ],
+    "editora": "Livraria Cristã Unida",
+    "data": "1983",
+    "edicao": "4ª edição",
+    "lugar": "Campinas",
+    "nPaginas": "138",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Oração; Testemunho cristão; Vida devocional"
+  },
+  "justificativa": "Folha de rosto e dados editoriais fornecem autora, tradutora, quarta edição, editora, local e ano.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e dados editoriais"
+  ],
+  "id_remoto": 20704
+}

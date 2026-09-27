@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "5449404cbb8f39966303ad6bad87395815eaea0a54011407bb3218e829b0918d",
+  "arquivo_origem": "324716010-Diario-Do-Um-Pioneiro.pdf",
+  "campos": {
+    "titulo": "O diário do pioneiro Gunnar Vingren",
+    "subTitulo": "",
+    "nmAutor0": "Vingren, Ivar",
+    "autores": [
+      {
+        "nome": "Vingren, Ivar",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Publicadora das Assembleias de Deus",
+    "data": "1982",
+    "edicao": "2ª edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "219",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "922.899",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa e CIP revisadas",
+    "origem_autor": "CIP revisada"
+  },
+  "justificativa": "Capa, CIP e informação de tiragem foram conferidas visualmente; o scan possui duas páginas impressas por imagem.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: capa e CIP, páginas 1-2"
+  ]
+}

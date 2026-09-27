@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "7188c06402bdd94a8bca0d82db3f9aa46a292989a2330de562936a25411ff426",
+  "arquivo_origem": "549379843-Batistas-Particulares-e-suas-Confissoes-de-Fe-O-inicio-da-historia-confessional-dos-Batistas.pdf",
+  "campos": {
+    "titulo": "Batistas Particulares e suas Confissões de Fé",
+    "subTitulo": "O início da história confessional dos Batistas",
+    "nmAutor0": "Paixão, Marcus Vinícius Costa",
+    "autores": [],
+    "editora": "O Estandarte de Cristo",
+    "data": "2019",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "15",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20514
+}

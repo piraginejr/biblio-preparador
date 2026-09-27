@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "4bdb69c9331e4a89dfe779d283c39d12967c023e0c5245c7077240368b13b6c6",
+  "arquivo_origem": "469432720-Traduzindo-Deus-pdf.pdf",
+  "campos": {
+    "titulo": "Traduzindo Deus",
+    "subTitulo": "Como ouvir a voz de Deus para você e o mundo que o cerca",
+    "nmAutor0": "Bolz, Shawn",
+    "autores": [
+      {
+        "nome": "Bolz, Shawn",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Chara",
+    "data": "2017",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "126",
+    "isbn": "9788561860400",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa e catálogo comercial"
+  },
+  "justificativa": "A capa identifica obra e autor; o arquivo inclui todos os capítulos, conclusão, biografia e agradecimentos. O catálogo comercial confirma editora, ano e ISBN.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, sumário e páginas finais",
+    "Catálogo comercial: Editora Chara, 2017, ISBN 9788561860400"
+  ],
+  "id_remoto": 20429
+}

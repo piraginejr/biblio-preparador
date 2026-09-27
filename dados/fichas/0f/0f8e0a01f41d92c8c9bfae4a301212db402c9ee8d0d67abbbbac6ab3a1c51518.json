@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "0f8e0a01f41d92c8c9bfae4a301212db402c9ee8d0d67abbbbac6ab3a1c51518",
+  "arquivo_origem": "558449941-A-Inerrancia-Da-Biblia-Norman-L-Geisler.pdf",
+  "campos": {
+    "titulo": "A Inerrância da Bíblia",
+    "subTitulo": "",
+    "nmAutor0": "Geisler, Norman L.",
+    "autores": [
+      {
+        "nome": "Geisler, Norman L.",
+        "desc": "Organizador"
+      }
+    ],
+    "editora": "Editora Vida",
+    "data": "2003",
+    "edicao": "1ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "531",
+    "isbn": "9788573676327",
+    "isbn_codigo_barras": "9788573676327",
+    "cdd": "220.132",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "CIP identifica Norman Geisler como organizador; Antivan Mendes é o tradutor.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: CIP e folha de rosto",
+    "Open Library: ISBN exato"
+  ],
+  "id_remoto": 20476
+}

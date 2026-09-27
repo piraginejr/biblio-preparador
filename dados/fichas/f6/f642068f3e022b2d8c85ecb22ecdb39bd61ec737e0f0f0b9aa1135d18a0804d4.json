@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "f642068f3e022b2d8c85ecb22ecdb39bd61ec737e0f0f0b9aa1135d18a0804d4",
+  "arquivo_origem": "717501663-01-Lucas-1-9.pdf",
+  "campos": {
+    "titulo": "LUCAS 1-9",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "Beacon Hill Press of Kansas City",
+    "data": "2015",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "273",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20685
+}

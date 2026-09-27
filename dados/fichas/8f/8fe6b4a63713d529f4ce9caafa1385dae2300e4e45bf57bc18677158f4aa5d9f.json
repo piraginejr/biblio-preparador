@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "8fe6b4a63713d529f4ce9caafa1385dae2300e4e45bf57bc18677158f4aa5d9f",
+  "arquivo_origem": "626755770-Habitos-Espirituais-David-Mathis.pdf",
+  "campos": {
+    "titulo": "O mistério",
+    "subTitulo": "",
+    "nmAutor0": "Mathis, Espirituais David",
+    "autores": [
+      {
+        "nome": "Mathis, Espirituais David",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2022",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "180",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20676
+}

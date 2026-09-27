@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "4b74fad9474127bcab2f356621da727ee2474077aa29ae4f6f69c86c22424898",
+  "arquivo_origem": "Perversiones sexuales un mundo oculto a la luz de la psicologiy la pastoral (Bernando Stamateas) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Perversiones Sexuales Un Mundo Oculto a La Luz De La Psicologia Y La Pastoral",
+    "subTitulo": "",
+    "nmAutor0": "Stamateas, Bernardo",
+    "autores": [
+      {
+        "nome": "Stamateas, Bernardo",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editorial Clie",
+    "data": "1997",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Barcelona",
+    "nPaginas": "176",
+    "isbn": "9788476458518",
+    "isbn_codigo_barras": "9788476458518",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20679
+}

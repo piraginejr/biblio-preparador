@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "741ea44bdbb57eda03deed55c5cd414cb9b4bee0bb48407a0922e2b06ec6743f",
+  "arquivo_origem": "420225056-Uma-Questao-de-Honra.pdf",
+  "campos": {
+    "titulo": "Uma questão de honra",
+    "subTitulo": "O valor do dinheiro na adoração",
+    "nmAutor0": "Subirá, Luciano",
+    "autores": [
+      {
+        "nome": "Subirá, Luciano",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Orvalho",
+    "data": "2015",
+    "edicao": "5ª edição",
+    "lugar": "Curitiba",
+    "nPaginas": "326",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "capa e folha de rosto revisadas"
+  },
+  "justificativa": "A página editorial declara explicitamente editora, local e ano da 5ª edição; 2004 é o copyright original.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, folha de rosto e créditos",
+    "Estante Virtual: consenso de 21 anúncios"
+  ],
+  "id_remoto": 20399
+}

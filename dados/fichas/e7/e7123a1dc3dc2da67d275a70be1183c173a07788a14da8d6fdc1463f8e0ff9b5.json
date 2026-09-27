@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "e7123a1dc3dc2da67d275a70be1183c173a07788a14da8d6fdc1463f8e0ff9b5",
+  "arquivo_origem": "Faith and works in the letter of James.pdf",
+  "campos": {
+    "titulo": "Faith and works in the letter of James",
+    "subTitulo": "",
+    "nmAutor0": "Cornes, Francie",
+    "autores": [
+      {
+        "nome": "Exploring, Faith",
+        "desc": "Autor"
+      },
+      {
+        "nome": "works:",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Tyndale House",
+    "data": "2023",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "6",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20613
+}

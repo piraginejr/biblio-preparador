@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "a871c7aee07cc16755421debcdedf7e814e754843ab55a3d4466b305165e26a2",
+  "arquivo_origem": "457065895-DOUTRINA-DO-ESPIRITO-SANTO-COMISSAO-DOS-TREZE.pdf",
+  "campos": {
+    "titulo": "Doutrina do Espírito Santo",
+    "subTitulo": "Parecer da Comissão dos Treze",
+    "nmAutor0": "Convenção Batista Brasileira, Comissão dos Treze",
+    "autores": [
+      {
+        "nome": "Convenção Batista Brasileira, Comissão dos Treze",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Publicadora Batista",
+    "data": "1963",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "67",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa e referências bibliográficas",
+    "origem_autor": "responsabilidade institucional"
+  },
+  "justificativa": "O próprio documento e referências acadêmicas concordam em título, entidade responsável, editora, local e ano.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: capa e texto",
+    "Referência acadêmica: Casa Publicadora Batista, 1963"
+  ]
+}

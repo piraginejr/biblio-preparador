@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "a4effe42a5637006f573d5e65262188b01eef95ae42a65fbc1eab6ed250761b5",
+  "arquivo_origem": "638464599-Curso-recepcao-de-igreja.pdf",
+  "campos": {
+    "titulo": "Recepção de Igreja",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "12",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20935
+}

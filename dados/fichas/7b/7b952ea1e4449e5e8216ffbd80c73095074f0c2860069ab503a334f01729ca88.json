@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "7b952ea1e4449e5e8216ffbd80c73095074f0c2860069ab503a334f01729ca88",
+  "arquivo_origem": "13651o_melhor_de_john_c._maxwell_1.pdf",
+  "campos": {
+    "titulo": "O MELHOR MELHOR DE JOHN",
+    "subTitulo": "Seleção Vida de Líder",
+    "nmAutor0": "Maxwell, John  C. ",
+    "autores": [
+      {
+        "nome": "Maxwell, John C.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Thomas Nelson Brasil",
+    "data": "2015",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janiero",
+    "nPaginas": "416",
+    "isbn": "9788578607173",
+    "isbn_codigo_barras": "",
+    "cdd": "253",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "O livro é uma seleção dos 3 que são indicados com seus respectivos títulos originais e tradutores. Minutos de liderança (título original: Leadership Promises for Your Week [tradução de\nBárbara Coutinho e Leonardo Barroso]); Liderando para o sucesso (título original: Mentoring\n101 [tradução de Bárbara Coutinho e Leonardo Barroso]); A arte de formar líderes (título\noriginal: Developing the leaders around you [tradução deValéria Lamim Delgado Fernandes]). ",
+    "palavrasChave": "",
+    "CDD": "253",
+    "assunto": "Liderança",
+    "pchave": "Lider , formação de lider, mentoria "
+  },
+  "justificativa": "revisão visual",
+  "fontes": [
+    "Metadados locais do acervo",
+    "revisão visual do PDF"
+  ]
+}

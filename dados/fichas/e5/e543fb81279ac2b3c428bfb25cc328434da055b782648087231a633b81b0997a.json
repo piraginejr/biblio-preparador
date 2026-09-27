@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "e543fb81279ac2b3c428bfb25cc328434da055b782648087231a633b81b0997a",
+  "arquivo_origem": "The History of Theological Education (Justo L. González) (Z-Library).pdf",
+  "campos": {
+    "titulo": "History of Theological Education",
+    "subTitulo": "",
+    "nmAutor0": "González, Justo L.",
+    "autores": [
+      {
+        "nome": "González, Justo L.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Abingdon Press",
+    "data": "2015",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Nashville",
+    "nPaginas": "167",
+    "isbn": "9781426787782",
+    "isbn_codigo_barras": "",
+    "cdd": "230.071",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Theology, study and teaching"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20630
+}

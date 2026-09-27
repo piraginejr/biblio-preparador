@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "56444e7ae4a1c689a1b3cb72904eb6c956a88e335ac2e443ad0d4c529c429eeb",
+  "arquivo_origem": "Serie o cristao contemporaneo - John Stott e Tim Chester.pdf",
+  "campos": {
+    "titulo": "Série o cristão contemporâneo",
+    "subTitulo": "",
+    "nmAutor0": "Chester, John Stott e Tim",
+    "autores": [
+      {
+        "nome": "Chester, John Stott e Tim",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Ultimato",
+    "data": "2021",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "600",
+    "isbn": "9786586173208",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "portugues",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20469
+}

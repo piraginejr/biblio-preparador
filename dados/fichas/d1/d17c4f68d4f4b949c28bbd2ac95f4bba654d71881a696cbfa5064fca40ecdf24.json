@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "d17c4f68d4f4b949c28bbd2ac95f4bba654d71881a696cbfa5064fca40ecdf24",
+  "arquivo_origem": "Learning biblical languages – where do I start_.pdf",
+  "campos": {
+    "titulo": "Starting out with biblical languages",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "Tyndale House",
+    "data": "2023",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "7",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20625
+}

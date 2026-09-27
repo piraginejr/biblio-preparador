@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "24ef6c9b72d519ca098747c8a16582bf9d6a9a42b231635dcd26b770d81cb643",
+  "arquivo_origem": "890026291-O-perigo-da-esquerda-na-igreja.pdf",
+  "campos": {
+    "titulo": "O perigo da esquerda na igreja",
+    "subTitulo": "",
+    "nmAutor0": "[autor não identificado]",
+    "autores": [],
+    "editora": "Eficiente Teologia",
+    "data": "[s.d.]",
+    "edicao": "documento digital",
+    "lugar": "[S.l.]",
+    "nPaginas": "27",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": "Igreja; Política; Esquerdismo; Teologia; Ideologia",
+    "isbn_motivo": "sem ISBN: documento digital sem ficha editorial",
+    "origem_titulo": "nome do arquivo e sumário revisados",
+    "origem_autor": "autoria não declarada no documento"
+  },
+  "justificativa": "O título é confirmado pelo sumário e pelo conteúdo. O nome repetido em todas as páginas é o licenciado, não o autor; Eficiente Teologia é a origem institucional visível.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: marca de licença, sumário e conteúdo integral"
+  ],
+  "id_remoto": 20838
+}

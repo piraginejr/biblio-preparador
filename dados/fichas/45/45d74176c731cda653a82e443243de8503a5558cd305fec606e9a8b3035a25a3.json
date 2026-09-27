@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "45d74176c731cda653a82e443243de8503a5558cd305fec606e9a8b3035a25a3",
+  "arquivo_origem": "381464614-John-Stott-O-Discipulo-Radical-Libre.pdf",
+  "campos": {
+    "titulo": "O discípulo radical",
+    "subTitulo": "",
+    "nmAutor0": "Stott, John W. R.",
+    "autores": [
+      {
+        "nome": "Stott, John W. R.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Ultimato",
+    "data": "2011",
+    "edicao": "1ª edição",
+    "lugar": "Viçosa, MG",
+    "nPaginas": "120",
+    "isbn": "9788577790449",
+    "isbn_codigo_barras": "",
+    "cdd": "248.4",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Meire Portes Santos",
+    "titulo_original": "The Radical Disciple",
+    "origem_titulo": "CIP revisada",
+    "origem_autor": "CIP revisada"
+  },
+  "justificativa": "A página de créditos e a CIP do próprio PDF fornecem a ficha completa da edição brasileira.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: página de créditos e CIP",
+    "Editora Ultimato: ficha técnica da obra"
+  ]
+}

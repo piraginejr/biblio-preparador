@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "81b732b2cf3322a535056db91ea1b01d59ab1168e5d7da54696d777f6d3e487f",
+  "arquivo_origem": "647761598-JOHN-PIPER-Exultacao-Expositiva-a-Pregacao-Crista-Como-Adoracao.pdf",
+  "campos": {
+    "titulo": "Exultação expositiva",
+    "subTitulo": "A pregação cristã como adoração",
+    "nmAutor0": "Piper, John",
+    "autores": [
+      {
+        "nome": "Piper, John",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2019",
+    "edicao": "1ª edição digital",
+    "lugar": "São José dos Campos, SP",
+    "nPaginas": "276",
+    "isbn": "9788581325767",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Pregação expositiva; Homilética; Adoração cristã; Ministério pastoral",
+    "origem_titulo": "capa e ficha externa da edição digital revisadas",
+    "origem_autor": "capa e ficha externa revisadas"
+  },
+  "justificativa": "Capa e conteúdo confirmam título e autor. A ficha da edição digital confirma Editora Fiel, 2019 e ISBN próprio do e-book.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: capa e texto integral",
+    "Ficha comercial da edição digital: Editora Fiel, ISBN 9788581325767"
+  ]
+}

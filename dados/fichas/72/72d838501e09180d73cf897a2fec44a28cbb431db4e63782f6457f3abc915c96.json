@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "72d838501e09180d73cf897a2fec44a28cbb431db4e63782f6457f3abc915c96",
+  "arquivo_origem": "653804829-Guia-Pratico-Da-Reuniao-de-Celula-V01.pdf",
+  "campos": {
+    "titulo": "Afiando o machado",
+    "subTitulo": "Guia prático da reunião de célula",
+    "nmAutor0": "Lacerda, Silvio A.",
+    "autores": [
+      {
+        "nome": "Lacerda, Silvio A.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "2018",
+    "edicao": "1",
+    "lugar": "Ribeirão Preto",
+    "nPaginas": "47",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa e nota biográfica revisadas"
+  },
+  "justificativa": "Capa, nota biográfica, rodapés e página final identificam título, autor, ano e local; não há editora declarada.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, nota sobre o autor, rodapés e página final"
+  ],
+  "id_remoto": 20939
+}

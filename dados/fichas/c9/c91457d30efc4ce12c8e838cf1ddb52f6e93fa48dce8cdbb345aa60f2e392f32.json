@@ -1,0 +1,55 @@
+{
+  "hash_sha256": "c91457d30efc4ce12c8e838cf1ddb52f6e93fa48dce8cdbb345aa60f2e392f32",
+  "arquivo_origem": "587782177-Comentario-Biblico-BEACON-9-Galatas-hasta-Filimon-desbloqueado.pdf",
+  "campos": {
+    "titulo": "Comentario Bíblico Beacon: Gálatas a Filemón",
+    "subTitulo": "Tomo IX",
+    "nmAutor0": "Howard, R. E.",
+    "autores": [
+      {
+        "nome": "Howard, R. E.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Taylor, Willard H.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Knight, John A.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Nielson, John B.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Airhart, Arnold E.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Gould, J. Glenn",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Nazarena de Publicaciones",
+    "data": "1969",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Lenexa, Kansas",
+    "nPaginas": "516",
+    "isbn": "9781563446092",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "volume": "9"
+  },
+  "justificativa": "O preparo havia sido interrompido por consulta ao ISBN do tomo I. A folha de rosto e a lista editorial confirmam o tomo IX e seu ISBN próprio.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto, créditos e lista de ISBNs"
+  ],
+  "id_remoto": 20508
+}

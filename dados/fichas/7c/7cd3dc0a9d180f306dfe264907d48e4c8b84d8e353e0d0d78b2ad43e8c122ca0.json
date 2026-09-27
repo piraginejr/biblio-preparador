@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "7cd3dc0a9d180f306dfe264907d48e4c8b84d8e353e0d0d78b2ad43e8c122ca0",
+  "arquivo_origem": "633457714-SEDENTOS-POR-AVIVAMENTO-pdf.pdf",
+  "campos": {
+    "titulo": "SEDENTOS POR AVIVAMENTO: POR QUE AINDA TARDA O PLENO AVIVAMENTO",
+    "subTitulo": "",
+    "nmAutor0": "RAVENHILL, LEONARD",
+    "autores": [
+      {
+        "nome": "RAVENHILL, LEONARD",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "THE WAY",
+    "data": "2009",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "192",
+    "isbn": "9788599579053",
+    "isbn_codigo_barras": "",
+    "cdd": "230.0462",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20650
+}

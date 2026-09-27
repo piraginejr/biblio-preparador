@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "b0eeae8d84973ee3651a341e234f94810b2be3fca7a8a9bc2c66bf997d605904",
+  "arquivo_origem": "631848994-Introducao-a-Biblia-de-kenneth.pdf",
+  "campos": {
+    "titulo": "Pr. Kenneth Eagleton",
+    "subTitulo": "",
+    "nmAutor0": "Livre, Kenneth Eagleton Escola Teológica Batista",
+    "autores": [],
+    "editora": "Sociedade Bíblica do Brasil",
+    "data": "",
+    "edicao": "",
+    "lugar": "Belém",
+    "nPaginas": "33",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20788
+}

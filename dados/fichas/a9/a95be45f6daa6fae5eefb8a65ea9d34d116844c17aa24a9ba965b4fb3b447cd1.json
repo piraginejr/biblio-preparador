@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "a95be45f6daa6fae5eefb8a65ea9d34d116844c17aa24a9ba965b4fb3b447cd1",
+  "arquivo_origem": "553508349-O-carater-do-Cristao-TimChallies.pdf",
+  "campos": {
+    "titulo": "O Caráter do Cristão",
+    "subTitulo": "",
+    "nmAutor0": "Challies, Tim",
+    "autores": [
+      {
+        "nome": "Challies, Tim",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Trinitas",
+    "data": "2017",
+    "edicao": "1a edição",
+    "lugar": "São Paulo",
+    "nPaginas": "67",
+    "isbn": "9788585034153",
+    "isbn_codigo_barras": "",
+    "cdd": "248.4",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20473
+}

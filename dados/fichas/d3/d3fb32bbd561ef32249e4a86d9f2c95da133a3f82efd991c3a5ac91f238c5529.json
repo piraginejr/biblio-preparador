@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "d3fb32bbd561ef32249e4a86d9f2c95da133a3f82efd991c3a5ac91f238c5529",
+  "arquivo_origem": "Louvor (Mark Ashton, R. Kent Hugues etc.) (Z-Library).pdf",
+  "campos": {
+    "titulo": "LOUVOR",
+    "subTitulo": "",
+    "nmAutor0": "Ashton, Mark",
+    "autores": [
+      {
+        "nome": "Ashton, Mark",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Thomas Nelson Brasil",
+    "data": "2017",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "1. ed. - Rio de Janeiro",
+    "nPaginas": "268",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "248.4",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20803
+}

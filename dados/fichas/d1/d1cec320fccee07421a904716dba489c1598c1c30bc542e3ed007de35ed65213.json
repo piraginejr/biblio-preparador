@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "d1cec320fccee07421a904716dba489c1598c1c30bc542e3ed007de35ed65213",
+  "arquivo_origem": "513342040-Igreja-o-evangelho-visivel-Mark-Dever.pdf",
+  "campos": {
+    "titulo": "2015",
+    "subTitulo": "",
+    "nmAutor0": "Dever, Mark",
+    "autores": [
+      {
+        "nome": "Dever, Mark",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "B&H Publishing Group",
+    "data": "2015",
+    "edicao": "1ª Edição",
+    "lugar": "Nashville",
+    "nPaginas": "192",
+    "isbn": "9788581323039",
+    "isbn_codigo_barras": "",
+    "cdd": "262",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20445
+}

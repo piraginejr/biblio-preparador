@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "37dbfd4435d2a4bba4efc74f3503ba8614457c868631523e7823e984a96cae9e",
+  "arquivo_origem": "410108018-O-Pastor-Aprovado-Richard-Baxter-REEDITADO-pdf.pdf",
+  "campos": {
+    "titulo": "O pastor aprovado",
+    "subTitulo": "Modelo de ministério e crescimento pessoal",
+    "nmAutor0": "Baxter, Richard",
+    "autores": [
+      {
+        "nome": "Baxter, Richard",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Publicações Evangélicas Selecionadas",
+    "data": "1989",
+    "edicao": "1ª edição em português",
+    "lugar": "São Paulo",
+    "nPaginas": "189",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "titulo_original": "The Reformed Pastor",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "Folha de rosto e página editorial distinguem 1656 da primeira edição brasileira de 1989.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e créditos"
+  ],
+  "id_remoto": 20397
+}

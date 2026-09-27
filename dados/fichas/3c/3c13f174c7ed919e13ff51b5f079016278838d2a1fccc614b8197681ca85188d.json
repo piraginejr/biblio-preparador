@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "3c13f174c7ed919e13ff51b5f079016278838d2a1fccc614b8197681ca85188d",
+  "arquivo_origem": "673581871-Reforma-Agora-Renato-Vargens.pdf",
+  "campos": {
+    "titulo": "Reforma agora: o antídoto para a confusão evangélica no Brasil",
+    "subTitulo": "",
+    "nmAutor0": "Vargens, Renato",
+    "autores": [
+      {
+        "nome": "Vargens, Renato",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2015",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São José dos Campos",
+    "nPaginas": "104",
+    "isbn": "9788581323190",
+    "isbn_codigo_barras": "",
+    "cdd": "230.42",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20779
+}

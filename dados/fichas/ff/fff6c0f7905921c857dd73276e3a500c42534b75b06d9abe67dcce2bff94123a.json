@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "fff6c0f7905921c857dd73276e3a500c42534b75b06d9abe67dcce2bff94123a",
+  "arquivo_origem": "Jesus as the second Adam_ why does Jesus's humanity matter_.pdf",
+  "campos": {
+    "titulo": "Adam, again: why Jesus’s humanity matters",
+    "subTitulo": "",
+    "nmAutor0": "Mackerras, Kirsten",
+    "autores": [],
+    "editora": "Tyndale House",
+    "data": "2023",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "9",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20618
+}

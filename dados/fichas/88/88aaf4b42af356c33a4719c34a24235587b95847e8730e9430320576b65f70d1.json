@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "88aaf4b42af356c33a4719c34a24235587b95847e8730e9430320576b65f70d1",
+  "arquivo_origem": "558819416-HISTORIA-DOS-BATISTAS-NO-PARA.pdf",
+  "campos": {
+    "titulo": "A HISTÓRIA DOS BATISTAS NO PARÁ",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "Belém",
+    "nPaginas": "2",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20584
+}

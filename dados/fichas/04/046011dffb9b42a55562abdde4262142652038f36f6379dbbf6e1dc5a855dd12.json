@@ -1,0 +1,42 @@
+{
+  "hash_sha256": "046011dffb9b42a55562abdde4262142652038f36f6379dbbf6e1dc5a855dd12",
+  "arquivo_origem": "615329146-A-igreja-local-e-a-musica-no-culto-Filipe-Fontes.pdf",
+  "campos": {
+    "titulo": "A igreja local e a música no culto",
+    "subTitulo": "O canto calvinista e os desafios contemporâneos",
+    "nmAutor0": "Fontes, Filipe Costa",
+    "autores": [
+      {
+        "nome": "Fontes, Filipe Costa",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Almeida, João Batista dos Santos",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Monergismo",
+    "data": "2020",
+    "edicao": "1ª edição",
+    "lugar": "Brasília",
+    "nPaginas": "250",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Música no culto; Liturgia reformada; João Calvino; Canto congregacional",
+    "origem_titulo": "capa",
+    "origem_autor": "capa e créditos",
+    "isbn_motivo": "o exemplar digital não declara ISBN",
+    "idioma": "por"
+  },
+  "justificativa": "A capa identifica título, subtítulo e dois autores; a página de créditos informa Editora Monergismo, Brasília, 1ª edição, 2020. O OCR 'E M' era apenas o logotipo.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e página de créditos"
+  ],
+  "id_remoto": 20755
+}

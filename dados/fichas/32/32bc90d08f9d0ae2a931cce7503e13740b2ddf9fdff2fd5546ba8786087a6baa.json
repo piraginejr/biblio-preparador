@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "32bc90d08f9d0ae2a931cce7503e13740b2ddf9fdff2fd5546ba8786087a6baa",
+  "arquivo_origem": "721883252-IGREJA-MISSIONAL-O-QUE-E-ISSO.pdf",
+  "campos": {
+    "titulo": "IGREJA MISSIONAL: O QUE É ISSO?",
+    "subTitulo": "",
+    "nmAutor0": "Ramlow, Rodomar Ricardo",
+    "autores": [],
+    "editora": "",
+    "data": "1998",
+    "edicao": "",
+    "lugar": "Curitiba",
+    "nPaginas": "11",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20836
+}

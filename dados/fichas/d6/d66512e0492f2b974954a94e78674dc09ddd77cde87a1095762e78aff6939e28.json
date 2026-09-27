@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "d66512e0492f2b974954a94e78674dc09ddd77cde87a1095762e78aff6939e28",
+  "arquivo_origem": "O Cristão Contemporâneo (John Stott e Tim Chester) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Série o cristão contemporâneo",
+    "subTitulo": "",
+    "nmAutor0": "STOTT, John",
+    "autores": [
+      {
+        "nome": "STOTT, John",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9786586173208",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

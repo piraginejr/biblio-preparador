@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "ea79ff3ca6ddc7cb192288b8836e3ffdd1fa487ba93cb756062c420a6307a1c2",
+  "arquivo_origem": "316544139-Liderazgo-Biblico-de-Ancianos-pdf.pdf",
+  "campos": {
+    "titulo": "LIDERAZGO BIBLICO RESTAURAR EL LIDERAZGO",
+    "subTitulo": "",
+    "nmAutor0": "A, Un Urgente Llamado",
+    "autores": [
+      {
+        "nome": "A, Un Urgente Llamado",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "1995",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "334",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20942
+}

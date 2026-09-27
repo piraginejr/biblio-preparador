@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "bb287b19f2f2243015c983ad0f5821ab4290a71ec045b75b03c16e4085833f80",
+  "arquivo_origem": "125996206-Voce-Esta-Cheio-do-Espirito-Santo-Eneas-Tognini.pdf",
+  "campos": {
+    "titulo": "Você está cheio do Espírito Santo?",
+    "subTitulo": "",
+    "nmAutor0": "Tognini, Enéas",
+    "autores": [
+      {
+        "nome": "Tognini, Enéas",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Edições Holy Bible",
+    "data": "2011",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "99",
+    "isbn": "9788575571088",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo",
+    "origem_titulo": "capa e ficha revisadas",
+    "origem_autor": "capa e ficha revisadas"
+  },
+  "justificativa": "Título, autor, editora, ano e ISBN conferidos na ficha impressa do PDF.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e página de créditos"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "hash_sha256": "ddb5b421937fdcc01f0707f4218b0d97f8dab5926ea6315d5a21b0c5377e6270",
+  "arquivo_origem": "111977125-A-HISTORIA-DOS-BATISTAS.pdf",
+  "campos": {
+    "titulo": "A HISTÓRIA DOS BATISTAS",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "46",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

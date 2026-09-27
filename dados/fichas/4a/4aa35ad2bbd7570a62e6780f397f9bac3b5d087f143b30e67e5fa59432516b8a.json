@@ -1,0 +1,41 @@
+{
+  "hash_sha256": "4aa35ad2bbd7570a62e6780f397f9bac3b5d087f143b30e67e5fa59432516b8a",
+  "arquivo_origem": "667964464-Como-Adorar-ao-Rei.pdf",
+  "campos": {
+    "titulo": "Como adorar ao Rei",
+    "subTitulo": "Prepare o seu coração, prepare o seu mundo, prepare o caminho",
+    "nmAutor0": "Neese, Zach",
+    "autores": [
+      {
+        "nome": "Neese, Zach",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Santos, Débora Luíza dos",
+        "desc": "Tradutor"
+      }
+    ],
+    "editora": "Gateway Create Publishing",
+    "data": "2015",
+    "edicao": "3ª edição",
+    "lugar": "[S.l.]",
+    "nPaginas": "313",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Adoração cristã; Louvor; Sacerdócio; Vida cristã",
+    "isbn_motivo": "sem ISBN localizado nesta edição digital",
+    "origem_titulo": "capa e créditos revisados",
+    "origem_autor": "capa e copyright revisados"
+  },
+  "justificativa": "A página de créditos informa título, autor, copyright de 2015 e terceira edição brasileira; o PDF identifica a tradução.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e créditos, páginas 1-4"
+  ],
+  "id_remoto": 20825
+}

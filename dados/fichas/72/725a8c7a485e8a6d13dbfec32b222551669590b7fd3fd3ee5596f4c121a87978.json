@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "725a8c7a485e8a6d13dbfec32b222551669590b7fd3fd3ee5596f4c121a87978",
+  "arquivo_origem": "818586401-Vida-e-Obra-J-C-Ryle.pdf",
+  "campos": {
+    "titulo": "Vida e Obra de J.C.Ryle",
+    "subTitulo": "",
+    "nmAutor0": "Marcos, Armando",
+    "autores": [
+      {
+        "nome": "Marcos, Armando",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fi",
+    "data": "1890",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "148",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20821
+}

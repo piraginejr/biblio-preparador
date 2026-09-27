@@ -1,0 +1,39 @@
+{
+  "hash_sha256": "7169f560675e3a8f9f5253d7fbe5c5b1e215899074ea8a3e5ac1dc645e5a133e",
+  "arquivo_origem": "748951944-A-History-of-the-Church-Angela-Pellicciari-095929.pdf",
+  "campos": {
+    "titulo": "A History of the Church",
+    "subTitulo": "Popes and Saints, Emperors and Kings, Gnosis and Persecution",
+    "nmAutor0": "Pellicciari, Angela",
+    "autores": [
+      {
+        "nome": "Pellicciari, Angela",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Sarah, Robert",
+        "desc": "Prefácio"
+      }
+    ],
+    "editora": "Gondolin Press",
+    "data": "2020",
+    "edicao": "1st edition",
+    "lugar": "[S.l.]",
+    "nPaginas": "146",
+    "isbn": "9781945658181",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Church history; Catholic Church; Papacy; Christianity",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "A folha de rosto identifica título, subtítulo, autora e prefaciador; a ficha externa pelo ISBN confirma Gondolin Press e 2020. O PDF reúne duas páginas impressas por folha.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: folha de rosto e texto integral",
+    "Ficha bibliográfica por ISBN 9781945658181"
+  ]
+}

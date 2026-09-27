@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "54052486c0e4c0b3c6eea747f62120a6ae17a4381e3b1e539986eff4582def49",
+  "arquivo_origem": "621306741-AULA-2-Formacao-de-um-lider.pdf",
+  "campos": {
+    "titulo": "Formação de um líder",
+    "subTitulo": "Aula 2",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "1",
+    "lugar": "",
+    "nPaginas": "10",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "autoria não declarada"
+  },
+  "justificativa": "Material didático identificado como Aula 2; contém reflexões e checklist da aula, sem ficha editorial ou autoria declarada.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, estrutura das atividades e checklist final"
+  ],
+  "id_remoto": 20941
+}

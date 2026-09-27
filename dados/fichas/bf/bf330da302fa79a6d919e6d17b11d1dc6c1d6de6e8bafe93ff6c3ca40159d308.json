@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "bf330da302fa79a6d919e6d17b11d1dc6c1d6de6e8bafe93ff6c3ca40159d308",
+  "arquivo_origem": "Aconselhamento Cristão - Apostila Nova.pdf",
+  "campos": {
+    "titulo": "ACONSELHAMENTO CRISTÃO",
+    "subTitulo": "",
+    "nmAutor0": "Nova, Apostila",
+    "autores": [],
+    "editora": "Editora Jocum Brasil. Terceira Edição – Setembro 2014",
+    "data": "2014",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "203",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20847
+}

@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "e76cbad0e155c8a276b4817b670933c1c242271ce74c76047695a5f915d6f465",
+  "arquivo_origem": "497489661-Como-Ser-Dirigido-Pelo-Espirito-Kenneth-E-Hagin.pdf",
+  "campos": {
+    "titulo": "Como ser dirigido pelo Espírito de Deus",
+    "subTitulo": "Edição Legado expandida",
+    "nmAutor0": "Hagin, Kenneth E.",
+    "autores": [
+      {
+        "nome": "Hagin, Kenneth E.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Rhema Brasil Publicações",
+    "data": "2015",
+    "edicao": "1ª edição em língua portuguesa",
+    "lugar": "Campina Grande",
+    "nPaginas": "319",
+    "isbn": "9788566217285",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Thiago Garcia",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa revisada"
+  },
+  "justificativa": "Capa e créditos identificam a edição expandida brasileira; a página oficial da editora confirma autor e ISBN.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e créditos",
+    "Rhema Brasil Publicações: ficha oficial da Edição Legado"
+  ],
+  "id_remoto": 20436
+}

@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "eb8d185f5071d36de2a16e3013100459bd0df0c43e96f6906c527cf481bacb4f",
+  "arquivo_origem": "101891214-23680260-Anibal-Pereira-Reis-Catolicos-Carismaticos-e-Pentecostais-Catolicos.pdf",
+  "campos": {
+    "titulo": "Católicos carismáticos e pentecostais católicos",
+    "subTitulo": "",
+    "nmAutor0": "Reis, Aníbal Pereira dos",
+    "autores": [
+      {
+        "nome": "Reis, Aníbal Pereira dos",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Edições Caminho de Damasco",
+    "data": "1992",
+    "edicao": "2ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "44",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "Título, autor, edição, editora, lugar e ano conferidos diretamente na folha de rosto.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto, página 2"
+  ],
+  "id_remoto": 20347
+}

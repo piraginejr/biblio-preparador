@@ -1,0 +1,56 @@
+{
+  "hash_sha256": "43df0aafab963d2a5f2891c1f505db28175fff61a8e3b52aac787e2ae21c5f52",
+  "arquivo_origem": "7 Classic Missionary Biographies (Lull, Raymond Taylor, James Hudson Paton etc.) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Seven Classic Missionary Biographies",
+    "subTitulo": "",
+    "nmAutor0": "Zwemer, Samuel M.",
+    "autores": [
+      {
+        "nome": "Zwemer, Samuel M.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Edwards, Jonathan",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Smith, George",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Taylor, J. Hudson",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Paton, John G.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Carmichael, Amy",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Christian Classics Treasury",
+    "data": "2014",
+    "edicao": "",
+    "lugar": "Barcelona",
+    "nPaginas": "1762",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "sumário e folhas de rosto das obras"
+  },
+  "justificativa": "As sete obras e seus autores foram conferidos no sumário e nas folhas de rosto internas; os missionários biografados não foram confundidos com os autores.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, sumário e folhas de rosto internas"
+  ],
+  "id_remoto": 20348
+}

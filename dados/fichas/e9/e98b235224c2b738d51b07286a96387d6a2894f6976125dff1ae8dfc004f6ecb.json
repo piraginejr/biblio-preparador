@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "e98b235224c2b738d51b07286a96387d6a2894f6976125dff1ae8dfc004f6ecb",
+  "arquivo_origem": "317436216-Os-Grandes-Teologos-Do-Seculo-XX-2.pdf",
+  "campos": {
+    "titulo": "OS GRANDES TEÓLOGOS DO SÉCULO VINTE BARTH BRUNNER TILLICH NIEBURHR BULTMANN CULLMANN _BONHOEFFER BULGAKOV FLOROVSKY",
+    "subTitulo": "",
+    "nmAutor0": "Mondin, Battista",
+    "autores": [
+      {
+        "nome": "Mondin, Battista",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Edições Paulinas",
+    "data": "1969",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "277",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "230.092",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

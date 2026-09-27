@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "ed8b14b268c2c4cd81414499851a179d9cd0f41e1ad15adebc7d6eaa801f6f40",
+  "arquivo_origem": "577431322-E-BOOK-Aprofundando-Raizes-Roosevelt-Arantes.pdf",
+  "campos": {
+    "titulo": "APROFUNDANDO RAÍZES",
+    "subTitulo": "",
+    "nmAutor0": "ARANTES, Roosevelt",
+    "autores": [
+      {
+        "nome": "ARANTES, Roosevelt",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9788566207118",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

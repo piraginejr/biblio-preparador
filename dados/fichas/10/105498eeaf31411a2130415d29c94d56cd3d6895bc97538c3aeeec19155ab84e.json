@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "105498eeaf31411a2130415d29c94d56cd3d6895bc97538c3aeeec19155ab84e",
+  "arquivo_origem": "625182030-O-Pecado-de-Nao-Orar-pdf-John-R-Rice.pdf",
+  "campos": {
+    "titulo": "O pecado de não orar",
+    "subTitulo": "",
+    "nmAutor0": "Rice, John R.",
+    "autores": [
+      {
+        "nome": "Rice, John R.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Jonathan",
+        "desc": "Adaptação e capítulo adicional"
+      }
+    ],
+    "editora": "Vale da Bênção",
+    "data": "2007",
+    "edicao": "3ª edição brasileira",
+    "lugar": "[S.l.]",
+    "nPaginas": "38",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Oração; Vida cristã; Pecado"
+  },
+  "justificativa": "Capa, sumário e apresentação da terceira edição foram conferidos diretamente no PDF.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, sumário e apresentação da terceira edição"
+  ],
+  "id_remoto": 20693
+}

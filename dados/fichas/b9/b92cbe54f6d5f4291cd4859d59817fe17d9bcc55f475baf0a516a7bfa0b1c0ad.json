@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "b92cbe54f6d5f4291cd4859d59817fe17d9bcc55f475baf0a516a7bfa0b1c0ad",
+  "arquivo_origem": "373866063-Livro-Chega-de-Regras.pdf",
+  "campos": {
+    "titulo": "CHEGA DE REGRAS",
+    "subTitulo": "",
+    "nmAutor0": "Siqueira, Larry Crab; traduzido por Neyd",
+    "autores": [
+      {
+        "nome": "Siqueira, Larry Crab; traduzido por Neyd",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Lawrence J",
+    "data": "2003",
+    "edicao": "1",
+    "lugar": "São Paulo",
+    "nPaginas": "97",
+    "isbn": "8573253258",
+    "isbn_codigo_barras": "",
+    "cdd": "248.4",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

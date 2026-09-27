@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "934464497052645ec77a4c373ac2b45679cc4ebc17612bc9554d2ab511ac7633",
+  "arquivo_origem": "6542joao_calvino.pdf",
+  "campos": {
+    "titulo": "A Arte Expositiva de Joao Calvino",
+    "subTitulo": "",
+    "nmAutor0": "LAWSON, Steven J.",
+    "autores": [
+      {
+        "nome": "LAWSON, Steven J.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "978-85991454-87",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

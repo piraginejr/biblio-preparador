@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "6d27aa2bdd681bf85cbb1f5c93609df5068917f5cfb241a2bcdd097a4f6ebbd2",
+  "arquivo_origem": "2015.261103.Prayer.pdf",
+  "campos": {
+    "titulo": "Prayer",
+    "subTitulo": "",
+    "nmAutor0": "Buttrick, George Arthur",
+    "autores": [
+      {
+        "nome": "Buttrick, George Arthur",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Abingdon-Cokesbury Press",
+    "data": "1942",
+    "edicao": "",
+    "lugar": "New York; Nashville",
+    "nPaginas": "332",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "Folha de rosto e copyright MCMXLII conferidos visualmente; MCMXLII corresponde a 1942.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: folha de rosto e copyright, páginas 2 e 3"
+  ]
+}

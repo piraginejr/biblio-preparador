@@ -1,0 +1,12 @@
+{
+  "hash_sha256": "705233e0ed163354ee5d57615233e3b098a7c201ab7fc824f2de36862a18bb64",
+  "arquivo_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/392786485-El-Pastor-Silencioso-John-MacArthur.pdf",
+  "campos": {
+    "titulo": "El Pastor silencioso",
+    "isbn": "9780825456084"
+  },
+  "justificativa": "Cadastrado na API Biblio",
+  "fontes": [
+    "API Biblio PIB Curitiba"
+  ]
+}

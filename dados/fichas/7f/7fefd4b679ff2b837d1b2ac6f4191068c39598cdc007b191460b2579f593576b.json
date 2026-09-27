@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "7fefd4b679ff2b837d1b2ac6f4191068c39598cdc007b191460b2579f593576b",
+  "arquivo_origem": "876911984-A-Caminho-de-Casa-Billy-Graham.pdf",
+  "campos": {
+    "titulo": "A Caminho de Casa",
+    "subTitulo": "",
+    "nmAutor0": "GRAHAM, Billy",
+    "autores": [
+      {
+        "nome": "GRAHAM, Billy",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "978-85-7960-126-2",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

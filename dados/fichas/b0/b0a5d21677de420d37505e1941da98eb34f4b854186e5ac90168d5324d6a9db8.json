@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "b0a5d21677de420d37505e1941da98eb34f4b854186e5ac90168d5324d6a9db8",
+  "arquivo_origem": "646224679-Estudo-04-OS-BATISTAS-NA-INGLATERRA.pdf",
+  "campos": {
+    "titulo": "Estudo 4",
+    "subTitulo": "",
+    "nmAutor0": "INGLATERRA, NA",
+    "autores": [
+      {
+        "nome": "INGLATERRA, NA",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "31",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apresentação",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20861
+}

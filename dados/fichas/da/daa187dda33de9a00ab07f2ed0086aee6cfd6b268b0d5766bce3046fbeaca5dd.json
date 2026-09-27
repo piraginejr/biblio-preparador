@@ -1,0 +1,59 @@
+{
+  "hash_sha256": "daa187dda33de9a00ab07f2ed0086aee6cfd6b268b0d5766bce3046fbeaca5dd",
+  "arquivo_origem": "587782192-Comentario-Biblico-BEACON-10-Hebreos-a-Apocalipsis-desbloqueado.pdf",
+  "campos": {
+    "titulo": "Comentario Bíblico Beacon: Hebreos a Apocalipsis",
+    "subTitulo": "Tomo X",
+    "nmAutor0": "Taylor, Richard S.",
+    "autores": [
+      {
+        "nome": "Taylor, Richard S.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Harper, A. F.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Nicholson, Roy S.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Fuhrman, Eldon R.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Blaney, Harvey J. S.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Rose, Delbert R.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Earle, Ralph",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Nazarena de Publicaciones",
+    "data": "1969",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Lenexa, Kansas",
+    "nPaginas": "439",
+    "isbn": "9781563446108",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "volume": "10"
+  },
+  "justificativa": "O preparo havia sido interrompido por consulta ao ISBN do tomo I. A folha de rosto e a lista editorial confirmam o tomo X e seu ISBN próprio.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto, créditos e lista de ISBNs"
+  ],
+  "id_remoto": 20509
+}

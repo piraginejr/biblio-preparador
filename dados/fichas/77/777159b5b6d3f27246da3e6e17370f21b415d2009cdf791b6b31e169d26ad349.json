@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "777159b5b6d3f27246da3e6e17370f21b415d2009cdf791b6b31e169d26ad349",
+  "arquivo_origem": "357012481-ron-dunn-por-que-deus-nao-me-cura-1-pdf.pdf",
+  "campos": {
+    "titulo": "RONALD DUNN Por que Deus não me cura?",
+    "subTitulo": "",
+    "nmAutor0": "DUNN, RON",
+    "autores": [
+      {
+        "nome": "DUNN, RON",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Ronald Dunn",
+    "data": "1997",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "189",
+    "isbn": "8573251905",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Religião"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

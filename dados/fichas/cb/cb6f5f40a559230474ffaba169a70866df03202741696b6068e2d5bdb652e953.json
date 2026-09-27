@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "cb6f5f40a559230474ffaba169a70866df03202741696b6068e2d5bdb652e953",
+  "arquivo_origem": "733308709-PDF-MODULO-1-IGREJA-MULTIPLICADORA-3.pdf",
+  "campos": {
+    "titulo": "CURSO DE",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "JUERP - Junta de Educação Religiosa e Publicações",
+    "data": "",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "56",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20683
+}

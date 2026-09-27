@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "7a6f337c10eb4c017199017abe9a4ee31922fef317367749a148143270ee1dd8",
+  "arquivo_origem": "678234363-Vida-de-A-W-Tozer-em-busca-de-Deus-pdf.pdf",
+  "campos": {
+    "titulo": "A vida de A. W. Tozer",
+    "subTitulo": "Em busca de Deus: biografia autorizada",
+    "nmAutor0": "Snyder, James L.",
+    "autores": [
+      {
+        "nome": "Snyder, James L.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Bethany House Publishers",
+    "data": "2014",
+    "edicao": "1ª edição",
+    "lugar": "Minneapolis",
+    "nPaginas": "310",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "A. W. Tozer; Biografia; Vida cristã"
+  },
+  "justificativa": "Capa e copyright do próprio arquivo identificam autor, título original, editora e edição de 2014.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e copyright"
+  ],
+  "id_remoto": 20697
+}

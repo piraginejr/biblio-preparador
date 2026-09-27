@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "f17251a4667f2f294fac0e9796ba781a0e53f2df74b9b1fce6ae1a31d05a45ba",
+  "arquivo_origem": "302La Iglesia y su Mision Evangelizadora.pdf",
+  "campos": {
+    "titulo": "La Iglesia y su misión evangelizadora",
+    "subTitulo": "",
+    "nmAutor0": "Costas, Orlando E.",
+    "autores": [
+      {
+        "nome": "MISION",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editorial La Aurora",
+    "data": "1971",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Buenos Aires",
+    "nPaginas": "123",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Evangelização; Missão cristã; Igreja; Missiologia; Orlando E. Costas",
+    "isbn_motivo": "sem ISBN declarado na edição de 1971",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "A folha de rosto e o copyright fornecem título, autor, editora, local e ano. O registro bibliográfico externo confirma a edição e a paginação.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto, copyright e sumário, páginas 2-6",
+    "Google Books: La Iglesia y su misión evangelizadora, Editorial La Aurora, 1971"
+  ],
+  "id_remoto": 20774
+}

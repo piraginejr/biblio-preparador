@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "35d4690fcb41c0a83567c27db8f2b9101bb3aa863b0cc06fefe613ab1cb193f8",
+  "arquivo_origem": "758790635-Teologia-Sistema-tica-Haddington.pdf",
+  "campos": {
+    "titulo": "TEOLOGÍA SISTEMÁTICA †",
+    "subTitulo": "",
+    "nmAutor0": "HADDINGTON, JOHN BROWN DE",
+    "autores": [
+      {
+        "nome": "HADDINGTON, JOHN BROWN DE",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Monergism Books",
+    "data": "[s.d.]",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "688",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20876
+}

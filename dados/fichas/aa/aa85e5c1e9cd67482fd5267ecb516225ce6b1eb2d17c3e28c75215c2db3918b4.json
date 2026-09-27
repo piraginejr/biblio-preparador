@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "aa85e5c1e9cd67482fd5267ecb516225ce6b1eb2d17c3e28c75215c2db3918b4",
+  "arquivo_origem": "A História de Jesus SEGUNDO OS EVANGELHOS - BÍBLIA PRAZER DA PALAVRA - AZEVEDO, Israel de Belo.pdf",
+  "campos": {
+    "titulo": "Bíblia Prazer da Palavra; versão ao alcance de todos",
+    "subTitulo": "A história de Jesus segundo os Evangelhos",
+    "nmAutor0": "Azevedo, Israel Belo de",
+    "autores": [
+      {
+        "nome": "Azevedo, Israel Belo de",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Prazer da Palavra",
+    "data": "2023",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "481",
+    "isbn": "9788594115430",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Bíblia"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

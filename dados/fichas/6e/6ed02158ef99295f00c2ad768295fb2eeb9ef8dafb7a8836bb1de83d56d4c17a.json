@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "6ed02158ef99295f00c2ad768295fb2eeb9ef8dafb7a8836bb1de83d56d4c17a",
+  "arquivo_origem": "402132945-Cristianismo-Pagao-Frank-Viola-pdf.pdf",
+  "campos": {
+    "titulo": "Cristianismo Pagao?",
+    "subTitulo": "",
+    "nmAutor0": "VIOLA, FRANK",
+    "autores": [
+      {
+        "nome": "VIOLA, FRANK",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Abba Press",
+    "data": "2008",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "400",
+    "isbn": "9788578570132",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20386
+}

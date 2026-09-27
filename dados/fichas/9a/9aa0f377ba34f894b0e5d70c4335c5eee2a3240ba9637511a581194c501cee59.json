@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "9aa0f377ba34f894b0e5d70c4335c5eee2a3240ba9637511a581194c501cee59",
+  "arquivo_origem": "Xavier - 2008 - O crescimento da igreja através dos séculos análi.pdf",
+  "campos": {
+    "titulo": "artigo07_04 Xavier",
+    "subTitulo": "",
+    "nmAutor0": "pela, adventista e Doutorando",
+    "autores": [
+      {
+        "nome": "pela, adventista",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Doutorando",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Revista Eletrônica de Teologia Curso de Teologia do Unas",
+    "data": "2005",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "14",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20905
+}

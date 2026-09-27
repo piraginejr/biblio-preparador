@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "b77d6a438e960437e97a414eafcb2f0f0b102fd80855bbf6567a718726b6d315",
+  "arquivo_origem": "558074778-John-Bevere-O-EspA-rito-Santo-Uma-IntroduA-A-o.pdf",
+  "campos": {
+    "titulo": "ESPÍRITO SANTO",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "LAN EDITORA",
+    "data": "",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "243",
+    "isbn": "9788599858530",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20727
+}

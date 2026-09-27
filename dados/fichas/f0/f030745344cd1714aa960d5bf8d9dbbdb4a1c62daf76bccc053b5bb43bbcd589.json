@@ -1,0 +1,26 @@
+{
+  "hash_sha256": "f030745344cd1714aa960d5bf8d9dbbdb4a1c62daf76bccc053b5bb43bbcd589",
+  "arquivo_origem": "343121737-Questionario-SEMINARIO.pdf",
+  "campos": {
+    "titulo": "Matéria: Princípios de Liderança",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "13",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "arquivo inválido",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

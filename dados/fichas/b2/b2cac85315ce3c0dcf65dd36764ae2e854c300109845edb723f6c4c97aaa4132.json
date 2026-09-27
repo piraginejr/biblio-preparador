@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "b2cac85315ce3c0dcf65dd36764ae2e854c300109845edb723f6c4c97aaa4132",
+  "arquivo_origem": "Quiero dejar de ser homosexual casos reales de terapia reparativa (Nicolosi, Joseph(Author)) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Quiero dejar de ser homosexual Casos reales de terapia reparativa",
+    "subTitulo": "",
+    "nmAutor0": "NICOLOSI, JOSEPH",
+    "autores": [
+      {
+        "nome": "NICOLOSI, JOSEPH",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Ediciones Encuentro, S. A., Madrid",
+    "data": "2009",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Madrid",
+    "nPaginas": "290",
+    "isbn": "9788474909661",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20845
+}

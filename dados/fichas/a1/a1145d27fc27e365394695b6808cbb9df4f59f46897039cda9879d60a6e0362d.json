@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "a1145d27fc27e365394695b6808cbb9df4f59f46897039cda9879d60a6e0362d",
+  "arquivo_origem": "6 Iglecrecimiento, el movimento ecumênico y el evangelicalismo.pdf",
+  "campos": {
+    "titulo": "COSTAS, O. E. Iglecrecimiento, el movimento ecumênico y el “evangelicalismo",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [
+      {
+        "nome": "COSTAS, O. E. Iglecrecimiento, el movimento ecumênico",
+        "desc": "Autor"
+      },
+      {
+        "nome": "\"evangelicalismo\"., el",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "3",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20770
+}

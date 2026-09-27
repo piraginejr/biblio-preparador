@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "4ca83ec72e3f076b837e3e6c3dc1b90f411d18860eef161929ff060ed502a0f0",
+  "arquivo_origem": "Catolicismo. Uma analise Critica e Teologi - Adelson Damasceno Santos.pdf",
+  "campos": {
+    "titulo": "AP SANTOS CATOLICISMO UMA ANÁLISE CRÍTICA E TEOLÓGICA Uma ferramenta essencial para conhecimento e discernimento",
+    "subTitulo": "",
+    "nmAutor0": "Santos, Adelson Damasceno",
+    "autores": [
+      {
+        "nome": "Santos, Adelson Damasceno",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "A.D. SANTOS EDITORA",
+    "data": "2017",
+    "edicao": "1",
+    "lugar": "Curitiba",
+    "nPaginas": "82",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20898
+}

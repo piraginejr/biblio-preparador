@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "6e0c1a33283470abe1480dac37c0ebcb82dca82351c11b43526006be04294ed7",
+  "arquivo_origem": "620520808-INVISIVEL-O-dom-de-permanecer-escondido-em-um-mundo-que-ama-ser (1).pdf",
+  "campos": {
+    "titulo": "INVISIVEL O dom de permanecer escondido em um mundo que ama ser",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "Editora Mundo Cristão",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "232",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20923
+}

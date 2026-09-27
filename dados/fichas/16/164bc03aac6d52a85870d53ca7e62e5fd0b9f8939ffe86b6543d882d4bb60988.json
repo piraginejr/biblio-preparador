@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "164bc03aac6d52a85870d53ca7e62e5fd0b9f8939ffe86b6543d882d4bb60988",
+  "arquivo_origem": "243290350-Servos-Servas-Santos-Santas-Sabios-Sabias-Solidarios-Solidarias-pdf.pdf",
+  "campos": {
+    "titulo": "Serviço, santidade, sabedoria e solidariedade",
+    "subTitulo": "Pistas para aprofundamento da compreensão da Carta Pastoral do Colégio Episcopal",
+    "nmAutor0": "Maia, Adriel de Souza",
+    "autores": [
+      {
+        "nome": "Maia, Adriel de Souza",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Colégio Episcopal da Igreja Metodista",
+    "data": "2006",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "18",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa revisada"
+  },
+  "justificativa": "Capa e folha de rosto identificam título, responsabilidade institucional, autor e ano.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e folha de rosto"
+  ],
+  "id_remoto": 20359
+}

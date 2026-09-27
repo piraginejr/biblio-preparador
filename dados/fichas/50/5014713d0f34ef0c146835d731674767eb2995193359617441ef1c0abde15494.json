@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "5014713d0f34ef0c146835d731674767eb2995193359617441ef1c0abde15494",
+  "arquivo_origem": "631837960-ETICA-CRISTA-Martinho-Lutero-pdf.pdf",
+  "campos": {
+    "titulo": "LUTERO",
+    "subTitulo": "",
+    "nmAutor0": "Lutero, Martim",
+    "autores": [
+      {
+        "nome": "Lutero, Martim",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Sinodal",
+    "data": "1989",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Leopol- do",
+    "nPaginas": "154",
+    "isbn": "9788523305703",
+    "isbn_codigo_barras": "9788523305703",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

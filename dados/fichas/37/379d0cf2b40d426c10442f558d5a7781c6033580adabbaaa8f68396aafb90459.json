@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "379d0cf2b40d426c10442f558d5a7781c6033580adabbaaa8f68396aafb90459",
+  "arquivo_origem": "Os Livros Malditos – Jacques Bergier.pdf",
+  "campos": {
+    "titulo": "Os Livros Malditos",
+    "subTitulo": "",
+    "nmAutor0": "Bergier, Jacques",
+    "autores": [
+      {
+        "nome": "Bergier, Jacques",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "1980",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "64",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20903
+}

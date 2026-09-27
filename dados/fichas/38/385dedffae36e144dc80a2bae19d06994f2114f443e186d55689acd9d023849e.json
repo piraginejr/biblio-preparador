@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "385dedffae36e144dc80a2bae19d06994f2114f443e186d55689acd9d023849e",
+  "arquivo_origem": "15721_ALCANCANDO_AS_ALTURAS_ocr.pdf",
+  "campos": {
+    "titulo": "ALCANÇANDO AS ALTURAS",
+    "subTitulo": "",
+    "nmAutor0": "DANTAS, Elias",
+    "autores": [
+      {
+        "nome": "DANTAS, Elias",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9788577460977",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

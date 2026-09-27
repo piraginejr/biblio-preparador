@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "3acb205513b2c1717665de2c33ad392178acb4b8f6e7a2c6facadefd4c2d598b",
+  "arquivo_origem": "501014240-Novo-Comentario-Biblico-Beacon-Galatas.pdf",
+  "campos": {
+    "titulo": "Novo comentário bíblico beacon: Gálatas",
+    "subTitulo": "",
+    "nmAutor0": "Lyons, George",
+    "autores": [
+      {
+        "nome": "Lyons, George",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Beacon Hill Press of Kansas City",
+    "data": "2016",
+    "edicao": "1",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "491",
+    "isbn": "9788576894933",
+    "isbn_codigo_barras": "9788576894933",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20441
+}

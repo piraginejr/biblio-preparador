@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "6399ae25238e398f27c546d454139c3465bb5d0d58cf27d9ba7dfb3e9aad9d18",
+  "arquivo_origem": "658448574-David-Powlison-Falando-a-Verdade-Em-Amor.pdf",
+  "campos": {
+    "titulo": "Falando a verdade em amor",
+    "subTitulo": "",
+    "nmAutor0": "Powlisson, David",
+    "autores": [
+      {
+        "nome": "Powlisson, David",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Cultura Cristã",
+    "data": "2005",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "192",
+    "isbn": "9788576223917",
+    "isbn_codigo_barras": "9788576223917",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20927
+}

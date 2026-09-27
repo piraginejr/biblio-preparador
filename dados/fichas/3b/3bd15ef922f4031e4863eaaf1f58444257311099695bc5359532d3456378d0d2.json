@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "3bd15ef922f4031e4863eaaf1f58444257311099695bc5359532d3456378d0d2",
+  "arquivo_origem": "422425198-Comentario-Biblico-Beacon-Tomo-6-Mateo-Hasta-Lucas.pdf",
+  "campos": {
+    "titulo": "COMENTARIO BÍBLICO BEACON",
+    "subTitulo": "",
+    "nmAutor0": "Campos, Uriel",
+    "autores": [
+      {
+        "nome": "Campos, Uriel",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Nazarena de Publicaciones",
+    "data": "1969",
+    "edicao": "",
+    "lugar": "Grand Rapids",
+    "nPaginas": "486",
+    "isbn": "9781563446016",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

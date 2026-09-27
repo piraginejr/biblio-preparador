@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "d9031c09002085fbed9e7e35abfa4b1ae6308f76736fdc4f1b0cee8f78952418",
+  "arquivo_origem": "492899070-Paulo-Uma-Teologia-Em-Construcao-Andreas-Dettwiler-Jean-Daniel.pdf",
+  "campos": {
+    "titulo": "Paulo, uma teologia em construção: Uma teologia em construção",
+    "subTitulo": "",
+    "nmAutor0": "Marguerat, Daniel",
+    "autores": [
+      {
+        "nome": "Marguerat, Daniel",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Edições Loyola",
+    "data": "2002",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "520",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20425
+}

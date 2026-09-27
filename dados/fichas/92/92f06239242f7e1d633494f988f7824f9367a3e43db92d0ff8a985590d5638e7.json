@@ -1,0 +1,12 @@
+{
+  "hash_sha256": "92f06239242f7e1d633494f988f7824f9367a3e43db92d0ff8a985590d5638e7",
+  "arquivo_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/_preparados-envio/748951944-A-History-of-the-Church-Angela-Pellicciari-095929-7169f560.pdf",
+  "campos": {
+    "titulo": "A History of the Church",
+    "isbn": "9781945658181"
+  },
+  "justificativa": "Cadastrado na API Biblio",
+  "fontes": [
+    "API Biblio PIB Curitiba"
+  ]
+}

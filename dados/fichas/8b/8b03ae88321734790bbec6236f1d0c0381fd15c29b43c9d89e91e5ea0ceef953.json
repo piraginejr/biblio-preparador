@@ -1,0 +1,41 @@
+{
+  "hash_sha256": "8b03ae88321734790bbec6236f1d0c0381fd15c29b43c9d89e91e5ea0ceef953",
+  "arquivo_origem": "757744661-O-Pastor-Renovado.pdf",
+  "campos": {
+    "titulo": "O pastor renovado",
+    "subTitulo": "",
+    "nmAutor0": "Baxter, Richard",
+    "autores": [
+      {
+        "nome": "Cristã, Livrarias Família",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Baxter, Richard",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Furlanete, Danilo",
+        "desc": "Tradutor"
+      }
+    ],
+    "editora": "Livrarias Família Cristã",
+    "data": "2021",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Londrina",
+    "nPaginas": "416",
+    "isbn": "9786559960361",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Religião"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20797
+}

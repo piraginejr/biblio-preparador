@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "9f5aff5f6617e29af242b702c08e54aa921858d95513ae5dfece56e3afe7b4f2",
+  "arquivo_origem": "687504402-conferencia23-ativacao-profetica.pdf",
+  "campos": {
+    "titulo": "CIDADE LEADERSHIP CONFERENCE 2023",
+    "subTitulo": "",
+    "nmAutor0": "RIBEIRO, FABIANO",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "20",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20787
+}

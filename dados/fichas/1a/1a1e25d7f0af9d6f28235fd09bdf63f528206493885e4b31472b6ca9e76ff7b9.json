@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "1a1e25d7f0af9d6f28235fd09bdf63f528206493885e4b31472b6ca9e76ff7b9",
+  "arquivo_origem": "Worship, Theology and Ministry in the Early Church Essays in Honor of Ralph P. Martin (The Library of New Testament Studies,… (Michael J. Wilkins) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Worship, theology and ministry in the early church",
+    "subTitulo": "essays in honor of Ralph P. Martin",
+    "nmAutor0": "Wilkins, Michael J.",
+    "autores": [
+      {
+        "nome": "Martin, Ralph P.",
+        "desc": "Colaborador"
+      },
+      {
+        "nome": "Wilkins, Michael J.",
+        "desc": "Editor"
+      }
+    ],
+    "editora": "JSOT Press",
+    "data": "1992",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Wheaton",
+    "nPaginas": "335",
+    "isbn": "9781850754176",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Public worship; Criticism, interpretation; History; Bible; Church history"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20808
+}

@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "e38580dd4e97d1a4b59bc68cd3d0eac85bf3c4699b4285c8219bda48f97ca2f7",
+  "arquivo_origem": "598946466-weber1.pdf",
+  "campos": {
+    "titulo": "Departamento de Ciências Sociais",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "34",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20590
+}

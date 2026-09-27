@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "909a8216c582943da36a321e3058c17a6a3c5a5606b898a3f1cb5218ceaf6580",
+  "arquivo_origem": "O impacto da reforma na liturgia do culto .pdf",
+  "campos": {
+    "titulo": "O Impacto da Reforma na liturgia do Culto",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "1967",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "4",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20909
+}

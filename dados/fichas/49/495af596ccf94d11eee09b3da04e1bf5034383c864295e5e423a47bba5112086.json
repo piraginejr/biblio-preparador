@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "495af596ccf94d11eee09b3da04e1bf5034383c864295e5e423a47bba5112086",
+  "arquivo_origem": "356963476-Curso-de-Discipulado-convertido-pdf.pdf",
+  "campos": {
+    "titulo": "Curso de Discipulado ",
+    "subTitulo": "",
+    "nmAutor0": "rc197213",
+    "autores": [
+      {
+        "nome": "rc197213",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9781495915628",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "10517b9d461b387f79a3a7ff177578b1d0440a3d9699f4b4be910c5a0c837dc0",
+  "arquivo_origem": "293422600-Historia-Dos-Batistas-Fluminenses.pdf",
+  "campos": {
+    "titulo": "História dos batistas fluminenses, 1891-1991",
+    "subTitulo": "",
+    "nmAutor0": "Ferreira, Ebenézer Soares",
+    "autores": [
+      {
+        "nome": "Ferreira, Ebenézer Soares",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "1991",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "257",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa e catálogo revisados",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "Autoria e integralidade conferidas no PDF; ano confirmado por registro bibliográfico, que indica publicação sem editora.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: apresentação, folha de rosto, sumário e índice final",
+    "Open Library: História dos batistas fluminenses, 1891-1991"
+  ],
+  "id_remoto": 20364
+}

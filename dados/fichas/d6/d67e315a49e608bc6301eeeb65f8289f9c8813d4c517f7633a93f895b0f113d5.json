@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "d67e315a49e608bc6301eeeb65f8289f9c8813d4c517f7633a93f895b0f113d5",
+  "arquivo_origem": "713376452-200-A-comunidade-do-Rei-uma-reflexao-sobre-a-Igreja-que-Deus-quer-Howard-Snyder-compactado.pdf",
+  "campos": {
+    "titulo": "A COMUNIDADE DO REI",
+    "subTitulo": "",
+    "nmAutor0": "SNYDER, HOWARD A.",
+    "autores": [
+      {
+        "nome": "SNYDER, HOWARD A.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "ABU EDITORA",
+    "data": "2004",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "200",
+    "isbn": "8570550561",
+    "isbn_codigo_barras": "",
+    "cdd": "248.4",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Religião"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20790
+}

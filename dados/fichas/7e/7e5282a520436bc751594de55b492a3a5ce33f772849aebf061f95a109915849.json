@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "7e5282a520436bc751594de55b492a3a5ce33f772849aebf061f95a109915849",
+  "arquivo_origem": "91084188-A-W-Tozer-Este-Mundo-Lugar-de-Lazer-Ou-Campo-de-Batalha.pdf",
+  "campos": {
+    "titulo": "ESTE MUNDO: LUGAR DE LAZER OU CAMPO DE BATALHA?",
+    "subTitulo": "",
+    "nmAutor0": "TOZER, A. W. ",
+    "autores": [
+      {
+        "nome": "TOZER, A. W. ",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "8585685174",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

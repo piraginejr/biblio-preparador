@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "45cab3fd37a3a6b5bd948b390c52162b282230ee775b67d1a091ebc122e263f0",
+  "arquivo_origem": "Artefact in focus_ Judaean Pillar Figurines.pdf",
+  "campos": {
+    "titulo": "Artefact in focus: Judaean Pillar Figurines",
+    "subTitulo": "",
+    "nmAutor0": "Heath-Whyte, George",
+    "autores": [],
+    "editora": "Tyndale House",
+    "data": "2023",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "7",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20610
+}

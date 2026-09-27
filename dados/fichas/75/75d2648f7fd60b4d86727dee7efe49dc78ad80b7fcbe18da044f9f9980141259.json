@@ -1,0 +1,41 @@
+{
+  "hash_sha256": "75d2648f7fd60b4d86727dee7efe49dc78ad80b7fcbe18da044f9f9980141259",
+  "arquivo_origem": "743606822-Teologia-Pastoral-Fundamentos-Teologicos-Do-Que-e-e-Do-Que-Faz-u.pdf",
+  "campos": {
+    "titulo": "Teologia Pastoral",
+    "subTitulo": "Fundamentos Teológicos do que é e do que faz o pastor",
+    "nmAutor0": "Akin, Daniel L.",
+    "autores": [
+      {
+        "nome": "Akin, Daniel L.",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Pace, R. Scott",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Grando, Vitor",
+        "desc": "Tradutor"
+      }
+    ],
+    "editora": "Pro Nobis Editora",
+    "data": "2022",
+    "edicao": "1ª edição",
+    "lugar": "Wheaton",
+    "nPaginas": "183",
+    "isbn": "9786581489182",
+    "isbn_codigo_barras": "",
+    "cdd": "253",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20793
+}

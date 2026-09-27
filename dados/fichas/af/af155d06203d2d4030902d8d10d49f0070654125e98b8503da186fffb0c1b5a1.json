@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "af155d06203d2d4030902d8d10d49f0070654125e98b8503da186fffb0c1b5a1",
+  "arquivo_origem": "434457617-timoteo.pdf",
+  "campos": {
+    "titulo": "Em busca de Timóteo",
+    "subTitulo": "Descobrindo e desenvolvendo o potencial dos colaboradores e voluntários na igreja",
+    "nmAutor0": "Cooke, Tony",
+    "autores": [
+      {
+        "nome": "Cooke, Tony",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Rhema Brasil Publicações",
+    "data": "2019",
+    "edicao": "1ª edição em português",
+    "lugar": "Campina Grande",
+    "nPaginas": "292",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "titulo_original": "In Search of Timothy",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa e créditos revisados"
+  },
+  "justificativa": "Os créditos declaram primeira edição em português e copyright brasileiro de 2019.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e créditos",
+    "Rhema Brasil Publicações"
+  ],
+  "id_remoto": 20404
+}

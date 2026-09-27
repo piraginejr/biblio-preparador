@@ -1,0 +1,52 @@
+{
+  "hash_sha256": "1018226da3fb5c083a49ac396c9347e142cf238338cb4fa30936e51289c23bf1",
+  "arquivo_origem": "624994449-Avancemos-Modelo-de-Discipulado-Cristao-Para-Homens (1).pdf",
+  "campos": {
+    "titulo": "Avancemos",
+    "subTitulo": "Um modelo de discipulado cristão para homens",
+    "nmAutor0": "Marques, Márcio Almeida",
+    "autores": [
+      {
+        "nome": "Marques, Márcio Almeida",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Lopes, Lana",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Freire, Eduardo José De",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Kuhn, Renata Marisa",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Tabosa, Samuel",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Shilo",
+    "data": "2022",
+    "edicao": "1",
+    "lugar": "Brasília",
+    "nPaginas": "192",
+    "isbn": "9786599782343",
+    "isbn_codigo_barras": "",
+    "cdd": "212.1",
+    "nmLingua": "português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional",
+    "origem_titulo": "CIP e capa revisadas",
+    "origem_autor": "CIP e capa revisadas"
+  },
+  "justificativa": "Capa, CIP, créditos e páginas finais confirmam a edição; a numeração iniciada após as preliminares não indica PDF parcial.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, CIP, créditos e páginas finais"
+  ],
+  "id_remoto": 20937
+}

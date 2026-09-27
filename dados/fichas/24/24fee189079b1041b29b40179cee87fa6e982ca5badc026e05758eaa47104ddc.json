@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "24fee189079b1041b29b40179cee87fa6e982ca5badc026e05758eaa47104ddc",
+  "arquivo_origem": "Orlando Costas e a Igreja Brasileira.pdf",
+  "campos": {
+    "titulo": "Orlando Costas e a Igreja Brasileira",
+    "subTitulo": "",
+    "nmAutor0": "Pereira, Josivaldo de França",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "5",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20910
+}

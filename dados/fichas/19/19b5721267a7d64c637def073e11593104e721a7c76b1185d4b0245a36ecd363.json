@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "19b5721267a7d64c637def073e11593104e721a7c76b1185d4b0245a36ecd363",
+  "arquivo_origem": "527561763-A-Terra-Nao-Pode-Suportar-as-Suas-Palavras-Reflexao-e-Estudo-Sobre-Amos-Milton-Schwantes.pdf",
+  "campos": {
+    "titulo": "“A TERRA NÃO PODE SUPORTAR SUAS PALAVRAS” (Am 7,10) Reflexão e estudo sobre Amós",
+    "subTitulo": "",
+    "nmAutor0": "Schwantes., Milton",
+    "autores": [
+      {
+        "nome": "Schwantes., Milton",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Paulinas",
+    "data": "2004",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "199",
+    "isbn": "8535614346",
+    "isbn_codigo_barras": "",
+    "cdd": "224.806",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

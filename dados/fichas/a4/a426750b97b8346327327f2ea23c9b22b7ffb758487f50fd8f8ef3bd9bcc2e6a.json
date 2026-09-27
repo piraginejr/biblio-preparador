@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "a426750b97b8346327327f2ea23c9b22b7ffb758487f50fd8f8ef3bd9bcc2e6a",
+  "arquivo_origem": "495687669-NOSSA-ESPERANCA-1-O-APARECIM-John-Piper.pdf",
+  "campos": {
+    "titulo": "NOSSA ESPERANÇA",
+    "subTitulo": "",
+    "nmAutor0": "Steinbeck, John",
+    "autores": [
+      {
+        "nome": "Steinbeck, John",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "sem cadastro",
+    "data": "1986",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "37",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20424
+}

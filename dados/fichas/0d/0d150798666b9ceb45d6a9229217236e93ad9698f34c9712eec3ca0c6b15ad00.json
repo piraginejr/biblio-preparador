@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "0d150798666b9ceb45d6a9229217236e93ad9698f34c9712eec3ca0c6b15ad00",
+  "arquivo_origem": "620586931-BibliotecaCrista-Mulheres-Da-Biblia-Abraham.pdf",
+  "campos": {
+    "titulo": "Mulheres na Bíblia - Brochura",
+    "subTitulo": "",
+    "nmAutor0": "Kuyper, Abraham",
+    "autores": [
+      {
+        "nome": "Kuyper, Abraham",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9786559962761",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

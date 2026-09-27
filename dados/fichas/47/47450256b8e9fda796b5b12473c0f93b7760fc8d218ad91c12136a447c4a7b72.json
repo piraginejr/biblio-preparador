@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "47450256b8e9fda796b5b12473c0f93b7760fc8d218ad91c12136a447c4a7b72",
+  "arquivo_origem": "6182theology_of_the_crossroads_in_contemporary_latin_america.pdf",
+  "campos": {
+    "titulo": "Theology of the Crossroads in contemporary Latin America",
+    "subTitulo": "",
+    "nmAutor0": "COSTAS, Orlando E.",
+    "autores": [
+      {
+        "nome": "COSTAS, Orlando E.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "90-6203-259-1",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

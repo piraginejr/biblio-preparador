@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "50ea709c876ef6708e00527dd110a457cde3e4cfb6211566bc817842238421b5",
+  "arquivo_origem": "581217357-Church-History-by-Watchman-Nee.pdf",
+  "campos": {
+    "titulo": "Church History (Watchman Nee)",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "[s.d.]",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "76",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": "Watchman Nee; História da Igreja; Testemunhos cristãos; Regeneração",
+    "origem_titulo": "primeira página e propriedades do PDF",
+    "origem_autor": "compilação sem autoria editorial identificada",
+    "isbn_motivo": "compilação de páginas de site: não identifica edição publicada",
+    "idioma": "eng"
+  },
+  "justificativa": "O arquivo reúne testemunhos e páginas de site; não é um livro de autoria de Watchman Nee. Foi preservado como documento, sem atribuir a ele a autoria da compilação.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: primeira página, índice interno e referências"
+  ],
+  "id_remoto": 20757
+}

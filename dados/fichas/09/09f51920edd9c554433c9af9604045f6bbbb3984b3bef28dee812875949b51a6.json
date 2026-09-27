@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "09f51920edd9c554433c9af9604045f6bbbb3984b3bef28dee812875949b51a6",
+  "arquivo_origem": "BÍBLIA - GENESIS A APOCALIPSE - ÍNDICE.pdf",
+  "campos": {
+    "titulo": "A BIBLIA NA LINGUAGEM DE HOJE (THL 054 TIZ)",
+    "subTitulo": "",
+    "nmAutor0": "AUTORES, VARIOS",
+    "autores": [
+      {
+        "nome": "AUTORES, VARIOS",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "SBB",
+    "data": "1973",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "859",
+    "isbn": "8531100011",
+    "isbn_codigo_barras": "",
+    "cdd": "220.569",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Bíblia"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

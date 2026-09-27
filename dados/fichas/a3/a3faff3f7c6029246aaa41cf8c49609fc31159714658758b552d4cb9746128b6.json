@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "a3faff3f7c6029246aaa41cf8c49609fc31159714658758b552d4cb9746128b6",
+  "arquivo_origem": "560233764-Critica-Textual-Da-Biblia-Hebraica.pdf",
+  "campos": {
+    "titulo": "Critica textual da bíblia hebraica",
+    "subTitulo": "",
+    "nmAutor0": "Tov, Emanuel",
+    "autores": [
+      {
+        "nome": "Tov, Emanuel",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "BV Films Editora",
+    "data": "2016",
+    "edicao": "3 Edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "538",
+    "isbn": "9788581581132",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

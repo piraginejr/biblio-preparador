@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "8494fddbdc89cfcc232899bc954e92a09f9302eb39d218f0e647c03302defb5b",
+  "arquivo_origem": "96366419-John-Edmund-Haggai-Como-Vencer-a-Preocupacao.pdf",
+  "campos": {
+    "titulo": "Como vencer a Preocupação",
+    "subTitulo": "",
+    "nmAutor0": "HAGGAI, John Edmund",
+    "autores": [
+      {
+        "nome": "HAGGAI, John Edmund",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

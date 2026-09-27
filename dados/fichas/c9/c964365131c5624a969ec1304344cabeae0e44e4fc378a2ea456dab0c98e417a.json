@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "c964365131c5624a969ec1304344cabeae0e44e4fc378a2ea456dab0c98e417a",
+  "arquivo_origem": "482692006-E-book-Gazeta-do-Povo-Evangelicos-No-Brasil-pdf.pdf",
+  "campos": {
+    "titulo": "Evangélicos no Brasil",
+    "subTitulo": "Como uma minoria invisível se transformou num agente de transformação social e política",
+    "nmAutor0": "Iacomini, Franco",
+    "autores": [
+      {
+        "nome": "Iacomini, Franco",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Gazeta do Povo",
+    "data": "2020",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "52",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa revisada"
+  },
+  "justificativa": "Capa e estrutura identificam um e-book completo; a publicação original e referências acadêmicas confirmam Gazeta do Povo e 2020.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, sumário e páginas finais",
+    "Gazeta do Povo: apresentação do e-book em 2020"
+  ],
+  "id_remoto": 20432
+}

@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "6779bdca542fd0e52d123eb3ef376163a63ba8298beac0bed99e2966cc734cd0",
+  "arquivo_origem": "608298983-Os-Batistas-seus-400-anos-e-sua-contribuicao-ABIBET-2009.pdf",
+  "campos": {
+    "titulo": "Os Batistas, seus 400 anos e sua contribuição teológica para o mundo",
+    "subTitulo": "",
+    "nmAutor0": "Riker, D. B.",
+    "autores": [],
+    "editora": "Editora Vozes, s.v. “Teodósio I’",
+    "data": "2009",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "21",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "cabeçalho do trabalho revisado",
+    "origem_autor": "cabeçalho do trabalho revisado"
+  },
+  "justificativa": "Trabalho apresentado no IV Congresso Brasileiro de Reflexão Teológica da ABIBET; notas históricas e referências não são título, editora ou data.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: primeira página"
+  ],
+  "id_remoto": 20536
+}

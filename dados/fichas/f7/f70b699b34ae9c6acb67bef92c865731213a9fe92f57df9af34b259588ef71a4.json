@@ -1,0 +1,25 @@
+{
+  "hash_sha256": "f70b699b34ae9c6acb67bef92c865731213a9fe92f57df9af34b259588ef71a4",
+  "arquivo_origem": "21778099-History-of-the-Westminster-Assembly-by-William-M-Hetherington.pdf",
+  "campos": {
+    "titulo": "History of the Westminster Assembly of Divines",
+    "subTitulo": "",
+    "nmAutor0": "Hetherington, William Maxwell",
+    "editora": "Still Waters Revival Books Inc.",
+    "isbn": "",
+    "edicao": "5ª edição fac-símile",
+    "data": "2002",
+    "nPaginas": "291",
+    "lugar": "Edmonton",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "CDD": "285.2",
+    "assunto": "Assembleia de Westminster, Presbiterianismo, História da Igreja",
+    "pchave": "Assembleia de Westminster, Confissão de Fé, História Eclesiástica, Puritanismo, Teologia Reformada",
+    "abstract": "Narrativa histórica clássica e detalhada das origens, deliberações e contexto teológico-político da célebre Assembleia de Teólogos de Westminster ocorrida no século XVII."
+  },
+  "justificativa": "Edição fac-símile da Still Waters Revival Books de 2002 identificada com dados completos",
+  "fontes": [
+    "revisão visual da folha de rosto e verso editorial"
+  ]
+}

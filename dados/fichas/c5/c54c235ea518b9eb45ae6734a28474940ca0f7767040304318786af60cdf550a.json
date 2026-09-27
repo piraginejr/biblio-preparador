@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "c54c235ea518b9eb45ae6734a28474940ca0f7767040304318786af60cdf550a",
+  "arquivo_origem": "639029537-Untitled.pdf",
+  "campos": {
+    "titulo": "2º TRIMESTRE • 2018 • Nº 323",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "Editora, 2007, p.81)",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "30",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20783
+}

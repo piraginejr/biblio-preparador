@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "b774d9fdeba46c82ebd4c7159b6e5b4689cfc9bd76cc6a3695f13b557df9386a",
+  "arquivo_origem": "745322036-Surpreendido-por-Jesus-graca-subversiva-n-Dane-C-Ortlund.pdf",
+  "campos": {
+    "titulo": "Surpreendido por Jesus",
+    "subTitulo": "A graça subversiva nos quatro Evangelhos",
+    "nmAutor0": "Ortlund, Dane",
+    "autores": [
+      {
+        "nome": "Ortlund, Dane",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Evangelical Press (EP Books)",
+    "data": "2021",
+    "edicao": "Edição revista, 2021",
+    "lugar": "Leyland",
+    "nPaginas": "147",
+    "isbn": "9781783973330",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Jesus Cristo; Evangelhos; Graça; Vida cristã",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto e copyright revisados"
+  },
+  "justificativa": "Folha de rosto, copyright e prefácio fornecem o título completo, autor, editora, ano, ISBN digital e a informação de que a versão de 2021 foi revista.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: folha de rosto, copyright e prefácio, páginas 1-6"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "5dc4362c5042429f56846b92b53986275760a0caaa7b01aee14ab57dcb7690d8",
+  "arquivo_origem": "642005972-Firmes um chamdo a perseverança dos santos.pdf",
+  "campos": {
+    "titulo": "Firmes: um chamado à perseverança dos santos",
+    "subTitulo": "",
+    "nmAutor0": "Piper, John",
+    "autores": [
+      {
+        "nome": "Piper, John",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Taylor, Justin",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2013",
+    "edicao": "1a Edição",
+    "lugar": "Wheaton",
+    "nPaginas": "170",
+    "isbn": "9788581320694",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Salvação e graça"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20652
+}

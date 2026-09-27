@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "a00f1e63c2b44fec6632213a8f9f059f8a7dcbd809075773dd69f7aa65598b49",
+  "arquivo_origem": "A Bíblia Toda, o Ano Todo (Stott, John) (Z-Library).pdf",
+  "campos": {
+    "titulo": "O Discípulo Radical",
+    "subTitulo": "",
+    "nmAutor0": "Stott, John",
+    "autores": [
+      {
+        "nome": "Stott, John",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Santos, Meire Portes",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Ultimato",
+    "data": "2021",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "817",
+    "isbn": "9786586173826",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20666
+}

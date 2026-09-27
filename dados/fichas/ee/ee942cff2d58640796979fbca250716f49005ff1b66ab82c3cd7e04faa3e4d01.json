@@ -1,0 +1,39 @@
+{
+  "hash_sha256": "ee942cff2d58640796979fbca250716f49005ff1b66ab82c3cd7e04faa3e4d01",
+  "arquivo_origem": "356493980-Paul-Washer-Pregacao-chocante-pdf.pdf",
+  "campos": {
+    "titulo": "Pregação chocante",
+    "subTitulo": "A pregação que abalou o mundo",
+    "nmAutor0": "Washer, Paul David",
+    "autores": [],
+    "editora": "O Estandarte de Cristo",
+    "data": "",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "32",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "sermão",
+    "abstract": "Transcrição da pregação de Paul David Washer, publicada em e-book por O Estandarte de Cristo em parceria com o site UmSóCorpo.com.br. Edição e capa de William Teixeira. O vídeo da pregação está no YouTube.",
+    "palavrasChave": "Pregação; Evangelismo; Arrependimento; Falsa conversão; Santidade",
+    "pasta_origem_importacao": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Artigos",
+    "arquivos_origem_importacao": [
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Artigos/356493980-Paul-Washer-Pregacao-chocante-pdf.pdf"
+    ],
+    "origem_autor": "página de créditos da transcrição",
+    "origem_titulo": "página de créditos da transcrição",
+    "idioma": "por",
+    "tipoAssunto1": "Teologia",
+    "isbn_motivo": "sermão transcrito: não recebe ISBN"
+  },
+  "justificativa": "NÃO é livro, é sermão transcrito - o próprio e-book declara ser 'uma transcrição da Pregação chocante por Paul David Washer'. Mesma editora do outro Washer do acervo, 'A videira e os ramos', também classificado como sermão. O título automático repetia o nome do autor ('Pregação Chocante Paul David Washer A Pregação que Abalou o Mundo'); o correto é 'Pregação chocante', com o subtítulo à parte. Sermão não tem ISBN nem data de edição declarada.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "pasta organizada de entrada",
+    "PDF local: página de créditos da transcrição, ao final do e-book"
+  ],
+  "id_remoto": 20859
+}

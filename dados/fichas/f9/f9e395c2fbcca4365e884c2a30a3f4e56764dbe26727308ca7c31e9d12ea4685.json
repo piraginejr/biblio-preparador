@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "f9e395c2fbcca4365e884c2a30a3f4e56764dbe26727308ca7c31e9d12ea4685",
+  "arquivo_origem": "101136719-A-HISTORIA-DAS-IGREJAS-BATISTAS.pdf",
+  "campos": {
+    "titulo": "PORQUE NÃO SOMOS PROTESTANTES",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "2001",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "55",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20562
+}

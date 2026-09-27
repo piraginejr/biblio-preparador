@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "13e34932b7836fc26c4c53130267ef04ea66cb9898ecd7db307e532640ace154",
+  "arquivo_origem": "413433890-Igreja-Forma-e-Essencia-Gene-a-Getz.pdf",
+  "campos": {
+    "titulo": "Gene A. Getz",
+    "subTitulo": "",
+    "nmAutor0": "ÂNGULOȘ DAS ESCRITURAS, DA",
+    "autores": [
+      {
+        "nome": "ÂNGULOȘ DAS ESCRITURAS, DA",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Sociedade Religiosa  Edições Vida Nova",
+    "data": "1984",
+    "edicao": "",
+    "lugar": "Wheaton",
+    "nPaginas": "405",
+    "isbn": "8527502046",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

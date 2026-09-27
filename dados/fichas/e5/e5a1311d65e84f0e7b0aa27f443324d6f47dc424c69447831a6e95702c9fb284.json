@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "e5a1311d65e84f0e7b0aa27f443324d6f47dc424c69447831a6e95702c9fb284",
+  "arquivo_origem": "11267doutrina_e_pratica_do_jejum___almir_e._santos1.pdf",
+  "campos": {
+    "titulo": "Doutrina e prática do jejum",
+    "subTitulo": "Segundo a Bíblia Sagrada",
+    "nmAutor0": "Santos, Almir Etelvino dos",
+    "autores": [
+      {
+        "nome": "Santos, Almir Etelvino dos",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Imprensa Metodista",
+    "data": "[s.d.]",
+    "edicao": "1ª edição",
+    "lugar": "[S.l.]",
+    "nPaginas": "90",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Jejum; Doutrina cristã; Prática religiosa; Bíblia",
+    "isbn_motivo": "sem ISBN: edição antiga sem ISBN declarado",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto e linha AUTOR revisadas"
+  },
+  "justificativa": "A folha de rosto separa claramente autor, título e subtítulo; a página seguinte declara o autor e a página de créditos informa a Imprensa Metodista.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto, autoria e créditos, páginas 2-4"
+  ],
+  "id_remoto": 20822
+}

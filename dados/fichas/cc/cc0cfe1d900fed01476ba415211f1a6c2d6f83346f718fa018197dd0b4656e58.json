@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "cc0cfe1d900fed01476ba415211f1a6c2d6f83346f718fa018197dd0b4656e58",
+  "arquivo_origem": "Aconselhamento bíblico.pdf",
+  "campos": {
+    "titulo": "Livros gospel grátis, livros de ultilidades gerais e produtos diversos",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "17",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20852
+}

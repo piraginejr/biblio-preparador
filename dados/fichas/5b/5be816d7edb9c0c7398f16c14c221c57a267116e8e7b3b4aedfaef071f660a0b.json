@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "5be816d7edb9c0c7398f16c14c221c57a267116e8e7b3b4aedfaef071f660a0b",
+  "arquivo_origem": "617844498-A-HISTORIA-DA-ESCOLA-BIBLICA-DOMINICAL.pdf",
+  "campos": {
+    "titulo": "A HISTÓRIA DA ESCOLA BÍBLICA DOMINICAL",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "4",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "trecho",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20583
+}

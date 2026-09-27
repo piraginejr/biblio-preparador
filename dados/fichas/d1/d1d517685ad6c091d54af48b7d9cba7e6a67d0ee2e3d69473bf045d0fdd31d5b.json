@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "d1d517685ad6c091d54af48b7d9cba7e6a67d0ee2e3d69473bf045d0fdd31d5b",
+  "arquivo_origem": "9049mahech_chavda___o_poder_secreto_do_jejum_e_da_oracao.pdf",
+  "campos": {
+    "titulo": "O poder secreto do jejum e da oração",
+    "subTitulo": "",
+    "nmAutor0": "MAHESCH, Chavda",
+    "autores": [
+      {
+        "nome": "MAHESCH, Chavda",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "85-88088-01-0",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

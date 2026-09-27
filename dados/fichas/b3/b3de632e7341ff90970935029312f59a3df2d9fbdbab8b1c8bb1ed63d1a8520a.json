@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "b3de632e7341ff90970935029312f59a3df2d9fbdbab8b1c8bb1ed63d1a8520a",
+  "arquivo_origem": "534529724-A-Profecia-de-Isaias-Vol-2.pdf",
+  "campos": {
+    "titulo": "PROFECIA ISAÍAS",
+    "subTitulo": "",
+    "nmAutor0": "Crabtree, A R",
+    "autores": [
+      {
+        "nome": "Crabtree, A R",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Publicadora Batista",
+    "data": "1967",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "396",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20464
+}

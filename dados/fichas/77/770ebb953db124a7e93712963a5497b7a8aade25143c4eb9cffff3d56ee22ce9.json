@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "770ebb953db124a7e93712963a5497b7a8aade25143c4eb9cffff3d56ee22ce9",
+  "arquivo_origem": "13885_The_Book_on_Leadership___John_MacArthur.pdf",
+  "campos": {
+    "titulo": "The Book on Leadership",
+    "subTitulo": "",
+    "nmAutor0": "JR MACARTHUR,JOHN ,",
+    "autores": [
+      {
+        "nome": "JR MACARTHUR,JOHN ,",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "0785262512",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

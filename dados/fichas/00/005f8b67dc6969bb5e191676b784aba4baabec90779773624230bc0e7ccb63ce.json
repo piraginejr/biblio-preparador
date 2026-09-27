@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "005f8b67dc6969bb5e191676b784aba4baabec90779773624230bc0e7ccb63ce",
+  "arquivo_origem": "329280560-Cidadaos-de-Outra-Patria.pdf",
+  "campos": {
+    "titulo": "BATISTAS NA BAHIA Elizete da Silva Wernet Orientador: Prof. Dr. Augustin apresentada ao Dept° de História FFLCH-USP de Doutorado Tese à como requisito de doutor. obtenção do título São Paulo 1998",
+    "subTitulo": "",
+    "nmAutor0": "Patria, Outra",
+    "autores": [],
+    "editora": "",
+    "data": "1951",
+    "edicao": "",
+    "lugar": "SÃO PAULO",
+    "nPaginas": "405",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "trabalho acadêmico",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20551
+}

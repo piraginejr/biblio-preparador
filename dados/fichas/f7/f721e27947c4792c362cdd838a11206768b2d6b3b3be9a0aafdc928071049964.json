@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "f721e27947c4792c362cdd838a11206768b2d6b3b3be9a0aafdc928071049964",
+  "arquivo_origem": "689703243-Adorar-a-Um-Inspirar-a-Todos-Inmer-Enoc-Blanco-Cabrera.pdf",
+  "campos": {
+    "titulo": "Adorar a um, inspirar a todos",
+    "subTitulo": "",
+    "nmAutor0": "Spyker, Kelly",
+    "autores": [],
+    "editora": "Más Vida",
+    "data": "2014",
+    "edicao": "cópia digital não comercial",
+    "lugar": "[S.l.]",
+    "nPaginas": "163",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": "Adoração cristã; Louvor; Liderança de adoração; Ministério de música",
+    "isbn_motivo": "ISBN 9786079646608 pertence à edição-fonte; não atribuído à cópia traduzida",
+    "origem_titulo": "capa e créditos revisados",
+    "origem_autor": "copyright revisado"
+  },
+  "justificativa": "O copyright identifica Kelly Spyker, não o nome inferido pelo arquivo. O próprio PDF declara cópia não comercial; por isso segue como documento e não herda o ISBN da edição-fonte.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e créditos, páginas 1-4"
+  ],
+  "id_remoto": 20830
+}

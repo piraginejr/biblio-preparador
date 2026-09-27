@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "bd4c2b608137bba72361c6578f8cf77919d8dc091c6f3c286042db1bcd072e10",
+  "arquivo_origem": "441427035-Apostoles-AUGUSTUS-NICODEMUS.pdf",
+  "campos": {
+    "titulo": "Apóstolos: a verdade bíblica sobre o apostolado",
+    "subTitulo": "",
+    "nmAutor0": "Lopes, Augustus Nicodemus",
+    "autores": [
+      {
+        "nome": "Lopes, Augustus Nicodemus",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2014",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Sao José dos Campos, SP",
+    "nPaginas": "395",
+    "isbn": "9788581321974",
+    "isbn_codigo_barras": "",
+    "cdd": "262",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Apologética e polêmica"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20871
+}

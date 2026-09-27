@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "2804a6192442528e7584cce882d0aa5d736335c914ccbfae6df34d32174551a8",
+  "arquivo_origem": "358855106-o-Protestantismo-Brasileiro-Estudo-de-eclesiologia-e-de-historia-social-pdf.pdf",
+  "campos": {
+    "titulo": "O protestantismo brasileiro",
+    "subTitulo": "Estudo de eclesiologia e de história social",
+    "nmAutor0": "Léonard, Émile-G.",
+    "autores": [
+      "Léonard, Émile-G.",
+      "Schützer, Lineu de Camargo (trad.)"
+    ],
+    "editora": "Revista de História (USP)",
+    "data": "1951",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "51",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": "",
+    "pasta_origem_importacao": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Artigos",
+    "arquivos_origem_importacao": [
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Artigos/358855106-o-Protestantismo-Brasileiro-Estudo-de-eclesiologia-e-de-historia-social-pdf.pdf"
+    ],
+    "isbn_motivo": "artigo de periódico de 1951: não recebe ISBN"
+  },
+  "justificativa": "arquivos associados pelo nome-base",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "pasta organizada de entrada"
+  ],
+  "id_remoto": 20860
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "97cefac0c8891cfe882d14d8f56c21bcf9aec68ac7a0a70e9e835b3bae23f955",
+  "arquivo_origem": "558671966-1642164575239E-Book-Mulheres-Da-Biblia-1.pdf",
+  "campos": {
+    "titulo": "Mulheres na Bíblia - Brochura",
+    "subTitulo": "",
+    "nmAutor0": "Kuyper, Abraham",
+    "autores": [
+      {
+        "nome": "Kuyper, Abraham",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Livrarias Família Cristã",
+    "data": "2021",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Londrina",
+    "nPaginas": "58",
+    "isbn": "9786559962761",
+    "isbn_codigo_barras": "",
+    "cdd": "220.83054",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Religião"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20477
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "9d94bc20ccccfc77929ce2d3c85b0d3b2b17039f302a56bdd72c86ecd6f1da46",
+  "arquivo_origem": "765189472-Avivamento-Para-a-Igreja.pdf",
+  "campos": {
+    "titulo": "Avivamento",
+    "subTitulo": "",
+    "nmAutor0": "Ferreira, Franklin",
+    "autores": [
+      {
+        "nome": "Ferreira, Franklin",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "VIDA NOVA",
+    "data": "2015",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "13",
+    "isbn": "9788527506274",
+    "isbn_codigo_barras": "9788527506274",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20810
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "e99b05bdd8c22419dead1f15996fbe45198eb5d0774966c1cf5ffa5f9e70a58f",
+  "arquivo_origem": "453289451-Vitoria-no-Deserto-Como-se-for-John-Bevere-pdf.pdf",
+  "campos": {
+    "titulo": "Vitória no deserto: como se fortalecer nos dias de sequidão",
+    "subTitulo": "",
+    "nmAutor0": "BEVERE, JOHN",
+    "autores": [
+      {
+        "nome": "BEVERE, JOHN",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Messenger International",
+    "data": "2011",
+    "edicao": "1ª edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "177",
+    "isbn": "9788599858998",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20394
+}

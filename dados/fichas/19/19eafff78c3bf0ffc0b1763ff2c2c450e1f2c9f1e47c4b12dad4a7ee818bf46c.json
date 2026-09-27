@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "19eafff78c3bf0ffc0b1763ff2c2c450e1f2c9f1e47c4b12dad4a7ee818bf46c",
+  "arquivo_origem": "615565765-262902006-78787517-Pregacao-Expositiva-pdf.pdf",
+  "campos": {
+    "titulo": "Pregação Expositiva Temática",
+    "subTitulo": "",
+    "nmAutor0": "Souza, Itamir Neves de",
+    "autores": [],
+    "editora": "",
+    "data": "1997",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "41",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "crédito de professor revisado"
+  },
+  "justificativa": "Apostila de disciplina; o título estava repetido pela junção mecânica de duas linhas.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e segunda página"
+  ],
+  "id_remoto": 20539
+}

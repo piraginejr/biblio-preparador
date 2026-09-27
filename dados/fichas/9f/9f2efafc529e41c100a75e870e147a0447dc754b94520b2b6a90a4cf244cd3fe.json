@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "9f2efafc529e41c100a75e870e147a0447dc754b94520b2b6a90a4cf244cd3fe",
+  "arquivo_origem": "A ÉTICA CRISTÃ E A PRÁXIS DA ESPIRITUALIDADE.pdf",
+  "campos": {
+    "titulo": "A ÉTICA CRISTÃ E A PRÁXIS DA ESPIRITUALIDADE",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [
+      {
+        "nome": "e, eclesiológica. A ética",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "16",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20894
+}

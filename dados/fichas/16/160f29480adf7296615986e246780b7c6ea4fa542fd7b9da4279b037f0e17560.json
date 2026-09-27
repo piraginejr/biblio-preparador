@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "160f29480adf7296615986e246780b7c6ea4fa542fd7b9da4279b037f0e17560",
+  "arquivo_origem": "Teología Bíblica Sistemática y Expositiva Analizando cada verso en su contexto (Spanish Edition) (Muñoz, Dr. Félix [Muñoz, Dr. Félix]) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Título: Teología Bíblica Sistemática y Expositiva. (Segunda edición)",
+    "subTitulo": "",
+    "nmAutor0": "Muñoz, Dr Félix",
+    "autores": [
+      {
+        "nome": "Muñoz, Dr Félix",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Independently published",
+    "data": "2019",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "797",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20680
+}

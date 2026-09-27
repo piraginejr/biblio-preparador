@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "ef7ed9732b40f0e015f80ff7fb32b23a77f51251725857f24970b1541112120c",
+  "arquivo_origem": "639029485-lB312-2015-Jul-Set-Comentarios-Adicionais-1.pdf",
+  "campos": {
+    "titulo": "3º TRIMESTRE • 2015 • Nº 312",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "2015",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "33",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20785
+}

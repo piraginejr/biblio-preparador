@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "d85740765ff79d47455efe4e0a816173b6dca5a963942d483e73249d2f2c58fb",
+  "arquivo_origem": "809420743-189-O-Pastor-Aprovado-Richard-Baxter.pdf",
+  "campos": {
+    "titulo": "Procura apresentar-te a Deus aprovado... 2 Timóteo 2:15 PES",
+    "subTitulo": "",
+    "nmAutor0": "Baxter, Aprovado Richard",
+    "autores": [
+      {
+        "nome": "Baxter, Aprovado Richard",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "PUBLICAÇÕES EVANGÉLICAS SELECIONADAS",
+    "data": "1989",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "189",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20799
+}

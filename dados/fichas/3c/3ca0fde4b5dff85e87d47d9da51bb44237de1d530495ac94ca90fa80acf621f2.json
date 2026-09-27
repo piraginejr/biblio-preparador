@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "3ca0fde4b5dff85e87d47d9da51bb44237de1d530495ac94ca90fa80acf621f2",
+  "arquivo_origem": "532199105-Implacavel-John-Bevere.pdf",
+  "campos": {
+    "titulo": "Implacável: o poder que você precisa para nunca desistir",
+    "subTitulo": "",
+    "nmAutor0": "Bevere Jr., John",
+    "autores": [
+      {
+        "nome": "Bevere Jr., John",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "LAN EDITORA",
+    "data": "2014",
+    "edicao": "1a edição",
+    "lugar": "1 ed. - Rio de Janeiro",
+    "nPaginas": "211",
+    "isbn": "9788599858592",
+    "isbn_codigo_barras": "",
+    "cdd": "248",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "8d86e3e74d1593002dfaf9a07f39830e709d466831e417f8b763049820d7cae1",
+  "arquivo_origem": "5 Origen y Desarrollo del Moviento de Crecimiento de la Iglesia.pdf",
+  "campos": {
+    "titulo": "COSTAS, E. O. Origen y Desarrollo del Moviento de Crecimiento de la Iglesia. Mision",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "1984",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "4",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20768
+}

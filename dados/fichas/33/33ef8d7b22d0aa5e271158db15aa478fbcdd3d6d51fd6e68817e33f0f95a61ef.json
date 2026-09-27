@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "33ef8d7b22d0aa5e271158db15aa478fbcdd3d6d51fd6e68817e33f0f95a61ef",
+  "arquivo_origem": "484597066-Historia-dos-Avivamentos-Panorama-dos-avivalistas-e-avivamentos-modernos.pdf",
+  "campos": {
+    "titulo": "História dos Avivamentos",
+    "subTitulo": "Panorama dos avivalistas e avivamentos modernos",
+    "nmAutor0": "Escola Superior de Teologia do Espírito Santo",
+    "autores": [],
+    "editora": "ESUTES",
+    "data": "[s.d.]",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "69",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "responsabilidade institucional"
+  },
+  "justificativa": "O documento se identifica como plano de aula apostilado, contém avaliação do módulo e deve aguardar a API de documentos.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, apresentação e avaliação final"
+  ],
+  "id_remoto": 20528
+}

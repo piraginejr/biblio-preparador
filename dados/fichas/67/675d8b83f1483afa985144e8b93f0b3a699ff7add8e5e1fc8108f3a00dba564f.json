@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "675d8b83f1483afa985144e8b93f0b3a699ff7add8e5e1fc8108f3a00dba564f",
+  "arquivo_origem": "701772629-Michael-Horton-Um-Caminho-Melhor.pdf",
+  "campos": {
+    "titulo": "Um Caminho Melhor",
+    "subTitulo": "",
+    "nmAutor0": "Horton, Michael S.",
+    "autores": [
+      {
+        "nome": "Horton, Michael S.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "CULTURA CRISTÃ",
+    "data": "2002",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "88",
+    "isbn": "8576221640",
+    "isbn_codigo_barras": "",
+    "cdd": "264",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20678
+}

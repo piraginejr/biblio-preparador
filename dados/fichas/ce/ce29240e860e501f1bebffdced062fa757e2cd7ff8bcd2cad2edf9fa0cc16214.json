@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "ce29240e860e501f1bebffdced062fa757e2cd7ff8bcd2cad2edf9fa0cc16214",
+  "arquivo_origem": "86480138-LDS-Handbook-Book-2-08702-eng.pdf",
+  "campos": {
+    "titulo": "OF LATTER-DAY SAINTS",
+    "subTitulo": "",
+    "nmAutor0": "Reserve, Intellectual",
+    "autores": [
+      {
+        "nome": "Reserve, Intellectual",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "The Church of Jesus Christ of Latter-day Saints",
+    "data": "2010",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "225",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20723
+}

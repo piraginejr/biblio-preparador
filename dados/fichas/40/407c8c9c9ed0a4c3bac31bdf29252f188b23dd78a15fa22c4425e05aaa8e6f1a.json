@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "407c8c9c9ed0a4c3bac31bdf29252f188b23dd78a15fa22c4425e05aaa8e6f1a",
+  "arquivo_origem": "200271346-Declaracao-Doutrinaria-da-Convencao-Batista-Brasileira.pdf",
+  "campos": {
+    "titulo": "Hampshire tornou-se a declaração dos Batistas brasileiros, passando a ser conhecida como \"Declaração Em 1983, a Assembléia Anual da Convenção",
+    "subTitulo": "",
+    "nmAutor0": "Brasileira, Batista",
+    "autores": [
+      {
+        "nome": "Brasileira, Batista",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "1868",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "33",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apresentação",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20862
+}

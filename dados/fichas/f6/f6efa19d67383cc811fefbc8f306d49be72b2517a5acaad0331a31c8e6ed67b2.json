@@ -1,0 +1,39 @@
+{
+  "hash_sha256": "f6efa19d67383cc811fefbc8f306d49be72b2517a5acaad0331a31c8e6ed67b2",
+  "arquivo_origem": "6- NÓS CREMOS.pdf",
+  "campos": {
+    "titulo": "Nós Cremos",
+    "subTitulo": "",
+    "nmAutor0": "Jr., Pr. Paschoal Piragine",
+    "autores": [
+      {
+        "nome": "Jr., Pr. Paschoal Piragine",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Rodrigues, Cleverson Pereira",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Ribeiro, Fernando Boa Sorte",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Fernando Boa Sorte Ribeiro",
+    "data": "2025",
+    "edicao": "1ª EDIÇÃO",
+    "lugar": "Curitiba",
+    "nPaginas": "142",
+    "isbn": "9786501496184",
+    "isbn_codigo_barras": "",
+    "cdd": "230",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

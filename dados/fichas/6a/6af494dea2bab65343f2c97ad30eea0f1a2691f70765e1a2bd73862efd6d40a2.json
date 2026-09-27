@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "6af494dea2bab65343f2c97ad30eea0f1a2691f70765e1a2bd73862efd6d40a2",
+  "arquivo_origem": "746959425-PREGACAO-EXPOSITIVA.pdf",
+  "campos": {
+    "titulo": "PREGAÇÃO EXPOSITIVA",
+    "subTitulo": "",
+    "nmAutor0": "[autor não identificado]",
+    "autores": [
+      {
+        "nome": "[autor não identificado]",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "25",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apresentação",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20866
+}

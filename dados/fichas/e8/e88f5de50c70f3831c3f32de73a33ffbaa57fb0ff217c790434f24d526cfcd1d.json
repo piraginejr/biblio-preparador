@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "e88f5de50c70f3831c3f32de73a33ffbaa57fb0ff217c790434f24d526cfcd1d",
+  "arquivo_origem": "630384730-Avivamento-da-Rua-Azuza.pdf",
+  "campos": {
+    "titulo": "A história do avivamento Azusa",
+    "subTitulo": "",
+    "nmAutor0": "Bartleman, Frank",
+    "autores": [
+      {
+        "nome": "Bartleman, Frank",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora D'Sena",
+    "data": "[s.d.]",
+    "edicao": "1ª edição",
+    "lugar": "[S.l.]",
+    "nPaginas": "66",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Avivamento da Rua Azusa; Pentecostalismo; História da Igreja",
+    "series": "Série Achados"
+  },
+  "justificativa": "Capa e apresentação identificam título, autor, editora, série e a obra original de 1925.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: capa e apresentação"
+  ]
+}

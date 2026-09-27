@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "9ff7d07af35af8aa1fd940d4e9dd334297e4f3b64846f779d53a08dc91dbea16",
+  "arquivo_origem": "407709840-Estilos-de-Lideranca-docx.pdf",
+  "campos": {
+    "titulo": "Estilos de Liderança",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "1996",
+    "edicao": "",
+    "lugar": "Curitiba",
+    "nPaginas": "4",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20592
+}

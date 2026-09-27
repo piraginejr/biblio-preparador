@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "8d8eb3e35da0ecf594fab43bf86817be0a77297a80251fffd29ed675a362f808",
+  "arquivo_origem": "12093_Documento.pdf",
+  "campos": {
+    "titulo": "AVENTURANDO-SE ATRAVÉS DA BÍBLIA - De Gênesis a Apocalipse - Parte II",
+    "subTitulo": "",
+    "nmAutor0": "STEDMAN, Ray C.",
+    "autores": [
+      {
+        "nome": "STEDMAN, Ray C.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9781680435962",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "fa7b601db36154dee37f480e4003d217cd86f31637f04f6ebcdf667f46117289",
+  "arquivo_origem": "578470860-Historia-Dos-Batistas-No-Brasil.pdf",
+  "campos": {
+    "titulo": "História dos Batistas do Brasil até o ano de 1906",
+    "subTitulo": "",
+    "nmAutor0": "Crabtree, A. R.",
+    "autores": [
+      {
+        "nome": "Crabtree, A. R.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Casa Publicadora Batista",
+    "data": "1962",
+    "edicao": "2ª edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "348",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto e metadados do PDF revisados"
+  },
+  "justificativa": "A folha de rosto identifica título completo, autor, segunda edição, editora, local e 1962; 1935 é período histórico citado, não data da edição.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e folha de rosto"
+  ],
+  "id_remoto": 20504
+}

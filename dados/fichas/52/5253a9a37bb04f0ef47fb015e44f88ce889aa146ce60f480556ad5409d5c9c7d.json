@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "5253a9a37bb04f0ef47fb015e44f88ce889aa146ce60f480556ad5409d5c9c7d",
+  "arquivo_origem": "The Extraordinary Hebrew Text behind Your English Bible.pdf",
+  "campos": {
+    "titulo": "The Extraordinary Hebrew Text behind Your English Bible",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "2024",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "11",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20641
+}

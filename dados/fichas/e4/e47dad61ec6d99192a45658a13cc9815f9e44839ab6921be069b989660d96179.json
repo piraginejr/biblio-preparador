@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "e47dad61ec6d99192a45658a13cc9815f9e44839ab6921be069b989660d96179",
+  "arquivo_origem": "432908398-Que-Sabemos-Sobre-a-Biblia-3.pdf",
+  "campos": {
+    "titulo": "Que sabemos sobre a Bíblia?",
+    "subTitulo": "Volume 3",
+    "nmAutor0": "Valdés, Ariel Álvarez",
+    "autores": [
+      {
+        "nome": "Valdés, Ariel Álvarez",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Santuário",
+    "data": "1997",
+    "edicao": "1ª edição",
+    "lugar": "Aparecida",
+    "nPaginas": "120",
+    "isbn": "8572004831",
+    "isbn_codigo_barras": "",
+    "cdd": "220.07",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "volume": "3",
+    "origem_titulo": "CIP e folha editorial revisadas",
+    "origem_autor": "CIP revisada"
+  },
+  "justificativa": "A CIP lista três ISBNs e identifica 85-7200-483-1 como o do volume 3. A sequência 'Ano: 2000 99 98 97 / Edição: 6 5 4 3 2 1' confundiu a heurística, que havia transformado 97 em número de edição.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: CIP e página de direitos do volume III"
+  ],
+  "id_remoto": 20417
+}

@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "7b6b7fb03b13c46dddf9e5999190a7fdb8102dbf83f327d2d75dc766cf056d3c",
+  "arquivo_origem": "193406395-Ricardo-Pitrowsky-Do-Arado-ao-Cajado-pdf.pdf",
+  "campos": {
+    "titulo": "Do arado ao cajado",
+    "subTitulo": "Vida e ministério de Ricardo Pitrowsky",
+    "nmAutor0": "Oliveira, Betty Antunes de",
+    "autores": [
+      {
+        "nome": "Oliveira, Betty Antunes de",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "2008",
+    "edicao": "2ª edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "50",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "apresentação e copyright revisados"
+  },
+  "justificativa": "A autora declara a elaboração da biografia e o copyright aparece em todas as páginas; revisão datada de 06/12/2008.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, apresentação e rodapés"
+  ],
+  "id_remoto": 20354
+}

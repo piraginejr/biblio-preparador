@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "c9ca00e48d89a8596acdbe80fc47acc89d742ff2a42e84043268e2a1b9a41187",
+  "arquivo_origem": "The State of Missiology Today Global Innovations in Christian Witness (Missiological Engagements) (Charles E. van Engen [Engen, Charles E. van]) (Z-Library).pdf",
+  "campos": {
+    "titulo": "The State of Missiology Today: Global Innovations in Christian Witness (Missiological Engagements)",
+    "subTitulo": "",
+    "nmAutor0": "Engen, Charles E. Van",
+    "autores": [
+      {
+        "nome": "Engen, Charles E. Van",
+        "desc": "Editor"
+      }
+    ],
+    "editora": "IVP Academic",
+    "data": "2016",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "319",
+    "isbn": "9780830893492",
+    "isbn_codigo_barras": "",
+    "cdd": "266.009",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Missions--Theory"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20634
+}

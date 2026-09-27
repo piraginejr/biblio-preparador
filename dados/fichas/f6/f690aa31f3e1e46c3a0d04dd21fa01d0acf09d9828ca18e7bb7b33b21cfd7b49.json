@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "f690aa31f3e1e46c3a0d04dd21fa01d0acf09d9828ca18e7bb7b33b21cfd7b49",
+  "arquivo_origem": "560236318-36-Instroducao-a-Historia-da-Musica.pdf",
+  "campos": {
+    "titulo": "Introdução à História da Música",
+    "subTitulo": "Sobre o desenvolvimento e a interação da música na comunidade cristã",
+    "nmAutor0": "Instituto de Teologia Logos",
+    "autores": [],
+    "editora": "Publicações ITL",
+    "data": "2021",
+    "edicao": "",
+    "lugar": "Maranhão",
+    "nPaginas": "83",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": "História da música; Música cristã; Hinódia; Liturgia",
+    "origem_titulo": "capa e DCIP",
+    "origem_autor": "DCIP e crédito de organização",
+    "isbn_motivo": "apostila institucional: não recebe ISBN",
+    "idioma": "por"
+  },
+  "justificativa": "A DCIP identifica organizador institucional, título, Publicações ITL, Maranhão, 2021 e 83 páginas. A 6ª edição e 'Phillip P' vieram de referências do conteúdo.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e DCIP, páginas 1-3"
+  ],
+  "id_remoto": 20761
+}

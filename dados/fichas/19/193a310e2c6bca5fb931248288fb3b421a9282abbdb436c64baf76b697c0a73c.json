@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "193a310e2c6bca5fb931248288fb3b421a9282abbdb436c64baf76b697c0a73c",
+  "arquivo_origem": "443558434-Nem-Anjos-Nem-Demonios-Paul-Freston.pdf",
+  "campos": {
+    "titulo": "Nem anjos nem demônios",
+    "subTitulo": "Interpretações sociológicas do pentecostalismo",
+    "nmAutor0": "Antoniazzi, Alberto et al.",
+    "autores": [
+      {
+        "nome": "Antoniazzi, Alberto et al.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Vozes",
+    "data": "1996",
+    "edicao": "2ª edição",
+    "lugar": "Petrópolis",
+    "nPaginas": "18",
+    "isbn": "853261227X",
+    "isbn_codigo_barras": "",
+    "cdd": "269.4",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "folha de rosto e CIP revisadas",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "A abertura em página dupla traz CIP e folha de rosto; 1994 pertence ao registro anterior e 1996 à 2ª edição digitalizada.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: CIP e folha de rosto",
+    "CBL/ISBN Brasil"
+  ],
+  "id_remoto": 20406
+}

@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "836d32e0cd1b204cdab4ab823b128e41f3df35b50eb189aeda9c1e451c987558",
+  "arquivo_origem": "ESPIRITUALIDADE.pdf",
+  "campos": {
+    "titulo": "ESPIRITUALIDADE : DESAFIO PARA A IGREJA PÓS",
+    "subTitulo": "",
+    "nmAutor0": "DEDICATÓRIA, Roberto Alves de Alencar.",
+    "autores": [],
+    "editora": "Editora Vida, 1988",
+    "data": "1993",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "37",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20906
+}

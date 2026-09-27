@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "aee72caaf73678453fa2f96edcf36bd23540d69b8be16df11f49791be242cf0d",
+  "arquivo_origem": "IMPLICA E DESAFIOS DA MISSAO INTEGRAL.pdf",
+  "campos": {
+    "titulo": "IMPLICAÇÕES E DESAFIOS DA MISSÃO INTEGRAL",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [
+      {
+        "nome": "INTEGRAL, IMPLICAÇÕES",
+        "desc": "Autor"
+      },
+      {
+        "nome": "MISSÃO, DESAFIOS DA",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "13",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20907
+}

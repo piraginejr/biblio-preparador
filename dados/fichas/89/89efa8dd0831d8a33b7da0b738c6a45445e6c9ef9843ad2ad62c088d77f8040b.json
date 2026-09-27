@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "89efa8dd0831d8a33b7da0b738c6a45445e6c9ef9843ad2ad62c088d77f8040b",
+  "arquivo_origem": "723644968-Fogo-Autentico.pdf",
+  "campos": {
+    "titulo": "Fogo autêntico",
+    "subTitulo": "Uma resposta a Fogo estranho, de John MacArthur",
+    "nmAutor0": "Brown, Michael L.",
+    "autores": [
+      {
+        "nome": "Brown, Michael L.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Excel Publishers",
+    "data": "2014",
+    "edicao": "1ª edição",
+    "lugar": "[S.l.]",
+    "nPaginas": "788",
+    "isbn": "9781629990026",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Dons espirituais; Pentecostalismo; Espírito Santo; Apologética"
+  },
+  "justificativa": "Capa e copyright identificam autor, título, editora, ano e ISBN da edição digital usada como fonte.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e copyright"
+  ],
+  "id_remoto": 20700
+}

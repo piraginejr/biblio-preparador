@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "dd47f55a1c04a0a1a7cbce1c5677d7380c67581d0f65a5512bfe89a51ee20cd6",
+  "arquivo_origem": "Types of Leadership Seminar by Slidesgo.pdf",
+  "campos": {
+    "titulo": "LIDERAZG Aquí es donde comienza la pres",
+    "subTitulo": "",
+    "nmAutor0": "[autor não identificado]",
+    "autores": [
+      {
+        "nome": "[autor não identificado]",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "18",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apresentação",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20864
+}

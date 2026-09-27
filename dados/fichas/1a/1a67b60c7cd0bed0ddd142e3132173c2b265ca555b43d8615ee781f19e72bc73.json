@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "1a67b60c7cd0bed0ddd142e3132173c2b265ca555b43d8615ee781f19e72bc73",
+  "arquivo_origem": "560235838-35-Historia-e-Cultura-Judaica.pdf",
+  "campos": {
+    "titulo": "História e Cultura Judaica",
+    "subTitulo": "A origem; Abraão e Moisés; a nação e o reino; as festividades judaicas",
+    "nmAutor0": "Instituto de Teologia Logos",
+    "autores": [],
+    "editora": "Publicações ITL",
+    "data": "2021",
+    "edicao": "",
+    "lugar": "Maranhão",
+    "nPaginas": "135",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": "História judaica; Cultura judaica; Israel; Festividades judaicas",
+    "origem_titulo": "capa e DCIP",
+    "origem_autor": "DCIP e crédito de organização",
+    "isbn_motivo": "apostila institucional: não recebe ISBN",
+    "idioma": "por"
+  },
+  "justificativa": "A DCIP identifica organizador institucional, título, Publicações ITL, Maranhão, 2021 e 135 páginas. A 3ª edição automática foi capturada de outra obra citada.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e DCIP, páginas 1-3"
+  ],
+  "id_remoto": 20760
+}

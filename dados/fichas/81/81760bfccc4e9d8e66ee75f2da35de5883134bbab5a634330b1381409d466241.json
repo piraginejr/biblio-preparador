@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "81760bfccc4e9d8e66ee75f2da35de5883134bbab5a634330b1381409d466241",
+  "arquivo_origem": "381943261-livro-6-miolo.pdf",
+  "campos": {
+    "titulo": "Estudo panorâmico do Novo Testamento: I Coríntios a Apocalipse",
+    "subTitulo": "",
+    "nmAutor0": "Woodward, Dick",
+    "autores": [],
+    "editora": "Ministério Cooperativo Internacional (ICM)",
+    "data": "2016",
+    "edicao": "4ª edição",
+    "lugar": "",
+    "nPaginas": "170",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa e expediente revisados",
+    "origem_autor": "capa e expediente revisados"
+  },
+  "justificativa": "Material complementar do Curso Bíblico Internacional Encontro com a Palavra; deve seguir a fila de apostilas.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, expediente e nota ao aluno"
+  ],
+  "id_remoto": 20524
+}

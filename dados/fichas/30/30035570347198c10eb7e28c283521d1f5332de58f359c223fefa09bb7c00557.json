@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "30035570347198c10eb7e28c283521d1f5332de58f359c223fefa09bb7c00557",
+  "arquivo_origem": "542876006-o-Homem-o-Local-Onde-Deus-Habita-A-w-Tozer.pdf",
+  "campos": {
+    "titulo": "Homem: o local onde habita Deus",
+    "subTitulo": "",
+    "nmAutor0": "cadastrado, Nao",
+    "autores": [
+      {
+        "nome": "cadastrado, Nao",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "HAGNOS",
+    "data": "2019",
+    "edicao": "1ª edição",
+    "lugar": "– São Paulo",
+    "nPaginas": "192",
+    "isbn": "9788577422913",
+    "isbn_codigo_barras": "",
+    "cdd": "248.4899",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20725
+}

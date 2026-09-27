@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "8400328b22b815de6d63f9a83d2eebccdfdfab038abcb9d57bc7ff2d318fff68",
+  "arquivo_origem": "405062758-Historia-Dos-Batistas-JDRoss-pdf.pdf",
+  "campos": {
+    "titulo": "A História dos Batistas",
+    "subTitulo": "Um estudo da continuidade das igrejas de Jesus Cristo, nosso Senhor e Salvador",
+    "nmAutor0": "Ross, Jerry Donald",
+    "autores": [
+      {
+        "nome": "Ross, Jerry Donald",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "1985",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "64",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa revisada"
+  },
+  "justificativa": "O material declara que foi escrito na década de 1980; a reprodução de 2017 é somente reformatação. A data de dezembro de 1985 e a responsabilidade do autor foram confirmadas em outra publicação do mesmo conjunto.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e nota da reprodução",
+    "Palavra Prudente: texto de Jerry Donald Ross, São Paulo, dezembro de 1985"
+  ],
+  "id_remoto": 20413
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "3a507bc6458d105ebc0cbbbc131a745c80565d747c2fb1251ceb13bfc6057d11",
+  "arquivo_origem": "147599800-Glendon-Grober-Doutrina-Biblica-da-Igreja-pdf.pdf",
+  "campos": {
+    "titulo": "A doutrina bíblica da Igreja",
+    "subTitulo": "",
+    "nmAutor0": "Grober, Glendon",
+    "autores": [
+      {
+        "nome": "Grober, Glendon",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Junta de Educação Religiosa e Publicações",
+    "data": "1987",
+    "edicao": "5ª edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "58",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "260.01",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Igreja — Doutrina da; Novo Testamento — Igreja — Doutrina da; Eclesiologia Batista l. Titulo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20351
+}

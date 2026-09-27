@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "bb9c6546a371bad58a49661d71d36ccc873ee2f2d50254d34103bc56a64a55f3",
+  "arquivo_origem": "584072597-Apostila-ministerio-Da-Recepcao.pdf",
+  "campos": {
+    "titulo": "Apostila Ministério da Recepção-1",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "9",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20930
+}

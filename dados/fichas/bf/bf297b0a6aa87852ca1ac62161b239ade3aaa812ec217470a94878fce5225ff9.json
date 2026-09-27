@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "bf297b0a6aa87852ca1ac62161b239ade3aaa812ec217470a94878fce5225ff9",
+  "arquivo_origem": "The Shepherd as Preacher (MacArthur, John) (Z-Library).pdf",
+  "campos": {
+    "titulo": "The shepherd as preacher",
+    "subTitulo": "",
+    "nmAutor0": "MacArthur, John",
+    "autores": [
+      {
+        "nome": "MacArthur, John",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Harvest House Publishers",
+    "data": "2015",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "234",
+    "isbn": "9780736962070",
+    "isbn_codigo_barras": "",
+    "cdd": "251",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Preaching; Congresses"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20632
+}

@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "3267309622bd33f857062868a22a549771a1e17cb07f1655c1a2f0edcfe892a4",
+  "arquivo_origem": "Gomes e Benatte - 2014 - ESTILHAÇANDO REPRESENTAÇÕES A ICONOCLASTIA CONTEM.pdf",
+  "campos": {
+    "titulo": "ESTILHAÇANDO REPRESENTAÇÕES: A ICONOCLASTIA CONTEMPORANEA NO PROCESSO COMUNIDADE ASSEMBLEIANA (CASTRO-PR)",
+    "subTitulo": "",
+    "nmAutor0": "Gomes, Aline",
+    "autores": [],
+    "editora": "Ateliê de História UEPG",
+    "data": "1997",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "23",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20911
+}

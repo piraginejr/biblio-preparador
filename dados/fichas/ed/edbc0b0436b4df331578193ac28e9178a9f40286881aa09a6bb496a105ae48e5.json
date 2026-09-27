@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "edbc0b0436b4df331578193ac28e9178a9f40286881aa09a6bb496a105ae48e5",
+  "arquivo_origem": "625707923-Oracao-Particular-Copia.pdf",
+  "campos": {
+    "titulo": "Oração particular",
+    "subTitulo": "",
+    "nmAutor0": "Pink, A. W.",
+    "autores": [
+      {
+        "nome": "Pink, A. W.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "[s.n.]",
+    "data": "[s.d.]",
+    "edicao": "1ª edição",
+    "lugar": "[S.l.]",
+    "nPaginas": "15",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Oração; Vida devocional; Espiritualidade cristã"
+  },
+  "justificativa": "Título e autor estão explícitos na capa; a edição digital não declara local, editora ou data.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: capa"
+  ]
+}

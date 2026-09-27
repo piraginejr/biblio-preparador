@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "ee862737b42158ff12ec816e0c76163812b876e771a3ac6c8acb99300a4f5f5d",
+  "arquivo_origem": "61009454-O-medico-missionario-Robert-Raid-Kaley.pdf",
+  "campos": {
+    "titulo": "O Médico Missionário - Robert Reid Kalley",
+    "subTitulo": "",
+    "nmAutor0": "Santos, Gilson",
+    "autores": [],
+    "editora": "Editora Fiel",
+    "data": "2011",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "4",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20534
+}

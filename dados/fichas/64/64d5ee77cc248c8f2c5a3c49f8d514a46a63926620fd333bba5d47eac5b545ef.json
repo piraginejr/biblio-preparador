@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "64d5ee77cc248c8f2c5a3c49f8d514a46a63926620fd333bba5d47eac5b545ef",
+  "arquivo_origem": "611656138-O-PREGADOR-E-A-ORACAO.pdf",
+  "campos": {
+    "titulo": "O pregador e a oração",
+    "subTitulo": "",
+    "nmAutor0": "Bounds, E. M.",
+    "autores": [
+      {
+        "nome": "Bounds, E. M.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Edições Cristãs",
+    "data": "[s.d.]",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "74",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Oração; Pregação; Ministério pastoral; Espiritualidade",
+    "origem_titulo": "folha de rosto",
+    "origem_autor": "folha de rosto",
+    "isbn_motivo": "edição sem ISBN declarado",
+    "idioma": "por"
+  },
+  "justificativa": "Folha de rosto identifica título, autor e editora. A data não consta no exemplar e foi registrada como sem data, sem inventar ano.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto"
+  ],
+  "id_remoto": 20754
+}

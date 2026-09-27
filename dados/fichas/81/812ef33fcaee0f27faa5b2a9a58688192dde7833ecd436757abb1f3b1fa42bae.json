@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "812ef33fcaee0f27faa5b2a9a58688192dde7833ecd436757abb1f3b1fa42bae",
+  "arquivo_origem": "549496052-HISTORIA-DOS-AVIVAMENTOS-PENTECOSTAL-converted.pdf",
+  "campos": {
+    "titulo": "HISTÓRIA DO MOVIMENTO PENTECOSTAL",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "2007",
+    "edicao": "",
+    "lugar": "Belém",
+    "nPaginas": "29",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "trecho",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20594
+}

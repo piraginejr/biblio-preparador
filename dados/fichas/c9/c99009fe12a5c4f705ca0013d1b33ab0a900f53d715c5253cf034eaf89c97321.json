@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "c99009fe12a5c4f705ca0013d1b33ab0a900f53d715c5253cf034eaf89c97321",
+  "arquivo_origem": "Counseling How to Counsel Biblically (John F. MacArthur, Wayne A. Mack etc.) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Counseling",
+    "subTitulo": "",
+    "nmAutor0": "JR MACARTHUR,JOHN ,",
+    "autores": [
+      {
+        "nome": "JR MACARTHUR,JOHN ,",
+        "desc": "Autor"
+      },
+      {
+        "nome": "JR MACARTHUR,JOHN ,",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "1418500054",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

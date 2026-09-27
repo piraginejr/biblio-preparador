@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "3df61dc1b2fde064964b71da8e6f0f3ed6e6d74a86def0eba1ff509a21dd5a76",
+  "arquivo_origem": "884476953-Fundamento-Do-Calvinismo-Agostiniano.pdf",
+  "campos": {
+    "titulo": "O fundamento do calvinismo-agostiniano",
+    "subTitulo": "",
+    "nmAutor0": "Wilson, Ken",
+    "autores": [],
+    "editora": "Regula Fidei Press",
+    "data": "2020",
+    "edicao": "versão digital simplificada",
+    "lugar": "[S.l.]",
+    "nPaginas": "113",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": "Calvinismo; Agostinho de Hipona; Livre-arbítrio; Teologia reformada",
+    "isbn_motivo": "ISBN 9783161557538 pertence à tese acadêmica de 388 páginas citada pelo autor, não a este documento",
+    "origem_titulo": "folha inicial e prefácio revisados",
+    "origem_autor": "capa e prefácio revisados"
+  },
+  "justificativa": "Copyright, capa e prefácio identificam esta versão simplificada de 113 páginas. O ISBN encontrado no texto remete explicitamente à tese acadêmica de 388 páginas e foi removido.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: copyright e prefácio, páginas 1-5"
+  ],
+  "id_remoto": 20837
+}

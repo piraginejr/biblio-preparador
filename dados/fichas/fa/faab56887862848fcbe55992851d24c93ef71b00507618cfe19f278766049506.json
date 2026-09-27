@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "faab56887862848fcbe55992851d24c93ef71b00507618cfe19f278766049506",
+  "arquivo_origem": "381943397-livro-11.pdf",
+  "campos": {
+    "titulo": "Estudo do Evangelho de João: versículo por versículo — capítulos 11–21",
+    "subTitulo": "",
+    "nmAutor0": "Woodward, Dick",
+    "autores": [],
+    "editora": "Ministério Cooperativo Internacional (ICM)",
+    "data": "2017",
+    "edicao": "5ª edição",
+    "lugar": "",
+    "nPaginas": "158",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa e expediente revisados",
+    "origem_autor": "capa e expediente revisados"
+  },
+  "justificativa": "Material complementar do Curso Bíblico Internacional Encontro com a Palavra; deve seguir a fila de apostilas.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, expediente e nota ao aluno"
+  ],
+  "id_remoto": 20522
+}

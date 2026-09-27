@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "9ca7a5b34eac94b966f6171938ddaca9b75ef9d0cc31f1fc0a58cd36cc02457c",
+  "arquivo_origem": "549596784-A-Importancia-de-Ser-Cheio-Do-Espirito-Santo-Silas-Malafaia.pdf",
+  "campos": {
+    "titulo": "A importância de ser cheio do espírito santo",
+    "subTitulo": "",
+    "nmAutor0": "Malafaia, Silas",
+    "autores": [
+      {
+        "nome": "Malafaia, Silas",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Central Gospel",
+    "data": "2009",
+    "edicao": "1",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "49",
+    "isbn": "9788576896586",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20471
+}

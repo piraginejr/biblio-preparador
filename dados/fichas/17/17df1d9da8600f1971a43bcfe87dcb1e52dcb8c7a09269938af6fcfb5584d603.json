@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "17df1d9da8600f1971a43bcfe87dcb1e52dcb8c7a09269938af6fcfb5584d603",
+  "arquivo_origem": "Os sete pecados capitais (Guiness Os) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Sete pecados capitais",
+    "subTitulo": "",
+    "nmAutor0": "Os Guinness",
+    "autores": [
+      {
+        "nome": "Os Guinness",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "85-88315-45-9",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

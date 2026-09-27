@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "3b5fdb8845ea8010d33c108e13d44acff555fad4488d9968cd46a644aaaccbe2",
+  "arquivo_origem": "703027249-CFL6-SEITAS-E-HERESIAS.pdf",
+  "campos": {
+    "titulo": "CFL6 SEITAS E HERESIAS",
+    "subTitulo": "",
+    "nmAutor0": "Xavier, Sóstenes Mendes",
+    "autores": [],
+    "editora": "",
+    "data": "2009",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "43",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20832
+}

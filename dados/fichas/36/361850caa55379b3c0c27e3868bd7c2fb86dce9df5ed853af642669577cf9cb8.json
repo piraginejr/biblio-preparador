@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "361850caa55379b3c0c27e3868bd7c2fb86dce9df5ed853af642669577cf9cb8",
+  "arquivo_origem": "Chinese Diamonds for the King of Kings (Rosalind Goforth) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Chinese Diamonds for the King of Kings",
+    "subTitulo": "",
+    "nmAutor0": "GOFORTH, ROSALIND",
+    "autores": [
+      {
+        "nome": "GOFORTH, ROSALIND",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Duke Classics",
+    "data": "1920",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "93",
+    "isbn": "9781620135143",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20608
+}

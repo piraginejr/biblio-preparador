@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "83407e5d00fb98cc30ea69787a8cf5cdfd99b07ab068813ca6d6e381f3524cad",
+  "arquivo_origem": "13371compreendendo_o_crescimento_da_igreja.pdf",
+  "campos": {
+    "titulo": "abril 2001",
+    "subTitulo": "",
+    "nmAutor0": "Wagner, Peter",
+    "autores": [],
+    "editora": "Editora~\" 5epal",
+    "data": "2001",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "222",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20950
+}

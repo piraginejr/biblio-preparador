@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "7747aa9413c5b802b9be6919aae912d818f614317975e4dd762bf1f8445e1d1a",
+  "arquivo_origem": "548859786-010-Arquivo-Completo-Transformando-Membros-e-Lideres-Copia-Copia.pdf",
+  "campos": {
+    "titulo": "Transformando membros em líderes",
+    "subTitulo": "Oito passos para desenvolver líderes de pequenos grupos",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "Missões Nacionais",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "136",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apresentação",
+    "abstract": "Material de treinamento sobre oito passos para identificar, formar, desenvolver e enviar novos líderes de pequenos grupos, associado ao programa Igreja Multiplicadora.",
+    "palavrasChave": "Liderança cristã; Pequenos grupos; Discipulado; Formação de líderes; Igreja Multiplicadora",
+    "pasta_origem_importacao": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/apresentações",
+    "arquivos_origem_importacao": [
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/apresentações/548859786-010-Arquivo-Completo-Transformando-Membros-e-Lideres-Copia-Copia.pptx"
+    ],
+    "origem_titulo": "capa e identidade visual repetida dos slides",
+    "origem_autor": "não declarado na apresentação"
+  },
+  "justificativa": "A capa identifica o material Transformando membros em líderes e os slides exibem a marca Missões Nacionais. Dave Earley é apresentado como autor dos livros usados no treinamento, não como autor declarado dos slides; Marcos Azevedo aparece apenas no metadado técnico do PowerPoint. A autoria permanece corretamente não declarada.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "capa do slide 1",
+    "identidade visual Missões Nacionais nos slides",
+    "conteúdo integral das 136 páginas"
+  ]
+}

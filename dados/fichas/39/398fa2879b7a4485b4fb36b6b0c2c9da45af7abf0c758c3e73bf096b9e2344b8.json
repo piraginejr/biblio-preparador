@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "398fa2879b7a4485b4fb36b6b0c2c9da45af7abf0c758c3e73bf096b9e2344b8",
+  "arquivo_origem": "588358834-Origem-e-Transmissa-o-do-Texto-do-Novo-Testamento.pdf",
+  "campos": {
+    "titulo": "Origem e Transm issão do Texto do Novo Testamento",
+    "subTitulo": "",
+    "nmAutor0": "Paroschi, Wilson",
+    "autores": [
+      {
+        "nome": "Paroschi, Wilson",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Sociedade Bíblica do Brasil",
+    "data": "2010",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "343",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "220.9",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20500
+}

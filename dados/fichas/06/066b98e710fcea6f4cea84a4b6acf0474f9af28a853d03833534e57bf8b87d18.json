@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "066b98e710fcea6f4cea84a4b6acf0474f9af28a853d03833534e57bf8b87d18",
+  "arquivo_origem": "583675381-Livros-sobre-a-historia-dos-batistas.pdf",
+  "campos": {
+    "titulo": "Livros sobre a história dos batistas",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "2008",
+    "edicao": "",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "3",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20596
+}

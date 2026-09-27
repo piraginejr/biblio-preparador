@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "18a7febffb4cb61ca2515a56547dd5f83f2a1a0d23d492bb04ad6e0c09619e53",
+  "arquivo_origem": "330462697-Descobertas-Dos-Tempos-Biblicos-Alan-Millard.pdf",
+  "campos": {
+    "titulo": "Descobertas dos tempos bíblicos",
+    "subTitulo": "",
+    "nmAutor0": "Millard, Alan",
+    "autores": [
+      {
+        "nome": "Millard, Alan",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Vida",
+    "data": "1999",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "350",
+    "isbn": "8573674008",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Eduardo Pereira e Ferreira",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa e copyright revisados"
+  },
+  "justificativa": "Copyright da edição portuguesa fornece ano, editora, tradutor e ISBN; o cifrão no título era erro de OCR.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: capa, copyright e contracapa"
+  ]
+}

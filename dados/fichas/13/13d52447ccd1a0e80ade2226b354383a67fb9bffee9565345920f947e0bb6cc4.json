@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "13d52447ccd1a0e80ade2226b354383a67fb9bffee9565345920f947e0bb6cc4",
+  "arquivo_origem": "131553390-La-Economia-Del-Reino.pdf",
+  "campos": {
+    "titulo": "La Economía del Reino",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "21",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "apresentação",
+    "abstract": "Apresentação de estudo bíblico sobre a economia do Reino de Deus, dons, ministérios e operações, a partir de Efésios 3 e outras passagens.",
+    "palavrasChave": "Reino de Deus; Dons espirituais; Ministérios; Eclesiologia; Estudo bíblico",
+    "pasta_origem_importacao": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/apresentações",
+    "arquivos_origem_importacao": [
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/apresentações/131553390-La-Economia-Del-Reino.ppt"
+    ],
+    "origem_titulo": "capa e cabeçalho repetido dos slides",
+    "origem_autor": "não declarado na apresentação"
+  },
+  "justificativa": "O título é inequívoco na capa e nos slides. A apresentação não declara autor, instituição responsável nem data; o autor anterior era um fragmento de Efésios 3 capturado por engano. Documento cadastrado honestamente somente com os elementos declarados.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "capa do slide 1",
+    "cabeçalho repetido nos slides 2 a 5",
+    "inspeção integral das 21 páginas"
+  ]
+}

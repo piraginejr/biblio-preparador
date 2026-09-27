@@ -1,0 +1,39 @@
+{
+  "hash_sha256": "14effb783441687508fa636c84800c0316c5a91b0fb9f2fb1614fd45eb5a7b66",
+  "arquivo_origem": "5- LIDERANDO UM PGM SAUDÁVEL.pdf",
+  "campos": {
+    "titulo": "Primeiros passos 5",
+    "subTitulo": "Liderando um PGM saudável",
+    "nmAutor0": "Jr., Paschoal Piragine",
+    "autores": [
+      {
+        "nome": "Jr., Paschoal Piragine",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Rodrigues, Cleverson Pereira",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Ribeiro, Fernando Boa Sorte",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Fernando Boa Sorte Ribeiro",
+    "data": "2025",
+    "edicao": "1ª EDIÇÃO",
+    "lugar": "Curitiba",
+    "nPaginas": "192",
+    "isbn": "9786501361086",
+    "isbn_codigo_barras": "",
+    "cdd": "243",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Moral cristã e teologia devocional"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

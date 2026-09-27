@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "4e49d8325253111e02b541334bddec21cbd1a88ce30ab53a0520048d5be21ac8",
+  "arquivo_origem": "557656607-na-apagues-o-Espirito.pdf",
+  "campos": {
+    "titulo": "Não Apagueis o Espírito",
+    "subTitulo": "Um guia de como desenvolver o dom de profecia",
+    "nmAutor0": "Coelho, Fábio",
+    "autores": [
+      {
+        "nome": "Coelho, Fábio",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Impacto Publicações",
+    "data": "2019",
+    "edicao": "1ª edição",
+    "lugar": "",
+    "nPaginas": "288",
+    "isbn": "9788565419444",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "ISBN exato e ficha comercial concordam com capa e conteúdo do PDF.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, folha de rosto e expediente",
+    "pesquisa bibliográfica por título/ISBN"
+  ],
+  "id_remoto": 20485
+}

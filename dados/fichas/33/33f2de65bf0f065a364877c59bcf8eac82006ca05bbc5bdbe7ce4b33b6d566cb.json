@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "33f2de65bf0f065a364877c59bcf8eac82006ca05bbc5bdbe7ce4b33b6d566cb",
+  "arquivo_origem": "John Adams Independence Forever (Heroes of History) (Janet Benge  Geoff Benge [Benge, Janet]) (Z-Library).pdf",
+  "campos": {
+    "titulo": "John Adams: Independence Forever",
+    "subTitulo": "",
+    "nmAutor0": "BENGE, Janet",
+    "autores": [
+      {
+        "nome": "BENGE, Janet",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9781932096910",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

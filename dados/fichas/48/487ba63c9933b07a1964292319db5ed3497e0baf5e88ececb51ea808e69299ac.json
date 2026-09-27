@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "487ba63c9933b07a1964292319db5ed3497e0baf5e88ececb51ea808e69299ac",
+  "arquivo_origem": "494111800-Origens-Judaicas-Do-Novo-Testamento.pdf",
+  "campos": {
+    "titulo": "Origens judaicas do Novo Testamento",
+    "subTitulo": "Um estudo do judaísmo intertestamentário",
+    "nmAutor0": "Scott Jr., J. Julius",
+    "autores": [
+      {
+        "nome": "Scott Jr., J. Julius",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Shedd Publicações",
+    "data": "2017",
+    "edicao": "1ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "432",
+    "isbn": "9788580380583",
+    "isbn_codigo_barras": "",
+    "cdd": "230.09",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Valéria Lamim Delgado Fernandes",
+    "origem_titulo": "CIP revisada",
+    "origem_autor": "CIP revisada"
+  },
+  "justificativa": "CIP e copyright oferecem a ficha completa; Angélica Ilacqua é a bibliotecária da CIP, não o título.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: capa, CIP, folha de rosto e copyright"
+  ]
+}

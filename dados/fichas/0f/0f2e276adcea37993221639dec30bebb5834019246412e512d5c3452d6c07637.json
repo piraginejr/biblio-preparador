@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "0f2e276adcea37993221639dec30bebb5834019246412e512d5c3452d6c07637",
+  "arquivo_origem": "558049389-Arminianismo-Perguntas-Frequentes-Por-Roger-Olson.pdf",
+  "campos": {
+    "titulo": "Arminianismo: perguntas mais frequentes",
+    "subTitulo": "",
+    "nmAutor0": "Olson, Roger E.",
+    "autores": [
+      {
+        "nome": "Olson, Roger E.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Seedbed Shorts",
+    "data": "2015",
+    "edicao": "1ª edição",
+    "lugar": "",
+    "nPaginas": "27",
+    "isbn": "9781628241624",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "ISBN exato e sumário da obra confirmam a edição curta em português.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, folha de rosto e expediente",
+    "pesquisa bibliográfica por título/ISBN"
+  ]
+}

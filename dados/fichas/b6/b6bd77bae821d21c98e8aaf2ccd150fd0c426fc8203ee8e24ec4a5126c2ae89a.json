@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "b6bd77bae821d21c98e8aaf2ccd150fd0c426fc8203ee8e24ec4a5126c2ae89a",
+  "arquivo_origem": "Introducing Christian Mission Today Scripture, History, and Issues (Michael W. Goheen) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Introducing Christian Mission Today",
+    "subTitulo": "Scripture, History and Issues",
+    "nmAutor0": "Goheen, Michael W.",
+    "autores": [
+      {
+        "nome": "Goheen, Michael W.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "InterVarsity Press",
+    "data": "2014",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "448",
+    "isbn": "9780830895434",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Mission of the church; Missions, theory"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20617
+}

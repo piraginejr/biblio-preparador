@@ -1,0 +1,44 @@
+{
+  "hash_sha256": "f4eed46a81ad3e26fe463d9fc9a7c0ae5ebded29a935d7366e17c4088661d469",
+  "arquivo_origem": "Worship_ The Christian's Highest Occupation - Alfred P. Gibbs.pdf",
+  "campos": {
+    "titulo": "Worship: The Christian's Highest Occupation",
+    "subTitulo": "",
+    "nmAutor0": "Gibbs, Alfred P.",
+    "autores": [
+      {
+        "nome": "Gibbs, Alfred P.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "ECS Ministries",
+    "data": "2012",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "222",
+    "isbn": "9781593873233",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "ingles",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "idioma": "eng",
+    "pasta_origem_importacao": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Gibbs, Alfred P_/Worship_ The Christian's Highest Occupation",
+    "arquivos_origem_importacao": [
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Gibbs, Alfred P_/Worship_ The Christian's Highest Occupation/Worship_ The Christian's Highest Occupation - Alfred P. Gibbs.epub",
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Gibbs, Alfred P_/Worship_ The Christian's Highest Occupation/Worship_ The Christian's Highest Occupation - Alfred P. Gibbs.jpg",
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Gibbs, Alfred P_/Worship_ The Christian's Highest Occupation/Worship_ The Christian's Highest Occupation - Alfred P. Gibbs.opf",
+      "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Gibbs, Alfred P_/Worship_ The Christian's Highest Occupation/Worship_ The Christian's Highest Occupation - Alfred P. Gibbs.pdf"
+    ],
+    "opf_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Gibbs, Alfred P_/Worship_ The Christian's Highest Occupation/Worship_ The Christian's Highest Occupation - Alfred P. Gibbs.opf",
+    "asin": "B008N09TM4"
+  },
+  "justificativa": "metadados estruturados importados do OPF",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "OPF: /Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/00-ENTRADA/Gibbs, Alfred P_/Worship_ The Christian's Highest Occupation/Worship_ The Christian's Highest Occupation - Alfred P. Gibbs.opf"
+  ],
+  "id_remoto": 20470
+}

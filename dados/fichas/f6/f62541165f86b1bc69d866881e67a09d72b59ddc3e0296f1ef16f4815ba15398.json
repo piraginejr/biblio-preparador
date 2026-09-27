@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "f62541165f86b1bc69d866881e67a09d72b59ddc3e0296f1ef16f4815ba15398",
+  "arquivo_origem": "660529157-5531920261-1-1.pdf",
+  "campos": {
+    "titulo": "Panorama Ilustrado da Bíblia",
+    "subTitulo": "Uma jornada autoguiada  da Palavra de Deus",
+    "nmAutor0": "hudson, christopher d.",
+    "autores": [
+      {
+        "nome": "hudson, christopher d.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Geográfica Editora",
+    "data": "2022",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "24",
+    "isbn": "9786556552835",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Religião"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20655
+}

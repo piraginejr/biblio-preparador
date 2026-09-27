@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "185cdb64d508473d47684a6dbb954d65a2650feb1b7ce3edd993c8e1ebf24d1f",
+  "arquivo_origem": "753600794-Revista-Teologia-Brasileira.pdf",
+  "campos": {
+    "titulo": "Teologia Brasileira Nº 102 | 2024 ISSN 2238-0388",
+    "subTitulo": "",
+    "nmAutor0": "Paula, Juan de",
+    "autores": [],
+    "editora": "Revista Teologia Brasileira tem o objetivo de",
+    "data": "2008",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "55",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20814
+}

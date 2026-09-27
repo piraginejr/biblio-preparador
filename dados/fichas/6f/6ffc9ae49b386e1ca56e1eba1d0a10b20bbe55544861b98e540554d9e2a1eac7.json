@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "6ffc9ae49b386e1ca56e1eba1d0a10b20bbe55544861b98e540554d9e2a1eac7",
+  "arquivo_origem": "Richard Wurmbrand Love Your Enemies (Christian Heroes Then  Now) (Janet Benge  Geoff Benge) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Richard Wurmbrand: Love Your Enemies",
+    "subTitulo": "",
+    "nmAutor0": "BENGE, Janet",
+    "autores": [
+      {
+        "nome": "BENGE, Janet",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9781576589878",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

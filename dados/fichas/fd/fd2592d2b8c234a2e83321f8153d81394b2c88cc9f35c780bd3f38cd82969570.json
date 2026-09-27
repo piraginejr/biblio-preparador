@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "fd2592d2b8c234a2e83321f8153d81394b2c88cc9f35c780bd3f38cd82969570",
+  "arquivo_origem": "390144360-antigo-testamento-em-quadros-pdf.pdf",
+  "campos": {
+    "titulo": "O Antigo Testamento em quadros",
+    "subTitulo": "Conheça melhor o Antigo Testamento por meio de tabelas e diagramas cronológicos e explicativos",
+    "nmAutor0": "Walton, John H.",
+    "autores": [
+      {
+        "nome": "Walton, John H.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Vida",
+    "data": "2001",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "128",
+    "isbn": "857367556X",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "titulo_original": "Chronological and Background Charts of the Old Testament",
+    "origem_titulo": "capa e créditos revisados",
+    "origem_autor": "capa e copyright revisados"
+  },
+  "justificativa": "Capa e copyright identificam obra, autor, título original e editora; catálogos concordam em ano, ISBN e paginação da edição brasileira.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e página de créditos",
+    "Catálogo bibliográfico: ISBN 857367556X"
+  ]
+}

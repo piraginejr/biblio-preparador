@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "242e094cf6e14e8eccb3be58c9458e9d62497bc810c612087e9c88742c6054e6",
+  "arquivo_origem": "427942881-Antigo-Testamento-Interlinear-Hebraico-Portugues-Vol-1.pdf",
+  "campos": {
+    "titulo": "Antigo Testamento Interlinear Hebraico-Português",
+    "subTitulo": "Volume 1: Pentateuco",
+    "nmAutor0": "Francisco, Edson de Faria",
+    "autores": [
+      {
+        "nome": "Francisco, Edson de Faria",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Sociedade Bíblica do Brasil",
+    "data": "2015",
+    "edicao": "Reimpressão revista",
+    "lugar": "Barueri",
+    "nPaginas": "808",
+    "isbn": "7898521805111",
+    "isbn_codigo_barras": "",
+    "cdd": "225.8969",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "Edição interlinear do Pentateuco com texto hebraico, tradução literal em português, Almeida Revista e Atualizada e Nova Tradução na Linguagem de Hoje.",
+    "palavrasChave": "Antigo Testamento; Pentateuco; Hebraico bíblico; Tradução interlinear",
+    "isbn_motivo": "Identificador impresso como ISBN na ficha do próprio livro",
+    "origem_titulo": "folha de rosto e CIP revisadas",
+    "origem_autor": "folha de rosto e CIP revisadas"
+  },
+  "justificativa": "Folha de rosto, CIP, copyright e nota da reimpressão foram conferidos diretamente no PDF; o arquivo permanece sujeito à exceção de tamanho.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: folha de rosto, CIP, copyright e nota ao leitor, páginas 3-7"
+  ]
+}

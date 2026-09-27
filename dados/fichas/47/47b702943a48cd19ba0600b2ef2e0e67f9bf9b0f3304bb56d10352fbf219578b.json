@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "47b702943a48cd19ba0600b2ef2e0e67f9bf9b0f3304bb56d10352fbf219578b",
+  "arquivo_origem": "625500522-PRO-NOBIS-Tensao-Racial-A-Tradicao-Batista-e-a-Unidade-Crista-Cap-14-Os-Batistas-e-o-Resgate-Da-Tradicao-Crista.pdf",
+  "campos": {
+    "titulo": "Organizado por",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "Nashville",
+    "nPaginas": "26",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20687
+}

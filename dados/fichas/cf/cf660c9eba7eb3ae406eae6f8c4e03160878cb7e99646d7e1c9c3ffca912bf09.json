@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "cf660c9eba7eb3ae406eae6f8c4e03160878cb7e99646d7e1c9c3ffca912bf09",
+  "arquivo_origem": "808939079-HERMENEUTICA-PENTECOSTAL-OFICIAL.pdf",
+  "campos": {
+    "titulo": "HERMENÊUTICA PENTECOSTAL",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "Edições Vida Nova, 1988",
+    "data": "1993",
+    "edicao": "",
+    "lugar": "São Paulo",
+    "nPaginas": "147",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20813
+}

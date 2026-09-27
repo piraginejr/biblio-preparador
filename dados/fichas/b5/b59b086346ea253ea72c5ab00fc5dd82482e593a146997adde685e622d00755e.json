@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "b59b086346ea253ea72c5ab00fc5dd82482e593a146997adde685e622d00755e",
+  "arquivo_origem": "Adoração Prioridade, princípios e prática (J. C... (Z-Library).pdf",
+  "campos": {
+    "titulo": "Adoração: prioridade, princípios e prática",
+    "subTitulo": "",
+    "nmAutor0": "Ryle, J. C.",
+    "autores": [
+      {
+        "nome": "Ryle, J. C.",
+        "desc": "Editor"
+      }
+    ],
+    "editora": "Editora Fiel",
+    "data": "2010",
+    "edicao": "1ª Edição",
+    "lugar": "",
+    "nPaginas": "23",
+    "isbn": "9788599145791",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Culto público"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20802
+}

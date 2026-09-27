@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "2f815acd1ea093acdbd6efbb3e13c563e810a428ce582f92f53ac5be6ada61b8",
+  "arquivo_origem": "433614960-A-Cristianizacao-da-Missao-de-Joao-Batista-Joao-Henrique-Magalhaes-da-Silva-pdf.pdf",
+  "campos": {
+    "titulo": "A cristianização da missão de João Batista",
+    "subTitulo": "O rebaixamento da figura do Batista como consequência do soerguimento da figura de Jesus",
+    "nmAutor0": "Silva, João Henrique Magalhães da",
+    "autores": [
+      {
+        "nome": "Silva, João Henrique Magalhães da",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Fi",
+    "data": "2017",
+    "edicao": "",
+    "lugar": "Porto Alegre",
+    "nPaginas": "109",
+    "isbn": "9788556962263",
+    "isbn_codigo_barras": "",
+    "cdd": "200",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "CIP revisada",
+    "origem_autor": "CIP revisada"
+  },
+  "justificativa": "CIP, capa, contracapa e código de barras fornecem uma ficha completa e concordante.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, contracapa e CIP",
+    "CBL/ISBN Brasil"
+  ],
+  "id_remoto": 20403
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "49e6391983159122e571822f3b3ac114a64a963a1438458c0054f8e7ec00f755",
+  "arquivo_origem": "120067328-O-Espirito-Das-Disciplinas-Dallas-Willard.pdf",
+  "campos": {
+    "titulo": "Entendendo Como Juus Transforma Vidas Captrito das DISCIPLINAS",
+    "subTitulo": "",
+    "nmAutor0": "Willard, Disciplinas Dallas",
+    "autores": [
+      {
+        "nome": "Willard, Disciplinas Dallas",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Danprewan",
+    "data": "1978",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "261",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20733
+}

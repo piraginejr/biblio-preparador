@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "e4b20c5a2474fd791a901bbc4b54b7b448abff90072f1ad51b2d3dc9912c2208",
+  "arquivo_origem": "3 La realiad de la Iglesia Evangelica Latinoamerica.pdf",
+  "campos": {
+    "titulo": "COSTAS, O. E. La realiad de la Iglesia Evangelica Latinoamerica. Bueno Aires",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "3",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20772
+}

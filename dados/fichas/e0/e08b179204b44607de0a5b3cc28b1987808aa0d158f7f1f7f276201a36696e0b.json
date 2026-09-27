@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "e08b179204b44607de0a5b3cc28b1987808aa0d158f7f1f7f276201a36696e0b",
+  "arquivo_origem": "620910870-Women-Leaders-and-the-Church-Three-Crucial-Questions-Linda-L-Belleville-Z-lib-org.pdf",
+  "campos": {
+    "titulo": "Women Leaders and the Church",
+    "subTitulo": "Three Crucial Questions",
+    "nmAutor0": "Belleville, Linda L.",
+    "autores": [
+      {
+        "nome": "Belleville, Linda L.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Baker Academic",
+    "data": "2000",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "224",
+    "isbn": "080105351X",
+    "isbn_codigo_barras": "",
+    "cdd": "082",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Women in church work; Women clergy; Women in Christianity; Vrouwen; Early church"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20751
+}

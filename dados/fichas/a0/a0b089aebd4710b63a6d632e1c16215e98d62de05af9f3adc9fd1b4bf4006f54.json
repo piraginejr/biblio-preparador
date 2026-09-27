@@ -1,0 +1,34 @@
+{
+  "hash_sha256": "a0b089aebd4710b63a6d632e1c16215e98d62de05af9f3adc9fd1b4bf4006f54",
+  "arquivo_origem": "Engaging with God A Biblical Theology of Worshi... (Z-Library).pdf",
+  "campos": {
+    "titulo": "Engaging with God",
+    "subTitulo": "A Biblical Theology of Worship",
+    "nmAutor0": "Peterson, David G.",
+    "autores": [
+      {
+        "nome": "Peterson, David G.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "InterVarsity Press",
+    "data": "1992",
+    "edicao": "1ª edição",
+    "lugar": "Downers Grove, Illinois",
+    "nPaginas": "426",
+    "isbn": "9780830898855",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Worship; Biblical theology; Public worship",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto e copyright revisados"
+  },
+  "justificativa": "A folha de rosto identifica título e autor; a página de copyright identifica editora, local, ano e ISBN digital. I. Howard Marshall assina somente o prefácio e não é coautor.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "PDF local: folhas de rosto, prefácio e copyright, páginas 1-10 e 425"
+  ]
+}

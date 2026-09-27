@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "15ac8714dd9a708d150319716d1bd229fa451aa2db2a518aaf8d7b195e8055a5",
+  "arquivo_origem": "216033001-Norman-Geisler-William-Nix-Introducao-Biblica-Como-a-Biblia-chegou-ate-nos-doc.pdf",
+  "campos": {
+    "titulo": "Introdução Bíblica -Como a Bíblia chegou até nós",
+    "subTitulo": "",
+    "nmAutor0": "Geisler; Norman",
+    "autores": [
+      {
+        "nome": "Geisler; Norman",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Nix; Willian",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "85-7367-026-6",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

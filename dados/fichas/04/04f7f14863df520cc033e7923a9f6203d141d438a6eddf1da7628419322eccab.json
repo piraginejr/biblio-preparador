@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "04f7f14863df520cc033e7923a9f6203d141d438a6eddf1da7628419322eccab",
+  "arquivo_origem": "536251955-WIERSBE-Warren-Respostas-as-Perguntas-Que-Os-Pastores-Semprem-Fazem.pdf",
+  "campos": {
+    "titulo": "qjue os pastores sempre fazem",
+    "subTitulo": "",
+    "nmAutor0": "Wiersbe, Warren W.",
+    "autores": [
+      {
+        "nome": "Wiersbe, Warren W.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Sociedade Bíblica do Brasil",
+    "data": "2006",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "190",
+    "isbn": "9788526308077",
+    "isbn_codigo_barras": "9788526308077",
+    "cdd": "250",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "8a6ac4adee6fc8cd7b7470d4a8ef2e5a09bd414693004586365d668761256047",
+  "arquivo_origem": "419664247-5-Teologos-Batistas-Que-Todo-Pastor-Deve.pdf",
+  "campos": {
+    "titulo": "5 teólogos batistas que todo pastor deveria ler",
+    "subTitulo": "",
+    "nmAutor0": "[autor não identificado]",
+    "autores": [],
+    "editora": "",
+    "data": "1857",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "3",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "artigo",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "cabeçalho revisado",
+    "origem_autor": "não declarado no arquivo"
+  },
+  "justificativa": "O arquivo é um artigo curto, sem folha de rosto ou estrutura editorial de livro.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: leitura integral e estrutura do documento"
+  ],
+  "id_remoto": 20511
+}

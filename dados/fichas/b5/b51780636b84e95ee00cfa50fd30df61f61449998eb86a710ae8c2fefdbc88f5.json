@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "b51780636b84e95ee00cfa50fd30df61f61449998eb86a710ae8c2fefdbc88f5",
+  "arquivo_origem": "Pastores del siglo XXI Un Modelo Pastoral Para la Iglesia Actual (Pastor Jose Mª Baena Acebal) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+  "campos": {
+    "titulo": "Pastores para el Siglo XXI",
+    "subTitulo": "",
+    "nmAutor0": "Acebal, Jose Maria Maena",
+    "autores": [
+      {
+        "nome": "Acebal, Jose Maria Maena",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Clie, Editorial",
+    "data": "2018",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "VILADECAVALLS",
+    "nPaginas": "206",
+    "isbn": "9788416845835",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Espanhol",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20672
+}

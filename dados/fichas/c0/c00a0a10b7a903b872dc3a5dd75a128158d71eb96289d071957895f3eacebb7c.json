@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "c00a0a10b7a903b872dc3a5dd75a128158d71eb96289d071957895f3eacebb7c",
+  "arquivo_origem": "513645638-Pedro-Discipulo-Apostolo-e-Martir-O-Cullman.pdf",
+  "campos": {
+    "titulo": "PEDRO DISCIPVLO APOSTOLO •M ÁRTIR.",
+    "subTitulo": "",
+    "nmAutor0": "CVLLMANN, OSCAR",
+    "autores": [
+      {
+        "nome": "CVLLMANN, OSCAR",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Associação de Seminários Teológicos Evangélicos (ASTE)",
+    "data": "1960",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "São Paulo",
+    "nPaginas": "266",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20446
+}

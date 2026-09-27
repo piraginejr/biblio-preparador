@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "da2cb5e3861b97eff9d2c27818bd0c6d8915ddf90711f4e7887202604b14435c",
+  "arquivo_origem": "423279051-CFW.pdf",
+  "campos": {
+    "titulo": "ESTUAOS. RA ESTUDOS NA \"COnfIssăo be fé C",
+    "subTitulo": "",
+    "nmAutor0": "FIGUEIREDO, DR. CLEÓMINES A. DE",
+    "autores": [
+      {
+        "nome": "FIGUEIREDO, DR. CLEÓMINES A. DE",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Cultura Cristã, S. Paulo, 2006",
+    "data": "2005",
+    "edicao": "12ª Edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "121",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20734
+}

@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "75c375e1514bcbaca4ca9e57a0c6e9dc739d20d42e18726cdd958556c2e10a73",
+  "arquivo_origem": "471092284-a-videira-e-os-ramos-por-paul-washer-pdf.pdf",
+  "campos": {
+    "titulo": "A videira e os ramos",
+    "subTitulo": "",
+    "nmAutor0": "Washer, Paul David",
+    "autores": [],
+    "editora": "O Estandarte de Cristo",
+    "data": "2015",
+    "edicao": "1ª edição",
+    "lugar": "",
+    "nPaginas": "11",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "sermão",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Ministério Voltemos ao Evangelho",
+    "origem_titulo": "capa e créditos revisados",
+    "origem_autor": "créditos revisados"
+  },
+  "justificativa": "O próprio arquivo declara ser transcrição não oficial de um sermão em vídeo; deve aguardar a API de documentos, não a de livros.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e declaração editorial"
+  ],
+  "id_remoto": 20513
+}

@@ -1,0 +1,12 @@
+{
+  "hash_sha256": "e33ca0cd3b184fa58ef6bb6dea1a70078ebec5748f0e3631c5d01763828f02bf",
+  "arquivo_origem": "/Users/piraginejr/Library/CloudStorage/Dropbox/arquivos temporários/revista/livros/600104766-1-Dogmatica-Reformada-Prolegomenos-Volumen-Uno-Herman-Bavinck-2.pdf",
+  "campos": {
+    "titulo": "Dogmática reformada: Prolegomenos",
+    "isbn": "9780801026324"
+  },
+  "justificativa": "Cadastrado na API Biblio",
+  "fontes": [
+    "API Biblio PIB Curitiba"
+  ]
+}

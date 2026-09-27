@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "1503c6a25242486fe29914333b7225681f038c39aaf07436c5e7042d3bed5040",
+  "arquivo_origem": "219154613-UCB-Disciplinas-Espirituais-Corrigido.pdf",
+  "campos": {
+    "titulo": "DISCIPLINAS ESPIRITUAIS",
+    "subTitulo": "",
+    "nmAutor0": "Ucb, Disciplinas Espirituais",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "46",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20735
+}

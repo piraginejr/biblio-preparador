@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "f13c9c75cbd829a37f8db90f813524f28ae4804c6138988fb9f7212c4f90345e",
+  "arquivo_origem": "699613182-A-Grande-Comissao-Michael-Horton.pdf",
+  "campos": {
+    "titulo": "A grande comissão",
+    "subTitulo": "O resgate da estratégia divina para o discipulado",
+    "nmAutor0": "Horton, Michael",
+    "autores": [
+      {
+        "nome": "Horton, Michael",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Cultura Cristã",
+    "data": "2014",
+    "edicao": "1",
+    "lugar": "São Paulo",
+    "nPaginas": "352",
+    "isbn": "9788576225157",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "CIP e capa revisadas",
+    "origem_autor": "CIP e capa revisadas"
+  },
+  "justificativa": "Capa, CIP, créditos, sumário e página 350 confirmam a edição brasileira completa de 2014; 2011 é o copyright do original em inglês.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, CIP, créditos, sumário e páginas finais"
+  ],
+  "id_remoto": 20940
+}

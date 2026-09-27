@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "7b739c7dd6a7f4d3ec06e3a6a3302f99adbb670665abac4ff2dfefb086681435",
+  "arquivo_origem": "403994779-A-Teologia-Pactual-de-Benjamim-Keach-e-a-Justificacao.pdf",
+  "campos": {
+    "titulo": "A teologia pactual de Benjamin Keach e a justificação",
+    "subTitulo": "",
+    "nmAutor0": "Hicks, Tom",
+    "autores": [
+      {
+        "nome": "Hicks, Tom",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "O Estandarte de Cristo",
+    "data": "2016",
+    "edicao": "1ª edição",
+    "lugar": "Nashville",
+    "nPaginas": "15",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa revisada",
+    "origem_autor": "capa e fonte editorial revisadas"
+  },
+  "justificativa": "Capa, créditos e a publicação editorial identificam de forma concordante a obra digital.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e créditos",
+    "O Estandarte de Cristo: publicação da obra"
+  ],
+  "id_remoto": 20396
+}

@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "90b76da1e3383626e549104722de48394f96fe8b5aa1c6af2586793a071f838a",
+  "arquivo_origem": "622245900-Discipulado-Um-a-Um-Crescimento-Com-Qualidade.pdf",
+  "campos": {
+    "titulo": "Discipulado um a um",
+    "subTitulo": "Crescimento com qualidade",
+    "nmAutor0": "Huber, Abe",
+    "autores": [
+      {
+        "nome": "Huber, Abe",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Adonai",
+    "data": "2011",
+    "edicao": "2ª edição",
+    "lugar": "",
+    "nPaginas": "177",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Discipulado; Células; Liderança cristã; Modelo de Discipulado Apostólico",
+    "origem_titulo": "capa",
+    "origem_autor": "capa e apresentação",
+    "isbn_motivo": "a edição digital examinada não declara ISBN",
+    "idioma": "por"
+  },
+  "justificativa": "Capa identifica autor, título e 2ª edição; a apresentação declara a Editora Adonai e situa esta edição em 2011.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa e apresentação, páginas iniciais"
+  ],
+  "id_remoto": 20756
+}

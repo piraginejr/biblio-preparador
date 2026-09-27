@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "1aa1319b1a332ce6cff6dee9fddabbbf4956e36666fdbcdc31809e09643d6d58",
+  "arquivo_origem": "243290558-Mais-de-um-seculo-de-educacao-metodista-ok-pdf.pdf",
+  "campos": {
+    "titulo": "Mais de um Século de Educação Metodista",
+    "subTitulo": "",
+    "nmAutor0": "Mattos, Paulo Ayres",
+    "autores": [
+      {
+        "nome": "Mattos, Paulo Ayres",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Cogeime",
+    "data": "2010",
+    "edicao": "2ª edição",
+    "lugar": "São Paulo",
+    "nPaginas": "96",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20360
+}

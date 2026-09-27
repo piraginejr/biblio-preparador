@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "d5fdae09a063e5021a5159b6e2e60aa1af314a1b67d571b32561799382f3580e",
+  "arquivo_origem": "677213363-Bryan-Bost-De-Casa-Em-Casa (1).pdf",
+  "campos": {
+    "titulo": "De casa em casa: crescimento da igreja nos lares",
+    "subTitulo": "",
+    "nmAutor0": "Bost, Bryan Jay",
+    "autores": [
+      {
+        "nome": "Bost, Bryan Jay",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Arte Editorial",
+    "data": "2007",
+    "edicao": "3",
+    "lugar": "– São Paulo",
+    "nPaginas": "68",
+    "isbn": "9788598172170",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20815
+}

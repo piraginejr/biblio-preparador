@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "a3abe4e539aa4b02a240d0db2d423459cf68c662d253d46023d29460e6895025",
+  "arquivo_origem": "Doze mulheres extraordinariamente comuns Como Deus moldou as mulheres da Bíblia, e o que ele quer fazer com você (John F. MacArthur Jr.) (z-library.sk, 1lib.sk.pdf",
+  "campos": {
+    "titulo": "Doze mulheres extraordinariamente comuns: como Deus usou as mulheres da Bíblia e como ele pode usar você",
+    "subTitulo": "",
+    "nmAutor0": "MacArthur, John",
+    "autores": [
+      {
+        "nome": "MacArthur, John",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Thomas Nelson Brasil",
+    "data": "2005",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "1. ed. - Rio de Janeiro",
+    "nPaginas": "224",
+    "isbn": "9788571670259",
+    "isbn_codigo_barras": "",
+    "cdd": "220.92",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Religião"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20877
+}

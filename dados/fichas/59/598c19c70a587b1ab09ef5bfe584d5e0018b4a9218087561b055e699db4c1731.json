@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "598c19c70a587b1ab09ef5bfe584d5e0018b4a9218087561b055e699db4c1731",
+  "arquivo_origem": "665989778-Lidere-Como-Jesus-2022.pdf",
+  "campos": {
+    "titulo": "Lidere como Jesus",
+    "subTitulo": "",
+    "nmAutor0": "Casademunt, Javier",
+    "autores": [
+      {
+        "nome": "Casademunt, Javier",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "VALERIA MARQUES SABINO GONCALVES DA SILVA",
+    "data": "2022",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Bragança Paulista",
+    "nPaginas": "57",
+    "isbn": "9786599796036",
+    "isbn_codigo_barras": "",
+    "cdd": "248.47",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Religião"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20928
+}

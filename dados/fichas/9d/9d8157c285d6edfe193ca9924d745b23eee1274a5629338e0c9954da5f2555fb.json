@@ -1,0 +1,32 @@
+{
+  "hash_sha256": "9d8157c285d6edfe193ca9924d745b23eee1274a5629338e0c9954da5f2555fb",
+  "arquivo_origem": "499072027-O-Evangelho-e-a-Diversidade-Das-Culturas-Paul-g-Hiebert.pdf",
+  "campos": {
+    "titulo": "A DIVERSIDADE",
+    "subTitulo": "",
+    "nmAutor0": "HIEBERT, PAUL G.",
+    "autores": [
+      {
+        "nome": "HIEBERT, PAUL G.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "SOCIEDADE RELIGIOSA EDIÇÕES VIDA NOVA",
+    "data": "1985",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Grand Rapids",
+    "nPaginas": "314",
+    "isbn": "9788527502696",
+    "isbn_codigo_barras": "9788527502696",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "ea72adbaf5431edcc1013c111aad465ae7d531d69a602f6f812f1e87a7fe3edf",
+  "arquivo_origem": "520564131-A-Historia-Da-Igreja-Batista-Da-Lagoinha.pdf",
+  "campos": {
+    "titulo": "Programa de Pós-Graduação em Ciência da Religião - PPCIR Thiago Moreira",
+    "subTitulo": "",
+    "nmAutor0": "UFJF, Universidade Federal de Juiz de Fora –",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "141",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "dissertação",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20553
+}

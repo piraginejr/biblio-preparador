@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "aa433714764162eedfcc92651a0148cc271fedfc3e0916bdda55a7dd7f436ac6",
+  "arquivo_origem": "539461144-Biografria-O-Gigante-Que-Dorme.pdf",
+  "campos": {
+    "titulo": "Biografria-O-gigante-que-dorme (3).ppt",
+    "subTitulo": "",
+    "nmAutor0": "[autor não identificado]",
+    "autores": [],
+    "editora": "",
+    "data": "",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "33",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20515
+}

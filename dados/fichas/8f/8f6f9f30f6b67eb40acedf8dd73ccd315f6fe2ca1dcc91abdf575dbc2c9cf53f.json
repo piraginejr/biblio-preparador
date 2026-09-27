@@ -1,0 +1,28 @@
+{
+  "hash_sha256": "8f6f9f30f6b67eb40acedf8dd73ccd315f6fe2ca1dcc91abdf575dbc2c9cf53f",
+  "arquivo_origem": "174601815-7-qualidades-de-um-lider.pdf",
+  "campos": {
+    "titulo": "7 qualidades de um líder",
+    "subTitulo": "",
+    "nmAutor0": "",
+    "autores": [],
+    "editora": "",
+    "data": "2013",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "3",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "documento",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20556
+}

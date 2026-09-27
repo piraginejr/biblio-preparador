@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "dcde9fcaef314c23be7cad9ab46bfce99f490777ccf1917bc775d83565e29d13",
+  "arquivo_origem": "15685_SEJA_UM_OBREIRO_APROVADO_ocr.pdf",
+  "campos": {
+    "titulo": "SEJA UM OBREIRO APROVADO",
+    "subTitulo": "",
+    "nmAutor0": "BARRAT, John Terrick",
+    "autores": [
+      {
+        "nome": "BARRAT, John Terrick",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "9788527504898",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

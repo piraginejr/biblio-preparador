@@ -1,0 +1,38 @@
+{
+  "hash_sha256": "a38f665425fc35c865181f3ec0bac370c3b7a0c71bc4d440c4449201e1844e74",
+  "arquivo_origem": "460832615-O-Melhor-Desta-Terra-Colecao-L-Bud-Wright-pdf.pdf",
+  "campos": {
+    "titulo": "O Melhor Desta Terra",
+    "subTitulo": "Coleção Legado — Livro 6",
+    "nmAutor0": "Wright, Bud",
+    "autores": [
+      {
+        "nome": "Wright, Bud",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Rhema Brasil Publicações",
+    "data": "2018",
+    "edicao": "1ª edição",
+    "lugar": "Campina Grande",
+    "nPaginas": "70",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "volume": "6",
+    "origem_titulo": "capa e propriedades do PDF",
+    "origem_autor": "capa e propriedades do PDF"
+  },
+  "justificativa": "Os créditos da própria cópia identificam editora e primeira edição; publicações do autor confirmam a circulação do livro em 2018.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, propriedades e créditos",
+    "Verbo da Vida: trechos do livro publicados em 2018"
+  ],
+  "id_remoto": 20416
+}

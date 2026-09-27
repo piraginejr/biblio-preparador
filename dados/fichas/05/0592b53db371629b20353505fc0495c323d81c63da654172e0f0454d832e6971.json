@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "0592b53db371629b20353505fc0495c323d81c63da654172e0f0454d832e6971",
+  "arquivo_origem": "The Family and the Fellowship (Ralph P. Martin) (Z-Library).pdf",
+  "campos": {
+    "titulo": "The Family and the Fellowship",
+    "subTitulo": "",
+    "nmAutor0": "Martin, Ralph P.",
+    "autores": [
+      {
+        "nome": "Martin, Ralph P.",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Wipf & Stock Publishers",
+    "data": "1997",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "142",
+    "isbn": "1579100333",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Criticism, interpretation; Bible; Biblical teaching; Church; Église"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20805
+}

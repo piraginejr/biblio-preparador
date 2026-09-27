@@ -1,0 +1,35 @@
+{
+  "hash_sha256": "68e8623666cf846e6d0260c69a0bce98035656e87b6b66fc7586f4bebe46360b",
+  "arquivo_origem": "398089489-Antes-de-tudo-fazei-discipulos-Jamie-Kemp.pdf",
+  "campos": {
+    "titulo": "Antes de tudo fazei discípulos",
+    "subTitulo": "",
+    "nmAutor0": "Kemp, Judith",
+    "autores": [
+      {
+        "nome": "Kemp, Judith",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Andreotti, Sonia Emilio Lopez",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "FÔLEGO EDITORA",
+    "data": "2013",
+    "edicao": "1a edição",
+    "lugar": "São Paulo",
+    "nPaginas": "142",
+    "isbn": "9788582060193",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

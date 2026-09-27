@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "b53661e7481a6d8d20ef20ea8e3ccd0652da0db5d12c95a4b885f07a7f75091c",
+  "arquivo_origem": "586124942-Jesus-Um-Pai-de-Familia.pdf",
+  "campos": {
+    "titulo": "Jesus, um Pai de família",
+    "subTitulo": "",
+    "nmAutor0": "Boas, Alessandro Vilas",
+    "autores": [
+      {
+        "nome": "Boas, Alessandro Vilas",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Doma LTDA",
+    "data": "2020",
+    "edicao": "1ª Edição",
+    "lugar": "1. ed. – São José dos Campos, SP",
+    "nPaginas": "176",
+    "isbn": "9786586994049",
+    "isbn_codigo_barras": "",
+    "cdd": "232",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20745
+}

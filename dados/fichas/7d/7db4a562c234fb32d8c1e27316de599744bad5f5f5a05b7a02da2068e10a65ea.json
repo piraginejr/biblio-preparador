@@ -1,0 +1,39 @@
+{
+  "hash_sha256": "7db4a562c234fb32d8c1e27316de599744bad5f5f5a05b7a02da2068e10a65ea",
+  "arquivo_origem": "388742149-Livro-O-Bastao-da-Lideranca-pdf.pdf",
+  "campos": {
+    "titulo": "O Bastão da Liderança",
+    "subTitulo": "",
+    "nmAutor0": "Forman, Rowland",
+    "autores": [
+      {
+        "nome": "Forman, Rowland",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Jones, Jeff",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Miller, Bruce",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "",
+    "data": "",
+    "edicao": "",
+    "lugar": "",
+    "nPaginas": "",
+    "isbn": "978-85-7839-000-6",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "hash_sha256": "e919398bf0e826eeffab16c8d8804a1747410cb7cbd0b473e2ab79d1fbccd4a0",
+  "arquivo_origem": "679866723-d007-Literatura-Apocrifa-Pseudepigrafa-Deuterocanonica-e-o-Canon-Biblico.pdf",
+  "campos": {
+    "titulo": "LITERATURA APÓCRIFA, PSEUDEPÍGRAFA, DEUTEROCANÔNICA E O CÂNON",
+    "subTitulo": "",
+    "nmAutor0": "Ministry, LSM Cursos - Living Stones",
+    "autores": [
+      {
+        "nome": "Ministry, LSM Cursos - Living Stones",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Vida Nova, 1989",
+    "data": "2011",
+    "edicao": "3ª edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "106",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20781
+}

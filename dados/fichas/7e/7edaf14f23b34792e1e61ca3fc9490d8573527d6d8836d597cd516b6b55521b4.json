@@ -1,0 +1,41 @@
+{
+  "hash_sha256": "7edaf14f23b34792e1e61ca3fc9490d8573527d6d8836d597cd516b6b55521b4",
+  "arquivo_origem": "314478455-Coletanea-Da-Teologia-de-Joao-Wesley.pdf",
+  "campos": {
+    "titulo": "Coletânea da teologia de João Wesley",
+    "subTitulo": "",
+    "nmAutor0": "Burtner, Robert W.",
+    "autores": [
+      {
+        "nome": "Burtner, Robert W.",
+        "desc": "Compilador"
+      },
+      {
+        "nome": "Chiles, Robert E.",
+        "desc": "Compilador"
+      }
+    ],
+    "editora": "Igreja Metodista, Colégio Episcopal",
+    "data": "1995",
+    "edicao": "2ª edição",
+    "lugar": "Rio de Janeiro",
+    "nPaginas": "262",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "tradutor": "Messias Freire",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto revisada"
+  },
+  "justificativa": "Folha de rosto e ficha da 2ª edição identificam corretamente os dois compiladores.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e ficha editorial"
+  ],
+  "id_remoto": 20365
+}

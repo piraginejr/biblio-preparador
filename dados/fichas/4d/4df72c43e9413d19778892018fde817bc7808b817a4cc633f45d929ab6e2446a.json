@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "4df72c43e9413d19778892018fde817bc7808b817a4cc633f45d929ab6e2446a",
+  "arquivo_origem": "385839490-livro-1-miolo.pdf",
+  "campos": {
+    "titulo": "Estudo panorâmico do Velho Testamento: Gênesis a II Samuel",
+    "subTitulo": "",
+    "nmAutor0": "Woodward, Dick",
+    "autores": [],
+    "editora": "Ministério Cooperativo Internacional (ICM)",
+    "data": "2015",
+    "edicao": "4ª edição",
+    "lugar": "",
+    "nPaginas": "140",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "apostila",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "capa e expediente revisados",
+    "origem_autor": "capa e expediente revisados"
+  },
+  "justificativa": "Material complementar do Curso Bíblico Internacional Encontro com a Palavra; deve seguir a fila de apostilas.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: capa, expediente e nota ao aluno"
+  ],
+  "id_remoto": 20525
+}

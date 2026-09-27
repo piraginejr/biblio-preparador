@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "5cfe5b595d9aef850376bb220d768b7badd68414a22e0753a2bff0b5dee8be05",
+  "arquivo_origem": "467856113-A-IMORTALIDADE-DA-ALMA-E-O-CASTIGO-ETERNO.pdf",
+  "campos": {
+    "titulo": "A imortalidade da alma e o castigo eterno",
+    "subTitulo": "Um breve comentário exegético de 2 Pedro",
+    "nmAutor0": "Gomes, Ezequiel",
+    "autores": [
+      {
+        "nome": "Gomes, Ezequiel",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Edição do Autor",
+    "data": "2020",
+    "edicao": "1ª edição",
+    "lugar": "Jundiaí",
+    "nPaginas": "305",
+    "isbn": "9786500046885",
+    "isbn_codigo_barras": "",
+    "cdd": "227.9206",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "CIP revisada",
+    "origem_autor": "CIP revisada"
+  },
+  "justificativa": "A CIP e a página editorial fornecem a ficha completa; o erro anterior veio do OCR decorativo da capa.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: CIP, página editorial e capa"
+  ],
+  "id_remoto": 20426
+}

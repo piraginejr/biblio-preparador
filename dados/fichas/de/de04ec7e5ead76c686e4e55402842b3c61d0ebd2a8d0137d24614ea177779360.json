@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "de04ec7e5ead76c686e4e55402842b3c61d0ebd2a8d0137d24614ea177779360",
+  "arquivo_origem": "638537169-Untitled.pdf",
+  "campos": {
+    "titulo": "(Des)congregados",
+    "subTitulo": "20 razões e desculpas para a evasão nas igrejas cristãs",
+    "nmAutor0": "Xavier, Mizael de Souza",
+    "autores": [
+      {
+        "nome": "Xavier, Mizael de Souza",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "5S Editora",
+    "data": "2022",
+    "edicao": "1ª edição",
+    "lugar": "Parnamirim, RN",
+    "nPaginas": "107",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Evasão da igreja; Igreja cristã; Vida cristã; Desigrejados",
+    "isbn_motivo": "sem ISBN: excerto digital identificado por ASIN, sem ISBN declarado",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "folha de rosto e aviso autoral revisados"
+  },
+  "justificativa": "A primeira página informa título, subtítulo, autor, editora, local e ano. O aviso autoral repete o nome completo.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e aviso autoral, página 1"
+  ],
+  "id_remoto": 20823
+}

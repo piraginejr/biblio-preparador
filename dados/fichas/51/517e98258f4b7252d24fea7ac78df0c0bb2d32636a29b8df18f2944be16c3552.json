@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "517e98258f4b7252d24fea7ac78df0c0bb2d32636a29b8df18f2944be16c3552",
+  "arquivo_origem": "248075955-Dicionario-Biblico-Lexico-Hebraico.pdf",
+  "campos": {
+    "titulo": "Dicionário Bíblico Strong",
+    "subTitulo": "Léxico Hebraico, Aramaico e Grego de Strong",
+    "nmAutor0": "Strong, James",
+    "autores": [
+      {
+        "nome": "Strong, James",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Sociedade Bíblica do Brasil",
+    "data": "2002",
+    "edicao": "",
+    "lugar": "Barueri",
+    "nPaginas": "2037",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "",
+    "origem_titulo": "folha de rosto revisada",
+    "origem_autor": "responsabilidade intelectual da obra"
+  },
+  "justificativa": "A folha de rosto declara título, subtítulo, editora e ano; o nome de arquivo não é autor.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e nota inicial"
+  ],
+  "id_remoto": 20361
+}

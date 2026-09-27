@@ -1,0 +1,36 @@
+{
+  "hash_sha256": "91891c0b8bbc54c2c9dde13958059e71b054b29305f709fc46c53e601a3f8e6b",
+  "arquivo_origem": "Igreja_Corpo_de_Cristo.pdf",
+  "campos": {
+    "titulo": "Igreja: corpo de Cristo",
+    "subTitulo": "Um estudo da epístola aos efésios",
+    "nmAutor0": "Silva, João Parahyba Daronch da",
+    "autores": [
+      {
+        "nome": "Silva, João Parahyba Daronch da",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Junta Geral de Ação Social da Igreja Metodista do Brasil",
+    "data": "1966",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "74",
+    "isbn": "",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Igreja; Corpo de Cristo; Efésios; Eclesiologia; Igreja Metodista",
+    "isbn_motivo": "publicação antiga sem ISBN declarado",
+    "idioma": "por"
+  },
+  "justificativa": "A folha de rosto declara título, subtítulo, autor, entidade publicadora e ano; o exemplar é anterior à adoção do ISBN.",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba",
+    "PDF local: folha de rosto e apresentação"
+  ],
+  "id_remoto": 20916
+}

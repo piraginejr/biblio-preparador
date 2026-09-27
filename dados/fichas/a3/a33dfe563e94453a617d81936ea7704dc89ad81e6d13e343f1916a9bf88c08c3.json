@@ -1,0 +1,31 @@
+{
+  "hash_sha256": "a33dfe563e94453a617d81936ea7704dc89ad81e6d13e343f1916a9bf88c08c3",
+  "arquivo_origem": "Social problems (Lumko) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Social Problems",
+    "subTitulo": "",
+    "nmAutor0": "Prior, Anselm",
+    "autores": [
+      {
+        "nome": "Prior, Anselm",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Lumko Institute",
+    "data": "2000",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "",
+    "nPaginas": "48",
+    "isbn": "1874838313",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Inglês",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": ""
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "hash_sha256": "e86c64ac1fccdbcc271ac181f0fa8f40705a69824f6093d44cd286c0dc47aa9f",
+  "arquivo_origem": "Raízes de um Evangelho Integral missão em perspectiva histórica (C. René Padilla (Editor) etc.) (Z-Library).pdf",
+  "campos": {
+    "titulo": "Raízes de um evangelho integral",
+    "subTitulo": "missão em perspectiva histórica",
+    "nmAutor0": "Steuernagel, Valdir",
+    "autores": [
+      {
+        "nome": "Steuernagel, Valdir",
+        "desc": "Autor"
+      },
+      {
+        "nome": "Padilla, C. René",
+        "desc": "Autor"
+      }
+    ],
+    "editora": "Editora Ultimato",
+    "data": "2021",
+    "edicao": "1ª edição (presumida)",
+    "lugar": "Curitiba",
+    "nPaginas": "360",
+    "isbn": "9786586173819",
+    "isbn_codigo_barras": "",
+    "cdd": "",
+    "nmLingua": "Português",
+    "tipo_documento": "livro",
+    "abstract": "",
+    "palavrasChave": "Cristianismo"
+  },
+  "justificativa": "Preparado e validado pelo motor Biblio",
+  "fontes": [
+    "Metadados locais do acervo",
+    "API Biblio PIB Curitiba"
+  ],
+  "id_remoto": 20673
+}
