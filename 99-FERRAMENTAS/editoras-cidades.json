@@ -1,52 +1,1673 @@
 {
-  "versao": 1,
-  "descricao": "Cidade provável por editora, gerada dos metadados locais e ampliada pela revisão visual. A ficha/copyright/CIP sempre vencem esta sugestão.",
+  "versao": 2,
+  "descricao": "Cidade provável por editora, gerada e consolidada a partir do acervo de 806 fichas do Biblio Preparador. A ficha/copyright/CIP sempre vencem esta sugestão.",
+  "total_editoras": 238,
   "editoras": [
-    {"editora": "ABU Editora", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 3},
-    {"editora": "Associação de Seminários Teológicos Evangélicos (ASTE)", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 3},
-    {"editora": "Baker Academic", "cidade": "Grand Rapids", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 6},
-    {"editora": "Beacon Hill Press of Kansas City", "cidade": "Rio de Janeiro", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 3},
-    {"editora": "Casa Nazarena de Publicaciones", "cidade": "Lenexa, Kansas", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 6},
-    {"editora": "Casa Publicadora Batista", "cidade": "Rio de Janeiro", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 10},
-    {"editora": "Casa Publicadora das Assembleias de Deus", "cidade": "Rio de Janeiro", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 6},
-    {"editora": "Central Gospel", "cidade": "Rio de Janeiro", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 5},
-    {"editora": "Convicção Editora", "cidade": "Rio de Janeiro", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 3},
-    {"editora": "Crossway", "cidade": "Wheaton", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 3},
-    {"editora": "Edições Caminho de Damasco", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "Edições Loyola", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 5},
-    {"editora": "Editora Cultura Cristã", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 12},
-    {"editora": "Editora Fi", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 3},
-    {"editora": "Editora Fiel", "cidade": "São José dos Campos", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 5},
-    {"editora": "EDITORA MONERGISMO", "cidade": "Brasília", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "Editora Mundo Cristão", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 4},
-    {"editora": "Editora Reflexão", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "Editora Ultimato", "cidade": "Viçosa", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 5},
-    {"editora": "Editora Vida", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 16},
-    {"editora": "Editorial Clie", "cidade": "VILADECAVALLS", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "Editorial Portavoz", "cidade": "Grand Rapids", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "Eerdmans", "cidade": "GRAND RAPIDS", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 3},
-    {"editora": "Fernando Boa Sorte Ribeiro", "cidade": "Curitiba", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 4},
-    {"editora": "Graça Editorial", "cidade": "Rio de Janeiro", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "Impacto Publicações", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "InterVarsity Press", "cidade": "Grand Rapids", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "JUERP - Junta de Educação Religiosa e Publicações", "cidade": "Rio de Janeiro", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 8},
-    {"editora": "LAN EDITORA", "cidade": "Rio de Janeiro", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "Livrarias Família Cristã", "cidade": "Londrina", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "O Estandarte de Cristo", "cidade": "Nashville", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "Paulinas", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 7},
-    {"editora": "Paulus Editora", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "Pro Nobis Editora", "cidade": "Rio de Janeiro", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 3},
-    {"editora": "Publicações ITL", "cidade": "Maranhão", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "Rhema Brasil Publicações", "cidade": "Campina Grande", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 6},
-    {"editora": "SBB", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "Seminário Teológico Batista de Niterói", "cidade": "Niterói", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "Shedd", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 3},
-    {"editora": "Sociedade Bíblica do Brasil", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "SOCIEDADE RELIGIOSA EDIÇÕES VIDA NOVA", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 3},
-    {"editora": "THE WAY", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "Thomas Nelson Brasil", "cidade": "Rio de Janeiro", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 3},
-    {"editora": "Tyndale House", "cidade": "Grand Rapids", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 3},
-    {"editora": "Universidade de São Paulo", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "media", "ocorrencias": 2},
-    {"editora": "VIDA NOVA", "cidade": "São Paulo", "fonte": "metadados locais", "confianca": "alta", "ocorrencias": 7}
+    {
+      "editora": "5S Editora",
+      "cidade": "Parnamirim",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "[edição do autor]",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "A.D. SANTOS EDITORA",
+      "cidade": "Curitiba",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Abba Press",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Abingdon Press",
+      "cidade": "Nashville",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Abingdon-Cokesbury Press",
+      "cidade": "New York; Nashville",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "ABU Editora",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 9,
+      "confianca": "alta"
+    },
+    {
+      "editora": "ABU EDITORA",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Arte Editorial",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Asociación Casa Editora Sudamericana",
+      "cidade": "Florida, Buenos Aires",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Associação de Seminários Teológicos Evangélicos (ASTE)",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "editora": "ASTE",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Ateliê de História UEPG",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "B & H Academic; B&H Academic",
+      "cidade": "Nashville",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "B&H Publishing Group",
+      "cidade": "Nashville",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Baker Academic",
+      "cidade": "Grand Rapids",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 14,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Baker Academics",
+      "cidade": "Grand Rapids",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Beacon Hill Press of Kansas City",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Bethany House Publishers",
+      "cidade": "Minneapolis",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Bible Lessons International",
+      "cidade": "Marshall, Texas",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Brill",
+      "cidade": "Leiden ; Boston",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "BV Films Editora",
+      "cidade": "Nashville",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 2,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Caio em 220",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Casa Editora e Publicadora",
+      "cidade": "Balneário Piçarras",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Casa Nazarena de Publicaciones",
+      "cidade": "Lenexa, Kansas",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 26,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Casa Publicadora Batista",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 36,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Casa Publicadora das Assembleias de Deus",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 18,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Casa Unida de Publicaciones; Publicaciones El Faro",
+      "cidade": "México, D.F",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "CBESP e OPBB-SP",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Central Gospel",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 11,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Centro de Editoração e Jornalismo da AFE",
+      "cidade": "Duque de Caxias",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Chara Editora",
+      "cidade": "Brasília",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Charles Scribner's Sons",
+      "cidade": "New York",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Chosen Books",
+      "cidade": "Grand Rapids",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Christian Classics Treasury",
+      "cidade": "Barcelona",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Clie, Editorial",
+      "cidade": "Viladecavalls",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Cogeime",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Collins",
+      "cidade": "London",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Colégio Episcopal da Igreja Metodista",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Congregação Batista da Graça",
+      "cidade": "Tucuruí",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Convenção Batista do Estado de São Paulo",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Convenção Batista Paranaense",
+      "cidade": "Curitiba",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Convicção Editora",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Crossway",
+      "cidade": "Wheaton",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Crossway Books",
+      "cidade": "Wheaton",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "CULTURA CRISTÃ",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 2,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Cultura Cristã",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Divulgue Gráfica e Editora",
+      "cidade": "Salvador",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Domício Cordeiro Chavante Filho/Instituto Advance",
+      "cidade": "Belém",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Duke University Press Books",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Ediciones Encuentro, S. A., Madrid",
+      "cidade": "Madrid",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "EDITORA",
+      "cidade": "Curitiba",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "EDITORA ACADEMIA CRISTÃ",
+      "cidade": "Santo André (SP)",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora aE d iç ã o",
+      "cidade": "Belém",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora Betânia",
+      "cidade": "Belo Horizonte",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Betânia, 1989, p. 21",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora Civilização Brasileira",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Cultrix",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora Cultura Cristã",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 31,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Cultura Cristã, S. Paulo, 2006",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora Cultura Cristã. Edição em português autorizada",
+      "cidade": "Wheaton",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora da Universidade de Brasília, 2012 (3ª. reimpressão)",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora Doma LTDA",
+      "cidade": "São José dos Campos",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora e Distribuidora Candeia",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Esperança",
+      "cidade": "Curitiba",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora Fi",
+      "cidade": "Porto Alegre",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 15,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Fiel",
+      "cidade": "São José dos Campos",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 36,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Fiel da Missão Evangélica Literária",
+      "cidade": "Nashville",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora Jocum",
+      "cidade": "Curitiba",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora Jocum Brasil. Terceira Edição – Setembro 2014",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "EDITORA MONERGISMO",
+      "cidade": "Brasília",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Monergismo",
+      "cidade": "Brasília",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Mundial",
+      "cidade": "Campo Grande",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Mundo Cristão",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 11,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Novos Diálogos",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora O Estandarte de Cristo",
+      "cidade": "Belém",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 2,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora O Mistério da Vida Cristã",
+      "cidade": "Maputo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Orvalho",
+      "cidade": "Curitiba",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Paulinas",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora Peregrino",
+      "cidade": "Eusébio",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora Prazer da Palavra",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora Proclamação",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Reflexão",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Santuário",
+      "cidade": "Aparecida",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Sara Brasil Edições e Produções",
+      "cidade": "Brasília",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora Shilo",
+      "cidade": "Brasília",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Trinitas",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora Ultimato",
+      "cidade": "Viçosa",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 11,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Universidade de Brasília",
+      "cidade": "Brasília",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Vida",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 48,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Vida Nova, 1989",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora Vida, 1988",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 2,
+      "confianca": "media"
+    },
+    {
+      "editora": "Editora Vozes",
+      "cidade": "Petrópolis",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editora Vozes, s.v. “Teodósio I’",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora, 2007, p.81)",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editora~\" 5epal",
+      "cidade": "Grand Rapids",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editorial Clie",
+      "cidade": "Viladecavalls",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "media"
+    },
+    {
+      "editora": "EDITORIAL HERDER",
+      "cidade": "Barcelona",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editorial Herder, S.A., Barcelona, Spain, for permission to",
+      "cidade": "Wheaton",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Editorial La Aurora",
+      "cidade": "Buenos Aires",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editorial Portavoz",
+      "cidade": "Grand Rapids",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Editorial Sal Terrae",
+      "cidade": "Barcelona",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Edição do Autor",
+      "cidade": "Jundiaí",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Edições Caminho de Damasco",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 8,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Edições Enéas Tognini",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Edições Holy Bible",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Edições Loyola",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 14,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Edições Paulinas",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Edições Terceira Via; Fonte Editorial, 2020",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Edições Vida Nova",
+      "cidade": "Nashville",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Edições Vida Nova, 1988",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Eerdmans",
+      "cidade": "Grand Rapids",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "editora": "EMPREVAN",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "ESUTES",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Evangelical Press (EP Books)",
+      "cidade": "Leyland",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Faculdade Teológica Batista de São Paulo",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Faculdade Teológica Batista do Paraná",
+      "cidade": "Curitiba",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Faculdade Teológica Sul Americana",
+      "cidade": "Londrina",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Faro Editorial",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Fernando Boa Sorte Ribeiro",
+      "cidade": "Curitiba",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 9,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Fides Reformata",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Fundação José Augusto",
+      "cidade": "Natal",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "FÔLEGO EDITORA",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Gazeta do Povo",
+      "cidade": "Grand Rapids",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Geográfica Editora",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Geração Editorial",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Graça Editorial",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Grupo Nelson",
+      "cidade": "Miami",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Hagnos",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "HAGNOS",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "HALIFAX",
+      "cidade": "Toronto",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Harper & Row",
+      "cidade": "New York",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "HarperCollins",
+      "cidade": "Grand Rapids",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Harrison House",
+      "cidade": "Grand Rapids",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "ICP - Instituto Cristão de Pesquisas",
+      "cidade": "Jundiaí",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Igreja Batista da Lagoinha",
+      "cidade": "Niterói",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Igreja em Células",
+      "cidade": "Curitiba",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Igreja Metodista, Colégio Episcopal",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Impacto Publicações",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 9,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Independently published",
+      "cidade": "Grand Rapids",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "InterVarsity Press",
+      "cidade": "Grand Rapids",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 8,
+      "confianca": "alta"
+    },
+    {
+      "editora": "J. E. Tilton and Company",
+      "cidade": "Boston",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 2,
+      "confianca": "media"
+    },
+    {
+      "editora": "James Nisbet & Co.",
+      "cidade": "London",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 2,
+      "confianca": "media"
+    },
+    {
+      "editora": "Janeiro: Horizonal, Recife: STBNB Edições, 1997",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "JCS Publicações",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Journal of the Evangelical Theological Society",
+      "cidade": "Nashville",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "JSOT Press",
+      "cidade": "Wheaton",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "JUERP",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Juerp",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "JUERP - Junta de Educação Religiosa e Publicações",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 18,
+      "confianca": "alta"
+    },
+    {
+      "editora": "JUERP — Junta de Educação Religiosa e Publicações",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Junta de Educação Religiosa e Publicações",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Junta de Missões Nacionais",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Kelps",
+      "cidade": "Goiânia",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "LAN EDITORA",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Lawrence J",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Living Stream Ministry",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Livraria Cristã Unida",
+      "cidade": "Campinas",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Livrarias Família Cristã",
+      "cidade": "Londrina",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "editora": "LMS",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Loyola",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Maná",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "MCM PUBLICACOES",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Messenger International",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Ministério Igreja em Células",
+      "cidade": "Curitiba",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "MUNDO CRISTÃO",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Nazarena",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Nelson Books",
+      "cidade": "Nashville",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "O Estandarte de Cristo",
+      "cidade": "Nashville",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Obra Missionária Chamada da Meia Noite",
+      "cidade": "Porto Alegre",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Orbis Books",
+      "cidade": "Nashville",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Pandora Pr",
+      "cidade": "Grand Rapids",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Paternoster Publishing",
+      "cidade": "Grand Rapids",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Paul Wagner",
+      "cidade": "Wheaton",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Paulinas",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 9,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Pauliru s",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Paulist Press",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Paulus",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "PAULUS",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Paulus Editora",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Penkall",
+      "cidade": "Londrina",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Pensamento",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Premius Editora",
+      "cidade": "Fortaleza",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Primeira Igreja Batista de Curitiba",
+      "cidade": "Curitiba",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Primeira Igreja Batista de Niterói",
+      "cidade": "Niterói",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Pro Nobis Editora",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 9,
+      "confianca": "alta"
+    },
+    {
+      "editora": "PUBLICACIONES KERIGMA",
+      "cidade": "Grand Rapids",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Publicações Evangélicas Selecionadas",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Publicações ITL",
+      "cidade": "Maranhão",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 8,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Publicações. Rio de Janeiro. 2018",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Rede Inspire",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Regal",
+      "cidade": "Wheaton",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Revista Batista Pioneira",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Revista de História (USP)",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Revista e AtualizadaR",
+      "cidade": "Brasília",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Revista Eletrônica de Teologia Curso de Teologia do Unas",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Revista Teologia Brasileira tem o objetivo de",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Rhema Brasil Publicações",
+      "cidade": "Campina Grande",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 22,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Ronald Dunn",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Rua: Martinho Lutero, 277 - Gleba Palhano - Londrina - PR",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "SBB",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Seminário Teológico Batista de Niterói",
+      "cidade": "Niterói",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 8,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Seminário Teológico Presbiteriano Rev. José Manoel da Conceição",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Shedd",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Shedd Publicações",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "SINODAL",
+      "cidade": "São Leopoldo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 2,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Sinodal",
+      "cidade": "São Leopol- do",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Sociedade Bíblica do Brasil",
+      "cidade": "Barueri",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 13,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Sociedade Religiosa  Edições Vida Nova",
+      "cidade": "Wheaton",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "SOCIEDADE RELIGIOSA EDIÇÕES VIDA NOVA",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Sociedade Religiosa Edições Vida Nova",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Still Waters Revival Books Inc.",
+      "cidade": "Edmonton",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 2,
+      "confianca": "media"
+    },
+    {
+      "editora": "The British",
+      "cidade": "Rio De Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "The Religious Tract Society",
+      "cidade": "London",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 2,
+      "confianca": "media"
+    },
+    {
+      "editora": "THE WAY",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Thomas Nelson",
+      "cidade": "Nashville",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Thomas Nelson Brasil",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 13,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Thomas Nelson, Inc",
+      "cidade": "Nashville",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Travessias Interativas",
+      "cidade": "Ribeirão Preto",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Tyndale House",
+      "cidade": "Grand Rapids",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "editora": "UFMBB",
+      "cidade": "Rio de 3.ed. Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "ULTIMATO",
+      "cidade": "Viçosa",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "UNIASSELVI",
+      "cidade": "Indaial",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "UNITED PRESS",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Universidad Intercontinental",
+      "cidade": "Madrid",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Universidade de São Paulo",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Universidade do Estado do Rio de Janeiro",
+      "cidade": "Rio de Janeiro",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "UNIVERSIDADE ESTADUAL DO PARANÁ",
+      "cidade": "Curitiba",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Universidade Estadual Paulista, Faculdade de Ciências e Letras, Campus de Assis",
+      "cidade": "Assis",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Universidade fladeri.1 da Bahia",
+      "cidade": "Salvador",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "Universidade Global - Instituto de Correspondência Internacional",
+      "cidade": "São Miguel, Açores",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Universidade Presbiteriana Mackenzie",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "University of California Press",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "VALERIA MARQUES SABINO GONCALVES DA SILVA",
+      "cidade": "Bragança Paulista",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "VIDA NOVA",
+      "cidade": "São Paulo",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 14,
+      "confianca": "alta"
+    },
+    {
+      "editora": "Vida Publishers",
+      "cidade": "Viladecavalls",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 1,
+      "confianca": "baixa"
+    },
+    {
+      "editora": "VINHA Editora",
+      "cidade": "Goiânia",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "editora": "World MAP",
+      "cidade": "Burbank, Califórnia",
+      "fonte": "acervo consolidado Biblio",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    }
   ]
 }
