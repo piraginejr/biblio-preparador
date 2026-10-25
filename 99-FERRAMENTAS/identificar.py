@@ -21,7 +21,35 @@ A camada 2 nunca e obedecida cega: o app faz
 NER erra em texto de OCR sujo, e o score barra o erro.
 """
 
-import re, unicodedata
+import re, unicodedata, json, pathlib
+
+_CACHE_AUTORES_CONHECIDOS = None
+
+
+def carregar_autores_conhecidos():
+    global _CACHE_AUTORES_CONHECIDOS
+    if _CACHE_AUTORES_CONHECIDOS is not None:
+        return _CACHE_AUTORES_CONHECIDOS
+    tabela = {}
+    arq = pathlib.Path(__file__).with_name("autores-conhecidos.json")
+    if arq.is_file():
+        try:
+            dados = json.loads(arq.read_text(encoding="utf-8"))
+            for it in dados.get("autores", []):
+                bib = it.get("nome_bibliografico", "")
+                dir_ = it.get("nome_direto", "")
+                tipo = it.get("tipo", "pessoa")
+                reg = {"nome_bibliografico": bib, "nome_direto": dir_, "tipo": tipo}
+                if bib:
+                    k_bib = " ".join(re.sub(r"[^\w\s]", "", normalizar(bib)).split())
+                    tabela[k_bib] = reg
+                if dir_:
+                    k_dir = " ".join(re.sub(r"[^\w\s]", "", normalizar(dir_)).split())
+                    tabela[k_dir] = reg
+        except Exception:
+            tabela = {}
+    _CACHE_AUTORES_CONHECIDOS = tabela
+    return tabela
 
 # --------------------------------------------------------------------------
 # NER opcional. Sem spaCy o modulo continua funcionando so com o score -
@@ -291,7 +319,13 @@ def limpar_pessoa(v):
 def sobrenome_virgula(nome):
     """'John MacArthur Jr.' -> 'MacArthur Jr., John' (grafia do biblio)."""
     nome = limpar_pessoa(nome)
-    if not nome or "," in nome:
+    if not nome:
+        return ""
+    tabela = carregar_autores_conhecidos()
+    k = " ".join(re.sub(r"[^\w\s]", "", normalizar(nome)).split())
+    if k in tabela:
+        return tabela[k]["nome_bibliografico"]
+    if "," in nome:
         return nome
     p = nome.split()
     if len(p) < 2:
@@ -335,6 +369,7 @@ def separar(linhas, autor_conhecido=""):
     # 1) se ja sabemos o autor por outra camada (CIP, creditos, API),
     #    a linha que o contem esta identificada - nao ha o que decidir
     autor, origem = "", ""
+    linha_autor_encontrada = ""
     if autor_conhecido:
         alvo = set(normalizar(autor_conhecido).split())
         alvo = {w for w in alvo if len(w) > 2}
@@ -342,18 +377,38 @@ def separar(linhas, autor_conhecido=""):
             tokens = set(normalizar(l).split())
             if alvo and len(alvo & tokens) >= max(1, len(alvo) - 1):
                 autor, origem = l, "confirmado"
+                linha_autor_encontrada = l
                 break
+
+    # 1.5) consulta ao dicionario de autores e instituicoes conhecidas
+    if not autor:
+        tabela = carregar_autores_conhecidos()
+        if tabela:
+            for l in sobra:
+                l_limpa = re.sub(r"(?i)^(?:por|by|texto de)\s+", "", l.strip(" ,.:;"))
+                k = " ".join(re.sub(r"[^\w\s]", "", normalizar(l_limpa)).split())
+                if k in tabela:
+                    reg = tabela[k]
+                    autor = reg["nome_bibliografico"]
+                    origem = "dicionario"
+                    linha_autor_encontrada = l
+                    r["confianca"] = "alta"
+                    break
 
     # 2) senao, as tres camadas do app decidem
     if not autor:
         autor, origem = escolher_pessoa(sobra)
         if autor:
             # recupera a linha inteira que originou o nome
-            autor = next((l for l in sobra
-                          if normalizar(autor) in normalizar(l)), autor)
+            linha_autor_encontrada = next((l for l in sobra
+                                           if normalizar(autor) in normalizar(l)), autor)
+            autor = linha_autor_encontrada
 
     r["origem_autor"] = origem
-    r["nmAutor0"] = sobrenome_virgula(autor) if autor else ""
+    if origem == "dicionario":
+        r["nmAutor0"] = autor
+    else:
+        r["nmAutor0"] = sobrenome_virgula(autor) if autor else ""
 
     # 3) titulo = o que sobrou, sem a linha do autor.
     #
@@ -364,7 +419,7 @@ def separar(linhas, autor_conhecido=""):
     #    as linhas vizinhas que sobraram juntas.
     idx = {l: i for i, l in enumerate(sobra)}
     resto = [l for l in sobra
-             if l != autor and not INSTITUICAO.search(l) and autor_score(l) < 40]
+             if l != linha_autor_encontrada and not INSTITUICAO.search(l) and autor_score(l) < 40]
 
     trechos, atual = [], []
     for l in resto:

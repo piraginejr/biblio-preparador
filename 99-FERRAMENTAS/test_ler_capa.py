@@ -61,5 +61,83 @@ class LerCapaVisualTest(unittest.TestCase):
         self.assertEqual("DOGMÁTICA REFORMADA", visual["titulo"])
 
 
+    def test_blocos_da_capa_cascata_tres_niveis(self):
+        original_vision = lercapa._ocr_vision_blocos
+        original_rapid = lercapa._ocr_rapidocr_blocos
+        original_tess = lercapa._ocr_tesseract_blocos
+        try:
+            # Nível 1: Vision tem blocos -> usa Vision
+            lercapa._ocr_vision_blocos = lambda img: [{"texto": "VISION", "area": 100}]
+            lercapa._ocr_rapidocr_blocos = lambda img: [{"texto": "RAPID", "area": 80}]
+            lercapa._ocr_tesseract_blocos = lambda img: [{"texto": "TESS", "area": 50}]
+            self.assertEqual("VISION", lercapa.blocos_da_capa("dummy.jpg")[0]["texto"])
+
+            # Nível 2: Vision falha ou ausente -> assume RapidOCR
+            lercapa._ocr_vision_blocos = lambda img: []
+            lercapa._ocr_rapidocr_blocos = lambda img: [{"texto": "RAPID", "area": 80}]
+            lercapa._ocr_tesseract_blocos = lambda img: [{"texto": "TESS", "area": 50}]
+            self.assertEqual("RAPID", lercapa.blocos_da_capa("dummy.jpg")[0]["texto"])
+
+            # Nível 3: Vision e RapidOCR ausentes -> fallback universal Tesseract
+            lercapa._ocr_vision_blocos = lambda img: []
+            lercapa._ocr_rapidocr_blocos = lambda img: []
+            lercapa._ocr_tesseract_blocos = lambda img: [{"texto": "TESS", "area": 50}]
+            self.assertEqual("TESS", lercapa.blocos_da_capa("dummy.jpg")[0]["texto"])
+        finally:
+            lercapa._ocr_vision_blocos = original_vision
+            lercapa._ocr_rapidocr_blocos = original_rapid
+            lercapa._ocr_tesseract_blocos = original_tess
+
+    def test_texto_da_capa_cascata_tres_niveis(self):
+        original_vision = lercapa._ocr_vision
+        original_rapid = lercapa._ocr_rapidocr
+        original_tess = lercapa._ocr_tesseract
+        try:
+            # Nível 1: Vision
+            lercapa._ocr_vision = lambda img: ["LINHA VISION"]
+            lercapa._ocr_rapidocr = lambda img: ["LINHA RAPID"]
+            lercapa._ocr_tesseract = lambda img: ["LINHA TESS"]
+            self.assertEqual(["LINHA VISION"], lercapa.texto_da_capa("dummy.jpg"))
+
+            # Nível 2: RapidOCR
+            lercapa._ocr_vision = lambda img: None
+            lercapa._ocr_rapidocr = lambda img: ["LINHA RAPID"]
+            lercapa._ocr_tesseract = lambda img: ["LINHA TESS"]
+            self.assertEqual(["LINHA RAPID"], lercapa.texto_da_capa("dummy.jpg"))
+
+            # Nível 3: Tesseract
+            lercapa._ocr_vision = lambda img: None
+            lercapa._ocr_rapidocr = lambda img: None
+            lercapa._ocr_tesseract = lambda img: ["LINHA TESS"]
+            self.assertEqual(["LINHA TESS"], lercapa.texto_da_capa("dummy.jpg"))
+        finally:
+            lercapa._ocr_vision = original_vision
+            lercapa._ocr_rapidocr = original_rapid
+            lercapa._ocr_tesseract = original_tess
+
+    def test_identificar_autoria_institucional_preserva_nome_direto(self):
+        import identificar
+        linhas = ["Manual de Identidade Batista", "Convenção Batista Paranaense", "Curitiba"]
+        resultado = identificar.separar(linhas)
+        self.assertEqual("Convenção Batista Paranaense", resultado["nmAutor0"])
+        self.assertEqual("Manual de Identidade Batista", resultado["titulo"])
+        self.assertEqual("dicionario", resultado["origem_autor"])
+
+    def test_identificar_autora_feminina_conhecida_formata_bibliografico(self):
+        import identificar
+        linhas = ["Heróis Cristãos de Ontem e Hoje", "Janet Benge", "Editora Vida"]
+        resultado = identificar.separar(linhas)
+        self.assertEqual("Benge, Janet", resultado["nmAutor0"])
+        self.assertEqual("Heróis Cristãos de Ontem e Hoje", resultado["titulo"])
+        self.assertEqual("dicionario", resultado["origem_autor"])
+
+    def test_identificar_autor_com_agnome_formata_corretamente(self):
+        import identificar
+        linhas = ["O Poder da Aliança", "Paschoal Piragine Júnior", "IBC"]
+        resultado = identificar.separar(linhas)
+        self.assertEqual("Piragine Júnior, Paschoal", resultado["nmAutor0"])
+        self.assertEqual("O Poder da Aliança", resultado["titulo"])
+
+
 if __name__ == "__main__":
     unittest.main()

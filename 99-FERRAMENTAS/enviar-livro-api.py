@@ -289,8 +289,26 @@ def consulta_bloqueia_envio(consulta):
     coincidencia de titulo/autor e apenas bibliografica e nao pode impedir o
     cadastro do exemplar consultado.
     """
+    solicitado = (consulta.get('criterios_enviados', {}) or {}).get('titulo', '')
+    parte = re.search(r'(?i)\b(?:parte|volume|tomo)\s+([IVX]+|\d+)\b', solicitado)
+    if parte and not consulta_confirmada_por_isbn(consulta):
+        recebido = re.search(r'(?i)\b(?:parte|volume|tomo)\s+([IVX]+|\d+)\b', consulta.get('titulo',''))
+        if not recebido or recebido[1].upper() != parte[1].upper():
+            return False
     return bool(consulta.get("encontrado")
                 and not consulta_com_isbn_divergente(consulta))
+
+
+def titulo_para_consulta(ficha):
+    """Inclui identificador de parte/tomo que a API não retorna em separado."""
+    titulo = str(ficha.get('titulo','')).strip()
+    subtitulo = str(ficha.get('subTitulo','')).strip()
+    if re.search(r'(?i)\b(?:parte|volume|tomo)\s+(?:[IVX]+|\d+)\b',subtitulo):
+        if subtitulo.casefold() not in titulo.casefold():
+            titulo += ' - '+subtitulo
+    elif ficha.get('volume') and not re.search(r'(?i)\b(?:parte|volume|tomo)\b',titulo):
+        titulo += ' - volume '+str(ficha['volume'])
+    return titulo
 
 
 def consultar_livro(sessao, chave, isbn="", titulo="", autores=None,
@@ -360,7 +378,7 @@ def reconciliar_resultado_incerto(ficha_path, digest, controle, registro,
     ficha = json.loads(ficha_path.read_text(encoding="utf-8"))
     consulta = consultar_livro(
         sessao or criar_sessao_api(), chave,
-        isbn=ficha.get("isbn", ""), titulo=ficha.get("titulo", ""),
+        isbn=ficha.get("isbn", ""), titulo=titulo_para_consulta(ficha),
         autores=autores_para_consulta(ficha), exato=True)
     # Algumas fichas documentais guardam o autor em ordem bibliografica,
     # enquanto a API o normaliza em ordem natural. Antes de concluir que um
@@ -370,12 +388,14 @@ def reconciliar_resultado_incerto(ficha_path, digest, controle, registro,
             ficha.get("titulo")):
         consulta = consultar_livro(
             sessao or criar_sessao_api(), chave,
-            titulo=ficha.get("titulo", ""), autores=[], exato=False)
+            titulo=titulo_para_consulta(ficha), autores=[], exato=False)
     confirmado = (
         consulta_confirmada_por_isbn(consulta) or
-        (consulta.get("encontrado") and
-         str(consulta.get("correspondencia", "")).lower() == "exata" and
-         int(consulta.get("total_matches", 0) or 0) == 1)
+        (consulta_bloqueia_envio(consulta)
+         and str(consulta.get('correspondencia','')).lower()=='exata'
+         and int(consulta.get('total_matches',0) or 0)==1
+         and (not consulta.get('titulo') or
+              _chave_textual(consulta['titulo'])==_chave_textual(titulo_para_consulta(ficha))))
     )
     if not confirmado:
         ausente = (not consulta.get("encontrado") or
@@ -541,6 +561,10 @@ def validar(ficha, pdf, capa, tipo_api="livro"):
     titulo = " ".join(str(ficha.get("titulo", "") or "").split())
     if not titulo:
         erros.append("titulo ausente")
+    elif (not re.search(r"[^\W\d_]", titulo, re.UNICODE)
+          or re.fullmatch(r"(?i)\[?\s*(?:pag\.?|author|autor|title|publisher)\s*:?", titulo)
+          or re.search(r"(?i)^\s*(?:e-?book\s+enviado\s+por|uma\s+publica[çc][aã]o\s+eletr[oô]nica|t[ií]tulo\s+do\s+original)\b|\b(?:CIP\s*[-–]?\s*Brasil|cataloga[çc][aã]o\s+na\s+fonte|p[aá]gina\s+\d+\s+de)\b", titulo)):
+        erros.append("titulo contém rótulo, tiragem ou aviso editorial; corrigir antes do envio")
     elif re.search(
             r"(?i)\b(?:todos\s+os\s+direitos\s+reservados|"
             r"proibida\s+a\s+reprodu[çc][aã]o|reprodu[çc][aã]o\s+total\s+ou\s+parcial|"
@@ -1328,7 +1352,7 @@ def preview(payload, pdf, capa, digest):
 
 
 def enviar(ficha_path, realmente=False, chave="", sessao=None,
-           tipo_api="livro"):
+           tipo_api="livro", substituir_id=None):
     ficha_path = pathlib.Path(ficha_path).expanduser().resolve()
     ficha = json.loads(ficha_path.read_text(encoding="utf-8"))
     pdf = caminho_local(ficha.get("pdf_preparado") or ficha.get("pdf_original")
@@ -1347,6 +1371,18 @@ def enviar(ficha_path, realmente=False, chave="", sessao=None,
     controle_path = controle_da_ficha(ficha_path)
     controle = carregar_controle(controle_path)
     anterior = controle["envios"].get(digest)
+    if substituir_id is not None:
+        # Uso deliberado: o gestor excluirá o ID antigo após conferir o novo.
+        # Não remove ISBN nem afrouxa validação, e não repete um envio incerto.
+        if (not anterior or anterior.get('estado') != 'cadastrado'
+                or str(anterior.get('id_remoto')) != str(substituir_id)):
+            raise RuntimeError('a substituição exige o ID do cadastro anterior confirmado')
+        if anterior.get('assinatura_ficha') == assinatura_ficha(ficha, tipo_api=tipo_api):
+            raise RuntimeError('a ficha não mudou; substituição desnecessária')
+        controle.setdefault('tentativas_anteriores', {}).setdefault(digest, []).append(
+            {**anterior, 'motivo': 'substituição corrigida autorizada pelo operador',
+             'arquivado_em': agora()})
+        anterior = None
     if anterior:
         if anterior.get("estado") == (
                 "resultado incerto - nao reenviar sem conferencia"):
@@ -1388,6 +1424,8 @@ def enviar(ficha_path, realmente=False, chave="", sessao=None,
         "estado": "envio iniciado - resultado ainda incerto",
         "iniciado_em": agora(), "endpoint": ENDPOINT,
     }
+    if substituir_id is not None:
+        registro['substitui_id'] = substituir_id
     controle["envios"][digest] = registro
     salvar_json(controle_path, controle)
 
@@ -1474,7 +1512,7 @@ def processar_fila(raiz, limite=0, intervalo=3.0, chave="", sessao=None,
             consulta = consultar_livro(
                 sessao or criar_sessao_api(), chave,
                 isbn=ficha_consulta.get("isbn", ""),
-                titulo=ficha_consulta.get("titulo", ""),
+                titulo=titulo_para_consulta(ficha_consulta),
                 autores=autores_consulta, exato=False)
             if consulta.get("encontrado") and consulta_com_isbn_divergente(consulta):
                 item["aviso_consulta_previa"] = (
@@ -1658,7 +1696,7 @@ def processar_fila_especifica(raiz, grupo, limite=0, intervalo=3.0,
             consulta = consultar_livro(
                 sessao or criar_sessao_api(), chave,
                 isbn=ficha_consulta.get("isbn", ""),
-                titulo=ficha_consulta.get("titulo", ""),
+                titulo=titulo_para_consulta(ficha_consulta),
                 autores=autores_para_consulta(ficha_consulta), exato=False)
             if (consulta_confirmada_por_isbn(consulta) or
                     consulta_corresponde_ao_titulo_exato(consulta)):

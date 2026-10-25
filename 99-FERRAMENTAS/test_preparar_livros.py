@@ -26,6 +26,44 @@ SPEC_CBL.loader.exec_module(cbl)
 
 
 class PrepararLivrosTest(unittest.TestCase):
+    def test_nome_arquivo_separa_autor_conhecido_antes_do_titulo(self):
+        with mock.patch.object(prep,'carregar_autores_conhecidos',return_value={'benny hinn':'Hinn, Benny'}):
+            self.assertEqual(('Bem Vindo, Espírito Santo','Hinn, Benny'),
+                prep.do_nome('Benny Hinn - Bem Vindo, Esp%C3%ADrito Santo.pdf'))
+        self.assertEqual(('Pentateuco',''),prep.do_nome('Autor desconhecido - Pentateuco.pdf'))
+
+    def test_isbn_de_volume_romano_nao_usa_primeiro_da_linha(self):
+        candidatos = prep.candidatos_isbn(
+            'ISBN 85-7200-481-5 (v. 1) — ISBN 85-7200-482-3 (v. 2)\n'
+            'ISBN 85-7200-483-1 (v. 3)')
+        self.assertEqual(['1', '2', '3'], [c['volume'] for c in candidatos])
+        self.assertEqual('8572004823', prep.escolher_isbn(
+            candidatos, 'Que sabemos sobre a Bíblia II.pdf', 1997)[0])
+        self.assertEqual('8572004831', prep.escolher_isbn(
+            candidatos, 'Que sabemos sobre a Bíblia III.pdf', 1997)[0])
+        self.assertEqual('', prep.escolher_isbn(candidatos, 'Coleção.pdf', 1997)[0])
+
+    def test_ruidos_editoriais_do_lote_nao_sao_titulos(self):
+        for titulo in ('10.000 1979', '[PAG', 'Author',
+                       'E-book enviado por: José de Arimatéia',
+                       'Uma publicação eletrônica da EDITORA SUPERVIRTUAL LTDA',
+                       'Volume XI/1 Psicologia e Religião CIP - Brasil. Catalogação na fonte',
+                       'UMBANDA Página 1 de'):
+            with self.subTest(titulo=titulo):
+                self.assertFalse(prep.titulo_bibliograficamente_plausivel(titulo))
+
+    def test_cip_quebrada_recupera_ano_e_editora_da_edicao(self):
+        dados = prep.ler_citacao_editorial_paginas(['''CIP - Brasil. Catalogação na fonte
+Jung, Carl Gustav, 1875-1961.
+J92p Psicologia e religião / C. G. Jung; tradução do Pe. Dom Mateus Ramalho Rocha;
+revisão técnica de Dora Ferreira da Silva. — Petrópolis :
+Vozes, 1978.
+CDD — 200.19'''])
+        self.assertEqual('Psicologia e religião', dados['titulo'])
+        self.assertEqual('Jung, Carl Gustav', dados['autor'])
+        self.assertEqual('Vozes', dados['editora'])
+        self.assertEqual('1978', dados['ano'])
+
     def test_isbn_valido_aceita_isbn10_e_recusa_ean13_de_produto(self):
         self.assertEqual("080105351X", prep.isbn_valido("0-8010-5351-X"))
         self.assertEqual("9788577790364", prep.isbn_valido("978-85-7779-036-4"))
@@ -1257,6 +1295,62 @@ Anexo 2 - Declaração de Niterói parte...............................23"""
                 json.dumps(dados), encoding="utf-8")
             self.assertEqual({}, prep.revisao_manual(pdf))
 
+    def test_revisao_manual_localiza_por_hash_se_renomeado(self):
+        with tempfile.TemporaryDirectory() as td:
+            raiz = pathlib.Path(td)
+            entrada = raiz / "00-ENTRADA"
+            controle = raiz / "_controle"
+            entrada.mkdir(); controle.mkdir()
+            pdf_original = entrada / "nome_original.pdf"
+            pdf_original.write_bytes(b"conteudo unico de teste")
+            digest = hashlib.sha256(pdf_original.read_bytes()).hexdigest()
+            dados = {"livros": {pdf_original.name: {
+                "hash_sha256": digest, "campos": {"titulo": "Livro Renomeado"}}}}
+            (controle / "revisoes-manuais.json").write_text(
+                json.dumps(dados), encoding="utf-8")
+
+            # Renomeia o arquivo
+            pdf_novo = entrada / "nome_completamente_diferente.pdf"
+            pdf_original.rename(pdf_novo)
+
+            resultado = prep.revisao_manual(pdf_novo)
+            self.assertEqual("Livro Renomeado", resultado.get("campos", {}).get("titulo"))
+
+    def test_revisao_manual_consulta_base_cooperativa(self):
+        with tempfile.TemporaryDirectory() as td:
+            raiz = pathlib.Path(td)
+            entrada = raiz / "00-ENTRADA"
+            entrada.mkdir()
+            pdf = entrada / "livro_cooperativo.pdf"
+            pdf.write_bytes(b"conteudo cooperativo novo")
+            digest = hashlib.sha256(pdf.read_bytes()).hexdigest()
+
+            ficha_mock = {
+                "hash_sha256": digest,
+                "campos": {"titulo": "Livro da Nuvem Cooperativa", "editora": "Editora Rede"},
+                "justificativa": "Validado pela comunidade",
+                "fontes": ["Base Cooperativa"]
+            }
+
+            from unittest.mock import patch
+            with patch("sincronizador_git.consultar_ficha_cooperativa", return_value=ficha_mock):
+                resultado = prep.revisao_manual(pdf)
+                self.assertTrue(resultado.get("aprovado"))
+                self.assertEqual("Livro da Nuvem Cooperativa", resultado.get("campos", {}).get("titulo"))
+                self.assertTrue(resultado.get("origem_cooperativa"))
+
+    def test_padronizar_autor_bibliografico(self):
+        self.assertEqual("Piper, John", prep.padronizar_autor_bibliografico("John Piper"))
+        self.assertEqual("Piper, John", prep.padronizar_autor_bibliografico("Piper, John"))
+        self.assertEqual("Tozer, A. W.", prep.padronizar_autor_bibliografico("A. W. Tozer"))
+        self.assertEqual("Van Til, Cornelius", prep.padronizar_autor_bibliografico("Cornelius Van Til"))
+        self.assertEqual("Piragine Junior, Paschoal", prep.padronizar_autor_bibliografico("Paschoal Piragine Junior"))
+        self.assertEqual("Igreja Presbiteriana do Brasil", prep.padronizar_autor_bibliografico("Igreja Presbiteriana do Brasil"))
+        self.assertEqual("Sociedade Bíblica do Brasil", prep.padronizar_autor_bibliografico("Sociedade Bíblica do Brasil"))
+        self.assertEqual("Convenção Batista Brasileira", prep.padronizar_autor_bibliografico("Convenção Batista Brasileira"))
+        self.assertEqual("Benge, Janet", prep.padronizar_autor_bibliografico("Janet Benge"))
+        self.assertEqual("Belleville, Linda L.", prep.padronizar_autor_bibliografico("Linda L. Belleville"))
+
     def test_revisao_registra_aprendizado_sem_promover_regra(self):
         with tempfile.TemporaryDirectory() as td:
             raiz = pathlib.Path(td)
@@ -1762,6 +1856,50 @@ https://site.example/pagina/3"""
         resultado = prep.diagnosticar_parcialidade_pdf(paginas)
         self.assertTrue(resultado["parcial"])
         self.assertIn("17", resultado["motivo"])
+
+    def test_ano_isolado_em_folha_preliminar_nao_faz_livro_parecer_parcial(self):
+        paginas = [
+            "Capa\n1859",
+            "Folha de Rosto\nBoston: J. E. Tilton and Company\n1859",
+            "Contents\nPreface",
+            "Conteúdo 1\n5",
+            "Conteúdo 2\n6",
+        ]
+        resultado = prep.diagnosticar_parcialidade_pdf(paginas)
+        self.assertFalse(resultado["parcial"])
+
+    def test_ler_copyright_e_ano_reconhecem_act_of_congress_e_imprint_historico(self):
+        texto = (
+            "Entered according to Act of Congress, in the year 1859, by\n"
+            "J. E. TILTON AND COMPANY,\n"
+            "in the Clerk's Office of the District Court of Massachusetts."
+        )
+        dados = prep.ler_copyright(texto)
+        self.assertEqual("J. E. TILTON AND COMPANY", dados["editora"])
+        ano = prep.ano_desta_edicao(texto)
+        self.assertEqual(1859, ano)
+
+    def test_ler_copyright_reconhece_imprint_londrino_e_cidade(self):
+        texto = (
+            "LONDON:\n"
+            "JAMES NISBET & CO., 21 BERNERS STREET.\n"
+            "1888."
+        )
+        dados = prep.ler_copyright(texto)
+        self.assertEqual("JAMES NISBET & CO", dados["editora"])
+        self.assertEqual("LONDON", dados["cidade"])
+        ano = prep.ano_publicacao(texto)
+        self.assertEqual(1888, ano)
+
+    def test_ler_isbn_codigo_barras_usa_fallback_python(self):
+        with mock.patch.object(prep, "shutil") as mock_shutil, \
+             mock.patch.object(prep, "_auxiliar_codigo_barras", return_value=None), \
+             mock.patch.object(prep, "n_paginas", return_value=1), \
+             mock.patch.object(prep.subprocess, "run") as mock_run, \
+             mock.patch.object(prep, "_ler_barcode_python", return_value=[{"valor": "9788538302759", "tipo": "EAN13"}]):
+            mock_shutil.which.return_value = None
+            res = prep.ler_isbn_codigo_barras("dummy.pdf")
+            self.assertIn("9788538302759", res["isbns"])
 
     def test_titulo_tecnico_do_office_nao_e_metadado_bibliografico(self):
         with mock.patch.object(prep.subprocess, "run") as executar:

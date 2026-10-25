@@ -1,0 +1,6482 @@
+{
+  "versao": 2,
+  "descricao": "Dicionario padronizado de autores e instituicoes autoras do acervo Biblio. Pessoas no padrao Sobrenome, Nome; Instituicoes no formato direto oficial.",
+  "total_autores": 925,
+  "autores": [
+    {
+      "nome_bibliografico": "Centro de Educação Alameda",
+      "nome_direto": "Centro de Educação Alameda",
+      "tipo": "institucional",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Convenção Batista Brasileira",
+      "nome_direto": "Convenção Batista Brasileira",
+      "tipo": "institucional",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Convenção Batista Brasileira, Comissão dos Treze",
+      "nome_direto": "Convenção Batista Brasileira, Comissão dos Treze",
+      "tipo": "institucional",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Convenção Batista Paranaense",
+      "nome_direto": "Convenção Batista Paranaense",
+      "tipo": "institucional",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Convenção Batista do Estado de São Paulo",
+      "nome_direto": "Convenção Batista do Estado de São Paulo",
+      "tipo": "institucional",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Escola Superior de Teologia do Espírito Santo",
+      "nome_direto": "Escola Superior de Teologia do Espírito Santo",
+      "tipo": "institucional",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Escola Teológica Batista Livre",
+      "nome_direto": "Escola Teológica Batista Livre",
+      "tipo": "institucional",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Igreja Batista Fonte dos Vales",
+      "nome_direto": "Igreja Batista Fonte dos Vales",
+      "tipo": "institucional",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Igreja Batista da Lagoinha",
+      "nome_direto": "Igreja Batista da Lagoinha",
+      "tipo": "institucional",
+      "ocorrencias": 12,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Igreja Presbiteriana Independente do Brasil",
+      "nome_direto": "Igreja Presbiteriana Independente do Brasil",
+      "tipo": "institucional",
+      "ocorrencias": 12,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Igreja da Cidade em São José dos Campos",
+      "nome_direto": "Igreja da Cidade em São José dos Campos",
+      "tipo": "institucional",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Junta de Missões Nacionais da Convenção Batista Brasileira",
+      "nome_direto": "Junta de Missões Nacionais da Convenção Batista Brasileira",
+      "tipo": "institucional",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Primeira Igreja Batista de Curitiba",
+      "nome_direto": "Primeira Igreja Batista de Curitiba",
+      "tipo": "institucional",
+      "ocorrencias": 12,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Sociedade Bíblica do Brasil",
+      "nome_direto": "Sociedade Bíblica do Brasil",
+      "tipo": "institucional",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "A., Aluízio",
+      "nome_direto": "Aluízio A.",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "A., Michael",
+      "nome_direto": "Michael A.",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "A., Richard",
+      "nome_direto": "Richard A.",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Abreu, de Armindo",
+      "nome_direto": "de Armindo Abreu",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Acebal, Jose Maria Maena",
+      "nome_direto": "Jose Maria Maena Acebal",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Adams, Jay E.",
+      "nome_direto": "Jay E. Adams",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Agreste, Sônia",
+      "nome_direto": "Sônia Agreste",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Aguiar, Maycon Silva",
+      "nome_direto": "Maycon Silva Aguiar",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Aguirre, Rafael",
+      "nome_direto": "Rafael Aguirre",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Airhart, Arnold E.",
+      "nome_direto": "Arnold E. Airhart",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Akin, Daniel L.",
+      "nome_direto": "Daniel L. Akin",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Al, E.",
+      "nome_direto": "E. Al",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Alameda, Centro de Educação",
+      "nome_direto": "Centro de Educação Alameda",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Alcantara, Jean Carlos da Silva",
+      "nome_direto": "Jean Carlos da Silva Alcantara",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Alencar., Roberto Alves de",
+      "nome_direto": "Roberto Alves de Alencar.",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Alexandre, Mário J.O",
+      "nome_direto": "Mário J.O Alexandre",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Allen, Clifton J.",
+      "nome_direto": "Clifton J. Allen",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Allmen, Jean-Jacques von",
+      "nome_direto": "Jean-Jacques von Allmen",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Allmen, Jean-Jacqves von",
+      "nome_direto": "Jean-Jacqves von Allmen",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Almeida, Claybson",
+      "nome_direto": "Claybson Almeida",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Almeida, João Batista dos Santos",
+      "nome_direto": "João Batista dos Santos Almeida",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Almeida, João Ferreira de",
+      "nome_direto": "João Ferreira de Almeida",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Almeida, Marcos Orison Nunes de",
+      "nome_direto": "Marcos Orison Nunes de Almeida",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Almeida, Vinícius Soares de",
+      "nome_direto": "Vinícius Soares de Almeida",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Alsene-Parker, Megan",
+      "nome_direto": "Megan Alsene-Parker",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Alves, Sonia Ribeiro",
+      "nome_direto": "Sonia Ribeiro Alves",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ames, Linda",
+      "nome_direto": "Linda Ames",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Anderson, Kevin L.",
+      "nome_direto": "Kevin L. Anderson",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Andreotti, Sonia Emilio Lopez",
+      "nome_direto": "Sonia Emilio Lopez Andreotti",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Angelim, Fernando",
+      "nome_direto": "Fernando Angelim",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ann, Eb Oral",
+      "nome_direto": "Eb Oral Ann",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Antonio, Prof°. Pr. Wemerson",
+      "nome_direto": "Prof°. Pr. Wemerson Antonio",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Arantes, Roosevelt",
+      "nome_direto": "Roosevelt Arantes",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Araujo, Marcio Roldan de",
+      "nome_direto": "Marcio Roldan de Araujo",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Araujo, Márcio Roldan de",
+      "nome_direto": "Márcio Roldan de Araujo",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Araujo, Sandro Silva",
+      "nome_direto": "Sandro Silva Araujo",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Araújo, Diego Dy Carlos",
+      "nome_direto": "Diego Dy Carlos Araújo",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Archer Junior, Gleason L.",
+      "nome_direto": "Gleason L. Archer Junior",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Armando, Noguez",
+      "nome_direto": "Noguez Armando",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Armitage, David",
+      "nome_direto": "David Armitage",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Arthur, Kay",
+      "nome_direto": "Kay Arthur",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ascol, Thomas K.",
+      "nome_direto": "Thomas K. Ascol",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ashton, Mark",
+      "nome_direto": "Mark Ashton",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Atkinson, John",
+      "nome_direto": "John Atkinson",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Autores, Varios",
+      "nome_direto": "Varios Autores",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Avaliação, Uma",
+      "nome_direto": "Uma Avaliação",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Avivamento, O.",
+      "nome_direto": "O. Avivamento",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Avivamientos, Diarios de",
+      "nome_direto": "Diarios de Avivamientos",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Azevedo, Israel Belo de",
+      "nome_direto": "Israel Belo de Azevedo",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "B., Robert",
+      "nome_direto": "Robert B.",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Bagby, Biografia de William Buck",
+      "nome_direto": "Biografia de William Buck Bagby",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Bailey, Boyd",
+      "nome_direto": "Boyd Bailey",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Barclay, El William",
+      "nome_direto": "El William Barclay",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Barclay, William",
+      "nome_direto": "William Barclay",
+      "tipo": "pessoa",
+      "ocorrencias": 16,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Barna, George",
+      "nome_direto": "George Barna",
+      "tipo": "pessoa",
+      "ocorrencias": 8,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Barrat, John Terrick",
+      "nome_direto": "John Terrick Barrat",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Barro, Jorge Henrique",
+      "nome_direto": "Jorge Henrique Barro",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Barros, Clara Jansson",
+      "nome_direto": "Clara Jansson Barros",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Bartleman, Frank",
+      "nome_direto": "Frank Bartleman",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bauckham, Richard",
+      "nome_direto": "Richard Bauckham",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bavinck, Herman",
+      "nome_direto": "Herman Bavinck",
+      "tipo": "pessoa",
+      "ocorrencias": 9,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Baxter, Aprovado Richard",
+      "nome_direto": "Aprovado Richard Baxter",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Baxter, Richard",
+      "nome_direto": "Richard Baxter",
+      "tipo": "pessoa",
+      "ocorrencias": 12,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Baxter., Rjchakd",
+      "nome_direto": "Rjchakd Baxter.",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Beckham, William A.",
+      "nome_direto": "William A. Beckham",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Beeke, Joel",
+      "nome_direto": "Joel Beeke",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Begg, Alistair",
+      "nome_direto": "Alistair Begg",
+      "tipo": "pessoa",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bekgaard, Wm. F.",
+      "nome_direto": "Wm. F. Bekgaard",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bekgaard, Wm. Ff",
+      "nome_direto": "Wm. Ff Bekgaard",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Belleville, Linda L.",
+      "nome_direto": "Linda L. Belleville",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Benge, Geoff",
+      "nome_direto": "Geoff Benge",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Benge, Janet",
+      "nome_direto": "Janet Benge",
+      "tipo": "pessoa",
+      "ocorrencias": 43,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bennema, Cor",
+      "nome_direto": "Cor Bennema",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bergier, Jacques",
+      "nome_direto": "Jacques Bergier",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bernardino, Felipe",
+      "nome_direto": "Felipe Bernardino",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bevere Junior, John",
+      "nome_direto": "John Bevere Junior",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bevere, John",
+      "nome_direto": "John Bevere",
+      "tipo": "pessoa",
+      "ocorrencias": 15,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Beyer, Hermann Wolfgang",
+      "nome_direto": "Hermann Wolfgang Beyer",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bezerra, João Marcos",
+      "nome_direto": "João Marcos Bezerra",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Biblica, Theologia",
+      "nome_direto": "Theologia Biblica",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Biblical, Starting Out With",
+      "nome_direto": "Starting Out With Biblical",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Binney, Amos",
+      "nome_direto": "Amos Binney",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Binney, Amos R.",
+      "nome_direto": "Amos R. Binney",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bird, Warren",
+      "nome_direto": "Warren Bird",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Blaney, Harvey J. S.",
+      "nome_direto": "Harvey J. S. Blaney",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Boas, Alessandro Vilas",
+      "nome_direto": "Alessandro Vilas Boas",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bolz, Shawn",
+      "nome_direto": "Shawn Bolz",
+      "tipo": "pessoa",
+      "ocorrencias": 12,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bomilcar, Nelson",
+      "nome_direto": "Nelson Bomilcar",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bonato, Nailda Marinho da Costa",
+      "nome_direto": "Nailda Marinho da Costa Bonato",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bonhoeffer, Dietrich",
+      "nome_direto": "Dietrich Bonhoeffer",
+      "tipo": "pessoa",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bonifácio, Gustavo Nogueira",
+      "nome_direto": "Gustavo Nogueira Bonifácio",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Booker, Richard",
+      "nome_direto": "Richard Booker",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Boom, Corrie Ten",
+      "nome_direto": "Corrie Ten Boom",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Borba, Telêmaco",
+      "nome_direto": "Telêmaco Borba",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Borba, Timóteo Monteiro",
+      "nome_direto": "Timóteo Monteiro Borba",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Borbal, Timóteo Monteiro",
+      "nome_direto": "Timóteo Monteiro Borbal",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Borges, Souza",
+      "nome_direto": "Souza Borges",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Boring, M. Eugene",
+      "nome_direto": "M. Eugene Boring",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bornkamm, Günter",
+      "nome_direto": "Günter Bornkamm",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bost, Bryan Jay",
+      "nome_direto": "Bryan Jay Bost",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bosworth, F. F.",
+      "nome_direto": "F. F. Bosworth",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bottrel, Roberto",
+      "nome_direto": "Roberto Bottrel",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bounds, E. M.",
+      "nome_direto": "E. M. Bounds",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bounds, Edward M.",
+      "nome_direto": "Edward M. Bounds",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Brandt, Robert L.",
+      "nome_direto": "Robert L. Brandt",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Brasil, Batistas do",
+      "nome_direto": "Batistas do Brasil",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Brasil, E. Algumas Figuras do",
+      "nome_direto": "E. Algumas Figuras do Brasil",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Brasileira, Batista",
+      "nome_direto": "Batista Brasileira",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Brasileiro, O. Protestantismo",
+      "nome_direto": "O. Protestantismo Brasileiro",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Bridges, Jerry",
+      "nome_direto": "Jerry Bridges",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bris, O.",
+      "nome_direto": "O. Bris",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Brizotti, Alan",
+      "nome_direto": "Alan Brizotti",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Brown, Michael L.",
+      "nome_direto": "Michael L. Brown",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Brown, Raymond E.",
+      "nome_direto": "Raymond E. Brown",
+      "tipo": "pessoa",
+      "ocorrencias": 11,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bruce, F. F.",
+      "nome_direto": "F. F. Bruce",
+      "tipo": "pessoa",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Buford, Bob",
+      "nome_direto": "Bob Buford",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Burkett, Bill",
+      "nome_direto": "Bill Burkett",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Burtner, Robert W.",
+      "nome_direto": "Robert W. Burtner",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bustanoby, André",
+      "nome_direto": "André Bustanoby",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Buttrick, George Arthur",
+      "nome_direto": "George Arthur Buttrick",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Básico, Curso",
+      "nome_direto": "Curso Básico",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Bíblica, Exegese",
+      "nome_direto": "Exegese Bíblica",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Bíblico, Comentario",
+      "nome_direto": "Comentario Bíblico",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bíblico, Comentário",
+      "nome_direto": "Comentário Bíblico",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Bíblico, I. Definição de Aconselhamento",
+      "nome_direto": "I. Definição de Aconselhamento Bíblico",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "C., John",
+      "nome_direto": "John C.",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "C.Stedman, Ray",
+      "nome_direto": "Ray C.Stedman",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "CONVENÇÃO, DA",
+      "nome_direto": "DA CONVENÇÃO",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Cadastrado, Nao",
+      "nome_direto": "Nao Cadastrado",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Caetano, Silmara",
+      "nome_direto": "Silmara Caetano",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Campbell, Roger F.",
+      "nome_direto": "Roger F. Campbell",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Campos, Uriel",
+      "nome_direto": "Uriel Campos",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Carmichael, Amy",
+      "nome_direto": "Amy Carmichael",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Carson, D.A",
+      "nome_direto": "D.A Carson",
+      "tipo": "pessoa",
+      "ocorrencias": 25,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Casademunt, Javier",
+      "nome_direto": "Javier Casademunt",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Casimiro, Arival Dias",
+      "nome_direto": "Arival Dias Casimiro",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Castro, Clovis Pinto de",
+      "nome_direto": "Clovis Pinto de Castro",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Cavalcanti, Robinson",
+      "nome_direto": "Robinson Cavalcanti",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Cavani, João Pedro",
+      "nome_direto": "João Pedro Cavani",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Cerqueira, Marcone Costa",
+      "nome_direto": "Marcone Costa Cerqueira",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Cesar, Julio",
+      "nome_direto": "Julio Cesar",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Chad Vegas, Alex Kocman",
+      "nome_direto": "Alex Kocman Chad Vegas",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Chagas, José Roberto de Oliveira",
+      "nome_direto": "José Roberto de Oliveira Chagas",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Chairô, Agência",
+      "nome_direto": "Agência Chairô",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Challies, Tim",
+      "nome_direto": "Tim Challies",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Chandler, Matt",
+      "nome_direto": "Matt Chandler",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Chapman, Gary",
+      "nome_direto": "Gary Chapman",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Chapman, Milo L.",
+      "nome_direto": "Milo L. Chapman",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Chavez, Juan",
+      "nome_direto": "Juan Chavez",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Che, Cuc",
+      "nome_direto": "Cuc Che",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Chester O. Mulder, M.A., B.D",
+      "nome_direto": "M.A., B.D Chester O. Mulder",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Chester, John Stott E. Tim",
+      "nome_direto": "John Stott E. Tim Chester",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Chester, Tim",
+      "nome_direto": "Tim Chester",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Chiles, Burtner E.",
+      "nome_direto": "Burtner E. Chiles",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Chiles, Nick",
+      "nome_direto": "Nick Chiles",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Chiles, Robert E.",
+      "nome_direto": "Robert E. Chiles",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Christ, Jesus",
+      "nome_direto": "Jesus Christ",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Chute, Anthony L.",
+      "nome_direto": "Anthony L. Chute",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Citações, Com Indicação da Fonte",
+      "nome_direto": "Com Indicação da Fonte Citações",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Citações, Resumo Expandido Com",
+      "nome_direto": "Resumo Expandido Com Citações",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Cod, Mizael Xavier",
+      "nome_direto": "Mizael Xavier Cod",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Coelho, Fábio",
+      "nome_direto": "Fábio Coelho",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Colossians, The Spiritual Powers In",
+      "nome_direto": "The Spiritual Powers In Colossians",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Comes, Ezequiel",
+      "nome_direto": "Ezequiel Comes",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Cometer, de Louvor Não Pode",
+      "nome_direto": "de Louvor Não Pode Cometer",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Comiskey, Joel",
+      "nome_direto": "Joel Comiskey",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Comunicações, McM",
+      "nome_direto": "McM Comunicações",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Connor, J. Murphi",
+      "nome_direto": "J. Murphi Connor",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Contemporâneo, Série O. Cristão",
+      "nome_direto": "Série O. Cristão Contemporâneo",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Cooke, Tony",
+      "nome_direto": "Tony Cooke",
+      "tipo": "pessoa",
+      "ocorrencias": 19,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Cornes, Francie",
+      "nome_direto": "Francie Cornes",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Corporation, Livingstone",
+      "nome_direto": "Livingstone Corporation",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Costa, Délcio",
+      "nome_direto": "Délcio Costa",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Costa, Irani José",
+      "nome_direto": "Irani José Costa",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Costa, João",
+      "nome_direto": "João Costa",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Costas, O. E. Crecimiento Integral",
+      "nome_direto": "O. E. Crecimiento Integral Costas",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Costas, Orlando",
+      "nome_direto": "Orlando Costas",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Costas, Orlando E.",
+      "nome_direto": "Orlando E. Costas",
+      "tipo": "pessoa",
+      "ocorrencias": 29,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Couto, Vinicius",
+      "nome_direto": "Vinicius Couto",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Cowles, C. S.",
+      "nome_direto": "C. S. Cowles",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Cox, Leo G.",
+      "nome_direto": "Leo G. Cox",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Coxe, Nehemiah",
+      "nome_direto": "Nehemiah Coxe",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Crabb, Larry",
+      "nome_direto": "Larry Crabb",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Crabtree, A. R.",
+      "nome_direto": "A. R. Crabtree",
+      "tipo": "pessoa",
+      "ocorrencias": 18,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Cre, Que Voce",
+      "nome_direto": "Que Voce Cre",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Crescimento, Cem - Integração E.",
+      "nome_direto": "Cem - Integração E. Crescimento",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Crista, Comunidade",
+      "nome_direto": "Comunidade Crista",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Cristo, Corpode",
+      "nome_direto": "Corpode Cristo",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Cristã, A. Missão",
+      "nome_direto": "A. Missão Cristã",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Cristã, A. Pregação",
+      "nome_direto": "A. Pregação Cristã",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Cristã, Liderança",
+      "nome_direto": "Liderança Cristã",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Cristã, Livrarias Família",
+      "nome_direto": "Livrarias Família Cristã",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Cristão, Culto",
+      "nome_direto": "Culto Cristão",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Cristão, História do Cantor",
+      "nome_direto": "História do Cantor Cristão",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Cristãs, Edições",
+      "nome_direto": "Edições Cristãs",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Cristă, Liderança",
+      "nome_direto": "Liderança Cristă",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Cullmann, Oscar",
+      "nome_direto": "Oscar Cullmann",
+      "tipo": "pessoa",
+      "ocorrencias": 8,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Cunha, Amilton Costa",
+      "nome_direto": "Amilton Costa Cunha",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Cunha, Gustavo S.",
+      "nome_direto": "Gustavo S. Cunha",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Cunha, Mauricio Jose Silva",
+      "nome_direto": "Mauricio Jose Silva Cunha",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Cunningham, William",
+      "nome_direto": "William Cunningham",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Curtis, Bill",
+      "nome_direto": "Bill Curtis",
+      "tipo": "pessoa",
+      "ocorrencias": 12,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Cvllmann, Oscar",
+      "nome_direto": "Oscar Cvllmann",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Da Silva, Jean Carlos",
+      "nome_direto": "Jean Carlos Da Silva",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Dantas, Elias",
+      "nome_direto": "Elias Dantas",
+      "tipo": "pessoa",
+      "ocorrencias": 8,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Dattler, Frederico",
+      "nome_direto": "Frederico Dattler",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "De Freire, Eduardo José",
+      "nome_direto": "Eduardo José De Freire",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Demaray, C. E.",
+      "nome_direto": "C. E. Demaray",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Denault, Pascal",
+      "nome_direto": "Pascal Denault",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Deus, Pérsio Ribeiro Gomes de",
+      "nome_direto": "Pérsio Ribeiro Gomes de Deus",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Dever, Mark",
+      "nome_direto": "Mark Dever",
+      "tipo": "pessoa",
+      "ocorrencias": 14,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Didático, Material",
+      "nome_direto": "Material Didático",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Dinero, Fe Y.",
+      "nome_direto": "Fe Y. Dinero",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Discursiva, Uma Análise",
+      "nome_direto": "Uma Análise Discursiva",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Divina, Método Lectio",
+      "nome_direto": "Método Lectio Divina",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Diálogo, Teologia Em",
+      "nome_direto": "Teologia Em Diálogo",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Dorman, Jim",
+      "nome_direto": "Jim Dorman",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Dornan, Jim",
+      "nome_direto": "Jim Dornan",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Dos Santos, José Rodrigues",
+      "nome_direto": "José Rodrigues Dos Santos",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Duailibe, André Mendonça",
+      "nome_direto": "André Mendonça Duailibe",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Duarte, Jedeías de Almeida",
+      "nome_direto": "Jedeías de Almeida Duarte",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Duarte”, Jedeias de Almeida",
+      "nome_direto": "Jedeias de Almeida Duarte”",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Dunn, Ron",
+      "nome_direto": "Ron Dunn",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Durais, Rubner",
+      "nome_direto": "Rubner Durais",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Dutra, Marcos Roberto",
+      "nome_direto": "Marcos Roberto Dutra",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Duvidas, E. Dissipe Suas",
+      "nome_direto": "E. Dissipe Suas Duvidas",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Dyck, Editor Elmer",
+      "nome_direto": "Editor Elmer Dyck",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Dyck, Elmer",
+      "nome_direto": "Elmer Dyck",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Díaz, Carlos Parra",
+      "nome_direto": "Carlos Parra Díaz",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "E., A. Origem Histórica",
+      "nome_direto": "A. Origem Histórica E.",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "E., Conceitos",
+      "nome_direto": "Conceitos E.",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "E., Donald",
+      "nome_direto": "Donald E.",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "E., Eclesiológica. A. Ética",
+      "nome_direto": "Eclesiológica. A. Ética E.",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Eagleton, Kenneth",
+      "nome_direto": "Kenneth Eagleton",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Earle, Ralph",
+      "nome_direto": "Ralph Earle",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Earley, Dave",
+      "nome_direto": "Dave Earley",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ebert, Clarice",
+      "nome_direto": "Clarice Ebert",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Economista, Denenhum Outro",
+      "nome_direto": "Denenhum Outro Economista",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Edersheim, Alfred",
+      "nome_direto": "Alfred Edersheim",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Edición, Tercera",
+      "nome_direto": "Tercera Edición",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Edlin, Jim",
+      "nome_direto": "Jim Edlin",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Edwards, Gene",
+      "nome_direto": "Gene Edwards",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Edwards, Jonathan",
+      "nome_direto": "Jonathan Edwards",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Eficaz, Liderança Cristã",
+      "nome_direto": "Liderança Cristã Eficaz",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Egger, Wilhelm",
+      "nome_direto": "Wilhelm Egger",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Eleitos, Mas Livres",
+      "nome_direto": "Mas Livres Eleitos",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Elliot, Elisabeth",
+      "nome_direto": "Elisabeth Elliot",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Emerson, Matthew Y.",
+      "nome_direto": "Matthew Y. Emerson",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Engen, Charles E. van",
+      "nome_direto": "Charles E. van Engen",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Engen, Charles Edward van",
+      "nome_direto": "Charles Edward van Engen",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Epístola, da",
+      "nome_direto": "da Epístola",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Erickson, Millard J.",
+      "nome_direto": "Millard J. Erickson",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Es, Guarapari",
+      "nome_direto": "Guarapari Es",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Espinosa, Gaston",
+      "nome_direto": "Gaston Espinosa",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Espinosa, Gastón",
+      "nome_direto": "Gastón Espinosa",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Espiritual, Re Novação",
+      "nome_direto": "Re Novação Espiritual",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Estep, William",
+      "nome_direto": "William Estep",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Estep, William R.",
+      "nome_direto": "William R. Estep",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Estrada, Michael Duque",
+      "nome_direto": "Michael Duque Estrada",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Eswine, Zack",
+      "nome_direto": "Zack Eswine",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Evaluation, !Mage",
+      "nome_direto": "!Mage Evaluation",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Evangelho?, do",
+      "nome_direto": "do Evangelho?",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Exploring, Faith",
+      "nome_direto": "Faith Exploring",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Extinção, Uma Marca Em",
+      "nome_direto": "Uma Marca Em Extinção",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Ezwine, Zack",
+      "nome_direto": "Zack Ezwine",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Faculty, By John MacArthur",
+      "nome_direto": "By John MacArthur Faculty",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Falcão Sobrinho, João",
+      "nome_direto": "João Falcão Sobrinho",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Família, Um Pai de",
+      "nome_direto": "Um Pai de Família",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Fechar, Imprimir",
+      "nome_direto": "Imprimir Fechar",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Ferguson, Dave",
+      "nome_direto": "Dave Ferguson",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Fernandes, Valéria Lamim Delgado",
+      "nome_direto": "Valéria Lamim Delgado Fernandes",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ferreira, Damy",
+      "nome_direto": "Damy Ferreira",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ferreira, Ebenézer Soares",
+      "nome_direto": "Ebenézer Soares Ferreira",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ferreira, Franklin",
+      "nome_direto": "Franklin Ferreira",
+      "tipo": "pessoa",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Figueiredo, Dr. Cleómines A. de",
+      "nome_direto": "Dr. Cleómines A. de Figueiredo",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Filho, Carlos Ribeiro Caldas",
+      "nome_direto": "Carlos Ribeiro Caldas Filho",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Final, Helwys — Parte",
+      "nome_direto": "Helwys — Parte Final",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Finley, Harvey E.",
+      "nome_direto": "Harvey E. Finley",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Finn, Nathan A.",
+      "nome_direto": "Nathan A. Finn",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Firth, Jill",
+      "nome_direto": "Jill Firth",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Fisher, David",
+      "nome_direto": "David Fisher",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Fitzmyer, H. A.",
+      "nome_direto": "H. A. Fitzmyer",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Fontes, Filipe Costa",
+      "nome_direto": "Filipe Costa Fontes",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ford, Jack",
+      "nome_direto": "Jack Ford",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Forman, Rowland",
+      "nome_direto": "Rowland Forman",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Formação, A.",
+      "nome_direto": "A. Formação",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Forrest, Benjamin K.",
+      "nome_direto": "Benjamin K. Forrest",
+      "tipo": "pessoa",
+      "ocorrencias": 16,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Fort, Ojeto Castelo",
+      "nome_direto": "Ojeto Castelo Fort",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Foundation, The Lockman",
+      "nome_direto": "The Lockman Foundation",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Franca, Leonel",
+      "nome_direto": "Leonel Franca",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Francisco, Edson de Faria",
+      "nome_direto": "Edson de Faria Francisco",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Franco, Sergio",
+      "nome_direto": "Sergio Franco",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Freire, Eduardo José de",
+      "nome_direto": "Eduardo José de Freire",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Freitas, Ida de",
+      "nome_direto": "Ida de Freitas",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Fresch, Chris",
+      "nome_direto": "Chris Fresch",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Frick, Frank S.",
+      "nome_direto": "Frank S. Frick",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Fromholz, Jeffery L.",
+      "nome_direto": "Jeffery L. Fromholz",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Fuhrman, Eldon R.",
+      "nome_direto": "Eldon R. Fuhrman",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Furlanete, Danilo",
+      "nome_direto": "Danilo Furlanete",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Gandolfo, Renata",
+      "nome_direto": "Renata Gandolfo",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Gard, Daniel L.",
+      "nome_direto": "Daniel L. Gard",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Gaston Espinosa, Ed",
+      "nome_direto": "Ed Gaston Espinosa",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Geisler",
+      "nome_direto": "Geisler",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Geisler, Norman L.",
+      "nome_direto": "Norman L. Geisler",
+      "tipo": "pessoa",
+      "ocorrencias": 12,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Genius?, Was Jesus A.",
+      "nome_direto": "Was Jesus A. Genius?",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Geraldo, Ezequiel",
+      "nome_direto": "Ezequiel Geraldo",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Gibbs, A.P",
+      "nome_direto": "A.P Gibbs",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Gibbs, Alfred P.",
+      "nome_direto": "Alfred P. Gibbs",
+      "tipo": "pessoa",
+      "ocorrencias": 8,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "God, Cngagins With",
+      "nome_direto": "Cngagins With God",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Godoi, Mariane",
+      "nome_direto": "Mariane Godoi",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Goforth, Rosalind",
+      "nome_direto": "Rosalind Goforth",
+      "tipo": "pessoa",
+      "ocorrencias": 14,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Goheen, Michael W.",
+      "nome_direto": "Michael W. Goheen",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Gomes, Aline",
+      "nome_direto": "Aline Gomes",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Gomes, Eliel",
+      "nome_direto": "Eliel Gomes",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Gomes, Ezequiel",
+      "nome_direto": "Ezequiel Gomes",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "GonzáLez, Justo L.",
+      "nome_direto": "Justo L. GonzáLez",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Gonçalves, Thais Barboza",
+      "nome_direto": "Thais Barboza Gonçalves",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Gorman, Michael J.",
+      "nome_direto": "Michael J. Gorman",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Gould, J. Glenn",
+      "nome_direto": "J. Glenn Gould",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Gourgues, Michel",
+      "nome_direto": "Michel Gourgues",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Graham, Billy",
+      "nome_direto": "Billy Graham",
+      "tipo": "pessoa",
+      "ocorrencias": 15,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Graham, Biografia de Billy",
+      "nome_direto": "Biografia de Billy Graham",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Grandes, dos",
+      "nome_direto": "dos Grandes",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Grando, Vitor",
+      "nome_direto": "Vitor Grando",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Greenway, Roger",
+      "nome_direto": "Roger Greenway",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Greenway, Roger S.",
+      "nome_direto": "Roger S. Greenway",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Grober, Glendon",
+      "nome_direto": "Glendon Grober",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Grudem, Wayne",
+      "nome_direto": "Wayne Grudem",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Gruen, W.",
+      "nome_direto": "W. Gruen",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Grupos, Pequenos",
+      "nome_direto": "Pequenos Grupos",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Guinness, Os",
+      "nome_direto": "Os Guinness",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Gundim, Divina Maria",
+      "nome_direto": "Divina Maria Gundim",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Gundry, Stanley",
+      "nome_direto": "Stanley Gundry",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Gundry, Stanley N.",
+      "nome_direto": "Stanley N. Gundry",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Gussơ, Antônio Renatơ",
+      "nome_direto": "Antônio Renatơ Gussơ",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Gutierrez, Ben",
+      "nome_direto": "Ben Gutierrez",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Gálatas, Carta de Paulo Aos",
+      "nome_direto": "Carta de Paulo Aos Gálatas",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Góis, Sidney",
+      "nome_direto": "Sidney Góis",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "H., Charles",
+      "nome_direto": "Charles H.",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Haddington, John Brown de",
+      "nome_direto": "John Brown de Haddington",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Hagerty, Sara",
+      "nome_direto": "Sara Hagerty",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Haggai, John Edmund",
+      "nome_direto": "John Edmund Haggai",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Hagin, Kenneth E.",
+      "nome_direto": "Kenneth E. Hagin",
+      "tipo": "pessoa",
+      "ocorrencias": 15,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Hall, Christopher A.",
+      "nome_direto": "Christopher A. Hall",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Hansen, Collin",
+      "nome_direto": "Collin Hansen",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Hansen, David",
+      "nome_direto": "David Hansen",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Harari, Yuval Noah",
+      "nome_direto": "Yuval Noah Harari",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Harper, A. F.",
+      "nome_direto": "A. F. Harper",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Harris, R. Laird",
+      "nome_direto": "R. Laird Harris",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Hasta, Gálatas",
+      "nome_direto": "Gálatas Hasta",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Hay, Mark",
+      "nome_direto": "Mark Hay",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Haykin, Michael",
+      "nome_direto": "Michael Haykin",
+      "tipo": "pessoa",
+      "ocorrencias": 9,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Haykin, Michael A. G.",
+      "nome_direto": "Michael A. G. Haykin",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Heath-Whyte, George",
+      "nome_direto": "George Heath-Whyte",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Hellinger, Bert",
+      "nome_direto": "Bert Hellinger",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Henrique, Samuel",
+      "nome_direto": "Samuel Henrique",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Herança, Sua",
+      "nome_direto": "Sua Herança",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Hess, Richard S.",
+      "nome_direto": "Richard S. Hess",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Hetherington, William Maxwell",
+      "nome_direto": "William Maxwell Hetherington",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Hicks, Tom",
+      "nome_direto": "Tom Hicks",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Hiebert, Paul G.",
+      "nome_direto": "Paul G. Hiebert",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Hill, Raranrc Tha",
+      "nome_direto": "Raranrc Tha Hill",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Hirsch, Alan",
+      "nome_direto": "Alan Hirsch",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Holmes, Laura Sweet",
+      "nome_direto": "Laura Sweet Holmes",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Homem, Óbvio do",
+      "nome_direto": "Óbvio do Homem",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Horton, David",
+      "nome_direto": "David Horton",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Horton, E. Viichael",
+      "nome_direto": "E. Viichael Horton",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Horton, Michael",
+      "nome_direto": "Michael Horton",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Horton, Michael S.",
+      "nome_direto": "Michael S. Horton",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Howard, Caleb",
+      "nome_direto": "Caleb Howard",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Howard, R. E.",
+      "nome_direto": "R. E. Howard",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Hsieh, Nelson",
+      "nome_direto": "Nelson Hsieh",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Huber, Abe",
+      "nome_direto": "Abe Huber",
+      "tipo": "pessoa",
+      "ocorrencias": 11,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Hudson, Christopher D.",
+      "nome_direto": "Christopher D. Hudson",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Hugenberger, Gordon P.",
+      "nome_direto": "Gordon P. Hugenberger",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Hustad, L. Arnold",
+      "nome_direto": "L. Arnold Hustad",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ia, Franco",
+      "nome_direto": "Franco Ia",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Iacomini, Franco",
+      "nome_direto": "Franco Iacomini",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ii, Hawoioa",
+      "nome_direto": "Hawoioa Ii",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Importância, A.",
+      "nome_direto": "A. Importância",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Inglaterra, Na",
+      "nome_direto": "Na Inglaterra",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Inicial, Apêndice",
+      "nome_direto": "Apêndice Inicial",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Inoá, Peo Ajou Mim",
+      "nome_direto": "Peo Ajou Mim Inoá",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Inserção, A.",
+      "nome_direto": "A. Inserção",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Institute, Lumko",
+      "nome_direto": "Lumko Institute",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Integral, Implicações",
+      "nome_direto": "Implicações Integral",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Isaak, Helmut",
+      "nome_direto": "Helmut Isaak",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Its, And",
+      "nome_direto": "And Its",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Jakes, T.D",
+      "nome_direto": "T.D Jakes",
+      "tipo": "pessoa",
+      "ocorrencias": 17,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "James, From Tyndale Bulletin",
+      "nome_direto": "From Tyndale Bulletin James",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Janeiro, Rio de",
+      "nome_direto": "Rio de Janeiro",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Janet",
+      "nome_direto": "Janet",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Jenkins, W. L.",
+      "nome_direto": "W. L. Jenkins",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Jesus, Um Pai de Família",
+      "nome_direto": "Um Pai de Família Jesus",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Jesús., En Cristo",
+      "nome_direto": "En Cristo Jesús.",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "John MacArthur, General Editor",
+      "nome_direto": "General Editor John MacArthur",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Johnson, Bill",
+      "nome_direto": "Bill Johnson",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Johnson, Terry L.",
+      "nome_direto": "Terry L. Johnson",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Johnston, Robert M.",
+      "nome_direto": "Robert M. Johnston",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Jonathan",
+      "nome_direto": "Jonathan",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Jones, Jeff",
+      "nome_direto": "Jeff Jones",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Jones, Robert C.",
+      "nome_direto": "Robert C. Jones",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Jongkind, Dirk",
+      "nome_direto": "Dirk Jongkind",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Jose, Mauricio",
+      "nome_direto": "Mauricio Jose",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Joseph Nicolosi, Ph.D",
+      "nome_direto": "Ph.D Joseph Nicolosi",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Josué, de",
+      "nome_direto": "de Josué",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Julius, J.",
+      "nome_direto": "J. Julius",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Junior MacArthur, John",
+      "nome_direto": "John Junior MacArthur",
+      "tipo": "pessoa",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Junior, Domicio",
+      "nome_direto": "Domicio Junior",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Junior, Paschoal Piragine",
+      "nome_direto": "Paschoal Piragine Junior",
+      "tipo": "pessoa",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Junior, Pr. Paschoal Piragine",
+      "nome_direto": "Pr. Paschoal Piragine Junior",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Jurado, Maria Antonia Rivera",
+      "nome_direto": "Maria Antonia Rivera Jurado",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Juster, Daniel",
+      "nome_direto": "Daniel Juster",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Júnior, Paschoal Piragine",
+      "nome_direto": "Paschoal Piragine Júnior",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Kemp, Judith",
+      "nome_direto": "Judith Kemp",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Kempis, Tomás de",
+      "nome_direto": "Tomás de Kempis",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ken Wilson, D.Phil",
+      "nome_direto": "D.Phil Ken Wilson",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Kerrigan, Jason Wayne",
+      "nome_direto": "Jason Wayne Kerrigan",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Kidner, Derek",
+      "nome_direto": "Derek Kidner",
+      "tipo": "pessoa",
+      "ocorrencias": 8,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "King, Kevin L.",
+      "nome_direto": "Kevin L. King",
+      "tipo": "pessoa",
+      "ocorrencias": 8,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Kinlaw, Dennis F.",
+      "nome_direto": "Dennis F. Kinlaw",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Kittel, Gerhard",
+      "nome_direto": "Gerhard Kittel",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Kivitz, Ed René",
+      "nome_direto": "Ed René Kivitz",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Knight Iii, George",
+      "nome_direto": "George Knight Iii",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Knight, John A.",
+      "nome_direto": "John A. Knight",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Kocman, Alex",
+      "nome_direto": "Alex Kocman",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Kocman, Chad Vegas E. Alex",
+      "nome_direto": "Chad Vegas E. Alex Kocman",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Komiskey, Joel",
+      "nome_direto": "Joel Komiskey",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Kornfield, David",
+      "nome_direto": "David Kornfield",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Kraft, Charles H.",
+      "nome_direto": "Charles H. Kraft",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Kraybill, Donald B.",
+      "nome_direto": "Donald B. Kraybill",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Kuhn, Renata Marisa",
+      "nome_direto": "Renata Marisa Kuhn",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Kuyper, Abraham",
+      "nome_direto": "Abraham Kuyper",
+      "tipo": "pessoa",
+      "ocorrencias": 19,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Körber, Doris",
+      "nome_direto": "Doris Körber",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Küng, Hans",
+      "nome_direto": "Hans Küng",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "L., Darrow",
+      "nome_direto": "Darrow L.",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "L., Justo",
+      "nome_direto": "Justo L.",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "L., Linda",
+      "nome_direto": "Linda L.",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "La, Uy Je Ni Mt",
+      "nome_direto": "Uy Je Ni Mt La",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Lacerda, Silvio",
+      "nome_direto": "Silvio Lacerda",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Lacerda, Silvio A.",
+      "nome_direto": "Silvio A. Lacerda",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Langston, A. B.",
+      "nome_direto": "A. B. Langston",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Lavoura, Mário da S.",
+      "nome_direto": "Mário da S. Lavoura",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Lawson, Steven J.",
+      "nome_direto": "Steven J. Lawson",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Lchute, Anthony",
+      "nome_direto": "Anthony Lchute",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Lee, Samuel",
+      "nome_direto": "Samuel Lee",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Leeman, Jonathan",
+      "nome_direto": "Jonathan Leeman",
+      "tipo": "pessoa",
+      "ocorrencias": 8,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Lemes, Gisele",
+      "nome_direto": "Gisele Lemes",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Lemos, Danilo Pallar",
+      "nome_direto": "Danilo Pallar Lemos",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Lewis, C. S.",
+      "nome_direto": "C. S. Lewis",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Liderazgo, Restaurar El",
+      "nome_direto": "Restaurar El Liderazgo",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Lideres, de",
+      "nome_direto": "de Lideres",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Lima, Delcyr de Souza",
+      "nome_direto": "Delcyr de Souza Lima",
+      "tipo": "pessoa",
+      "ocorrencias": 9,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Lima, Sandra",
+      "nome_direto": "Sandra Lima",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Lin, Inte",
+      "nome_direto": "Inte Lin",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Literatura, História da",
+      "nome_direto": "História da Literatura",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Livingston, George Herbert",
+      "nome_direto": "George Herbert Livingston",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Livros, Rj",
+      "nome_direto": "Rj Livros",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Lloyd-Jones, D. Martyn",
+      "nome_direto": "D. Martyn Lloyd-Jones",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Logos, Instituto de Teologia",
+      "nome_direto": "Instituto de Teologia Logos",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "London, England",
+      "nome_direto": "England London",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Longman Iii, Tremper",
+      "nome_direto": "Tremper Longman Iii",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Lopes, Augustus Nicodemus",
+      "nome_direto": "Augustus Nicodemus Lopes",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Lopes, Hernandes Dias",
+      "nome_direto": "Hernandes Dias Lopes",
+      "tipo": "pessoa",
+      "ocorrencias": 11,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Lopes, Lana",
+      "nome_direto": "Lana Lopes",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Lopes, Nicodemus",
+      "nome_direto": "Nicodemus Lopes",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Lutero, Martim",
+      "nome_direto": "Martim Lutero",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Lutero, Martinho",
+      "nome_direto": "Martinho Lutero",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Lutzer, Erwin E.",
+      "nome_direto": "Erwin E. Lutzer",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Lyons, George",
+      "nome_direto": "George Lyons",
+      "tipo": "pessoa",
+      "ocorrencias": 9,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Léonard, Émile-G",
+      "nome_direto": "Émile-G Léonard",
+      "tipo": "pessoa",
+      "ocorrencias": 9,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Líderes., Seus",
+      "nome_direto": "Seus Líderes.",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Ma, Julie C.",
+      "nome_direto": "Julie C. Ma",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ma, Wonsuk",
+      "nome_direto": "Wonsuk Ma",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "MacArthur, John",
+      "nome_direto": "John MacArthur",
+      "tipo": "pessoa",
+      "ocorrencias": 34,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "MacArthur, The John",
+      "nome_direto": "The John MacArthur",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "MacDonald, William",
+      "nome_direto": "William MacDonald",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Machado, Maria Celeste Castro",
+      "nome_direto": "Maria Celeste Castro Machado",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Maciel, Clauder Pereira",
+      "nome_direto": "Clauder Pereira Maciel",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Mackerras, Kirsten",
+      "nome_direto": "Kirsten Mackerras",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Madureira, Jonas",
+      "nome_direto": "Jonas Madureira",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Mahesch, Chavda",
+      "nome_direto": "Chavda Mahesch",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Mahoney, Ralph",
+      "nome_direto": "Ralph Mahoney",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Maia, Adriel de Souza",
+      "nome_direto": "Adriel de Souza Maia",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Malafaia, Silas",
+      "nome_direto": "Silas Malafaia",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Male, Reparative Therapy Of",
+      "nome_direto": "Reparative Therapy Of Male",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Malony, H. Newton",
+      "nome_direto": "H. Newton Malony",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Maphori, Thomas",
+      "nome_direto": "Thomas Maphori",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Maraví, Heyssen J. Cordero",
+      "nome_direto": "Heyssen J. Cordero Maraví",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Marcos, Armando",
+      "nome_direto": "Armando Marcos",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Marguerat, Daniel",
+      "nome_direto": "Daniel Marguerat",
+      "tipo": "pessoa",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Marinho, Robson Moura",
+      "nome_direto": "Robson Moura Marinho",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Mark",
+      "nome_direto": "Mark",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Marques, Márcio Almeida",
+      "nome_direto": "Márcio Almeida Marques",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Marshall, Colin",
+      "nome_direto": "Colin Marshall",
+      "tipo": "pessoa",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Martin, Raiph P.",
+      "nome_direto": "Raiph P. Martin",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Martin, Ralph P.",
+      "nome_direto": "Ralph P. Martin",
+      "tipo": "pessoa",
+      "ocorrencias": 15,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Martins, Jéssica Santos Souza",
+      "nome_direto": "Jéssica Santos Souza Martins",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Martins, Mário Ribeiro",
+      "nome_direto": "Mário Ribeiro Martins",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Martins, Sebastiao Pinheiro",
+      "nome_direto": "Sebastiao Pinheiro Martins",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Mason, Roy",
+      "nome_direto": "Roy Mason",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Masta, Mebreos",
+      "nome_direto": "Mebreos Masta",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Mathis, David",
+      "nome_direto": "David Mathis",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Mathis, Espirituais David",
+      "nome_direto": "Espirituais David Mathis",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Matt",
+      "nome_direto": "Matt",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Mattos, Paulo Ayres",
+      "nome_direto": "Paulo Ayres Mattos",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Maxwell, John",
+      "nome_direto": "John Maxwell",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Maxwell, John C.",
+      "nome_direto": "John C. Maxwell",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Mayfield, Joseph H.",
+      "nome_direto": "Joseph H. Mayfield",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "McDowell, Josh",
+      "nome_direto": "Josh McDowell",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "McGavran, Donald",
+      "nome_direto": "Donald McGavran",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "McGrath, Alister",
+      "nome_direto": "Alister McGrath",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "McGrath, Alister E.",
+      "nome_direto": "Alister E. McGrath",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Mellish, Kevin J.",
+      "nome_direto": "Kevin J. Mellish",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Melo, Edino",
+      "nome_direto": "Edino Melo",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Mendes, Antivan",
+      "nome_direto": "Antivan Mendes",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Mendes, Ms. Danilo",
+      "nome_direto": "Ms. Danilo Mendes",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Mendes, Religiao Danilo",
+      "nome_direto": "Religiao Danilo Mendes",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Mendonça, Antonio Gouvêa",
+      "nome_direto": "Antonio Gouvêa Mendonça",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Mendonça, Antônio Gouvêa",
+      "nome_direto": "Antônio Gouvêa Mendonça",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Menezes, Josias Moura de",
+      "nome_direto": "Josias Moura de Menezes",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Menezes, de",
+      "nome_direto": "de Menezes",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Menzies, Robert P.",
+      "nome_direto": "Robert P. Menzies",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Menzies, William W.",
+      "nome_direto": "William W. Menzies",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Menzies, William W. Menzies",
+      "nome_direto": "William W. Menzies Menzies",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Merkh, David J.",
+      "nome_direto": "David J. Merkh",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Merrill, Eugene H.",
+      "nome_direto": "Eugene H. Merrill",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Mesquita, Antônio Neves de",
+      "nome_direto": "Antônio Neves de Mesquita",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Michael L. Brown, Phd",
+      "nome_direto": "Phd Michael L. Brown",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Milioni, Dwayne",
+      "nome_direto": "Dwayne Milioni",
+      "tipo": "pessoa",
+      "ocorrencias": 8,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Millard, Alan",
+      "nome_direto": "Alan Millard",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Miller, Bruce",
+      "nome_direto": "Bruce Miller",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Miller, Darrow L.",
+      "nome_direto": "Darrow L. Miller",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Miller, Donald E.",
+      "nome_direto": "Donald E. Miller",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Mision, Y. Su",
+      "nome_direto": "Y. Su Mision",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Missionária, Programa de Formacáo",
+      "nome_direto": "Programa de Formacáo Missionária",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Missão, Desafios da",
+      "nome_direto": "Desafios da Missão",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Moffett, Samuel Hugh",
+      "nome_direto": "Samuel Hugh Moffett",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Monasterio, Rafael Aguirre",
+      "nome_direto": "Rafael Aguirre Monasterio",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Mondin, Battista",
+      "nome_direto": "Battista Mondin",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Monte, Milton",
+      "nome_direto": "Milton Monte",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Moraes, Jilton",
+      "nome_direto": "Jilton Moraes",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Moral, Iii",
+      "nome_direto": "Iii Moral",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Moravianos, Jovens",
+      "nome_direto": "Jovens Moravianos",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Moreira, José Cícero",
+      "nome_direto": "José Cícero Moreira",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Morelli, João",
+      "nome_direto": "João Morelli",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Moretti, Evandro",
+      "nome_direto": "Evandro Moretti",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Morris, Robert",
+      "nome_direto": "Robert Morris",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Mothoagae, I.D",
+      "nome_direto": "I.D Mothoagae",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Moura, Lisânias",
+      "nome_direto": "Lisânias Moura",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Movement, Christian",
+      "nome_direto": "Christian Movement",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Movimento, O.",
+      "nome_direto": "O. Movimento",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Mulder, Chester O.",
+      "nome_direto": "Chester O. Mulder",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Muller, Richard A.",
+      "nome_direto": "Richard A. Muller",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Munroe, Myles",
+      "nome_direto": "Myles Munroe",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Murray, Andrew",
+      "nome_direto": "Andrew Murray",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Muñoz, Dr Félix",
+      "nome_direto": "Dr Félix Muñoz",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Muñoz, Félix",
+      "nome_direto": "Félix Muñoz",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Música, A.",
+      "nome_direto": "A. Música",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Música, Mestrado Em",
+      "nome_direto": "Mestrado Em Música",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "München, República Federal da Alemanha",
+      "nome_direto": "República Federal da Alemanha München",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Nas, Nutriconal",
+      "nome_direto": "Nutriconal Nas",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Nascimento, Paulo César",
+      "nome_direto": "Paulo César Nascimento",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Nasser, José Monir",
+      "nome_direto": "José Monir Nasser",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Nassiff, Nivaldo",
+      "nome_direto": "Nivaldo Nassiff",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Nee, Watchman",
+      "nome_direto": "Watchman Nee",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Neese, Zach",
+      "nome_direto": "Zach Neese",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Nicholson, Roy S.",
+      "nome_direto": "Roy S. Nicholson",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Nicodemus, Augustus",
+      "nome_direto": "Augustus Nicodemus",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Nicolau Filho, Miguel Olímpio",
+      "nome_direto": "Miguel Olímpio Nicolau Filho",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Nicolosi, By Joseph",
+      "nome_direto": "By Joseph Nicolosi",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Nicolosi, Joseph",
+      "nome_direto": "Joseph Nicolosi",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Nicolosi, Joseph J.",
+      "nome_direto": "Joseph J. Nicolosi",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Nicolosi, Joseph Nicolosi",
+      "nome_direto": "Joseph Nicolosi Nicolosi",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Nicolosi, Linda Ames",
+      "nome_direto": "Linda Ames Nicolosi",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Nielson, John B.",
+      "nome_direto": "John B. Nielson",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Nix",
+      "nome_direto": "Nix",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Noll, Mark A.",
+      "nome_direto": "Mark A. Noll",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Noltiw, Salnymhos",
+      "nome_direto": "Salnymhos Noltiw",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Norman",
+      "nome_direto": "Norman",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Nos, Iversiva",
+      "nome_direto": "Iversiva Nos",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Nova, Apostila",
+      "nome_direto": "Apostila Nova",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Nós, O. Reino Entre",
+      "nome_direto": "O. Reino Entre Nós",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "O'Leary, Seán",
+      "nome_direto": "Seán O'Leary",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "O., Reconstruindo",
+      "nome_direto": "Reconstruindo O.",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "O., Y. Vencendo",
+      "nome_direto": "Y. Vencendo O.",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Of, The State",
+      "nome_direto": "The State Of",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ogden, Greg",
+      "nome_direto": "Greg Ogden",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ogden, Gregory J.",
+      "nome_direto": "Gregory J. Ogden",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Okesson, Gregg",
+      "nome_direto": "Gregg Okesson",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Oliva, Alfredo dos Santos",
+      "nome_direto": "Alfredo dos Santos Oliva",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Oliveira, Adiel Almeida de",
+      "nome_direto": "Adiel Almeida de Oliveira",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Oliveira, Betty Antunes de",
+      "nome_direto": "Betty Antunes de Oliveira",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Oliveira, Daiane Rodrigues de",
+      "nome_direto": "Daiane Rodrigues de Oliveira",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Oliveira, Jônatas",
+      "nome_direto": "Jônatas Oliveira",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Oliveira, Soraya Imon",
+      "nome_direto": "Soraya Imon Oliveira",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Olson, Roger E.",
+      "nome_direto": "Roger E. Olson",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ortlund, Dane",
+      "nome_direto": "Dane Ortlund",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ortlund, Dane C.",
+      "nome_direto": "Dane C. Ortlund",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Ortlund, Humilde Dane",
+      "nome_direto": "Humilde Dane Ortlund",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ortodoxo, Um",
+      "nome_direto": "Um Ortodoxo",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Outros, Joel Beeke",
+      "nome_direto": "Joel Beeke Outros",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Owen, John",
+      "nome_direto": "John Owen",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "P., Paul Trip",
+      "nome_direto": "Paul Trip P.",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "P., Ralph",
+      "nome_direto": "Ralph P.",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "P., Robert",
+      "nome_direto": "Robert P.",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Pablo, San",
+      "nome_direto": "San Pablo",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Pace, R. Scott",
+      "nome_direto": "R. Scott Pace",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Packer, J. I.",
+      "nome_direto": "J. I. Packer",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Pactual, A. Teologia",
+      "nome_direto": "A. Teologia Pactual",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Padilla, C. René",
+      "nome_direto": "C. René Padilla",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Paganelli, André",
+      "nome_direto": "André Paganelli",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Paganelli, Magno",
+      "nome_direto": "Magno Paganelli",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Paine, Colin Marshall de Tony",
+      "nome_direto": "Colin Marshall de Tony Paine",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Paixão, Marcus Vinícius Costa",
+      "nome_direto": "Marcus Vinícius Costa Paixão",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Para, Relacionamentos",
+      "nome_direto": "Relacionamentos Para",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Parker, T. H. L.",
+      "nome_direto": "T. H. L. Parker",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Paroschi, Wilson",
+      "nome_direto": "Wilson Paroschi",
+      "tipo": "pessoa",
+      "ocorrencias": 11,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Pastorais, E.",
+      "nome_direto": "E. Pastorais",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Paton, John G.",
+      "nome_direto": "John G. Paton",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Patria, Outra",
+      "nome_direto": "Outra Patria",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Patzia, Arthur G.",
+      "nome_direto": "Arthur G. Patzia",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Paulo, Batista Sao",
+      "nome_direto": "Batista Sao Paulo",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Paulo, Faculdade Evangélica de São",
+      "nome_direto": "Faculdade Evangélica de São Paulo",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Paulo, São",
+      "nome_direto": "São Paulo",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Payne, Tony",
+      "nome_direto": "Tony Payne",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Pdf, Biblico Beacon",
+      "nome_direto": "Biblico Beacon Pdf",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Pela, Adventista",
+      "nome_direto": "Adventista Pela",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Pela, Adventista E. Doutorando",
+      "nome_direto": "Adventista E. Doutorando Pela",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Pelikan, Jaroslav",
+      "nome_direto": "Jaroslav Pelikan",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Pellicciari, Angela",
+      "nome_direto": "Angela Pellicciari",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Penna, Romano",
+      "nome_direto": "Romano Penna",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Pentecost, J. Dwight",
+      "nome_direto": "J. Dwight Pentecost",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Pequenos Grupos, Grandes Negócios",
+      "nome_direto": "Grandes Negócios Pequenos Grupos",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Pereira, J. Reis",
+      "nome_direto": "J. Reis Pereira",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Pereira, Josivaldo de França",
+      "nome_direto": "Josivaldo de França Pereira",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Peres, Erick Ribeiro",
+      "nome_direto": "Erick Ribeiro Peres",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Perloff, Robert",
+      "nome_direto": "Robert Perloff",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Peterson, David G.",
+      "nome_direto": "David G. Peterson",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Petrotta, Anthony J.",
+      "nome_direto": "Anthony J. Petrotta",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Pgm, Liderando Um",
+      "nome_direto": "Liderando Um Pgm",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Phillips, Keith",
+      "nome_direto": "Keith Phillips",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Pimentel, Vinícius Musselman",
+      "nome_direto": "Vinícius Musselman Pimentel",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Pink, A. W.",
+      "nome_direto": "A. W. Pink",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Pink, W.",
+      "nome_direto": "W. Pink",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Pioneira, Revista Batista",
+      "nome_direto": "Revista Batista Pioneira",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Piper, John",
+      "nome_direto": "John Piper",
+      "tipo": "pessoa",
+      "ocorrencias": 22,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Piragine Junior, Paschoal",
+      "nome_direto": "Paschoal Piragine Junior",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Piragine Junior, Pr. Paschoal",
+      "nome_direto": "Pr. Paschoal Piragine Junior",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Piragine Júnior, Paschoal",
+      "nome_direto": "Paschoal Piragine Júnior",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Piragine, Michel Ferreira",
+      "nome_direto": "Michel Ferreira Piragine",
+      "tipo": "pessoa",
+      "ocorrencias": 11,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Piraginejr., Paschoal",
+      "nome_direto": "Paschoal Piraginejr.",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Pitrowsky, R.",
+      "nome_direto": "R. Pitrowsky",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Platt, David",
+      "nome_direto": "David Platt",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Pompermayer, Davi Taylor",
+      "nome_direto": "Davi Taylor Pompermayer",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Pond, Clifford",
+      "nome_direto": "Clifford Pond",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Por, Versículo",
+      "nome_direto": "Versículo Por",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Portela, Davi",
+      "nome_direto": "Davi Portela",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Powlison, David",
+      "nome_direto": "David Powlison",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Powlisson, David",
+      "nome_direto": "David Powlisson",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Preto, Ribeirão",
+      "nome_direto": "Ribeirão Preto",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Princeton, Cerary Of",
+      "nome_direto": "Cerary Of Princeton",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Principal, Bradesco",
+      "nome_direto": "Bradesco Principal",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Prior, Anselm",
+      "nome_direto": "Anselm Prior",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Processo, A. Iconoclastia Contemporanea No",
+      "nome_direto": "A. Iconoclastia Contemporanea No Processo",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Profundas, Águas",
+      "nome_direto": "Águas Profundas",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Protestantes, Pastores",
+      "nome_direto": "Pastores Protestantes",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Prática, Teoria E.",
+      "nome_direto": "Teoria E. Prática",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Purkiser, W. T.",
+      "nome_direto": "W. T. Purkiser",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Que, Cristão Mais",
+      "nome_direto": "Cristão Mais Que",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Queiroz, Newton A.",
+      "nome_direto": "Newton A. Queiroz",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ramlow, Rodomar Ricardo",
+      "nome_direto": "Rodomar Ricardo Ramlow",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ravenhill, Leonard",
+      "nome_direto": "Leonard Ravenhill",
+      "tipo": "pessoa",
+      "ocorrencias": 14,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Reformada, Os Batistas",
+      "nome_direto": "Os Batistas Reformada",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Rega, Lourenco Stelio",
+      "nome_direto": "Lourenco Stelio Rega",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Rega, Lourenço S.",
+      "nome_direto": "Lourenço S. Rega",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Rega, Lourenço Stelio",
+      "nome_direto": "Lourenço Stelio Rega",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Rega, Organizador Lourenço Stelio",
+      "nome_direto": "Organizador Lourenço Stelio Rega",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Rei, Adorar Ao",
+      "nome_direto": "Adorar Ao Rei",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Reily, D. Uncan Alexander",
+      "nome_direto": "D. Uncan Alexander Reily",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Reily, Duncan",
+      "nome_direto": "Duncan Reily",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Reis, Aníbal Pereira",
+      "nome_direto": "Aníbal Pereira Reis",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Reis, Aníbal Pereira dos",
+      "nome_direto": "Aníbal Pereira dos Reis",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Religião, Psicologia da",
+      "nome_direto": "Psicologia da Religião",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Rengstorf, Karl Heinrich",
+      "nome_direto": "Karl Heinrich Rengstorf",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Renn, Rick",
+      "nome_direto": "Rick Renn",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Renner, Rick",
+      "nome_direto": "Rick Renner",
+      "tipo": "pessoa",
+      "ocorrencias": 14,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Reserve, Intellectual",
+      "nome_direto": "Intellectual Reserve",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Revisada, Edição Completa E.",
+      "nome_direto": "Edição Completa E. Revisada",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Revisão, Diagramação E. Produção",
+      "nome_direto": "Diagramação E. Produção Revisão",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Rhodes, Ron",
+      "nome_direto": "Ron Rhodes",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ribeiro, Alex Falcão",
+      "nome_direto": "Alex Falcão Ribeiro",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Ribeiro, Fabiano",
+      "nome_direto": "Fabiano Ribeiro",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ribeiro, Fernando Boa Sorte",
+      "nome_direto": "Fernando Boa Sorte Ribeiro",
+      "tipo": "pessoa",
+      "ocorrencias": 12,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ribeiro, Marcio",
+      "nome_direto": "Marcio Ribeiro",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ribeiro, Paulo Ricardo Benevenuto",
+      "nome_direto": "Paulo Ricardo Benevenuto Ribeiro",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Rice, John R.",
+      "nome_direto": "John R. Rice",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Richards, Lawrence O.",
+      "nome_direto": "Lawrence O. Richards",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ridall, R. Clyde",
+      "nome_direto": "R. Clyde Ridall",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Riker, D. B.",
+      "nome_direto": "D. B. Riker",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Robinson, Por Jeff",
+      "nome_direto": "Por Jeff Robinson",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Rocha, Thiago R.",
+      "nome_direto": "Thiago R. Rocha",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Rodovalho, Robson",
+      "nome_direto": "Robson Rodovalho",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Rodrigues, Cleverson Pereira",
+      "nome_direto": "Cleverson Pereira Rodrigues",
+      "tipo": "pessoa",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Rodrigues, Jose",
+      "nome_direto": "Jose Rodrigues",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Rodrigues, Jéferson Ferreira",
+      "nome_direto": "Jéferson Ferreira Rodrigues",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Rodrigues, Pr. Cleverson Pereira",
+      "nome_direto": "Pr. Cleverson Pereira Rodrigues",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Roest, Gert-Jan",
+      "nome_direto": "Gert-Jan Roest",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Rofdrigues, Cleverson",
+      "nome_direto": "Cleverson Rofdrigues",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ronis, Osvadido",
+      "nome_direto": "Osvadido Ronis",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Roquejani, Renato",
+      "nome_direto": "Renato Roquejani",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Rose, Delbert R.",
+      "nome_direto": "Delbert R. Rose",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ross, Jerry Donald",
+      "nome_direto": "Jerry Donald Ross",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Rossi, Luiz Alexandre Solano",
+      "nome_direto": "Luiz Alexandre Solano Rossi",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Rowe, William L.",
+      "nome_direto": "William L. Rowe",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Rp, Louvor Lagoinha",
+      "nome_direto": "Louvor Lagoinha Rp",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Russell, Corey",
+      "nome_direto": "Corey Russell",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ryle, J. C.",
+      "nome_direto": "J. C. Ryle",
+      "tipo": "pessoa",
+      "ocorrencias": 17,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Régo, Paulo Romero Batista",
+      "nome_direto": "Paulo Romero Batista Régo",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Rêgo, Paulo Romero Batista",
+      "nome_direto": "Paulo Romero Batista Rêgo",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Sales, Rodolfo Rodrigues",
+      "nome_direto": "Rodolfo Rodrigues Sales",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Salvador, Universidade Federal da",
+      "nome_direto": "Universidade Federal da Salvador",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Santos Filho, Tiago J.",
+      "nome_direto": "Tiago J. Santos Filho",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Santos, Adelson Damasceno",
+      "nome_direto": "Adelson Damasceno Santos",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Santos, Almir Etelvino dos",
+      "nome_direto": "Almir Etelvino dos Santos",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Santos, Débora Luíza dos",
+      "nome_direto": "Débora Luíza dos Santos",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Santos, Gilson",
+      "nome_direto": "Gilson Santos",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Santos, José Rodrigues dos",
+      "nome_direto": "José Rodrigues dos Santos",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Santos, Judiclay Silva",
+      "nome_direto": "Judiclay Silva Santos",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Santos, Leila Christina Gusmão dos",
+      "nome_direto": "Leila Christina Gusmão dos Santos",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Santos, Meire Portes",
+      "nome_direto": "Meire Portes Santos",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Santos, Thomas Tronco dos",
+      "nome_direto": "Thomas Tronco dos Santos",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Saores, Pedro Claudio",
+      "nome_direto": "Pedro Claudio Saores",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Sarah, Robert",
+      "nome_direto": "Robert Sarah",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Sas, Aa Sar Oo",
+      "nome_direto": "Aa Sar Oo Sas",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Sathler, Anderson",
+      "nome_direto": "Anderson Sathler",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Sawyer, Robert L.",
+      "nome_direto": "Robert L. Sawyer",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Schaeffer, Francis",
+      "nome_direto": "Francis Schaeffer",
+      "tipo": "pessoa",
+      "ocorrencias": 8,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Schaeffer, Francis A.",
+      "nome_direto": "Francis A. Schaeffer",
+      "tipo": "pessoa",
+      "ocorrencias": 11,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Schmid, Konrad",
+      "nome_direto": "Konrad Schmid",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Schmidt, Karl Ludwig",
+      "nome_direto": "Karl Ludwig Schmidt",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Schopenhauer, Arthur",
+      "nome_direto": "Arthur Schopenhauer",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Schwantes, Milton",
+      "nome_direto": "Milton Schwantes",
+      "tipo": "pessoa",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Scocc, Jod",
+      "nome_direto": "Jod Scocc",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Scott Junior, J.",
+      "nome_direto": "J. Scott Junior",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Scott Junior, J. Julius",
+      "nome_direto": "J. Julius Scott Junior",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Scott, Waldron Byron",
+      "nome_direto": "Waldron Byron Scott",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Scougal, Henry",
+      "nome_direto": "Henry Scougal",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Selph, Robert B.",
+      "nome_direto": "Robert B. Selph",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Seminary, The Master’S",
+      "nome_direto": "The Master’S Seminary",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Ser, Nosso Jeito de",
+      "nome_direto": "Nosso Jeito de Ser",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Sh, Russell P.",
+      "nome_direto": "Russell P. Sh",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Shaw",
+      "nome_direto": "Shaw",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Shedd, Russell",
+      "nome_direto": "Russell Shedd",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Shedd, Russell P.",
+      "nome_direto": "Russell P. Shedd",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Shelley, Bruce L.",
+      "nome_direto": "Bruce L. Shelley",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Siitema, John",
+      "nome_direto": "John Siitema",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Silva, Aluízio A.",
+      "nome_direto": "Aluízio A. Silva",
+      "tipo": "pessoa",
+      "ocorrencias": 9,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Silva, Cássio Murilo Dias da",
+      "nome_direto": "Cássio Murilo Dias da Silva",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Silva, Hope Gordon",
+      "nome_direto": "Hope Gordon Silva",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Silva, Jorgevan Alves da",
+      "nome_direto": "Jorgevan Alves da Silva",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Silva, Joáo Henrique Magalháes da",
+      "nome_direto": "Joáo Henrique Magalháes da Silva",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Silva, João Henrique Magalhães da",
+      "nome_direto": "João Henrique Magalhães da Silva",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Silva, João Parahyba Daronch da",
+      "nome_direto": "João Parahyba Daronch da Silva",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Silva, Leandro",
+      "nome_direto": "Leandro Silva",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Silva, Luciano",
+      "nome_direto": "Luciano Silva",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Silva, Ms Flávio Martins da",
+      "nome_direto": "Ms Flávio Martins da Silva",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Silva, Ronei Costa Martins",
+      "nome_direto": "Ronei Costa Martins Silva",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Simons, Menno",
+      "nome_direto": "Menno Simons",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Simpson, A. B.",
+      "nome_direto": "A. B. Simpson",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Sinamunda, Félix F.",
+      "nome_direto": "Félix F. Sinamunda",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Siott, John",
+      "nome_direto": "John Siott",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Siqueira, Larry Crab",
+      "nome_direto": "Larry Crab Siqueira",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Sittema, John",
+      "nome_direto": "John Sittema",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Sittema, John R.",
+      "nome_direto": "John R. Sittema",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Smith, George",
+      "nome_direto": "George Smith",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Smith, James K.",
+      "nome_direto": "James K. Smith",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Smith, James K.A",
+      "nome_direto": "James K.A Smith",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Smith, Oswald J.",
+      "nome_direto": "Oswald J. Smith",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Snyder, Howard",
+      "nome_direto": "Howard Snyder",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Snyder, Howard A.",
+      "nome_direto": "Howard A. Snyder",
+      "tipo": "pessoa",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Snyder, James L.",
+      "nome_direto": "James L. Snyder",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Souza, Edilson Soares de",
+      "nome_direto": "Edilson Soares de Souza",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Souza, Isaac Lopes de",
+      "nome_direto": "Isaac Lopes de Souza",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Souza, Itamir Neves de",
+      "nome_direto": "Itamir Neves de Souza",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Souza, Manoel Avelino de",
+      "nome_direto": "Manoel Avelino de Souza",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Spyer, Juliano",
+      "nome_direto": "Juliano Spyer",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Spyker, Kelly",
+      "nome_direto": "Kelly Spyker",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Stamateas, Bernardo",
+      "nome_direto": "Bernardo Stamateas",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Stedman, Ray C.",
+      "nome_direto": "Ray C. Stedman",
+      "tipo": "pessoa",
+      "ocorrencias": 8,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Steinbeck, John",
+      "nome_direto": "John Steinbeck",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Steuernagel, Valdir",
+      "nome_direto": "Valdir Steuernagel",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "SteveTimmis",
+      "nome_direto": "SteveTimmis",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Storniolo, Ivo",
+      "nome_direto": "Ivo Storniolo",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Stott, Ejohn",
+      "nome_direto": "Ejohn Stott",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Stott, John",
+      "nome_direto": "John Stott",
+      "tipo": "pessoa",
+      "ocorrencias": 22,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Stott, John R. W.",
+      "nome_direto": "John R. W. Stott",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Stott, John W. R.",
+      "nome_direto": "John W. R. Stott",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Strauss, Stephen J.",
+      "nome_direto": "Stephen J. Strauss",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Strong, James",
+      "nome_direto": "James Strong",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Studies, Regoum",
+      "nome_direto": "Regoum Studies",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Suas, Dissipe",
+      "nome_direto": "Dissipe Suas",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Suas, No Brasil E.",
+      "nome_direto": "No Brasil E. Suas",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Subirá, Luciano",
+      "nome_direto": "Luciano Subirá",
+      "tipo": "pessoa",
+      "ocorrencias": 8,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Susin, Luiz Carlos",
+      "nome_direto": "Luiz Carlos Susin",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "TEOLOGIA, INSTITUTO DE",
+      "nome_direto": "INSTITUTO DE TEOLOGIA",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Tabosa, Samuel",
+      "nome_direto": "Samuel Tabosa",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Taylor, Gene",
+      "nome_direto": "Gene Taylor",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Taylor, J. Hudson",
+      "nome_direto": "J. Hudson Taylor",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Taylor, Justin",
+      "nome_direto": "Justin Taylor",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Taylor, Richard S.",
+      "nome_direto": "Richard S. Taylor",
+      "tipo": "pessoa",
+      "ocorrencias": 9,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Taylor, Willard H.",
+      "nome_direto": "Willard H. Taylor",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Teixeira, Marli Geralda",
+      "nome_direto": "Marli Geralda Teixeira",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Teixeira, William",
+      "nome_direto": "William Teixeira",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Teologia, Eclesiologia Medio",
+      "nome_direto": "Eclesiologia Medio Teologia",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Teologia, Homiletica Medio",
+      "nome_direto": "Homiletica Medio Teologia",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Teologia, Uma",
+      "nome_direto": "Uma Teologia",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Testamento, Grego do Novo",
+      "nome_direto": "Grego do Novo Testamento",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Testamento, Novo",
+      "nome_direto": "Novo Testamento",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Testamento, O. Antigo",
+      "nome_direto": "O. Antigo Testamento",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Textual, Critica",
+      "nome_direto": "Critica Textual",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "The Reformation, Bible Translation",
+      "nome_direto": "Bible Translation The Reformation",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Timm, Denis",
+      "nome_direto": "Denis Timm",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Timmis, Steve",
+      "nome_direto": "Steve Timmis",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Timmis, Tim Chester",
+      "nome_direto": "Tim Chester Timmis",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Titus, Genesis",
+      "nome_direto": "Genesis Titus",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Tognini, Enéas",
+      "nome_direto": "Enéas Tognini",
+      "tipo": "pessoa",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Tov, Emanuel",
+      "nome_direto": "Emanuel Tov",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Towns, Elmer",
+      "nome_direto": "Elmer Towns",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Towns, Elmer L.",
+      "nome_direto": "Elmer L. Towns",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Toz, Ann",
+      "nome_direto": "Ann Toz",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Tozer, A.",
+      "nome_direto": "A. Tozer",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Tozer, A. W.",
+      "nome_direto": "A. W. Tozer",
+      "tipo": "pessoa",
+      "ocorrencias": 21,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Traffanstedt, Chris",
+      "nome_direto": "Chris Traffanstedt",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Tripp, Paul",
+      "nome_direto": "Paul Tripp",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Tripp, Paul David",
+      "nome_direto": "Paul David Tripp",
+      "tipo": "pessoa",
+      "ocorrencias": 10,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Tunala, Marcio",
+      "nome_direto": "Marcio Tunala",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Ucb, Disciplinas Espirituais",
+      "nome_direto": "Disciplinas Espirituais Ucb",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Um, Cada Um Salvando",
+      "nome_direto": "Cada Um Salvando Um",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Uma, Assim",
+      "nome_direto": "Assim Uma",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Uma, Cultivando",
+      "nome_direto": "Cultivando Uma",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Underhill, Evelyn",
+      "nome_direto": "Evelyn Underhill",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Utley, Bob",
+      "nome_direto": "Bob Utley",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Igreja Batista Fonte dos Vales",
+      "nome_direto": "Igreja Batista Fonte dos Vales",
+      "tipo": "institucional",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Vailatti, Carlos Augusto",
+      "nome_direto": "Carlos Augusto Vailatti",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Valdés, Ariel Álvarez",
+      "nome_direto": "Ariel Álvarez Valdés",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Vanhoye, Albert",
+      "nome_direto": "Albert Vanhoye",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Vargens, Renato",
+      "nome_direto": "Renato Vargens",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Vegas, Chad",
+      "nome_direto": "Chad Vegas",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Veloso, Mario",
+      "nome_direto": "Mario Veloso",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Veyne, Paul",
+      "nome_direto": "Paul Veyne",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Vieira, David Gueiros",
+      "nome_direto": "David Gueiros Vieira",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "View, Premillennial",
+      "nome_direto": "Premillennial View",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Vilar, Venefredo Barbosa",
+      "nome_direto": "Venefredo Barbosa Vilar",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Vincent, Marvin R.",
+      "nome_direto": "Marvin R. Vincent",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Vingren, Ivar",
+      "nome_direto": "Ivar Vingren",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Vingren, Vingren Ivar",
+      "nome_direto": "Vingren Ivar Vingren",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Viola, Frank",
+      "nome_direto": "Frank Viola",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Visdo, Uma",
+      "nome_direto": "Uma Visdo",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Vocês., Há Em",
+      "nome_direto": "Há Em Vocês.",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "W., Kenneth",
+      "nome_direto": "Kenneth W.",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Wagner, Peter",
+      "nome_direto": "Peter Wagner",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Wallace, O. C. S.",
+      "nome_direto": "O. C. S. Wallace",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Walls, Andrew F.",
+      "nome_direto": "Andrew F. Walls",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Waltke, Bruce K.",
+      "nome_direto": "Bruce K. Waltke",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Walton, John H.",
+      "nome_direto": "John H. Walton",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Washer, Paul",
+      "nome_direto": "Paul Washer",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Washer, Paul David",
+      "nome_direto": "Paul David Washer",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Watkins, Tony",
+      "nome_direto": "Tony Watkins",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Weber, Max",
+      "nome_direto": "Max Weber",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Wesley, John",
+      "nome_direto": "John Wesley",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Whitefield, Samuel",
+      "nome_direto": "Samuel Whitefield",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Whyte, Alexander",
+      "nome_direto": "Alexander Whyte",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Wiersbe, Warren W.",
+      "nome_direto": "Warren W. Wiersbe",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Wilkerson, David",
+      "nome_direto": "David Wilkerson",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Wilkins, Michael J.",
+      "nome_direto": "Michael J. Wilkins",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Willard, Dallas",
+      "nome_direto": "Dallas Willard",
+      "tipo": "pessoa",
+      "ocorrencias": 7,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Willard, Disciplinas Dallas",
+      "nome_direto": "Disciplinas Dallas Willard",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Williams, David J.",
+      "nome_direto": "David J. Williams",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Williams, Peter",
+      "nome_direto": "Peter Williams",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Williamson, Rick",
+      "nome_direto": "Rick Williamson",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Willian",
+      "nome_direto": "Willian",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Wilson, Bill",
+      "nome_direto": "Bill Wilson",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Wilson, Ken",
+      "nome_direto": "Ken Wilson",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Wolf, Earl C.",
+      "nome_direto": "Earl C. Wolf",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Woodward, Dick",
+      "nome_direto": "Dick Woodward",
+      "tipo": "pessoa",
+      "ocorrencias": 19,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Worship, Theology",
+      "nome_direto": "Theology Worship",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Wright, Bud",
+      "nome_direto": "Bud Wright",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Xavier, Mizael de Souza",
+      "nome_direto": "Mizael de Souza Xavier",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Xavier, Sóstenes Mendes",
+      "nome_direto": "Sóstenes Mendes Xavier",
+      "tipo": "pessoa",
+      "ocorrencias": 2,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Xxi, Siglo",
+      "nome_direto": "Siglo Xxi",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Yoder, John Howard",
+      "nome_direto": "John Howard Yoder",
+      "tipo": "pessoa",
+      "ocorrencias": 6,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Zwemer, Samuel M.",
+      "nome_direto": "Samuel M. Zwemer",
+      "tipo": "pessoa",
+      "ocorrencias": 4,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "da, O. Perigo",
+      "nome_direto": "O. Perigo da",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "da, Prazer",
+      "nome_direto": "Prazer da",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "das, Historia",
+      "nome_direto": "Historia das",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "de, Curso",
+      "nome_direto": "Curso de",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "de, Em Busc®",
+      "nome_direto": "Em Busc® de",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "de, Gestão",
+      "nome_direto": "Gestão de",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "de, Gestão-Em Rede",
+      "nome_direto": "Gestão-Em Rede de",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "de, Livro",
+      "nome_direto": "Livro de",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "de, O. Melhor",
+      "nome_direto": "O. Melhor de",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "de, Taller de Tipos",
+      "nome_direto": "Taller de Tipos de",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "do, Apostila",
+      "nome_direto": "Apostila do",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "do, Sm de Teologia",
+      "nome_direto": "Sm de Teologia do",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "no, ministério pastoral",
+      "nome_direto": "ministério pastoral no",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "works",
+      "nome_direto": "works",
+      "tipo": "pessoa",
+      "ocorrencias": 3,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "©, Testemunhos E. Biografias",
+      "nome_direto": "Testemunhos E. Biografias ©",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "Ânguloș das Escrituras, da",
+      "nome_direto": "da Ânguloș das Escrituras",
+      "tipo": "pessoa",
+      "ocorrencias": 5,
+      "confianca": "alta"
+    },
+    {
+      "nome_bibliografico": "Íblico, Bi",
+      "nome_direto": "Bi Íblico",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    },
+    {
+      "nome_bibliografico": "→, Antonio Gouvea",
+      "nome_direto": "Antonio Gouvea →",
+      "tipo": "pessoa",
+      "ocorrencias": 1,
+      "confianca": "media"
+    }
+  ]
+}
