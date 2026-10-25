@@ -15,7 +15,8 @@ MEMORIAS = {'titulos-ruidosos-conhecidos.json', 'autores-ruidosos-conhecidos.jso
 def inventario(pasta):
     return {str(p.relative_to(pasta)): hashlib.sha256(p.read_bytes()).hexdigest()
             for p in sorted(pasta.rglob('*')) if p.is_file()
-            and p.suffix in {'.py', '.json', '.swift', '.sh', '.command'}
+            and (p.suffix in {'.py', '.json', '.swift', '.sh', '.command'}
+                 or p.name == 'SectigoPublicServerAuthenticationCADVR36.pem')
             and '__pycache__' not in p.parts
             and p.name != 'versao-motor.json' and p.name not in MEMORIAS}
 
