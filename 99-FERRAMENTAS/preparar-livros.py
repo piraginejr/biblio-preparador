@@ -6399,7 +6399,8 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
     rev = revisao_manual(revisao_caminho or caminho)
     arquivos_origem = (rev.get("campos", {}).get(
         "arquivos_origem_importacao", []) if rev else [])
-    origem_word = any(pathlib.Path(str(p)).suffix.lower() in {".doc", ".docx"}
+    origem_word = any(pathlib.Path(str(p)).suffix.lower() in {
+                         '.doc', '.docx', '.rtf', '.odt', '.fodt', '.txt'}
                       for p in arquivos_origem)
     origem_apresentacao = origem_e_apresentacao(arquivos_origem)
 
