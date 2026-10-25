@@ -26,6 +26,44 @@ SPEC_CBL.loader.exec_module(cbl)
 
 
 class PrepararLivrosTest(unittest.TestCase):
+    def test_nome_arquivo_separa_autor_conhecido_antes_do_titulo(self):
+        with mock.patch.object(prep,'carregar_autores_conhecidos',return_value={'benny hinn':'Hinn, Benny'}):
+            self.assertEqual(('Bem Vindo, Espírito Santo','Hinn, Benny'),
+                prep.do_nome('Benny Hinn - Bem Vindo, Esp%C3%ADrito Santo.pdf'))
+        self.assertEqual(('Pentateuco',''),prep.do_nome('Autor desconhecido - Pentateuco.pdf'))
+
+    def test_isbn_de_volume_romano_nao_usa_primeiro_da_linha(self):
+        candidatos = prep.candidatos_isbn(
+            'ISBN 85-7200-481-5 (v. 1) — ISBN 85-7200-482-3 (v. 2)\n'
+            'ISBN 85-7200-483-1 (v. 3)')
+        self.assertEqual(['1', '2', '3'], [c['volume'] for c in candidatos])
+        self.assertEqual('8572004823', prep.escolher_isbn(
+            candidatos, 'Que sabemos sobre a Bíblia II.pdf', 1997)[0])
+        self.assertEqual('8572004831', prep.escolher_isbn(
+            candidatos, 'Que sabemos sobre a Bíblia III.pdf', 1997)[0])
+        self.assertEqual('', prep.escolher_isbn(candidatos, 'Coleção.pdf', 1997)[0])
+
+    def test_ruidos_editoriais_do_lote_nao_sao_titulos(self):
+        for titulo in ('10.000 1979', '[PAG', 'Author',
+                       'E-book enviado por: José de Arimatéia',
+                       'Uma publicação eletrônica da EDITORA SUPERVIRTUAL LTDA',
+                       'Volume XI/1 Psicologia e Religião CIP - Brasil. Catalogação na fonte',
+                       'UMBANDA Página 1 de'):
+            with self.subTest(titulo=titulo):
+                self.assertFalse(prep.titulo_bibliograficamente_plausivel(titulo))
+
+    def test_cip_quebrada_recupera_ano_e_editora_da_edicao(self):
+        dados = prep.ler_citacao_editorial_paginas(['''CIP - Brasil. Catalogação na fonte
+Jung, Carl Gustav, 1875-1961.
+J92p Psicologia e religião / C. G. Jung; tradução do Pe. Dom Mateus Ramalho Rocha;
+revisão técnica de Dora Ferreira da Silva. — Petrópolis :
+Vozes, 1978.
+CDD — 200.19'''])
+        self.assertEqual('Psicologia e religião', dados['titulo'])
+        self.assertEqual('Jung, Carl Gustav', dados['autor'])
+        self.assertEqual('Vozes', dados['editora'])
+        self.assertEqual('1978', dados['ano'])
+
     def test_isbn_valido_aceita_isbn10_e_recusa_ean13_de_produto(self):
         self.assertEqual("080105351X", prep.isbn_valido("0-8010-5351-X"))
         self.assertEqual("9788577790364", prep.isbn_valido("978-85-7779-036-4"))

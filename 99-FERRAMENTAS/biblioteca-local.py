@@ -1240,7 +1240,7 @@ def autores_da_ficha(linha):
 def consultar_duplicidade_apos_preparo(linha, sessao, chave):
     """Repete a consulta com a identidade definitiva descoberta no preparo."""
     isbn = str(linha.get("isbn", "")).strip()
-    titulo = str(linha.get("titulo", "")).strip()
+    titulo = api_envio.titulo_para_consulta(linha)
     autores = autores_da_ficha(linha)
     if not isbn and not (titulo and autores):
         return {}
@@ -1769,6 +1769,7 @@ def montar_pacote_revisao(c, digest, registro):
         "ausencias": ausencias,
         "fontes_revisao": _partes_pipe(ficha.get("fontes_revisao", "")),
         "fontes_rejeitadas": ficha.get("fontes_rejeitadas", []) or [],
+        "analise_apple": pacote_apple_revisao(c, ficha.get("analise_apple", {})),
         "evidencias": _compactar_evidencias_revisao(
             ficha.get("evidencias", []) or []),
         "paginas_sugeridas": paginas_sugeridas_revisao(c, ficha, registro),
@@ -1777,6 +1778,21 @@ def montar_pacote_revisao(c, digest, registro):
             c, ficha, registro),
         "acoes_sugeridas": acoes_sugeridas_revisao(ficha, conflitos, ausencias),
     }
+
+
+def pacote_apple_revisao(c, analise):
+    """Imagens locais com caminho restrito à biblioteca; não expõe cache bruto."""
+    if not isinstance(analise, dict):
+        return {}
+    pacote = {k: analise[k] for k in ('estado', 'motivo', 'aviso', 'sugestoes',
+                                     'campos_aplicados', 'paginas_enviadas') if k in analise}
+    pacote['paginas'] = []
+    raiz = c['raiz'].resolve()
+    for p in analise.get('paginas', []):
+        caminho = pathlib.Path(p.get('imagem') or '/arquivo-inexistente').resolve()
+        rel = str(caminho.relative_to(raiz)) if raiz in caminho.parents and caminho.is_file() else ''
+        pacote['paginas'].append({'pagina': p['pagina'], 'imagem': rel})
+    return pacote
 
 
 def acoes_sugeridas_revisao(ficha, conflitos, ausencias):
@@ -2148,7 +2164,15 @@ def gravar_decisao_revisao(raiz, arquivo, campos=None, aprovado=True,
                 ficha_atualizada["resolvidos_por_revisao_manual"] = resolvidos
             ficha_atualizada["conflitos"] = ""
             ficha_atualizada["pendencias"] = ""
-            _mover_aprovado_revisao(c, digest, registro, ficha_atualizada)
+            if registro.get('estado') == 'cadastrado' and registro.get('id_remoto'):
+                # Corrigir um cadastro existente não autoriza criar uma cópia.
+                # A substituição remota exige uma ação explícita separada.
+                ficha_atualizada['situacao'] = 'cadastrado'
+                ficha_atualizada['situacao_metadados'] = 'cadastrado'
+                ficha_atualizada['correcao_remota_pendente'] = True
+                ficha_atualizada['id_remoto'] = registro['id_remoto']
+            else:
+                _mover_aprovado_revisao(c, digest, registro, ficha_atualizada)
         snapshot = _salvar_snapshot_revisao_manual(
             c, registro, ficha, ficha_atualizada, revisao)
         ficha_atualizada["ultimo_snapshot_revisao_manual"] = relativo(c, snapshot)

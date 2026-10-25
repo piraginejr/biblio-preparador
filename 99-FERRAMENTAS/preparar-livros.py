@@ -37,9 +37,11 @@
 
 import argparse, collections, csv, difflib, hashlib, json, os, pathlib, re, shutil, statistics, subprocess, sys, tempfile, time
 from datetime import datetime
+from urllib.parse import unquote
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import identificar          # pessoa x instituicao (porte do app de cartoes)
+import consultar_apple
 try:
     import conferir_identidade
 except ImportError:                      # o modulo e opcional
@@ -343,6 +345,12 @@ def carregar_editoras_cidades(atualizar=False):
             "confianca": item.get("confianca", "cadastro"),
         }
 
+    # A tabela já foi consolidada e recebe as novas revisões incrementalmente.
+    # Reabrir centenas de fichas no Dropbox para cada processo pode bloquear
+    # o preparo à espera da nuvem. A reconstrução histórica é explícita.
+    if not atualizar:
+        _CACHE_EDITORAS_CIDADES = dict(por_chave)
+        return dict(por_chave)
     observados = collections.defaultdict(collections.Counter)
     formas = {}
     for pasta in _pastas_metadados_catalogo():
@@ -490,7 +498,7 @@ def carregar_periodicos_conhecidos(incluir_catalogo=True, atualizar=False):
             "origem": "cadastro",
         }
 
-    if incluir_catalogo:
+    if incluir_catalogo and atualizar:
         observados = collections.Counter()
         forma = {}
         for pasta in _pastas_metadados_catalogo():
@@ -1542,6 +1550,11 @@ def volume_edicao_do_nome(nome):
         achado = re.search(padrao, base)
         if achado:
             return achado.group(1)
+    # Um romano final é frequente em coleções sem a palavra "volume".
+    romano = re.search(r"\s+(VIII|VII|VI|IV|III|II|IX|V|X|I)\s*$", base)
+    if romano:
+        return str({"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5,
+                    "VI": 6, "VII": 7, "VIII": 8, "IX": 9, "X": 10}[romano[1]])
     return ""
 
 
@@ -1575,9 +1588,16 @@ def candidatos_isbn(t):
         antes = " ".join(t[max(linha_ini, m.start(1)-50):m.start(1)].split())
         depois = " ".join(t[m.end(1):min(linha_fim, m.end(1)+40)].split())
         rot = (antes + " " + depois).strip(" :|")
+        # O volume pertence ao ISBN adjacente, não ao primeiro "v. 1"
+        # da linha que lista ISBNs de toda a coleção.
+        proximo_isbn = re.search(r"(?i)\bISBN\b", depois)
+        trecho_volume = depois[:proximo_isbn.start()] if proximo_isbn else depois
+        volume = _volume_no_contexto(trecho_volume)
+        if not volume and not re.search(r"(?i)\bISBN\b", depois):
+            volume = _volume_no_contexto(antes)
         out.append({"isbn": n, "rotulo": rot[:80], "ctx": ctx[:180],
                     "linha": linha[:220], "formato": _formato_isbn(linha),
-                    "volume": _volume_no_contexto(linha)})
+                    "volume": volume})
     u, vis = [], set()
     for c in out:
         if c["isbn"] not in vis:
@@ -1740,11 +1760,15 @@ def escolher_isbn(cands, nome, ano):
 
     v = volume_edicao_do_nome(nome)
     if v:
-        g = [c for c in cands if c.get("volume") == v or re.search(
+        g = [c for c in cands if c.get("volume") == v or (not c.get("volume") and re.search(
              r"(?:v\.?|vol(?:ume|umen)?|tomo)\s*[:.]?\s*" + v + r"\b",
-             c.get("linha", ""), re.I)]
+             c.get("linha", ""), re.I))]
         if g:
             return _prefere13(g)["isbn"], f"copyright identifica volume {v}"
+        if any(c.get("volume") for c in cands):
+            return "", f"ISBN do volume {v} não identificado na lista da coleção"
+    elif len({c.get("volume") for c in cands if c.get("volume")}) > 1:
+        return "", "lista de ISBNs de vários volumes; identificar o tomo antes da consulta"
 
     imp = [c for c in cands if c.get("formato") not in ("pdf", "digital")]
     g = [c for c in (imp or cands) if c.get("formato") == "brochura"]
@@ -3321,7 +3345,8 @@ def assinatura_do_programa():
     for nome in sorted(("preparar-livros.py", "identificar.py",
                         "conferir_identidade.py", "ler-capa.py",
                         "periodicos-conhecidos.json",
-                        "titulos-ruidosos-conhecidos.json")):
+                        "titulos-ruidosos-conhecidos.json", "consultar_apple.py",
+                        "piloto-apple-bibliografia.swift")):
         caminho = os.path.join(pasta, nome)
         try:
             with open(caminho, "rb") as f:
@@ -3669,6 +3694,14 @@ def alertas_plausibilidade_metadados(titulo, autor, editora):
     nt = identificar.normalizar(titulo or "")
     na = identificar.normalizar((autor or "").replace(",", " "))
     ne = identificar.normalizar(editora or "")
+    if titulo and not re.search(r"[^\W\d_]", titulo, re.UNICODE):
+        alertas.append("titulo contém somente números ou tiragem")
+    if re.fullmatch(r"(?i)\s*\[?\s*(?:pag\.?|author|autor|title|publisher)\s*:?\s*", titulo or ""):
+        alertas.append("titulo é rótulo técnico sem conteúdo")
+    if re.search(r"(?i)^\s*(?:e-?book\s+enviado\s+por|uma\s+publica[çc][aã]o\s+eletr[oô]nica|t[ií]tulo\s+do\s+original)\b", titulo or ""):
+        alertas.append("titulo capturou aviso de distribuição ou crédito editorial")
+    if re.search(r"(?i)\b(?:CIP\s*[-–]?\s*Brasil|cataloga[çc][aã]o\s+na\s+fonte|p[aá]gina\s+\d+\s+de)\b", titulo or ""):
+        alertas.append("titulo contaminado por cabeçalho ou paginação")
     motivo_ruido_conhecido = identificar_titulo_ruidoso(titulo)
     if motivo_ruido_conhecido:
         alertas.append(
@@ -4563,6 +4596,47 @@ def ler_dcip_institucional_paginas(paginas):
             "pagina_cip": numero,
             "formato_cip": "DCIP institucional",
         }
+    return {}
+
+
+def ler_citacao_editorial_paginas(paginas):
+    """Lê citações CIP quebradas em linhas, sem promover referências do miolo."""
+    for indice, texto in enumerate(paginas or []):
+        sinais_cip = re.search(r'(?i)\bCIP\b|ficha\s+catalog|dados\s+internacionais\s+de\s+catalog', texto)
+        codigo_catalogo = re.search(r'(?m)^\s*[A-Z]\d{2,5}[a-z]?\s+\S', texto)
+        ficha_editorial = (indice < 3 and 'ISBN' in texto and
+                          re.search(r'(?i)\d+\s*[aªº.]?\s*ed\.',texto))
+        if not (sinais_cip or codigo_catalogo or ficha_editorial):
+            continue
+        linhas = [l.strip() for l in texto.splitlines() if l.strip()]
+        for i, linha in enumerate(linhas):
+            if '/' not in linha:
+                continue
+            antes, depois = linha.split('/', 1)
+            titulo = re.sub(r"^[A-Z]\d{2,5}[a-z]?\s+", "", antes).strip()
+            if not titulo_bibliograficamente_plausivel(titulo):
+                continue
+            bloco = ' '.join([depois] + linhas[i + 1:i + 5])
+            pub = re.search(r"(?:[—–]|\s-\s)\s*([A-ZÀ-Ü][^:;]{1,45}?)\s*:\s*([^,]{2,70}),\s*((?:18|19|20)\d{2})", bloco)
+            if not pub:
+                continue
+            autores_brutos = bloco[:pub.start()].split(';', 1)[0].strip(' .-')
+            if re.search(r'(?i)\((?:orgs?|eds?)\.?\)', autores_brutos):
+                autores_brutos = re.sub(r'(?i)\s*\((?:orgs?|eds?)\.?\).*$', '', autores_brutos)
+                autores_brutos = autores_brutos.split(',', 1)[0]
+            autor = sobrenome_virgula(autores_brutos)
+            for entrada in linhas[max(0, i-2):i]:
+                entrada = re.sub(r'^\[PAG[^\]]*\]\s*', '', entrada, flags=re.I)
+                if re.fullmatch(r"[A-ZÀ-Ü][\wÀ-ÿ'’-]+,\s+[A-ZÀ-Ü][\wÀ-ÿ .]+(?:,\s*\d{4}[-–]\d{4})?\.?", entrada):
+                    autor = re.sub(r',\s*\d{4}[-–]\d{4}\.?$', '', entrada).strip(' .')
+            cidade = re.sub(r',\s*[A-Z]{2}$', '', pub[1].strip())
+            if not autor_bibliograficamente_plausivel(autor):
+                continue
+            cdd = re.search(r'(?i)CDD\s*[—–:-]?\s*(\d{3}(?:\.\d+)?)', texto)
+            return {'titulo': titulo, 'autor': autor, 'cidade': cidade,
+                    'editora': pub[2].strip(), 'ano': pub[3],
+                    'cdd': cdd[1] if cdd else '',
+                    'formato_cip': 'citação editorial com linhas quebradas'}
     return {}
 
 
@@ -5484,6 +5558,24 @@ def autor_confirmado_nas_paginas(paginas, candidato):
 
 def do_nome(nome):
     base = os.path.splitext(nome)[0]
+    for _ in range(2):
+        base = unquote(base)
+    if 'Ã' in base:
+        try:
+            base = base.encode('latin1').decode('utf-8')
+        except (UnicodeError, ValueError):
+            pass
+    sem_anonimo = re.sub(r'(?i)^(?:an[oô]nimo|autor\s+desconhecido)\s*-\s*', '', base)
+    if sem_anonimo != base:
+        return limpar_titulo_bibliografico(sem_anonimo), ''
+    partes = re.split(r'\s+-\s+', base, maxsplit=1)
+    if len(partes) == 2:
+        chave = ' '.join(re.sub(r'[^\w\s]', '', partes[0].lower()).split())
+        conhecido = carregar_autores_conhecidos().get(chave)
+        if conhecido:
+            titulo = re.sub(r'(?i)^(?:livro|e-?book)\s*-\s*', '', partes[1])
+            if titulo_bibliograficamente_plausivel(titulo):
+                return limpar_titulo_bibliografico(titulo), conhecido
     sufixo_copia_curto = bool(re.search(
         r"[-_]\d{1,2}$", base)
         and re.search(r"[A-ZÀ-Ü][a-zà-ÿ]+[-_]"
@@ -6368,6 +6460,7 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
     copyright_original = copyright_parece_da_edicao_original(cp)
     cip = combinar_fichas_catalograficas(
         ler_cip_paginas(paginas_bibliograficas),
+        ler_citacao_editorial_paginas(paginas_bibliograficas),
         ler_ficha_catalografica_simplificada(paginas_bibliograficas),
         ler_ficha_catalografica_por_sinais(
             paginas[:PAGS_BIBLIOGRAFICAS]))
@@ -7583,7 +7676,7 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
         "cdd_sugerido": cip.get("cdd_sugerido", ""),
         "fonte_cdd_sugerido": cip.get("fonte_cdd_sugerido", ""),
         "CDD": cip.get("cdd", "") or cip.get("classificacao_original", ""),
-        "series": "", "numSerie": "", "volume": "",
+        "series": "", "numSerie": "", "volume": volume_edicao_do_nome(nome),
         "acervo": ACERVO_PADRAO,
         # a pagina de creditos ("Titulo del original: ...") tem prioridade;
         # se ela nao declarar, fica o titulo que a API devolveu pelo ISBN
@@ -7629,6 +7722,16 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
             linha["editora"] = ""
             linha["data"] = ""
 
+    # Fontes tardias (Word, cabeçalho documental) não podem reintroduzir
+    # um rótulo descartado pelas camadas anteriores.
+    if not titulo_bibliograficamente_plausivel(linha.get('titulo', '')):
+        for candidato, origem in ((cip.get('titulo', ''), 'cip'),
+                                  (tit_pag, motivo_tit_pag),
+                                  (tit_nome, 'nome do arquivo substituiu ruído editorial')):
+            if titulo_bibliograficamente_plausivel(candidato):
+                linha['titulo'] = candidato
+                linha['origem_titulo'] = origem
+                break
     alertas_finais = alertas_plausibilidade_metadados(
         linha.get("titulo", ""), linha.get("nmAutor0", ""),
         linha.get("editora", ""))
@@ -7743,6 +7846,49 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
         linha.get("origem_autor", ""))
     if suspeito:
         linha["conflitos"].append(f"autor suspeito: {motivo_suspeita}")
+
+    # Apple é auxiliar: só entra nos pendentes e nunca vence decisão humana.
+    # Campos só entram automaticamente com trecho real e confirmação externa.
+    apple = {}
+    if (usar_api and not rev.get('aprovado')
+            and tipo_documento != 'arquivo inválido'
+            and (linha['conflitos'] or not linha.get('titulo')
+                 or not linha.get('nmAutor0') or not linha.get('editora')
+                 or not linha.get('data'))):
+        def confirmar_apple(sugestoes):
+            if not fontes_biblio:
+                return {}
+            campos = {s['campo']: s['valor'] for s in sugestoes}
+            achados = {}
+            cache = fontes_biblio.pasta_cache_para_pdf(caminho)
+            isbn_apple = re.sub(r'[^0-9X]', '', campos.get('isbn', '').upper())
+            if isbn_valido(isbn_apple):
+                achados['Open Library — conferência Apple'] = fontes_biblio.consultar_open_library(isbn_apple, cache)
+                achados['Google Books — conferência Apple'] = fontes_biblio.consultar_google_books(isbn_apple, cache)
+                if consultar_cbl:
+                    achados['CBL — conferência Apple'] = consultar_cbl.consultar(isbn_apple, cache)
+            elif (titulo_bibliograficamente_plausivel(campos.get('titulo', ''))
+                    and autor_bibliograficamente_plausivel(campos.get('nmAutor0', ''))):
+                achados['Google Books — título/autoria Apple'] = fontes_biblio.consultar_google_books_titulo_autor(
+                    campos['titulo'], campos['nmAutor0'], cache)
+            return achados
+
+        apple = consultar_apple.analisar(caminho, paginas, {
+            'catálogo por ISBN/título': api_geral,
+            'CBL': cbl, 'BnF': bnf, 'Internet Archive': ia,
+            'Library of Congress': loc, 'HathiTrust': hathitrust,
+            'fontes comerciais conciliadas': comercial,
+        }, contexto=linha, confirmador=confirmar_apple)
+        for s in apple.get('sugestoes', []):
+            if ((s['campo'] == 'titulo' and not titulo_bibliograficamente_plausivel(s['valor']))
+                    or (s['campo'] == 'editora' and not editora_bibliograficamente_plausivel(s['valor']))
+                    or (s['campo'] == 'isbn' and not isbn_valido(re.sub(r'[^0-9X]', '', s['valor'].upper())))):
+                s['fontes_confirmadoras'] = []
+                s['estado'] = 'valor bibliográfico suspeito; revisar'
+        consultar_apple.aplicar_confirmadas(linha, apple)
+        if any(x['campo'] == 'nmAutor0' for x in apple.get('campos_aplicados', [])):
+            linha['nmAutor0'] = sobrenome_virgula(linha['nmAutor0'])
+        linha['analise_apple'] = apple
 
     # Última camada automática: aceita ausências reais de livros antigos
     # somente quando identidade, autoria e publicação convergem. Ela não

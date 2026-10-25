@@ -2,6 +2,11 @@
   "versao": 1,
   "descricao": "Memoria incremental de textos que ja foram confundidos com titulos. Acrescente um item com modo exato, prefixo ou contem; a comparacao ignora maiusculas, acentos e espacos repetidos.",
   "itens": [
+    {"texto":"E-book enviado por:","modo":"prefixo","motivo":"identifica o distribuidor da digitalização, não a obra"},
+    {"texto":"Uma publicação eletrônica da","modo":"prefixo","motivo":"aviso editorial, não título"},
+    {"texto":"Título do original em inglês","modo":"exato","motivo":"rótulo de créditos de tradução"},
+    {"texto":"Author","modo":"exato","motivo":"metadado genérico de documento convertido"},
+    {"texto":"[PAG","modo":"exato","motivo":"marcador de paginação da conversão"},
     {
       "texto": "Apresentação do PowerPoint",
       "modo": "exato",

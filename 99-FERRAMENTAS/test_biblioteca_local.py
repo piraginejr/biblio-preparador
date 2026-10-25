@@ -30,6 +30,19 @@ def resultado_pronto(nome):
 
 
 class BibliotecaLocalTest(unittest.TestCase):
+    def test_pacote_apple_so_expoe_imagem_dentro_da_biblioteca(self):
+        with tempfile.TemporaryDirectory() as td:
+            raiz = pathlib.Path(td)
+            foto = raiz / 'pagina.png'
+            foto.write_bytes(b'png')
+            pacote = local.pacote_apple_revisao({'raiz': raiz}, {
+                'estado': 'revisão assistida', 'cache': '/segredo',
+                'paginas': [{'pagina': 1, 'imagem': str(foto)},
+                            {'pagina': 2, 'imagem': '/etc/passwd'}]})
+            self.assertEqual('pagina.png', pacote['paginas'][0]['imagem'])
+            self.assertEqual('', pacote['paginas'][1]['imagem'])
+            self.assertNotIn('cache', pacote)
+
     def escrever_opf(self, caminho, titulo="Livro Alpha", autor="Ana Souza",
                      isbn="9788577790364"):
         caminho.write_text(f'''<?xml version="1.0" encoding="utf-8"?>
@@ -1134,6 +1147,29 @@ Times CID TrueType Identity-H yes yes yes 2 0
             self.assertTrue((c["pronto"] / registro["arquivo"]).is_file())
             salva = json.loads(ficha.read_text(encoding="utf-8"))
             self.assertEqual("pronto para cadastro", salva["situacao"])
+
+    def test_corrigir_cadastrado_nao_reabre_fila_para_upload(self):
+        with tempfile.TemporaryDirectory() as td:
+            c = local.inicializar(pathlib.Path(td)/'livros')
+            pdf = c['pronto']/'enviado.pdf'
+            pdf.write_bytes(b'%PDF-enviado')
+            digest = local.sha256(pdf)
+            ficha = c['metadados']/'enviado.json'
+            local.salvar_json(ficha, {'arquivo':pdf.name, 'titulo':'Antes',
+                                      'tipo_documento':'livro'})
+            cat = local.carregar_catalogo(c)
+            cat['livros'][digest] = {'hash_sha256':digest, 'arquivo':pdf.name,
+                'caminho':local.relativo(c,pdf), 'estado':'cadastrado',
+                'id_remoto':123, 'metadados':local.relativo(c,ficha)}
+            local.salvar_catalogo(c,cat)
+            with mock.patch.object(local.prep, 'registrar_aprendizados_da_revisao', return_value=[]):
+                local.gravar_decisao_revisao(c['raiz'],pdf.name,
+                    campos={'titulo':'Depois'},aprovado=True,imprimir=False)
+            salvo=json.loads(ficha.read_text())
+            self.assertEqual('cadastrado',salvo['situacao'])
+            self.assertEqual(123,salvo['id_remoto'])
+            self.assertTrue(salvo['correcao_remota_pendente'])
+            self.assertEqual('cadastrado',local.carregar_catalogo(c)['livros'][digest]['estado'])
 
     def test_pacotes_revisao_nao_reabre_pronto_com_pendencia_historica(self):
         with tempfile.TemporaryDirectory() as td:

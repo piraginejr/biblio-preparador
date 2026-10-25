@@ -105,6 +105,10 @@ HTML = r"""<!doctype html>
   <nav class="painel lista">
     <div class="fixo">
       <button onclick="recarregar()">recarregar lista</button>
+      <select id="filtroApple" onchange="recarregar()" aria-label="Filtro da revisão">
+        <option value="todos">Todos os pendentes</option>
+        <option value="apple">Análise da Apple</option>
+      </select>
       <div class="meta" style="margin-top:8px">Itens em revisão</div>
     </div>
     <div id="listaItens"></div>
@@ -160,6 +164,10 @@ HTML = r"""<!doctype html>
     </div>
 
     <div class="corpo-revisao">
+    <section id="painelApple" hidden>
+      <h3>Análise da Apple — conferir evidências</h3>
+      <div id="apple"></div>
+    </section>
     <h3>Campos para cadastro</h3>
     <label>Título <input id="tituloCampo"></label>
     <label>Tipo do material
@@ -224,6 +232,25 @@ const $ = id => document.getElementById(id);
 function arquivoUrl(rel) {
   return rel ? "/arquivo?rel=" + encodeURIComponent(rel) : "about:blank";
 }
+function usarSugestaoApple(indice) {
+  const s = ((atual() || {}).analise_apple || {}).sugestoes?.[indice];
+  if (!s || !campos.includes(s.campo)) return;
+  $(s.campo === 'titulo' ? 'tituloCampo' : s.campo).value = s.valor;
+  sujo = true;
+}
+function mostrarApple(item) {
+  const a = item.analise_apple || {};
+  $("painelApple").hidden = !a.estado;
+  const sugestoes = a.sugestoes || [];
+  $("apple").innerHTML = `<p class="meta">${esc(a.aviso || a.motivo || a.estado || '')}</p>` +
+    sugestoes.map((s,i) => `<div class="item"><b>${esc(s.campo)}: ${esc(s.valor)}</b><br>
+      <span class="meta">${esc(s.estado)} ${esc((s.fontes_confirmadoras||[]).join(', '))}</span>
+      <button class="mini sec" onclick="usarSugestaoApple(${i})">usar na ficha</button>
+      ${(s.evidencias||[]).map(e=>`<blockquote>${esc(e.trecho)}<br><span class="meta">${esc(e.origem || '')}</span><br>
+      <button class="mini sec" onclick="irPagina(${Number(e.pagina)||1})">abrir página ${Number(e.pagina)||1}</button></blockquote>`).join('')}</div>`).join('') +
+    (a.paginas||[]).map(p=>`<div class="item">Página ${Number(p.pagina)||1}
+      ${p.imagem ? `<a target="_blank" rel="noopener" href="${arquivoUrl(p.imagem)}"><img alt="Página usada na análise Apple" loading="lazy" style="display:block;width:100%;max-height:320px;object-fit:contain" src="${arquivoUrl(p.imagem)}"></a>` : '<span class="meta">Imagem indisponível; use o PDF ativo.</span>'}</div>`).join('');
+}
 function arquivoPaginaUrl(rel, pagina) {
   return arquivoUrl(rel) + (pagina ? "#page=" + encodeURIComponent(pagina) : "");
 }
@@ -231,6 +258,9 @@ async function recarregar() {
   $("estado").textContent = "carregando…";
   const resp = await fetch("/api/pacotes");
   dados = await resp.json();
+  if ($("filtroApple").value === "apple") {
+    dados.itens = dados.itens.filter(x => (x.analise_apple || {}).estado === "revisão assistida");
+  }
   idx = Math.min(idx, Math.max(0, dados.itens.length - 1));
   mostrar();
 }
@@ -456,6 +486,7 @@ function mostrar() {
   $("conclusao").style.display = "none";
   $("titulo").textContent = item.campos.titulo || item.arquivo;
   $("arquivo").textContent = `${idx + 1}/${dados.itens.length} — ${item.arquivo} — ${item.estado}`;
+  mostrarApple(item);
   $("pdf").src = "about:blank";
   setTimeout(() => { $("pdf").src = arquivoUrl(item.pdf_visualizacao); }, 30);
   $("capa").src = item.capa ? arquivoUrl(item.capa) : "";

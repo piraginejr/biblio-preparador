@@ -14,6 +14,37 @@ SPEC.loader.exec_module(api)
 
 
 class EnviarLivroApiTest(unittest.TestCase):
+    def test_parte_no_subtitulo_nao_confirma_outra_parte_como_duplicado(self):
+        ficha={'titulo':'Comentário ao livro de Malaquias','subTitulo':'Parte III'}
+        titulo=api.titulo_para_consulta(ficha)
+        self.assertTrue(titulo.endswith('Parte III'))
+        consulta={'encontrado':True,'correspondencia':'aproximada','total_matches':1,
+                  'titulo':ficha['titulo'],'id':123,
+                  'criterios_enviados':{'titulo':titulo}}
+        self.assertFalse(api.consulta_bloqueia_envio(consulta))
+
+    def test_substituicao_exige_id_antigo_e_nao_repete_sucesso(self):
+        with tempfile.TemporaryDirectory() as td:
+            raiz=pathlib.Path(td)/'livros'
+            ficha,pdf=self.criar_ficha(raiz,'livro','2026-10-25',titulo='Depois')
+            digest=api.sha256(pdf)
+            api.salvar_json(api.controle_da_ficha(ficha), {'envios':{digest:{
+                'estado':'cadastrado','id_remoto':10,'assinatura_ficha':'anterior'}}})
+            sessao=mock.Mock()
+            sessao.post.return_value.status_code=201
+            sessao.post.return_value.json.return_value={'id':11}
+            with self.assertRaisesRegex(RuntimeError,'ID do cadastro'):
+                api.enviar(ficha,realmente=True,chave='teste',sessao=sessao,substituir_id=99)
+            sessao.post.assert_not_called()
+            resultado=api.enviar(ficha,realmente=True,chave='teste',sessao=sessao,substituir_id=10)
+            self.assertEqual(11,resultado['id_remoto'])
+            self.assertEqual(10,resultado['substitui_id'])
+            with self.assertRaises(RuntimeError):
+                api.enviar(ficha,realmente=True,chave='teste',sessao=sessao,substituir_id=10)
+            self.assertEqual(1,sessao.post.call_count)
+            diario=api.carregar_controle(api.controle_da_ficha(ficha))
+            self.assertEqual(10,diario['tentativas_anteriores'][digest][0]['id_remoto'])
+
     def test_sessao_api_mantem_verificacao_tls_com_intermediaria(self):
         self.assertTrue(api.CERTIFICADO_INTERMEDIARIO.is_file())
         sessao = api.criar_sessao_api()
