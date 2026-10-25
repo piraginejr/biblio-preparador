@@ -39,6 +39,7 @@ copiar_limpo() {
     --exclude='.pytest_cache' \
     --exclude='*.pyc' \
     --exclude='*.pyo' \
+    --exclude='*.shortcut' \
     --exclude='_resultado-capas.txt' \
     --exclude='_resultado-ner.txt' \
     --exclude='baixar-voice-fgbmfi.log' \
@@ -107,6 +108,11 @@ xcrun swiftc \
 
 copiar_limpo "$ROOT/99-FERRAMENTAS" "$PACKAGE_BASE/99-FERRAMENTAS"
 copiar_limpo "$ROOT/docs" "$PACKAGE_BASE/docs"
+PYTHONPYCACHEPREFIX=/private/tmp/biblio-pycache python3 \
+  "$ROOT/packaging/macos/verificar_motor.py" "$PACKAGE_BASE/99-FERRAMENTAS" --gerar
+PYTHONPYCACHEPREFIX=/private/tmp/biblio-pycache python3 \
+  "$ROOT/packaging/macos/verificar_motor.py" "$ROOT/99-FERRAMENTAS" \
+  --comparar "$PACKAGE_BASE/99-FERRAMENTAS"
 
 # Além do CFBundleIconFile, aplicamos também o ícone customizado no próprio
 # bundle. Isso ajuda o Finder a exibir a arte imediatamente, especialmente em

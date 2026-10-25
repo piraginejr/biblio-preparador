@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import argparse
 import cgi
+import hashlib
 import json
 import mimetypes
 import os
@@ -23,6 +24,14 @@ import biblio_app_service as svc
 
 PORTA_PADRAO = 65087
 APP_ID = "biblio-preparador-visual"
+_BASE_MOTOR = pathlib.Path(__file__).resolve().parent
+# Capturado na inicialização: não confundir arquivos novos no disco com
+# módulos antigos que continuam em memória no servidor.
+VERSAO_MOTOR = hashlib.sha256(b''.join(
+    (_BASE_MOTOR / nome).read_bytes() for nome in
+    ('biblio_app_visual.py', 'preparar-livros.py', 'biblioteca-local.py',
+     'enviar-livro-api.py', 'consultar_apple.py', 'piloto-apple-bibliografia.swift',
+     'revisao-visual.py'))).hexdigest()[:16]
 
 
 HTML = r"""<!doctype html>
@@ -375,6 +384,9 @@ class Handler(BaseHTTPRequestHandler):
                 "ok": True,
                 "app": APP_ID,
                 "raiz": str(self.raiz),
+                "versao_motor": VERSAO_MOTOR,
+                "caminho_motor": str(_BASE_MOTOR),
+                "ocupado": bool(svc.JOBS.ultimo() and svc.JOBS.ultimo().estado == 'rodando'),
             })
             return
         if url.path == "/api/status":

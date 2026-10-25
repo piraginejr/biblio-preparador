@@ -1,5 +1,6 @@
 import Cocoa
 import WebKit
+import CryptoKit
 
 let appId = "biblio-preparador-visual"
 let defaultPort = 65087
@@ -98,6 +99,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
             try FileManager.default.createDirectory(at: livros, withIntermediateDirectories: true)
 
             var url = URL(string: "http://127.0.0.1:\(defaultPort)/")!
+            if isBiblioAlive(port: defaultPort) && !isCurrentEngine(tools: tools, port: defaultPort) {
+                throw AppError("Uma versão anterior do Biblio ainda está aberta. Conclua o processamento, encerre o app anterior e abra novamente para usar as melhorias instaladas.")
+            }
             if !isBiblioAlive(port: defaultPort) {
                 updateStatus("Abrindo o motor local…")
                 log("servidor nao estava ativo; verificando porta presa")
@@ -139,6 +143,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
             throw AppError("Pacote interno não encontrado.")
         }
         log("base: \(base.path)")
+        try verifyEngineFiles(in: base.appendingPathComponent("99-FERRAMENTAS"))
         try fm.createDirectory(at: support, withIntermediateDirectories: true)
 
         // Atualiza a ferramenta a cada abertura, mas preserva a biblioteca
@@ -148,6 +153,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
             let origem = base.appendingPathComponent(nome)
             guard fm.fileExists(atPath: origem.path) else { continue }
             let destino = support.appendingPathComponent(nome)
+            if nome == "99-FERRAMENTAS" {
+                try installTools(from: origem, to: destino)
+                continue
+            }
             if fm.fileExists(atPath: destino.path) {
                 log("removendo: \(destino.path)")
                 try fm.removeItem(at: destino)
@@ -155,6 +164,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
             log("copiando: \(origem.path) -> \(destino.path)")
             try fm.copyItem(at: origem, to: destino)
         }
+        try verifyEngineFiles(in: support.appendingPathComponent("99-FERRAMENTAS"))
 
         let livrosOrigem = base.appendingPathComponent("livros", isDirectory: true)
         let livrosDestino = support.appendingPathComponent("livros", isDirectory: true)
@@ -163,6 +173,85 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
             try fm.copyItem(at: livrosOrigem, to: livrosDestino)
         }
         return support
+    }
+
+    private func verifyEngineFiles(in tools: URL) throws {
+        let data = try Data(contentsOf: tools.appendingPathComponent("versao-motor.json"))
+        guard let manifest = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+              let files = manifest["arquivos"] as? [String: String] else {
+            throw AppError("Pacote do motor sem identificação de versão válida.")
+        }
+        for (name, expected) in files {
+            let data = try Data(contentsOf: tools.appendingPathComponent(name))
+            let actual = SHA256.hash(data: data).map { String(format: "%02x", $0) }.joined()
+            if actual != expected {
+                throw AppError("O arquivo \(name) não corresponde à versão empacotada. Reinstale o pacote atualizado.")
+            }
+        }
+        log("Motor verificado: \(manifest["versao"] ?? "")")
+    }
+
+    private let memoryFiles: Set<String> = ["titulos-ruidosos-conhecidos.json",
+        "autores-ruidosos-conhecidos.json", "editoras-cidades.json",
+        "periodicos-conhecidos.json", "autores-conhecidos.json"]
+
+    private func installTools(from source: URL, to target: URL) throws {
+        let fm = FileManager.default
+        try fm.createDirectory(at: target, withIntermediateDirectories: true)
+        guard let paths = fm.enumerator(atPath: source.path) else { return }
+        for case let relative as String in paths {
+            let src = source.appendingPathComponent(relative)
+            let dst = target.appendingPathComponent(relative)
+            var directory: ObjCBool = false
+            guard fm.fileExists(atPath: src.path, isDirectory: &directory) else { continue }
+            if directory.boolValue {
+                try fm.createDirectory(at: dst, withIntermediateDirectories: true)
+                continue
+            }
+            if memoryFiles.contains(src.lastPathComponent), fm.fileExists(atPath: dst.path),
+               var fresh = try JSONSerialization.jsonObject(with: Data(contentsOf: src)) as? [String:Any],
+               let previous = try JSONSerialization.jsonObject(with: Data(contentsOf: dst)) as? [String:Any] {
+                for key in ["itens", "autores", "editoras", "periodicos"] {
+                    guard let old = previous[key] as? [[String:Any]] else { continue }
+                    var list = fresh[key] as? [[String:Any]] ?? []
+                    var seen = Set(try list.map { try JSONSerialization.data(withJSONObject:$0, options:.sortedKeys) })
+                    for row in old {
+                        let bytes = try JSONSerialization.data(withJSONObject:row, options:.sortedKeys)
+                        if seen.insert(bytes).inserted { list.append(row) }
+                    }
+                    fresh[key] = list
+                }
+                try JSONSerialization.data(withJSONObject:fresh, options:[.sortedKeys,.prettyPrinted]).write(to:dst, options:.atomic)
+            } else if !fm.contentsEqual(atPath: src.path, andPath: dst.path) {
+                try Data(contentsOf: src).write(to: dst, options: .atomic)
+                let attrs = try fm.attributesOfItem(atPath: src.path)
+                if let permissions = attrs[.posixPermissions] {
+                    try fm.setAttributes([.posixPermissions: permissions], ofItemAtPath: dst.path)
+                }
+            }
+        }
+        // Não remove binários Vision nem memórias locais ausentes do pacote.
+    }
+
+    private func isCurrentEngine(tools: URL, port: Int) -> Bool {
+        var bytes = Data()
+        for name in ["biblio_app_visual.py", "preparar-livros.py", "biblioteca-local.py", "enviar-livro-api.py", "consultar_apple.py", "piloto-apple-bibliografia.swift", "revisao-visual.py"] {
+            guard let data = try? Data(contentsOf: tools.appendingPathComponent(name)) else { return false }
+            bytes.append(data)
+        }
+        let expected = String(SHA256.hash(data: bytes).map { String(format: "%02x", $0) }.joined().prefix(16))
+        let semaphore = DispatchSemaphore(value: 0)
+        var matches = false
+        var req = URLRequest(url: URL(string: "http://127.0.0.1:\(port)/api/health")!)
+        req.timeoutInterval = 2
+        URLSession.shared.dataTask(with: req) { data, _, _ in
+            defer { semaphore.signal() }
+            if let data, let obj = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
+                matches = obj["versao_motor"] as? String == expected
+            }
+        }.resume()
+        _ = semaphore.wait(timeout: .now() + 3)
+        return matches
     }
 
     private func findPython() throws -> URL {

@@ -2,6 +2,38 @@
 
 ## Objetivo
 
+### Atualização de 25/10/2026 — motor auditável e camada Apple
+
+O pacote usa `versao-motor.json` para comparar código-fonte, pacote-base e
+instalação ativa. A atualização preserva binários auxiliares e mescla listas
+incrementais do operador; não apaga a pasta de ferramentas. Um servidor antigo
+em memória não é aceito silenciosamente como se fosse o motor novo. Encerre as
+tarefas antes de fechar/reabrir o aplicativo atualizado.
+
+A Apple Intelligence é uma camada auxiliar automática nos pendentes, depois
+das pesquisas existentes. Não refaz OCR, não consulta a internet e não altera
+decisões humanas aprovadas. Requer Mac compatível com Apple Intelligence
+disponível. Nos demais computadores, o fluxo anterior continua funcionando.
+
+Para aplicar um campo, o motor exige trecho literal verificável na página e
+concordância com fonte independente de identidade compatível. ISBN, volume ou
+edição divergentes não são resolvidos apagando conflitos. Os validadores normais
+continuam decidindo se o material está pronto; sugestões sem confirmação vão
+para a bancada, no filtro **Análise da Apple**, com páginas citadas e imagens.
+
+Os dados enviados ao modelo são somente excertos numerados das páginas (não
+o nome de arquivo nem a ficha anterior). O cache é separado por hash do PDF,
+entrada e versão do modelo/leitor. Respostas, imagens e histórico ficam em
+`livros/_evidencias_apple/`, fora do Git. Os PDFs não são modificados.
+Há limite de tempo e indicação de atividade a cada 15 segundos. Falhas ou
+indisponibilidade mantêm a revisão, sem bloquear o lote. Para diagnóstico,
+`BIBLIO_APPLE=0` desativa a camada. A primeira análise de cada versão prepara
+o leitor Swift; as seguintes reutilizam o binário e as respostas em cache.
+
+O piloto independente anterior não demonstrou segurança para aprovação pela
+Apple sozinha. Por isso, citação sem confirmação externa continua sendo apenas
+sugestão. O operador conserva a decisão final.
+
 Começar o empacotamento do Biblio Preparador sem alterar o que já está
 funcional.
 
