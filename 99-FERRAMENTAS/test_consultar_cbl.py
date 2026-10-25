@@ -82,8 +82,9 @@ class ConsultarCBLTest(unittest.TestCase):
     def test_descarta_resultado_aproximado(self):
         cbl._CONFIG = {"IndexName": "indice", "QueryKey": "chave",
                        "ServiceName": "servico"}
-        sessao = SessaoFalsa([RespostaFalsa(dados={"value": [{
-            "RowKey": "9788564536075", "Title": "Outra edição"}]})])
+        # A consulta tenta o ISBN compacto e, sem exato, o formato com hífens.
+        aproximado = {"value": [{"RowKey": "9788564536075", "Title": "Outra edição"}]}
+        sessao = SessaoFalsa([RespostaFalsa(dados=aproximado), RespostaFalsa(dados=aproximado)])
         with tempfile.TemporaryDirectory() as td, \
                 mock.patch.object(cbl, "INTERVALO_MINIMO", 0):
             self.assertEqual({}, cbl.consultar(
@@ -91,6 +92,7 @@ class ConsultarCBLTest(unittest.TestCase):
             dados = json.loads(pathlib.Path(
                 td, "9788564536074.json").read_text(encoding="utf-8"))
             self.assertEqual("nao_encontrado", dados["status"])
+            self.assertEqual(2, len(sessao.chamadas))
 
 
 if __name__ == "__main__":
