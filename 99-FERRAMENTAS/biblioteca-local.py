@@ -12,6 +12,7 @@ import difflib
 import errno
 import fcntl
 import hashlib
+import html
 import importlib.util
 import json
 import os
@@ -127,11 +128,15 @@ CAMPOS_REVISAO_POR_TIPO = {
     "trabalho acadêmico": ("titulo", "nmAutor0", "data"),
 }
 EBOOK_CONVERT = pathlib.Path("/Applications/calibre.app/Contents/MacOS/ebook-convert")
-EXTENSOES_WORD = {".doc", ".docx"}
+EXTENSOES_WORD = {".doc", ".docx", ".rtf", ".odt", ".fodt"}
+EXTENSOES_EBOOK = {".epub", ".mobi", ".azw3", ".fb2"}
+EXTENSOES_TEXTO = {".txt"}
 # PowerPoint e congêneres. Sete apresentações ficaram paradas em
 # 00-ENTRADA/apresentações porque a esteira só convertia Word, EPUB e HTML.
 # O Biblio só aceita PDF: sem conversão, elas nunca subiriam.
 EXTENSOES_APRESENTACAO = {".ppt", ".pptx", ".pps", ".ppsx", ".odp"}
+EXTENSOES_CONVERSIVEIS = (EXTENSOES_WORD | EXTENSOES_TEXTO | EXTENSOES_EBOOK
+                         | EXTENSOES_APRESENTACAO | set(converter_html.EXTENSOES_HTML))
 SOFFICE_APLICATIVOS = (
     pathlib.Path("/Applications/LibreOffice.app/Contents/MacOS/soffice"),
     pathlib.Path("/Applications/LibreOfficeDev.app/Contents/MacOS/soffice"),
@@ -2663,7 +2668,7 @@ end run
 
 
 def converter_word_para_pdf(origem, destino):
-    """Converte DOC/DOCX preservando o original e informa o motor utilizado."""
+    """Converte DOC/DOCX/RTF/ODT/FODT preservando o original."""
     origem, destino = pathlib.Path(origem), pathlib.Path(destino)
     if origem.suffix.lower() not in EXTENSOES_WORD:
         return {"ok": False, "motor": "", "erro": "formato Word inválido"}
@@ -2682,7 +2687,8 @@ def converter_word_para_pdf(origem, destino):
         "BIBLIO_PERMITIR_WORD", "").strip().casefold() in {
             "1", "sim", "true", "yes",
         }
-    if (permitir_word and MICROSOFT_WORD.is_dir()
+    if (permitir_word and origem.suffix.lower() in {'.doc', '.docx', '.rtf'}
+            and MICROSOFT_WORD.is_dir()
             and shutil.which("osascript")):
         ok, erro = _converter_word_microsoft(origem, destino)
         if ok:
@@ -2694,6 +2700,59 @@ def converter_word_para_pdf(origem, destino):
     elif not permitir_word:
         erros.append("Microsoft Word gráfico desativado para evitar janelas")
     return {"ok": False, "motor": "", "erro": " | ".join(erros)}
+
+
+def ler_texto_para_pdf(origem):
+    bruto = pathlib.Path(origem).read_bytes()
+    if bruto.startswith((b'\xff\xfe', b'\xfe\xff')):
+        texto = bruto.decode('utf-16')
+        codificacao = 'UTF-16'
+    else:
+        for codificacao in ('utf-8-sig', 'cp1252', 'latin-1'):
+            try:
+                texto = bruto.decode(codificacao)
+                break
+            except UnicodeDecodeError:
+                continue
+    if '\x00' in texto or not texto.strip():
+        raise ValueError('TXT vazio ou binário; salve o texto em UTF-8 ou UTF-16 com BOM')
+    return texto.replace('\r\n', '\n').replace('\r', '\n'), codificacao
+
+
+def converter_texto_para_pdf(origem, destino):
+    """TXT vira texto real no PDF, nunca imagem; conteúdo HTML é escapado."""
+    origem, destino = pathlib.Path(origem), pathlib.Path(destino)
+    if origem.suffix.lower() not in EXTENSOES_TEXTO:
+        return {'ok': False, 'motor': '', 'erro': 'formato de texto inválido'}
+    if destino.exists():
+        return {'ok': False, 'motor': '', 'erro': 'destino já existe; não será substituído'}
+    try:
+        texto, codificacao = ler_texto_para_pdf(origem)
+        with tempfile.TemporaryDirectory(prefix='biblio-txt-') as td:
+            pagina = pathlib.Path(td) / (origem.stem + '.html')
+            corpo = '</pre><div style="break-before:page;page-break-before:always"></div><pre>'.join(
+                html.escape(parte) for parte in texto.split('\f'))
+            pagina.write_text('<!doctype html><meta charset="utf-8"><title>' +
+                html.escape(origem.stem) + '</title><style>'
+                '@page{size:A4;margin:18mm}pre{font-family:serif;font-size:11pt;'
+                'line-height:1.4;white-space:pre-wrap;overflow-wrap:anywhere;tab-size:4}'
+                '</style><pre>' + corpo + '</pre>', encoding='utf-8')
+            ok, erro = converter_html._converter_chromium(pagina, destino, permitir_rede=False)
+            motor = 'Chromium (TXT)'
+            if not ok or not pdf_convertido_valido(destino):
+                destino.unlink(missing_ok=True)
+                soffice = localizar_soffice()
+                if not soffice:
+                    return {'ok': False, 'motor': '', 'erro': erro or 'conversor ausente'}
+                ok, erro = _converter_word_libreoffice(pagina, destino, soffice)
+                motor = 'LibreOffice (TXT)'
+            if ok and pdf_convertido_valido(destino):
+                return {'ok': True, 'motor': motor, 'erro': '', 'codificacao': codificacao}
+            destino.unlink(missing_ok=True)
+            return {'ok': False, 'motor': '', 'erro': erro or 'PDF convertido inválido'}
+    except (OSError, ValueError, subprocess.SubprocessError) as exc:
+        destino.unlink(missing_ok=True)
+        return {'ok': False, 'motor': '', 'erro': str(exc)}
 
 
 def converter_apresentacao_para_pdf(origem, destino):
@@ -2746,7 +2805,7 @@ def _salvar_vinculo_importacao(c, pdf, pasta, arquivos, opf=None):
 
 
 def preparar_entrada_organizada(c, catalogo):
-    """Organiza PDFs e converte DOC, DOCX ou EPUB antes da preparação."""
+    """Converte formatos suportados para PDF antes da preparação habitual."""
     estado_path = c["controle"] / "importacoes-organizadas.json"
     try:
         estado = json.loads(estado_path.read_text(encoding="utf-8"))
@@ -2804,9 +2863,13 @@ def preparar_entrada_organizada(c, catalogo):
         estado.setdefault("itens", {})[chave] = {
             "estado": "importado", "importado_em": agora(),
             "pdf_entrada": str(destino), "hash_sha256": sha256(destino),
-            "convertido_de_epub": convertido,
-            "convertido_de_word": bool(conversao),
+            "convertido_de_epub": convertido and pathlib.Path(chave).suffix.lower() == '.epub',
+            "convertido_de_ebook": convertido,
+            "convertido_de_word": bool(conversao) and pathlib.Path(chave).suffix.lower() in EXTENSOES_WORD,
+            "convertido_de_texto": bool(conversao) and pathlib.Path(chave).suffix.lower() in EXTENSOES_TEXTO,
             "motor_conversao": (conversao or {}).get("motor", ""),
+            "formato_origem": pathlib.Path(chave).suffix.lower(),
+            "codificacao_texto": (conversao or {}).get("codificacao", ""),
             "assinatura": assinatura}
         resumo["importados"] += 1
 
@@ -2817,8 +2880,10 @@ def preparar_entrada_organizada(c, catalogo):
             p for p in c["entrada"].rglob("*")
             if p.is_file() and not p.is_symlink()
             and not p.name.startswith("~$")
-            and p.suffix.lower() in EXTENSOES_WORD):
+            and p.suffix.lower() in (EXTENSOES_WORD | EXTENSOES_TEXTO)):
         chave = str(word.resolve())
+        rotulo_formato = ('Word' if word.suffix.lower() in {'.doc', '.docx'}
+                          else word.suffix[1:].upper())
         assinatura = sha256(word)
         anterior_estado = estado.get("itens", {}).get(chave, {})
         if (anterior_estado.get("estado") == "importado"
@@ -2836,12 +2901,19 @@ def preparar_entrada_organizada(c, catalogo):
             continue
         with tempfile.TemporaryDirectory(prefix="biblio-word-") as td:
             convertido = pathlib.Path(td) / (word.stem + ".pdf")
-            resultado = converter_word_para_pdf(word, convertido)
+            print(f'  convertendo {word.name} para PDF pesquisável', flush=True)
+            atualizar_processamento_ativo(c, etapa='convertendo para PDF', arquivo=word.name)
+            try:
+                conversor = (converter_texto_para_pdf if word.suffix.lower() in EXTENSOES_TEXTO
+                             else converter_word_para_pdf)
+                resultado = conversor(word, convertido)
+            except (OSError, ValueError, subprocess.SubprocessError) as exc:
+                resultado = {'ok': False, 'erro': str(exc), 'motor': ''}
             if not resultado["ok"]:
                 resumo["encontrados"] += 1
                 resumo["falhas"] += 1
                 estado.setdefault("itens", {})[chave] = {
-                    "estado": "falha na conversão Word",
+                    "estado": f"falha na conversão {rotulo_formato}",
                     "arquivo_origem": str(word), "assinatura": assinatura,
                     "erro": resultado["erro"], "atualizado_em": agora(),
                 }
@@ -2990,7 +3062,8 @@ def preparar_entrada_organizada(c, catalogo):
     for epub in sorted(
             p for p in c["entrada"].rglob("*")
             if p.is_file() and not p.is_symlink()
-            and p.suffix.lower() == ".epub"):
+            and p.suffix.lower() in EXTENSOES_EBOOK):
+        rotulo_ebook = epub.suffix[1:].upper()
         pdf = _associado_por_nome(epub.parent, epub.stem, {".pdf"})
         if pdf:
             continue
@@ -3006,11 +3079,13 @@ def preparar_entrada_organizada(c, catalogo):
         if (anterior_estado.get("estado") == "importado"
                 and anterior_estado.get("assinatura") == assinatura):
             continue
-        if not EBOOK_CONVERT.is_file():
+        executavel_ebook = (EBOOK_CONVERT if EBOOK_CONVERT.is_file() else
+                            pathlib.Path(shutil.which('ebook-convert') or '/conversor-ausente'))
+        if not executavel_ebook.is_file():
             resumo["encontrados"] += 1
             resumo["falhas"] += 1
             estado.setdefault("itens", {})[chave] = {
-                "estado": "falha na conversão EPUB",
+                "estado": f"falha na conversão {rotulo_ebook}",
                 "arquivo_origem": str(epub), "assinatura": assinatura,
                 "erro": "conversor do Calibre não encontrado",
                 "atualizado_em": agora(),
@@ -3023,19 +3098,25 @@ def preparar_entrada_organizada(c, catalogo):
         # Um perfil limpo evita que plugins pessoais antigos do Calibre
         # impeçam uma conversão que não depende deles. O diretório é efêmero
         # e não altera as preferências do operador.
-        with tempfile.TemporaryDirectory(prefix="biblio-calibre-") as config:
-            ambiente = dict(os.environ)
-            ambiente["CALIBRE_CONFIG_DIRECTORY"] = config
-            resultado = subprocess.run(
-                [str(EBOOK_CONVERT), str(epub), str(destino)],
-                capture_output=True, text=True, timeout=1800, env=ambiente)
+        print(f'  convertendo {epub.name} para PDF pesquisável (Calibre)', flush=True)
+        atualizar_processamento_ativo(c, etapa='convertendo ebook para PDF', arquivo=epub.name)
+        try:
+            with tempfile.TemporaryDirectory(prefix="biblio-calibre-") as config:
+                ambiente = dict(os.environ)
+                ambiente["CALIBRE_CONFIG_DIRECTORY"] = config
+                resultado = subprocess.run(
+                    [str(executavel_ebook), str(epub), str(destino)],
+                    capture_output=True, text=True, timeout=1800, env=ambiente)
+        except (OSError, subprocess.SubprocessError) as exc:
+            resultado = subprocess.CompletedProcess([], 1, '', str(exc))
         if resultado.returncode or not destino.is_file():
+            destino.unlink(missing_ok=True)
             resumo["encontrados"] += 1
             resumo["falhas"] += 1
             erro = (resultado.stderr or resultado.stdout or
                     "o Calibre não produziu o PDF").strip()
             estado.setdefault("itens", {})[chave] = {
-                "estado": "falha na conversão EPUB",
+                "estado": f"falha na conversão {rotulo_ebook}",
                 "arquivo_origem": str(epub), "assinatura": assinatura,
                 "erro": erro[-1000:], "atualizado_em": agora(),
             }
@@ -3045,7 +3126,16 @@ def preparar_entrada_organizada(c, catalogo):
         importar_pdf(destino, opf=opf, convertido=True,
                      pasta_fonte=epub.parent, base_fonte=epub.stem,
                      assinatura=assinatura, chave_fonte=chave,
-                     conversao={"motor": "Calibre (EPUB)"})
+                     conversao={"motor": f"Calibre ({epub.suffix[1:].upper()})"})
+    for ajuda in sorted(p for p in c['entrada'].rglob('*')
+                        if p.is_file() and not p.is_symlink() and p.suffix.lower() in {'.hlp', '.chm'}):
+        motivo = 'Requer extrator específico de ajuda; original preservado e não executado'
+        estado.setdefault('itens', {})[str(ajuda.resolve())] = {
+            'estado': 'aguardando conversor de ajuda', 'erro': motivo,
+            'arquivo_origem': str(ajuda), 'assinatura': sha256(ajuda), 'atualizado_em': agora()}
+        print(f'  conversão pendente: {ajuda.name}: {motivo}', flush=True)
+        resumo['falhas'] += 1
+        resumo['encontrados'] += 1
     estado["atualizado_em"] = agora()
     salvar_json(estado_path, estado)
     if resumo["encontrados"] or resumo["ambiguos"] or resumo["falhas"]:
@@ -3687,9 +3777,7 @@ def mostrar_status(raiz):
     print(f"Catálogo: {len(catalogo['livros'])} registro(s)")
     for e in sorted(contagem):
         print(f"  {e:.<28} {contagem[e]:4}  ({bytes_estado[e]/1024/1024:.1f} MB)")
-    extensoes_entrada = ({".pdf", ".epub"} | EXTENSOES_WORD
-                         | EXTENSOES_APRESENTACAO
-                         | set(converter_html.EXTENSOES_HTML))
+    extensoes_entrada = {'.pdf'} | EXTENSOES_CONVERSIVEIS
     arquivos_entrada = [
         p for p in c["entrada"].rglob("*")
         if p.is_file() and not p.is_symlink()
@@ -3755,7 +3843,7 @@ def _arquivos_origem_importados(ficha, raiz_local):
     confirmados = []
     permitidas = ({".pdf", ".epub", ".opf", ".jpg", ".jpeg", ".png",
                    ".gif", ".webp", ".mobi", ".azw", ".azw3", ".doc",
-                   ".docx", ".rtf", ".txt"} | EXTENSOES_APRESENTACAO)
+                   ".docx", ".rtf", ".txt"} | EXTENSOES_CONVERSIVEIS)
     for valor_arquivo in registrados:
         try:
             arquivo = pathlib.Path(valor_arquivo).expanduser().resolve(strict=True)
@@ -3768,7 +3856,7 @@ def _arquivos_origem_importados(ficha, raiz_local):
     # O OPF é aproveitado quando existe, mas não é obrigatório.
     extensoes = {p.suffix.lower() for p in confirmados}
     if not extensoes.intersection(
-            {".pdf", ".epub", ".doc", ".docx"} | EXTENSOES_APRESENTACAO):
+            {".pdf"} | EXTENSOES_CONVERSIVEIS):
         return []
     return confirmados
 
@@ -3783,7 +3871,7 @@ def _arquivos_origem_historico(c, digest, historico):
     entrada = c["entrada"].resolve()
     permitidas = ({".pdf", ".epub", ".opf", ".jpg", ".jpeg", ".png",
                    ".gif", ".webp", ".mobi", ".azw", ".azw3", ".doc",
-                   ".docx", ".rtf", ".txt"} | EXTENSOES_APRESENTACAO)
+                   ".docx", ".rtf", ".txt"} | EXTENSOES_CONVERSIVEIS)
     encontrados = []
     for origem, dados in (historico or {}).items():
         if not isinstance(dados, dict) or dados.get("hash_sha256") != digest:

@@ -2,6 +2,26 @@
 
 ## Objetivo
 
+### Formatos de entrada — atualização de 25/10/2026
+
+Além de PDF, DOC/DOCX, apresentações e HTML, o importador aceita:
+
+- TXT: texto UTF-8, UTF-16 com BOM, Windows-1252 ou Latin-1, convertido para
+  PDF com texto real. HTML contido no texto é escapado e não executado.
+- RTF, ODT e FODT: conversão silenciosa pelo LibreOffice.
+- MOBI, AZW3 e FB2: mesmo fluxo Calibre do EPUB, sem remover DRM. Ausência
+  do conversor, proteção do arquivo ou falha mantém o original e registra causa.
+
+Arquivos de ajuda HLP e CHM são identificados como aguardando conversor
+específico; não são executados nem anunciados como convertidos.
+
+A conversão ocorre ao iniciar a preparação habitual. Não cadastra materiais
+sozinha. O PDF passa pelo diagnóstico, capa e metadados existentes. Originais
+ficam associados ao PDF para a liberação de espaço após cadastro/duplicidade
+confirmados. A associação agora também contempla os novos formatos e HTML.
+Um PDF homônimo já fornecido tem prioridade; a repetição do preparo não
+reconverte uma origem inalterada.
+
 ### Atualização de 25/10/2026 — motor auditável e camada Apple
 
 O pacote usa `versao-motor.json` para comparar código-fonte, pacote-base e

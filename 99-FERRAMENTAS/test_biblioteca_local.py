@@ -30,6 +30,106 @@ def resultado_pronto(nome):
 
 
 class BibliotecaLocalTest(unittest.TestCase):
+    def test_texto_codificacoes_legadas_e_unicode(self):
+        with tempfile.TemporaryDirectory() as td:
+            p = pathlib.Path(td) / 'Texto.txt'
+            for encoding in ('utf-8-sig', 'utf-16', 'cp1252'):
+                p.write_bytes('Publicação\r\nFé e história'.encode(encoding))
+                texto, usado = local.ler_texto_para_pdf(p)
+                self.assertEqual('Publicação\nFé e história', texto)
+            p.write_bytes(b'binario\x00invalido')
+            with self.assertRaises(ValueError):
+                local.ler_texto_para_pdf(p)
+
+    def test_txt_escapa_html_e_nao_substitui_pdf(self):
+        with tempfile.TemporaryDirectory() as td:
+            p, pdf = pathlib.Path(td) / 'Texto.txt', pathlib.Path(td) / 'Texto.pdf'
+            p.write_text('Fé <script>alert(1)</script>\nTexto & prova', encoding='utf-8')
+            def converter(origem, destino, permitir_rede=False):
+                codigo = origem.read_text()
+                self.assertIn('&lt;script&gt;', codigo)
+                self.assertNotIn('<script>', codigo)
+                self.assertFalse(permitir_rede)
+                destino.write_bytes(b'%PDF-amostra')
+                return True, ''
+            with mock.patch.object(local.converter_html, '_converter_chromium', side_effect=converter), \
+                 mock.patch.object(local, 'pdf_convertido_valido', return_value=True):
+                self.assertTrue(local.converter_texto_para_pdf(p, pdf)['ok'])
+                self.assertFalse(local.converter_texto_para_pdf(p, pdf)['ok'])
+            self.assertEqual(b'%PDF-amostra', pdf.read_bytes())
+
+    def test_novos_formatos_geram_pdf_e_vinculo_sem_reconverter(self):
+        for extensao in ('.rtf', '.odt', '.fodt', '.txt'):
+            with self.subTest(extensao=extensao), tempfile.TemporaryDirectory() as td:
+                c = local.inicializar(pathlib.Path(td) / 'livros')
+                origem = c['entrada'] / ('Obra' + extensao)
+                origem.write_text('Texto de teste')
+                nome_funcao = 'converter_texto_para_pdf' if extensao == '.txt' else 'converter_word_para_pdf'
+                def converter(_origem, destino):
+                    destino.write_bytes(b'%PDF-convertido')
+                    return {'ok': True, 'motor': 'Conversor testado', 'erro': ''}
+                with mock.patch.object(local, nome_funcao, side_effect=converter) as conv:
+                    resumo = local.preparar_entrada_organizada(c, local.carregar_catalogo(c))
+                    repeticao = local.preparar_entrada_organizada(c, local.carregar_catalogo(c))
+                self.assertEqual(1, resumo['convertidos'])
+                self.assertEqual(0, repeticao['convertidos'])
+                conv.assert_called_once()
+                revisoes = json.loads((c['controle'] / 'revisoes-manuais.json').read_text())
+                ficha = revisoes['livros']['Obra.pdf']['campos']
+                self.assertEqual([origem], local._arquivos_origem_importados(ficha, c['raiz']))
+
+    def test_ajuda_nao_e_executada_e_fica_identificada(self):
+        with tempfile.TemporaryDirectory() as td:
+            c = local.inicializar(pathlib.Path(td) / 'livros')
+            origem = c['entrada'] / 'Manual.hlp'
+            origem.write_bytes(b'arquivo de ajuda')
+            with mock.patch.object(local.subprocess, 'run') as executar:
+                resumo = local.preparar_entrada_organizada(c, local.carregar_catalogo(c))
+            executar.assert_not_called()
+            self.assertEqual(1, resumo['falhas'])
+            estado = json.loads((c['controle'] / 'importacoes-organizadas.json').read_text())
+            self.assertEqual('aguardando conversor de ajuda', estado['itens'][str(origem.resolve())]['estado'])
+
+    def test_ebooks_adicionais_usam_mesmo_fluxo_e_preservam_origem(self):
+        for ext in ('.mobi', '.azw3', '.fb2'):
+            with self.subTest(ext=ext), tempfile.TemporaryDirectory() as td:
+                c = local.inicializar(pathlib.Path(td) / 'livros')
+                livro = c['entrada'] / ('Livro' + ext)
+                livro.write_bytes(b'ebook')
+                conversor = pathlib.Path(td) / 'ebook-convert'
+                conversor.write_text('amostra')
+                def converter(comando, **kwargs):
+                    pathlib.Path(comando[2]).write_bytes(b'%PDF-convertido')
+                    return mock.Mock(returncode=0, stdout='', stderr='')
+                with mock.patch.object(local, 'EBOOK_CONVERT', conversor), \
+                     mock.patch.object(local.subprocess, 'run', side_effect=converter) as run:
+                    resumo = local.preparar_entrada_organizada(c, local.carregar_catalogo(c))
+                    local.preparar_entrada_organizada(c, local.carregar_catalogo(c))
+                self.assertEqual(1, resumo['convertidos'])
+                run.assert_called_once()
+                self.assertTrue(livro.is_file())
+                historico = json.loads((c['controle'] / 'importacoes-organizadas.json').read_text())
+                registro = historico['itens'][str(livro.resolve())]
+                self.assertFalse(registro['convertido_de_epub'])
+                self.assertTrue(registro['convertido_de_ebook'])
+
+    def test_ebook_timeout_nao_trava_lote_e_nao_deixa_pdf_parcial(self):
+        with tempfile.TemporaryDirectory() as td:
+            c = local.inicializar(pathlib.Path(td) / 'livros')
+            livro = c['entrada'] / 'Livro.fb2'
+            livro.write_bytes(b'ebook')
+            conversor = pathlib.Path(td) / 'ebook-convert'
+            conversor.write_text('amostra')
+            def falhar(comando, **kwargs):
+                pathlib.Path(comando[2]).write_bytes(b'pdf incompleto')
+                raise local.subprocess.TimeoutExpired(comando, 1800)
+            with mock.patch.object(local, 'EBOOK_CONVERT', conversor), \
+                 mock.patch.object(local.subprocess, 'run', side_effect=falhar):
+                resumo = local.preparar_entrada_organizada(c, local.carregar_catalogo(c))
+            self.assertEqual(1, resumo['falhas'])
+            self.assertFalse((c['entrada'] / 'Livro.pdf').exists())
+            self.assertTrue(livro.is_file())
+
     def test_pacote_apple_so_expoe_imagem_dentro_da_biblioteca(self):
         with tempfile.TemporaryDirectory() as td:
             raiz = pathlib.Path(td)

@@ -205,8 +205,8 @@ while true; do
       | head -5 | while read -r f; do
         case "${f##*.}" in
           html|htm|xhtml|HTML|HTM) marca="sera convertido em PDF" ;;
-          doc|docx|DOC|DOCX)       marca="sera convertido em PDF" ;;
-          epub|EPUB)               marca="sera convertido em PDF" ;;
+          doc|docx|rtf|odt|fodt|txt|DOC|DOCX|RTF|ODT|FODT|TXT) marca="sera convertido em PDF" ;;
+          epub|mobi|azw3|fb2|EPUB|MOBI|AZW3|FB2) marca="sera convertido em PDF" ;;
           ppt|pptx|pps|ppsx|odp|PPT|PPTX|PPS|PPSX|ODP) marca="sera convertido em PDF" ;;
           *)                       marca="formato nao reconhecido" ;;
         esac
