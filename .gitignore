@@ -25,6 +25,7 @@ __pycache__/
 .env.*
 *.key
 *.pem
+!99-FERRAMENTAS/certificados/SectigoPublicServerAuthenticationCADVR36.pem
 
 # Estado local da preparação de livros.
 livros/00-ENTRADA/
