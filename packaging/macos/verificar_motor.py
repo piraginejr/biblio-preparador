@@ -24,7 +24,7 @@ def inventario(pasta):
 def instalar(origem, destino):
     """Atualização pontual: não remove caches/binários nem acervo."""
     destino.mkdir(parents=True, exist_ok=True)
-    arquivos = set(inventario(origem)) | {'versao-motor.json'} | MEMORIAS
+    arquivos = set(inventario(origem)) | MEMORIAS
     for rel in sorted(arquivos):
         src, dst = origem / rel, destino / rel
         if not src.is_file():
@@ -55,10 +55,36 @@ def instalar(origem, destino):
         finally:
             if os.path.exists(temporario):
                 os.unlink(temporario)
+    # O projeto-fonte não precisa ter manifesto. Mesmo assim, a instalação
+    # deve recebê-lo atualizado: copiar somente fontes deixava o manifesto
+    # antigo e fazia o lançador Swift recusar um motor correto.
+    gravar_manifesto(destino)
 
 
 def versao(arquivos):
     return hashlib.sha256(json.dumps(arquivos, sort_keys=True).encode()).hexdigest()
+
+
+def gravar_manifesto(pasta):
+    arquivos = inventario(pasta)
+    dados = {'versao': versao(arquivos), 'arquivos': arquivos}
+    fd, temporario = tempfile.mkstemp(dir=pasta, prefix='.manifesto-')
+    try:
+        with os.fdopen(fd, 'w', encoding='utf-8') as out:
+            out.write(json.dumps(dados, ensure_ascii=False, indent=2) + '\n')
+        os.replace(temporario, pasta / 'versao-motor.json')
+    finally:
+        if os.path.exists(temporario):
+            os.unlink(temporario)
+
+
+def manifesto_valido(pasta):
+    try:
+        dados = json.loads((pasta / 'versao-motor.json').read_text(encoding='utf-8'))
+        arquivos = inventario(pasta)
+        return dados.get('arquivos') == arquivos and dados.get('versao') == versao(arquivos)
+    except (OSError, ValueError, AttributeError):
+        return False
 
 
 def main():
@@ -76,14 +102,16 @@ def main():
         if inventario(args.instalar) != arquivos:
             raise SystemExit('A instalação ainda possui fontes divergentes; confira antes de abrir.')
     if args.gerar:
-        (args.ferramentas/'versao-motor.json').write_text(
-            json.dumps(dados, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+        gravar_manifesto(args.ferramentas)
     if args.comparar:
         outro = inventario(args.comparar)
         divergentes = [k for k in sorted(set(arquivos)|set(outro))
                        if arquivos.get(k) != outro.get(k)]
-        print(json.dumps({'iguais': not divergentes, 'divergentes': divergentes}, ensure_ascii=False))
-        raise SystemExit(bool(divergentes))
+        manifesto_ok = manifesto_valido(args.comparar)
+        print(json.dumps({'iguais': not divergentes and manifesto_ok,
+                          'divergentes': divergentes,
+                          'manifesto_destino_valido': manifesto_ok}, ensure_ascii=False))
+        raise SystemExit(bool(divergentes) or not manifesto_ok)
     print(dados['versao'])
 
 

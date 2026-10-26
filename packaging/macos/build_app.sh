@@ -36,6 +36,9 @@ PYTHONPYCACHEPREFIX=/private/tmp/biblio-pycache BIBLIO_APPLE=0 python3 -m unitte
   test_preparar_livros.PrepararLivrosTest.test_contrato_de_todas_as_chamadas_reais_do_combinador \
   test_biblioteca_local.BibliotecaLocalTest.test_reprocessamento_preserva_ficha_com_erro_e_continua_sem_refazer_ocr
 
+PYTHONPYCACHEPREFIX=/private/tmp/biblio-pycache python3 -m unittest discover \
+  -s "$ROOT/packaging/macos" -p 'test_verificar_motor.py'
+
 copiar_limpo() {
   local origem="$1"
   local destino="$2"
