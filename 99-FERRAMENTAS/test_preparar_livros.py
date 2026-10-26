@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 import importlib.util
+import ast
+import inspect
 import hashlib
 import json
 import pathlib
@@ -26,6 +28,24 @@ SPEC_CBL.loader.exec_module(cbl)
 
 
 class PrepararLivrosTest(unittest.TestCase):
+    def test_contrato_de_todas_as_chamadas_reais_do_combinador(self):
+        assinatura = inspect.signature(prep.combinar_fichas_catalograficas)
+        chamadas = [n for n in ast.walk(ast.parse(ARQUIVO.read_text()))
+                    if isinstance(n, ast.Call) and isinstance(n.func, ast.Name)
+                    and n.func.id == 'combinar_fichas_catalograficas']
+        self.assertGreaterEqual(len(chamadas), 2)
+        for chamada in chamadas:
+            with self.subTest(linha=chamada.lineno):
+                assinatura.bind(*[None] * len(chamada.args),
+                                **{k.arg: None for k in chamada.keywords})
+
+    def test_citacao_complementa_sem_substituir_cip_formal(self):
+        ficha = prep.combinar_fichas_catalograficas(
+            {'titulo': 'Psicologia e religião', 'ano': '1978'},
+            {'editora': ''}, {}, citacao={'editora': 'Vozes', 'ano': '1903'})
+        self.assertEqual('1978', ficha['ano'])
+        self.assertEqual('Vozes', ficha['editora'])
+        self.assertEqual('Psicologia e religião', ficha['titulo'])
     def test_nome_arquivo_separa_autor_conhecido_antes_do_titulo(self):
         with mock.patch.object(prep,'carregar_autores_conhecidos',return_value={'benny hinn':'Hinn, Benny'}):
             self.assertEqual(('Bem Vindo, Espírito Santo','Hinn, Benny'),

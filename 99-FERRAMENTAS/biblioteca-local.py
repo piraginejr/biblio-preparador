@@ -3655,9 +3655,19 @@ def reprocessar_revisao(raiz, usar_api=True, arquivos=None):
                 f"destino: {relativo(c, destino)}")
             continue
         capa = prep.gerar_capa(str(fonte), str(c["capas"]))
-        linha = prep.processar(
-            str(fonte), usar_api=usar_api, capa=capa, paginas=paginas,
-            revisao_caminho=str(origem), nome_origem=origem.name)
+        try:
+            linha = prep.processar(
+                str(fonte), usar_api=usar_api, capa=capa, paginas=paginas,
+                revisao_caminho=str(origem), nome_origem=origem.name)
+        except Exception as exc:
+            # A falha de uma extração não pode abortar os demais nem gravar
+            # uma ficha vazia sobre a revisão anterior. Mantém o PDF/OCR.
+            anterior['erro_reprocessamento'] = str(exc)
+            anterior['ultima_tentativa_reprocessamento'] = agora()
+            salvar_json(ficha_path, anterior)
+            resumo['falhas'] += 1
+            print(f'  falha na extração bibliográfica: {exc}; ficha preservada; seguindo lote', flush=True)
+            continue
         if tamanho_envio > LIMITE_ENVIO_BYTES:
             linha["excecao_tamanho"] = True
             linha["motivo_excecao_tamanho"] = (

@@ -30,6 +30,38 @@ def resultado_pronto(nome):
 
 
 class BibliotecaLocalTest(unittest.TestCase):
+    def test_reprocessamento_preserva_ficha_com_erro_e_continua_sem_refazer_ocr(self):
+        with tempfile.TemporaryDirectory() as td:
+            c = local.inicializar(pathlib.Path(td) / 'livros')
+            catalogo = local.carregar_catalogo(c)
+            fichas = []
+            for nome in ('Primeiro', 'Segundo'):
+                origem = c['revisao'] / (nome + '.pdf')
+                origem.write_bytes(b'%PDF-' + nome.encode())
+                digest = local.sha256(origem)
+                ficha = c['metadados'] / (nome + '.json')
+                local.salvar_json(ficha, {'titulo': nome, 'pdf_original': local.relativo(c, origem)})
+                fichas.append(ficha)
+                catalogo['livros'][digest] = {
+                    'arquivo': origem.name, 'caminho': local.relativo(c, origem),
+                    'metadados': local.relativo(c, ficha), 'estado': 'analisado'}
+            local.salvar_catalogo(c, catalogo)
+            with mock.patch.object(local.prep, 'paginas_pdftotext', return_value=['texto']), \
+                 mock.patch.object(local, 'localizar_duplicado_textual', return_value=({}, None)), \
+                 mock.patch.object(local.prep, 'gerar_capa', return_value=''), \
+                 mock.patch.object(local.prep, 'processar', side_effect=[
+                     TypeError('erro de contrato'), resultado_pronto('Segundo.pdf')]), \
+                 mock.patch.object(local, 'preparar_pdf_automaticamente') as ocr:
+                resumo = local.reprocessar_revisao(c['raiz'], usar_api=False)
+            ocr.assert_not_called()
+            self.assertEqual(1, resumo['falhas'])
+            self.assertEqual(1, resumo['prontos'])
+            anterior = json.loads(fichas[0].read_text())
+            self.assertEqual('Primeiro', anterior['titulo'])
+            self.assertEqual('erro de contrato', anterior['erro_reprocessamento'])
+            self.assertTrue((c['revisao'] / 'Primeiro.pdf').is_file())
+            self.assertTrue((c['pronto'] / 'Segundo.pdf').is_file())
+
     def test_texto_codificacoes_legadas_e_unicode(self):
         with tempfile.TemporaryDirectory() as td:
             p = pathlib.Path(td) / 'Texto.txt'
