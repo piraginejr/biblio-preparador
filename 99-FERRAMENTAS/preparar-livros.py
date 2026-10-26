@@ -4806,11 +4806,13 @@ def ler_ficha_catalografica_por_sinais(paginas):
     return {}
 
 
-def combinar_fichas_catalograficas(cabecalho, simplificada, sinais):
+def combinar_fichas_catalograficas(cabecalho, simplificada, sinais, *, citacao=None):
     """Une leitores complementares sem deixar uma regex fraca vencer outra forte."""
     resultado = dict(simplificada or {})
     resultado.update({k: v for k, v in (sinais or {}).items()
                       if v not in (None, "", [])})
+    resultado.update({k: v for k, v in (citacao or {}).items()
+                      if v not in (None, "", []) and not resultado.get(k)})
     resultado.update({k: v for k, v in (cabecalho or {}).items()
                       if v not in (None, "", [])})
     titulo = resultado.get("titulo", "")
@@ -6461,10 +6463,10 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
     copyright_original = copyright_parece_da_edicao_original(cp)
     cip = combinar_fichas_catalograficas(
         ler_cip_paginas(paginas_bibliograficas),
-        ler_citacao_editorial_paginas(paginas_bibliograficas),
         ler_ficha_catalografica_simplificada(paginas_bibliograficas),
         ler_ficha_catalografica_por_sinais(
-            paginas[:PAGS_BIBLIOGRAFICAS]))
+            paginas[:PAGS_BIBLIOGRAFICAS]),
+        citacao=ler_citacao_editorial_paginas(paginas_bibliograficas))
     ficha_rotulada = ler_ficha_tecnica_rotulada_paginas(
         paginas_bibliograficas)
     if ficha_rotulada:
