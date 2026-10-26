@@ -2806,6 +2806,8 @@ def _salvar_vinculo_importacao(c, pdf, pasta, arquivos, opf=None):
 
 def preparar_entrada_organizada(c, catalogo):
     """Converte formatos suportados para PDF antes da preparação habitual."""
+    import importar_compactados
+    importar_compactados.preparar(c["entrada"], c["controle"])
     estado_path = c["controle"] / "importacoes-organizadas.json"
     try:
         estado = json.loads(estado_path.read_text(encoding="utf-8"))

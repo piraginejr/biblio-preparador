@@ -2274,6 +2274,9 @@ def _titulo_documental_do_inicio(paginas):
         r"cap[ií]tulo\s+\d+|fonte\s*:|publicado\s+em|p[aá]gina\s*\|?\s*\d+)$")
     candidatas = []
     for posicao, linha in enumerate(linhas[:16]):
+        if re.match(r"^\s*\[?\d{1,3}\s*[:,]\s*\d{1,3}\]?\s", linha):
+            # Início do texto bíblico, não cabeçalho bibliográfico.
+            continue
         if (ignorar.match(linha) or re.fullmatch(r"(?:19|20)\d{2}", linha)
                 or re.match(r"(?i)^\d{1,2}\s+de\s+\w+\s+de\s+\d{4}$", linha)
                 or re.search(r"https?://|www\.", linha, re.I)):
@@ -2329,6 +2332,7 @@ def _autor_documental_explicito(paginas):
         if autor_bibliograficamente_plausivel(nome):
             return sobrenome_virgula(nome)
     padroes = [
+        r"(?im)^\s*By\s+([A-ZÀ-Ü][^\n|]{3,90})$",
         r"(?im)^\s*AUTOR\s*:\s*(?:Pr\.?|Rev\.?|Dr\.?)?\s*([^\n|]{3,90})$",
         r"(?im)^\s*(?:ESTUDO\s*:\s*)?.{5,150}?\s*[\u2013\u2014-]\s*Por\s+"
         r"(?:Pr\.?|Rev\.?|Dr\.?)?\s*([^\n|]{3,90})$",
@@ -5574,6 +5578,15 @@ def do_nome(nome):
     if len(partes) == 2:
         chave = ' '.join(re.sub(r'[^\w\s]', '', partes[0].lower()).split())
         conhecido = carregar_autores_conhecidos().get(chave)
+        if not conhecido:
+            # Um separador explícito permite reconhecer coautores conhecidos,
+            # sem transformar as últimas palavras do título em uma pessoa.
+            coautores = re.split(r'\s+(?:e|and|&)\s+', partes[0], flags=re.I)
+            nomes = [carregar_autores_conhecidos().get(
+                ' '.join(re.sub(r'[^\w\s]', '', p.lower()).split()))
+                for p in coautores]
+            if len(nomes) > 1 and all(nomes):
+                conhecido = nomes[0]
         if conhecido:
             titulo = re.sub(r'(?i)^(?:livro|e-?book)\s*-\s*', '', partes[1])
             if titulo_bibliograficamente_plausivel(titulo):
@@ -5653,11 +5666,9 @@ def do_nome(nome):
         return m.group(3).strip(), f"{m.group(1).title()}, {m.group(2)}"
 
     # caso 2 - "Titulo da Obra Nome Sobrenome": autor no fim.
-    # Pega 2 ou 3 palavras capitalizadas no final. Nao e infalivel -
-    # "Manual de Billy Graham" tem o nome no proprio titulo - mas um autor
-    # provavel vale mais que campo vazio: o registro entra e se corrige
-    # depois. A planilha marca a origem como "nome do arquivo" justamente
-    # para essas linhas receberem um olhar.
+    # Capitalização sozinha não prova autoria: "Sempre Certo" e
+    # "Brincadeiras Infantis" são partes do título. Sem um marcador
+    # explícito, exigir pessoa já conhecida; o PDF ainda precisa confirmá-la.
     # Sem um separador inequívoco, capturar três palavras no fim roubava
     # a última palavra do título (``... Church Angela Pellicciari`` e
     # ``... Adoração Domicio Junior``). Dois nomes são uma pista segura;
@@ -5680,11 +5691,13 @@ def do_nome(nome):
         lexical_de_titulo = any(
             re.search(r"(?i)(?:ismo|logia)$", identificar.normalizar(p))
             for p in partes)
-        if (2 <= len(partes) <= 3 and not lexical_de_titulo
+        conhecido = carregar_autores_conhecidos().get(
+            ' '.join(re.sub(r'[^\w\s]', '', cand.lower()).split()))
+        if (conhecido and 2 <= len(partes) <= 3 and not lexical_de_titulo
                 and not any(p in comuns for p in partes)):
             titulo = base[: m.start(1)].strip(" -–,")
             if len(titulo) >= 3:
-                return titulo, f"{partes[-1]}, {' '.join(partes[:-1])}"
+                return titulo, conhecido
 
     return base, ""
 

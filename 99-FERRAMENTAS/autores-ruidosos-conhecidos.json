@@ -2,6 +2,10 @@
   "versao": 1,
   "descricao": "Memoria incremental de textos que ja foram confundidos com autores. Acrescente um item com modo exato, prefixo ou contem; a comparacao ignora maiusculas, acentos, virgulas e espacos repetidos.",
   "itens": [
+    {"texto":"Certo, Sempre","modo":"exato","motivo":"final do título Amar é Sempre Certo confundido com pessoa"},
+    {"texto":"INFANTIS, BRINCADEIRAS","modo":"exato","motivo":"parte de título de coletânea de jogos, não autoria"},
+    {"texto":"ARQUÉTIPOS, DOS","modo":"exato","motivo":"final de título de artigo, não autoria"},
+    {"texto":"EMPRESAS, NAS","modo":"exato","motivo":"final do título de artigo, não autoria"},
     {"texto":"Digital Source","modo":"exato","motivo":"grupo de digitalização, não autor"},
     {"texto":"Source, Digital","modo":"exato","motivo":"grupo de digitalização com nome invertido"},
     {"texto":"herdeiros","modo":"exato","motivo":"palavra do corpo bíblico confundida com autoria"},

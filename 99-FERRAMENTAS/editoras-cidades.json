@@ -165,6 +165,13 @@
       "ocorrencias": 1
     },
     {
+      "editora": "Candeia",
+      "cidade": "São Paulo",
+      "fonte": "revisão visual do PDF",
+      "confianca": "revisada",
+      "ocorrencias": 1
+    },
+    {
       "editora": "Casa Editora e Publicadora",
       "cidade": "Balneário Piçarras",
       "fonte": "acervo consolidado Biblio",
@@ -749,7 +756,7 @@
       "editora": "Editora Vozes",
       "cidade": "Petrópolis",
       "fonte": "revisão visual do PDF",
-      "ocorrencias": 4,
+      "ocorrencias": 7,
       "confianca": "revisada"
     },
     {
@@ -970,6 +977,13 @@
       "confianca": "baixa"
     },
     {
+      "editora": "Hemus",
+      "cidade": "Curitiba",
+      "fonte": "revisão visual do PDF",
+      "confianca": "revisada",
+      "ocorrencias": 2
+    },
+    {
       "editora": "ICP - Instituto Cristão de Pesquisas",
       "cidade": "Jundiaí",
       "fonte": "acervo consolidado Biblio",
@@ -1164,6 +1178,13 @@
       "fonte": "acervo consolidado Biblio",
       "ocorrencias": 3,
       "confianca": "alta"
+    },
+    {
+      "editora": "Martins Fontes",
+      "cidade": "São Paulo",
+      "fonte": "revisão visual do PDF",
+      "confianca": "revisada",
+      "ocorrencias": 1
     },
     {
       "editora": "MCM PUBLICACOES",
@@ -1530,6 +1551,13 @@
       "confianca": "media"
     },
     {
+      "editora": "Tchê! Editora",
+      "cidade": "Porto Alegre",
+      "fonte": "revisão visual do PDF",
+      "confianca": "revisada",
+      "ocorrencias": 1
+    },
+    {
       "editora": "The British",
       "cidade": "Rio De Janeiro",
       "fonte": "acervo consolidado Biblio",
@@ -1719,5 +1747,5 @@
       "confianca": "alta"
     }
   ],
-  "atualizado_em": "2026-10-25T17:45:40"
+  "atualizado_em": "2026-10-26T12:33:19"
 }
