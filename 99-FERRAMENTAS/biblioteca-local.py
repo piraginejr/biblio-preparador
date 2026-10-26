@@ -33,6 +33,7 @@ from datetime import datetime
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import converter_html          # HTML -> PDF pesquisavel (Chromium)
+import triagem_entrada
 
 BASE_SCRIPT = pathlib.Path(__file__).with_name("preparar-livros.py")
 SPEC = importlib.util.spec_from_file_location("preparar_livros", BASE_SCRIPT)
@@ -2808,6 +2809,7 @@ def preparar_entrada_organizada(c, catalogo):
     """Converte formatos suportados para PDF antes da preparação habitual."""
     import importar_compactados
     importar_compactados.preparar(c["entrada"], c["controle"])
+    triagem_entrada.organizar(c)
     estado_path = c["controle"] / "importacoes-organizadas.json"
     try:
         estado = json.loads(estado_path.read_text(encoding="utf-8"))
@@ -4228,6 +4230,8 @@ def liberar_espaco(raiz, executar=False, lixeira=None):
     pastas_residuais = _pastas_residuais_entrada(c)
     orfaos = _arquivos_orfaos(c, catalogo)
     bytes_orfaos = sum(o["bytes"] for o in orfaos)
+    acessorios = triagem_entrada.para_limpeza(c)
+    bytes_acessorios = sum(a['bytes'] for a in acessorios)
 
     resumo = {"modo": "EXECUÇÃO" if executar else "SIMULAÇÃO",
               "livros": len(planos), "arquivos": total_arquivos,
@@ -4236,6 +4240,9 @@ def liberar_espaco(raiz, executar=False, lixeira=None):
               "bloqueados_sem_prova": sem_prova,
               "orfaos": orfaos,
               "orfaos_mb": round(bytes_orfaos / 1024 / 1024, 1),
+              "acessorios_para_descarte": acessorios,
+              "acessorios_quantidade": len(acessorios),
+              "acessorios_mb": round(bytes_acessorios / 1024 / 1024, 2),
               "pastas_vazias": [relativo(c, p) for p in pastas_residuais]}
     for plano in planos:
         resumo["itens"].append({
@@ -4259,6 +4266,19 @@ def liberar_espaco(raiz, executar=False, lixeira=None):
     operacao = {"executado_em": agora(), "destino": "Lixeira do macOS",
                 "livros": [], "orfaos_removidos": [],
                 "pastas_vazias_removidas": []}
+    operacao['acessorios_descartados'] = []
+    dados_acessorios = triagem_entrada.ler(c)
+    for item in acessorios:
+        origem = c['raiz'] / item['arquivo']
+        if origem.is_symlink() or triagem_entrada.digest(origem) != item['hash']:
+            continue
+        destino = _destino_lixeira(lixeira, origem, 'acessorio')
+        shutil.move(str(origem), str(destino))
+        operacao['acessorios_descartados'].append(dict(item, lixeira=destino.name))
+        for registrado in dados_acessorios['itens']:
+            if registrado['hash'] == item['hash'] and registrado['origem'] == item['origem']:
+                registrado.update(estado='enviado à Lixeira', lixeira=destino.name)
+        triagem_entrada.salvar(c, dados_acessorios)
     for plano in planos:
         movidos = []
         pastas_importadas = set()
