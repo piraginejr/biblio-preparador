@@ -30,6 +30,22 @@ def resultado_pronto(nome):
 
 
 class BibliotecaLocalTest(unittest.TestCase):
+    def test_acessorios_so_saem_na_limpeza_confirmada_e_com_historico(self):
+        with tempfile.TemporaryDirectory() as td:
+            c=local.inicializar(pathlib.Path(td)/'livros')
+            link=c['entrada']/'pagina.url'
+            link.write_text('[InternetShortcut]\nURL=https://exemplo.org')
+            (c['entrada']/'artigo.txt').write_text('Conteúdo útil com https://exemplo.org')
+            local.triagem_entrada.organizar(c)
+            plano=local.liberar_espaco(c['raiz'])
+            self.assertEqual(1,plano['acessorios_quantidade'])
+            arquivo=c['raiz']/plano['acessorios_para_descarte'][0]['arquivo']
+            self.assertTrue(arquivo.exists())
+            lixo=pathlib.Path(td)/'lixeira'
+            local.liberar_espaco(c['raiz'],executar=True,lixeira=lixo)
+            self.assertFalse(arquivo.exists())
+            self.assertTrue((c['entrada']/'artigo.txt').exists())
+            self.assertEqual('enviado à Lixeira',local.triagem_entrada.ler(c)['itens'][0]['estado'])
     def test_reprocessamento_preserva_ficha_com_erro_e_continua_sem_refazer_ocr(self):
         with tempfile.TemporaryDirectory() as td:
             c = local.inicializar(pathlib.Path(td) / 'livros')

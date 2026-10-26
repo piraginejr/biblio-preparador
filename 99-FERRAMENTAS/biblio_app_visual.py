@@ -315,7 +315,7 @@ function confirmarEnviar(){
 function confirmarLimpeza(){
   abrirModal({
     titulo: 'Liberar espaço local?',
-    texto: 'Arquivos cadastrados, duplicados confirmados e descartes serão movidos para a Lixeira do macOS.',
+    texto: 'Arquivos cadastrados, duplicados confirmados e descartes, incluindo acessórios separados na pasta Descarte, serão movidos para a Lixeira do macOS.',
     alerta: 'Metadados, IDs, hashes e histórico serão preservados.',
     confirmarTexto: 'Sim, liberar espaço',
     classe: 'danger',
