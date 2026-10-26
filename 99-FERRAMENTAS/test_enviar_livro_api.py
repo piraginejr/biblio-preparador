@@ -14,6 +14,21 @@ SPEC.loader.exec_module(api)
 
 
 class EnviarLivroApiTest(unittest.TestCase):
+    def test_documento_nao_ignora_conflito_de_identidade(self):
+        with tempfile.TemporaryDirectory() as td:
+            raiz = pathlib.Path(td)
+            pdf, capa = raiz / 'doc.pdf', raiz / 'doc.jpg'
+            pdf.write_bytes(b'%PDF-teste')
+            capa.write_bytes(b'imagem')
+            ficha = dict(titulo='Dinâmicas infantis', tipo_documento='documento',
+                         situacao='pronto para cadastro específico',
+                         status_ocr='OCR aprovado', conflitos='título incerto')
+            self.assertTrue(api.validar(ficha, pdf, capa, tipo_api='documento'))
+            ficha.update(conflitos='autor parece fragmento', nmAutor0='Infantis, Dinâmicas')
+            self.assertTrue(api.validar(ficha, pdf, capa, tipo_api='documento'))
+            ficha['nmAutor0'] = ''
+            self.assertEqual([], api.validar(ficha, pdf, capa, tipo_api='documento'))
+
     def test_parte_no_subtitulo_nao_confirma_outra_parte_como_duplicado(self):
         ficha={'titulo':'Comentário ao livro de Malaquias','subTitulo':'Parte III'}
         titulo=api.titulo_para_consulta(ficha)

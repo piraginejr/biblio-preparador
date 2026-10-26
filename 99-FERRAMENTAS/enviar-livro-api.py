@@ -544,6 +544,13 @@ def validar(ficha, pdf, capa, tipo_api="livro"):
         erros.append("o OCR nao esta aprovado")
     if ficha.get("conflitos") and not documento_so_titulo:
         erros.append("a ficha ainda contem conflitos")
+    elif documento_so_titulo:
+        # Autor/editora ausentes são permitidos em documentos anônimos.
+        # Isso não autoriza enviar uma identidade sabidamente conflitante.
+        conflitos = str(ficha.get("conflitos", "") or "").casefold()
+        if (re.search(r"t[ií]tulo", conflitos)
+                or (ficha.get("nmAutor0") and "autor" in conflitos)):
+            erros.append("identidade documental em conflito; revisar titulo/autoria")
     pendencias = str(ficha.get("pendencias", "") or "")
     if tipo_api in {"documento", "revista", "artigo de revista",
                     "artigo de jornal"}:
@@ -573,6 +580,8 @@ def validar(ficha, pdf, capa, tipo_api="livro"):
         erros.append("titulo parece aviso de direitos autorais; envio bloqueado")
     elif len(titulo) > 240 or len(titulo.split()) > 32:
         erros.append("titulo excessivamente longo; envio bloqueado para revisao")
+    elif re.match(r"^\s*\[?\d{1,3}\s*[:,]\s*\d{1,3}\]?\s", titulo):
+        erros.append("titulo parece versiculo ou fragmento do corpo; revisar")
     elif documento_so_titulo:
         palavras = titulo.split()
         titulo_ruim = (

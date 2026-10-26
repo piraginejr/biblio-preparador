@@ -28,6 +28,24 @@ SPEC_CBL.loader.exec_module(cbl)
 
 
 class PrepararLivrosTest(unittest.TestCase):
+    def test_cabecalho_nao_e_versiculo_e_by_e_autoria(self):
+        self.assertEqual('', prep._titulo_documental_do_inicio(
+            ['[1:1] Paulo servo de Jesus Cristo']))
+        self.assertEqual('McConkey, James H.', prep._autor_documental_explicito(
+            ['THE BOOK OF REVELATION\nBy James H. McConkey\nIntroduction']))
+
+    def test_capitalizacao_final_nao_inventa_autor(self):
+        for titulo in ('Amar é Sempre Certo', '14 JOGOS E BRINCADEIRAS INFANTIS',
+                       'A TIPOLOGIA DE JUNG NAS EMPRESAS'):
+            with self.subTest(titulo=titulo):
+                self.assertEqual((titulo, ''), prep.do_nome(titulo + '.pdf'))
+
+    def test_coautores_conhecidos_nao_roubam_final_do_titulo(self):
+        titulo, autor = prep.do_nome(
+            'Josh McDowell e Norman L. Geisler - Amar é Sempre Certo.pdf')
+        self.assertEqual('Amar é Sempre Certo', titulo)
+        self.assertIn('McDowell', autor)
+
     def test_contrato_de_todas_as_chamadas_reais_do_combinador(self):
         assinatura = inspect.signature(prep.combinar_fichas_catalograficas)
         chamadas = [n for n in ast.walk(ast.parse(ARQUIVO.read_text()))
