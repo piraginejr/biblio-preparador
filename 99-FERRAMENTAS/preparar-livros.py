@@ -3351,7 +3351,7 @@ def assinatura_do_programa():
                         "conferir_identidade.py", "ler-capa.py",
                         "periodicos-conhecidos.json",
                         "titulos-ruidosos-conhecidos.json", "consultar_apple.py",
-                        "piloto-apple-bibliografia.swift")):
+                        "piloto-apple-bibliografia.swift", "validacao_bibliografica.py")):
         caminho = os.path.join(pasta, nome)
         try:
             with open(caminho, "rb") as f:
