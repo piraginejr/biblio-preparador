@@ -25,6 +25,7 @@ import sys
 import time
 import unicodedata
 from datetime import datetime
+import validacao_bibliografica
 
 try:
     import requests
@@ -606,6 +607,11 @@ def validar(ficha, pdf, capa, tipo_api="livro"):
         erros.append(f"capa nao encontrada: {capa}")
     elif capa.suffix.lower() not in {".jpg", ".jpeg", ".png", ".gif", ".webp"}:
         erros.append("formato de capa nao aceito pela API")
+    if not erros:
+        # Só reler páginas quando o item realmente poderia ser enviado.
+        # Catálogos grandes contêm centenas de fichas já bloqueadas/arquivadas.
+        for achado in validacao_bibliografica.auditar(ficha, pdf=pdf):
+            erros.append('conferência bibliográfica: ' + achado['motivo'])
     return erros
 
 

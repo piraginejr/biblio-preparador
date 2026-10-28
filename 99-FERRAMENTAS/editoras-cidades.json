@@ -510,9 +510,9 @@
     {
       "editora": "Editora Cultrix",
       "cidade": "São Paulo",
-      "fonte": "acervo consolidado Biblio",
-      "ocorrencias": 1,
-      "confianca": "baixa"
+      "fonte": "revisão visual do PDF",
+      "ocorrencias": 4,
+      "confianca": "revisada"
     },
     {
       "editora": "Editora Cultura Cristã",
@@ -756,7 +756,7 @@
       "editora": "Editora Vozes",
       "cidade": "Petrópolis",
       "fonte": "revisão visual do PDF",
-      "ocorrencias": 7,
+      "ocorrencias": 10,
       "confianca": "revisada"
     },
     {
@@ -1257,6 +1257,13 @@
       "confianca": "baixa"
     },
     {
+      "editora": "Paidós",
+      "cidade": "Buenos Aires",
+      "fonte": "revisão visual do PDF",
+      "confianca": "revisada",
+      "ocorrencias": 1
+    },
+    {
       "editora": "Palas Athena",
       "cidade": "São Paulo",
       "fonte": "revisão visual do PDF",
@@ -1409,6 +1416,13 @@
       "fonte": "acervo consolidado Biblio",
       "ocorrencias": 1,
       "confianca": "baixa"
+    },
+    {
+      "editora": "Relógio D’Água",
+      "cidade": "Lisboa",
+      "fonte": "revisão visual do PDF",
+      "confianca": "revisada",
+      "ocorrencias": 1
     },
     {
       "editora": "Revista Batista Pioneira",
@@ -1747,5 +1761,5 @@
       "confianca": "alta"
     }
   ],
-  "atualizado_em": "2026-10-26T12:33:19"
+  "atualizado_em": "2026-10-28T13:35:05"
 }
