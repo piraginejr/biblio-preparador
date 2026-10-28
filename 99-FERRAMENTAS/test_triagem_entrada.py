@@ -5,6 +5,13 @@ import triagem_entrada as triagem
 
 
 class TriagemTest(unittest.TestCase):
+    def test_info_publicitario_e_preservacao_de_info_com_metadados(self):
+        with tempfile.TemporaryDirectory() as td:
+            entrada=pathlib.Path(td);p=entrada/'Info.txt'
+            p.write_text('Projeto Democratização da Leitura\nBiblioteca virtual gratuita. Visite www.exemplo.org')
+            self.assertIn('informativo',triagem.motivo(p,entrada))
+            p.write_text('Título: Obra\nAutor: Pessoa\nISBN: 1234\nwww.exemplo.org')
+            self.assertEqual('',triagem.motivo(p,entrada))
     def test_documentos_e_anexos_nao_sao_descartados(self):
         with tempfile.TemporaryDirectory() as td:
             entrada = pathlib.Path(td)

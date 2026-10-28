@@ -31,7 +31,7 @@ VERSAO_MOTOR = hashlib.sha256(b''.join(
     (_BASE_MOTOR / nome).read_bytes() for nome in
     ('biblio_app_visual.py', 'preparar-livros.py', 'biblioteca-local.py',
      'enviar-livro-api.py', 'consultar_apple.py', 'piloto-apple-bibliografia.swift',
-     'revisao-visual.py'))).hexdigest()[:16]
+     'revisao-visual.py', 'validacao_bibliografica.py'))).hexdigest()[:16]
 
 
 HTML = r"""<!doctype html>

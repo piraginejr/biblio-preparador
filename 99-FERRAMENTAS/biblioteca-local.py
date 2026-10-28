@@ -2103,6 +2103,7 @@ def gravar_decisao_revisao(raiz, arquivo, campos=None, aprovado=True,
                                      + (fontes or ["revisão visual"]))),
         "justificativa": justificativa,
         "aprovado": bool(aprovado),
+        "origem_decisao": "humana",
         "confirmacao_soberana": bool(confirmacao_soberana),
         "motivo_confirmacao_soberana": str(motivo_confirmacao or "").strip(),
         "atualizado_em": agora(),
@@ -2147,6 +2148,7 @@ def gravar_decisao_revisao(raiz, arquivo, campos=None, aprovado=True,
                 ficha_atualizada.get("lugar", ""),
                 fonte="revisão visual do PDF")
         ficha_atualizada["revisao_manual_aplicada"] = True
+        ficha_atualizada["origem_decisao_revisao"] = "humana"
         ficha_atualizada["revisao_manual_aprovada"] = bool(aprovado)
         ficha_atualizada["revisao_manual_atualizada_em"] = revisao["atualizado_em"]
         ficha_atualizada["fontes_revisao"] = " | ".join(revisao.get("fontes", []))
@@ -2795,11 +2797,22 @@ def _salvar_vinculo_importacao(c, pdf, pasta, arquivos, opf=None):
     essenciais = all(campos.get(k) for k in
                      ("titulo", "nmAutor0", "editora", "data", "nmLingua"))
     fontes = [f"OPF: {opf.resolve()}"] if opf else ["pasta organizada de entrada"]
+    anterior = revisoes.get('livros', {}).get(pdf.name, {})
+    if (anterior.get('hash_sha256') == sha256(pdf)
+            and (anterior.get('origem_decisao') == 'humana'
+                 or (anterior.get('atualizado_em') and anterior.get('justificativa') not in {
+                     'arquivos associados pelo nome-base', 'metadados estruturados importados do OPF'}))):
+        # Importar de novo não autoriza apagar a decisão da bancada.
+        for campo in ('pasta_origem_importacao', 'arquivos_origem_importacao', 'opf_origem'):
+            anterior.setdefault('campos', {}).setdefault(campo, campos[campo])
+        salvar_json(revisoes_path, revisoes)
+        return
     revisoes.setdefault("livros", {})[pdf.name] = {
         "hash_sha256": sha256(pdf), "campos": campos, "fontes": fontes,
         "justificativa": ("metadados estruturados importados do OPF" if opf
                            else "arquivos associados pelo nome-base"),
         "aprovado": essenciais,
+        "origem_decisao": "importacao_automatica",
     }
     revisoes["atualizado_em"] = agora()
     salvar_json(revisoes_path, revisoes)

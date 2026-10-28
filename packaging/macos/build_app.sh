@@ -34,7 +34,9 @@ PACKAGE_BASE="$RESOURCES/pacote-base"
 PYTHONPATH="$ROOT/99-FERRAMENTAS${PYTHONPATH:+:$PYTHONPATH}" \
 PYTHONPYCACHEPREFIX=/private/tmp/biblio-pycache BIBLIO_APPLE=0 python3 -m unittest \
   test_preparar_livros.PrepararLivrosTest.test_contrato_de_todas_as_chamadas_reais_do_combinador \
-  test_biblioteca_local.BibliotecaLocalTest.test_reprocessamento_preserva_ficha_com_erro_e_continua_sem_refazer_ocr
+  test_biblioteca_local.BibliotecaLocalTest.test_reprocessamento_preserva_ficha_com_erro_e_continua_sem_refazer_ocr \
+  test_biblioteca_local.BibliotecaLocalTest.test_nova_importacao_nao_substitui_decisao_humana \
+  test_validacao_bibliografica
 
 PYTHONPYCACHEPREFIX=/private/tmp/biblio-pycache python3 -m unittest discover \
   -s "$ROOT/packaging/macos" -p 'test_verificar_motor.py'

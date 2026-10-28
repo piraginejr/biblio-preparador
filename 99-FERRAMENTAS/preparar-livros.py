@@ -42,6 +42,7 @@ from urllib.parse import unquote
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import identificar          # pessoa x instituicao (porte do app de cartoes)
 import consultar_apple
+import validacao_bibliografica
 try:
     import conferir_identidade
 except ImportError:                      # o modulo e opcional
@@ -7954,6 +7955,26 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
             linha["pendencias"].append(_diagnostico_campo("editora"))
         if not linha.get("data") and not _revisor_decidiu("data"):
             linha["pendencias"].append(_diagnostico_campo("data de publicacao"))
+
+    humana = bool(rev.get('aprovado') and (
+        rev.get('origem_decisao') == 'humana' or
+        (rev.get('atualizado_em') and rev.get('justificativa') not in {
+            'arquivos associados pelo nome-base', 'metadados estruturados importados do OPF'})))
+    achados_biblio = validacao_bibliografica.auditar(
+        linha, paginas=paginas[:6], fim=paginas[-3:] if len(paginas)>6 else [],
+        confirmacao_humana=humana)
+    linha['validacao_bibliografica'] = {
+        'versao': validacao_bibliografica.VERSAO, 'achados': achados_biblio,
+        'revisao_humana': humana}
+    if humana:
+        linha['origem_decisao_revisao'] = 'humana'
+        linha['revisao_manual_aprovada'] = True
+    for achado in achados_biblio:
+        linha['conflitos'].append(achado['motivo'])
+    if (not humana and validacao_bibliografica.informativo_distribuicao('\n'.join(paginas))
+            and any(a['codigo']=='informativo_distribuicao' for a in achados_biblio)):
+        linha['tipo_documento']='arquivo inválido'
+        linha['motivo_descarte_documental']='informativo de distribuição sem conteúdo bibliográfico'
 
     if linha.get("tipo_documento") == "arquivo inválido":
         linha["situacao_metadados"] = "descartado - não é livro"

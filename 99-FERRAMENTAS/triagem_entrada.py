@@ -3,6 +3,7 @@ import hashlib
 import json
 import pathlib
 import shutil
+import validacao_bibliografica
 from datetime import datetime
 
 GRUPOS = {
@@ -25,6 +26,11 @@ def motivo(p, entrada):
     p, entrada = pathlib.Path(p), pathlib.Path(entrada)
     if p.is_symlink() or not p.is_file():
         return ''
+    if (p.suffix.lower()=='.txt' and p.stem.casefold() in {'info','readme','leia-me','leia_me'}
+            and p.stat().st_size<=16000):
+        texto=p.read_text(encoding='utf8',errors='replace')
+        if validacao_bibliografica.informativo_distribuicao(texto):
+            return 'informativo de distribuição sem conteúdo da obra'
     # Recursos de páginas salvas podem conter fontes/atalhos necessários.
     for pasta in (p.parent, *p.parents):
         if pasta == entrada.parent:

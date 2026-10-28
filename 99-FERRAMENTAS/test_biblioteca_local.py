@@ -30,6 +30,18 @@ def resultado_pronto(nome):
 
 
 class BibliotecaLocalTest(unittest.TestCase):
+    def test_nova_importacao_nao_substitui_decisao_humana(self):
+        with tempfile.TemporaryDirectory() as td:
+            c=local.inicializar(pathlib.Path(td)/'livros')
+            pdf=c['entrada']/'livro.pdf';pdf.write_bytes(b'%PDF-conteudo')
+            local.salvar_json(c['controle']/'revisoes-manuais.json',{'livros':{
+                pdf.name:{'hash_sha256':local.sha256(pdf),'origem_decisao':'humana',
+                          'aprovado':True,'campos':{'titulo':'Título conferido'}}}})
+            local._salvar_vinculo_importacao(c,pdf,pdf.parent,[pdf])
+            d=json.loads((c['controle']/'revisoes-manuais.json').read_text())['livros'][pdf.name]
+            self.assertEqual('Título conferido',d['campos']['titulo'])
+            self.assertTrue(d['aprovado'])
+            self.assertEqual('humana',d['origem_decisao'])
     def test_acessorios_so_saem_na_limpeza_confirmada_e_com_historico(self):
         with tempfile.TemporaryDirectory() as td:
             c=local.inicializar(pathlib.Path(td)/'livros')
