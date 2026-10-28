@@ -28,6 +28,24 @@ SPEC_CBL.loader.exec_module(cbl)
 
 
 class PrepararLivrosTest(unittest.TestCase):
+    def test_alterar_validador_invalida_assinatura_dos_metadados(self):
+        import builtins
+        import io
+        anterior=prep._ASSINATURA_PROGRAMA
+        abrir=builtins.open
+        try:
+            prep._ASSINATURA_PROGRAMA=None
+            primeira=prep.assinatura_do_programa()
+            def modificado(caminho,*args,**kwargs):
+                if str(caminho).endswith('validacao_bibliografica.py'):
+                    return io.BytesIO(b'validador atualizado')
+                return abrir(caminho,*args,**kwargs)
+            prep._ASSINATURA_PROGRAMA=None
+            with mock.patch('builtins.open',side_effect=modificado):
+                self.assertNotEqual(primeira,prep.assinatura_do_programa())
+        finally:
+            prep._ASSINATURA_PROGRAMA=anterior
+
     def test_cabecalho_nao_e_versiculo_e_by_e_autoria(self):
         self.assertEqual('', prep._titulo_documental_do_inicio(
             ['[1:1] Paulo servo de Jesus Cristo']))
