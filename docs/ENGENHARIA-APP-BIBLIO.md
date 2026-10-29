@@ -83,6 +83,22 @@ Uma mudança não termina no código local. A entrega deve seguir este roteiro:
 
 Esta rotina aplica-se também às correções e aos aprendizados originados na bancada.
 
+### Contrato de atualização da API — conferido em 29/10/2026
+
+A documentação do provedor agora define `cadastrar_livro` como inserção ou
+atualização por título: HTTP 201 cria; HTTP 200 com mensagem explícita e ID
+confirma atualização. O motor reconhece ambos e concilia respostas antigas sem
+novo envio, preservando o diário e o ID.
+
+Atenção às limitações do servidor: havendo títulos iguais, ele atualiza o de
+maior ID; a consulta pode devolver outra correspondência. Além disso, autores
+são ignorados nas atualizações. Portanto, consulta ambígua e diferença de edição
+não autorizam substituição automática. Correções de autoria em registros antigos
+dependem do gestor até existir atualização por ID com autores. Não contornar
+permissões de pasta nem repetir uploads com resultado já confirmado.
+
+Referência: https://apibib.pibcuritiba.org.br/documentacao.html#atualizacao-titulo
+
 Não devemos reescrever o motor do zero.
 
 A primeira versão do aplicativo deve **embrulhar, organizar e estabilizar** o
