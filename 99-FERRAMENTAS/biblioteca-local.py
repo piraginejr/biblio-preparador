@@ -129,7 +129,7 @@ CAMPOS_REVISAO_POR_TIPO = {
     "trabalho acadêmico": ("titulo", "nmAutor0", "data"),
 }
 EBOOK_CONVERT = pathlib.Path("/Applications/calibre.app/Contents/MacOS/ebook-convert")
-EXTENSOES_WORD = {".doc", ".docx", ".rtf", ".odt", ".fodt"}
+EXTENSOES_WORD = {".doc", ".docx", ".rtf", ".odt", ".fodt", ".sxw"}
 EXTENSOES_EBOOK = {".epub", ".mobi", ".azw3", ".fb2"}
 EXTENSOES_TEXTO = {".txt"}
 # PowerPoint e congêneres. Sete apresentações ficaram paradas em
@@ -797,6 +797,7 @@ def preparar_pdf_automaticamente(c, origem, digest, paginas=None,
         refazer = bool(diagnostico.get("paginas_pesquisaveis"))
         if prep.rodar_ocr(str(origem), str(preparado), idioma=idioma,
                           refazer=refazer, otimizar=3,
+                          forcar=prep.texto_com_codificacao_corrompida(paginas),
                           progresso=monitor_progresso_ocr(
                               c, origem.name, paginas_originais,
                               origem.stat().st_size)):
@@ -2153,6 +2154,21 @@ def gravar_decisao_revisao(raiz, arquivo, campos=None, aprovado=True,
         ficha_atualizada["revisao_manual_atualizada_em"] = revisao["atualizado_em"]
         ficha_atualizada["fontes_revisao"] = " | ".join(revisao.get("fontes", []))
         if aprovado:
+            # Cópia estacionada como duplicata pode ter só uma ficha mínima.
+            # Ao recuperá-la como outra edição, não presumir OCR/capa ausentes:
+            # conferir a camada já existente, sem executar novo OCR.
+            if not ficha_atualizada.get('status_ocr'):
+                fonte = c['raiz'] / ficha_atualizada.get('pdf_preparado','')
+                if not fonte.is_file():fonte=pdf
+                paginas = prep.paginas_pdftotext(str(fonte))
+                diagnostico = prep.diagnosticar_ocr(str(fonte),paginas)
+                ficha_atualizada.update(status_ocr=diagnostico['status'],
+                    situacao_ocr=diagnostico['status'],diagnostico_ocr=diagnostico,
+                    cobertura_ocr=diagnostico['cobertura_pesquisavel'],
+                    tem_ocr=bool(diagnostico['paginas_pesquisaveis']))
+            if not ficha_atualizada.get('capa'):
+                capa=prep.gerar_capa(str(pdf),str(c['capas']))
+                if capa:ficha_atualizada['capa']=relativo(c,pathlib.Path(capa))
             conflitos_anteriores = _partes_pipe(
                 ficha_atualizada.get("conflitos", ""))
             pendencias_anteriores = _partes_pipe(
@@ -2997,7 +3013,7 @@ def preparar_entrada_organizada(c, catalogo):
             importar_pdf(
                 convertido, pasta_fonte=html.parent, base_fonte=html.stem,
                 assinatura=assinatura, chave_fonte=chave,
-                conversao={"motor": "Chromium (HTML)", "aviso": aviso,
+                conversao={"motor": "LibreOffice (HTML)" if 'LibreOffice' in aviso else "Chromium (HTML)", "aviso": aviso,
                            "titulo_html": converter_html.titulo_do_html(html)})
 
     # ------------------------------------------------------------------

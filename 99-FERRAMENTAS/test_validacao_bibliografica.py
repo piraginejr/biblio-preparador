@@ -3,6 +3,14 @@ import validacao_bibliografica as v
 
 
 class ValidacaoBibliograficaTest(unittest.TestCase):
+    def test_versiculo_e_creditos_nao_sao_titulo(self):
+        self.assertIn('versiculo_como_titulo',self.codigos({'titulo':'[1,1] PAULOS APOSTOLOS'}))
+        self.assertIn('rotulos_no_titulo',self.codigos({'titulo':'O Anticristo Autor: Nietzsche Fonte: Labyrinth'}))
+        self.assertNotIn('versiculo_como_titulo',self.codigos({'titulo':'Novo Testamento — Romanos'}))
+
+    def test_autora_e_sobre_autor_sao_rotulos_validos(self):
+        for texto in ('Autora: Nise da Silveira','Sobre o Autor: Prof. Alexander Raspa da Silva'):
+            self.assertIn('autor_declarado_ausente',self.codigos({},[texto]))
     def test_frases_e_parenteses_do_corpo_nao_sao_creditos(self):
         for texto in ('Portanto, seguem, agora, estas linhas, para que me saibam',
                       'Por su ilustración del uso curativo de la religión',

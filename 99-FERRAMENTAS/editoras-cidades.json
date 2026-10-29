@@ -756,7 +756,7 @@
       "editora": "Editora Vozes",
       "cidade": "Petrópolis",
       "fonte": "revisão visual do PDF",
-      "ocorrencias": 10,
+      "ocorrencias": 13,
       "confianca": "revisada"
     },
     {
@@ -1184,7 +1184,7 @@
       "cidade": "São Paulo",
       "fonte": "revisão visual do PDF",
       "confianca": "revisada",
-      "ocorrencias": 1
+      "ocorrencias": 2
     },
     {
       "editora": "MCM PUBLICACOES",
@@ -1761,5 +1761,5 @@
       "confianca": "alta"
     }
   ],
-  "atualizado_em": "2026-10-28T13:35:05"
+  "atualizado_em": "2026-10-29T00:40:20"
 }

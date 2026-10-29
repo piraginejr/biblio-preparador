@@ -663,6 +663,7 @@ def _registro_por_arquivo(controle):
 def atualizar_fila(raiz):
     """Mantem historico remoto e deixa pendentes somente fichas ainda aptas."""
     raiz = pathlib.Path(raiz).expanduser().resolve()
+    conciliar_sucessos_registrados(raiz)
     caminho = fila_da_raiz(raiz)
     fila = carregar_fila(caminho)
     controle = carregar_controle(raiz / "_controle" / NOME_CONTROLE)
@@ -994,6 +995,78 @@ def reativar_falhas_tls_locais(raiz):
     salvar_json(controle_path, controle)
     salvar_json(fila_path, fila)
     return len(reativados)
+
+
+def resposta_cadastro_confirmada(status, corpo):
+    """201 criado ou 200 explicitamente confirmado pelo provedor; não é reenvio."""
+    if not isinstance(corpo,dict) or corpo.get('erro'):
+        return False
+    ident=corpo.get('id')
+    if isinstance(ident,bool) or not str(ident or '').isdigit() or int(ident)<=0:
+        return False
+    if status == 201:return True
+    mensagem=str(corpo.get('mensagem','')).strip().rstrip('.').casefold()
+    return status == 200 and mensagem in {
+        'livro atualizado com sucesso','livro cadastrado com sucesso'}
+
+
+def conciliar_sucessos_registrados(raiz):
+    """Corrige antigas respostas 200 mal classificadas, sem rede nem novo POST."""
+    raiz=pathlib.Path(raiz);cp=raiz/'_controle'/NOME_CONTROLE
+    if not cp.is_file():return 0
+    controle=carregar_controle(cp);corrigidos={}
+    for digest,reg in controle['envios'].items():
+        if (reg.get('estado')=='erro confirmado - revisar'
+                and resposta_cadastro_confirmada(reg.get('http_status'),reg.get('resposta'))):
+            reg.setdefault('reconciliacoes',[]).append({
+                'estado_anterior':reg['estado'],'em':agora(),
+                'motivo':'resposta de sucesso HTTP 200 já registrada; nenhum reenvio'})
+            reg.update(estado='cadastrado',id_remoto=reg['resposta']['id'],
+                       operacao_confirmada='atualizacao' if 'atualizado' in reg['resposta'].get('mensagem','').lower() else 'cadastro')
+            corrigidos[digest]=reg
+    if corrigidos:salvar_json(cp,controle)
+    confirmados={d:r for d,r in controle['envios'].items()
+                 if r.get('estado')=='cadastrado' and r.get('reconciliacoes')
+                 and resposta_cadastro_confirmada(r.get('http_status'),r.get('resposta'))}
+    if not confirmados:return 0
+    por_arquivo={str(pathlib.Path(r['arquivo']).resolve()):r
+                 for r in confirmados.values() if r.get('arquivo')}
+    cat_path=raiz/'_controle'/'catalogo-local.json'
+    try:
+        catalogados=json.loads(cat_path.read_text(encoding='utf-8'))['livros']
+    except (OSError,ValueError,KeyError):catalogados={}
+    por_ficha={r.get('metadados'):r for r in catalogados.values() if r.get('metadados')}
+    for nome in [NOME_FILA]+list(FILAS_ESPECIFICAS.values()):
+        p=raiz/'_controle'/nome
+        if not p.is_file():continue
+        fila=json.loads(p.read_text(encoding='utf-8'));alterados=[]
+        for item in fila.get('itens',[]):
+            reg=confirmados.get(item.get('hash_sha256'))
+            if not reg:
+                # A fila específica usa o hash do original; o diário do upload
+                # usa o hash da cópia OCR. Vincular pelo PDF efetivamente enviado.
+                fp=raiz/(item.get('ficha') or item.get('metadados') or '')
+                if fp.is_file():
+                    try:
+                        f=json.loads(fp.read_text(encoding='utf-8'))
+                        pdf=caminho_local(f.get('pdf_preparado') or f.get('pdf_original') or f.get('arquivo'),fp)
+                        reg=por_arquivo.get(str(pdf.resolve()))
+                    except (OSError,ValueError,TypeError):pass
+            if not reg:continue
+            if item.get('estado')=='cadastrado' and item.get('id_remoto')==reg['id_remoto']:continue
+            catalogado=por_ficha.get(item.get('ficha') or item.get('metadados'),{})
+            if (catalogado.get('estado','').startswith('cadastrado')
+                    and catalogado.get('id_remoto')
+                    and str(catalogado['id_remoto'])!=str(reg['id_remoto'])):
+                # ID confirmado só muda com substituição explícita, nunca
+                # pela recuperação de uma resposta histórica da API.
+                continue
+            item.update(estado='cadastrado',id_remoto=reg['id_remoto'],
+                        concluido_em=reg.get('concluido_em'),operacao_confirmada=reg['operacao_confirmada'])
+            alterados.append({**item,'ficha':item.get('ficha') or item.get('metadados')})
+        if alterados:
+            salvar_json(p,fila);sincronizar_catalogo_com_fila(raiz,{'itens':alterados})
+    return len(corrigidos)
 
 
 def marcar_catalogo_cadastrado(raiz, digest, registro):
@@ -1460,9 +1533,11 @@ def enviar(ficha_path, realmente=False, chave="", sessao=None,
             corpo = {"resposta_texto": resposta.text[:1000]}
         registro.update({"http_status": resposta.status_code,
                          "resposta": corpo, "concluido_em": agora()})
-        if resposta.status_code == 201 and corpo.get("id"):
+        if resposta_cadastro_confirmada(resposta.status_code,corpo):
             registro["estado"] = "cadastrado"
             registro["id_remoto"] = corpo["id"]
+            registro['operacao_confirmada'] = ('atualizacao' if
+                'atualizado' in corpo.get('mensagem','').lower() else 'cadastro')
         elif resposta.status_code == 400 and "existe" in str(
                 corpo.get("mensagem", "")).lower():
             registro["estado"] = "duplicado informado pela API - revisar"

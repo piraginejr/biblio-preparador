@@ -36,6 +36,66 @@ import re
 import shutil
 import subprocess
 import tempfile
+import html as html_std
+from html.parser import HTMLParser
+from urllib.parse import unquote
+
+
+def _recurso_local(pasta, valor):
+    if re.match(r'(?i)^[a-z][\w+.-]*:|^//',valor):return None
+    pasta=pathlib.Path(pasta).resolve()
+    for enc in ('utf-8','cp1252'):
+        p=(pasta/unquote(valor,encoding=enc)).resolve()
+        if pasta in p.parents and p.is_file():return p
+    return None
+
+
+def ler_html(origem):
+    dados = pathlib.Path(origem).read_bytes()
+    charset = re.search(br'charset\s*=\s*["\x27]?([\w-]+)',dados[:4096],re.I)
+    enc = charset[1].decode('ascii') if charset else 'utf-8-sig'
+    try:
+        return dados.decode(enc)
+    except (UnicodeError, LookupError):
+        return dados.decode('cp1252',errors='replace')
+
+
+class _HTMLLocal(HTMLParser):
+    """Alternativa Writer: sem scripts/CSS/requisições externas por padrão."""
+    def __init__(self, pasta):
+        super().__init__(convert_charrefs=False)
+        self.pasta=pathlib.Path(pasta).resolve();self.partes=[];self.bloqueio=0
+
+    def handle_starttag(self, tag, attrs):
+        if tag in {'script','iframe','object','style'}:
+            self.bloqueio+=1;return
+        if self.bloqueio or tag in {'base','link','meta','embed'}:return
+        seguros=[]
+        for k,v in attrs:
+            if v is None or k.startswith('on') or k in {'style','srcset','background','action','formaction'}:continue
+            if k in {'src','href'}:
+                if re.match(r'(?i)^[a-z][\w+.-]*:|^//',v):continue
+                if v.startswith('#'):
+                    seguros.append((k,v));continue
+                p=_recurso_local(self.pasta,v)
+                if p is None:continue
+                v=p.as_uri()
+            seguros.append((k,v))
+        self.partes.append('<'+tag+''.join(' '+k+'="'+html_std.escape(v,quote=True)+'"' for k,v in seguros)+'>')
+
+    def handle_endtag(self,tag):
+        if tag in {'script','iframe','object','style'}:
+            self.bloqueio=max(0,self.bloqueio-1);return
+        if not self.bloqueio:self.partes.append('</'+tag+'>')
+
+    def handle_data(self,d):
+        if not self.bloqueio:self.partes.append(html_std.escape(d))
+
+    def handle_entityref(self,n):
+        if not self.bloqueio:self.partes.append('&'+n+';')
+
+    def handle_charref(self,n):
+        if not self.bloqueio:self.partes.append('&#'+n+';')
 
 EXTENSOES_HTML = {".html", ".htm", ".xhtml", ".mht", ".mhtml"}
 
@@ -56,7 +116,7 @@ def pasta_de_recursos(html):
 def titulo_do_html(html):
     """<title> da pagina, para nomear o PDF e alimentar a ficha."""
     try:
-        bruto = pathlib.Path(html).read_text(encoding="utf-8", errors="ignore")
+        bruto = ler_html(html)
     except OSError:
         return ""
     m = re.search(r"<title[^>]*>(.*?)</title>", bruto, re.I | re.S)
@@ -66,7 +126,7 @@ def titulo_do_html(html):
         return ""
     texto = re.sub(r"<[^>]+>", " ", m.group(1))
     texto = re.sub(r"&nbsp;?", " ", texto)
-    return " ".join(texto.split())[:200]
+    return " ".join(html_std.unescape(texto).split())[:200]
 
 
 def _converter_chromium(origem, destino, permitir_rede=False):
@@ -113,28 +173,41 @@ def _converter_chromium(origem, destino, permitir_rede=False):
     return True, aviso
 
 
-def _converter_libreoffice(origem, destino):
-    soffice = shutil.which("soffice") or shutil.which("libreoffice")
+def _converter_libreoffice(origem, destino, permitir_rede=False):
+    soffice = os.environ.get('BIBLIO_SOFFICE') or shutil.which("soffice") or shutil.which("libreoffice")
     if not soffice:
         for c in ("/Applications/LibreOffice.app/Contents/MacOS/soffice",):
             if os.path.exists(c):
                 soffice = c
                 break
     if not soffice:
+        candidatos=sorted((pathlib.Path.home()/'.cache/codex-runtimes').glob(
+            '*/dependencies/bin/override/soffice'))
+        soffice=next((str(p) for p in candidatos if p.is_file()),None)
+    if not soffice:
         return False, "LibreOffice ausente"
     with tempfile.TemporaryDirectory(prefix="biblio-html-") as td:
         try:
-            subprocess.run(
+            entrada=pathlib.Path(origem).resolve()
+            if not permitir_rede:
+                parser=_HTMLLocal(entrada.parent);parser.feed(ler_html(entrada))
+                entrada=pathlib.Path(td)/'pagina-local.html'
+                entrada.write_text('<meta charset="utf-8">'+''.join(parser.partes),encoding='utf-8')
+            perfil=pathlib.Path(td)/'perfil'
+            resultado=subprocess.run(
                 [soffice, "--headless", "--nologo", "--nodefault",
-                 "--convert-to", "pdf", "--outdir", td, str(origem)],
+                 "--nofirststartwizard", '-env:UserInstallation='+perfil.as_uri(),
+                 "--convert-to", "pdf", "--outdir", td, str(entrada)],
                 capture_output=True, timeout=600)
         except Exception as erro:
             return False, f"libreoffice: {str(erro)[:100]}"
         gerados = list(pathlib.Path(td).glob("*.pdf"))
-        if not gerados:
+        if resultado.returncode or not gerados:
             return False, "libreoffice nao gerou o PDF"
+        if gerados[0].read_bytes()[:5]!=b'%PDF-':
+            return False, 'libreoffice gerou arquivo inválido'
         shutil.move(str(gerados[0]), str(destino))
-    return True, "convertido pelo LibreOffice (fidelidade menor que a do navegador)"
+    return True, "convertido pelo LibreOffice (alternativa local sem scripts/CSS externo; conferir apresentação)"
 
 
 def converter(origem, destino, permitir_rede=False):
@@ -145,13 +218,21 @@ def converter(origem, destino, permitir_rede=False):
     origem = pathlib.Path(origem)
     if origem.suffix.lower() not in EXTENSOES_HTML:
         return False, "nao e HTML"
+    # Frames antigos frequentemente foram salvos sem as páginas internas.
+    # Converter só a moldura produz um PDF branco e um falso sucesso.
+    codigo=ler_html(origem)
+    frames=re.findall(r'(?i)<frame\b[^>]*\bsrc=["\x27]([^"\x27]+)',codigo)
+    if frames and not permitir_rede:
+        return False, 'HTML em frames: exige recuperar/reunir as páginas internas antes de converter; não gerar PDF vazio'
     destino = pathlib.Path(destino)
+    if destino.exists():
+        return False, 'destino já existe; PDF preservado'
     destino.parent.mkdir(parents=True, exist_ok=True)
 
     ok, aviso = _converter_chromium(origem, destino, permitir_rede)
     if ok:
         return True, aviso
-    ok2, aviso2 = _converter_libreoffice(origem, destino)
+    ok2, aviso2 = _converter_libreoffice(origem, destino, permitir_rede=permitir_rede)
     if ok2:
         return True, f"{aviso2} ({aviso})"
     return False, f"{aviso}; {aviso2}"

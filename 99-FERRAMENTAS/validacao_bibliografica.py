@@ -11,7 +11,7 @@ import shutil
 import subprocess
 import unicodedata
 
-VERSAO = 1
+VERSAO = 2
 
 
 def informativo_distribuicao(texto):
@@ -94,6 +94,10 @@ def auditar(ficha, pdf=None, paginas=None, fim=None, confirmacao_humana=False):
 
     if ('\ufffd' in titulo or re.search(r'(?i)\((?:doc|doc\s+cap[^)]*)\)',titulo)):
         registrar('titulo_tecnico','titulo','título contém ruído técnico/codificação do arquivo')
+    if re.match(r'^\s*\[\d{1,3}\s*[,.:]\s*\d{1,3}\]', titulo):
+        registrar('versiculo_como_titulo','titulo','primeiro versículo usado como título, sem identificar o documento')
+    if re.search(r'(?i)\b(?:autor(?:a|es|as)?|tradutor(?:a)?|fonte)\s*:', titulo):
+        registrar('rotulos_no_titulo','titulo','créditos de autoria/tradução/fonte foram incorporados ao título')
     if re.search(r'(?i)\b(?:R\.|Rua|Av\.|Avenida)\s+.{2,60},\s*n[ºoQ°.]',titulo):
         registrar('endereco_no_titulo','titulo','endereço editorial incorporado ao título')
     if re.match(r'(?i)^obras\s+completas\s+de\s+[\w. ]{0,12}$',titulo):
@@ -127,7 +131,7 @@ def auditar(ficha, pdf=None, paginas=None, fim=None, confirmacao_humana=False):
             registrar('autor_diverge_pdf','nmAutor0','autoria diverge da identificação explícita no PDF',evidencia)
 
     for pagina in paginas[:2]:
-        m=re.search(r'(?im)^\s*(?:autor(?:es)?|author(?:s)?)\s*:\s*([^\n]{3,100})',pagina)
+        m=re.search(r'(?im)^\s*(?:Sobre\s+[oa]\s+)?(?:autor(?:a|es|as)?|authors?)\s*:\s*(?:Prof\.?\s+)?([^\n]{3,100})',pagina)
         if not m:
             # Rótulo separado e nome completo, nunca "Portanto" nem uma
             # frase como "Por su ilustración ..." no corpo do texto.
