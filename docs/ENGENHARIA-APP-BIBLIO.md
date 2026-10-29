@@ -90,6 +90,10 @@ atualização por título: HTTP 201 cria; HTTP 200 com mensagem explícita e ID
 confirma atualização. O motor reconhece ambos e concilia respostas antigas sem
 novo envio, preservando o diário e o ID.
 
+Proteção instalada: antes do upload, consultar também o título exato sem filtro
+de autor. Título existente bloqueia o POST automático; a substituição explícita
+exige ID informado e correspondência única. Isso não exige autoria de documentos.
+
 Atenção às limitações do servidor: havendo títulos iguais, ele atualiza o de
 maior ID; a consulta pode devolver outra correspondência. Além disso, autores
 são ignorados nas atualizações. Portanto, consulta ambígua e diferença de edição
