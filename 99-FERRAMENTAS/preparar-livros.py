@@ -1166,8 +1166,23 @@ def qualidade_ocr(t):
     return round(max(0.0, boas / len(candidatas) - penal), 2)
 
 
+def texto_com_codificacao_corrompida(paginas):
+    """Texto visível com mapa de caracteres quebrado não é camada OCR antiga.
+
+    Não confundir fórmulas pontuais com o documento inteiro: são necessárias
+    amostras extensas e corrupção majoritária nas páginas avaliadas.
+    """
+    amostras = [''.join(c for c in p if not c.isspace())
+                for p in (paginas or [])[:20]]
+    amostras = [p for p in amostras if len(p) >= 150]
+    ruins = sum(sum('\ue000' <= c <= '\uf8ff' or c == '\ufffd' for c in p) / len(p) > .10
+                or sum(c.isalpha() for c in p) / len(p) < .20
+                for p in amostras)
+    return bool(amostras and ruins / len(amostras) >= .6)
+
+
 def rodar_ocr(f, destino, idioma="por+eng+spa", refazer=False, otimizar=3,
-              progresso=None):
+              progresso=None, forcar=False):
     """Cria uma copia com Apple Vision OCR; nunca substitui o PDF recebido.
 
     --skip-text  : nao mexe em pagina que ja tem texto (o padrao)
@@ -1177,7 +1192,9 @@ def rodar_ocr(f, destino, idioma="por+eng+spa", refazer=False, otimizar=3,
         raise ValueError("o destino do OCR nao pode ser o arquivo original")
     os.makedirs(os.path.dirname(destino), exist_ok=True)
     tmp = destino + ".tmp.pdf"
-    modo = "--redo-ocr" if refazer else "--skip-text"
+    # --redo-ocr só remove OCR invisível: mantém texto visível com mapa
+    # corrompido. Nesses casos renderizar uma CÓPIA antes de reconhecer.
+    modo = "--force-ocr" if forcar else "--redo-ocr" if refazer else "--skip-text"
     plugin = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                           "apple-vision-ocr-plugin.py")
     helper = os.path.join(os.path.dirname(os.path.abspath(__file__)),
@@ -1197,7 +1214,7 @@ def rodar_ocr(f, destino, idioma="por+eng+spa", refazer=False, otimizar=3,
         # OCRmyPDF nao permite --deskew junto de --redo-ocr. A rotacao de
         # paginas continua ativa nos dois modos; a correcao fina de inclinacao
         # e usada apenas quando estamos criando uma camada do zero.
-        if not refazer:
+        if not refazer or forcar:
             comando.insert(comando.index("--optimize"), "--deskew")
         if progresso:
             ambiente = os.environ.copy()
@@ -2309,6 +2326,15 @@ def _titulo_documental_do_inicio(paginas):
     return titulo.strip(" .,:;-")
 
 
+def _responsavel_documental_explicito(paginas):
+    bordas='\n'.join((paginas or [])[:3]+(paginas or [])[-3:])
+    m=re.search(r'(?im)^\s*(Material\s+compilado|Editado)\s+por\s+([^\n|]{3,90})$',bordas)
+    if m and autor_bibliograficamente_plausivel(m[2].strip()):
+        return {'nome':sobrenome_virgula(m[2].strip()),
+                'desc':'Compilador' if m[1].lower().startswith('material') else 'Editor'}
+    return {}
+
+
 def _autor_documental_explicito(paginas):
     """Aceita somente autoria acompanhada por rótulo ou byline inequívoca."""
     if not paginas:
@@ -2334,7 +2360,7 @@ def _autor_documental_explicito(paginas):
             return sobrenome_virgula(nome)
     padroes = [
         r"(?im)^\s*By\s+([A-ZÀ-Ü][^\n|]{3,90})$",
-        r"(?im)^\s*AUTOR\s*:\s*(?:Pr\.?|Rev\.?|Dr\.?)?\s*([^\n|]{3,90})$",
+        r"(?im)^\s*(?:Sobre\s+[oa]\s+)?AUTOR(?:A|ES|AS)?\s*:\s*(?:Prof\.?|Pr\.?|Rev\.?|Dr\.?)?\s*([^\n|]{3,90})$",
         r"(?im)^\s*(?:ESTUDO\s*:\s*)?.{5,150}?\s*[\u2013\u2014-]\s*Por\s+"
         r"(?:Pr\.?|Rev\.?|Dr\.?)?\s*([^\n|]{3,90})$",
         r"(?im)^\s*(?:Pr\.?|Rev\.?|Dr\.?)\s+"
@@ -2349,7 +2375,7 @@ def _autor_documental_explicito(paginas):
         nome = re.sub(r"(?i)\s+Publicado\s+em.*$", "", nome).strip()
         if autor_bibliograficamente_plausivel(nome):
             return sobrenome_virgula(nome)
-    return ""
+    return _responsavel_documental_explicito(paginas).get('nome','')
 
 
 def metadados_documentais_genericos(paginas, metadados=None,
@@ -2412,6 +2438,17 @@ def metadados_documentais_genericos(paginas, metadados=None,
             and (origem_word or rotulos_documentais or urls)):
         confianca = "alta" if autor and (urls or data) else (
             "media" if urls or autor else "baixa")
+        # Coletânea/apostila sem autoria é válida. Exigir uma assinatura
+        # inventada não melhora o catálogo. Só dispensar a procedência quando
+        # o cabeçalho coincide com a origem e o corpo é realmente estruturado.
+        palavras_titulo = {w for w in identificar.normalizar(titulo).split() if len(w)>3}
+        palavras_nome = set(nome_n.split())
+        cabecalho_confirmado = (origem_word and len(palavras_titulo & palavras_nome)>=2
+                                and len(titulo.split())<=14
+                                and not re.match(r'^\s*\[?\d+[,.:]\d+',titulo)
+                                and len(re.findall(r'(?im)^\s*(?:objetivo|material|procedimento|desenvolvimento)\s*:',inicio))>=2)
+        if confianca == 'baixa' and cabecalho_confirmado:
+            confianca = 'media'
         return {
             "tipo_documento": tipo_nome, "titulo": titulo, "autor": autor,
             "ano": data, "fontes": urls, "confianca": confianca,
@@ -3932,7 +3969,7 @@ def autores_rotulados_nas_paginas(paginas):
     """
     texto = "\n".join((paginas or [])[:10] + (paginas or [])[-12:])
     achado = re.search(
-        r"(?im)^\s*(?:authors?|autores?)\s*:\s*([^\n|]{3,180})\s*$", texto)
+        r"(?im)^\s*(?:Sobre\s+[oa]\s+)?(?:authors?|autor(?:a|es|as)?)\s*:\s*(?:Prof\.?\s+)?([^\n|]{3,180})\s*$", texto)
     if not achado:
         return []
     valor = re.split(r"\s{3,}", achado.group(1), maxsplit=1)[0]
@@ -6416,7 +6453,7 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
     arquivos_origem = (rev.get("campos", {}).get(
         "arquivos_origem_importacao", []) if rev else [])
     origem_word = any(pathlib.Path(str(p)).suffix.lower() in {
-                         '.doc', '.docx', '.rtf', '.odt', '.fodt', '.txt'}
+                         '.doc', '.docx', '.rtf', '.odt', '.fodt', '.sxw', '.txt'}
                       for p in arquivos_origem)
     origem_apresentacao = origem_e_apresentacao(arquivos_origem)
 
@@ -7638,6 +7675,11 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
             {"nome": nome_autor, "desc": "Autor"}
             for nome_autor in autores_creditos
         ]
+    if documento_nao_livro and not autores_estruturados:
+        responsavel=_responsavel_documental_explicito(paginas)
+        if responsavel and (not autor or identificar.normalizar(autor)==identificar.normalizar(responsavel['nome'])):
+            autores_estruturados=[responsavel];autor=responsavel['nome']
+            origem_aut='responsabilidade documental explícita: '+responsavel['desc']
 
     documento_nao_livro = tipo_documento not in {"livro", "coletânea"}
     linha.update({
@@ -8121,6 +8163,7 @@ def main():
                 refazer = args.refazer_ocr or bool(diag_inicial["paginas_pesquisaveis"])
                 warn(f"criando copia com OCR ({IDIOMA_OCR.get(idi, 'por')})")
                 if rodar_ocr(caminho, preparado,
+                             forcar=texto_com_codificacao_corrompida(paginas),
                              idioma=IDIOMA_OCR.get(idi, "por"), refazer=refazer):
                     fonte = preparado
                     paginas = paginas_pdftotext(fonte)

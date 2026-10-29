@@ -1178,6 +1178,24 @@ CDD - 260.01"""
         with self.assertRaises(ValueError):
             prep.rodar_ocr("/tmp/livro.pdf", "/tmp/livro.pdf")
 
+    def test_texto_codificado_precisa_ocr_forcado_na_copia(self):
+        self.assertTrue(prep.texto_com_codificacao_corrompida(['!#$%&()* ' * 80]))
+        self.assertTrue(prep.texto_com_codificacao_corrompida(['\uf021\uf022\uf023 ' * 80]))
+        self.assertFalse(prep.texto_com_codificacao_corrompida(['Texto legível sobre educação e ciência. ' * 20]))
+        self.assertFalse(prep.texto_com_codificacao_corrompida(['αρχη του ευαγγελιου ιησου χριστου ' * 20]))
+        self.assertFalse(prep.texto_com_codificacao_corrompida(['Curto']))
+        with mock.patch.object(prep.os.path,'isfile',return_value=True), mock.patch.object(prep.os,'access',return_value=True), mock.patch.object(prep.subprocess,'run') as executar, mock.patch.object(prep.os,'replace'):
+            self.assertTrue(prep.rodar_ocr('/tmp/origem.pdf','/tmp/destino.pdf',refazer=True,forcar=True))
+        comando=executar.call_args.args[0]
+        self.assertIn('--force-ocr',comando);self.assertNotIn('--redo-ocr',comando)
+
+    def test_autoria_feminina_professor_e_compilador(self):
+        self.assertEqual('Silveira, Nise da',prep._autor_documental_explicito(['Autora: Nise da Silveira']))
+        self.assertEqual('Silva, Alexander Raspa da',prep._autor_documental_explicito(['Sobre o Autor: Prof. Alexander Raspa da Silva']))
+        self.assertEqual('Lustosa, Jean',prep._autor_documental_explicito(['Texto','Material compilado por Jean Lustosa']))
+        self.assertEqual({'nome':'Lustosa, Jean','desc':'Compilador'},prep._responsavel_documental_explicito(['Material compilado por Jean Lustosa']))
+        self.assertEqual({'nome':'Neighbour, Randall G.','desc':'Editor'},prep._responsavel_documental_explicito(['Editado por Randall G. Neighbour']))
+
     def test_rodar_ocr_corrige_orientacao_e_inclinacao(self):
         with mock.patch.object(prep.os.path, "isfile", return_value=True), \
              mock.patch.object(prep.os, "access", return_value=True), \

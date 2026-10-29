@@ -625,3 +625,22 @@ Especialmente:
 - separar instalador como etapa própria.
 
 Essa preparação torna a fase Windows mais barata.
+
+## Melhorias futuras registradas
+
+### Contagens claras de catálogo e entrada — 26/10/2026
+
+- [ ] Separar, na interface e no relatório textual, o total do catálogo dos
+  documentos novos que realmente aguardam preparação.
+- [ ] Exibir separadamente originais com importação registrada, compactados
+  já examinados, acessórios destinados ao Descarte e formatos a conferir.
+- [ ] Não rotular todos os arquivos fisicamente presentes como “aguardando”.
+  Conferir alterações nas fontes antes de considerar uma importação concluída.
+- [ ] No progresso, distinguir “verificando 225 registros do catálogo” de
+  “corrigindo OCR de 3 materiais”, com contagens de etapa e de lote explícitas.
+- [ ] Usar a mesma regra de contagem no painel inicial, no resumo final e no
+  relatório, para que os números não se contradigam.
+- [ ] Testar um lote misto com originais preservados, documentos novos,
+  compactados já extraídos e acessórios, sem contar uma obra mais de uma vez.
+
+Implementar e instalar após o processamento ativo terminar, sem interromper OCR.

@@ -14,6 +14,41 @@ SPEC.loader.exec_module(api)
 
 
 class EnviarLivroApiTest(unittest.TestCase):
+    def test_sucesso_200_atualizacao_nao_e_falha_nem_novo_cadastro(self):
+        self.assertTrue(api.resposta_cadastro_confirmada(200,{'id':42,'mensagem':'Livro atualizado com sucesso'}))
+        self.assertTrue(api.resposta_cadastro_confirmada(201,{'id':42}))
+        for status,corpo in [(500,{'id':42,'mensagem':'Livro atualizado com sucesso'}),
+                             (200,{'id':42,'erro':True,'mensagem':'Livro atualizado com sucesso'}),
+                             (200,{'id':42,'mensagem':'Consulta concluída'}),
+                             (200,{'id':True,'mensagem':'Livro atualizado com sucesso'}),
+                             (200,{'mensagem':'Livro atualizado com sucesso'})]:
+            self.assertFalse(api.resposta_cadastro_confirmada(status,corpo))
+
+    def test_conciliacao_200_preserva_resposta_e_nao_envia(self):
+        with tempfile.TemporaryDirectory() as td:
+            r=pathlib.Path(td);p=r/'_controle'/api.NOME_CONTROLE
+            resposta={'id':42,'mensagem':'Livro atualizado com sucesso'}
+            api.salvar_json(p,{'envios':{'abc':{'estado':'erro confirmado - revisar','http_status':200,'resposta':resposta}}})
+            with mock.patch.object(api,'criar_sessao_api') as sessao:
+                self.assertEqual(1,api.conciliar_sucessos_registrados(r))
+                self.assertEqual(0,api.conciliar_sucessos_registrados(r))
+            sessao.assert_not_called();salvo=api.carregar_controle(p)['envios']['abc']
+            self.assertEqual('cadastrado',salvo['estado']);self.assertEqual(resposta,salvo['resposta'])
+            self.assertEqual('erro confirmado - revisar',salvo['reconciliacoes'][0]['estado_anterior'])
+
+    def test_conciliacao_vincula_original_a_copia_ocr_por_caminho(self):
+        with tempfile.TemporaryDirectory() as td:
+            r=pathlib.Path(td);fp=r/'_metadados'/'ficha.json'
+            pdf=r/'_preparados-envio'/'ocr.pdf';pdf.parent.mkdir();pdf.write_bytes(b'%PDF-ocr')
+            api.salvar_json(fp,{'pdf_preparado':str(pdf)})
+            cp=r/'_controle'/api.NOME_CONTROLE
+            api.salvar_json(cp,{'envios':{'hash-preparado':{'arquivo':str(pdf),'estado':'erro confirmado - revisar','http_status':200,'resposta':{'id':42,'mensagem':'Livro atualizado com sucesso'}}}})
+            fila=r/'_controle'/api.FILAS_ESPECIFICAS['documentos']
+            api.salvar_json(fila,{'itens':[{'hash_sha256':'hash-original','metadados':'_metadados/ficha.json','estado':'erro confirmado - revisar'}]})
+            with mock.patch.object(api,'sincronizar_catalogo_com_fila'):
+                api.conciliar_sucessos_registrados(r)
+            item=json.loads(fila.read_text())['itens'][0]
+            self.assertEqual('cadastrado',item['estado']);self.assertEqual(42,item['id_remoto'])
     def test_documento_nao_ignora_conflito_de_identidade(self):
         with tempfile.TemporaryDirectory() as td:
             raiz = pathlib.Path(td)

@@ -58,6 +58,31 @@ isso em produto instalável e operável por outras pessoas.
 
 ## Princípio central de engenharia
 
+### Rotina obrigatória de entrega: testes, backups e Git
+
+Uma mudança não termina no código local. A entrega deve seguir este roteiro:
+
+1. Conferir o estado Git e preservar trabalhos do operador. Registrar somente
+   código, testes, regras e documentação pertinentes; não versionar acervo,
+   credenciais, caches ou PDFs.
+2. Validar a mudança e replicar o motor compartilhado nas branches
+   `codex/app-mac-biblio` e `desenvolvimento-biblio`, mantendo `main` intacta.
+   Recursos exclusivos da interface Mac não devem descaracterizar o motor antigo.
+3. Reconstruir o pacote Mac e comparar os hashes do projeto, pacote-base e
+   instalação ativa, sem interromper preparação/OCR em execução. Conferir a
+   versão em `/api/health` depois da reabertura.
+4. Preservar o projeto no Dropbox e sincronizar os arquivos entregues no Kingston
+   (`/Volumes/kingston projetos/projetos/revista`). Validar o volume e os hashes;
+   salvar versões divergentes antes de substituir arquivos. Não executar exclusão
+   espelhada nem sobrescrever `.git`. Material do operador deve ser preservado.
+5. Fazer commit e push das duas branches, sem force; comparar o hash remoto
+   com o local. Commits locais, mesmo numerosos, não substituem o push.
+6. Registrar no relatório de entrega os commits, os pushes confirmados, os backups
+   verificados, os testes e qualquer pendência. Volume desmontado, rede indisponível
+   ou divergência de histórico devem aparecer como pendência, não como sucesso.
+
+Esta rotina aplica-se também às correções e aos aprendizados originados na bancada.
+
 Não devemos reescrever o motor do zero.
 
 A primeira versão do aplicativo deve **embrulhar, organizar e estabilizar** o

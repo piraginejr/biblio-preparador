@@ -119,7 +119,7 @@ class BibliotecaLocalTest(unittest.TestCase):
             self.assertEqual(b'%PDF-amostra', pdf.read_bytes())
 
     def test_novos_formatos_geram_pdf_e_vinculo_sem_reconverter(self):
-        for extensao in ('.rtf', '.odt', '.fodt', '.txt'):
+        for extensao in ('.rtf', '.odt', '.fodt', '.sxw', '.txt'):
             with self.subTest(extensao=extensao), tempfile.TemporaryDirectory() as td:
                 c = local.inicializar(pathlib.Path(td) / 'livros')
                 origem = c['entrada'] / ('Obra' + extensao)
@@ -1194,6 +1194,24 @@ Times CID TrueType Identity-H yes yes yes 2 0
             self.assertEqual("Depois", salva["titulo"])
             self.assertEqual("Autor", salva["nmAutor0"])
             self.assertTrue(salva["revisao_manual_aplicada"])
+
+    def test_recuperar_ficha_minima_reconstroi_capa_e_diagnostico_sem_ocr(self):
+        with tempfile.TemporaryDirectory() as td:
+            c=local.inicializar(pathlib.Path(td)/'livros')
+            pdf=c['revisao']/'outra-edicao.pdf';pdf.write_bytes(b'%PDF-texto')
+            capa=c['capas']/'outra-edicao.jpg';capa.write_bytes(b'jpg')
+            fp=c['metadados']/'minima.json'
+            local.salvar_json(fp,{'arquivo':pdf.name,'titulo':'Outra edição','tipo_documento':'documento'})
+            digest=local.sha256(pdf);cat=local.carregar_catalogo(c)
+            cat['livros'][digest]={'arquivo':pdf.name,'caminho':local.relativo(c,pdf),
+                'estado':'duplicado textual - revisar','metadados':local.relativo(c,fp)}
+            local.salvar_catalogo(c,cat)
+            diag={'status':'OCR aprovado','cobertura_pesquisavel':1.0,'paginas_pesquisaveis':1}
+            with mock.patch.object(local.prep,'paginas_pdftotext',return_value=['Texto legível']), mock.patch.object(local.prep,'diagnosticar_ocr',return_value=diag), mock.patch.object(local.prep,'gerar_capa',return_value=str(capa)), mock.patch.object(local.prep,'rodar_ocr') as ocr, mock.patch.object(local.prep,'registrar_aprendizados_da_revisao',return_value=[]):
+                local.gravar_decisao_revisao(c['raiz'],pdf.name,aprovado=True,imprimir=False)
+            ocr.assert_not_called();f=json.loads(fp.read_text())
+            self.assertEqual('OCR aprovado',f['status_ocr'])
+            self.assertEqual(local.relativo(c,capa),f['capa'])
 
     def test_substituir_capa_revisao_por_url_atualiza_ficha_e_catalogo(self):
         class HeadersFake:
