@@ -2194,6 +2194,7 @@ def gravar_decisao_revisao(raiz, arquivo, campos=None, aprovado=True,
                 ficha_atualizada['situacao'] = 'cadastrado'
                 ficha_atualizada['situacao_metadados'] = 'cadastrado'
                 ficha_atualizada['correcao_remota_pendente'] = True
+                registro['correcao_remota_pendente'] = True
                 ficha_atualizada['id_remoto'] = registro['id_remoto']
             else:
                 _mover_aprovado_revisao(c, digest, registro, ficha_atualizada)
@@ -4119,6 +4120,10 @@ def liberar_espaco(raiz, executar=False, lixeira=None):
     vistos = set()
 
     for chave_catalogo, registro in catalogo["livros"].items():
+        if registro.get('correcao_remota_pendente'):
+            # Preservar evidência e fonte enquanto o gestor corrige o vínculo.
+            # Sucesso de upload não garante identidade correta após um upsert.
+            continue
         item = liberaveis.get(registro.get("metadados"))
         duplicado_local = (
             str(chave_catalogo).startswith("duplicado:")
