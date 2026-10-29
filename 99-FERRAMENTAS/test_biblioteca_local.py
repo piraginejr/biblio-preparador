@@ -1862,6 +1862,16 @@ Times CID TrueType Identity-H yes yes yes 2 0
                                     "manifesto-liberacao-espaco.json").read_text())
             self.assertEqual(55, manifesto["operacoes"][0]["livros"][0]["id_remoto"])
 
+    def test_limpeza_preserva_cadastro_que_aguarda_correcao_remota(self):
+        with tempfile.TemporaryDirectory() as td:
+            c=local.inicializar(td);pdf=c['pronto']/'evidencia.pdf';pdf.write_bytes(b'%PDF-evidencia')
+            fp=c['metadados']/'evidencia.json';local.salvar_json(fp,{'pdf_original':local.relativo(c,pdf)})
+            cat=local.carregar_catalogo(c);cat['livros']['h']={'arquivo':pdf.name,'estado':'cadastrado','id_remoto':12237,
+                'correcao_remota_pendente':True,'caminho':local.relativo(c,pdf),'metadados':local.relativo(c,fp)}
+            local.salvar_catalogo(c,cat)
+            local.salvar_json(c['controle']/'fila-envio-api.json',{'itens':[{'ficha':local.relativo(c,fp),'estado':'cadastrado','id_remoto':12237}]})
+            self.assertEqual(0,local.liberar_espaco(td)['livros']);self.assertTrue(pdf.exists())
+
     def test_liberar_espaco_inclui_duplicado_confirmado_pela_api(self):
         with tempfile.TemporaryDirectory() as td, tempfile.TemporaryDirectory() as lixo:
             raiz = pathlib.Path(td) / "livros"
