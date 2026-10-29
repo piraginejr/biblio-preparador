@@ -1439,6 +1439,28 @@ def preview(payload, pdf, capa, digest):
     }
 
 
+def verificar_titulo_para_cadastro(sessao, chave, ficha, substituir_id=None):
+    """API atual faz upsert por título: nunca autorizar edição acidental.
+
+    A consulta não filtra autor: caso contrário outro autor ou um documento
+    anônimo de título igual fica invisível e o POST sobrescreve a sua ficha.
+    Isto não torna autor obrigatório em documentos.
+    """
+    consulta=consultar_livro(sessao,chave,titulo=ficha.get('titulo',''),exato=True)
+    if not consulta.get('encontrado'):return consulta
+    unico=(int(consulta.get('total_matches',0) or 0)==1
+           and str(consulta.get('correspondencia','')).casefold()=='exata'
+           and _chave_textual(consulta.get('titulo'))==_chave_textual(ficha.get('titulo')))
+    if (substituir_id is not None and unico
+            and str(consulta.get('id'))==str(substituir_id)):
+        return consulta
+    raise RuntimeError(
+        'upload bloqueado antes do envio: a API já possui título igual '
+        f"(ID retornado {consulta.get('id')}; {consulta.get('total_matches')} correspondência(s)) "
+        'e atualizaria um registro por título. A edição exige ID explícito e único; '
+        'autor não é obrigatório para documentos. Nenhum arquivo foi enviado.')
+
+
 def enviar(ficha_path, realmente=False, chave="", sessao=None,
            tipo_api="livro", substituir_id=None):
     ficha_path = pathlib.Path(ficha_path).expanduser().resolve()
@@ -1504,6 +1526,9 @@ def enviar(ficha_path, realmente=False, chave="", sessao=None,
     if not chave:
         raise ValueError("chave da API ausente")
 
+    sessao = sessao or criar_sessao_api()
+    consulta_colisao = verificar_titulo_para_cadastro(
+        sessao,chave,ficha,substituir_id=substituir_id)
     registro = {
         "sha256": digest, "isbn": ficha.get("isbn", ""),
         "titulo": ficha.get("titulo", ""), "arquivo": str(pdf),
@@ -1511,13 +1536,13 @@ def enviar(ficha_path, realmente=False, chave="", sessao=None,
         "tipo_api": tipo_api,
         "estado": "envio iniciado - resultado ainda incerto",
         "iniciado_em": agora(), "endpoint": ENDPOINT,
+        "consulta_colisao_titulo": consulta_colisao,
     }
     if substituir_id is not None:
         registro['substitui_id'] = substituir_id
     controle["envios"][digest] = registro
     salvar_json(controle_path, controle)
 
-    sessao = sessao or criar_sessao_api()
     try:
         with pdf.open("rb") as fp, capa.open("rb") as fc:
             resposta = sessao.post(

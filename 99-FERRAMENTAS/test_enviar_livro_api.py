@@ -14,6 +14,32 @@ SPEC.loader.exec_module(api)
 
 
 class EnviarLivroApiTest(unittest.TestCase):
+    def test_titulo_igual_nao_autoriza_upsert_nem_exige_autor_documental(self):
+        sessao=mock.Mock()
+        for autores in ([],['Outro, Autor']):
+            q={'encontrado':True,'id':12237,'total_matches':1,
+               'correspondencia':'exata','titulo':'Documento','autores':autores}
+            with mock.patch.object(api,'consultar_livro',return_value=q) as consultar:
+                with self.assertRaisesRegex(RuntimeError,'Nenhum arquivo foi enviado'):
+                    api.verificar_titulo_para_cadastro(sessao,'teste',{'titulo':'Documento','tipo_documento':'documento'})
+                self.assertNotIn('autores',consultar.call_args.kwargs)
+                self.assertEqual(q,api.verificar_titulo_para_cadastro(sessao,'teste',{'titulo':'Documento'},substituir_id=12237))
+                q['total_matches']=2
+                with self.assertRaises(RuntimeError):api.verificar_titulo_para_cadastro(sessao,'teste',{'titulo':'Documento'},substituir_id=12237)
+        with mock.patch.object(api,'consultar_livro',return_value={'encontrado':False}):
+            self.assertEqual({'encontrado':False},api.verificar_titulo_para_cadastro(sessao,'teste',{'titulo':'Documento','nmAutor0':''}))
+        sessao.post.assert_not_called()
+
+    def test_colisao_para_antes_do_upload_e_do_diario_de_tentativa(self):
+        with tempfile.TemporaryDirectory() as td:
+            r=pathlib.Path(td)/'livros';fp,_=self.criar_ficha(r,'colisao','2026-10-29')
+            titulo=json.loads(fp.read_text())['titulo'];sessao=mock.Mock()
+            q={'encontrado':True,'id':12237,'total_matches':1,'correspondencia':'exata','titulo':titulo,'autores':['Outra pessoa']}
+            with mock.patch.object(api,'consultar_livro',return_value=q):
+                with self.assertRaisesRegex(RuntimeError,'upload bloqueado'):
+                    api.enviar(fp,realmente=True,chave='teste',sessao=sessao)
+            sessao.post.assert_not_called()
+            self.assertFalse(api.controle_da_ficha(fp).exists())
     def test_sucesso_200_atualizacao_nao_e_falha_nem_novo_cadastro(self):
         self.assertTrue(api.resposta_cadastro_confirmada(200,{'id':42,'mensagem':'Livro atualizado com sucesso'}))
         self.assertTrue(api.resposta_cadastro_confirmada(201,{'id':42}))
@@ -86,7 +112,8 @@ class EnviarLivroApiTest(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError,'ID do cadastro'):
                 api.enviar(ficha,realmente=True,chave='teste',sessao=sessao,substituir_id=99)
             sessao.post.assert_not_called()
-            resultado=api.enviar(ficha,realmente=True,chave='teste',sessao=sessao,substituir_id=10)
+            with mock.patch.object(api,'verificar_titulo_para_cadastro',return_value={}):
+                resultado=api.enviar(ficha,realmente=True,chave='teste',sessao=sessao,substituir_id=10)
             self.assertEqual(11,resultado['id_remoto'])
             self.assertEqual(10,resultado['substitui_id'])
             with self.assertRaises(RuntimeError):
