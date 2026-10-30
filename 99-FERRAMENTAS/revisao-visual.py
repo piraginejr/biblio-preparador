@@ -151,6 +151,7 @@ HTML = r"""<!doctype html>
         <button class="sec" onclick="reprocessarAtual()">reprocessar este item</button>
         <button class="warn" onclick="confirmarMesmoComDivergencia()">confirmar divergência</button>
         <button class="sec" onclick="salvar(false)">salvar sem aprovar</button>
+        <button class="warn" onclick="descartarAtual()">descartar material</button>
       </div>
       <div class="capa-url">
         <input id="capaUrl" placeholder="URL da capa encontrada na internet">
@@ -513,6 +514,22 @@ function mostrar() {
   $("salvoTopo").textContent = "";
   sujo = false;
 }
+async function descartarAtual() {
+  const item = atual();
+  if (!item) return;
+  if (!confirm("Descartar este material? Ele sairá da revisão e não será enviado. Os arquivos serão preservados até usar Liberar espaço. Alterações não salvas não serão aplicadas.")) return;
+  const motivo = prompt("Motivo do descarte:", "material sem utilidade para o acervo");
+  if (motivo === null) return;
+  try {
+    const resp = await fetch("/api/descartar", {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({arquivo:item.arquivo, confirmado:true, motivo})});
+    const out = await resp.json();
+    if (!resp.ok) throw new Error(out.erro || "Não foi possível descartar");
+    sujo = false;
+    removerItemAtualDaRevisao();
+  } catch (e) {
+    $("salvoTopo").textContent = `Falha no descarte: ${e.message}`;
+  }
+}
 async function salvar(aprovado, avancar=false) {
   const item = atual();
   const payload = {arquivo: item.arquivo, aprovado, campos: {}, fonte: $("fonte").value, ruido_titulo: [], ruido_autor: [], confirmacao_soberana: false, motivo_confirmacao: ""};
@@ -647,7 +664,7 @@ class ServidorRevisao(BaseHTTPRequestHandler):
         caminho = urllib.parse.urlparse(self.path).path
         if caminho not in {
                 "/api/gravar", "/api/consultar-isbn", "/api/capa-url",
-                "/api/capa-arquivo", "/api/reprocessar", "/api/encerrar"}:
+                "/api/capa-arquivo", "/api/reprocessar", "/api/encerrar", "/api/descartar"}:
             self.send_error(404)
             return
         try:
@@ -658,7 +675,12 @@ class ServidorRevisao(BaseHTTPRequestHandler):
                 return
             tamanho = int(self.headers.get("Content-Length", "0"))
             dados = json.loads(self.rfile.read(tamanho).decode("utf-8"))
-            if caminho == "/api/consultar-isbn":
+            if caminho == "/api/descartar":
+                resultado = local.descartar_material_revisao(
+                    self.raiz, dados.get("arquivo", ""),
+                    confirmado=dados.get("confirmado") is True,
+                    motivo=dados.get("motivo", ""), imprimir=False)
+            elif caminho == "/api/consultar-isbn":
                 resultado = local.consultar_metadados_isbn_revisao(
                     self.raiz,
                     dados.get("isbn", ""),

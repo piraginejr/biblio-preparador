@@ -2075,6 +2075,76 @@ def _mover_aprovado_revisao(c, digest, registro, ficha):
     return estado
 
 
+def descartar_material_revisao(raiz, arquivo, confirmado=False, motivo="",
+                               imprimir=True):
+    """Separa descarte humano sem apagar arquivos nem alterar o acervo remoto."""
+    if confirmado is not True:
+        raise RuntimeError("confirme o descarte antes de continuar")
+    c = inicializar(raiz)
+    catalogo = carregar_catalogo(c)
+    digest, registro = _localizar_registro(c, catalogo, arquivo)
+    if not registro:
+        raise RuntimeError("item não encontrado no catálogo")
+    if (registro.get("id_remoto") or registro.get("correcao_remota_pendente")
+            or registro.get("estado", "").startswith("cadastrado")):
+        raise RuntimeError("item com vínculo remoto: confira o cadastro antes de descartar")
+    pdf = _arquivo_do_registro(c, registro)
+    if not pdf:
+        raise RuntimeError("arquivo local não encontrado")
+    ficha_path, ficha = _ler_ficha_registro(c, registro)
+    if ficha.get("id_remoto") or ficha.get("correcao_remota_pendente"):
+        raise RuntimeError("ficha com vínculo remoto: confira o cadastro antes de descartar")
+    filas = []
+    nomes_filas = ['fila-envio-api.json'] + list(api_envio.FILAS_ESPECIFICAS.values())
+    for nome in nomes_filas:
+        caminho_fila = c['controle'] / nome
+        if not caminho_fila.is_file():
+            continue
+        fila = json.loads(caminho_fila.read_text(encoding='utf-8'))
+        itens = [i for i in fila.get('itens', [])
+                 if i.get('ficha') == registro.get('metadados')]
+        for item in itens:
+            estado = str(item.get('estado', '')).casefold()
+            if item.get('id_remoto') or any(x in estado for x in ('incerto', 'enviando', 'envio iniciado', 'cadastrado')):
+                raise RuntimeError('envio registrado ou incerto: confira o resultado antes de descartar')
+        filas.append((caminho_fila, fila, itens))
+    revisoes_path, revisoes = _carregar_revisoes(c)
+    nome_anterior = registro.get("arquivo", "")
+    destino = (pdf if pdf.parent == c["descarte"] else
+               mover_sem_substituir(pdf, c["descarte"], digest))
+    decisao = {"em": agora(), "origem": "humana",
+               "motivo": str(motivo or "material sem utilidade para o acervo").strip(),
+               "caminho_anterior": relativo(c, pdf),
+               "caminho": relativo(c, destino)}
+    registro.setdefault("historico_descarte", []).append(decisao)
+    registro.update(estado=ESTADO_DESCARTE, arquivo=destino.name,
+                    caminho=relativo(c, destino), revisao_manual_aprovada=False)
+    if ficha_path and ficha_path.is_file():
+        ficha.update(situacao=ESTADO_DESCARTE, situacao_metadados=ESTADO_DESCARTE,
+                     pdf_original=relativo(c, destino), arquivo=destino.name,
+                     revisao_manual_aprovada=False, descarte_manual=decisao)
+        salvar_json(ficha_path, ficha)
+    revisao = revisoes["livros"].get(nome_anterior, {})
+    revisao.update(aprovado=False, descartado=True, origem_decisao="humana",
+                   atualizado_em=decisao["em"], descarte=decisao)
+    revisoes["livros"][nome_anterior] = revisao
+    revisoes["atualizado_em"] = decisao["em"]
+    salvar_json(revisoes_path, revisoes)
+    salvar_catalogo(c, catalogo)
+    for caminho_fila, fila, itens in filas:
+        for item in itens:
+            item.setdefault('historico_descarte', []).append(decisao)
+            item['estado'] = ESTADO_DESCARTE
+        if itens:
+            salvar_json(caminho_fila, fila)
+    resultado = {"ok": True, "estado": ESTADO_DESCARTE,
+                 "caminho": relativo(c, destino),
+                 "mensagem": "Material separado para descarte; use Liberar espaço para removê-lo."}
+    if imprimir:
+        print(json.dumps(resultado, ensure_ascii=False, indent=2))
+    return resultado
+
+
 def gravar_decisao_revisao(raiz, arquivo, campos=None, aprovado=True,
                            justificativa="revisão visual",
                            fontes=None, conflitos=None, pendencias=None,
