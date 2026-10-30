@@ -2559,6 +2559,15 @@ def consolidar_filas_especificas(c, catalogo):
             ficha = json.loads(ficha_path.read_text(encoding="utf-8"))
         except (OSError, ValueError, json.JSONDecodeError):
             continue
+        if (registro.get('estado') == ESTADO_DESCARTE or
+                (ficha.get('descarte_manual')
+                 and ficha.get('situacao') == ESTADO_DESCARTE
+                 and not ficha.get('revisao_manual_aprovada'))):
+            # Uma decisão de descarte não é uma ficha incompleta a revalidar.
+            if registro.get('estado') != ESTADO_DESCARTE:
+                registro['estado'] = ESTADO_DESCARTE
+                catalogo_alterado = True
+            continue
         tipo = ficha.get("tipo_documento", "livro")
         for nome, grupo in grupos.items():
             if tipo in grupo["tipos"]:
@@ -4122,10 +4131,54 @@ def _arquivos_orfaos(c, catalogo):
     return orfaos
 
 
+def _vincular_copias_residuais_confirmadas(c, catalogo):
+    """Recupera cópias renomeadas somente por SHA idêntico a cadastro confirmado.
+
+    Altera apenas o catálogo em memória; a simulação nunca persiste vínculos.
+    Não usa título, nome do arquivo ou similaridade textual como prova.
+    """
+    provas = {}
+    for registro in list(catalogo['livros'].values()):
+        estado = registro.get('estado', '')
+        if (registro.get('id_remoto') and not registro.get('correcao_remota_pendente')
+                and (estado in {'cadastrado', 'cadastrado - arquivos locais liberados',
+                               'duplicado na API - arquivos locais liberados'}
+                     or (estado == 'duplicado confirmado por ISBN'
+                         and registro.get('confirmado_por_api') == 'isbn'))):
+            digest = registro.get('hash_sha256', '')
+            if len(digest) == 64:
+                provas[digest] = registro
+    referenciados = {r.get('caminho') for r in catalogo['livros'].values() if r.get('caminho')}
+    for nome in ('DUPLICADOS', 'DUPLICADOS-API', 'DUPLICADOS-TEXTO'):
+        pasta = c['revisao'] / nome
+        if not pasta.is_dir() or pasta.is_symlink():
+            continue
+        for pdf in pasta.iterdir():
+            if not pdf.is_file() or pdf.is_symlink() or pdf.suffix.lower() != '.pdf':
+                continue
+            rel = relativo(c, pdf)
+            if rel in referenciados:
+                continue
+            digest = sha256(pdf)
+            prova = provas.get(digest)
+            if not prova:
+                continue
+            chave = 'duplicado:remanescente:' + digest + ':' + hashlib.sha256(rel.encode()).hexdigest()[:12]
+            catalogo['livros'][chave] = {
+                'hash_sha256': digest, 'arquivo': pdf.name, 'caminho': rel,
+                'estado': 'duplicado', 'metadados': '',
+                'id_remoto': prova['id_remoto'], 'duplicado_de': prova.get('arquivo', ''),
+                'prova_limpeza': 'SHA-256 idêntico a cadastro remoto confirmado',
+                'tamanho_bytes': pdf.stat().st_size, 'registrado_em': agora(),
+            }
+            referenciados.add(rel)
+
+
 def liberar_espaco(raiz, executar=False, lixeira=None):
     """Leva à Lixeira cadastros, duplicados e descartes confirmados."""
     c = inicializar(raiz)
     catalogo = carregar_catalogo(c)
+    _vincular_copias_residuais_confirmadas(c, catalogo)
 
     # ------------------------------------------------------------------
     # TODAS as filas, derivadas da mesma fonte que o resto do aplicativo.

@@ -14,6 +14,36 @@ SPEC.loader.exec_module(api)
 
 
 class EnviarLivroApiTest(unittest.TestCase):
+    def test_edicao_por_id_envia_pdf_e_autores_sem_reabrir_inclusao(self):
+        with tempfile.TemporaryDirectory() as td:
+            r=pathlib.Path(td)/'livros';fp,_=self.criar_ficha(r,'edicao','2026-10-30')
+            f=json.loads(fp.read_text());titulo=f['titulo']
+            diario=api.controle_da_ficha(fp)
+            api.salvar_json(diario,{'envios':{'original':{'estado':'cadastrado','id_remoto':8573}}})
+            q=mock.Mock(status_code=200);q.json.return_value={'encontrado':True,'id':8573,'total_matches':1,'titulo':titulo}
+            resp=mock.Mock(status_code=200);resp.json.return_value={'id':8573,'mensagem':'Livro atualizado com sucesso','operacao':'atualizar_livro'}
+            sessao=mock.Mock();sessao.post.side_effect=[q,resp,q]
+            out=api.atualizar_livro_por_id(fp,8573,realmente=True,chave='teste',sessao=sessao)
+            self.assertEqual('cadastrado',out['estado'])
+            envio=sessao.post.call_args_list[1].kwargs
+            self.assertEqual('atualizar_livro',envio['data']['action'])
+            self.assertEqual('8573',envio['data']['id'])
+            self.assertEqual({'arquivo_digital'},set(envio['files']))
+            self.assertIn('Idempotency-Key',envio['headers'])
+            self.assertEqual({'estado':'cadastrado','id_remoto':8573},json.loads(diario.read_text())['envios']['original'])
+            api.atualizar_livro_por_id(fp,8573,realmente=True,chave='teste',sessao=sessao)
+            self.assertEqual(3,sessao.post.call_count)  # segunda execução só consulta
+
+    def test_edicao_id_incorreto_nao_envia_arquivo(self):
+        with tempfile.TemporaryDirectory() as td:
+            fp,_=self.criar_ficha(pathlib.Path(td)/'livros','erro','2026-10-30')
+            sessao=mock.Mock();sessao.post.return_value=mock.Mock(status_code=200)
+            sessao.post.return_value.json.return_value={'encontrado':True,'id':999,'total_matches':1,'titulo':'outro'}
+            with self.assertRaisesRegex(RuntimeError,'nenhum arquivo'):
+                api.atualizar_livro_por_id(fp,8573,realmente=True,chave='teste',sessao=sessao)
+            self.assertEqual(1,sessao.post.call_count)
+            self.assertNotIn('files',sessao.post.call_args.kwargs)
+
     def test_titulo_igual_nao_autoriza_upsert_nem_exige_autor_documental(self):
         sessao=mock.Mock()
         for autores in ([],['Outro, Autor']):

@@ -1461,6 +1461,68 @@ def verificar_titulo_para_cadastro(sessao, chave, ficha, substituir_id=None):
         'autor não é obrigatório para documentos. Nenhum arquivo foi enviado.')
 
 
+def atualizar_livro_por_id(ficha_path, id_remoto, realmente=False, chave='',
+                          sessao=None, tipo_api='livro'):
+    """Edição deliberada por ID; preserva o diário de inclusão e sua identidade."""
+    if isinstance(id_remoto, bool) or not str(id_remoto).isdigit() or int(id_remoto) < 1:
+        raise ValueError('a atualização exige um ID positivo explícito')
+    alvo = int(id_remoto)
+    ficha_path = pathlib.Path(ficha_path).resolve()
+    ficha = json.loads(ficha_path.read_text(encoding='utf-8'))
+    pdf = caminho_local(ficha.get('pdf_preparado') or ficha.get('pdf_original'), ficha_path)
+    if not pdf.is_file() or pdf.suffix.lower() != '.pdf':
+        raise ValueError('PDF local não encontrado para atualização')
+    payload = montar_payload(ficha, tipo_api=tipo_api)
+    payload.update(action='atualizar_livro', id=str(alvo))
+    digest = sha256(pdf)
+    if not realmente:
+        return {'simulacao':True, 'id_remoto':alvo, 'arquivo':str(pdf), 'payload':payload}
+    chave = chave or ler_chave_chaves() or os.environ.get('BIBLIO_API_KEY', '')
+    if not chave:
+        raise ValueError('chave da API ausente')
+    sessao = sessao or criar_sessao_api()
+    previa = sessao.post(ENDPOINT, json={'action':'consultar_livro','id':alvo},
+                        headers={'X-API-Key':chave}, timeout=(30,90))
+    consulta = previa.json()
+    if (previa.status_code != 200 or not consulta.get('encontrado')
+            or str(consulta.get('id')) != str(alvo)
+            or int(consulta.get('total_matches',0)) != 1
+            or _chave_textual(consulta.get('titulo')) != _chave_textual(ficha.get('titulo'))):
+        raise RuntimeError('ID/título não confirmado; nenhum arquivo foi enviado')
+    assinatura = hashlib.sha256((digest + json.dumps(payload,sort_keys=True,ensure_ascii=False)).encode()).hexdigest()
+    idempotencia = f'biblio-atualizar-{alvo}-{assinatura}'
+    controle_path = controle_da_ficha(ficha_path)
+    controle = carregar_controle(controle_path)
+    anteriores = controle.setdefault('atualizacoes_por_id', [])
+    confirmado = next((a for a in anteriores if a.get('idempotency_key') == idempotencia
+                       and a.get('estado') == 'cadastrado'), None)
+    if confirmado:
+        return confirmado
+    registro = {'id_remoto':alvo, 'sha256':digest, 'arquivo':str(pdf),
+                'operacao':'atualizar_livro', 'idempotency_key':idempotencia,
+                'consulta_previa_id':consulta, 'iniciado_em':agora(),
+                'estado':'resultado incerto - nao reenviar sem conferencia'}
+    anteriores.append(registro)
+    salvar_json(controle_path, controle)
+    try:
+        with pdf.open('rb') as fp:
+            resposta = sessao.post(ENDPOINT, data=payload,
+                files={'arquivo_digital':(pdf.name, fp, 'application/pdf')},
+                headers={'X-API-Key':chave,'Idempotency-Key':idempotencia}, timeout=(30,300))
+        corpo = resposta.json()
+        registro.update(http_status=resposta.status_code, resposta=corpo, concluido_em=agora())
+        if (resposta.status_code != 200 or not resposta_cadastro_confirmada(200,corpo)
+                or str(corpo.get('id')) != str(alvo)):
+            raise RuntimeError('atualização não confirmada; preserve o PDF e confira a resposta')
+        registro['estado'] = 'cadastrado'
+    except Exception as exc:
+        registro['erro'] = str(exc)
+        raise
+    finally:
+        salvar_json(controle_path, controle)
+    return registro
+
+
 def enviar(ficha_path, realmente=False, chave="", sessao=None,
            tipo_api="livro", substituir_id=None):
     ficha_path = pathlib.Path(ficha_path).expanduser().resolve()
