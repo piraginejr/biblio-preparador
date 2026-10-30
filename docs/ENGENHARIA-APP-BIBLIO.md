@@ -664,6 +664,17 @@ Arquivos de referência do protótipo aprovado:
   remoto. A remoção recuperável só ocorre em **Liberar espaço**.
 - Vínculos remotos, correções remotas pendentes e envios de resultado incerto
   são bloqueados para descarte simples; preservar evidências até conferência.
+- A bancada mantém autor/responsável principal e permite adicionar/remover
+  pessoas individualmente, com função editável (Autor, Organizador, Tradutor,
+  Editor, Compilador etc.). Nunca dividir nomes por vírgulas: elas pertencem
+  ao formato bibliográfico `Sobrenome, Nome`.
+- Salvar, validar e confirmar divergências persistem a lista estruturada
+  `autores`, sincronizada com `nmAutor0`, nas decisões manuais e na ficha.
+  O envio mantém uma entrada por pessoa/função. Correções antigas que só
+  alteravam `nmAutor0` substituem o primeiro nome, preservando os coautores.
+- Atualizações da interface não reprocessam nem migram as fichas do operador.
+  Antes da instalação, copiar fichas, catálogo e decisões manuais; após a
+  instalação, comparar os arquivos para provar que continuam inalterados.
 
 - `/Users/piraginejr/.codex/visualizations/2026/07/27/019fa273-6b82-7741-802f-cb5b4cb585b1/biblio-app-mockups-lateral.html`
 - `/Users/piraginejr/.codex/visualizations/2026/07/27/019fa273-6b82-7741-802f-cb5b4cb585b1/biblio-revisao-bancada-aprovada.html`

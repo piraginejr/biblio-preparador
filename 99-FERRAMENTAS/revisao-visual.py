@@ -177,7 +177,12 @@ HTML = r"""<!doctype html>
       </select>
     </label>
     <label>Subtítulo <input id="subTitulo"></label>
-    <label>Autor principal <input id="nmAutor0"></label>
+    <label>Autor ou responsável principal <input id="nmAutor0" placeholder="Sobrenome, Nome"></label>
+    <label>Função <input id="funcaoAutor0" list="funcoesAutores" value="Autor"></label>
+    <datalist id="funcoesAutores"><option value="Autor"><option value="Organizador"><option value="Editor"><option value="Tradutor"><option value="Compilador"><option value="Coordenador"></datalist>
+    <div id="outrosAutores"></div>
+    <button class="sec" onclick="adicionarAutor()">adicionar autor / responsável</button>
+    <div class="meta">Uma pessoa por campo, preferencialmente Sobrenome, Nome. Não separe pessoas por vírgula.</div>
     <label>Editora <input id="editora"></label>
     <label>ISBN <input id="isbn"></label>
     <button class="sec" onclick="consultarIsbn()">consultar dados por ISBN</button>
@@ -229,6 +234,46 @@ let sujo = false;
 const VOLTAR_URL = "__VOLTAR_URL__";
 const campos = ["titulo","subTitulo","nmAutor0","editora","isbn","edicao","data","nPaginas","lugar","nmLingua","tipo_documento","CDD","assunto","pchave","abstract"];
 const $ = id => document.getElementById(id);
+
+function adicionarAutor(nome='', funcao='Autor') {
+  const linha = document.createElement('div');
+  linha.className = 'autor-extra item';
+  const rotulo = document.createElement('label'); rotulo.textContent = 'Outro autor / responsável';
+  const entrada = document.createElement('input'); entrada.className = 'autor-nome';
+  entrada.value = nome; entrada.placeholder = 'Sobrenome, Nome';
+  rotulo.appendChild(entrada); linha.appendChild(rotulo);
+  const papel = document.createElement('label'); papel.textContent = 'Função';
+  const func = document.createElement('input'); func.className = 'autor-funcao';
+  func.setAttribute('list','funcoesAutores'); func.value = funcao || 'Autor';
+  papel.appendChild(func); linha.appendChild(papel);
+  const remover = document.createElement('button'); remover.className = 'sec mini';
+  remover.textContent = 'remover este autor';
+  remover.onclick = () => { linha.remove(); marcarSujo(); };
+  linha.appendChild(remover);
+  entrada.addEventListener('input', marcarSujo); func.addEventListener('input', marcarSujo);
+  $('outrosAutores').appendChild(linha);
+  marcarSujo();
+}
+function preencherAutores(fonte) {
+  const lista = Array.isArray(fonte.autores) ? fonte.autores.map(a => typeof a === 'string' ? {nome:a,desc:'Autor'} : a).filter(a => a && a.nome) : [];
+  $('outrosAutores').replaceChildren();
+  // O nome corrigido manualmente prevalece sobre a lista automática antiga.
+  $('nmAutor0').value = fonte.nmAutor0 || (lista[0] || {}).nome || '';
+  $('funcaoAutor0').value = (lista[0] || {}).desc || 'Autor';
+  lista.slice(1).forEach(a => adicionarAutor(a.nome, a.desc));
+}
+function coletarAutores() {
+  const autores = [{nome:$('nmAutor0').value.trim(), desc:$('funcaoAutor0').value.trim() || 'Autor'}];
+  document.querySelectorAll('#outrosAutores .autor-extra').forEach(linha => autores.push({
+    nome:linha.querySelector('.autor-nome').value.trim(),
+    desc:linha.querySelector('.autor-funcao').value.trim() || 'Autor'
+  }));
+  return autores.filter(a => a.nome);
+}
+function incluirAutores(payload) {
+  payload.campos.autores = coletarAutores();
+  payload.campos.nmAutor0 = (payload.campos.autores[0] || {}).nome || '';
+}
 
 function arquivoUrl(rel) {
   return rel ? "/arquivo?rel=" + encodeURIComponent(rel) : "about:blank";
@@ -374,6 +419,7 @@ function preencherCampos(camposFonte) {
   for (const [campo, valor] of Object.entries(camposFonte || {})) {
     usarValor(campo, valor);
   }
+  if (Array.isArray((camposFonte || {}).autores)) preencherAutores(camposFonte);
 }
 function cardFonteIsbn(fonte, i) {
   const c = fonte.campos || {};
@@ -496,6 +542,7 @@ function mostrar() {
   $("capaArquivo").value = "";
   document.querySelector(".corpo-revisao").scrollTop = 0;
   for (const c of campos) $(c === "titulo" ? "tituloCampo" : c).value = item.campos[c] || "";
+  preencherAutores(item.campos);
   ultimaConsultaIsbn = null;
   $("fontesIsbn").textContent = "";
   lista("conflitos", item.conflitos.map(esc), "sem conflito registrado");
@@ -534,6 +581,7 @@ async function salvar(aprovado, avancar=false) {
   const item = atual();
   const payload = {arquivo: item.arquivo, aprovado, campos: {}, fonte: $("fonte").value, ruido_titulo: [], ruido_autor: [], confirmacao_soberana: false, motivo_confirmacao: ""};
   for (const c of campos) payload.campos[c] = $(c === "titulo" ? "tituloCampo" : c).value;
+  incluirAutores(payload);
   if ($("ruidoTitulo").value.trim()) payload.ruido_titulo.push($("ruidoTitulo").value.trim());
   if ($("ruidoAutor").value.trim()) payload.ruido_autor.push($("ruidoAutor").value.trim());
   $("salvo").textContent = "gravando…";
@@ -552,6 +600,7 @@ async function confirmarMesmoComDivergencia() {
   const item = atual();
   const payload = {arquivo: item.arquivo, aprovado: true, campos: {}, fonte: `decisão soberana do operador — ${motivo || "conferência visual"}`, ruido_titulo: [], ruido_autor: [], confirmacao_soberana: true, motivo_confirmacao: motivo || "conferência visual"};
   for (const c of campos) payload.campos[c] = $(c === "titulo" ? "tituloCampo" : c).value;
+  incluirAutores(payload);
   if ($("ruidoTitulo").value.trim()) payload.ruido_titulo.push($("ruidoTitulo").value.trim());
   if ($("ruidoAutor").value.trim()) payload.ruido_autor.push($("ruidoAutor").value.trim());
   $("salvo").textContent = "gravando confirmação soberana…";
@@ -591,6 +640,7 @@ async function reprocessarAtual() {
   await recarregar();
 }
 window.addEventListener("load", () => {
+  $('funcaoAutor0').addEventListener('input', marcarSujo);
   for (const c of campos) {
     const el = $(c === "titulo" ? "tituloCampo" : c);
     if (el) el.addEventListener("input", marcarSujo);
