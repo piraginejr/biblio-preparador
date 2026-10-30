@@ -30,6 +30,41 @@ def resultado_pronto(nome):
 
 
 class BibliotecaLocalTest(unittest.TestCase):
+    def test_descarte_nao_ressuscita_na_consolidacao(self):
+        with tempfile.TemporaryDirectory() as td:
+            c=local.inicializar(pathlib.Path(td)/'livros')
+            ficha=c['metadados']/'descartado.json'
+            local.salvar_json(ficha,{'titulo':'Descartado','tipo_documento':'documento',
+                'situacao':local.ESTADO_DESCARTE,'descarte_manual':{'motivo':'inútil'},
+                'revisao_manual_aprovada':False})
+            cat=local.carregar_catalogo(c)
+            cat['livros']['abc']={'estado':'aguardando correção para cadastro específico',
+                                  'metadados':local.relativo(c,ficha),'arquivo':'descartado.pdf'}
+            local.salvar_catalogo(c,cat)
+            local.consolidar_filas_especificas(c,cat)
+            self.assertEqual(local.ESTADO_DESCARTE,local.carregar_catalogo(c)['livros']['abc']['estado'])
+            fila=json.loads((c['controle']/'fila-cadastro-documentos.json').read_text())
+            self.assertEqual([],fila['itens'])
+
+    def test_limpeza_recupera_copia_renomeada_por_hash_sem_alterar_simulacao(self):
+        with tempfile.TemporaryDirectory() as td:
+            c=local.inicializar(pathlib.Path(td)/'livros')
+            pasta=c['revisao']/'DUPLICADOS';pasta.mkdir()
+            pdf=pasta/'nome-novo-14.pdf';pdf.write_bytes(b'%PDF-exatamente-igual')
+            outro=pasta/'nao-confirmado.pdf';outro.write_bytes(b'%PDF-outro')
+            cat=local.carregar_catalogo(c)
+            cat['livros']['fonte']={'arquivo':'nome-antigo.pdf','hash_sha256':local.sha256(pdf),
+                'estado':'duplicado na API - arquivos locais liberados','id_remoto':19807,
+                'arquivos_liberados_em':'2026-10-01','caminho':''}
+            local.salvar_catalogo(c,cat)
+            antes=(c['controle']/'catalogo-local.json').read_bytes()
+            plano=local.liberar_espaco(c['raiz'])
+            self.assertEqual(1,plano['arquivos'])
+            self.assertEqual(antes,(c['controle']/'catalogo-local.json').read_bytes())
+            self.assertTrue(pdf.exists());self.assertTrue(outro.exists())
+            local.liberar_espaco(c['raiz'],executar=True,lixeira=pathlib.Path(td)/'lixo')
+            self.assertFalse(pdf.exists());self.assertTrue(outro.exists())
+
     def test_multiplos_autores_salvos_sem_perder_correcao_anterior(self):
         with tempfile.TemporaryDirectory() as td:
             c = local.inicializar(pathlib.Path(td)/'livros')

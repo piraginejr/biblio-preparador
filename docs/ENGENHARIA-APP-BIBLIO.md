@@ -83,25 +83,35 @@ Uma mudança não termina no código local. A entrega deve seguir este roteiro:
 
 Esta rotina aplica-se também às correções e aos aprendizados originados na bancada.
 
-### Contrato de atualização da API — conferido em 29/10/2026
+### Contrato de atualização da API — conferido em 30/10/2026
 
-A documentação do provedor agora define `cadastrar_livro` como inserção ou
-atualização por título: HTTP 201 cria; HTTP 200 com mensagem explícita e ID
-confirma atualização. O motor reconhece ambos e concilia respostas antigas sem
-novo envio, preservando o diário e o ID.
+A documentação atual separa `cadastrar_livro` (inserção pura, HTTP 201) de
+`atualizar_livro` (edição por ID explícito, HTTP 200). A edição permite trocar
+somente o PDF, mantendo a capa; os autores enviados são atualizados. O motor
+continua reconhecendo respostas HTTP 200 antigas e conciliando-as sem novo
+envio, preservando os diários originais.
 
 Proteção instalada: antes do upload, consultar também o título exato sem filtro
 de autor. Título existente bloqueia o POST automático; a substituição explícita
 exige ID informado e correspondência única. Isso não exige autoria de documentos.
 
-Atenção às limitações do servidor: havendo títulos iguais, ele atualiza o de
-maior ID; a consulta pode devolver outra correspondência. Além disso, autores
-são ignorados nas atualizações. Portanto, consulta ambígua e diferença de edição
-não autorizam substituição automática. Correções de autoria em registros antigos
-dependem do gestor até existir atualização por ID com autores. Não contornar
-permissões de pasta nem repetir uploads com resultado já confirmado.
+Na versão antiga do servidor, o título escolhia o maior ID e autores eram
+ignorados na atualização. Essa regra produziu casos pendentes que continuam
+protegidos até conferência; não os reabrir em massa só porque a API mudou.
+O cliente agora possui `atualizar_livro_por_id`: exige ID positivo, consulta
+exata do ID e título antes do envio, usa `Idempotency-Key` estável e registra
+um diário de atualizações separado, sem sobrescrever o histórico de inclusão.
+O fluxo automático mantém o bloqueio conservador de títulos coincidentes até
+uma integração ampla do novo contrato. Não contornar permissões de pasta.
 
-Referência: https://apibib.pibcuritiba.org.br/documentacao.html#atualizacao-titulo
+Limpeza: descartes humanos não retornam às filas por faltar metadados. Cópias
+residuais renomeadas em subpastas de duplicados só são liberadas por SHA-256
+idêntico ao de um cadastro remoto confirmado, nunca por título ou similaridade.
+Na simulação, os vínculos recuperados existem apenas em memória. Na execução,
+ficam auditados no catálogo e no manifesto da Lixeira. Correções remotas
+pendentes permanecem protegidas.
+
+Referência: https://apibib.pibcuritiba.org.br/documentacao.html#atualizar-livro
 
 Não devemos reescrever o motor do zero.
 
