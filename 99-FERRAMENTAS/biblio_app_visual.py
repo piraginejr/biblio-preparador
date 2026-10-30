@@ -15,6 +15,7 @@ import shutil
 import socket
 import sys
 import threading
+import tempfile
 import urllib.parse
 import urllib.request
 import webbrowser
@@ -133,6 +134,14 @@ HTML = r"""<!doctype html>
             </div>
           </form>
           <p class="muted" id="uploadMsg"></p>
+          <hr>
+          <h2>Consultar no Biblio</h2>
+          <p>Verifique se os livros já existem sem preparar ou cadastrar. Lê OPF e texto das primeiras páginas, sem OCR. Arquivos selecionados são lidos em cópia temporária local, fora da entrada.</p>
+          <input id="consultaArquivos" type="file" multiple accept=".pdf,.opf">
+          <input id="consultaPasta" type="file" multiple webkitdirectory directory>
+          <button class="secondary" onclick="consultarAcervo()">consultar selecionados</button>
+          <a href="/api/consulta-relatorio" target="_blank">baixar último relatório CSV</a>
+          <p id="consultaMsg" class="muted">Selecione arquivos ou uma pasta. Nenhum original será apagado ou movido.</p>
         </div>
         <div class="panel">
           <h2>Estado da biblioteca</h2>
@@ -283,6 +292,21 @@ async function acao(nome){
   if(data.message) alert(data.message);
   await carregarStatus();
 }
+async function consultarAcervo(){
+  const arquivos = [...$('consultaArquivos').files, ...$('consultaPasta').files].filter(f => /\.(pdf|opf)$/i.test(f.name));
+  if (!arquivos.length) { $('consultaMsg').textContent = 'Selecione PDF ou OPF para consultar.'; return; }
+  const form = new FormData();
+  arquivos.forEach(f => form.append('files', f, f.webkitRelativePath || f.name));
+  $('consultaMsg').textContent = 'Lendo seleção local…';
+  try {
+    const resp = await fetch('/api/consultar-acervo', {method:'POST', body:form});
+    const out = await resp.json();
+    if (!resp.ok) throw new Error(out.erro || 'Falha na consulta');
+    jobAtual = out.job_id;
+    $('consultaMsg').textContent = 'Consulta iniciada. Acompanhe no centro de progresso; o relatório fica disponível neste painel.';
+    mostrar('preparar'); atualizarJob();
+  } catch(e) { $('consultaMsg').textContent = e.message; }
+}
 async function iniciarJob(action){
   if(action.includes('envio') || action.includes('limpeza')) mostrar('enviar');
   if(action.includes('preparar') || action.includes('reprocessar')) mostrar('preparar');
@@ -389,6 +413,19 @@ class Handler(BaseHTTPRequestHandler):
                 "ocupado": bool(svc.JOBS.ultimo() and svc.JOBS.ultimo().estado == 'rodando'),
             })
             return
+        if url.path == "/api/consulta-relatorio":
+            pasta = self.raiz / '_controle' / 'consultas-acervo'
+            arquivos = sorted(pasta.glob('consulta-*.csv'))
+            if not arquivos:
+                self.send_error(404, 'Nenhum relatório de consulta disponível')
+                return
+            bruto = arquivos[-1].read_bytes()
+            self.send_response(200)
+            self.send_header('Content-Type', 'text/csv; charset=utf-8')
+            self.send_header('Content-Disposition', 'attachment; filename="consulta-biblio.csv"')
+            self.send_header('Content-Length', str(len(bruto)))
+            self.end_headers(); self.wfile.write(bruto)
+            return
         if url.path == "/api/status":
             try:
                 self._json({
@@ -418,6 +455,9 @@ class Handler(BaseHTTPRequestHandler):
             return
         if url.path == "/api/upload":
             self._upload()
+            return
+        if url.path == "/api/consultar-acervo":
+            self._consultar_acervo()
             return
         self.send_error(404)
 
@@ -456,6 +496,44 @@ class Handler(BaseHTTPRequestHandler):
                 self._json({"erro": "ação desconhecida"}, 400)
         except Exception as exc:
             self._json({"erro": str(exc)}, 500)
+
+    def _consultar_acervo(self):
+        temporario = None
+        try:
+            if svc.JOBS.ultimo() and svc.JOBS.ultimo().estado == 'rodando':
+                raise RuntimeError('Aguarde a tarefa atual terminar antes de consultar.')
+            temporario = tempfile.TemporaryDirectory(prefix='biblio-consulta-')
+            base = pathlib.Path(temporario.name)
+            form = cgi.FieldStorage(fp=self.rfile, headers=self.headers,
+                                    environ={'REQUEST_METHOD':'POST'})
+            campos = form['files'] if 'files' in form else []
+            if not isinstance(campos, list): campos = [campos]
+            for item in campos:
+                rel = pathlib.PurePosixPath(getattr(item, 'filename', '') or '')
+                if rel.is_absolute() or '..' in rel.parts or rel.suffix.lower() not in {'.pdf','.opf'}:
+                    continue
+                destino = base / str(rel)
+                if destino.exists():
+                    raise RuntimeError('Seleção contém nomes repetidos; consulte uma pasta por vez.')
+                destino.parent.mkdir(parents=True, exist_ok=True)
+                with destino.open('wb') as f: shutil.copyfileobj(item.file, f)
+            if not any(base.rglob('*.pdf')) and not any(p.suffix.lower() == '.opf' for p in base.rglob('*')):
+                if not any(p.suffix.lower() == '.pdf' for p in base.rglob('*')):
+                    raise RuntimeError('Nenhum PDF ou OPF selecionado.')
+            job = svc.JOBS.iniciar('Consulta no Biblio — sem preparo', [svc.Etapa(
+                'Identificação leve e consulta à API', svc.python_cmd('consultar-acervo.py',
+                    '--entrada', str(base), '--saida', str(self.raiz / '_controle' / 'consultas-acervo')))])
+            # Só a cópia temporária do seletor é removida ao terminar; nunca a origem.
+            def limpar(tmp, tarefa):
+                import time
+                while tarefa.estado == 'rodando': time.sleep(0.5)
+                tmp.cleanup()
+            threading.Thread(target=limpar, args=(temporario,job), daemon=True).start()
+            temporario = None
+            self._json({'ok':True,'job_id':job.id})
+        except Exception as exc:
+            if temporario: temporario.cleanup()
+            self._json({'erro':str(exc)},400)
 
     def _upload(self):
         try:

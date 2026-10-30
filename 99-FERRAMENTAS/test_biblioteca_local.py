@@ -30,6 +30,67 @@ def resultado_pronto(nome):
 
 
 class BibliotecaLocalTest(unittest.TestCase):
+    def test_descarte_manual_preserva_arquivos_e_sai_da_revisao(self):
+        with tempfile.TemporaryDirectory() as td:
+            c = local.inicializar(pathlib.Path(td)/'livros')
+            pdf = c['revisao']/'inutil.pdf'
+            pdf.write_bytes(b'%PDF-teste-descarte')
+            digest = local.sha256(pdf)
+            ficha = c['metadados']/'inutil.json'
+            local.salvar_json(ficha, {'titulo':'Material', 'situacao':'analisado',
+                                     'pdf_original':local.relativo(c,pdf)})
+            cat = local.carregar_catalogo(c)
+            cat['livros'][digest] = {'arquivo':pdf.name, 'caminho':local.relativo(c,pdf),
+                'metadados':local.relativo(c,ficha), 'estado':'analisado'}
+            local.salvar_catalogo(c,cat)
+            fila_path = c['controle']/'fila-envio-api.json'
+            local.salvar_json(fila_path, {'itens':[{'ficha':local.relativo(c,ficha),
+                                                  'estado':'pendente'}]})
+            with self.assertRaises(RuntimeError):
+                local.descartar_material_revisao(c['raiz'],pdf.name,imprimir=False)
+            self.assertTrue(pdf.exists())
+            out = local.descartar_material_revisao(c['raiz'],pdf.name,
+                confirmado=True,motivo='Sem conteúdo útil',imprimir=False)
+            self.assertFalse(pdf.exists())
+            self.assertEqual(b'%PDF-teste-descarte',(c['raiz']/out['caminho']).read_bytes())
+            reg = local.carregar_catalogo(c)['livros'][digest]
+            self.assertEqual(local.ESTADO_DESCARTE,reg['estado'])
+            self.assertIn(reg['estado'],local.ESTADOS_TERMINAIS_REVISAO_VISUAL)
+            self.assertEqual(local.ESTADO_DESCARTE,json.loads(ficha.read_text())['situacao'])
+            self.assertTrue(ficha.exists())
+            self.assertEqual(local.ESTADO_DESCARTE,json.loads(fila_path.read_text())['itens'][0]['estado'])
+            plano = local.liberar_espaco(c['raiz'])
+            self.assertTrue(any(x.get('motivo') == 'item classificado para descarte'
+                                for x in plano['itens']))
+
+    def test_descarte_manual_nao_altera_cadastro_remoto(self):
+        with tempfile.TemporaryDirectory() as td:
+            c = local.inicializar(pathlib.Path(td)/'livros')
+            pdf = c['revisao']/'enviado.pdf'; pdf.write_bytes(b'%PDF-enviado')
+            cat = local.carregar_catalogo(c)
+            cat['livros']['abc'] = {'arquivo':pdf.name,'caminho':local.relativo(c,pdf),
+                                    'estado':'analisado','id_remoto':42}
+            local.salvar_catalogo(c,cat)
+            with self.assertRaisesRegex(RuntimeError,'vínculo remoto'):
+                local.descartar_material_revisao(c['raiz'],pdf.name,confirmado=True,imprimir=False)
+            self.assertTrue(pdf.exists())
+            self.assertEqual(42,local.carregar_catalogo(c)['livros']['abc']['id_remoto'])
+
+    def test_descarte_bloqueia_envio_incerto(self):
+        with tempfile.TemporaryDirectory() as td:
+            c = local.inicializar(pathlib.Path(td)/'livros')
+            pdf = c['revisao']/'incerto.pdf'; pdf.write_bytes(b'%PDF-incerto')
+            ficha = c['metadados']/'incerto.json'; local.salvar_json(ficha,{})
+            cat = local.carregar_catalogo(c)
+            cat['livros']['abc'] = {'arquivo':pdf.name,'caminho':local.relativo(c,pdf),
+                                    'metadados':local.relativo(c,ficha),'estado':'analisado'}
+            local.salvar_catalogo(c,cat)
+            local.salvar_json(c['controle']/'fila-envio-api.json',{'itens':[
+                {'ficha':local.relativo(c,ficha),'estado':'resultado incerto - nao reenviar sem conferencia'}]})
+            with self.assertRaisesRegex(RuntimeError,'incerto'):
+                local.descartar_material_revisao(c['raiz'],pdf.name,confirmado=True,imprimir=False)
+            self.assertTrue(pdf.exists())
+
     def test_nova_importacao_nao_substitui_decisao_humana(self):
         with tempfile.TemporaryDirectory() as td:
             c=local.inicializar(pathlib.Path(td)/'livros')

@@ -646,6 +646,25 @@ Decisão de layout aprovada em 13/09/2026:
 
 Arquivos de referência do protótipo aprovado:
 
+### Consulta independente e descarte na bancada (30/10/2026)
+
+- Em **Importar**, o painel **Consultar no Biblio** aceita PDF/OPF avulsos ou
+  uma pasta. Usa cópias temporárias locais, sem inserir na entrada nem alterar
+  originais. Consulta somente metadados pela API; não envia PDFs ao servidor.
+- A leitura é limitada ao OPF ou às primeiras 12 páginas de texto do PDF.
+  Não executa OCR, capas, compactação ou preparação. Sem texto/identidade
+  confiável, retorna **precisa conferir**, não uma confirmação de ausência.
+- Confirma presença apenas por ISBN válido único, correspondente ao retorno.
+  Título/autor, múltiplos ISBNs e respostas ambíguas exigem conferência da edição.
+  Os relatórios JSON/CSV ficam em `_controle/consultas-acervo`, sem alterar
+  catálogo, filas ou decisões de revisão. O último CSV é acessível no painel.
+- Na bancada, **descartar material** pede confirmação e motivo. Registra a
+  decisão humana, move o original para `19-DESCARTE`, retira o item da bancada
+  e cancela sua pendência nas filas. Não apaga arquivos nem altera o cadastro
+  remoto. A remoção recuperável só ocorre em **Liberar espaço**.
+- Vínculos remotos, correções remotas pendentes e envios de resultado incerto
+  são bloqueados para descarte simples; preservar evidências até conferência.
+
 - `/Users/piraginejr/.codex/visualizations/2026/07/27/019fa273-6b82-7741-802f-cb5b4cb585b1/biblio-app-mockups-lateral.html`
 - `/Users/piraginejr/.codex/visualizations/2026/07/27/019fa273-6b82-7741-802f-cb5b4cb585b1/biblio-revisao-bancada-aprovada.html`
 
