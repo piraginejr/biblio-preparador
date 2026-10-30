@@ -30,6 +30,60 @@ def resultado_pronto(nome):
 
 
 class BibliotecaLocalTest(unittest.TestCase):
+    def test_multiplos_autores_salvos_sem_perder_correcao_anterior(self):
+        with tempfile.TemporaryDirectory() as td:
+            c = local.inicializar(pathlib.Path(td)/'livros')
+            pdf = c['revisao']/'ultimo.pdf'; pdf.write_bytes(b'%PDF-autores')
+            digest = local.sha256(pdf)
+            ficha_path = c['metadados']/'ultimo.json'
+            local.salvar_json(ficha_path,{'titulo':'Título automático antigo','nmAutor0':'Antigo, Nome',
+                'autores':[{'nome':'Antigo, Nome','desc':'Autor'}],
+                'situacao':'analisado','pdf_original':local.relativo(c,pdf)})
+            cat = local.carregar_catalogo(c)
+            cat['livros'][digest] = {'arquivo':pdf.name,'caminho':local.relativo(c,pdf),
+                'metadados':local.relativo(c,ficha_path),'estado':'analisado'}
+            local.salvar_catalogo(c,cat)
+            revisoes = {'livros':{pdf.name:{'hash_sha256':digest, 'aprovado':False,
+                'campos':{'titulo':'Título corrigido pelo operador','subTitulo':'Subtítulo salvo',
+                          'editora':'Editora já corrigida'}}}}
+            local.salvar_json(c['controle']/'revisoes-manuais.json',revisoes)
+            autores = [{'nome':'Silva, Ana','desc':'Autor'},
+                       {'nome':'Santos, João','desc':'Autor'},
+                       {'nome':'Lima, Maria','desc':'Tradutor'}]
+            with mock.patch.object(local.prep,'registrar_aprendizados_da_revisao',return_value=[]):
+                local.gravar_decisao_revisao(c['raiz'],pdf.name,campos={'autores':autores},
+                                           aprovado=False,imprimir=False)
+            ficha = json.loads(ficha_path.read_text())
+            self.assertEqual('Título corrigido pelo operador',ficha['titulo'])
+            self.assertEqual('Subtítulo salvo',ficha['subTitulo'])
+            self.assertEqual('Editora já corrigida',ficha['editora'])
+            self.assertEqual(autores,ficha['autores'])
+            self.assertEqual('Silva, Ana',ficha['nmAutor0'])
+            self.assertTrue(pdf.exists())
+            self.assertEqual(digest,local.sha256(pdf))
+            _, reaberta = local._ler_ficha_registro(c,local.carregar_catalogo(c)['livros'][digest])
+            self.assertEqual(autores,reaberta['autores'])
+            payload = local.api_envio.montar_payload(reaberta,tipo_api='documento')
+            enviados = json.loads(payload['autores'])
+            self.assertEqual(3,len(enviados))
+            self.assertEqual('Tradutor',enviados[2]['desc'])
+
+    def test_correcao_autor_principal_preserva_coautores_e_funcoes(self):
+        anteriores = [{'nome':'Errado, Nome','desc':'Organizador'},
+                      {'nome':'Segundo, Nome','desc':'Tradutor'}]
+        lista = local._autores_da_revisao({'nmAutor0':'Correto, Nome'},anteriores)
+        self.assertEqual('Correto, Nome',lista[0]['nome'])
+        self.assertEqual('Organizador',lista[0]['desc'])
+        self.assertEqual(anteriores[1],lista[1])
+        self.assertEqual('Errado, Nome',anteriores[0]['nome'])
+
+    def test_remocao_explicita_todos_autores(self):
+        self.assertEqual([],local._autores_da_revisao({'autores':[]},[{'nome':'Antigo'}]))
+
+    def test_autores_invalidos_nao_sao_gravados(self):
+        with self.assertRaises(ValueError):
+            local._autores_da_revisao({'autores':'Silva, Ana; Santos, João'},[])
+
     def test_descarte_manual_preserva_arquivos_e_sai_da_revisao(self):
         with tempfile.TemporaryDirectory() as td:
             c = local.inicializar(pathlib.Path(td)/'livros')

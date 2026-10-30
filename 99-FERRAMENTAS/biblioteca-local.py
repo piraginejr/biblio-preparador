@@ -2145,6 +2145,37 @@ def descartar_material_revisao(raiz, arquivo, confirmado=False, motivo="",
     return resultado
 
 
+def _autores_da_revisao(campos, anteriores):
+    """Lista explícita é soberana; clientes antigos só trocam o primeiro nome."""
+    lista = campos.get('autores', anteriores or [])
+    if not isinstance(lista, list):
+        raise ValueError('autores deve ser uma lista de pessoas')
+    if len(lista) > 100:
+        raise ValueError('máximo de 100 responsáveis por material')
+    resultado = []
+    for item in lista:
+        if isinstance(item, str):
+            item = {'nome': item, 'desc': 'Autor'}
+        if not isinstance(item, dict):
+            raise ValueError('autor inválido: informe nome e função')
+        nome = ' '.join(str(item.get('nome') or '').split())
+        papel = ' '.join(str(item.get('desc') or 'Autor').split())
+        if len(nome) > 500 or len(papel) > 100:
+            raise ValueError('nome ou função de autor excede o tamanho permitido')
+        if nome:
+            resultado.append({'nome': nome, 'desc': papel})
+    if 'autores' not in campos and 'nmAutor0' in campos:
+        principal = str(campos['nmAutor0'] or '').strip()
+        if resultado:
+            if principal:
+                resultado[0]['nome'] = principal
+            else:
+                resultado.pop(0)
+        elif principal:
+            resultado.append({'nome': principal, 'desc': 'Autor'})
+    return resultado
+
+
 def gravar_decisao_revisao(raiz, arquivo, campos=None, aprovado=True,
                            justificativa="revisão visual",
                            fontes=None, conflitos=None, pendencias=None,
@@ -2166,6 +2197,11 @@ def gravar_decisao_revisao(raiz, arquivo, campos=None, aprovado=True,
     anterior = revisoes["livros"].get(registro.get("arquivo", ""), {})
     campos_mesclados = dict(anterior.get("campos", {}))
     campos_mesclados.update(campos or {})
+    if 'autores' in (campos or {}) or 'nmAutor0' in (campos or {}):
+        autores = _autores_da_revisao(
+            campos or {}, campos_mesclados.get('autores') or ficha.get('autores', []))
+        campos_mesclados['autores'] = autores
+        campos_mesclados['nmAutor0'] = autores[0]['nome'] if autores else ''
     revisao = {
         **anterior,
         "hash_sha256": sha256(pdf),
