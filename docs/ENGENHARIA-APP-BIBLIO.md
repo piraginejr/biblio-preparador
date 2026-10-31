@@ -111,6 +111,19 @@ Na simulação, os vínculos recuperados existem apenas em memória. Na execuç�
 ficam auditados no catálogo e no manifesto da Lixeira. Correções remotas
 pendentes permanecem protegidas.
 
+**Área temporária — regra de 31/10/2026:** o comando Liberar espaço nunca remove
+arquivos externos à biblioteca de trabalho, mesmo que fichas antigas apontem
+para a pasta original do operador na nuvem. PDF, originais convertidos, capas,
+compactados e acessórios locais integram o mesmo ciclo. Um compactado misto
+só é liberado quando todos os seus documentos estão encerrados; histórico de
+uma conversão antiga não pode ocultar outra pendência do mesmo conteúdo.
+O extrator grava hashes de cada conteúdo para esse vínculo futuro. Casos
+legados e resíduos revisados têm autorização individual por caminho/hash em
+`_controle/residuos-ciclo.json`, com dependências do catálogo quando existirem.
+Arquivos novos, alterados ou desconhecidos sem prova não são apagados. A
+simulação lista `residuos_ciclo`; execução valida novamente escopo e hash e
+registra o destino na Lixeira. Metadados, aprendizado e históricos permanecem.
+
 Referência: https://apibib.pibcuritiba.org.br/documentacao.html#atualizar-livro
 
 Não devemos reescrever o motor do zero.

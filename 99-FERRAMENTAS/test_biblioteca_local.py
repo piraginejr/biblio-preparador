@@ -30,6 +30,20 @@ def resultado_pronto(nome):
 
 
 class BibliotecaLocalTest(unittest.TestCase):
+    def test_limpeza_de_residuos_so_move_area_temporaria_e_mantem_diario(self):
+        with tempfile.TemporaryDirectory() as td:
+            c=local.inicializar(pathlib.Path(td)/'livros')
+            p=c['entrada']/'legado.cpt';p.write_bytes(b'base antiga')
+            externo=pathlib.Path(td)/'original-nuvem.cpt';externo.write_bytes(b'original')
+            local.salvar_json(c['controle']/'residuos-ciclo.json',{'itens':[
+                {'arquivo':str(x),'sha256':local.sha256(x),'aprovado':True} for x in (p,externo)]})
+            resultado=local.liberar_espaco(c['raiz'],executar=True,lixeira=pathlib.Path(td)/'lixo')
+            self.assertEqual(1,resultado['residuos_quantidade'])
+            self.assertFalse(p.exists());self.assertTrue(externo.exists())
+            diario=json.loads((c['controle']/'manifesto-liberacao-espaco.json').read_text())
+            self.assertEqual(1,len(diario['operacoes'][-1]['residuos_ciclo_removidos']))
+            self.assertTrue((c['controle']/'residuos-ciclo.json').exists())
+
     def test_descarte_nao_ressuscita_na_consolidacao(self):
         with tempfile.TemporaryDirectory() as td:
             c=local.inicializar(pathlib.Path(td)/'livros')
@@ -2234,7 +2248,7 @@ Times CID TrueType Identity-H yes yes yes 2 0
             self.assertEqual("descartado - arquivos locais liberados",
                              atualizado["estado"])
 
-    def test_liberar_espaco_remove_pasta_completa_de_livro_importado(self):
+    def test_liberar_espaco_preserva_pasta_externa_de_livro_importado(self):
         with tempfile.TemporaryDirectory() as td, tempfile.TemporaryDirectory() as lixo:
             base = pathlib.Path(td)
             raiz = base / "biblioteca-local"
@@ -2271,18 +2285,19 @@ Times CID TrueType Identity-H yes yes yes 2 0
 
             simulacao = local.liberar_espaco(raiz)
             self.assertEqual(1, simulacao["livros"])
-            self.assertIn(str((pacote / "livro.opf").resolve()),
-                          simulacao["itens"][0]["arquivos"])
+            self.assertNotIn(str((pacote / "livro.opf").resolve()),
+                             simulacao["itens"][0]["arquivos"])
             self.assertTrue(pacote.exists())
 
             local.liberar_espaco(raiz, executar=True, lixeira=lixo)
-            self.assertFalse(pacote.exists())
+            self.assertTrue(pacote.exists())
+            self.assertTrue(all(p.exists() for p in originais))
             self.assertFalse(pdf.exists())
             destinos = list(pathlib.Path(lixo).iterdir())
-            self.assertEqual(5, len(destinos))
+            self.assertEqual(1, len(destinos))
             self.assertTrue(all(p.is_file() for p in destinos))
 
-    def test_word_original_pode_ser_liberado_depois_do_cadastro(self):
+    def test_word_original_externo_nunca_e_liberado(self):
         with tempfile.TemporaryDirectory() as td:
             base = pathlib.Path(td)
             pasta = base / "originais" / "Documento"
@@ -2294,7 +2309,7 @@ Times CID TrueType Identity-H yes yes yes 2 0
                 "arquivos_origem_importacao": [str(word)],
             }
             self.assertEqual(
-                [word.resolve()],
+                [],
                 local._arquivos_origem_importados(ficha, base / "biblioteca"))
 
     def test_powerpoint_original_pode_ser_liberado_depois_do_cadastro(self):
@@ -2309,7 +2324,7 @@ Times CID TrueType Identity-H yes yes yes 2 0
                 "arquivos_origem_importacao": [str(powerpoint)],
             }
             self.assertEqual(
-                [powerpoint.resolve()],
+                [],
                 local._arquivos_origem_importados(ficha, base / "biblioteca"))
 
     def test_limpeza_recupera_word_legado_pelo_historico_de_importacao(self):
@@ -2395,7 +2410,7 @@ Times CID TrueType Identity-H yes yes yes 2 0
             local.liberar_espaco(raiz, executar=True, lixeira=lixo)
 
             self.assertTrue(pasta_autor.is_dir())
-            self.assertFalse(any(p.exists() for p in livro_a))
+            self.assertTrue(all(p.exists() for p in livro_a))
             self.assertTrue(all(p.exists() for p in livro_b))
 
     def test_limpeza_remove_pastas_com_apenas_ds_store_mesmo_sem_livros(self):

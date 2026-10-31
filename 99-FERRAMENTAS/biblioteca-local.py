@@ -34,6 +34,7 @@ from datetime import datetime
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import converter_html          # HTML -> PDF pesquisavel (Chromium)
 import triagem_entrada
+import residuos_ciclo
 
 BASE_SCRIPT = pathlib.Path(__file__).with_name("preparar-livros.py")
 SPEC = importlib.util.spec_from_file_location("preparar_livros", BASE_SCRIPT)
@@ -3993,7 +3994,8 @@ def _arquivos_origem_importados(ficha, raiz_local):
     pasta = pathlib.Path(valor).expanduser()
     try:
         pasta = pasta.resolve(strict=True)
-    except OSError:
+        pasta.relative_to(pathlib.Path(raiz_local).resolve())
+    except (OSError, ValueError):
         return []
     if (not pasta.is_dir() or pasta.is_symlink()
             or pasta == pathlib.Path(pasta.anchor)
@@ -4425,6 +4427,10 @@ def liberar_espaco(raiz, executar=False, lixeira=None):
     bytes_orfaos = sum(o["bytes"] for o in orfaos)
     acessorios = triagem_entrada.para_limpeza(c)
     bytes_acessorios = sum(a['bytes'] for a in acessorios)
+    ja_planejados={str(a['caminho'].resolve()) for p in planos for a in p['arquivos']}
+    ja_planejados.update(str((c['raiz']/a['arquivo']).resolve()) for a in acessorios+orfaos)
+    residuos=[i for i in residuos_ciclo.planejar(c,catalogo,historico_importacoes)
+              if str((c['raiz']/i['arquivo']).resolve()) not in ja_planejados]
 
     resumo = {"modo": "EXECUÇÃO" if executar else "SIMULAÇÃO",
               "livros": len(planos), "arquivos": total_arquivos,
@@ -4436,6 +4442,9 @@ def liberar_espaco(raiz, executar=False, lixeira=None):
               "acessorios_para_descarte": acessorios,
               "acessorios_quantidade": len(acessorios),
               "acessorios_mb": round(bytes_acessorios / 1024 / 1024, 2),
+              "residuos_ciclo": residuos,
+              "residuos_quantidade": len(residuos),
+              "residuos_mb": round(sum(i['bytes'] for i in residuos)/1024/1024,2),
               "pastas_vazias": [relativo(c, p) for p in pastas_residuais]}
     for plano in planos:
         resumo["itens"].append({
@@ -4460,6 +4469,13 @@ def liberar_espaco(raiz, executar=False, lixeira=None):
                 "livros": [], "orfaos_removidos": [],
                 "pastas_vazias_removidas": []}
     operacao['acessorios_descartados'] = []
+    operacao['residuos_ciclo_removidos'] = []
+    for item in residuos:
+        origem=residuos_ciclo.local_entrada(c,item['arquivo'])
+        if not origem or residuos_ciclo.sha(origem)!=item['sha256']:continue
+        destino=_destino_lixeira(lixeira,origem,'residuo-ciclo')
+        shutil.move(str(origem),str(destino))
+        operacao['residuos_ciclo_removidos'].append(dict(item,lixeira=destino.name))
     dados_acessorios = triagem_entrada.ler(c)
     for item in acessorios:
         origem = c['raiz'] / item['arquivo']
@@ -4477,6 +4493,9 @@ def liberar_espaco(raiz, executar=False, lixeira=None):
         pastas_importadas = set()
         for arquivo in plano["arquivos"]:
             origem = arquivo["caminho"]
+            # Defesa final: nenhum vínculo antigo autoriza apagar fora da
+            # biblioteca temporária, mesmo apontando para a nuvem de origem.
+            origem.resolve().relative_to(c['raiz'].resolve())
             if arquivo.get("arquivo_importado"):
                 pastas_importadas.add(origem.parent)
             destino = _destino_lixeira(

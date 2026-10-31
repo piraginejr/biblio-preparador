@@ -51,7 +51,7 @@ def extrair(origem, destino, max_arquivos=5000,
     destino.mkdir(parents=True, exist_ok=False)
     arquivo = lib.archive_read_new()
     inicio, total = time.monotonic(), 0
-    resultado = {'extraidos': [], 'ignorados': [], 'ok': False}
+    resultado = {'extraidos': [], 'ignorados': [], 'ok': False, 'hashes_extraidos': {}}
     def erro():
         return (lib.archive_error_string(arquivo) or b'compactado ilegivel').decode('utf8', 'replace')
     try:
@@ -88,6 +88,7 @@ def extrair(origem, destino, max_arquivos=5000,
             # Destino novo, sem links, e criação exclusiva: nada é sobrescrito.
             with alvo.open('xb') as saida:
                 escritos = 0
+                digest_item = hashlib.sha256()
                 while True:
                     n = lib.archive_read_data(arquivo, buffer, len(buffer))
                     if n < 0:
@@ -100,7 +101,9 @@ def extrair(origem, destino, max_arquivos=5000,
                             or time.monotonic() - inicio > segundos):
                         raise ValueError('limite de extração excedido')
                     saida.write(buffer.raw[:n])
+                    digest_item.update(buffer.raw[:n])
             resultado['extraidos'].append(str(relativo))
+            resultado['hashes_extraidos'][str(relativo)] = digest_item.hexdigest()
         resultado['bytes'] = total
         return resultado
     finally:
