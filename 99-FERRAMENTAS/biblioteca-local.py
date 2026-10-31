@@ -1882,6 +1882,7 @@ def _salvar_snapshot_revisao_manual(c, registro, ficha_antes, ficha_depois,
         "hash_sha256": revisao.get("hash_sha256", ""),
         "salvo_em": revisao.get("atualizado_em", agora()),
         "campos_revisao": revisao.get("campos", {}),
+        "campos_recebidos": revisao.get("campos_recebidos", {}),
         "ficha_antes": ficha_antes,
         "ficha_depois": ficha_depois,
     })
@@ -2174,6 +2175,10 @@ def _autores_da_revisao(campos, anteriores):
                 resultado.pop(0)
         elif principal:
             resultado.append({'nome': principal, 'desc': 'Autor'})
+    elif 'autores' in campos and campos.get('nmAutor0'):
+        principal=' '.join(str(campos['nmAutor0']).split())
+        if not resultado or principal.casefold()!=resultado[0]['nome'].casefold():
+            raise ValueError('autor principal diverge da lista de autores; confira antes de salvar')
     return resultado
 
 
@@ -2207,6 +2212,7 @@ def gravar_decisao_revisao(raiz, arquivo, campos=None, aprovado=True,
         **anterior,
         "hash_sha256": sha256(pdf),
         "campos": campos_mesclados,
+        "campos_recebidos": dict(campos or {}),
         "fontes": list(dict.fromkeys((anterior.get("fontes", []) or [])
                                      + (fontes or ["revisão visual"]))),
         "justificativa": justificativa,

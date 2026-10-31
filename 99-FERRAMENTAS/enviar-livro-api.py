@@ -1118,6 +1118,10 @@ def sincronizar_catalogo_com_fila(raiz, fila):
         registro = por_ficha.get(item.get("ficha"))
         if not registro:
             continue
+        if registro.get('arquivos_liberados_em'):
+            # A fila mantém o recibo remoto, mas não pode reabrir o ciclo
+            # local já encerrado nem apagar sua confirmação de limpeza.
+            continue
         estado_fila = item.get("estado", "")
         if estado_fila == "cadastrado":
             novo_estado = "cadastrado"
