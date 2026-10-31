@@ -28,6 +28,30 @@ SPEC_CBL.loader.exec_module(cbl)
 
 
 class PrepararLivrosTest(unittest.TestCase):
+    def test_tipo_documental_definido_antes_do_uso_na_autoria(self):
+        func=ast.parse(inspect.getsource(prep.processar)).body[0]
+        trechos=[]
+        for node in func.body:
+            if isinstance(node,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='documento_nao_livro' for t in node.targets):
+                trechos.append(node)
+            elif (isinstance(node,ast.If) and isinstance(node.test,ast.BoolOp)
+                  and len(node.test.values)==2
+                  and isinstance(node.test.values[0],ast.Name)
+                  and node.test.values[0].id=='documento_nao_livro'
+                  and isinstance(node.test.values[1],ast.UnaryOp)
+                  and isinstance(node.test.values[1].operand,ast.Name)
+                  and node.test.values[1].operand.id=='autores_estruturados'):
+                trechos.append(node)
+        self.assertEqual(2,len(trechos))
+        codigo=compile(ast.fix_missing_locations(ast.Module(body=trechos,type_ignores=[])),'autoria','exec')
+        for tipo in ('livro','documento'):
+            responsavel=mock.Mock(return_value=None)
+            contexto={'tipo_documento':tipo,'autores_estruturados':[],'paginas':[],
+                      '_responsavel_documental_explicito':responsavel}
+            exec(codigo,contexto)
+            self.assertEqual(tipo!='livro',contexto['documento_nao_livro'])
+            self.assertEqual(int(tipo!='livro'),responsavel.call_count)
+
     def test_alterar_validador_invalida_assinatura_dos_metadados(self):
         import builtins
         import io

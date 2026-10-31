@@ -7675,13 +7675,13 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
             {"nome": nome_autor, "desc": "Autor"}
             for nome_autor in autores_creditos
         ]
+    documento_nao_livro = tipo_documento not in {"livro", "coletânea"}
     if documento_nao_livro and not autores_estruturados:
         responsavel=_responsavel_documental_explicito(paginas)
         if responsavel and (not autor or identificar.normalizar(autor)==identificar.normalizar(responsavel['nome'])):
             autores_estruturados=[responsavel];autor=responsavel['nome']
             origem_aut='responsabilidade documental explícita: '+responsavel['desc']
 
-    documento_nao_livro = tipo_documento not in {"livro", "coletânea"}
     linha.update({
         "titulo": titulo, "origem_titulo": origem_tit,
         "subTitulo": linha.get("subTitulo", ""),

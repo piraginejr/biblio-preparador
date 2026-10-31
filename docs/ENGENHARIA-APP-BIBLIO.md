@@ -698,6 +698,18 @@ Arquivos de referência do protótipo aprovado:
 - Atualizações da interface não reprocessam nem migram as fichas do operador.
   Antes da instalação, copiar fichas, catálogo e decisões manuais; após a
   instalação, comparar os arquivos para provar que continuam inalterados.
+- A lista estruturada não pode substituir silenciosamente um autor principal
+  divergente: o salvamento deve pedir conferência. O diário e a cópia de cada
+  salvamento guardam `campos_recebidos` separados dos campos efetivamente
+  aplicados, para distinguir entrada da tela de transformações do motor.
+- Valores já aprovados pelo operador não devem receber correções genéricas de
+  letras repetidas em sobrenomes; correções de grafia são decisões específicas
+  da obra e, se já enviada, atualizações de metadados no mesmo ID.
+- Sincronizar a fila de envios não reabre registros com
+  `arquivos_liberados_em`: o recibo remoto e o estado de limpeza são distintos.
+- A classificação `documento_nao_livro` deve ser definida antes do tratamento
+  de autoria documental; a cobertura de regressão executa o trecho tanto para
+  livros quanto para documentos, sem OCR nem consultas externas.
 
 - `/Users/piraginejr/.codex/visualizations/2026/07/27/019fa273-6b82-7741-802f-cb5b4cb585b1/biblio-app-mockups-lateral.html`
 - `/Users/piraginejr/.codex/visualizations/2026/07/27/019fa273-6b82-7741-802f-cb5b4cb585b1/biblio-revisao-bancada-aprovada.html`

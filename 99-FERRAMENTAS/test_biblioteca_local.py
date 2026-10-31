@@ -30,6 +30,11 @@ def resultado_pronto(nome):
 
 
 class BibliotecaLocalTest(unittest.TestCase):
+    def test_autor_principal_nao_pode_ser_sobrescrito_por_lista_divergente(self):
+        with self.assertRaisesRegex(ValueError,'diverge'):
+            local._autores_da_revisao({'nmAutor0':'KOEHN, Nancy F.',
+                'autores':[{'nome':'KKOEHN, Nancy F.','desc':'Autor'}]},[])
+
     def test_limpeza_de_residuos_so_move_area_temporaria_e_mantem_diario(self):
         with tempfile.TemporaryDirectory() as td:
             c=local.inicializar(pathlib.Path(td)/'livros')

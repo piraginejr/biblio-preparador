@@ -14,6 +14,16 @@ SPEC.loader.exec_module(api)
 
 
 class EnviarLivroApiTest(unittest.TestCase):
+    def test_sincronizar_fila_nao_reabre_cadastro_ja_limpo(self):
+        with tempfile.TemporaryDirectory() as td:
+            r=pathlib.Path(td);p=r/'_controle/catalogo-local.json'
+            original={'estado':'cadastrado - arquivos locais liberados','arquivos_liberados_em':'2026-10-31',
+                      'metadados':'_metadados/a.json','id_remoto':77,'caminho':''}
+            api.salvar_json(p,{'livros':{'h':original}})
+            self.assertEqual(0,api.sincronizar_catalogo_com_fila(r,{'itens':[
+                {'ficha':'_metadados/a.json','estado':'cadastrado','id_remoto':77}]}))
+            self.assertEqual(original,json.loads(p.read_text())['livros']['h'])
+
     def test_edicao_por_id_envia_pdf_e_autores_sem_reabrir_inclusao(self):
         with tempfile.TemporaryDirectory() as td:
             r=pathlib.Path(td)/'livros';fp,_=self.criar_ficha(r,'edicao','2026-10-30')
