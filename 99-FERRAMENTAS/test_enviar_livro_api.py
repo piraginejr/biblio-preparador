@@ -14,6 +14,71 @@ SPEC.loader.exec_module(api)
 
 
 class EnviarLivroApiTest(unittest.TestCase):
+    def test_atualizacao_recusada_explicitamente_nao_fica_incerta(self):
+        with tempfile.TemporaryDirectory() as td:
+            fp,_=self.criar_ficha(pathlib.Path(td)/'livros','permissao','2026-11-01')
+            titulo=json.loads(fp.read_text())['titulo']
+            q=mock.Mock(status_code=200);q.json.return_value={'encontrado':True,'id':42,'total_matches':1,'titulo':titulo}
+            erro=mock.Mock(status_code=500);erro.json.return_value={'erro':True,'mensagem':'Diretório sem permissão de escrita'}
+            sessao=mock.Mock();sessao.post.side_effect=[q,erro]
+            with self.assertRaisesRegex(RuntimeError,'permissão'):
+                api.atualizar_livro_por_id(fp,42,realmente=True,chave='teste',sessao=sessao)
+            registro=api.carregar_controle(api.controle_da_ficha(fp))['atualizacoes_por_id'][-1]
+            self.assertEqual('erro confirmado - revisar',registro['estado'])
+            self.assertIn('permissão',registro['erro'])
+
+    def test_novo_contrato_permite_documento_homonimo_de_livros(self):
+        q={'encontrado':True,'total_matches':2,'candidatos':[
+            {'id':1,'tipo':1,'autores':['Um, Autor']},
+            {'id':2,'tipo':1,'autores':['Outro, Autor']}]}
+        with mock.patch.object(api,'consultar_livro',return_value=q):
+            self.assertIn('decisao_homonimos',api.verificar_titulo_para_cadastro(
+                mock.Mock(),'teste',{'titulo':'Arqueologia','tipo_documento':'documento'}))
+            q['candidatos'].append({'id':3,'tipo':5,'autores':['Autor desconhecido']})
+            q['total_matches']=3
+            with self.assertRaisesRegex(api.RevisaoHomonimos,'IDs'):
+                api.verificar_titulo_para_cadastro(mock.Mock(),'teste',{'titulo':'Arqueologia','tipo_documento':'documento'})
+
+    def test_homonimo_isbn_igual_nao_libera_por_tipo_diferente(self):
+        q={'encontrado':True,'total_matches':1,'candidatos':[
+            {'id':1,'tipo':1,'isbn':'9788573258868','autores':['Outro, Autor']}]}
+        with mock.patch.object(api,'consultar_livro',return_value=q):
+            with self.assertRaises(api.RevisaoHomonimos):
+                api.verificar_titulo_para_cadastro(mock.Mock(),'teste',{
+                    'titulo':'Teste','tipo_documento':'documento','isbn':'9788573258868'})
+
+    def test_autor_desconhecido_e_abreviacao_nao_provam_obra_distinta(self):
+        self.assertEqual((),api._chave_autor('[autor não identificado]'))
+        q={'encontrado':True,'total_matches':1,'candidatos':[
+            {'id':1,'tipo':1,'autores':['Jung, C. G.']}]}
+        with mock.patch.object(api,'consultar_livro',return_value=q):
+            with self.assertRaises(api.RevisaoHomonimos):
+                api.verificar_titulo_para_cadastro(mock.Mock(),'teste',{
+                    'titulo':'Psicologia','tipo_documento':'livro','nmAutor0':'Jung, Carl Gustav'})
+
+    def test_cadastro_envia_chave_idempotente_estavel(self):
+        with tempfile.TemporaryDirectory() as td:
+            fp,_=self.criar_ficha(pathlib.Path(td)/'livros','chave','2026-11-01')
+            sessao=mock.Mock();sessao.post.return_value.status_code=201
+            sessao.post.return_value.json.return_value={'id':321}
+            with mock.patch.object(api,'verificar_titulo_para_cadastro',return_value={}), \
+                 mock.patch.object(api,'carregar_controle',side_effect=lambda *a:{'envios':{}}):
+                primeiro=api.enviar(fp,realmente=True,chave='teste',sessao=sessao)
+                segundo=api.enviar(fp,realmente=True,chave='teste',sessao=sessao)
+            self.assertEqual(primeiro['idempotency_key'],segundo['idempotency_key'])
+            self.assertEqual(primeiro['idempotency_key'],sessao.post.call_args.kwargs['headers']['Idempotency-Key'])
+
+    def test_erro_de_envio_e_motivo_sao_sincronizados_no_catalogo(self):
+        with tempfile.TemporaryDirectory() as td:
+            r=pathlib.Path(td);p=r/'_controle/catalogo-local.json'
+            api.salvar_json(p,{'livros':{'h':{'estado':'pronto para cadastro específico','metadados':'_metadados/a.json'}}})
+            api.sincronizar_catalogo_com_fila(r,{'itens':[{
+                'ficha':'_metadados/a.json','estado':'aguardando conferência de homônimos',
+                'erro':'IDs 1, 2; conferir identidade','concluido_em':'2026-11-01'}]})
+            v=json.loads(p.read_text())['livros']['h']
+            self.assertEqual('aguardando conferência de homônimos',v['estado'])
+            self.assertIn('IDs 1, 2',v['erro_envio'])
+
     def test_obra_base_nao_e_versao_para_criancas_nem_trecho_parcial(self):
         c={'encontrado':True,'correspondencia':'aproximada',
            'criterios_enviados':{'titulo':'As Cinco Linguagens do Amor'},
@@ -828,7 +893,7 @@ class EnviarLivroApiTest(unittest.TestCase):
             self.assertEqual(0, resultado["enviados"])
             self.assertEqual(1, resultado["reconciliados"])
 
-    def test_fila_especifica_consulta_titulo_antes_do_upload(self):
+    def test_fila_especifica_titulo_anonimo_igual_nao_e_duplicata_automatica(self):
         with tempfile.TemporaryDirectory() as td:
             raiz = pathlib.Path(td) / "livros"
             (raiz / "_controle").mkdir(parents=True)
@@ -854,16 +919,17 @@ class EnviarLivroApiTest(unittest.TestCase):
             }
             with mock.patch.object(api, "consultar_livro",
                                    return_value=consulta), \
-                 mock.patch.object(api, "enviar") as enviar:
+                 mock.patch.object(api, "enviar",side_effect=api.RevisaoHomonimos('IDs 99; conferir identidade')) as enviar:
                 resultado = api.processar_fila_especifica(
                     raiz, "documentos", chave="segredo-de-teste",
                     intervalo=0, realmente=True)
-            enviar.assert_not_called()
+            enviar.assert_called_once()
             self.assertEqual(1, resultado["revisao"])
             fila = json.loads((raiz / "_controle" /
                                api.FILAS_ESPECIFICAS["documentos"]).read_text())
-            self.assertEqual(api.ESTADO_DUPLICADO_TITULO,
+            self.assertEqual('aguardando conferência de homônimos',
                              fila["itens"][0]["estado"])
+            self.assertIn('IDs 99',fila['itens'][0]['erro'])
 
     def test_reconciliacao_sem_isbn_tenta_titulo_sem_autor(self):
         with tempfile.TemporaryDirectory() as td:
