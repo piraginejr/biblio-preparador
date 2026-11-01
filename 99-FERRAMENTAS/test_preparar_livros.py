@@ -1202,6 +1202,17 @@ CDD - 260.01"""
         with self.assertRaises(ValueError):
             prep.rodar_ocr("/tmp/livro.pdf", "/tmp/livro.pdf")
 
+    def test_conversao_binaria_explodida_nao_se_confunde_com_livro_longo(self):
+        legivel = 'Texto legível sobre educação e ciência. ' * 30
+        lixo = '#(¢Š#(¢Š Ù¬�#Ãðh·º�Å½Ììš !#$% ' * 30
+        paginas = [legivel] * 100 + [lixo] * 2200
+        self.assertIn('reconverter', prep.motivo_conversao_anomala(
+            paginas, 'LibreOfficeDev / Writer'))
+        self.assertFalse(prep.motivo_conversao_anomala([legivel]*2300, 'Writer'))
+        self.assertFalse(prep.motivo_conversao_anomala(['']*2300, 'Writer'))
+        self.assertFalse(prep.motivo_conversao_anomala(paginas, 'Scanner'))
+        self.assertFalse(prep.motivo_conversao_anomala([lixo]*100, 'Writer'))
+
     def test_texto_codificado_precisa_ocr_forcado_na_copia(self):
         self.assertTrue(prep.texto_com_codificacao_corrompida(['!#$%&()* ' * 80]))
         self.assertTrue(prep.texto_com_codificacao_corrompida(['\uf021\uf022\uf023 ' * 80]))

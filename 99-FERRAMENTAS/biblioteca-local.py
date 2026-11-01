@@ -788,7 +788,12 @@ def preparar_pdf_automaticamente(c, origem, digest, paginas=None,
     diagnostico_estrutura = {}
     otimizacao_sem_perdas = {}
 
-    if diagnostico["status"] != "OCR aprovado":
+    bloqueio_conversao = prep.verificar_conversao_anomala(str(fonte), paginas)
+    if bloqueio_conversao:
+        erros.append(bloqueio_conversao)
+        diagnostico["status"] = "conversão inválida - reconverter original"
+        print(f"  OCR evitado: {bloqueio_conversao}", flush=True)
+    elif diagnostico["status"] != "OCR aprovado":
         preparado = c["preparados"] / f"{origem.stem}-{digest[:8]}.pdf"
         texto_idioma = "\n".join(paginas[:30]) or prep.texto_inicio(str(origem))
         idioma = prep.IDIOMA_OCR.get(prep.idioma_do_texto(texto_idioma),
@@ -814,7 +819,7 @@ def preparar_pdf_automaticamente(c, origem, digest, paginas=None,
             detalhe = prep.MOTOR.get("erro_ocr", "").strip()
             erros.append("falha ao criar OCR" + (f": {detalhe}" if detalhe else ""))
 
-    if fonte.stat().st_size > LIMITE_OTIMIZACAO_BYTES:
+    if not bloqueio_conversao and fonte.stat().st_size > LIMITE_OTIMIZACAO_BYTES:
         destino = (preparado or
                    c["preparados"] / f"{origem.stem}-{digest[:8]}.pdf")
         print(f"  otimizando copia para envio ({fonte.stat().st_size/1024/1024:.1f} MB)",
@@ -2776,6 +2781,14 @@ def _converter_word_libreoffice(origem, destino, soffice,
             "--nofirststartwizard", f"-env:UserInstallation={perfil.as_uri()}",
             "--convert-to", "pdf", "--outdir", str(temporario), str(origem),
         ]
+        # DOC binário danificado não pode cair no importador de texto: ele
+        # imprime os próprios bytes OLE e produz milhares de páginas de lixo.
+        if pathlib.Path(origem).suffix.lower() == ".doc":
+            with pathlib.Path(origem).open("rb") as entrada:
+                assinatura = entrada.read(8)
+            if assinatura == bytes.fromhex("d0cf11e0a1b11ae1"):
+                comando.insert(comando.index("--convert-to"),
+                               "--infilter=MS Word 97")
         resultado = executor(
             comando, capture_output=True, text=True, timeout=600)
         convertido = temporario / (pathlib.Path(origem).stem + ".pdf")
@@ -2783,6 +2796,11 @@ def _converter_word_libreoffice(origem, destino, soffice,
             detalhe = (resultado.stderr or resultado.stdout or
                        "LibreOffice não gerou um PDF válido").strip()
             return False, detalhe
+        if prep.n_paginas(str(convertido)) >= 2000:
+            motivo = prep.verificar_conversao_anomala(
+                str(convertido), prep.paginas_pdftotext(str(convertido)))
+            if motivo:
+                return False, motivo
         shutil.copy2(convertido, destino)
     return pdf_convertido_valido(destino), ""
 
@@ -3638,6 +3656,12 @@ def corrigir_ocr_pendentes(raiz, usar_api=True):
             ficha["preflight_compactacao"] = preparo["preflight_compactacao"]
             ficha["diagnostico_estrutura"] = preparo["diagnostico_estrutura"]
             ficha["otimizacao_sem_perdas"] = preparo["otimizacao_sem_perdas"]
+            if preparo["diagnostico"]["status"] == "conversão inválida - reconverter original":
+                ficha["conversao_requer_reparo"] = True
+                ficha["situacao"] = ficha["situacao_metadados"] = "conflito"
+                ficha["pendencias"] = " | ".join(preparo["erros"])
+                registro["estado"] = "conflito"
+                salvar_catalogo(c, catalogo)
             salvar_json(ficha_path, ficha)
             print("  OCR ainda nao aprovado; original preservado")
             resumo["falhas"] += 1
