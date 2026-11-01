@@ -291,6 +291,16 @@ def consulta_bloqueia_envio(consulta):
     cadastro do exemplar consultado.
     """
     solicitado = (consulta.get('criterios_enviados', {}) or {}).get('titulo', '')
+    if solicitado and not consulta_confirmada_por_isbn(consulta):
+        enviados = set(_chave_textual(solicitado).split())
+        recebidos = set(_chave_textual(consulta.get('titulo','')).split())
+        qualificadores = {'criancas','solteiros','adolescentes','casais','homens','mulheres'}
+        if (enviados & qualificadores) != (recebidos & qualificadores):
+            return False
+        subtitulo_remoto = str(consulta.get('subtitulo') or '')
+        if (re.search(r'(?i)\bparcial\b',subtitulo_remoto)
+                and not re.search(r'(?i)\bparcial\b',solicitado)):
+            return False
     parte = re.search(r'(?i)\b(?:parte|volume|tomo)\s+([IVX]+|\d+)\b', solicitado)
     if parte and not consulta_confirmada_por_isbn(consulta):
         recebido = re.search(r'(?i)\b(?:parte|volume|tomo)\s+([IVX]+|\d+)\b', consulta.get('titulo',''))

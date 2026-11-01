@@ -14,6 +14,16 @@ SPEC.loader.exec_module(api)
 
 
 class EnviarLivroApiTest(unittest.TestCase):
+    def test_obra_base_nao_e_versao_para_criancas_nem_trecho_parcial(self):
+        c={'encontrado':True,'correspondencia':'aproximada',
+           'criterios_enviados':{'titulo':'As Cinco Linguagens do Amor'},
+           'titulo':'As Cinco Linguagens do Amor das Crianças'}
+        self.assertFalse(api.consulta_bloqueia_envio(c))
+        c.update(titulo='Cristianismo puro e simples',subtitulo='Livro I — material parcial',
+                 criterios_enviados={'titulo':'Cristianismo puro e simples'})
+        self.assertFalse(api.consulta_bloqueia_envio(c))
+        c.update(isbn='9788573258868',criterios_enviados={'titulo':'As Cinco Linguagens do Amor','isbn':'9788573258868'})
+        self.assertTrue(api.consulta_bloqueia_envio(c))
     def test_sincronizar_fila_nao_reabre_cadastro_ja_limpo(self):
         with tempfile.TemporaryDirectory() as td:
             r=pathlib.Path(td);p=r/'_controle/catalogo-local.json'

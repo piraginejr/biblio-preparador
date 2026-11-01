@@ -30,6 +30,14 @@ def resultado_pronto(nome):
 
 
 class BibliotecaLocalTest(unittest.TestCase):
+    def test_conversao_substituida_nao_reabre_bancada(self):
+        with tempfile.TemporaryDirectory() as td:
+            c=local.inicializar(pathlib.Path(td)/'livros')
+            ficha=c['metadados']/'antiga.json';local.salvar_json(ficha,{'titulo':'conversão inválida','pendencias':'precisa OCR'})
+            cat=local.carregar_catalogo(c)
+            cat['livros']['antiga']={'arquivo':'antigo.pdf','caminho':'10-REVISAO/antigo.pdf','metadados':'_metadados/antiga.json','estado':local.ESTADO_CONVERSAO_SUBSTITUIDA}
+            local.salvar_catalogo(c,cat)
+            self.assertEqual(0,local.pacotes_revisao(c['raiz'],imprimir=False)['total'])
     def test_doc_binario_exige_importador_word_e_nao_texto(self):
         with tempfile.TemporaryDirectory() as td:
             p = pathlib.Path(td)/'livro.doc'

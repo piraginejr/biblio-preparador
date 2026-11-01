@@ -1202,6 +1202,20 @@ CDD - 260.01"""
         with self.assertRaises(ValueError):
             prep.rodar_ocr("/tmp/livro.pdf", "/tmp/livro.pdf")
 
+    def test_assinatura_binaria_bloqueia_conversao_curta(self):
+        paginas=['ÐÏ#à¡±#á################>###þÿ'] + ['lixo']*305
+        self.assertIn('assinatura binária',prep.motivo_conversao_anomala(paginas,'Writer'))
+        self.assertFalse(prep.motivo_conversao_anomala(paginas,'Scanner'))
+        self.assertFalse(prep.assinatura_ole_impressa(['Capítulo: exemplo ÐÏ#à¡±#á']))
+
+    def test_aviso_de_recuperacao_nao_e_credito_editorial(self):
+        nota='VERSÃO DE RECUPERAÇÃO - SOMENTE TEXTO\nNão foi usado OCR nem IA para reescrever. Integralidade editorial não conferida.'
+        paginas=[nota,'Título\nAutor\nEditora Vida, 1997']
+        filtradas=prep.paginas_sem_aviso_de_recuperacao(paginas)
+        self.assertEqual(['',paginas[1]],filtradas)
+        self.assertEqual(nota,paginas[0])
+        self.assertEqual(['Recuperação textual em arquivos históricos'],prep.paginas_sem_aviso_de_recuperacao(['Recuperação textual em arquivos históricos']))
+
     def test_conversao_binaria_explodida_nao_se_confunde_com_livro_longo(self):
         legivel = 'Texto legível sobre educação e ciência. ' * 30
         lixo = '#(¢Š#(¢Š Ù¬�#Ãðh·º�Å½Ììš !#$% ' * 30
