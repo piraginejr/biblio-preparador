@@ -30,6 +30,31 @@ def resultado_pronto(nome):
 
 
 class BibliotecaLocalTest(unittest.TestCase):
+    def test_doc_binario_exige_importador_word_e_nao_texto(self):
+        with tempfile.TemporaryDirectory() as td:
+            p = pathlib.Path(td)/'livro.doc'
+            p.write_bytes(bytes.fromhex('d0cf11e0a1b11ae1') + b'original')
+            executar = mock.Mock(return_value=mock.Mock(returncode=1, stderr='danificado'))
+            ok, erro = local._converter_word_libreoffice(
+                p, pathlib.Path(td)/'saida.pdf', '/soffice', executor=executar)
+            self.assertFalse(ok)
+            self.assertIn('--infilter=MS Word 97', executar.call_args.args[0])
+            self.assertEqual('danificado', erro)
+
+    def test_conversao_anomala_nao_dispara_ocr_nem_compactacao(self):
+        with tempfile.TemporaryDirectory() as td:
+            c = local.inicializar(pathlib.Path(td)/'livros')
+            p = c['revisao']/'ruim.pdf'; p.write_bytes(b'%PDF-ruim')
+            with mock.patch.object(local.prep, 'n_paginas', return_value=11271), \
+                 mock.patch.object(local.prep, 'diagnosticar_ocr', return_value={'status':'precisa OCR'}), \
+                 mock.patch.object(local.prep, 'verificar_conversao_anomala', return_value='reconverter original'), \
+                 mock.patch.object(local.prep, 'rodar_ocr') as ocr, \
+                 mock.patch.object(local, 'otimizar_pdf_sem_perdas') as compactar:
+                r = local.preparar_pdf_automaticamente(c, p, '12345678', paginas=['lixo'])
+            ocr.assert_not_called(); compactar.assert_not_called()
+            self.assertIn('reconverter original', r['erros'])
+            self.assertIsNone(r['preparado'])
+
     def test_autor_principal_nao_pode_ser_sobrescrito_por_lista_divergente(self):
         with self.assertRaisesRegex(ValueError,'diverge'):
             local._autores_da_revisao({'nmAutor0':'KOEHN, Nancy F.',

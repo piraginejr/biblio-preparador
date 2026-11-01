@@ -1181,6 +1181,40 @@ def texto_com_codificacao_corrompida(paginas):
     return bool(amostras and ruins / len(amostras) >= .6)
 
 
+def motivo_conversao_anomala(paginas, produtor=""):
+    """Não tentar reparar por OCR dados binários impressos pelo conversor.
+
+    Volume sozinho não reprova livros extensos nem PDFs digitalizados. Exige
+    conversor de texto conhecido, milhares de páginas e ruído majoritário em
+    amostras distribuídas, não apenas na capa ou nas primeiras páginas.
+    """
+    if len(paginas) < 2000 or not re.search(
+            r"(?i)libreoffice|\bwriter\b", produtor):
+        return ""
+    indices = sorted({round(i * (len(paginas) - 1) / 23) for i in range(24)})
+    amostras = [paginas[i] for i in indices
+                if len(re.sub(r"\s+", "", paginas[i])) >= 80]
+    ruins = sum(qualidade_ocr(p) < .25 for p in amostras)
+    if len(amostras) >= 12 and ruins / len(amostras) >= .60:
+        return (f"conversão suspeita: {len(paginas)} páginas e texto ilegível "
+                "na maioria das amostras; reconverter o documento original "
+                "antes de tentar OCR")
+    return ""
+
+
+def verificar_conversao_anomala(f, paginas):
+    if len(paginas) < 2000:
+        return ""
+    try:
+        info = subprocess.run(["pdfinfo", str(f)], capture_output=True,
+                              text=True, timeout=30, check=True).stdout
+    except (OSError, subprocess.SubprocessError):
+        return ""
+    produtor = "\n".join(l for l in info.splitlines()
+                          if l.startswith(("Producer:", "Creator:")))
+    return motivo_conversao_anomala(paginas, produtor)
+
+
 def rodar_ocr(f, destino, idioma="por+eng+spa", refazer=False, otimizar=3,
               progresso=None, forcar=False):
     """Cria uma copia com Apple Vision OCR; nunca substitui o PDF recebido.

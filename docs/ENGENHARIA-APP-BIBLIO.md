@@ -1,5 +1,21 @@
 # Engenharia do projeto — transformar o preparo de livros em aplicativo
 
+## Proteção contra conversão binária inválida — 01/11/2026
+
+- DOC com assinatura OLE usa explicitamente o importador Microsoft Word 97
+  do LibreOffice. Falha nesse importador não autoriza tratá-lo como texto.
+- PDFs produzidos por Writer/LibreOffice, com pelo menos 2.000 páginas e
+  ruído majoritário em amostras distribuídas, são retidos para reconversão,
+  antes de iniciar OCR ou compactação. Volume sozinho não reprova um livro.
+- A retomada de OCR marca esses casos como conflito com motivo explícito,
+  em vez de tentar o mesmo OCR a cada ciclo. Originais ficam preservados.
+- Serviços de conversão externos só recebem arquivos mediante autorização
+  específica. Teste do Gardner: importador Word e CloudConvert recusaram o
+  documento danificado. O resgate estático posterior recuperou um bloco de
+  576.631 caracteres em Windows-1252, sem reescrita por IA, para TXT e PDF
+  exclusivamente textuais. Não considerar as imagens/objetos ou a integralidade
+  editorial validadas. Essa versão é separada e não foi aprovada para envio.
+
 ## Objetivo maior
 
 Transformar o conjunto atual de scripts do preparo de livros em um aplicativo
