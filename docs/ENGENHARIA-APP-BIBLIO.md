@@ -2,6 +2,25 @@
 
 ## Proteção contra conversão binária inválida — 01/11/2026
 
+### Aprendizado da revisão assistida do lote
+
+- A assinatura OLE/Word impressa no começo de um PDF do Writer bloqueia OCR
+  mesmo abaixo de 2.000 páginas. Foram encontrados casos de 306 a 6.500 páginas.
+- Notas técnicas dos nossos resgates não participam da extração bibliográfica.
+  Não interpretar “integridade editorial” como nome de editora. A exclusão
+  conserva os índices das páginas e não altera o diagnóstico OCR nem o PDF.
+- Uma conversão substituída mantém hash, arquivo preservado e vínculo com o
+  novo PDF, mas sai das pendências e da bancada. Não apagar o histórico.
+- Títulos da mesma família (“das crianças”, “para solteiros” etc.) não são
+  equivalentes à obra-base sem ISBN exato confirmado. Cadastro explicitamente
+  parcial também não bloqueia automaticamente uma cópia integral.
+- Data de primeira publicação da obra original não prova o ano da cópia.
+  Deschner: 1974 não identifica esta edição; a referência Yalde não deve ser
+  importada como certeza da edição do PDF. Campos desconhecidos permanecem
+  desconhecidos, sem reclassificar artificialmente um livro como documento.
+- Classificação confirmada pelo conteúdo: “Costumes Hebraicos” é curso/apostila;
+  “Arqueologia bíblica” é coletânea documental, não obra inteira de Will Varner.
+
 - DOC com assinatura OLE usa explicitamente o importador Microsoft Word 97
   do LibreOffice. Falha nesse importador não autoriza tratá-lo como texto.
 - PDFs produzidos por Writer/LibreOffice, com pelo menos 2.000 páginas e

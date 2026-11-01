@@ -82,6 +82,7 @@ PAGINAS_AMOSTRA_COMPACTACAO = 140
 ESTADO_EXCECAO_TAMANHO = "aguardando exceção de tamanho"
 ESTADO_DESCARTE = "descartado - não é livro"
 ESTADO_DUPLICADO_CONTEUDO = "duplicado confirmado por conteúdo"
+ESTADO_CONVERSAO_SUBSTITUIDA = "conversão substituída por recuperação textual"
 # A comparação integral de uma Bíblia levou mais de 14 minutos e pareceu
 # congelar o aplicativo. O SHA-256 já elimina cópias byte a byte; para cópias
 # recompostas, 30 mil palavras distribuídas entre começo, meio e fim dão uma
@@ -98,6 +99,7 @@ ESTADOS_REVISAO_VISUAL = {
     "duplicado informado pela API - revisar",
 }
 ESTADOS_TERMINAIS_REVISAO_VISUAL = {
+    ESTADO_CONVERSAO_SUBSTITUIDA,
     "pronto para cadastro",
     "pronto para cadastro específico",
     "cadastrado",

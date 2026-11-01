@@ -1188,8 +1188,12 @@ def motivo_conversao_anomala(paginas, produtor=""):
     conversor de texto conhecido, milhares de páginas e ruído majoritário em
     amostras distribuídas, não apenas na capa ou nas primeiras páginas.
     """
-    if len(paginas) < 2000 or not re.search(
-            r"(?i)libreoffice|\bwriter\b", produtor):
+    if not re.search(r"(?i)libreoffice|\bwriter\b", produtor):
+        return ""
+    if assinatura_ole_impressa(paginas):
+        return ("conversão suspeita: assinatura binária do Word impressa no PDF; "
+                "reconverter o documento original antes de tentar OCR")
+    if len(paginas) < 2000:
         return ""
     indices = sorted({round(i * (len(paginas) - 1) / 23) for i in range(24)})
     amostras = [paginas[i] for i in indices
@@ -1202,8 +1206,18 @@ def motivo_conversao_anomala(paginas, produtor=""):
     return ""
 
 
+def assinatura_ole_impressa(paginas):
+    """A sequência D0 CF 11 E0 A1 B1 1A E1 não é uma capa de livro.
+
+    O importador textual do Writer representa os controles como #. Exigir a
+    assinatura no início evita reprovar livros de informática que a citem.
+    """
+    return bool(paginas and re.match(
+        r'^\s*ÐÏ[#\s]*à¡±[#\s]*á', paginas[0][:200]))
+
+
 def verificar_conversao_anomala(f, paginas):
-    if len(paginas) < 2000:
+    if len(paginas) < 2000 and not assinatura_ole_impressa(paginas):
         return ""
     try:
         info = subprocess.run(["pdfinfo", str(f)], capture_output=True,
@@ -1213,6 +1227,22 @@ def verificar_conversao_anomala(f, paginas):
     produtor = "\n".join(l for l in info.splitlines()
                           if l.startswith(("Producer:", "Creator:")))
     return motivo_conversao_anomala(paginas, produtor)
+
+
+def paginas_sem_aviso_de_recuperacao(paginas):
+    """Nota técnica gerada pelo resgate não é ficha editorial nem capa.
+
+    Mantém os índices das páginas e não altera o PDF nem o diagnóstico OCR.
+    Só exclui preliminares com a combinação específica de aviso de resgate e
+    declaração de não reescrita por OCR/IA usada nas nossas recuperações.
+    """
+    saida = list(paginas)
+    for i, texto in enumerate(saida[:3]):
+        aviso = re.search(r'(?i)VERS[ÃÓ]O (?:DE )?RECUPERA[ÇC][ÃA]O|VERSI[ÓO]N RECUPERADA|RECUPERA(?:ÇÃO|CIÓN) TEXTUAL', texto)
+        tecnica = re.search(r'(?i)(?:n[ãa]o foi usado|no se utiliz[óo]) OCR (?:nem|ni) IA', texto)
+        if aviso and tecnica:
+            saida[i] = ""
+    return saida
 
 
 def rodar_ocr(f, destino, idioma="por+eng+spa", refazer=False, otimizar=3,
@@ -6536,6 +6566,8 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
     if complemento_vision:
         t = "\n".join(paginas[:PAGS_BIBLIOGRAFICAS])
         linha["motor_texto"] = "camada do PDF + OCR bibliográfico seletivo"
+    paginas = paginas_sem_aviso_de_recuperacao(paginas)
+    t = "\n".join(paginas[:PAGS_BIBLIOGRAFICAS])
     paginas_selecionadas = selecionar_paginas_bibliograficas(paginas)
     numeros_bibliograficos = [numero for numero, _texto in paginas_selecionadas]
     paginas_bibliograficas = [texto for _numero, texto in paginas_selecionadas]
