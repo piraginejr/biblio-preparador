@@ -69,6 +69,12 @@ TIPOS_API = {
 CATEGORIAS_API = {"público": "0", "restrito": "1"}
 ESTADO_DUPLICADO_TITULO_AUTOR = "duplicado confirmado por título e autor"
 ESTADO_DUPLICADO_TITULO = "duplicado confirmado por título"
+ESTADOS_FALHA_ENVIO = {
+    'erro confirmado - revisar', 'erro local - revisar',
+    'aguardando conferência de homônimos',
+    'resultado incerto - nao reenviar sem conferencia',
+    'envio iniciado - resultado ainda incerto',
+}
 CERTIFICADO_INTERMEDIARIO = (pathlib.Path(__file__).with_name("certificados") /
                              "SectigoPublicServerAuthenticationCADVR36.pem")
 # Durante um POST multipart, urllib3 tambem usa o primeiro prazo nas escritas.
@@ -237,6 +243,9 @@ def _chave_autor(valor):
         valor = valor.get("nome", "")
     ignorar = {"da", "das", "de", "do", "dos", "e", "et", "al"}
     tokens = [t for t in _chave_textual(valor).split() if t not in ignorar]
+    if _chave_textual(valor) in {'autor desconhecido', 'autor nao identificado',
+                                'nao identificado', 'anonimo'}:
+        return ()
     return tuple(sorted(tokens)) if len(tokens) >= 2 else ()
 
 
@@ -1144,11 +1153,17 @@ def sincronizar_catalogo_com_fila(raiz, fila):
         elif estado_fila in {"duplicado informado pela API - revisar",
                              "já existente na API - conferir vínculo"}:
             novo_estado = "já existente na API - conferir vínculo"
+        elif estado_fila in ESTADOS_FALHA_ENVIO:
+            novo_estado = estado_fila
         else:
             continue
         if registro.get("estado") != novo_estado:
             alterados += 1
         registro["estado"] = novo_estado
+        if item.get('erro'):
+            registro['erro_envio'] = item['erro']
+            registro['erro_envio_em'] = item.get('concluido_em', agora())
+            alterados += 1
         if item.get("id_remoto"):
             registro["id_remoto"] = item["id_remoto"]
         if item.get("concluido_em"):
@@ -1454,11 +1469,10 @@ def preview(payload, pdf, capa, digest):
 
 
 def verificar_titulo_para_cadastro(sessao, chave, ficha, substituir_id=None):
-    """API atual faz upsert por título: nunca autorizar edição acidental.
+    """Consulta todos os homônimos antes da inclusão pura da API atual.
 
-    A consulta não filtra autor: caso contrário outro autor ou um documento
-    anônimo de título igual fica invisível e o POST sobrescreve a sua ficha.
-    Isto não torna autor obrigatório em documentos.
+    Resposta legada/incompleta continua protegida. Igualdade só de título
+    nunca prova duplicidade de um documento anônimo.
     """
     consulta=consultar_livro(sessao,chave,titulo=ficha.get('titulo',''),exato=True)
     if not consulta.get('encontrado'):return consulta
@@ -1468,11 +1482,56 @@ def verificar_titulo_para_cadastro(sessao, chave, ficha, substituir_id=None):
     if (substituir_id is not None and unico
             and str(consulta.get('id'))==str(substituir_id)):
         return consulta
+    candidatos = consulta.get('candidatos') or []
+    if (substituir_id is None and candidatos
+            and len(candidatos) == int(consulta.get('total_matches',0) or 0)):
+        # Contrato conferido: cadastrar_livro insere; atualizar_livro exige ID.
+        # Ainda exigimos identidade distinta ou conferência humana registrada.
+        conferidos = ficha.get('homonimos_conferidos') or {}
+        isbn_ficha = normalizar_isbn_consulta(ficha.get('isbn'))
+        if isbn_ficha and any(normalizar_isbn_consulta(x.get('isbn')) == isbn_ficha for x in candidatos):
+            raise RevisaoHomonimos('ISBN já existente entre os candidatos; conferir vínculo. Nenhum arquivo foi enviado.')
+        ids = {str(x.get('id')) for x in candidatos}
+        autorizados = {str(x) for x in conferidos.get('ids', [])}
+        if (conferidos.get('hash_sha256') == ficha.get('hash_sha256')
+                and conferidos.get('hash_sha256') and ids <= autorizados
+                and conferidos.get('motivo')):
+            consulta['decisao_homonimos'] = 'conferência humana registrada'
+            return consulta
+        tipo_local = ficha.get('tipo_documento', 'livro')
+        tipo = ('1' if tipo_local == 'livro' else '2' if tipo_local in
+                {'revista','periódico','boletim','jornal'} else '3' if tipo_local == 'artigo' else '5')
+        autor = _chave_autor(ficha.get('nmAutor0'))
+        isbn = normalizar_isbn_consulta(ficha.get('isbn'))
+        distintos = []
+        for candidato in candidatos:
+            outro_isbn = normalizar_isbn_consulta(candidato.get('isbn'))
+            if isbn and outro_isbn and isbn == outro_isbn:
+                distintos.append(False)
+                continue
+            autores = {_chave_autor(x) for x in (candidato.get('autores') or [])}
+            autores.discard(())
+            outro_tipo = candidato.get('tipo')
+            distinto = bool(
+                (outro_tipo is not None and str(outro_tipo) != tipo)
+                or (autor and autores and all(not set(autor).intersection(x) for x in autores))
+                or (isbn and outro_isbn and isbn != outro_isbn))
+            distintos.append(distinto)
+        if distintos and all(distintos):
+            consulta['decisao_homonimos'] = 'material distinto por tipo, autor ou ISBN'
+            return consulta
+        raise RevisaoHomonimos(
+            'aguardando conferência de homônimos: título igual não prova duplicidade; '
+            f"IDs {', '.join(sorted(ids))}. Confira a identidade antes de enviar. Nenhum arquivo foi enviado.")
     raise RuntimeError(
         'upload bloqueado antes do envio: a API já possui título igual '
         f"(ID retornado {consulta.get('id')}; {consulta.get('total_matches')} correspondência(s)) "
-        'e atualizaria um registro por título. A edição exige ID explícito e único; '
+        'com resposta insuficiente para distinguir os homônimos. A edição exige ID explícito e único; '
         'autor não é obrigatório para documentos. Nenhum arquivo foi enviado.')
+
+
+class RevisaoHomonimos(RuntimeError):
+    """Pendência bibliográfica anterior ao upload, não erro do servidor."""
 
 
 def atualizar_livro_por_id(ficha_path, id_remoto, realmente=False, chave='',
@@ -1525,6 +1584,9 @@ def atualizar_livro_por_id(ficha_path, id_remoto, realmente=False, chave='',
                 headers={'X-API-Key':chave,'Idempotency-Key':idempotencia}, timeout=(30,300))
         corpo = resposta.json()
         registro.update(http_status=resposta.status_code, resposta=corpo, concluido_em=agora())
+        if resposta.status_code >= 400 and corpo.get('erro') is True:
+            registro['estado'] = 'erro confirmado - revisar'
+            raise RuntimeError(str(corpo.get('mensagem') or 'API recusou a atualização'))
         if (resposta.status_code != 200 or not resposta_cadastro_confirmada(200,corpo)
                 or str(corpo.get('id')) != str(alvo)):
             raise RuntimeError('atualização não confirmada; preserve o PDF e confira a resposta')
@@ -1614,6 +1676,8 @@ def enviar(ficha_path, realmente=False, chave="", sessao=None,
         "iniciado_em": agora(), "endpoint": ENDPOINT,
         "consulta_colisao_titulo": consulta_colisao,
     }
+    identidade = '|'.join((ENDPOINT, digest, registro['assinatura_ficha'], sha256(capa)))
+    registro['idempotency_key'] = 'biblio-cadastro-' + hashlib.sha256(identidade.encode()).hexdigest()
     if substituir_id is not None:
         registro['substitui_id'] = substituir_id
     controle["envios"][digest] = registro
@@ -1627,7 +1691,8 @@ def enviar(ficha_path, realmente=False, chave="", sessao=None,
                     "nome_capa": (capa.name, fc, "image/jpeg"),
                     "arquivo_digital": (pdf.name, fp, "application/pdf"),
                 },
-                headers={"X-API-Key": chave}, timeout=TIMEOUT_ENVIO)
+                headers={"X-API-Key": chave,
+                         "Idempotency-Key": registro['idempotency_key']}, timeout=TIMEOUT_ENVIO)
         try:
             corpo = resposta.json()
         except ValueError:
@@ -1758,11 +1823,13 @@ def processar_fila(raiz, limite=0, intervalo=3.0, chave="", sessao=None,
             remoto = carregar_controle(
                 raiz / "_controle" / NOME_CONTROLE).get(
                     "envios", {}).get(sha256(pdf), {})
-            item["estado"] = remoto.get("estado", "erro local - revisar")
+            item["estado"] = ("aguardando conferência de homônimos" if isinstance(exc, RevisaoHomonimos)
+                              else remoto.get("estado", "erro local - revisar"))
             item["erro"] = str(exc)
             item["concluido_em"] = agora()
             salvar_json(caminho, fila)
-            print(f"  falha isolada; mantido em revisão; a fila continuará",
+            sincronizar_catalogo_com_fila(raiz, {'itens':[item]})
+            print(f"  {item['estado']}: {exc}; a fila continuará",
                   flush=True)
             if "incerto" in item.get("estado", ""):
                 revisao_final.append(item)
@@ -1780,7 +1847,8 @@ def processar_fila(raiz, limite=0, intervalo=3.0, chave="", sessao=None,
             print(f"  cadastrado; ID {item['id_remoto']}", flush=True)
         else:
             resultado["revisao"] += 1
-            print(f"  {item['estado']}", flush=True)
+            item['erro'] = str((registro.get('resposta') or {}).get('mensagem') or registro.get('erro_local') or item['estado'])
+            print(f"  {item['estado']}: {item['erro']}", flush=True)
         salvar_json(caminho, fila)
         if posicao < len(pendentes) and intervalo > 0:
             dormir(intervalo)
@@ -1890,7 +1958,7 @@ def processar_fila_especifica(raiz, grupo, limite=0, intervalo=3.0,
                 titulo=titulo_para_consulta(ficha_consulta),
                 autores=autores_para_consulta(ficha_consulta), exato=False)
             if (consulta_confirmada_por_isbn(consulta) or
-                    consulta_corresponde_ao_titulo_exato(consulta)):
+                    consulta_confirmada_por_titulo_autor(consulta)):
                 por_isbn = consulta_confirmada_por_isbn(consulta)
                 por_titulo_autor = consulta_confirmada_por_titulo_autor(
                     consulta)
@@ -1931,11 +1999,14 @@ def processar_fila_especifica(raiz, grupo, limite=0, intervalo=3.0,
             remoto = carregar_controle(
                 raiz / "_controle" / NOME_CONTROLE).get(
                     "envios", {}).get(item.get("hash_sha256", ""), {})
-            item["estado"] = remoto.get("estado", "erro confirmado - revisar")
+            item["estado"] = ("aguardando conferência de homônimos" if isinstance(exc, RevisaoHomonimos)
+                              else remoto.get("estado", "erro confirmado - revisar"))
             item["erro"] = str(exc)
             item["concluido_em"] = agora()
             salvar_json(caminho, fila)
-            print("  falha isolada; mantido em revisão; a fila continuará",
+            sincronizar_catalogo_com_fila(raiz, {"itens": [{
+                **item, 'ficha':item.get('metadados','')} ]})
+            print(f"  {item['estado']}: {exc}; a fila continuará",
                   flush=True)
             if "incerto" in item.get("estado", ""):
                 revisao_final.append(item)
@@ -1960,7 +2031,9 @@ def processar_fila_especifica(raiz, grupo, limite=0, intervalo=3.0,
                 raiz, item.get("hash_sha256", ""), registro)
         else:
             resultado["revisao"] += 1
-            print(f"  {item['estado']}", flush=True)
+            item['erro'] = str((registro.get('resposta') or {}).get('mensagem') or registro.get('erro_local') or item['estado'])
+            sincronizar_catalogo_com_fila(raiz,{'itens':[{**item,'ficha':item.get('metadados','')}]})
+            print(f"  {item['estado']}: {item['erro']}", flush=True)
         salvar_json(caminho, fila)
         if posicao < len(pendentes) and intervalo > 0:
             dormir(intervalo)

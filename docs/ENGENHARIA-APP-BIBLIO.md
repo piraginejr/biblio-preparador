@@ -136,8 +136,23 @@ protegidos até conferência; não os reabrir em massa só porque a API mudou.
 O cliente agora possui `atualizar_livro_por_id`: exige ID positivo, consulta
 exata do ID e título antes do envio, usa `Idempotency-Key` estável e registra
 um diário de atualizações separado, sem sobrescrever o histórico de inclusão.
-O fluxo automático mantém o bloqueio conservador de títulos coincidentes até
-uma integração ampla do novo contrato. Não contornar permissões de pasta.
+Integração de 01/11/2026: respostas completas com candidatos permitem inclusão
+pura de homônimos comprovadamente distintos por tipo, autoria sem tokens
+coincidentes ou ISBN divergente. Mesmo ISBN prevalece. Autoria desconhecida,
+abreviações e dados insuficientes não provam obra diferente: ficam em
+`aguardando conferência de homônimos`, nunca duplicados só pelo título.
+Conferência humana pode registrar hash do PDF, IDs examinados e motivo; novos
+candidatos invalidam a autorização anterior. Respostas legadas/incompletas
+mantêm o bloqueio. Não contornar permissões de pasta.
+
+Inclusão envia `Idempotency-Key` estável por endpoint, PDF, metadados e capa.
+A repetição da mesma operação não cria novo cadastro no contrato atual.
+Erros e homônimos ficam persistidos no catálogo e nas filas específicas com
+o motivo visível; atualizar filas/limpar não os transforma silenciosamente em
+prontos. Nova validação humana posterior permite reavaliar a ficha.
+Caso conferido: Arqueologia bíblica (coletânea documental) foi incluída como
+tipo 5 sem alterar livros homônimos; O segredo foi reconhecido por título e
+créditos finais coincidentes (grupo tempo de germinar), não apenas pelo nome.
 
 Limpeza: descartes humanos não retornam às filas por faltar metadados. Cópias
 residuais renomeadas em subpastas de duplicados só são liberadas por SHA-256

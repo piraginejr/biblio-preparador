@@ -2595,8 +2595,14 @@ def consolidar_filas_especificas(c, catalogo):
                 erros = api_envio.validar(
                     ficha, pdf, capa, tipo_api=tipo_api)
                 estado_atual = registro.get("estado", "")
+                anterior = anteriores.get(registro.get('hash_sha256', digest), {})
+                falha_anterior = anterior.get('estado') in api_envio.ESTADOS_FALHA_ENVIO
+                revisado_depois = (bool(registro.get('revisao_manual_aprovada'))
+                    and str(registro.get('revisao_manual_atualizada_em','')) > str(anterior.get('concluido_em','')))
                 if estado_atual == "cadastrado":
                     estado = estado_atual
+                elif estado_atual in api_envio.ESTADOS_FALHA_ENVIO or (falha_anterior and not revisado_depois):
+                    estado = estado_atual if estado_atual in api_envio.ESTADOS_FALHA_ENVIO else anterior['estado']
                 elif estado_atual == "já existente na API - conferir vínculo":
                     anterior = anteriores.get(
                         registro.get("hash_sha256", digest), {})
@@ -2624,7 +2630,7 @@ def consolidar_filas_especificas(c, catalogo):
                 if registro.get("estado") != estado:
                     registro["estado"] = estado
                     catalogo_alterado = True
-                itens[nome].append({
+                item = {
                     "hash_sha256": registro.get("hash_sha256", digest),
                     "tipo_documento": tipo,
                     "titulo": ficha.get("titulo", ""),
@@ -2637,7 +2643,12 @@ def consolidar_filas_especificas(c, catalogo):
                     "arquivo": registro.get("arquivo", ""),
                     "caminho": registro.get("caminho", ""),
                     "metadados": registro.get("metadados", ""),
-                })
+                }
+                for campo in ('erro','http_status','iniciado_em','concluido_em','consulta_previa_api'):
+                    if campo in anterior:item[campo] = anterior[campo]
+                if registro.get('erro_envio'):
+                    item['erro'] = registro['erro_envio']
+                itens[nome].append(item)
                 break
     if catalogo_alterado:
         catalogo["atualizado_em"] = agora()

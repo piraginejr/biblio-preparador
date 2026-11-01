@@ -2208,6 +2208,24 @@ Times CID TrueType Identity-H yes yes yes 2 0
                                "fila-cadastro-documentos.json").read_text())
             self.assertEqual(20773, fila["itens"][0]["id_remoto"])
 
+    def test_atualizar_fila_especifica_nao_apaga_falha_nem_reabre_pronto(self):
+        with tempfile.TemporaryDirectory() as td:
+            c=local.inicializar(pathlib.Path(td)/'livros')
+            fp=c['metadados']/'doc.json'
+            local.salvar_json(fp,{'titulo':'Documento','tipo_documento':'documento'})
+            cat=local.carregar_catalogo(c)
+            cat['livros']['h']={'hash_sha256':'h','arquivo':'doc.pdf',
+                'metadados':local.relativo(c,fp),'estado':'pronto para cadastro específico'}
+            caminho=c['controle']/'fila-cadastro-documentos.json'
+            local.salvar_json(caminho,{'itens':[{'hash_sha256':'h',
+                'estado':'aguardando conferência de homônimos','erro':'IDs 2, 3',
+                'concluido_em':'2026-11-01T09:00:00'}]})
+            with mock.patch.object(local.api_envio,'validar',return_value=[]):
+                for _ in range(2):local.consolidar_filas_especificas(c,cat)
+            item=json.loads(caminho.read_text())['itens'][0]
+            self.assertEqual('aguardando conferência de homônimos',item['estado'])
+            self.assertEqual('IDs 2, 3',item['erro'])
+
     def test_isbn_ja_confirmado_no_catalogo_resolve_copia_pendente(self):
         with tempfile.TemporaryDirectory() as td:
             raiz = pathlib.Path(td) / "livros"
