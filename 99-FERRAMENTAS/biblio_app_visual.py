@@ -22,6 +22,7 @@ import webbrowser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 import biblio_app_service as svc
+import consultar_claude
 
 PORTA_PADRAO = 65087
 APP_ID = "biblio-preparador-visual"
@@ -32,7 +33,7 @@ VERSAO_MOTOR = hashlib.sha256(b''.join(
     (_BASE_MOTOR / nome).read_bytes() for nome in
     ('biblio_app_visual.py', 'preparar-livros.py', 'biblioteca-local.py',
      'enviar-livro-api.py', 'consultar_apple.py', 'piloto-apple-bibliografia.swift',
-     'revisao-visual.py', 'validacao_bibliografica.py'))).hexdigest()[:16]
+     'revisao-visual.py', 'validacao_bibliografica.py', 'consultar_claude.py'))).hexdigest()[:16]
 
 
 HTML = r"""<!doctype html>
@@ -158,6 +159,13 @@ HTML = r"""<!doctype html>
       <div class="two">
         <div class="panel">
           <h2>Preparar lote</h2>
+          <details><summary>Claude — leitura assistida dos pendentes</summary>
+            <p>Páginas selecionadas (capa, rosto e créditos) serão enviadas ao Claude Sonnet pelo Antigravity.
+            Usa os limites da conta conectada; não envia o livro completo nem substitui sua revisão.</p>
+            <p id="claudeEstado">consultando configuração…</p>
+            <div class="actions"><button class="secondary" onclick="configurarClaude(true)">ativar Claude</button>
+              <button class="secondary" onclick="configurarClaude(false)">desativar Claude</button></div>
+          </details>
           <p>Este botão executa o equivalente ao ciclo completo do menu antigo, com OCR, preparo, conciliação, filas e resumo.</p>
           <div class="actions">
             <button onclick="iniciarJob('preparar')">iniciar preparação</button>
@@ -286,6 +294,15 @@ async function carregarStatus(){
   renderStats(data.contagens, $('statsFinal'));
   $('statusTexto').textContent = data.status;
   $('statusFinal').textContent = data.status;
+  const ia = await api('/api/claude');
+  $('claudeEstado').textContent = `${ia.ativo ? 'Ativo' : 'Desativado'} — ${ia.modelo}. ` +
+    (ia.cli_disponivel ? 'Antigravity CLI localizado.' : 'Instale o CLI oficial agy e conecte sua conta.');
+}
+async function configurarClaude(ativo){
+  try {
+    await api('/api/claude', {ativo});
+    await carregarStatus();
+  } catch(e) { alert('Não foi possível configurar o Claude: ' + e.message); }
 }
 async function acao(nome){
   const data = await api('/api/action', {action:nome});
@@ -413,6 +430,9 @@ class Handler(BaseHTTPRequestHandler):
                 "ocupado": bool(svc.JOBS.ultimo() and svc.JOBS.ultimo().estado == 'rodando'),
             })
             return
+        if url.path == "/api/claude":
+            self._json(consultar_claude.status())
+            return
         if url.path == "/api/consulta-relatorio":
             pasta = self.raiz / '_controle' / 'consultas-acervo'
             arquivos = sorted(pasta.glob('consulta-*.csv'))
@@ -448,6 +468,28 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         url = urllib.parse.urlparse(self.path)
+        if url.path == "/api/claude":
+            # Configuração com transmissão à nuvem: não aceitar formulário cross-site.
+            origin = self.headers.get('Origin')
+            host = self.headers.get('Host', '')
+            if (urllib.parse.urlparse('http://' + host).hostname not in ('127.0.0.1', 'localhost')
+                    or (origin and origin != 'http://' + host)) or \
+                    self.headers.get('Content-Type', '').split(';')[0] != 'application/json':
+                self._json({'erro': 'requisição deve partir do próprio aplicativo'}, 403)
+                return
+            job = svc.JOBS.ultimo()
+            if job and job.estado == 'rodando':
+                self._json({'erro': 'aguarde o processamento terminar para mudar a configuração'}, 409)
+                return
+            try:
+                tamanho = int(self.headers.get('Content-Length', '0'))
+                if not 0 < tamanho <= 1024:
+                    raise ValueError('requisição inválida')
+                dados = json.loads(self.rfile.read(tamanho))
+                self._json(consultar_claude.configurar(dados.get('ativo')))
+            except (ValueError, OSError, RuntimeError, AttributeError) as exc:
+                self._json({'erro': str(exc)}, 400)
+            return
         if url.path == "/api/action":
             tamanho = int(self.headers.get("Content-Length", "0"))
             dados = json.loads(self.rfile.read(tamanho) or b"{}")

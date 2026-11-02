@@ -235,7 +235,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
 
     private func isCurrentEngine(tools: URL, port: Int) -> Bool {
         var bytes = Data()
-        for name in ["biblio_app_visual.py", "preparar-livros.py", "biblioteca-local.py", "enviar-livro-api.py", "consultar_apple.py", "piloto-apple-bibliografia.swift", "revisao-visual.py"] {
+        for name in ["biblio_app_visual.py", "preparar-livros.py", "biblioteca-local.py", "enviar-livro-api.py", "consultar_apple.py", "piloto-apple-bibliografia.swift", "revisao-visual.py", "validacao_bibliografica.py", "consultar_claude.py"] {
             guard let data = try? Data(contentsOf: tools.appendingPathComponent(name)) else { return false }
             bytes.append(data)
         }
