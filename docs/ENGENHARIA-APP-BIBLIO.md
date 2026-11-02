@@ -81,6 +81,10 @@
   nem correção individual de metadados foi necessária para esses 12 resultados.
   A conferência visual posterior é controle de qualidade, não foi usada para
   promover os seis restantes. Este grupo difícil não mede a taxa geral de 95%.
+- No envio controlado desses 12: dez novos cadastros confirmados; dois retidos
+  pelas proteções de vínculo/homônimo, sem upload duplicado. Uma ficha completa
+  com falha de envio ou homônimo também deve aparecer na bancada. O indicador de
+  preparo não pode ser apresentado como número de novos cadastros no servidor.
 - Suspeita por diferença de paginação não prova ausência de páginas. Trechos
   comprovados podem ser identificados como cópia parcial; não rotular nem enviar
   automaticamente uma obra apenas suspeita como se a incompletude fosse certa.

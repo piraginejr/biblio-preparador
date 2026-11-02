@@ -99,6 +99,9 @@ ESTADOS_REVISAO_VISUAL = {
     "já existente na API - conferir vínculo",
     "duplicado informado pela API - revisar",
 }
+# Ficha bibliográfica completa também pode precisar de decisão sobre homônimo,
+# falha de envio ou tentativa incerta. Não a ocultar só por ter todos os campos.
+ESTADOS_REVISAO_VISUAL.update(api_envio.ESTADOS_FALHA_ENVIO)
 ESTADOS_TERMINAIS_REVISAO_VISUAL = {
     ESTADO_CONVERSAO_SUBSTITUIDA,
     "pronto para cadastro",
