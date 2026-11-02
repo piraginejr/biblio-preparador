@@ -70,3 +70,38 @@ class ResiduosTest(unittest.TestCase):
                 residuos.sha(p):{'ok':True,'origem':str(p),'destino':destino,
                                  'extraidos':['obra.doc'],'ignorados':[]}}})
             self.assertEqual([],residuos.planejar(c,cat,hist))
+
+    def test_original_convertido_encerrado_pode_sair_por_hash(self):
+        with tempfile.TemporaryDirectory() as td:
+            c=self.contexto(td);p=c['entrada']/'obra.htm';p.write_bytes(b'original')
+            hist={str(p):{'assinatura':residuos.sha(p),'hash_sha256':'pdf'}}
+            cat={'livros':{'pdf':{'estado':'cadastrado','id_remoto':42}}}
+            self.assertEqual(1,len(residuos.planejar(c,cat,hist)))
+            cat['livros']['pdf']['correcao_remota_pendente']=True
+            self.assertEqual([],residuos.planejar(c,cat,hist))
+
+    def test_compactado_redundante_exige_copia_interna_identica(self):
+        with tempfile.TemporaryDirectory() as td:
+            c=self.contexto(td);p=c['entrada']/'obra.rar';p.write_bytes(b'pacote')
+            doc=c['entrada']/'obra.doc';doc.write_bytes(b'original');digest=residuos.sha(doc)
+            hist={str(doc):{'assinatura':digest,'hash_sha256':'pdf'}}
+            cat={'livros':{'pdf':{'estado':'erro confirmado - revisar','correcao_remota_pendente':True}}}
+            self.salvar(c['controle']/'importacoes-compactados.json',{'itens':{residuos.sha(p):{
+                'ok':True,'origem':str(p),'extraidos':['obra.doc'],'hashes_extraidos':{'obra.doc':digest},'ignorados':[]}}})
+            plano=residuos.planejar(c,cat,hist)
+            self.assertEqual(1,len(plano));self.assertTrue(residuos.copia_ainda_preservada(c,plano[0]))
+            doc.write_bytes(b'outra edicao')
+            self.assertFalse(residuos.copia_ainda_preservada(c,plano[0]))
+            self.assertEqual([],residuos.planejar(c,cat,hist))
+
+    def test_preservacao_de_original_nao_move_sem_pdf_ou_para_fora(self):
+        with tempfile.TemporaryDirectory() as td:
+            c=self.contexto(td);p=c['entrada']/'obra.doc';p.write_bytes(b'original')
+            hist={str(p):{'assinatura':residuos.sha(p),'hash_sha256':'pdf'}}
+            cat={'livros':{'pdf':{'correcao_remota_pendente':True,'caminho':'obra.pdf'}}}
+            self.assertEqual([],residuos.planejar_pendencias(c,cat,hist))
+            pdf=c['raiz']/'obra.pdf';pdf.write_bytes(b'%PDF-1.7 preservado')
+            plano=residuos.planejar_pendencias(c,cat,hist)
+            self.assertEqual(1,len(plano));self.assertTrue(p.exists())
+            pdf.unlink();pdf.symlink_to(pathlib.Path(td)/'externo.pdf')
+            self.assertEqual([],residuos.planejar_pendencias(c,cat,hist))

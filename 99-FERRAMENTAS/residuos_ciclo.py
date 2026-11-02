@@ -3,6 +3,8 @@ import hashlib
 import json
 import pathlib
 
+PASTA_PENDENCIAS = '11-PENDENCIAS-DE-CADASTRO'
+
 
 def sha(p):
     h=hashlib.sha256()
@@ -17,17 +19,54 @@ def ler(p, padrao):
 
 
 def local_entrada(c, valor):
+    return _local_em(c['entrada'], c['raiz'], valor)
+
+
+def _local_em(base, raiz, valor):
     p=pathlib.Path(valor)
-    if not p.is_absolute():p=c['raiz']/p
+    if not p.is_absolute():p=raiz/p
     if p.is_symlink():return None
     try:
         resolvido=p.resolve(strict=True)
-        resolvido.relative_to(c['entrada'].resolve())
+        resolvido.relative_to(base.resolve())
         for x in [p,*p.parents]:
             if x.is_symlink():return None
-            if x.resolve()==c['entrada'].resolve():break
+            if x.resolve()==base.resolve():break
     except (OSError,ValueError):return None
     return resolvido if resolvido.is_file() else None
+
+
+def local_residuo(c, valor):
+    return (local_entrada(c, valor) or
+            _local_em(c['raiz']/PASTA_PENDENCIAS, c['raiz'], valor))
+
+
+def planejar_pendencias(c, catalogo, historico):
+    """Separa originais já convertidos, sem tratar conteúdo novo ou reenviar."""
+    saida = []
+    for origem, registro in historico.items():
+        p = local_entrada(c, origem)
+        digest = registro.get('assinatura')
+        alvo = registro.get('hash_sha256')
+        ficha = catalogo.get('livros', {}).get(alvo, {})
+        if not (p and digest and ficha.get('correcao_remota_pendente') and sha(p) == digest):
+            continue
+        # Não mover a única representação disponível: o PDF correspondente
+        # precisa continuar preservado dentro da biblioteca temporária.
+        pdf = c['raiz']/ficha.get('caminho', '')
+        try:
+            pdf.resolve().relative_to(c['raiz'].resolve())
+            if pdf.is_symlink() or not pdf.is_file():continue
+            with pdf.open('rb') as f:
+                if f.read(5) != b'%PDF-':continue
+        except (OSError, ValueError):continue
+        destino = c['raiz']/PASTA_PENDENCIAS/(digest[:12]+'-'+p.name)
+        if destino.exists():continue  # nunca sobrescrever uma preservação anterior
+        saida.append({'arquivo': str(p.relative_to(c['raiz'].resolve())),
+                      'destino': str(destino.relative_to(c['raiz'])),
+                      'sha256': digest, 'hash_catalogo': alvo,
+                      'motivo': 'original convertido; correção remota pendente; não reprocessar'})
+    return saida
 
 
 def encerrado(registro):
@@ -60,6 +99,20 @@ def planejar(c, catalogo, historico):
         if p and sha(p)==digest:
             saida[str(p)]={'arquivo':str(p.relative_to(c['raiz'].resolve())), 'sha256':digest,
                            'bytes':p.stat().st_size,'motivo':motivo}
+    # A extensão não decide: assinatura do original + recibo de conversão
+    # + cadastro encerrado permitem liberar também HTML/TXT/DOC já tratados.
+    for origem, registro in historico.items():
+        digest = registro.get('assinatura')
+        if digest and conteudo_resolvido(digest):
+            incluir(local_residuo(c, origem), digest, 'original convertido: cadastro encerrado')
+
+    def copia_preservada(digest):
+        for origem, registro in historico.items():
+            if registro.get('assinatura') != digest:continue
+            p = local_residuo(c, origem)
+            if p and sha(p) == digest:
+                return {'arquivo': str(p.relative_to(c['raiz'].resolve())), 'sha256': digest}
+        return None
     # Revisão explícita para acessórios/formatos legados. Não são regras globais
     # por extensão: cada aprovação vale apenas para aquele caminho e hash.
     recibos=ler(c['controle']/'residuos-ciclo.json',{'itens':[]})
@@ -77,6 +130,17 @@ def planejar(c, catalogo, historico):
         ignorados=item.get('ignorados',[])
         inofensivos={'.exe','.dll','.msi','.ttf','.otf','.lnk','.url','.ini','.db'}
         if any(pathlib.Path(n).suffix.lower() not in inofensivos for n in ignorados):continue
+        # Um pacote de documento único é redundante mesmo com correção remota
+        # pendente, desde que a cópia extraída IDÊNTICA continue preservada.
+        # Pacotes mistos, sem hashes ou com membros ignorados não usam essa regra.
+        if len(nomes) == 1 and not ignorados and hashes.get(nomes[0]):
+            preservada = copia_preservada(hashes[nomes[0]])
+            origem = local_entrada(c, item.get('origem', ''))
+            if preservada and origem:
+                incluir(origem, digest, 'compactado redundante: cópia extraída idêntica preservada')
+                if str(origem) in saida:
+                    saida[str(origem)]['copia_preservada'] = preservada
+                continue
         documentos=[];suportes=[];incompleto=False
         for nome in nomes:
             origem=str(pathlib.Path(item.get('destino',''))/nome)
@@ -99,3 +163,10 @@ def planejar(c, catalogo, historico):
             p=local_entrada(c,str(pathlib.Path(item.get('destino',''))/nome))
             if p and hashes.get(nome):incluir(p,hashes[nome],'apoio de compactado encerrado')
     return list(saida.values())
+
+
+def copia_ainda_preservada(c, item):
+    prova = item.get('copia_preservada')
+    if not prova:return True
+    p = local_residuo(c, prova.get('arquivo', ''))
+    return bool(p and sha(p) == prova.get('sha256'))

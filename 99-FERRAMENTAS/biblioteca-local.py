@@ -4250,6 +4250,48 @@ def _vincular_copias_residuais_confirmadas(c, catalogo):
             referenciados.add(rel)
 
 
+def organizar_residuos_entrada(c, residuos, originais_pendentes, historico_importacoes, lixeira):
+    """Executa apenas a organização auditada, sem limpar o resto do acervo."""
+    operacao = {'executado_em': agora(), 'residuos_ciclo_removidos': [],
+                'originais_preservados_em_pendencias': [],
+                'residuos_planejados': residuos, 'preservacoes_planejadas': originais_pendentes}
+    diario_path = c['controle']/'organizacao-entrada.json'
+    diario = residuos_ciclo.ler(diario_path, {'operacoes': []})
+    diario['operacoes'].append(operacao)
+    salvar_json(diario_path, diario)
+    lixeira = pathlib.Path(lixeira)
+    lixeira.mkdir(parents=True, exist_ok=True)
+    for item in residuos:
+        origem = residuos_ciclo.local_residuo(c, item['arquivo'])
+        if (not origem or residuos_ciclo.sha(origem) != item['sha256']
+                or not residuos_ciclo.copia_ainda_preservada(c, item)):continue
+        destino = _destino_lixeira(lixeira, origem, 'residuo-ciclo')
+        shutil.move(str(origem), str(destino))
+        operacao['residuos_ciclo_removidos'].append(dict(item, lixeira=destino.name))
+        salvar_json(diario_path, diario)
+    for item in originais_pendentes:
+        origem = residuos_ciclo.local_entrada(c, item['arquivo'])
+        destino = c['raiz']/item['destino']
+        # O plano não é autorização para caminhos arbitrários recebidos de fora.
+        esperado = c['raiz']/residuos_ciclo.PASTA_PENDENCIAS/(item['sha256'][:12]+'-'+(origem.name if origem else ''))
+        if (not origem or destino != esperado or destino.exists()
+                or residuos_ciclo.sha(origem) != item['sha256']):continue
+        destino.parent.mkdir(parents=True, exist_ok=True)
+        if destino.parent.is_symlink():raise RuntimeError('pasta de pendências não pode ser atalho')
+        shutil.move(str(origem), str(destino))
+        if residuos_ciclo.sha(destino) != item['sha256']:
+            raise RuntimeError('original preservado divergiu; conferir antes de continuar a limpeza')
+        anterior = historico_importacoes[str(origem)]
+        anterior['origem_movida_para'] = str(destino)
+        historico_importacoes[str(destino)] = dict(anterior, preservado_em=agora())
+        operacao['originais_preservados_em_pendencias'].append(item)
+        dados = residuos_ciclo.ler(c['controle']/'importacoes-organizadas.json', {})
+        dados.update(itens=historico_importacoes, atualizado_em=agora())
+        salvar_json(c['controle']/'importacoes-organizadas.json', dados)
+        salvar_json(diario_path, diario)
+    return operacao
+
+
 def liberar_espaco(raiz, executar=False, lixeira=None):
     """Leva à Lixeira cadastros, duplicados e descartes confirmados."""
     c = inicializar(raiz)
@@ -4513,6 +4555,7 @@ def liberar_espaco(raiz, executar=False, lixeira=None):
     ja_planejados.update(str((c['raiz']/a['arquivo']).resolve()) for a in acessorios+orfaos)
     residuos=[i for i in residuos_ciclo.planejar(c,catalogo,historico_importacoes)
               if str((c['raiz']/i['arquivo']).resolve()) not in ja_planejados]
+    originais_pendentes = residuos_ciclo.planejar_pendencias(c, catalogo, historico_importacoes)
 
     resumo = {"modo": "EXECUÇÃO" if executar else "SIMULAÇÃO",
               "livros": len(planos), "arquivos": total_arquivos,
@@ -4525,6 +4568,7 @@ def liberar_espaco(raiz, executar=False, lixeira=None):
               "acessorios_quantidade": len(acessorios),
               "acessorios_mb": round(bytes_acessorios / 1024 / 1024, 2),
               "residuos_ciclo": residuos,
+              "originais_para_pendencias": originais_pendentes,
               "residuos_quantidade": len(residuos),
               "residuos_mb": round(sum(i['bytes'] for i in residuos)/1024/1024,2),
               "pastas_vazias": [relativo(c, p) for p in pastas_residuais]}
@@ -4551,13 +4595,10 @@ def liberar_espaco(raiz, executar=False, lixeira=None):
                 "livros": [], "orfaos_removidos": [],
                 "pastas_vazias_removidas": []}
     operacao['acessorios_descartados'] = []
-    operacao['residuos_ciclo_removidos'] = []
-    for item in residuos:
-        origem=residuos_ciclo.local_entrada(c,item['arquivo'])
-        if not origem or residuos_ciclo.sha(origem)!=item['sha256']:continue
-        destino=_destino_lixeira(lixeira,origem,'residuo-ciclo')
-        shutil.move(str(origem),str(destino))
-        operacao['residuos_ciclo_removidos'].append(dict(item,lixeira=destino.name))
+    organizacao = organizar_residuos_entrada(c, residuos, originais_pendentes,
+                                            historico_importacoes, lixeira)
+    operacao['residuos_ciclo_removidos'] = organizacao['residuos_ciclo_removidos']
+    operacao['originais_preservados_em_pendencias'] = organizacao['originais_preservados_em_pendencias']
     dados_acessorios = triagem_entrada.ler(c)
     for item in acessorios:
         origem = c['raiz'] / item['arquivo']
