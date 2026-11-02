@@ -1,5 +1,28 @@
 # Engenharia do projeto — transformar o preparo de livros em aplicativo
 
+## Meta permanente: 95% de automação — 02/11/2026
+
+- Meta definida pelo responsável do projeto: chegar a pelo menos **95% dos
+  materiais úteis preparados corretamente sem intervenção do operador nem
+  correções assistidas pelo Codex**, deixando no máximo 5% para revisão humana.
+  Esta é uma meta de evolução, não uma taxa já atingida.
+- Medir por lote e no acumulado: materiais úteis únicos que ficaram corretamente
+  prontos de forma automática / total de materiais úteis únicos recebidos.
+  Pendências, conflitos, falhas de OCR, conversão ou pesquisa permanecem no
+  denominador; não podem ser excluídos para melhorar artificialmente a taxa.
+  Registrar separadamente duplicados confirmados e materiais realmente inúteis,
+  com motivo verificável, sem contá-los como novos cadastros preparados.
+- Separar os resultados da execução automática dos resultados obtidos depois
+  de revisão humana ou assistida. Aprovação automática incorreta não é acerto:
+  apresentar também a qualidade apurada por amostragem e correções posteriores.
+- Toda melhoria deve perseguir esta meta: aprender regras gerais com as
+  pendências, criar testes de regressão e comparar o aproveitamento antes/depois
+  em lotes representativos, por idioma e tipo de material. Informar quantidade,
+  percentual, tempo e causas das pendências, sem prometer confiabilidade total.
+- A meta não autoriza inventar metadados, ignorar divergências reais, perder
+  correções humanas, dispensar a qualidade do PDF/OCR ou enfraquecer a prevenção
+  de duplicidade. A revisão humana permanece disponível e soberana.
+
 ## Claude Sonnet — integração de 02/11/2026
 
 - Escolha do operador: Claude Sonnet 5.5 Medium, pelo Antigravity CLI oficial
