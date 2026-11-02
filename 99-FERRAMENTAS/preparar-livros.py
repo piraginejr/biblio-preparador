@@ -6656,6 +6656,10 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
         tipo_documento = "apresentação"
     artigo = (metadados_artigo_paginas(paginas, nome=nome)
               if tipo_documento == "artigo" else {})
+    cabecalho_periodico = validacao_bibliografica.cabecalho_periodico(paginas)
+    if cabecalho_periodico and not _revisao_define_tipo(rev):
+        tipo_documento = 'artigo'
+        artigo.update(cabecalho_periodico)
     if artigo.get("titulo"):
         tit_pag, pag_tit, motivo_tit_pag = (
             artigo["titulo"], 1, "cabeçalho de artigo")
@@ -8079,7 +8083,10 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
         linha['revisao_manual_aprovada'] = True
     for achado in achados_biblio:
         linha['conflitos'].append(achado['motivo'])
-    if (not humana and validacao_bibliografica.informativo_distribuicao('\n'.join(paginas))
+    if (not humana and any(a['codigo'] in {'resumo_terceiros','publicidade_download'} for a in achados_biblio)):
+        linha['tipo_documento']='arquivo inválido'
+        linha['motivo_descarte_documental']='resumo de terceiros ou propaganda de download; não é a obra integral'
+    elif (not humana and validacao_bibliografica.informativo_distribuicao('\n'.join(paginas))
             and any(a['codigo']=='informativo_distribuicao' for a in achados_biblio)):
         linha['tipo_documento']='arquivo inválido'
         linha['motivo_descarte_documental']='informativo de distribuição sem conteúdo bibliográfico'

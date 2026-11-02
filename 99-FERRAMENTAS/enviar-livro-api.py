@@ -456,12 +456,16 @@ def montar_payload(ficha, tipo_api="livro"):
     autores = []
     for item in ficha.get("autores", []) or []:
         if isinstance(item, dict) and item.get("nome"):
+            if _chave_textual(item['nome']) in {'autor nao identificado','autor desconhecido','nao identificado','identificado nao'}:
+                continue
             autores.append({
                 "nome": nome_natural(item["nome"]),
                 "desc": item.get("desc", "Autor") or "Autor",
             })
     if not autores:
         autor = nome_natural(ficha.get("nmAutor0", ""))
+        if _chave_textual(ficha.get('nmAutor0')) in {'autor nao identificado','autor desconhecido','nao identificado','identificado nao'}:
+            autor = ''
         autores = [{"nome": autor, "desc": "Autor"}] if autor else []
     mapa = {
         "action": "cadastrar_livro",
@@ -588,6 +592,8 @@ def validar(ficha, pdf, capa, tipo_api="livro"):
     titulo = " ".join(str(ficha.get("titulo", "") or "").split())
     if not titulo:
         erros.append("titulo ausente")
+    elif validacao_bibliografica.titulo_sem_identidade(titulo):
+        erros.append('título sem identidade bibliográfica: rótulo técnico ou contato; corrigir antes do envio')
     elif (not re.search(r"[^\W\d_]", titulo, re.UNICODE)
           or re.fullmatch(r"(?i)\[?\s*(?:pag\.?|author|autor|title|publisher)\s*:?", titulo)
           or re.search(r"(?i)^\s*(?:e-?book\s+enviado\s+por|uma\s+publica[çc][aã]o\s+eletr[oô]nica|t[ií]tulo\s+do\s+original)\b|\b(?:CIP\s*[-–]?\s*Brasil|cataloga[çc][aã]o\s+na\s+fonte|p[aá]gina\s+\d+\s+de)\b", titulo)):

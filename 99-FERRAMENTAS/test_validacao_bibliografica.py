@@ -3,6 +3,41 @@ import validacao_bibliografica as v
 
 
 class ValidacaoBibliograficaTest(unittest.TestCase):
+    def test_artigo_springer_nao_e_livro_parcial_pela_marca_13(self):
+        pagina='Journal of Autism and Developmental Disorders (2023) 53:3460–3474\nhttps://doi.org/10.1007/s10803-022-05645-5\n\nORIGINAL PAPER\n\nCoping with uncertainty in everyday situations (CUES)\nto address intolerance of uncertainty in autistic children\nJacqui Rodgers1 · Jane Goodwin1\n\nAbstract\nTexto.\n13'
+        cab=v.cabecalho_periodico([pagina])
+        self.assertEqual('Jacqui Rodgers',cab['autor']);self.assertEqual('2023',cab['ano'])
+        self.assertIn('autistic children',cab['titulo'])
+
+    def test_edicao_expressa_nao_e_substituida_pela_primeira_presumida(self):
+        self.assertIn('edicao_presumida_contradiz_pdf',self.codigos({'edicao':'1ª edição (presumida)'},['2nd Edition\nUpdated and Expanded']))
+        self.assertNotIn('edicao_presumida_contradiz_pdf',self.codigos({'edicao':'2ª edição'},['2nd Edition']))
+        texto='FICHA TÉCNICA\n1ª edição – 2012\n2ª edição – 2019 – Atualizada e Revisada'
+        self.assertIn('ano_diverge_edicao_declarada',self.codigos({'data':'2012'},[texto]))
+        self.assertNotIn('ano_diverge_edicao_declarada',self.codigos({'data':'2019'},[texto]))
+
+    def test_rotulo_completo_e_email_nao_identificam_a_obra(self):
+        for titulo in ('(livro completo)','TEXTO COMPLETO','Email: autor@universidade.edu'):
+            self.assertIn('titulo_sem_identidade',self.codigos({'titulo':titulo}))
+        self.assertFalse(v.titulo_sem_identidade('Cristianismo puro e simples'))
+
+    def test_cabecalho_wiley_prevalece_sobre_notas_de_rodape(self):
+        pagina='Modern Theology 42:3 July 2026 DOI:10.1111/moth.70070\nISSN 0266-7177 (Print)\nISSN 1468-0025 (Online)\n\nCONSCIENCE AND THE ENDS OF\nHUMANITY: CHRISTIAN HUMANISM\nAND ARTIFICIAL INTELLIGENCE\n\nWILLIAM SCHWEIKER\n\nAbstract\nArtigo.\nEmail: w-schweiker@uchicago.edu'
+        cab=v.cabecalho_periodico([pagina])
+        self.assertEqual('William Schweiker',cab['autor']);self.assertEqual('2026',cab['ano'])
+        self.assertIn('ARTIFICIAL INTELLIGENCE',cab['titulo'])
+        self.assertIn('artigo_como_livro',self.codigos({'titulo':'Email: w-schweiker@uchicago.edu','tipo_documento':'livro'},[pagina]))
+        self.assertEqual({},v.cabecalho_periodico(['Referências\nModern Theology DOI 10.1111/moth.70070']))
+
+    def test_resumo_bookey_e_promocao_nao_sao_livro_integral(self):
+        self.assertIn('resumo_terceiros',self.codigos({},['A Praying Life\nWritten by Bookey\nSummary Content List']))
+        self.assertIn('publicidade_download',self.codigos({},['DESCARGAR EBOOK\nHaga clic en el enlace y regístrese gratis']))
+        self.assertNotIn('publicidade_download',self.codigos({},['Guia para descargar ebook legalmente: estudo acadêmico.']))
+
+    def test_primeiro_paragrafo_de_introducao_nao_e_titulo(self):
+        titulo='Há momentos na vida em que nos deparamos com situações que parecem'
+        self.assertIn('paragrafo_como_titulo',self.codigos({'titulo':titulo},['Introdução\n\n'+titulo+' definitivas.']))
+
     def test_versiculo_e_creditos_nao_sao_titulo(self):
         self.assertIn('versiculo_como_titulo',self.codigos({'titulo':'[1,1] PAULOS APOSTOLOS'}))
         self.assertIn('rotulos_no_titulo',self.codigos({'titulo':'O Anticristo Autor: Nietzsche Fonte: Labyrinth'}))

@@ -30,6 +30,30 @@ def resultado_pronto(nome):
 
 
 class BibliotecaLocalTest(unittest.TestCase):
+    def test_pdf_sem_cabecalho_pede_nova_copia_e_nao_roda_ocr(self):
+        with tempfile.TemporaryDirectory() as td:
+            r=pathlib.Path(td)/'livros';c=local.inicializar(r)
+            pdf=c['revisao']/'corrompido.pdf';pdf.write_bytes(b'x'*2048)
+            fp=c['metadados']/'corrompido.json';local.salvar_json(fp,{'situacao':'precisa OCR'})
+            cat=local.carregar_catalogo(c);cat['livros']['hash']={
+                'arquivo':pdf.name,'caminho':local.relativo(c,pdf),'estado':'precisa OCR',
+                'metadados':local.relativo(c,fp)}
+            local.salvar_catalogo(c,cat)
+            with mock.patch.object(local.prep,'rodar_ocr') as ocr:
+                local.corrigir_ocr_pendentes(r,usar_api=False)
+            ocr.assert_not_called()
+            self.assertEqual('arquivo inválido - precisa nova cópia',local.carregar_catalogo(c)['livros']['hash']['estado'])
+
+    def test_liberacao_por_texto_exige_prova_integral_e_id_consistente(self):
+        r={'estado':'duplicado confirmado por conteúdo','confirmado_por_api':'texto_integral','id_remoto':21172,
+            'prova_duplicado_integral':{'id_remoto':21172,'hash_texto_integral':'a'*64,'hash_destino':'b'*64}}
+        self.assertTrue(local.duplicado_integral_comprovado(r))
+        r['prova_duplicado_integral']['hash_texto_integral']='similaridade 100%'
+        self.assertFalse(local.duplicado_integral_comprovado(r))
+        r['prova_duplicado_integral']['hash_texto_integral']='a'*64
+        r['prova_duplicado_integral']['id_remoto']=999
+        self.assertFalse(local.duplicado_integral_comprovado(r))
+
     def test_conversao_substituida_nao_reabre_bancada(self):
         with tempfile.TemporaryDirectory() as td:
             c=local.inicializar(pathlib.Path(td)/'livros')
