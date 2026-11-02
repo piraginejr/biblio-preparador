@@ -125,7 +125,7 @@ def isbn_normalizado(valor):
     return s
 
 
-def conferir(resposta, paginas, fontes, contexto=None, trechos=None):
+def conferir(resposta, paginas, fontes, contexto=None, trechos=None, origem='Apple'):
     if not isinstance(resposta, dict) or resposta.get('erro'):
         return []
     evidencias = resposta.get('evidencias', [])
@@ -168,7 +168,7 @@ def conferir(resposta, paginas, fontes, contexto=None, trechos=None):
             # um dado inventado. Autoria pode estar na ordem bibliográfica.
             sustenta = bool(palavras) and all(p in citacao.split() for p in palavras)
             if len(citacao) >= 12 and citacao in texto and sustenta:
-                provas.append({'pagina': n, 'trecho': trecho[:1000], 'origem': 'citação da Apple verificada'})
+                provas.append({'pagina': n, 'trecho': trecho[:1000], 'origem': f'citação da {origem} verificada'})
         # O modelo às vezes omite citações. Nesse caso o motor pode localizar
         # o valor literalmente NOS EXCERTOS ENVIADOS, sem atribuir à IA uma
         # citação que ela não fez. Ainda exige a fonte externa para aplicar.
@@ -224,7 +224,7 @@ def conferir(resposta, paginas, fontes, contexto=None, trechos=None):
     return saida
 
 
-def aplicar_confirmadas(linha, analise):
+def aplicar_confirmadas(linha, analise, origem='Apple'):
     """Somente campos com citação real E fonte independente concordante.
 
     Conflitos de identidade/edição/paginação não são apagados em bloco.
@@ -243,9 +243,9 @@ def aplicar_confirmadas(linha, analise):
         anterior = linha.get(campo, '')
         linha[campo] = valor
         if campo == 'nmAutor0':
-            linha['origem_autor'] = 'Apple + ' + ', '.join(s['fontes_confirmadoras'])
+            linha['origem_autor'] = origem + ' + ' + ', '.join(s['fontes_confirmadoras'])
         if campo == 'titulo':
-            linha['origem_titulo'] = 'Apple + ' + ', '.join(s['fontes_confirmadoras'])
+            linha['origem_titulo'] = origem + ' + ' + ', '.join(s['fontes_confirmadoras'])
         aplicados.append({'campo': campo, 'antes': anterior, 'depois': valor})
         # Estes conflitos são de fallback textual, não de edição divergente.
         prefixos = {'titulo': ('titulo so do nome do arquivo:',),

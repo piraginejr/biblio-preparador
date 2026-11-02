@@ -42,6 +42,7 @@ from urllib.parse import unquote
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import identificar          # pessoa x instituicao (porte do app de cartoes)
 import consultar_apple
+import consultar_claude
 import validacao_bibliografica
 try:
     import conferir_identidade
@@ -3451,7 +3452,7 @@ def assinatura_do_programa():
     for nome in sorted(("preparar-livros.py", "identificar.py",
                         "conferir_identidade.py", "ler-capa.py",
                         "periodicos-conhecidos.json",
-                        "titulos-ruidosos-conhecidos.json", "consultar_apple.py",
+                        "titulos-ruidosos-conhecidos.json", "consultar_apple.py", "consultar_claude.py",
                         "piloto-apple-bibliografia.swift", "validacao_bibliografica.py")):
         caminho = os.path.join(pasta, nome)
         try:
@@ -7984,7 +7985,7 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
             and (linha['conflitos'] or not linha.get('titulo')
                  or not linha.get('nmAutor0') or not linha.get('editora')
                  or not linha.get('data'))):
-        def confirmar_apple(sugestoes):
+        def confirmar_apple(sugestoes, origem='Apple'):
             if not fontes_biblio:
                 return {}
             campos = {s['campo']: s['valor'] for s in sugestoes}
@@ -7992,22 +7993,38 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
             cache = fontes_biblio.pasta_cache_para_pdf(caminho)
             isbn_apple = re.sub(r'[^0-9X]', '', campos.get('isbn', '').upper())
             if isbn_valido(isbn_apple):
-                achados['Open Library — conferência Apple'] = fontes_biblio.consultar_open_library(isbn_apple, cache)
-                achados['Google Books — conferência Apple'] = fontes_biblio.consultar_google_books(isbn_apple, cache)
+                achados[f'Open Library — conferência {origem}'] = fontes_biblio.consultar_open_library(isbn_apple, cache)
+                achados[f'Google Books — conferência {origem}'] = fontes_biblio.consultar_google_books(isbn_apple, cache)
                 if consultar_cbl:
-                    achados['CBL — conferência Apple'] = consultar_cbl.consultar(isbn_apple, cache)
+                    achados[f'CBL — conferência {origem}'] = consultar_cbl.consultar(isbn_apple, cache)
             elif (titulo_bibliograficamente_plausivel(campos.get('titulo', ''))
                     and autor_bibliograficamente_plausivel(campos.get('nmAutor0', ''))):
-                achados['Google Books — título/autoria Apple'] = fontes_biblio.consultar_google_books_titulo_autor(
+                achados[f'Google Books — título/autoria {origem}'] = fontes_biblio.consultar_google_books_titulo_autor(
                     campos['titulo'], campos['nmAutor0'], cache)
             return achados
 
-        apple = consultar_apple.analisar(caminho, paginas, {
+        fontes_ia = {
             'catálogo por ISBN/título': api_geral,
             'CBL': cbl, 'BnF': bnf, 'Internet Archive': ia,
             'Library of Congress': loc, 'HathiTrust': hathitrust,
             'fontes comerciais conciliadas': comercial,
-        }, contexto=linha, confirmador=confirmar_apple)
+        }
+        claude = consultar_claude.analisar(caminho, paginas, fontes_ia, contexto=linha,
+                                          confirmador=lambda s: confirmar_apple(s, 'Claude'))
+        for s in claude.get('sugestoes', []):
+            if ((s['campo'] == 'titulo' and not titulo_bibliograficamente_plausivel(s['valor']))
+                    or (s['campo'] == 'editora' and not editora_bibliograficamente_plausivel(s['valor']))
+                    or (s['campo'] == 'isbn' and not isbn_valido(re.sub(r'[^0-9X]', '', s['valor'].upper())))):
+                s['fontes_confirmadoras'] = []
+                s['estado'] = 'valor bibliográfico suspeito; revisar'
+        consultar_claude.aplicar_confirmadas(linha, claude, campos_manuais=(rev.get('campos') or {}))
+        if any(x['campo'] == 'nmAutor0' for x in claude.get('campos_aplicados', [])):
+            linha['nmAutor0'] = sobrenome_virgula(linha['nmAutor0'])
+        linha['analise_claude'] = claude
+        # Não gastar duas inferências quando a primeira já trouxe sugestões úteis.
+        apple = (consultar_apple.analisar(caminho, paginas, fontes_ia,
+                                         contexto=linha, confirmador=confirmar_apple)
+                 if not any(s.get('evidencias') for s in claude.get('sugestoes', [])) else {})
         for s in apple.get('sugestoes', []):
             if ((s['campo'] == 'titulo' and not titulo_bibliograficamente_plausivel(s['valor']))
                     or (s['campo'] == 'editora' and not editora_bibliograficamente_plausivel(s['valor']))

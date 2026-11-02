@@ -1,5 +1,35 @@
 # Engenharia do projeto — transformar o preparo de livros em aplicativo
 
+## Claude Sonnet — integração de 02/11/2026
+
+- Escolha do operador: Claude Sonnet 5.5 Medium, pelo Antigravity CLI oficial
+  (`agy`), usando a conta Google AI Pro já conectada. Sol não é usado pelo motor.
+- Opt-in por computador, fora do acervo e do Git: `~/.config/biblio-claude/config.json`.
+  O Biblio não lê/copía tokens ou cookies. Ativar/desativar na etapa Preparar ou
+  por `python3 99-FERRAMENTAS/consultar_claude.py --ativar/--desativar`.
+  Outros computadores precisam instalar o CLI oficial e conectar a própria conta.
+- Aciona somente pendentes, com internet habilitada, após as leituras e buscas
+  existentes. Não reabre cadastro confirmado nem revisão aprovada. Campos de
+  revisão manual salva, mesmo sem aprovação, são protegidos contra a nova camada.
+- Envia até sete páginas selecionadas (20 mil caracteres) e no máximo quatro
+  imagens de capa/rosto/créditos, nunca o PDF integral. Páginas do PDF são
+  numeradas explicitamente; observações e sugestões aparecem na bancada lateral.
+- Execução isolada numa pasta temporária: comandos, escrita, navegação e MCP
+  bloqueados por permissões oficiais; sem aprovação irrestrita de ferramentas.
+- Contrato JSON tipado; timeout/sucesso vazio são falha, não ficha válida.
+  Progresso a cada 15 s, limite de 120 s por inferência; falha pausa novas chamadas
+  por 15 minutos na execução e mantém o lote em andamento. Apple local é fallback.
+- Cache por hash do PDF, modelo, versão e páginas enviadas. Resultado bom é
+  reutilizado, mas fontes/evidências são reconferidas. Falha não é negativa eterna.
+- Campos só se aplicam automaticamente com citação literal verificável e fonte
+  bibliográfica independente concordante. Divergência de ISBN/edição não é apagada.
+  Tipo do material existente permanece protegido; sugestões ajudam a decisão humana.
+- Inferências não fazem upload ao Biblio nem removem arquivos. Evidências/cache
+  ficam em `_evidencias_claude`, excluído do Git. Não versionar executável `agy`,
+  PDFs, configuração pessoal, credenciais ou cache.
+- Entrega segue o protocolo das duas branches, pushes sem force, pacote Mac
+  reconstruído, hashes projeto/pacote/instalação e backup Kingston conferidos.
+
 ## Aprendizado do lote de 02/11/2026
 
 - “(livro completo)” é rótulo técnico, não identidade bibliográfica. E-mail de

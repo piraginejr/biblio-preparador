@@ -1797,6 +1797,7 @@ def montar_pacote_revisao(c, digest, registro):
         "fontes_revisao": _partes_pipe(ficha.get("fontes_revisao", "")),
         "fontes_rejeitadas": ficha.get("fontes_rejeitadas", []) or [],
         "analise_apple": pacote_apple_revisao(c, ficha.get("analise_apple", {})),
+        "analise_claude": pacote_apple_revisao(c, ficha.get("analise_claude", {})),
         "evidencias": _compactar_evidencias_revisao(
             ficha.get("evidencias", []) or []),
         "paginas_sugeridas": paginas_sugeridas_revisao(c, ficha, registro),
@@ -1812,7 +1813,7 @@ def pacote_apple_revisao(c, analise):
     if not isinstance(analise, dict):
         return {}
     pacote = {k: analise[k] for k in ('estado', 'motivo', 'aviso', 'sugestoes',
-                                     'campos_aplicados', 'paginas_enviadas') if k in analise}
+                                     'campos_aplicados', 'paginas_enviadas', 'modelo', 'observacoes', 'autores') if k in analise}
     pacote['paginas'] = []
     raiz = c['raiz'].resolve()
     for p in analise.get('paginas', []):
