@@ -7984,7 +7984,11 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
             and tipo_documento != 'arquivo inválido'
             and (linha['conflitos'] or not linha.get('titulo')
                  or not linha.get('nmAutor0') or not linha.get('editora')
-                 or not linha.get('data'))):
+                 or not linha.get('data')
+                 # Alertas do validador final também devem alcançar a camada.
+                 # A decisão final continua sendo auditada abaixo, após as sugestões.
+                 or validacao_bibliografica.auditar(
+                     linha, paginas=paginas[:6], fim=paginas[-3:] if len(paginas) > 6 else []))):
         def confirmar_apple(sugestoes, origem='Apple'):
             if not fontes_biblio:
                 return {}

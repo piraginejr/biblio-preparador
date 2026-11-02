@@ -1,3 +1,4 @@
+import ast
 import copy
 import json
 import pathlib
@@ -168,6 +169,21 @@ class ClaudeTest(unittest.TestCase):
         self.assertIn('read_url(*)', rules['permissions']['deny'])
         self.assertIn('--disable-slash-commands', args)
         self.assertNotIn('--dangerously-skip-permissions', args)
+
+    def test_alerta_so_do_validador_final_tambem_aciona_camada(self):
+        tree = ast.parse(pathlib.Path(ia.__file__).with_name('preparar-livros.py').read_text())
+        processar = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == 'processar')
+        bloco = next(n for n in processar.body if isinstance(n, ast.If) and any(
+            isinstance(x, ast.FunctionDef) and x.name == 'confirmar_apple' for x in n.body))
+        expressao = compile(ast.fix_missing_locations(ast.Expression(bloco.test)), '<gatilho>', 'eval')
+        auditor = mock.Mock()
+        auditor.auditar.return_value = [{'motivo': 'data só nas referências finais'}]
+        ctx = {'usar_api': True, 'rev': {}, 'tipo_documento': 'livro', 'paginas': ['dados'],
+               'linha': {'conflitos': [], 'titulo': 'Título', 'nmAutor0': 'Autor',
+                         'editora': 'Editora', 'data': '2000'}, 'validacao_bibliografica': auditor}
+        self.assertTrue(eval(expressao, ctx))
+        ctx['rev'] = {'aprovado': True}
+        self.assertFalse(eval(expressao, ctx))
 
 
 if __name__ == '__main__':

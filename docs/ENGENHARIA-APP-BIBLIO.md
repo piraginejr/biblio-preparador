@@ -24,6 +24,9 @@
 - Campos só se aplicam automaticamente com citação literal verificável e fonte
   bibliográfica independente concordante. Divergência de ISBN/edição não é apagada.
   Tipo do material existente permanece protegido; sugestões ajudam a decisão humana.
+- Teste monitorado detectou conflitos gerados apenas no validador final (data/editora
+  vindas das referências). Uma pré-auditoria também aciona a camada nesses casos,
+  sem apagar o alerta ou dispensar a auditoria final. Revisão humana segue soberana.
 - Inferências não fazem upload ao Biblio nem removem arquivos. Evidências/cache
   ficam em `_evidencias_claude`, excluído do Git. Não versionar executável `agy`,
   PDFs, configuração pessoal, credenciais ou cache.
