@@ -1,5 +1,26 @@
 # Engenharia do projeto — transformar o preparo de livros em aplicativo
 
+## Aprendizado do lote de 02/11/2026
+
+- “(livro completo)” é rótulo técnico, não identidade bibliográfica. E-mail de
+  contato, nota bibliográfica e primeira frase da introdução não podem virar título.
+- Cabeçalhos Modern Theology e Springer/Trials com DOI, título e byline anteriores ao Abstract
+  prevalecem sobre metadados PDF, rodapés e referências. Essa evidência identifica
+  artigo e habilita a consulta acadêmica por DOI, sem depender de GROBID disponível.
+- Bookey + Summary Content List e propaganda “regístrese gratis/descargar ebook”
+  não são as obras integrais. Não cadastrar automaticamente como livros.
+- Edição declarada vence “1ª edição presumida”. Lista de edições nos créditos
+  deve ser conferida antes de copiar a data do primeiro copyright.
+- Placeholder de autor desconhecido não é pessoa: enviar lista vazia quando o
+  tipo permitir anonimato, não inverter “[autor não identificado]” como nome.
+- PDF binário sem cabeçalho não é falta de OCR: separar para nova cópia e evitar
+  novas tentativas automáticas de OCR sobre a mesma entrada estruturalmente inválida.
+- Duplicado por conteúdo só entra na limpeza com prova de igualdade de TODO o
+  texto, hash da cópia canônica e ID remoto confirmado; amostras/simhash não bastam.
+- Revisão após envio corrige metadados por `atualizar_livro` e ID exato, sem trocar
+  PDF/capa nem reabrir a inclusão. Preservar recibo original, antes/depois e chave
+  estável. Sem anexos, enviar corpo JSON (form-urlencoded é rejeitado pela API).
+
 ## Proteção contra conversão binária inválida — 01/11/2026
 
 ### Aprendizado da revisão assistida do lote

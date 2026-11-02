@@ -94,6 +94,7 @@ TIPOS_DOCUMENTOS = {"artigo", "documento", "apostila", "sermão", "trecho",
 TIPOS_REVISTAS = {"revista", "periódico", "boletim", "jornal"}
 ESTADOS_REVISAO_VISUAL = {
     "analisado", "conflito", "precisa OCR",
+    "arquivo inválido - precisa nova cópia",
     "duplicado textual - revisar",
     "já existente na API - conferir vínculo",
     "duplicado informado pela API - revisar",
@@ -1111,6 +1112,17 @@ def preparo_envio_pendente(registro, origem, ficha, raiz):
     if preparado_rel and not candidato.is_file():
         return True
     return candidato.is_file() and candidato.stat().st_size > LIMITE_ENVIO_BYTES
+
+
+def duplicado_integral_comprovado(registro):
+    """Similaridade/amostra não libera limpeza; exige prova integral e ID."""
+    prova=registro.get('prova_duplicado_integral') or {}
+    return bool(registro.get('estado')=='duplicado confirmado por conteúdo'
+        and registro.get('confirmado_por_api')=='texto_integral'
+        and registro.get('id_remoto')
+        and str(prova.get('id_remoto'))==str(registro['id_remoto'])
+        and re.fullmatch(r'[a-f0-9]{64}',str(prova.get('hash_texto_integral','')))
+        and re.fullmatch(r'[a-f0-9]{64}',str(prova.get('hash_destino',''))))
 
 
 def excedeu_tamanho_apos_preparo(preparo):
@@ -3598,6 +3610,21 @@ def corrigir_ocr_pendentes(raiz, usar_api=True):
         if estado not in {"precisa OCR", "pronto para cadastro"}:
             continue
         if estado == "precisa OCR":
+            origem = c['raiz'] / registro.get('caminho','')
+            if origem.is_file() and origem.stat().st_size >= 1024:
+                with origem.open('rb') as entrada:assinatura = entrada.read(5)
+                if assinatura != b'%PDF-':
+                    registro['estado']='arquivo inválido - precisa nova cópia'
+                    fp=c['raiz']/registro.get('metadados','')
+                    if fp.is_file():
+                        f=json.loads(fp.read_text(encoding='utf-8'))
+                        f.update(status_ocr='PDF inválido',situacao=registro['estado'],
+                            situacao_metadados=registro['estado'],
+                            pendencias='substituir por cópia válida: arquivo sem assinatura PDF; não repetir OCR')
+                        salvar_json(fp,f)
+                    salvar_catalogo(c,catalogo)
+                    print(f"  {registro.get('arquivo')}: PDF inválido; OCR evitado, é necessária outra cópia",flush=True)
+                    continue
             alvos.append((digest, registro))
             continue
         origem = c["raiz"] / registro.get("caminho", "")
@@ -4331,8 +4358,9 @@ def liberar_espaco(raiz, executar=False, lixeira=None):
         item = liberaveis.get(registro.get("metadados"))
         duplicado_local = (
             str(chave_catalogo).startswith("duplicado:")
-            or registro.get("estado") in {
-                "duplicado", ESTADO_DUPLICADO_CONTEUDO})
+            or registro.get("estado") == "duplicado"
+            or (registro.get('estado') == ESTADO_DUPLICADO_CONTEUDO
+                and registro.get('confirmado_por_api') != 'texto_integral'))
         descarte = registro.get("estado") == ESTADO_DESCARTE
         cadastrado_direto = (registro.get("estado") == "cadastrado"
                              and registro.get("id_remoto"))
@@ -4354,6 +4382,13 @@ def liberar_espaco(raiz, executar=False, lixeira=None):
                 "id_remoto": registro.get("id_remoto", ""),
                 "motivo_liberacao": "cadastro confirmado pela API",
                 "identificador_lixeira": registro.get("id_remoto"),
+            }
+        elif not item and duplicado_integral_comprovado(registro):
+            item = {
+                'titulo':registro.get('arquivo','Duplicado integral'),
+                'id_remoto':registro['id_remoto'],
+                'motivo_liberacao':'duplicidade confirmada pela API',
+                'identificador_lixeira':registro['id_remoto'],
             }
         elif (not item
               and registro.get("estado") in {

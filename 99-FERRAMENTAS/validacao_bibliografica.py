@@ -11,7 +11,49 @@ import shutil
 import subprocess
 import unicodedata
 
-VERSAO = 2
+VERSAO = 3
+
+
+def titulo_sem_identidade(titulo):
+    n=normalizar(titulo)
+    return (n in {'livro completo','texto completo','arquivo completo','full text',
+                   'complete book','pdf completo'}
+            or bool(re.match(r'(?i)^\s*e-?mail\s*:',str(titulo or ''))))
+
+
+def cabecalho_periodico(paginas):
+    """Cabeçalho Wiley: DOI, ISSN, título e byline anteriores ao Abstract.
+
+    Não usa bibliografia, nomes do arquivo, citações nem o primeiro parágrafo.
+    Demais layouts continuam nas rotas genéricas/GROBID/Crossref.
+    """
+    texto=paginas[0] if paginas else ''
+    doi_estudo=re.search(r'(?i)\b10\.(?:1007/s10803|1186/s13063)-[0-9-]+',texto[:1800])
+    if doi_estudo and re.search(r'(?im)^\s*Abstract\b',texto):
+        marcador=re.search(r'(?im)^.*(?:ORIGINAL PAPER|STUDY PROTOCOL|S\.I\.\s*:)[^\n]*\n',texto)
+        if marcador:
+            frente=re.split(r'(?im)^\s*Abstract\b',texto[marcador.end():],maxsplit=1)[0]
+            nome=re.search(r'(?m)^\s*([A-Z][A-Za-z’.-]+(?:[ \t]+[A-Z][A-Za-z’.-]+){1,4})\d[*, ·]',frente)
+            if nome:
+                titulo=' '.join(frente[:nome.start()].split())
+                ano=re.search(r'\((20\d{2})\)',texto[:400])
+                if 12<len(titulo)<230:
+                    return {'titulo':titulo,'autor':nome[1],'ano':ano[1] if ano else '',
+                        'doi':doi_estudo[0],'editora':'Springer Nature',
+                        'periodico':'Trials' if '/s13063' in doi_estudo[0] else 'Journal of Autism and Developmental Disorders'}
+    doi=re.search(r'(?i)\b10\.1111/moth\.[0-9]+',texto[:1800])
+    if not doi or 'Modern Theology' not in texto[:500] or 'ISSN' not in texto[:800]:return {}
+    antes=re.split(r'(?im)^\s*Abstract\s*$',texto,maxsplit=1)
+    if len(antes)!=2:return {}
+    blocos=[b.strip() for b in re.split(r'\n\s*\n',antes[0]) if b.strip()]
+    if len(blocos)<3:return {}
+    autor=' '.join(blocos[-1].split());titulo=' '.join(blocos[-2].split())
+    if (len(autor.split()) not in range(2,7) or not autor.isupper()
+            or not titulo.isupper() or not 4<len(titulo)<230
+            or re.search(r'(?i)ISSN|Email|copyright|\d',autor)):return {}
+    ano=re.search(r'Modern Theology[^\n]*\b((?:19|20)\d{2})\b',texto)
+    return {'titulo':titulo,'autor':autor.title(),'ano':ano[1] if ano else '',
+            'doi':doi[0],'editora':'John Wiley & Sons Ltd','periodico':'Modern Theology'}
 
 
 def informativo_distribuicao(texto):
@@ -94,6 +136,24 @@ def auditar(ficha, pdf=None, paginas=None, fim=None, confirmacao_humana=False):
 
     if ('\ufffd' in titulo or re.search(r'(?i)\((?:doc|doc\s+cap[^)]*)\)',titulo)):
         registrar('titulo_tecnico','titulo','título contém ruído técnico/codificação do arquivo')
+    if titulo_sem_identidade(titulo):
+        registrar('titulo_sem_identidade','titulo','rótulo de arquivo ou contato usado como título')
+    if (re.search(r'(?i)^\s*(?:see|ver)\s+.+\([^)]*(?:19|20)\d{2}\)',titulo)
+            and re.search(r'\d+\s*[-–\u00ad]',titulo)):
+        registrar('citacao_como_titulo','titulo','referência bibliográfica usada como título')
+    inicio_corpo=re.search(r'(?im)^\s*(?:Introdução|Introduction|Resumo|Abstract)\s*\n+([^\f]{40,250})',abertura)
+    if inicio_corpo and len(titulo)>50 and normalizar(inicio_corpo[1]).startswith(normalizar(titulo)):
+        registrar('paragrafo_como_titulo','titulo','primeira frase do corpo foi usada como título')
+    if re.search(r'(?i)Written by Bookey',texto) and re.search(r'(?i)Summary Content List|Chapter\s+\d+\s+Summary',texto):
+        registrar('resumo_terceiros','tipo_documento','resumo de terceiros, não o livro integral')
+    if (len(paginas)<=8 and re.search(r'(?i)reg[ií]strese gratis|DESCARGAR EBOOK',abertura)
+            and re.search(r'(?i)Haga clic en el enlace|DESCARGAR DE NUESTRA BIBLIOTECA',texto)):
+        registrar('publicidade_download','tipo_documento','propaganda de download, não conteúdo do livro')
+    cabecalho=cabecalho_periodico(paginas)
+    if cabecalho:
+        if tipo!='artigo':registrar('artigo_como_livro','tipo_documento','DOI e cabeçalho identificam artigo de periódico')
+        if normalizar(titulo)!=normalizar(cabecalho['titulo']):
+            registrar('titulo_diverge_periodico','titulo','título diverge do cabeçalho do periódico',cabecalho['titulo'])
     if re.match(r'^\s*\[\d{1,3}\s*[,.:]\s*\d{1,3}\]', titulo):
         registrar('versiculo_como_titulo','titulo','primeiro versículo usado como título, sem identificar o documento')
     if re.search(r'(?i)\b(?:autor(?:a|es|as)?|tradutor(?:a)?|fonte)\s*:', titulo):
@@ -175,6 +235,15 @@ def auditar(ficha, pdf=None, paginas=None, fim=None, confirmacao_humana=False):
                 registrar('sobrenome_fragmentado','nmAutor0','sobrenome fragmentado pelo OCR; conferir a imagem',fragmento[0])
 
     atual=str(ficha.get('data','') or '')
+    edicoes=re.findall(r'(?im)^\s*(\d{1,2})\s*[ªaº]?\s*edi[çc][aã]o\s*[-–—,:]?\s*((?:19|20)\d{2})',texto)
+    if edicoes and not isbn_confirmado(ficha):
+        numero,ano_edicao=max(edicoes,key=lambda x:int(x[0]))
+        if re.fullmatch(r'(?:19|20)\d{2}',atual) and atual!=ano_edicao:
+            registrar('ano_diverge_edicao_declarada','data','ano difere da edição mais recente explicitamente declarada nos créditos',f'{numero}ª edição — {ano_edicao}')
+    edicao_local=str(ficha.get('edicao','') or '')
+    numero_edicao=re.search(r'(?im)^\s*(?:Description:\s*)?([2-9])(?:nd|rd|th)\s+edition\b',texto)
+    if numero_edicao and re.match(r'^\s*1\s*[ªaº]?',edicao_local):
+        registrar('edicao_presumida_contradiz_pdf','edicao','primeira edição presumida contradiz a edição expressa na folha de rosto/CIP',numero_edicao[0])
     propria=re.search(r'(?i)copyright\s*©\s*((?:19|20)\d{2})[^\n]{0,100}\b1[ªaº]?\s*edi[çc][aã]o',texto)
     if (propria and re.fullmatch(r'(?:19|20)\d{2}',atual) and atual!=propria[1]
             and not isbn_confirmado(ficha)

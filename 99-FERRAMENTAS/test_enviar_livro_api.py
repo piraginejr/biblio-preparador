@@ -14,6 +14,12 @@ SPEC.loader.exec_module(api)
 
 
 class EnviarLivroApiTest(unittest.TestCase):
+    def test_placeholder_de_autor_nao_vai_para_a_api(self):
+        for valor in ('[autor não identificado]','Autor desconhecido','Não identificado'):
+            p=api.montar_payload({'titulo':'Documento','nmAutor0':valor,
+                'autores':[{'nome':valor,'desc':'Autor'}]},tipo_api='documento')
+            self.assertEqual([],json.loads(p['autores']))
+
     def test_atualizacao_recusada_explicitamente_nao_fica_incerta(self):
         with tempfile.TemporaryDirectory() as td:
             fp,_=self.criar_ficha(pathlib.Path(td)/'livros','permissao','2026-11-01')
