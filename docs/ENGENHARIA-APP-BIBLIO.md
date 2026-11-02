@@ -1,5 +1,24 @@
 # Engenharia do projeto — transformar o preparo de livros em aplicativo
 
+## Encerramento da entrada sem perder pendências — 02/11/2026
+
+- A limpeza reconhece originais HTML/TXT/DOC pelo hash registrado na conversão,
+  não pela extensão ou pelo nome. Só libera quando todos os vínculos dessa
+  assinatura estão encerrados e sem correção remota pendente.
+- Compactado de documento único pode sair mesmo com cadastro pendente se há
+  hash interno registrado e uma cópia extraída idêntica preservada na biblioteca.
+  Revalidar a cópia imediatamente antes de mover o pacote à Lixeira. Pacotes
+  mistos, sem hashes ou com membros ignorados não usam essa liberação antecipada.
+- Original já convertido com correção remota pendente e PDF ainda preservado
+  sai da entrada para `11-PENDENCIAS-DE-CADASTRO`, com prefixo do hash, sem
+  sobrescrita. Não implica nova conversão/OCR, aprovação ou reenvio.
+- Histórico mantém origem anterior, novo caminho, assinatura e vínculo com o
+  cadastro. O diário `organizacao-entrada.json` registra planos antes da ação e
+  resultados progressivamente. A limpeza futura alcança essa pasta somente
+  depois de encerrados os vínculos. Fontes externas da nuvem ficam intocadas.
+- Organização assistida de um conjunto específico não executa a limpeza geral
+  de outros livros; simulação e execução devem manter o mesmo escopo autorizado.
+
 ## Meta permanente: 95% de automação — 02/11/2026
 
 - Meta definida pelo responsável do projeto: chegar a pelo menos **95% dos
