@@ -92,13 +92,100 @@ class ClaudeTest(unittest.TestCase):
         self.assertTrue(linha['origem_titulo'].startswith('Claude +'))
         self.assertEqual(['ISBN: divergente'], linha['conflitos'])
 
-    def test_sem_fonte_independente_nao_aplica(self):
+    def test_fonte_primaria_explicita_aplica_sem_catalogo_externo(self):
         a, _ = self.analisar()
         for s in a['sugestoes']:
             s['fontes_confirmadoras'] = []
         linha = {'titulo': 'anterior'}
-        self.assertEqual([], ia.aplicar_confirmadas(linha, a))
+        self.assertTrue(ia.aplicar_confirmadas(linha, a))
+        self.assertEqual('O Caminho da Fé', linha['titulo'])
+        self.assertEqual('Maria Silva', linha['nmAutor0'])
+        self.assertFalse(linha.get('revisao_manual_aprovada'))
+
+    def test_sem_evidencia_primaria_nem_catalogo_nao_aplica(self):
+        linha = {'titulo': 'anterior'}
+        self.assertEqual([], ia.aplicar_confirmadas(linha, {'sugestoes': []}))
         self.assertEqual('anterior', linha['titulo'])
+
+    def test_fonte_primaria_preserva_integridade_e_edicao(self):
+        a, _ = self.analisar()
+        for s in a['sugestoes']:
+            s['fontes_confirmadoras'] = []
+        linha = {'conflitos': ['PDF pode estar incompleto: 20 paginas, a edicao tem 200',
+                              'ISBN: divergente', 'edição divergente']}
+        ia.aplicar_confirmadas(linha, a)
+        self.assertEqual(3, len(linha['conflitos']))
+        r = resposta()
+        primaria = ia.conferir_fonte_primaria(r, self.paginas,
+                       {'isbn_confirmado_na_edicao': True, 'data': '2001', 'titulo': 'Outro título'})
+        self.assertNotIn('data', primaria['campos'])
+        self.assertNotIn('titulo', primaria['campos'])
+
+    def test_copyright_nao_e_byline_e_endereco_nao_e_cidade_publicacao(self):
+        r = resposta()
+        r.update(tipo_documento='artigo', lugar='São Paulo', nmAutor0='Maria Silva')
+        r['evidencias'] += [{'campo': 'nmAutor0', 'pagina': 1, 'trecho': '© Maria Silva'},
+                            {'campo': 'lugar', 'pagina': 1, 'trecho': 'Rua Dois, São Paulo'}]
+        r['evidencias'] = [e for e in r['evidencias'] if not e['trecho'].startswith('Autor:')]
+        p = self.paginas[0] + '\n© Maria Silva\nRua Dois, São Paulo'
+        a = ia.conferir_fonte_primaria(r, [p])
+        self.assertNotIn('nmAutor0', a['campos'])
+        self.assertNotIn('lugar', a['campos'])
+
+    def test_titulo_curto_so_como_linha_autonoma(self):
+        r = resposta(); r['titulo'] = 'Paul'
+        r['evidencias'][0]['trecho'] = 'Paul'
+        a = ia.conferir_fonte_primaria(r, ['A letter from Paul to others'])
+        self.assertNotIn('titulo', a['campos'])
+        a = ia.conferir_fonte_primaria(r, ['Paul\nJewish Law and Early Christianity'])
+        self.assertIn('titulo', a['campos'])
+
+    def test_tipo_manual_nao_e_trocado_por_classificacao_da_ia(self):
+        a, _ = self.analisar()
+        linha = {'tipo_documento': 'documento', 'titulo': 'Manual'}
+        ia.aplicar_confirmadas(linha, a, ['tipo_documento'])
+        self.assertEqual('documento', linha['tipo_documento'])
+
+    def test_citacao_inventada_ou_em_referencias_nao_e_primaria(self):
+        r = resposta()
+        for e in r['evidencias']:
+            e['pagina'] = 15
+        self.assertFalse(ia.conferir_fonte_primaria(r, self.paginas * 20)['campos'])
+
+    def test_cronologia_contraditoria_nao_passa_como_data_confirmada(self):
+        r = resposta(); r['observacoes'] = ['Sumário tem artigos posteriores a 2002: divergência não explicada.']
+        a = ia.conferir_fonte_primaria(r, self.paginas)
+        self.assertTrue(a['alerta_data'])
+        self.assertNotIn('data', a['campos'])
+
+    def test_divergencia_amostral_nao_e_contradicao_de_publicacao(self):
+        r = resposta(); r['observacoes'] = ['Divergência nos dados: 585 entrevistas em 2022 e gráfico com 584.']
+        self.assertFalse(ia.conferir_fonte_primaria(r, self.paginas)['alerta_data'])
+
+    def test_editor_da_coletanea_conserva_papel_na_api(self):
+        r = resposta(); r.update(tipo_documento='coletânea', nmAutor0=None)
+        p = self.paginas[0] + '\nStaff for this book:\nMaria Silva – Editor\nJoão Souza – Designer'
+        a = ia.conferir_fonte_primaria(r, [p])
+        self.assertEqual('Editor', a['campos']['nmAutor0']['papel'])
+        linha = {'conflitos': []}
+        ia.aplicar_confirmadas(linha, {'fonte_primaria': a})
+        self.assertEqual([{'nome': 'Maria Silva', 'desc': 'Editor'}], linha['autores'])
+        self.assertEqual('livro', linha['tipo_documento'])
+
+    def test_editor_do_periodico_citado_nao_vira_editor_da_coletanea(self):
+        r = resposta();r.update(tipo_documento='coletânea', nmAutor0=None)
+        p = self.paginas[0] + '\nwith Maria Silva, editor, Religious Review'
+        a = ia.conferir_fonte_primaria(r, [p])
+        self.assertNotIn('nmAutor0', a['campos'])
+
+    def test_autores_anteriores_nao_sobrevivem_ao_anonimato_documental(self):
+        r = resposta(); r.update(tipo_documento='artigo',nmAutor0=None)
+        p = self.paginas[0]+'\nhttps://exemplo.org/article/teste\nAug 20, 2002'
+        r['evidencias'] += [{'campo':'data','pagina':1,'trecho':'Aug 20, 2002'}]
+        a=ia.conferir_fonte_primaria(r,[p])
+        linha={'autores':[{'nome':'Menu incorreto'}], 'conflitos':[]}
+        ia.aplicar_confirmadas(linha,{'fonte_primaria':a})
+        self.assertEqual([],linha['autores'])
 
     def test_decisao_humana_e_id_remoto_nao_reabrem(self):
         for chave in ('revisao_manual_aprovada', 'id_remoto'):
