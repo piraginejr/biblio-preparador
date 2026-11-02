@@ -8064,7 +8064,8 @@ def processar(caminho, usar_api=True, capa="", paginas=None,
     if (documento_nao_livro
             and not rev.get("aprovado")
             and documental.get("confianca") == "baixa"
-            and tipo_documento != "arquivo inválido"):
+            and tipo_documento != "arquivo inválido"
+            and not linha.get('analise_claude', {}).get('fonte_primaria', {}).get('identidade_verificada')):
         linha["pendencias"].append("confirmar procedência documental")
 
     # Editora e data são obrigatórias para o tombo de livro. Materiais

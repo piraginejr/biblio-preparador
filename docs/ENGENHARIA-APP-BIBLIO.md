@@ -44,9 +44,9 @@
   por 15 minutos na execução e mantém o lote em andamento. Apple local é fallback.
 - Cache por hash do PDF, modelo, versão e páginas enviadas. Resultado bom é
   reutilizado, mas fontes/evidências são reconferidas. Falha não é negativa eterna.
-- Campos só se aplicam automaticamente com citação literal verificável e fonte
-  bibliográfica independente concordante. Divergência de ISBN/edição não é apagada.
-  Tipo do material existente permanece protegido; sugestões ajudam a decisão humana.
+- Campos se aplicam com citação literal verificável e fonte bibliográfica
+  independente concordante, ou pela política de fonte primária abaixo.
+  Divergência de ISBN/edição não é apagada; decisões humanas prevalecem.
 - Teste monitorado detectou conflitos gerados apenas no validador final (data/editora
   vindas das referências). Uma pré-auditoria também aciona a camada nesses casos,
   sem apagar o alerta ou dispensar a auditoria final. Revisão humana segue soberana.
@@ -55,6 +55,35 @@
   PDFs, configuração pessoal, credenciais ou cache.
 - Entrega segue o protocolo das duas branches, pushes sem force, pacote Mac
   reconstruído, hashes projeto/pacote/instalação e backup Kingston conferidos.
+
+### Aprovação por fonte primária — política 1, 02/11/2026
+
+- Claude continua sem permissão para cadastrar: propõe dados, e o código local
+  verifica as citações nas páginas efetivamente enviadas, até a página PDF 12.
+  Dados explícitos podem ser aproveitados sem exigir um catálogo externo que
+  talvez nem contenha esse material. A inferência em cache é reutilizada;
+  a versão da política é separada da versão da chamada ao modelo.
+- Título/subtítulo, byline, editora e publicação precisam de evidência própria.
+  Copyright não é autoria, endereço não é cidade editorial, versão do arquivo
+  Gutenberg não é edição impressa e datas de captura não são publicação.
+- Artigos web com título/data/estrutura verificáveis e relatórios com identificação
+  explícita podem ter tipo corrigido automaticamente. Ausência de autor/editora
+  em documento não é preenchida com pessoa citada, menu ou titular de copyright.
+- Coletâneas permanecem livros: editor declarado em linha própria nos créditos
+  da obra pode ser responsabilidade principal, enviado no papel **Editor**, não
+  Autor. Editor de periódico citado, designer e publisher não são essa autoria.
+- Campos manuais, cadastro remoto e edição fixada por ISBN são protegidos.
+  A política só retira alertas textuais ligados aos campos efetivamente corrigidos;
+  mantém integridade, paginação, cronologia contraditória e divergências editoriais.
+  OCR, PDF, capa, duplicidade e auditoria bibliográfica final continuam obrigatórios.
+- Medição controlada sobre as mesmas 18 pendências: antes 0 prontos; com a
+  política 1, 12 prontos (66,7% de recuperação). Nenhuma nova chamada ao Claude
+  nem correção individual de metadados foi necessária para esses 12 resultados.
+  A conferência visual posterior é controle de qualidade, não foi usada para
+  promover os seis restantes. Este grupo difícil não mede a taxa geral de 95%.
+- Suspeita por diferença de paginação não prova ausência de páginas. Trechos
+  comprovados podem ser identificados como cópia parcial; não rotular nem enviar
+  automaticamente uma obra apenas suspeita como se a incompletude fosse certa.
 
 ## Aprendizado do lote de 02/11/2026
 

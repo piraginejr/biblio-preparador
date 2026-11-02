@@ -1,4 +1,4 @@
-"""Claude/Antigravity: leitura auxiliar, auditável e opt-in; nunca decide cadastro.
+"""Claude/Antigravity: leitura documentada, auditável e opt-in.
 
 Usa a sessão oficial do agy, sem ler tokens, cookies ou chaves. Só cópias de
 páginas selecionadas chegam ao serviço. Falhas preservam a revisão e a fila.
@@ -17,6 +17,7 @@ import time
 import consultar_apple as provas
 
 VERSAO = 2
+POLITICA_FONTE_PRIMARIA = 1
 MODELO = 'claude-sonnet-5-5-medium'
 LIMITE_SEGUNDOS = 120
 COOLDOWN = 900
@@ -279,32 +280,218 @@ def analisar(pdf, paginas, fontes=None, contexto=None, confirmador=None):
         paginas_prova = [p if n in numeros else '' for n, p in enumerate(paginas, 1)]
         fontes = dict(fontes or {})
         sugestoes = provas.conferir(resposta, paginas_prova, fontes, contexto, origem='Claude')
+        primaria = conferir_fonte_primaria(resposta, paginas_prova, contexto)
         erro_conferencia = ''
-        if confirmador and any(s['evidencias'] for s in sugestoes):
+        if (confirmador and not primaria.get('identidade_verificada')
+                and any(s['evidencias'] for s in sugestoes)):
             try:
                 fontes.update(confirmador([s for s in sugestoes if s['evidencias']]) or {})
                 sugestoes = provas.conferir(resposta, paginas_prova, fontes, contexto, origem='Claude')
             except Exception:
                 erro_conferencia = 'Fonte bibliográfica indisponível; sugestão permanece em revisão'
         return {'estado': 'revisão assistida', 'modelo': MODELO, 'versao': VERSAO,
+                'fonte_primaria': primaria,
                 'sugestoes': sugestoes, 'observacoes': resposta['observacoes'],
                 'autores': resposta['autores'], 'hash_pdf': digest, 'cache': str(cache),
                 'paginas_enviadas': sorted(numeros), 'erro_conferencia': erro_conferencia,
                 'paginas': [{'pagina': n, 'imagem': str(pasta / f'pagina-{n}.png')
                             if (pasta / f'pagina-{n}.png').is_file() else ''} for n in sorted(numeros)],
-                'aviso': 'Claude é auxiliar. Somente citação verificada e fonte independente podem '
-                         'completar campos; a aprovação continua no validador ou com o operador.'}
+                'aviso': 'Dados explícitos conferidos no PDF podem completar a ficha sem catálogo '
+                         'externo. Inferências ficam em revisão; os validadores finais continuam ativos.'}
     except (OSError, ValueError, RuntimeError, TimeoutError) as exc:
         return {'estado': 'falha', 'motivo': str(exc)[:400]}
+
+
+def conferir_fonte_primaria(resposta, paginas, contexto=None):
+    """Política local sobre evidência real, não sobre a confiança declarada pela IA.
+
+    Não procura valores arbitrários no corpo: exige citação enviada, nos créditos
+    iniciais, e semântica de autoria/publicação. Não equivale a revisão humana.
+    A versão da inferência permanece estável para reaproveitar o cache existente.
+    """
+    contexto = contexto or {}
+    norm = provas.normalizar
+    valores = {k: resposta.get(k) for k in provas.CAMPOS}
+    evidencias = {}
+    for e in resposta.get('evidencias', []):
+        n, trecho, campo = e.get('pagina'), e.get('trecho'), e.get('campo')
+        if (type(n) is not int or not 1 <= n <= min(12, len(paginas))
+                or not isinstance(trecho, str) or not norm(trecho)
+                or norm(trecho) not in norm(paginas[n-1])):
+            continue
+        valor = valores.get(campo)
+        if campo == 'tipo_documento' or (isinstance(valor, str) and norm(valor)
+                and all(w in norm(trecho).split() for w in norm(valor).split())):
+            evidencias.setdefault(campo, []).append(dict(e))
+    aceitos, rejeitados = {}, {}
+    tipo = valores.get('tipo_documento')
+    inicio = '\n'.join(paginas[:3])
+    for campo, es in evidencias.items():
+        valor = valores.get(campo)
+        if not valor or campo == 'tipo_documento':
+            continue
+        valido = False
+        for e in es:
+            trecho, pagina = e['trecho'], paginas[e['pagina']-1]
+            if campo in ('titulo', 'subTitulo'):
+                # Título curto só como linha autônoma; não aceitar nome no corpo.
+                completo = norm(str(valor) + ' ' + str(valores.get('subTitulo') or ''))
+                valido = (len(norm(valor)) >= 12 or any(norm(x) in (norm(valor), completo)
+                          for x in pagina.splitlines()))
+            elif campo == 'nmAutor0':
+                valido = bool(re.search(r'\b(by|autor(?:a)?|author|por)\s*[:\-]?\s+', trecho, re.I))
+                valido = valido and not re.search(r'copyright|©|estate|edited\s+by', trecho, re.I)
+                # Uma byline do livro citado não prova autoria do infográfico.
+                if tipo == 'trecho':
+                    valido = False
+                if not valido and e['pagina'] <= 2 and re.search(r'\bPh\.?\s?D\.?', trecho):
+                    valido = any(norm(x).startswith(norm(valor)) for x in pagina.splitlines())
+            elif campo == 'editora':
+                valido = bool(re.search(r'\b(editora|publisher|published\s+by|publishing|press)\b', trecho, re.I))
+                # Créditos editoriais de e-book: copyright com entidade na mesma página
+                # e título próprio. Não transformar o dono do site em editora de artigo.
+                valido |= bool(tipo in ('livro', 'coletânea') and e['pagina'] <= 3
+                               and re.search(r'©|copyright', pagina, re.I)
+                               and evidencias.get('titulo'))
+                valido |= bool(re.search(r'\bThe Project Gutenberg EBook of\b', trecho))
+            elif campo == 'data':
+                ano = str(valor)
+                valido = bool(re.fullmatch(r'(1[5-9]|20)\d{2}', ano) and re.search(
+                    r'©\s*'+ano+r'|copyright[^\n]{0,80}\b'+ano+r'\b|'
+                    r'(?:release date|publica[çc][aã]o|published)[^\n]{0,60}\b'+ano+r'\b|'
+                    r'\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{1,2},?\s+'+ano,
+                    trecho, re.I))
+                # Copyright não data automaticamente tradução ou revisão posterior.
+                if (re.search(r'translat|tradu[çc]|original edition', inicio, re.I)
+                        and re.search(r'copyright|©', trecho, re.I)):
+                    valido = False
+            elif campo == 'volume':
+                valido = bool(re.search(r'\bvol(?:ume)?\.?\s', trecho, re.I))
+            elif campo == 'edicao':
+                valido = bool(re.search(r'edi[çc][aã]o|edition', trecho, re.I))
+                if re.search(r'Project Gutenberg', inicio, re.I):
+                    valido = False  # versão do arquivo não é edição impressa
+            # ISBN/local exigem a conciliação já existente (não inferir cidade por endereço).
+            if valido:
+                aceitos[campo] = {'valor': valor, 'evidencias': [e]}
+                break
+        if campo not in aceitos:
+            rejeitados[campo] = 'citação não comprova a função bibliográfica'
+
+    titulo = 'titulo' in aceitos
+    sem_isbn = not contexto.get('isbn_confirmado_na_edicao')
+    web = bool(re.search(r'https?://\S+', inicio))
+    es_tipo = evidencias.get('tipo_documento', [])
+    sinais = norm(' '.join(e['trecho'] for e in es_tipo))
+    tipo_verificado = bool(titulo and (
+        (tipo == 'artigo' and (re.search(r'\barticle\b|\bartigo\b', sinais)
+                              or (web and 'data' in aceitos)))
+        or (tipo == 'trecho' and re.search(r'\bexcerpt\b|\bcapitulo\b|\bchapter\b', sinais))
+        or (tipo == 'documento' and (web and es_tipo or
+            'nmAutor0' in aceitos and sem_isbn and (len(paginas) <= 5 or re.search(
+                r'equipo de investigacion|research report|relatorio de pesquisa|informe de investigacion', norm(inicio)))))
+        or (tipo in ('livro', 'coletânea') and ('editora' in aceitos))))
+    if contexto.get('isbn_confirmado_na_edicao') and contexto.get('tipo_documento') not in (
+            None, '', tipo, 'livro' if tipo == 'coletânea' else tipo):
+        tipo_verificado = False
+    # Datas contraditórias declaradas nos créditos/sumário continuam pendentes.
+    obs = ' '.join(resposta.get('observacoes', []))
+    alerta_data = bool(re.search(r'posteriores\s+a\s+\d{4}|'
+                                r'(?:data|ano|copyright)[^.]{0,140}contradi', obs, re.I))
+    if alerta_data:
+        aceitos.pop('data', None)
+        rejeitados['data'] = 'cronologia contraditória na própria publicação'
+    # ISBN confirmado fixa a edição. Não substituir seus campos por outra leitura.
+    if contexto.get('isbn_confirmado_na_edicao'):
+        for campo in list(aceitos):
+            if contexto.get(campo) and not provas.igual(contexto[campo], aceitos[campo]['valor'], campo):
+                rejeitados[campo] = 'preservada a edição identificada por ISBN'
+                del aceitos[campo]
+    responsabilidade = None
+    if tipo == 'coletânea' and titulo:
+        # Editor da própria coletânea, em linha dedicada nos créditos. Não
+        # confundir editor de periódico citado, designer, publisher ou prefaciador.
+        for n, pagina in enumerate(paginas[:3], 1):
+            if not re.search(r'staff for this book|production and design staff|edited by', pagina, re.I):
+                continue
+            m = re.search(r'(?m)^\s*([A-Z][A-Za-z .\u2019\x27-]{4,65}?)\s*[-–—]\s*Editor\s*$', pagina)
+            if not m:
+                m = re.search(r'(?im)^\s*Edited by\s+([A-Z][A-Za-z .\u2019\x27-]{4,65})\s*$', pagina)
+            if m:
+                responsabilidade = {'valor': m[1].strip(), 'evidencias': [
+                    {'campo': 'nmAutor0', 'pagina': n, 'trecho': m[0].strip()}], 'papel': 'Editor'}
+                aceitos['nmAutor0'] = responsabilidade
+                break
+    return {'versao': POLITICA_FONTE_PRIMARIA, 'campos': aceitos, 'rejeitados': rejeitados,
+            'identidade_verificada': bool(titulo and tipo_verificado),
+            'tipo': ('livro' if tipo == 'coletânea' else tipo) if tipo_verificado else None,
+            'natureza_material': tipo if tipo_verificado else None,
+            'alerta_data': alerta_data}
 
 
 def aplicar_confirmadas(linha, analise, campos_manuais=()):
     if linha.get('revisao_manual_aprovada') or linha.get('id_remoto'):
         return []
     protegidos = set(campos_manuais)
+    if 'autores' in protegidos:
+        protegidos.add('nmAutor0')
     analise['sugestoes'] = [dict(s, fontes_confirmadoras=[])
                             if s['campo'] in protegidos else s for s in analise.get('sugestoes', [])]
-    return provas.aplicar_confirmadas(linha, analise, origem='Claude')
+    aplicados = provas.aplicar_confirmadas(linha, analise, origem='Claude')
+    primaria = analise.get('fonte_primaria') or {}
+    if not primaria.get('identidade_verificada'):
+        return aplicados
+    if ('tipo_documento' in protegidos and primaria.get('tipo') != linha.get('tipo_documento')):
+        return aplicados
+    campos = dict(primaria.get('campos') or {})
+    if primaria.get('tipo'):
+        campos['tipo_documento'] = {'valor': primaria['tipo']}
+    # Em documentos/artigos, ausência comprovada de atribuição é melhor que
+    # transformar menu, titular de copyright ou editora em autor.
+    documental = primaria.get('tipo') in ('documento', 'artigo', 'trecho')
+    if documental:
+        for campo in ('nmAutor0', 'editora', 'data', 'lugar'):
+            if campo not in campos:
+                campos[campo] = {'valor': '', 'motivo': 'não declarado com evidência suficiente'}
+    elif primaria.get('natureza_material') == 'coletânea' and 'nmAutor0' not in campos:
+        campos['nmAutor0'] = {'valor': '', 'motivo': 'coletânea sem responsabilidade principal comprovada'}
+    alterados = set()
+    for campo, prova in campos.items():
+        if campo in protegidos:
+            continue
+        anterior, valor = linha.get(campo, ''), prova['valor']
+        if anterior == valor:
+            continue
+        linha[campo] = valor
+        alterados.add(campo)
+        aplicados.append({'campo': campo, 'antes': anterior, 'depois': valor,
+                          'origem': 'Claude + fonte primária verificada', 'prova': prova})
+        if campo in ('titulo', 'nmAutor0'):
+            linha['origem_titulo' if campo == 'titulo' else 'origem_autor'] = 'Claude + fonte primária verificada'
+    if 'nmAutor0' not in protegidos and 'autores' not in protegidos and 'nmAutor0' in campos:
+        nome = campos['nmAutor0']['valor']
+        linha['autores'] = [{'nome': nome, 'desc': campos['nmAutor0'].get('papel', 'Autor')}] if nome else []
+    linha['natureza_material'] = primaria.get('natureza_material')
+    if primaria.get('alerta_data'):
+        linha.setdefault('conflitos', []).append('cronologia contraditória nos créditos e sumário; conferir data')
+    prefixos = []
+    if 'titulo' in alterados:
+        prefixos += ['titulo so do nome do arquivo:', 'titulo com fragmentos de OCR']
+    if 'nmAutor0' in alterados:
+        prefixos += ['autor so do nome do arquivo:', 'autor suspeito:', 'autor parece frase',
+                     'autor contém pontuação', 'autor bibliograficamente implausivel']
+    if {'titulo', 'nmAutor0'} & alterados:
+        prefixos += ['titulo parece conter ou repetir o nome do autor']
+    for campo in ('editora', 'data'):
+        if campo in alterados:
+            prefixos.append(campo + ' localizado apenas nas referências finais')
+    linha['conflitos'] = [x for x in linha.get('conflitos', []) if not any(
+        provas.normalizar(x).startswith(provas.normalizar(p)) for p in prefixos)]
+    analise['campos_aplicados'] = aplicados
+    if aplicados:
+        print(f'  Claude: {len(aplicados)} campo(s) aproveitado(s); fonte primária conferida; '
+              'validação final preservada', flush=True)
+    return aplicados
 
 
 if __name__ == '__main__':
