@@ -111,10 +111,12 @@ class ClaudeTest(unittest.TestCase):
         r=resposta();r.update(tipo_documento='trabalho acadêmico',nmAutor0=None,editora=None,data=None)
         a=ia.conferir_fonte_primaria(r,self.paginas)
         self.assertFalse(a['identidade_verificada'])
-        linha={'titulo':'Nome errado','tipo_documento':'trabalho acadêmico','conflitos':[]}
+        linha={'titulo':'Nome errado','tipo_documento':'trabalho acadêmico',
+               'natureza_material':'dissertação','conflitos':[]}
         ia.aplicar_confirmadas(linha,{'fonte_primaria':a},['tipo_documento'])
         self.assertEqual('O Caminho da Fé',linha['titulo'])
         self.assertEqual('trabalho acadêmico',linha['tipo_documento'])
+        self.assertEqual('dissertação',linha['natureza_material'])
 
     def test_assinatura_propria_junto_ao_titulo_nao_exige_rotulo_autor(self):
         r=resposta();r.update(tipo_documento='artigo',nmAutor0='C. René Padilla',editora=None,data=None)
