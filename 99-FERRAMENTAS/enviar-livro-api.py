@@ -237,6 +237,29 @@ def nome_natural(nome):
     return " ".join(x for x in (restante, sobrenome) if x)
 
 
+def nome_para_api(nome):
+    """Evita o truncamento documentado de nomes naturais com >3 palavras.
+
+    A API atual preserva a vírgula bibliográfica. Para nomes curtos mantém
+    o contrato anterior; para nomes longos nunca perde partículas/iniciais.
+    """
+    original = " ".join(str(nome or "").split())
+    if ',' in original:
+        base, sufixo = (x.strip() for x in original.rsplit(',', 1))
+        if len(base.split()) > 1 and sufixo.rstrip('.').casefold() in {'jr','junior','júnior','filho','neto'}:
+            base = re.sub(r'^(?:Dr|Prof|Rev)\.?\s+', '', base, flags=re.I)
+            partes_base = base.split()
+            original = partes_base[-1]+' '+sufixo+', '+' '.join(partes_base[:-1])
+    natural = nome_natural(original)
+    partes = natural.split()
+    if len(partes) <= 3:
+        return natural
+    if ',' in original:
+        return original
+    corte = -2 if partes[-1].rstrip('.').casefold() in {'filho','neto','sobrinho','junior','júnior','jr'} else -1
+    return ' '.join(partes[corte:]) + ', ' + ' '.join(partes[:corte])
+
+
 def texto_seguro_api(valor):
     """Remove apostrofos que podem derrubar o banco da API legada.
 
@@ -487,11 +510,11 @@ def montar_payload(ficha, tipo_api="livro"):
             if _chave_textual(item['nome']) in {'autor nao identificado','autor desconhecido','nao identificado','identificado nao'}:
                 continue
             autores.append({
-                "nome": nome_natural(item["nome"]),
+                "nome": nome_para_api(item["nome"]),
                 "desc": item.get("desc", "Autor") or "Autor",
             })
     if not autores:
-        autor = nome_natural(ficha.get("nmAutor0", ""))
+        autor = nome_para_api(ficha.get("nmAutor0", ""))
         if _chave_textual(ficha.get('nmAutor0')) in {'autor nao identificado','autor desconhecido','nao identificado','identificado nao'}:
             autor = ''
         autores = [{"nome": autor, "desc": "Autor"}] if autor else []
