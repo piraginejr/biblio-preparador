@@ -2858,6 +2858,41 @@ end run
     return True, ""
 
 
+def _converter_word_antigo_textutil(origem, destino, soffice):
+    """Recuperação local de DOC antigo: RTF, sem imprimir bytes OLE como texto."""
+    origem, destino = pathlib.Path(origem), pathlib.Path(destino)
+    if (sys.platform != 'darwin' or origem.suffix.lower() != '.doc'
+            or not pathlib.Path('/usr/bin/textutil').is_file() or destino.exists()
+            or origem.stat().st_size > 50 * 1024 * 1024):
+        return False, 'recuperação Word antigo não aplicável'
+    with origem.open('rb') as f:
+        if f.read(8) != bytes.fromhex('d0cf11e0a1b11ae1'):
+            return False, 'não é um DOC binário reconhecido'
+    try:
+        texto = subprocess.run(['/usr/bin/textutil','-convert','txt','-stdout',str(origem)],
+            check=True,capture_output=True,text=True,timeout=30).stdout
+        texto = re.sub(r'MACROBUTTON\s+endnote\+\.?(?:cit|bib)', '', texto)
+        termos = set(re.findall(r'\w{3,}', texto.casefold()))
+        if len(termos) < 30 or '\x00' in texto or texto.count('\ufffd') > max(2,len(texto)//1000):
+            return False, 'texto recuperado insuficiente ou corrompido'
+        with tempfile.TemporaryDirectory(prefix='biblio-word-antigo-') as td:
+            rtf = pathlib.Path(td)/(origem.stem+'.rtf')
+            dados = subprocess.run(['/usr/bin/textutil','-convert','rtf','-stdout',str(origem)],
+                check=True,capture_output=True,timeout=30).stdout
+            rtf.write_bytes(re.sub(rb'MACROBUTTON\s+endnote\+\.?(?:cit|bib)',b'',dados))
+            ok, erro = _converter_word_libreoffice(rtf,destino,soffice)
+            if not ok:return False,erro
+        obtidos = set(re.findall(r'\w{3,}', '\n'.join(prep.paginas_pdftotext(str(destino))).casefold()))
+        cobertura = len(termos & obtidos)/len(termos)
+        if cobertura < .90 or prep.n_paginas(str(destino)) > max(20,len(texto)//1000+20):
+            destino.unlink(missing_ok=True)
+            return False,'recuperação rejeitada: perda textual ou paginação anômala'
+        return True,''
+    except (OSError,ValueError,subprocess.SubprocessError) as exc:
+        destino.unlink(missing_ok=True)
+        return False,str(exc)
+
+
 def converter_word_para_pdf(origem, destino):
     """Converte DOC/DOCX/RTF/ODT/FODT preservando o original."""
     origem, destino = pathlib.Path(origem), pathlib.Path(destino)
@@ -2871,6 +2906,11 @@ def converter_word_para_pdf(origem, destino):
             return {"ok": True, "motor": "LibreOffice", "erro": ""}
         erros.append(f"LibreOffice: {erro}")
         destino.unlink(missing_ok=True)
+        if origem.suffix.lower() == '.doc':
+            ok, erro = _converter_word_antigo_textutil(origem,destino,soffice)
+            if ok:
+                return {'ok':True,'motor':'textutil RTF + LibreOffice (DOC antigo)','erro':''}
+            erros.append('Recuperação DOC antigo: '+erro)
     # O Word é mantido somente como alternativa explicitamente autorizada.
     # Automatizá-lo via AppleScript aciona a interface gráfica e permissões
     # do macOS, uma experiência inadequada para o processamento em lote.
