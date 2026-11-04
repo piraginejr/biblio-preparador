@@ -159,12 +159,16 @@ HTML = r"""<!doctype html>
       <div class="two">
         <div class="panel">
           <h2>Preparar lote</h2>
-          <details><summary>Claude — leitura assistida dos pendentes</summary>
+          <details><summary>IA — leitura assistida dos pendentes</summary>
             <p>Páginas selecionadas (capa, rosto e créditos) serão enviadas ao Claude Sonnet pelo Antigravity.
             Usa os limites da conta conectada; não envia o livro completo nem substitui sua revisão.</p>
             <p id="claudeEstado">consultando configuração…</p>
             <div class="actions"><button class="secondary" onclick="configurarClaude(true)">ativar Claude</button>
-              <button class="secondary" onclick="configurarClaude(false)">desativar Claude</button></div>
+              <button class="secondary" onclick="configurarClaude(false)">desativar Claude</button>
+              <button class="secondary" onclick="configurarGemini(true)">ativar Gemini de reserva</button>
+              <button class="secondary" onclick="configurarGemini(false)">desativar Gemini de reserva</button></div>
+            <p>Com a reserva ativada, o Gemini assume quando o Claude estiver indisponível.
+              Respostas anteriores são reaproveitadas. Não repete OCR e não altera decisões manuais.</p>
           </details>
           <p>Este botão executa o equivalente ao ciclo completo do menu antigo, com OCR, preparo, conciliação, filas e resumo.</p>
           <div class="actions">
@@ -296,6 +300,7 @@ async function carregarStatus(){
   $('statusFinal').textContent = data.status;
   const ia = await api('/api/claude');
   $('claudeEstado').textContent = `${ia.ativo ? 'Ativo' : 'Desativado'} — ${ia.modelo}. ` +
+    `Gemini de reserva: ${ia.gemini_reserva ? 'ativado' : 'desativado'}. ` +
     (ia.cli_disponivel ? 'Antigravity CLI localizado.' : 'Instale o CLI oficial agy e conecte sua conta.');
 }
 async function configurarClaude(ativo){
@@ -303,6 +308,12 @@ async function configurarClaude(ativo){
     await api('/api/claude', {ativo});
     await carregarStatus();
   } catch(e) { alert('Não foi possível configurar o Claude: ' + e.message); }
+}
+async function configurarGemini(ativo){
+  try {
+    await api('/api/claude', {gemini_reserva:ativo});
+    await carregarStatus();
+  } catch(e) { alert('Não foi possível configurar a reserva: ' + e.message); }
 }
 async function acao(nome){
   const data = await api('/api/action', {action:nome});
@@ -486,7 +497,10 @@ class Handler(BaseHTTPRequestHandler):
                 if not 0 < tamanho <= 1024:
                     raise ValueError('requisição inválida')
                 dados = json.loads(self.rfile.read(tamanho))
-                self._json(consultar_claude.configurar(dados.get('ativo')))
+                if not isinstance(dados, dict) or set(dados) not in ({'ativo'}, {'gemini_reserva'}):
+                    raise ValueError('informe apenas a configuração que deseja alterar')
+                self._json(consultar_claude.configurar_reserva(dados['gemini_reserva'])
+                           if 'gemini_reserva' in dados else consultar_claude.configurar(dados.get('ativo')))
             except (ValueError, OSError, RuntimeError, AttributeError) as exc:
                 self._json({'erro': str(exc)}, 400)
             return

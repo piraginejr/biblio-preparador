@@ -166,7 +166,7 @@ HTML = r"""<!doctype html>
 
     <div class="corpo-revisao">
     <section id="painelClaude" hidden>
-      <h3>Claude Sonnet — conferir evidências</h3><div id="claude"></div>
+      <h3 id="tituloIA">IA — conferir evidências</h3><div id="claude"></div>
     </section>
     <section id="painelApple" hidden>
       <h3>Análise da Apple — conferir evidências</h3>
@@ -309,7 +309,9 @@ function usarSugestaoClaude(indice) {
 function mostrarClaude(item) {
   const a = item.analise_claude || {};
   $("painelClaude").hidden = !a.estado || a.estado === 'desativado';
-  $("claude").innerHTML = `<p class="meta">${esc(a.aviso || a.motivo || a.estado || '')}</p>` +
+  $("tituloIA").textContent = `${a.provedor || (String(a.modelo || '').startsWith('gemini-') ? 'Gemini' : 'Claude')} — conferir evidências`;
+  $("claude").innerHTML = `<p class="meta">${esc(a.modelo || '')}${a.cache_reutilizado ? ' · resposta reutilizada, sem nova consulta' : ''}</p>` +
+    `<p class="meta">${esc(a.aviso || a.motivo || a.estado || '')}</p>` +
     (a.sugestoes || []).map((s,i) => `<div class="item"><b>${esc(s.campo)}: ${esc(s.valor)}</b><br>
       <span class="meta">${esc(s.estado)} ${esc((s.fontes_confirmadoras||[]).join(', '))}</span>
       <button class="mini sec" onclick="usarSugestaoClaude(${i})">usar na ficha</button>
@@ -318,7 +320,7 @@ function mostrarClaude(item) {
     (a.autores || []).map(x=>`<p class="meta">${esc(x.papel)}: ${esc(x.nome)}</p>`).join('') +
     (a.observacoes || []).map(x=>`<p class="meta">${esc(x)}</p>`).join('') +
     (a.paginas || []).map(p=>`<div class="item">Página PDF ${Number(p.pagina)||1}
-      ${p.imagem ? `<a target="_blank" rel="noopener" href="${arquivoUrl(p.imagem)}"><img alt="Página enviada ao Claude" loading="lazy" style="display:block;width:100%;max-height:320px;object-fit:contain" src="${arquivoUrl(p.imagem)}"></a>` : ''}</div>`).join('');
+      ${p.imagem ? `<a target="_blank" rel="noopener" href="${arquivoUrl(p.imagem)}"><img alt="Página usada pela IA" loading="lazy" style="display:block;width:100%;max-height:320px;object-fit:contain" src="${arquivoUrl(p.imagem)}"></a>` : ''}</div>`).join('');
 }
 function arquivoPaginaUrl(rel, pagina) {
   return arquivoUrl(rel) + (pagina ? "#page=" + encodeURIComponent(pagina) : "");

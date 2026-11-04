@@ -48,6 +48,17 @@ class ClaudeUITest(unittest.TestCase):
                 self.post({'ativo': True}, origin, tipo)
             self.assertEqual(403, e.exception.code)
 
+    def test_configura_reserva_sem_desativar_principal(self):
+        with self.post({'ativo':True}):
+            pass
+        with self.post({'gemini_reserva':True}) as r:
+            dados=json.load(r)
+        self.assertTrue(dados['ativo'])
+        self.assertTrue(dados['gemini_reserva'])
+        with self.assertRaises(urllib.error.HTTPError) as e:
+            self.post({'gemini_reserva':'sim'})
+        self.assertEqual(400,e.exception.code)
+
     def test_nao_altera_configuracao_no_meio_de_lote(self):
         self.job.return_value = mock.Mock(estado='rodando')
         with self.assertRaises(urllib.error.HTTPError) as e:
