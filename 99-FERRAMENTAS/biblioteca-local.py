@@ -1816,7 +1816,9 @@ def pacote_apple_revisao(c, analise):
     if not isinstance(analise, dict):
         return {}
     pacote = {k: analise[k] for k in ('estado', 'motivo', 'aviso', 'sugestoes',
-                                     'campos_aplicados', 'paginas_enviadas', 'modelo', 'observacoes', 'autores') if k in analise}
+                                     'campos_aplicados', 'paginas_enviadas', 'modelo', 'observacoes', 'autores',
+                                     'provedor', 'cache_reutilizado', 'nova_consulta', 'tempo_analise_segundos',
+                                     'reserva_de', 'motivo_reserva') if k in analise}
     pacote['paginas'] = []
     raiz = c['raiz'].resolve()
     for p in analise.get('paginas', []):

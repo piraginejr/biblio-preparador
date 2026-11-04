@@ -17,10 +17,13 @@ import time
 import consultar_apple as provas
 
 VERSAO = 2
-POLITICA_FONTE_PRIMARIA = 1
+POLITICA_FONTE_PRIMARIA = 2
 MODELO = 'claude-sonnet-5-5-medium'
+MODELO_GEMINI = 'gemini-3.8-flash-medium'
 LIMITE_SEGUNDOS = 120
+LIMITE_GEMINI = 300
 COOLDOWN = 900
+COOLDOWN_COTA = 3600
 _suspenso_ate = 0
 TIPOS = ('livro', 'coletânea', 'opúsculo', 'documento', 'apostila', 'sermão',
          'artigo', 'revista', 'periódico', 'boletim', 'jornal', 'tese',
@@ -66,7 +69,9 @@ def binario():
 def status():
     return {'ativo': bool(configuracao().get('ativo')) and os.environ.get('BIBLIO_CLAUDE') != '0',
             'cli_disponivel': bool(binario()), 'modelo': MODELO,
-            'aviso': 'Páginas selecionadas são enviadas ao Claude pelo Antigravity; '
+            'gemini_reserva': bool(configuracao().get('gemini_reserva')),
+            'modelo_reserva': MODELO_GEMINI,
+            'aviso': 'Páginas selecionadas são enviadas ao Claude e, se autorizado, ao Gemini pelo Antigravity; '
                      'consome os limites da conta conectada. Não envia o livro completo.'}
 
 
@@ -75,9 +80,58 @@ def configurar(ativo):
         raise ValueError('ativo deve ser verdadeiro ou falso')
     if ativo and not binario():
         raise RuntimeError('Instale o Antigravity CLI oficial (agy) e conecte sua conta antes de ativar.')
-    _gravar(pasta_config() / 'config.json', {'ativo': ativo, 'modelo': MODELO,
-                                           'consentimento_paginas_nuvem_em': time.time()})
+    cfg = configuracao()
+    cfg.update(ativo=ativo, modelo=MODELO, consentimento_paginas_nuvem_em=time.time())
+    _gravar(pasta_config() / 'config.json', cfg)
     return status()
+
+
+def configurar_reserva(ativo):
+    if type(ativo) is not bool:raise ValueError('ativo deve ser verdadeiro ou falso')
+    cfg=configuracao();cfg.update(gemini_reserva=ativo,modelo_reserva=MODELO_GEMINI,
+                                consentimento_gemini_em=time.time())
+    _gravar(pasta_config()/'config.json',cfg)
+    return status()
+
+
+class FalhaIA(RuntimeError):
+    def __init__(self, tipo):
+        self.tipo=tipo
+        super().__init__('IA indisponível: '+tipo+'; resposta não aplicada')
+
+
+def _falha_cli(texto):
+    t=str(texto).lower()
+    if re.search(r'quota|resource.exhausted|rate.limit|capacity|usage.limit|cota|429',t):return FalhaIA('cota')
+    if re.search(r'not.authenticated|unauthorized|login.required|sign.in|401|403',t):return FalhaIA('autenticacao')
+    if re.search(r'print_timeout|timed.out|timeout',t):return FalhaIA('tempo')
+    return FalhaIA('servico')
+
+
+def _pausa_modelo(modelo):
+    try:return json.loads((pasta_config()/'pausas-modelos.json').read_text()).get(modelo,{}).get('ate',0)
+    except (OSError,ValueError,AttributeError):return 0
+
+
+def _tipo_pausa(modelo):
+    try:return json.loads((pasta_config()/'pausas-modelos.json').read_text()).get(modelo,{}).get('tipo','servico')
+    except (OSError,ValueError,AttributeError):return 'servico'
+
+
+def _registrar_pausa(modelo,tipo):
+    p=pasta_config()/'pausas-modelos.json'
+    try:d=json.loads(p.read_text())
+    except (OSError,ValueError):d={}
+    d[modelo]={'tipo':tipo,'ate':time.time()+(COOLDOWN_COTA if tipo=='cota' else COOLDOWN)}
+    _gravar(p,d)
+
+
+def _limpar_pausa(modelo):
+    p=pasta_config()/'pausas-modelos.json'
+    try:d=json.loads(p.read_text())
+    except (OSError,ValueError):return
+    if modelo in d:
+        del d[modelo];_gravar(p,d)
 
 
 def selecionar_paginas(paginas):
@@ -112,6 +166,15 @@ def esquema():
     campos['observacoes'] = {'type': 'array', 'items': {'type': 'string'}}
     return {'type': 'object', 'properties': campos, 'required': list(campos),
             'additionalProperties': False}
+
+
+def esquema_transporte(modelo):
+    contrato = esquema()
+    if modelo.startswith('gemini-'):
+        # O adaptador Gemini não aceita null em enum. O validador local
+        # continua impondo exatamente os mesmos tipos do contrato original.
+        contrato['properties']['tipo_documento'].pop('enum')
+    return contrato
 
 
 def validar_envelope(out):
@@ -152,7 +215,9 @@ def validar_envelope(out):
     return resposta
 
 
-def executar(cli, selecionadas, imagens):
+def executar(cli, selecionadas, imagens, modelo=None, limite=None):
+    modelo=modelo or MODELO;limite=limite or LIMITE_SEGUNDOS
+    provedor='Gemini' if modelo.startswith('gemini-') else 'Claude'
     with tempfile.TemporaryDirectory(prefix='biblio-claude-', dir='/private/tmp' if os.name != 'nt' else None) as temp:
         pasta = pathlib.Path(temp).resolve()
         nomes = []
@@ -161,7 +226,7 @@ def executar(cli, selecionadas, imagens):
                 nome = f'pagina-{p["pagina"]}.png'
                 shutil.copyfile(p['imagem'], pasta / nome)
                 nomes.append(str(pasta / nome))
-        permissoes = {'toolPermission': 'request-review', 'permissions': {
+        permissoes = {'useG1Credits': False, 'toolPermission': 'request-review', 'permissions': {
             'allow': [f'read_file({pasta})'], 'ask': [],
             'deny': ['write_file(*)', 'command(*)', 'read_url(*)', 'execute_url(*)', 'mcp(*)']}}
         prompt = (
@@ -172,21 +237,28 @@ def executar(cli, selecionadas, imagens):
             'se a ferramenta não estiver disponível, registre isso explicitamente em observacoes. '
             'Use exclusivamente os números PAGINA_PDF, não os números impressos. '
             'Não invente dados nem complete por conhecimento de outra edição. Ausente = null. '
+            'As páginas enviadas são uma amostra deliberada. Páginas não enviadas à análise NÃO '
+            'provam que faltem páginas no arquivo, nem justificam classificar a obra como trecho. '
+            'Verifique assinaturas em linhas próprias junto ao título e no fim do texto, inclusive '
+            'sem a palavra Autor, e títulos distribuídos em várias linhas. '
             'Distinga autores de tradutores, orientadores, pessoas citadas e editora. '
             'nmAutor0 contém apenas autor/responsável da obra enviada, não da obra resumida. '
             'Data é ano desta edição; em tese é ano da apresentação; em artigo é ano do fascículo. '
             'Copyright original não prova data de edição traduzida. Relate outras datas em observacoes. '
             'Não coloque edição no subtítulo. Não presuma primeira edição. Classifique resumo comercial '
-            'como resumo, manual de curso como apostila, artigo como artigo. Não afirme integralidade '
-            'com páginas iniciais. Transcreva CDD/CDU e divergências em observacoes, sem conversões. '
+            'como resumo, manual de curso como apostila, artigo como artigo. Não afirme integralidade com páginas iniciais. '
+            'Em capítulo avulso, o título principal é o do capítulo, não o título do livro '
+            'repetido no cabeçalho corrente. Registre a obra de origem em observacoes. '
+            'Transcreva CDD/CDU e divergências em observacoes, sem conversões. '
             'Não corrija grafias por probabilidade: sinalize a dúvida em observacoes. '
             'Para cada campo, cite trecho literal curto e página PDF exata. '
             'Responda apenas no esquema JSON solicitado.\nIMAGENS: ' + ', '.join(nomes) +
             '\nPÁGINAS:\n' + json.dumps(selecionadas, ensure_ascii=False))
-        cmd = [cli, '--print', prompt, '--model', MODELO, '--output-format', 'json',
-               '--json-schema', json.dumps(esquema(), ensure_ascii=False),
+        contrato=esquema_transporte(modelo)
+        cmd = [cli, '--print', prompt, '--model', modelo, '--output-format', 'json',
+               '--json-schema', json.dumps(contrato, ensure_ascii=False),
                '--settings', json.dumps(permissoes), '--disable-slash-commands',
-               '--print-timeout', f'{LIMITE_SEGUNDOS}s']
+               '--print-timeout', f'{limite}s']
         env = dict(os.environ, PYTHONPYCACHEPREFIX='/private/tmp/biblio-pycache')
         for segredo in ('GEMINI_API_KEY', 'GOOGLE_API_KEY', 'ANTHROPIC_API_KEY', 'OPENAI_API_KEY'):
             env.pop(segredo, None)
@@ -197,15 +269,19 @@ def executar(cli, selecionadas, imagens):
             while True:
                 try:
                     out, _err = p.communicate(timeout=15)
-                    if p.returncode:
-                        raise RuntimeError('Claude indisponível ou sem cota; confira a sessão do agy')
-                    return validar_envelope(out)
+                    if p.returncode:raise _falha_cli(out+'\n'+_err)
+                    try:envelope=json.loads(out)
+                    except ValueError:envelope={}
+                    if envelope.get('status')!='SUCCESS':raise _falha_cli(out+'\n'+_err)
+                    resultado=validar_envelope(out)
+                    _limpar_pausa(modelo)
+                    return resultado
                 except subprocess.TimeoutExpired:
                     decorrido = int(time.monotonic() - inicio)
-                    print(f'  Claude Sonnet: lendo {len(selecionadas)} páginas selecionadas; '
-                          f'{decorrido}s / limite {LIMITE_SEGUNDOS}s', flush=True)
-                    if decorrido >= LIMITE_SEGUNDOS + 10:
-                        raise TimeoutError('tempo limite do Claude; revisão preservada')
+                    print(f'  {provedor}: lendo {len(selecionadas)} páginas selecionadas; '
+                          f'{decorrido}s / limite {limite}s', flush=True)
+                    if decorrido >= limite + 10:
+                        raise TimeoutError('tempo limite do '+provedor+'; revisão preservada')
         finally:
             if p.poll() is None:
                 p.kill()
@@ -213,7 +289,22 @@ def executar(cli, selecionadas, imagens):
 
 
 def analisar(pdf, paginas, fontes=None, contexto=None, confirmador=None):
+    primeiro=_analisar_modelo(pdf,paginas,fontes,contexto,confirmador,MODELO,LIMITE_SEGUNDOS)
+    if (status().get('gemini_reserva') and status().get('ativo')
+            and primeiro.get('estado') in ('falha','indisponível')
+            and primeiro.get('tipo_falha')!='autenticacao'):
+        print('  Claude indisponível; consultando Gemini de reserva, sem repetir OCR ou preparo.',flush=True)
+        reserva=_analisar_modelo(pdf,paginas,fontes,contexto,confirmador,MODELO_GEMINI,LIMITE_GEMINI)
+        reserva['reserva_de']=MODELO
+        reserva['motivo_reserva']=primeiro.get('motivo','Claude indisponível')
+        return reserva
+    return primeiro
+
+
+def _analisar_modelo(pdf, paginas, fontes, contexto, confirmador, modelo, limite):
     global _suspenso_ate
+    provedor='Gemini' if modelo.startswith('gemini-') else 'Claude'
+    inicio_analise = time.monotonic()
     contexto = contexto or {}
     if contexto.get('revisao_manual_aprovada') or contexto.get('id_remoto'):
         return {'estado': 'preservado', 'motivo': 'decisão humana ou cadastro confirmado'}
@@ -233,20 +324,23 @@ def analisar(pdf, paginas, fontes=None, contexto=None, confirmador=None):
                 h.update(bloco)
         digest = h.hexdigest()
         raiz = next((p for p in origem.parents if (p / '_controle').is_dir()), origem.parent)
-        chave = hashlib.sha256(json.dumps([VERSAO, MODELO, selecionadas],
+        chave = hashlib.sha256(json.dumps([VERSAO, modelo, selecionadas],
                                          ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:20]
         pasta = raiz / '_evidencias_claude' / digest / chave
         cache = pasta / 'resposta.json'
         resposta = None
+        cache_reutilizado = False
         if cache.is_file():
             try:
                 resposta = validar_envelope(json.dumps({'status': 'SUCCESS',
                                                         'structured_output': json.loads(cache.read_text())}))
+                cache_reutilizado = True
             except (ValueError, TypeError):
                 pass
         if resposta is None:
-            if time.time() < _suspenso_ate:
-                return {'estado': 'indisponível', 'motivo': 'Claude em pausa após falha; lote continua sem IA remota'}
+            if time.time() < max(_suspenso_ate if modelo==MODELO else 0,_pausa_modelo(modelo)):
+                return {'estado': 'indisponível', 'tipo_falha': _tipo_pausa(modelo),
+                        'motivo': provedor+' em pausa após falha/cota; resposta em cache continua aproveitável'}
             falha = pasta / 'falha.json'
             if falha.is_file() and time.time() - falha.stat().st_mtime < COOLDOWN:
                 return {'estado': 'indisponível', 'motivo': 'tentativa recente sem resposta; revisão preservada'}
@@ -256,7 +350,7 @@ def analisar(pdf, paginas, fontes=None, contexto=None, confirmador=None):
                 n = x['pagina']
                 imagem = pasta / f'pagina-{n}.png'
                 if not imagem.is_file() and shutil.which('pdftoppm'):
-                    print(f'  Claude Sonnet: preparando imagem da página PDF {n}', flush=True)
+                    print(f'  {provedor}: preparando imagem da página PDF {n}', flush=True)
                     try:
                         subprocess.run(['pdftoppm', '-f', str(n), '-l', str(n), '-scale-to', '1600',
                                         '-singlefile', '-png', str(origem), str(imagem.with_suffix(''))],
@@ -264,14 +358,16 @@ def analisar(pdf, paginas, fontes=None, contexto=None, confirmador=None):
                     except (OSError, subprocess.SubprocessError):
                         pass
                 imagens.append({'pagina': n, 'imagem': str(imagem) if imagem.is_file() else ''})
-            print(f'  Claude Sonnet: conferindo {len(selecionadas)} páginas; '
-                  f'{sum(bool(p["imagem"]) for p in imagens)} imagens; modelo {MODELO}', flush=True)
+            print(f'  {provedor}: conferindo {len(selecionadas)} páginas; '
+                  f'{sum(bool(p["imagem"]) for p in imagens)} imagens; modelo {modelo}', flush=True)
             try:
-                resposta = executar(cli, selecionadas, imagens)
+                resposta = executar(cli, selecionadas, imagens,modelo=modelo,limite=limite)
             except (OSError, ValueError, RuntimeError, TimeoutError) as exc:
-                _suspenso_ate = time.time() + COOLDOWN
+                tipo=getattr(exc,'tipo','tempo' if isinstance(exc,TimeoutError) else 'resposta_invalida')
+                if modelo==MODELO:_suspenso_ate = time.time() + COOLDOWN
+                _registrar_pausa(modelo,tipo)
                 _gravar(falha, {'motivo': 'falha/tempo/cota; sem repetição imediata', 'quando': time.time()})
-                raise RuntimeError('Claude não entregou ficha válida; lote continua e revisão foi preservada') from exc
+                raise FalhaIA(tipo) from exc
             _gravar(cache, resposta)
         # Evidência tem de existir nas páginas ENVIADAS, não num trecho distante do PDF.
         numeros = {x['pagina'] for x in selecionadas}
@@ -279,17 +375,20 @@ def analisar(pdf, paginas, fontes=None, contexto=None, confirmador=None):
         resposta['evidencias'] = [e for e in resposta['evidencias'] if e['pagina'] in numeros]
         paginas_prova = [p if n in numeros else '' for n, p in enumerate(paginas, 1)]
         fontes = dict(fontes or {})
-        sugestoes = provas.conferir(resposta, paginas_prova, fontes, contexto, origem='Claude')
+        sugestoes = provas.conferir(resposta, paginas_prova, fontes, contexto, origem=provedor)
         primaria = conferir_fonte_primaria(resposta, paginas_prova, contexto)
         erro_conferencia = ''
         if (confirmador and not primaria.get('identidade_verificada')
                 and any(s['evidencias'] for s in sugestoes)):
             try:
                 fontes.update(confirmador([s for s in sugestoes if s['evidencias']]) or {})
-                sugestoes = provas.conferir(resposta, paginas_prova, fontes, contexto, origem='Claude')
+                sugestoes = provas.conferir(resposta, paginas_prova, fontes, contexto, origem=provedor)
             except Exception:
                 erro_conferencia = 'Fonte bibliográfica indisponível; sugestão permanece em revisão'
-        return {'estado': 'revisão assistida', 'modelo': MODELO, 'versao': VERSAO,
+        return {'estado': 'revisão assistida', 'modelo': modelo, 'provedor': provedor, 'versao': VERSAO,
+                'cache_reutilizado': cache_reutilizado,
+                'nova_consulta': not cache_reutilizado,
+                'tempo_analise_segundos': round(time.monotonic()-inicio_analise, 3),
                 'fonte_primaria': primaria,
                 'sugestoes': sugestoes, 'observacoes': resposta['observacoes'],
                 'autores': resposta['autores'], 'hash_pdf': digest, 'cache': str(cache),
@@ -299,7 +398,8 @@ def analisar(pdf, paginas, fontes=None, contexto=None, confirmador=None):
                 'aviso': 'Dados explícitos conferidos no PDF podem completar a ficha sem catálogo '
                          'externo. Inferências ficam em revisão; os validadores finais continuam ativos.'}
     except (OSError, ValueError, RuntimeError, TimeoutError) as exc:
-        return {'estado': 'falha', 'motivo': str(exc)[:400]}
+        return {'estado': 'falha', 'motivo': str(exc)[:400], 'tipo_falha':getattr(exc,'tipo','resposta_invalida'),
+                'modelo':modelo,'provedor':provedor}
 
 
 def conferir_fonte_primaria(resposta, paginas, contexto=None):
@@ -346,6 +446,16 @@ def conferir_fonte_primaria(resposta, paginas, contexto=None):
                     valido = False
                 if not valido and e['pagina'] <= 2 and re.search(r'\bPh\.?\s?D\.?', trecho):
                     valido = any(norm(x).startswith(norm(valor)) for x in pagina.splitlines())
+                # Assinatura dedicada junto ao título ou no final de um texto
+                # curto: nome próprio, não slogan em maiúsculas nem pessoa citada.
+                if not valido and e['pagina'] <= 3 and len(paginas) <= 25:
+                    pessoa = re.fullmatch(r'(?:[A-ZÀ-Ü][a-zà-ÿ’\x27-]+|[A-Z]\.)'
+                        r'(?:\s+(?:[A-ZÀ-Ü][a-zà-ÿ’\x27-]+|[A-Z]\.|de|da|do|del|dos|y|van|von)){1,7}', str(valor).strip())
+                    linhas = [x.strip() for x in pagina.splitlines() if x.strip()]
+                    assinaturas = [i for i,x in enumerate(linhas) if re.fullmatch(
+                        r'(?i)(?:(?:Rev|Dr|Prof)\.\s*)?'+re.escape(str(valor))+r'(?:[,;].*)?',x)]
+                    valido = bool(pessoa and assinaturas and ('titulo' in evidencias)
+                                  and (min(assinaturas) < 12 or len(linhas) <= 4))
             elif campo == 'editora':
                 valido = bool(re.search(r'\b(editora|publisher|published\s+by|publishing|press)\b', trecho, re.I))
                 # Créditos editoriais de e-book: copyright com entidade na mesma página
@@ -378,6 +488,31 @@ def conferir_fonte_primaria(resposta, paginas, contexto=None):
         if campo not in aceitos:
             rejeitados[campo] = 'citação não comprova a função bibliográfica'
 
+    # Capítulo avulso: cabeçalho corrente identifica a obra de origem, não o
+    # texto enviado. Só recupera o título quando está explícito em bloco próprio.
+    if tipo == 'trecho' and paginas:
+        linhas = paginas[0].splitlines()
+        for i, linha in enumerate(linhas[:15]):
+            if not re.fullmatch(r'\s*(?:CAP[IÍ]TULO|CHAPTER)\s+(?:[IVXLCDM]+|\d+)\s*', linha, re.I):
+                continue
+            bloco = []
+            for seguinte in linhas[i+1:i+9]:
+                s = seguinte.strip()
+                if not s:
+                    if bloco:
+                        break
+                    continue
+                if not s.isupper():
+                    break
+                bloco.append(s)
+            cabecalho = ' '.join(bloco)
+            if (12 <= len(cabecalho) <= 180 and len(cabecalho.split()) >= 3
+                    and norm(cabecalho) != norm(valores.get('titulo') or '')):
+                aceitos['titulo'] = {'valor': cabecalho, 'evidencias': [
+                    {'campo': 'titulo', 'pagina': 1, 'trecho': '\n'.join(bloco)}]}
+                rejeitados['titulo_da_obra_origem'] = 'cabeçalho do livro não substitui o título explícito do capítulo'
+            break
+
     titulo = 'titulo' in aceitos
     sem_isbn = not contexto.get('isbn_confirmado_na_edicao')
     web = bool(re.search(r'https?://\S+', inicio))
@@ -391,6 +526,14 @@ def conferir_fonte_primaria(resposta, paginas, contexto=None):
             'nmAutor0' in aceitos and sem_isbn and (len(paginas) <= 5 or re.search(
                 r'equipo de investigacion|research report|relatorio de pesquisa|informe de investigacion', norm(inicio)))))
         or (tipo in ('livro', 'coletânea') and ('editora' in aceitos))))
+    # Texto assinado com título, sem sinais de edição de livro: o tipo genérico
+    # documento é seguro mesmo sem comprovação de periódico/fascículo.
+    documento_assinado = bool(titulo and 'nmAutor0' in aceitos and sem_isbn
+        and not valores.get('isbn') and not valores.get('editora') and len(paginas) <= 25
+        and tipo in ('artigo', 'documento', 'trecho', 'sermão', 'apostila'))
+    if documento_assinado and not tipo_verificado:
+        tipo_verificado = True
+        tipo = 'documento'
     if contexto.get('isbn_confirmado_na_edicao') and contexto.get('tipo_documento') not in (
             None, '', tipo, 'livro' if tipo == 'coletânea' else tipo):
         tipo_verificado = False
@@ -437,18 +580,20 @@ def aplicar_confirmadas(linha, analise, campos_manuais=()):
         protegidos.add('nmAutor0')
     analise['sugestoes'] = [dict(s, fontes_confirmadoras=[])
                             if s['campo'] in protegidos else s for s in analise.get('sugestoes', [])]
-    aplicados = provas.aplicar_confirmadas(linha, analise, origem='Claude')
+    provedor=analise.get('provedor') or ('Gemini' if str(analise.get('modelo','')).startswith('gemini-') else 'Claude')
+    aplicados = provas.aplicar_confirmadas(linha, analise, origem=provedor)
     primaria = analise.get('fonte_primaria') or {}
-    if not primaria.get('identidade_verificada'):
+    if not primaria.get('campos'):
         return aplicados
-    if ('tipo_documento' in protegidos and primaria.get('tipo') != linha.get('tipo_documento')):
+    if ('tipo_documento' in protegidos and primaria.get('tipo')
+            and primaria.get('tipo') != linha.get('tipo_documento')):
         return aplicados
     campos = dict(primaria.get('campos') or {})
     if primaria.get('tipo'):
         campos['tipo_documento'] = {'valor': primaria['tipo']}
     # Em documentos/artigos, ausência comprovada de atribuição é melhor que
     # transformar menu, titular de copyright ou editora em autor.
-    documental = primaria.get('tipo') in ('documento', 'artigo', 'trecho')
+    documental = primaria.get('identidade_verificada') and primaria.get('tipo') in ('documento', 'artigo', 'trecho')
     if documental:
         for campo in ('nmAutor0', 'editora', 'data', 'lugar'):
             if campo not in campos:
@@ -465,9 +610,9 @@ def aplicar_confirmadas(linha, analise, campos_manuais=()):
         linha[campo] = valor
         alterados.add(campo)
         aplicados.append({'campo': campo, 'antes': anterior, 'depois': valor,
-                          'origem': 'Claude + fonte primária verificada', 'prova': prova})
+                          'origem': provedor+' + fonte primária verificada', 'prova': prova})
         if campo in ('titulo', 'nmAutor0'):
-            linha['origem_titulo' if campo == 'titulo' else 'origem_autor'] = 'Claude + fonte primária verificada'
+            linha['origem_titulo' if campo == 'titulo' else 'origem_autor'] = provedor+' + fonte primária verificada'
     if 'nmAutor0' not in protegidos and 'autores' not in protegidos and 'nmAutor0' in campos:
         nome = campos['nmAutor0']['valor']
         linha['autores'] = [{'nome': nome, 'desc': campos['nmAutor0'].get('papel', 'Autor')}] if nome else []
@@ -489,7 +634,7 @@ def aplicar_confirmadas(linha, analise, campos_manuais=()):
         provas.normalizar(x).startswith(provas.normalizar(p)) for p in prefixos)]
     analise['campos_aplicados'] = aplicados
     if aplicados:
-        print(f'  Claude: {len(aplicados)} campo(s) aproveitado(s); fonte primária conferida; '
+        print(f'  {provedor}: {len(aplicados)} campo(s) aproveitado(s); fonte primária conferida; '
               'validação final preservada', flush=True)
     return aplicados
 

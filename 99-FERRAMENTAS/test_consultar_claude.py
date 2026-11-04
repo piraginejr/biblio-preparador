@@ -107,6 +107,30 @@ class ClaudeTest(unittest.TestCase):
         self.assertEqual([], ia.aplicar_confirmadas(linha, {'sugestoes': []}))
         self.assertEqual('anterior', linha['titulo'])
 
+    def test_titulo_com_prova_nao_depende_de_tipo_resolvido(self):
+        r=resposta();r.update(tipo_documento='trabalho acadêmico',nmAutor0=None,editora=None,data=None)
+        a=ia.conferir_fonte_primaria(r,self.paginas)
+        self.assertFalse(a['identidade_verificada'])
+        linha={'titulo':'Nome errado','tipo_documento':'trabalho acadêmico','conflitos':[]}
+        ia.aplicar_confirmadas(linha,{'fonte_primaria':a},['tipo_documento'])
+        self.assertEqual('O Caminho da Fé',linha['titulo'])
+        self.assertEqual('trabalho acadêmico',linha['tipo_documento'])
+
+    def test_assinatura_propria_junto_ao_titulo_nao_exige_rotulo_autor(self):
+        r=resposta();r.update(tipo_documento='artigo',nmAutor0='C. René Padilla',editora=None,data=None)
+        r['evidencias']=[{'campo':'titulo','pagina':1,'trecho':'O Caminho da Fé'},
+                        {'campo':'nmAutor0','pagina':1,'trecho':'C. René Padilla'}]
+        a=ia.conferir_fonte_primaria(r,['O Caminho da Fé\nC. René Padilla\nTexto do artigo e suas reflexões.'])
+        self.assertEqual('C. René Padilla',a['campos']['nmAutor0']['valor'])
+        self.assertEqual('documento',a['tipo'])
+
+    def test_slogan_em_maiusculas_nao_e_assinatura(self):
+        r=resposta();r.update(tipo_documento='artigo',nmAutor0='RELACIONAMENTO AMOROSO',editora=None)
+        r['evidencias']=[{'campo':'titulo','pagina':1,'trecho':'O Caminho da Fé'},
+                        {'campo':'nmAutor0','pagina':1,'trecho':'RELACIONAMENTO AMOROSO'}]
+        a=ia.conferir_fonte_primaria(r,['O Caminho da Fé\nRELACIONAMENTO AMOROSO\ntexto'])
+        self.assertNotIn('nmAutor0',a['campos'])
+
     def test_fonte_primaria_preserva_integridade_e_edicao(self):
         a, _ = self.analisar()
         for s in a['sugestoes']:
@@ -139,6 +163,18 @@ class ClaudeTest(unittest.TestCase):
         self.assertNotIn('titulo', a['campos'])
         a = ia.conferir_fonte_primaria(r, ['Paul\nJewish Law and Early Christianity'])
         self.assertIn('titulo', a['campos'])
+
+    def test_capitulo_avulso_nao_herda_titulo_do_cabecalho_do_livro(self):
+        r=resposta();r.update(tipo_documento='trecho',titulo='Manual de Crescimento da Igreja',
+                            nmAutor0=None,editora=None,data=None)
+        r['evidencias']=[{'campo':'titulo','pagina':2,'trecho':'156 - Manual de Crescimento da Igreja'},
+                        {'campo':'tipo_documento','pagina':1,'trecho':'CAPÍTULO VII'}]
+        paginas=['CAPÍTULO VII\n\nO MINISTÉRIO SOCIAL E\nO CRESCIMENTO DA\nIGREJA\n\nNo segundo capítulo, falamos...',
+                 '156 - Manual de Crescimento da Igreja\nTexto']
+        a=ia.conferir_fonte_primaria(r,paginas)
+        self.assertEqual('O MINISTÉRIO SOCIAL E O CRESCIMENTO DA IGREJA',a['campos']['titulo']['valor'])
+        self.assertEqual('trecho',a['tipo'])
+        self.assertIn('titulo_da_obra_origem',a['rejeitados'])
 
     def test_tipo_manual_nao_e_trocado_por_classificacao_da_ia(self):
         a, _ = self.analisar()
@@ -210,6 +246,10 @@ class ClaudeTest(unittest.TestCase):
             b = ia.analisar(self.pdf, self.paginas, {})
         run.assert_not_called()
         self.assertEqual(a['cache'], b['cache'])
+        self.assertFalse(a['cache_reutilizado'])
+        self.assertTrue(a['nova_consulta'])
+        self.assertTrue(b['cache_reutilizado'])
+        self.assertFalse(b['nova_consulta'])
         self.assertFalse(any(s['fontes_confirmadoras'] for s in b['sugestoes']))
 
     def test_citacao_fora_da_pagina_enviada_nao_confirma(self):
