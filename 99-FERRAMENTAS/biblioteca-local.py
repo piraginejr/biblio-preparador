@@ -346,11 +346,31 @@ def localizar_duplicado_textual(c, catalogo, paginas, excluir_digest=""):
         return atual, {}
     texto_atual = texto_normalizado_para_duplicidade(paginas)
     melhor = {}
-    for digest, registro in catalogo.get("livros", {}).items():
-        if digest == excluir_digest or str(digest).startswith("duplicado:"):
+    registros = dict(catalogo.get('referencias_remotas', {}))
+    registros.update(catalogo.get('livros', {}))
+    for digest, registro in registros.items():
+        if ((digest == excluir_digest and digest in catalogo.get('livros',{}))
+                or str(digest).startswith("duplicado:")):
             continue
         simhash = registro.get("simhash_texto", "")
         palavras = int(registro.get("palavras_texto", 0) or 0)
+        # Obras curtas têm hash do texto inteiro, não apenas amostras. Essa
+        # prova continua disponível depois da limpeza do PDF e não depende
+        # de o título ter sido extraído corretamente na primeira preparação.
+        if (120 <= palavras < MAX_PALAVRAS_DUPLICIDADE
+                and palavras == atual['palavras']
+                and registro.get('hash_texto') == atual['hash_texto']
+                and registro.get('id_remoto')
+                and registro.get('estado') in {'cadastrado','cadastrado - arquivos locais liberados'}
+                and not registro.get('correcao_remota_pendente')):
+            return atual, {'hash_sha256':digest,'arquivo':registro.get('arquivo',''),
+                'caminho':registro.get('caminho',''),'similaridade':1.0,
+                'estado':registro['estado'],'id_remoto':registro['id_remoto'],
+                'titulo_historico':registro.get('titulo',''),
+                'referencia_historica':digest in catalogo.get('referencias_remotas',{}),
+                'prova_duplicado_integral':{'hash_texto_integral':atual['hash_texto'],
+                    'hash_destino':digest,'id_remoto':registro['id_remoto'],
+                    'criterio':'texto normalizado integral idêntico; menos de 30000 palavras'}}
         if (not simhash or not palavras
                 or min(palavras, atual["palavras"]) /
                 max(palavras, atual["palavras"]) < 0.82
@@ -388,6 +408,20 @@ def registrar_duplicado_textual(c, catalogo, digest, origem,
         ficha = {}
     destino = mover_sem_substituir(
         origem, c["revisao"] / "DUPLICADOS-TEXTO", digest)
+    if duplicado.get('referencia_historica'):
+        # Índice migrado evita novo OCR, mas não autoriza descarte com ID
+        # inexistente ou renomeado pelo operador desde o cadastro original.
+        try:
+            chave = api_envio.ler_chave_chaves()
+            if not chave:raise ValueError('API não configurada')
+            q = api_envio.post_consulta_com_espera(api_envio.criar_sessao_api(),chave,
+                {'action':'consultar_livro','id':int(duplicado['id_remoto'])}).json()
+            if (not q.get('encontrado') or q.get('total_matches') != 1
+                    or str(q.get('id')) != str(duplicado['id_remoto'])
+                    or api_envio._chave_textual(q.get('titulo')) != api_envio._chave_textual(duplicado.get('titulo_historico'))):
+                raise ValueError('vínculo histórico não confirmado na API')
+        except Exception:
+            duplicado = dict(duplicado,estado='histórico a conferir')
     confirmado = bool(
         duplicado.get("similaridade", 0) >= 0.99
         and duplicado.get("id_remoto")
@@ -425,6 +459,11 @@ def registrar_duplicado_textual(c, catalogo, digest, origem,
         "palavras_texto": assinatura.get("palavras", 0),
         "hash_texto": assinatura.get("hash_texto", ""),
     }
+    if confirmado and duplicado.get('prova_duplicado_integral'):
+        prova = duplicado['prova_duplicado_integral']
+        ficha.update(prova_duplicado_integral=prova,confirmado_por_api='texto_integral',id_remoto=duplicado['id_remoto'])
+        catalogo['livros'][digest].update(prova_duplicado_integral=prova,confirmado_por_api='texto_integral')
+        salvar_json(ficha_path,ficha)
     salvar_catalogo(c, catalogo)
     return destino
 
