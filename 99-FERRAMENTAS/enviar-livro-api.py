@@ -69,11 +69,13 @@ TIPOS_API = {
 CATEGORIAS_API = {"público": "0", "restrito": "1"}
 ESTADO_DUPLICADO_TITULO_AUTOR = "duplicado confirmado por título e autor"
 ESTADO_DUPLICADO_TITULO = "duplicado confirmado por título"
+ESTADO_AGUARDAR_API = 'aguardando disponibilidade da API'
 ESTADOS_FALHA_ENVIO = {
     'erro confirmado - revisar', 'erro local - revisar',
     'aguardando conferência de homônimos',
     'resultado incerto - nao reenviar sem conferencia',
     'envio iniciado - resultado ainda incerto',
+    ESTADO_AGUARDAR_API,
 }
 CERTIFICADO_INTERMEDIARIO = (pathlib.Path(__file__).with_name("certificados") /
                              "SectigoPublicServerAuthenticationCADVR36.pem")
@@ -81,6 +83,34 @@ CERTIFICADO_INTERMEDIARIO = (pathlib.Path(__file__).with_name("certificados") /
 # Trinta segundos interrompia PDFs validos no meio do upload. O servidor aceita
 # arquivos grandes; por isso a transferencia e a resposta recebem ate 30 min.
 TIMEOUT_ENVIO = (1800, 1800)
+
+
+class ConsultaTemporariamenteIndisponivel(RuntimeError):
+    """Recusa antes do upload: não é falha bibliográfica nem envio incerto."""
+
+
+def post_consulta_com_espera(sessao, chave, payload, dormir=None):
+    """Retry limitado apenas de consulta sem anexos; nunca repete um upload."""
+    if payload.get('action') != 'consultar_livro':
+        raise ValueError('a repetição automática é exclusiva de consultas')
+    dormir = dormir or time.sleep
+    for tentativa in range(4):
+        resposta = sessao.post(ENDPOINT, json=payload, headers={'X-API-Key': chave}, timeout=(30, 90))
+        if resposta.status_code != 429:return resposta
+        try:mensagem = str(resposta.json().get('mensagem', ''))
+        except (ValueError, AttributeError):mensagem = ''
+        header = getattr(resposta, 'headers', {})
+        retry = header.get('Retry-After', '') if isinstance(header, dict) or hasattr(header, 'get') else ''
+        m = re.search(r'em\s+(\d+)\s*s\b', mensagem, re.I)
+        prazo = float(retry) if isinstance(retry, str) and re.fullmatch(r'\d+(?:\.\d+)?',retry) else float(m[1]) if m else 2
+        espera = max(2, prazo, 2**tentativa)
+        if tentativa == 3 or espera > 30:
+            raise ConsultaTemporariamenteIndisponivel(
+                'consulta adiada: limite temporário da API (429); nenhum arquivo enviado; tente novamente mais tarde')
+        print(f'  API ocupada (429): aguardando {espera:g}s antes de repetir somente a consulta '
+              f'({tentativa+1}/3)', flush=True)
+        dormir(espera)
+    raise AssertionError('consulta sem resultado')
 
 
 class AdaptadorTLSBiblio(HTTPAdapter):
@@ -349,9 +379,7 @@ def consultar_livro(sessao, chave, isbn="", titulo="", autores=None,
     if len(payload) == 2:
         return {"encontrado": False, "consulta_nao_realizada": True,
                 "motivo": "sem ISBN nem titulo/autor suficientes"}
-    resposta = sessao.post(
-        ENDPOINT, json=payload, headers={"X-API-Key": chave},
-        timeout=(30, 90))
+    resposta = post_consulta_com_espera(sessao, chave, payload)
     try:
         corpo = resposta.json()
     except ValueError as exc:
@@ -757,11 +785,11 @@ def atualizar_fila(raiz):
                     "já existente na API - conferir vínculo")
         # Um item ainda nao enviado pode deixar de ser confiavel depois de uma
         # nova consulta ou regra. Ele sai da fila ativa, mas fica auditavel.
-        if item.get("estado") == "pendente" and item.get("ficha") not in aptas:
+        if item.get("estado") in {"pendente", ESTADO_AGUARDAR_API} and item.get("ficha") not in aptas:
             retirados.append({
                 "ficha": item.get("ficha", ""),
                 "titulo": item.get("titulo", ""),
-                "estado_anterior": "pendente",
+                "estado_anterior": item.get("estado"),
                 "motivo": "ficha deixou de estar apta após reavaliação",
                 "retirado_em": agora(),
             })
@@ -1741,7 +1769,7 @@ def processar_fila(raiz, limite=0, intervalo=3.0, chave="", sessao=None,
     incertos = [i for i in fila["itens"] if
                 "incerto" in i.get("estado", "") or
                 i.get("estado", "").startswith("envio iniciado")]
-    pendentes = [i for i in fila["itens"] if i.get("estado") == "pendente"]
+    pendentes = [i for i in fila["itens"] if i.get("estado") in {"pendente",ESTADO_AGUARDAR_API}]
     if limite and limite > 0:
         pendentes = pendentes[:limite]
     if not pendentes and not incertos:
@@ -1808,6 +1836,13 @@ def processar_fila(raiz, limite=0, intervalo=3.0, chave="", sessao=None,
                     f"{consulta.get('id', '?')} ({consulta.get('correspondencia')})",
                     flush=True)
                 continue
+        except ConsultaTemporariamenteIndisponivel as exc:
+            item.update(estado=ESTADO_AGUARDAR_API,erro=str(exc),concluido_em=agora())
+            salvar_json(caminho,fila)
+            sincronizar_catalogo_com_fila(raiz,{'itens':[item]})
+            print('  servidor limitou as consultas; lote adiado sem upload nem nova preparação.',flush=True)
+            resultado['adiados']=len(pendentes)-posicao+1
+            break
         except Exception as exc:
             # Indisponibilidade da consulta nao torna o resultado do upload
             # incerto; registramos o aviso e seguimos com o cadastro normal.
@@ -1829,12 +1864,17 @@ def processar_fila(raiz, limite=0, intervalo=3.0, chave="", sessao=None,
             remoto = carregar_controle(
                 raiz / "_controle" / NOME_CONTROLE).get(
                     "envios", {}).get(sha256(pdf), {})
-            item["estado"] = ("aguardando conferência de homônimos" if isinstance(exc, RevisaoHomonimos)
+            item["estado"] = (ESTADO_AGUARDAR_API if isinstance(exc,ConsultaTemporariamenteIndisponivel) else
+                              "aguardando conferência de homônimos" if isinstance(exc, RevisaoHomonimos)
                               else remoto.get("estado", "erro local - revisar"))
             item["erro"] = str(exc)
             item["concluido_em"] = agora()
             salvar_json(caminho, fila)
             sincronizar_catalogo_com_fila(raiz, {'itens':[item]})
+            if isinstance(exc,ConsultaTemporariamenteIndisponivel):
+                resultado['adiados']=len(pendentes)-posicao+1
+                print('  consulta adiada; nenhum upload iniciado.',flush=True)
+                break
             print(f"  {item['estado']}: {exc}; a fila continuará",
                   flush=True)
             if "incerto" in item.get("estado", ""):
@@ -1901,7 +1941,7 @@ def processar_fila(raiz, limite=0, intervalo=3.0, chave="", sessao=None,
         salvar_json(caminho, fila)
 
     resultado["pendentes"] = sum(
-        1 for i in fila["itens"] if i.get("estado") == "pendente")
+        1 for i in fila["itens"] if i.get("estado") in {"pendente", ESTADO_AGUARDAR_API})
     resultado["em_revisao"] = sum(
         1 for i in fila["itens"] if "incerto" in i.get("estado", "") or
         "revisar" in i.get("estado", ""))
@@ -1935,7 +1975,7 @@ def processar_fila_especifica(raiz, grupo, limite=0, intervalo=3.0,
                 if tentativa_incerta(item)]
     hashes_incertos = {item.get("hash_sha256", "") for item in incertos}
     pendentes = [item for item in fila.get("itens", [])
-                 if item.get("estado") == "pronto para cadastro específico"
+                 if item.get("estado") in {"pronto para cadastro específico",ESTADO_AGUARDAR_API}
                  and item.get("hash_sha256", "") not in hashes_incertos]
     if limite > 0:
         pendentes = pendentes[:limite]
@@ -1992,6 +2032,13 @@ def processar_fila_especifica(raiz, grupo, limite=0, intervalo=3.0,
                       f"{consulta.get('id', '?')} "
                       f"({consulta.get('correspondencia', '')})", flush=True)
                 continue
+        except ConsultaTemporariamenteIndisponivel as exc:
+            item.update(estado=ESTADO_AGUARDAR_API,erro=str(exc),concluido_em=agora())
+            salvar_json(caminho,fila)
+            sincronizar_catalogo_com_fila(raiz,{'itens':[{**item,'ficha':item.get('metadados','')}]})
+            resultado['adiados']=len(pendentes)-posicao+1
+            print('  servidor limitou as consultas; lote adiado sem upload nem nova preparação.',flush=True)
+            break
         except Exception as exc:
             # Se apenas a consulta estiver indisponível, o cadastro continua;
             # a falha não transforma o upload em resultado incerto.
@@ -2005,13 +2052,18 @@ def processar_fila_especifica(raiz, grupo, limite=0, intervalo=3.0,
             remoto = carregar_controle(
                 raiz / "_controle" / NOME_CONTROLE).get(
                     "envios", {}).get(item.get("hash_sha256", ""), {})
-            item["estado"] = ("aguardando conferência de homônimos" if isinstance(exc, RevisaoHomonimos)
+            item["estado"] = (ESTADO_AGUARDAR_API if isinstance(exc,ConsultaTemporariamenteIndisponivel) else
+                              "aguardando conferência de homônimos" if isinstance(exc, RevisaoHomonimos)
                               else remoto.get("estado", "erro confirmado - revisar"))
             item["erro"] = str(exc)
             item["concluido_em"] = agora()
             salvar_json(caminho, fila)
             sincronizar_catalogo_com_fila(raiz, {"itens": [{
                 **item, 'ficha':item.get('metadados','')} ]})
+            if isinstance(exc,ConsultaTemporariamenteIndisponivel):
+                resultado['adiados']=len(pendentes)-posicao+1
+                print('  consulta adiada; nenhum upload iniciado.',flush=True)
+                break
             print(f"  {item['estado']}: {exc}; a fila continuará",
                   flush=True)
             if "incerto" in item.get("estado", ""):
@@ -2088,7 +2140,7 @@ def processar_fila_especifica(raiz, grupo, limite=0, intervalo=3.0,
         salvar_json(caminho, fila)
     resultado["pendentes"] = sum(
         1 for item in fila.get("itens", [])
-        if item.get("estado") == "pronto para cadastro específico")
+        if item.get("estado") in {"pronto para cadastro específico", ESTADO_AGUARDAR_API})
     resultado["em_revisao"] = sum(
         1 for item in fila.get("itens", [])
         if "incerto" in item.get("estado", "") or
@@ -2114,7 +2166,7 @@ def planejar_todas_filas(raiz, limite=0):
              "total_disponivel": 0, "total_selecionado": 0, "filas": {}}
     for grupo, fila, estado_pendente in filas:
         itens = fila.get("itens", [])
-        pendentes = [i for i in itens if i.get("estado") == estado_pendente]
+        pendentes = [i for i in itens if i.get("estado") in {estado_pendente,ESTADO_AGUARDAR_API}]
         incertos = [i for i in itens if (
             "incerto" in i.get("estado", "")
             or i.get("estado", "").startswith("envio iniciado"))]
@@ -2169,6 +2221,9 @@ def processar_todas_filas(raiz, limite=0, intervalo=3.0,
             resultados[grupo] = processar_fila_especifica(
                 raiz, grupo, limite=limite_grupo, intervalo=intervalo,
                 chave=chave, sessao=sessao, realmente=True)
+        if resultados[grupo].get('adiados'):
+            print('API temporariamente indisponível; demais filas preservadas para a próxima execução.', flush=True)
+            break
     return {"modo": "ENVIO", "limite_total": limite,
             "planejado": plano["total_selecionado"],
             "resultados": resultados}
@@ -2221,7 +2276,7 @@ def main():
         if not args.enviar:
             fila, _, _ = atualizar_fila(args.processar_fila)
             pendentes = [i for i in fila["itens"]
-                         if i.get("estado") == "pendente"]
+                         if i.get("estado") in {"pendente", ESTADO_AGUARDAR_API}]
             if args.limite > 0:
                 pendentes = pendentes[:args.limite]
             print(json.dumps({"modo": "SIMULACAO", "quantidade": len(pendentes),
