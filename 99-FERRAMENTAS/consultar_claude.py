@@ -616,7 +616,8 @@ def aplicar_confirmadas(linha, analise, campos_manuais=()):
     if 'nmAutor0' not in protegidos and 'autores' not in protegidos and 'nmAutor0' in campos:
         nome = campos['nmAutor0']['valor']
         linha['autores'] = [{'nome': nome, 'desc': campos['nmAutor0'].get('papel', 'Autor')}] if nome else []
-    linha['natureza_material'] = primaria.get('natureza_material')
+    if primaria.get('natureza_material') and 'tipo_documento' not in protegidos:
+        linha['natureza_material'] = primaria['natureza_material']
     if primaria.get('alerta_data'):
         linha.setdefault('conflitos', []).append('cronologia contraditória nos créditos e sumário; conferir data')
     prefixos = []
@@ -644,7 +645,11 @@ if __name__ == '__main__':
     grupo = parser.add_mutually_exclusive_group()
     grupo.add_argument('--ativar', action='store_true')
     grupo.add_argument('--desativar', action='store_true')
+    parser.add_argument('--gemini-reserva', choices=('ativar', 'desativar'),
+                        help='configura a reserva sem alterar a ativação do Claude')
     args = parser.parse_args()
     if args.ativar or args.desativar:
         configurar(args.ativar)
+    if args.gemini_reserva:
+        configurar_reserva(args.gemini_reserva == 'ativar')
     print(json.dumps(status(), ensure_ascii=False, indent=2))
