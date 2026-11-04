@@ -2656,7 +2656,9 @@ def consolidar_filas_especificas(c, catalogo):
                 falha_anterior = anterior.get('estado') in api_envio.ESTADOS_FALHA_ENVIO
                 revisado_depois = (bool(registro.get('revisao_manual_aprovada'))
                     and str(registro.get('revisao_manual_atualizada_em','')) > str(anterior.get('concluido_em','')))
-                if estado_atual == "cadastrado":
+                if duplicado_integral_comprovado(registro):
+                    estado = ESTADO_DUPLICADO_CONTEUDO
+                elif estado_atual == "cadastrado":
                     estado = estado_atual
                 elif estado_atual in api_envio.ESTADOS_FALHA_ENVIO or (falha_anterior and not revisado_depois):
                     estado = estado_atual if estado_atual in api_envio.ESTADOS_FALHA_ENVIO else anterior['estado']

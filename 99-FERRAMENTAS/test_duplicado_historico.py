@@ -32,4 +32,19 @@ class HistoricoTest(unittest.TestCase):
         with mock.patch.object(m,'_arquivo_do_registro',return_value=None):
             self.assertEqual({},m.localizar_duplicado_textual({}, {'livros':{'a'*64:r}},paginas)[1])
 
+    def test_consolidacao_nao_reabre_duplicado_integral_para_corrigir(self):
+        with tempfile.TemporaryDirectory() as td:
+            c=m.inicializar(pathlib.Path(td)/'livros');h='a'*64
+            p=c['documentos']/'artigo.pdf';p.write_bytes(b'%PDF-teste')
+            fp=c['metadados']/'artigo.json';m.salvar_json(fp,{'tipo_documento':'documento',
+                'titulo':'Artigo','arquivo':p.name,'pdf_original':m.relativo(c,p)})
+            r={'hash_sha256':h,'estado':m.ESTADO_DUPLICADO_CONTEUDO,'arquivo':p.name,
+                'metadados':m.relativo(c,fp),'caminho':m.relativo(c,p),'id_remoto':20910,
+                'confirmado_por_api':'texto_integral','prova_duplicado_integral':{
+                    'id_remoto':20910,'hash_texto_integral':'b'*64,'hash_destino':'c'*64}}
+            cat={'livros':{h:r}}
+            with mock.patch.object(m.api_envio,'validar',return_value=['não é ficha de novo envio']):
+                m.consolidar_filas_especificas(c,cat)
+            self.assertEqual(m.ESTADO_DUPLICADO_CONTEUDO,r['estado'])
+
 if __name__=='__main__':unittest.main()
