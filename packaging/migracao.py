@@ -51,10 +51,16 @@ def criar_tar(destino, fontes):
                     if not stat.S_ISREG(before.st_mode):
                         continue
                     h = sha(path)
+                    # O primeiro acesso pode materializar um arquivo do Dropbox
+                    # e ajustar seus timestamps. Fixar a referência após a leitura.
+                    before = path.stat()
                     tar.add(path, arcname=str(rel), recursive=False)
                     after = path.stat()
                     if (before.st_size, before.st_mtime_ns) != (after.st_size, after.st_mtime_ns):
-                        raise RuntimeError('Arquivo mudou durante o backup: ' + str(path))
+                        # Metadados podem mudar sem mudança do conteúdo. Em caso
+                        # de dúvida, exigir os mesmos bytes, não apenas o horário.
+                        if before.st_size != after.st_size or sha(path) != h:
+                            raise RuntimeError('Arquivo mudou durante o backup: ' + str(path))
                     registros.append({'arquivo': str(rel), 'bytes': before.st_size,
                                       'sha256': h, 'incluido': True})
                     if len(registros) % 250 == 0:
