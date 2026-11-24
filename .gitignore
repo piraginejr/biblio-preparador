@@ -49,6 +49,16 @@ livros/_livros-metadados.csv
 
 # Artefatos e saídas locais de ferramentas.
 dist/
+# Migração privada: contém acervo, comprovantes e dados do operador.
+/migracao-privada/
+/experimentos/
+*.bundle
+*.tar.gz
+*.tgz
+*.zip
+*.shortcut
+.venv/
+.pytest_cache/
 99-FERRAMENTAS/.DS_Store
 99-FERRAMENTAS/_originais_sem_ocr/
 99-FERRAMENTAS/baixar-voice-fgbmfi.log
