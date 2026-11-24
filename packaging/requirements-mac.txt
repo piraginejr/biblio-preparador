@@ -1,0 +1,5 @@
+# Dependências presentes no Python usado pelo launcher deste Mac em 24/11/2026.
+# Não inclui bibliotecas nativas, NER opcional ou ferramentas de OCR/conversão.
+# Conferir o interpretador realmente escolhido pelo app; ver DEPENDENCIAS-MAC.md.
+requests==2.32.5
+playwright==1.60.0
